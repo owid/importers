@@ -1,0 +1,5461 @@
+year,country,value
+1990,China,8.158
+1991,China,8.499
+1992,China,8.81
+1993,China,9.068999999999999
+1994,China,9.252
+1995,China,9.329
+1996,China,9.324
+1997,China,9.277000000000001
+1998,China,9.215
+1999,China,9.17
+2000,China,9.165
+2001,China,9.17
+2002,China,9.186
+2003,China,9.218
+2004,China,9.272
+2005,China,9.352
+2006,China,9.523
+2007,China,9.883
+2008,China,10.33
+2009,China,10.758
+2010,China,11.046
+2011,China,11.225999999999999
+2012,China,11.42
+2013,China,11.626
+2014,China,11.843
+2015,China,12.065999999999999
+2016,China,12.29
+2017,China,12.514000000000001
+1990,North Korea,7.483
+1991,North Korea,7.809
+1992,North Korea,8.085
+1993,North Korea,8.299
+1994,North Korea,8.443999999999999
+1995,North Korea,8.508
+1996,North Korea,8.5
+1997,North Korea,8.427
+1998,North Korea,8.309
+1999,North Korea,8.167
+2000,North Korea,8.023
+2001,North Korea,7.801
+2002,North Korea,7.495
+2003,North Korea,7.185
+2004,North Korea,6.945
+2005,North Korea,6.843999999999999
+2006,North Korea,6.8229999999999995
+2007,North Korea,6.822
+2008,North Korea,6.835
+2009,North Korea,6.861000000000001
+2010,North Korea,6.896
+2011,North Korea,6.925
+2012,North Korea,6.959
+2013,North Korea,6.999
+2014,North Korea,7.045
+2015,North Korea,7.099
+2016,North Korea,7.16
+2017,North Korea,7.23
+1990,Taiwan,8.293
+1991,Taiwan,8.626
+1992,Taiwan,8.937999999999999
+1993,Taiwan,9.204
+1994,Taiwan,9.405
+1995,Taiwan,9.51
+1996,Taiwan,9.552
+1997,Taiwan,9.585
+1998,Taiwan,9.611
+1999,Taiwan,9.636000000000001
+2000,Taiwan,9.658999999999999
+2001,Taiwan,9.649
+2002,Taiwan,9.605
+2003,Taiwan,9.557
+2004,Taiwan,9.536
+2005,Taiwan,9.571
+2006,Taiwan,9.704
+2007,Taiwan,9.972999999999999
+2008,Taiwan,10.315
+2009,Taiwan,10.662
+2010,Taiwan,10.948
+2011,Taiwan,11.18
+2012,Taiwan,11.442
+2013,Taiwan,11.729000000000001
+2014,Taiwan,12.037
+2015,Taiwan,12.366
+2016,Taiwan,12.71
+2017,Taiwan,13.067
+1990,Cambodia,4.428
+1991,Cambodia,5.103
+1992,Cambodia,5.8629999999999995
+1993,Cambodia,6.693
+1994,Cambodia,7.575
+1995,Cambodia,8.488
+1996,Cambodia,9.411
+1997,Cambodia,10.515999999999998
+1998,Cambodia,11.667
+1999,Cambodia,12.695
+2000,Cambodia,13.392000000000001
+2001,Cambodia,13.855
+2002,Cambodia,14.248
+2003,Cambodia,14.587
+2004,Cambodia,14.889000000000001
+2005,Cambodia,15.17
+2006,Cambodia,15.472999999999999
+2007,Cambodia,15.784
+2008,Cambodia,16.072
+2009,Cambodia,16.305999999999997
+2010,Cambodia,16.455
+2011,Cambodia,16.566
+2012,Cambodia,16.677
+2013,Cambodia,16.784000000000002
+2014,Cambodia,16.885
+2015,Cambodia,16.974
+2016,Cambodia,17.05
+2017,Cambodia,17.109
+1990,Indonesia,0.857
+1991,Indonesia,0.867
+1992,Indonesia,0.878
+1993,Indonesia,0.888
+1994,Indonesia,0.898
+1995,Indonesia,0.9079999999999999
+1996,Indonesia,0.917
+1997,Indonesia,0.9279999999999999
+1998,Indonesia,0.9390000000000001
+1999,Indonesia,0.9490000000000001
+2000,Indonesia,0.958
+2001,Indonesia,0.965
+2002,Indonesia,0.972
+2003,Indonesia,0.978
+2004,Indonesia,0.986
+2005,Indonesia,0.9940000000000001
+2006,Indonesia,1.003
+2007,Indonesia,1.014
+2008,Indonesia,1.026
+2009,Indonesia,1.0390000000000001
+2010,Indonesia,1.052
+2011,Indonesia,1.065
+2012,Indonesia,1.08
+2013,Indonesia,1.0959999999999999
+2014,Indonesia,1.113
+2015,Indonesia,1.131
+2016,Indonesia,1.15
+2017,Indonesia,1.171
+1990,Laos,9.767000000000001
+1991,Laos,9.726
+1992,Laos,9.693
+1993,Laos,9.673
+1994,Laos,9.665
+1995,Laos,9.672
+1996,Laos,9.687999999999999
+1997,Laos,9.716000000000001
+1998,Laos,9.748
+1999,Laos,9.777000000000001
+2000,Laos,9.797
+2001,Laos,9.737
+2002,Laos,9.592
+2003,Laos,9.424
+2004,Laos,9.291
+2005,Laos,9.247
+2006,Laos,9.267999999999999
+2007,Laos,9.309
+2008,Laos,9.361
+2009,Laos,9.416
+2010,Laos,9.467
+2011,Laos,9.504
+2012,Laos,9.549
+2013,Laos,9.599
+2014,Laos,9.656
+2015,Laos,9.719
+2016,Laos,9.788
+2017,Laos,9.862
+1990,Malaysia,6.472
+1991,Malaysia,6.4510000000000005
+1992,Malaysia,6.394
+1993,Malaysia,6.308
+1994,Malaysia,6.197
+1995,Malaysia,6.068
+1996,Malaysia,5.901
+1997,Malaysia,5.65
+1998,Malaysia,5.361000000000001
+1999,Malaysia,5.075
+2000,Malaysia,4.834
+2001,Malaysia,4.571000000000001
+2002,Malaysia,4.276
+2003,Malaysia,4.008
+2004,Malaysia,3.822
+2005,Malaysia,3.77
+2006,Malaysia,3.8569999999999998
+2007,Malaysia,4.11
+2008,Malaysia,4.438
+2009,Malaysia,4.748
+2010,Malaysia,4.939
+2011,Malaysia,5.053
+2012,Malaysia,5.1610000000000005
+2013,Malaysia,5.2620000000000005
+2014,Malaysia,5.354
+2015,Malaysia,5.435
+2016,Malaysia,5.502999999999999
+2017,Malaysia,5.558
+1990,Maldives,2.374
+1991,Maldives,2.59
+1992,Maldives,2.8
+1993,Maldives,3.0
+1994,Maldives,3.188
+1995,Maldives,3.361
+1996,Maldives,3.522
+1997,Maldives,3.682
+1998,Maldives,3.8369999999999997
+1999,Maldives,3.983
+2000,Maldives,4.112
+2001,Maldives,4.234
+2002,Maldives,4.3660000000000005
+2003,Maldives,4.489
+2004,Maldives,4.586
+2005,Maldives,4.637
+2006,Maldives,4.602
+2007,Maldives,4.496
+2008,Maldives,4.363
+2009,Maldives,4.242
+2010,Maldives,4.1739999999999995
+2011,Maldives,4.144
+2012,Maldives,4.127
+2013,Maldives,4.12
+2014,Maldives,4.123
+2015,Maldives,4.135
+2016,Maldives,4.157
+2017,Maldives,4.192
+1990,Myanmar,2.471
+1991,Myanmar,2.513
+1992,Myanmar,2.559
+1993,Myanmar,2.61
+1994,Myanmar,2.665
+1995,Myanmar,2.7239999999999998
+1996,Myanmar,2.787
+1997,Myanmar,2.86
+1998,Myanmar,2.938
+1999,Myanmar,3.015
+2000,Myanmar,3.0839999999999996
+2001,Myanmar,3.141
+2002,Myanmar,3.195
+2003,Myanmar,3.248
+2004,Myanmar,3.305
+2005,Myanmar,3.366
+2006,Myanmar,3.4330000000000003
+2007,Myanmar,3.51
+2008,Myanmar,3.59
+2009,Myanmar,3.6710000000000003
+2010,Myanmar,3.7489999999999997
+2011,Myanmar,3.82
+2012,Myanmar,3.8939999999999997
+2013,Myanmar,3.97
+2014,Myanmar,4.048
+2015,Myanmar,4.128
+2016,Myanmar,4.209
+2017,Myanmar,4.29
+1990,Philippines,9.881
+1991,Philippines,9.875
+1992,Philippines,9.88
+1993,Philippines,9.894
+1994,Philippines,9.917
+1995,Philippines,9.946
+1996,Philippines,10.007
+1997,Philippines,10.129
+1998,Philippines,10.274000000000001
+1999,Philippines,10.402999999999999
+2000,Philippines,10.477
+2001,Philippines,10.495999999999999
+2002,Philippines,10.514000000000001
+2003,Philippines,10.529000000000002
+2004,Philippines,10.54
+2005,Philippines,10.545
+2006,Philippines,10.470999999999998
+2007,Philippines,10.312999999999999
+2008,Philippines,10.133
+2009,Philippines,9.987
+2010,Philippines,9.93
+2011,Philippines,9.923
+2012,Philippines,9.926
+2013,Philippines,9.94
+2014,Philippines,9.967
+2015,Philippines,10.009
+2016,Philippines,10.068
+2017,Philippines,10.146
+1990,Sri Lanka,3.443
+1991,Sri Lanka,3.427
+1992,Sri Lanka,3.424
+1993,Sri Lanka,3.432
+1994,Sri Lanka,3.448
+1995,Sri Lanka,3.469
+1996,Sri Lanka,3.529
+1997,Sri Lanka,3.662
+1998,Sri Lanka,3.841
+1999,Sri Lanka,4.042
+2000,Sri Lanka,4.237
+2001,Sri Lanka,4.425
+2002,Sri Lanka,4.64
+2003,Sri Lanka,4.886
+2004,Sri Lanka,5.162999999999999
+2005,Sri Lanka,5.477
+2006,Sri Lanka,5.862
+2007,Sri Lanka,6.37
+2008,Sri Lanka,6.9479999999999995
+2009,Sri Lanka,7.525
+2010,Sri Lanka,8.017999999999999
+2011,Sri Lanka,8.407
+2012,Sri Lanka,8.799
+2013,Sri Lanka,9.187999999999999
+2014,Sri Lanka,9.564
+2015,Sri Lanka,9.92
+2016,Sri Lanka,10.245999999999999
+2017,Sri Lanka,10.533
+1990,Thailand,9.732999999999999
+1991,Thailand,10.089
+1992,Thailand,10.433
+1993,Thailand,10.759
+1994,Thailand,11.059000000000001
+1995,Thailand,11.327
+1996,Thailand,11.56
+1997,Thailand,11.79
+1998,Thailand,12.005999999999998
+1999,Thailand,12.195
+2000,Thailand,12.345
+2001,Thailand,12.459000000000001
+2002,Thailand,12.568
+2003,Thailand,12.672
+2004,Thailand,12.772
+2005,Thailand,12.870999999999999
+2006,Thailand,12.964
+2007,Thailand,13.071
+2008,Thailand,13.187999999999999
+2009,Thailand,13.312000000000001
+2010,Thailand,13.437000000000001
+2011,Thailand,13.557
+2012,Thailand,13.697000000000001
+2013,Thailand,13.857999999999999
+2014,Thailand,14.039000000000001
+2015,Thailand,14.24
+2016,Thailand,14.462
+2017,Thailand,14.706
+1990,Timor-Leste,0.772
+1991,Timor-Leste,0.7829999999999999
+1992,Timor-Leste,0.795
+1993,Timor-Leste,0.8079999999999999
+1994,Timor-Leste,0.823
+1995,Timor-Leste,0.838
+1996,Timor-Leste,0.8590000000000001
+1997,Timor-Leste,0.8859999999999999
+1998,Timor-Leste,0.9129999999999999
+1999,Timor-Leste,0.934
+2000,Timor-Leste,0.941
+2001,Timor-Leste,0.9209999999999999
+2002,Timor-Leste,0.873
+2003,Timor-Leste,0.8079999999999999
+2004,Timor-Leste,0.7390000000000001
+2005,Timor-Leste,0.679
+2006,Timor-Leste,0.618
+2007,Timor-Leste,0.5479999999999999
+2008,Timor-Leste,0.48100000000000004
+2009,Timor-Leste,0.43
+2010,Timor-Leste,0.409
+2011,Timor-Leste,0.40700000000000003
+2012,Timor-Leste,0.405
+2013,Timor-Leste,0.40299999999999997
+2014,Timor-Leste,0.402
+2015,Timor-Leste,0.401
+2016,Timor-Leste,0.402
+2017,Timor-Leste,0.40299999999999997
+1990,Vietnam,3.9589999999999996
+1991,Vietnam,4.331
+1992,Vietnam,4.753
+1993,Vietnam,5.224
+1994,Vietnam,5.742999999999999
+1995,Vietnam,6.307
+1996,Vietnam,6.896
+1997,Vietnam,7.593
+1998,Vietnam,8.39
+1999,Vietnam,9.267000000000001
+2000,Vietnam,10.19
+2001,Vietnam,11.08
+2002,Vietnam,12.113
+2003,Vietnam,13.241
+2004,Vietnam,14.394
+2005,Vietnam,15.481
+2006,Vietnam,16.570999999999998
+2007,Vietnam,17.839000000000002
+2008,Vietnam,19.086
+2009,Vietnam,20.074
+2010,Vietnam,20.529
+2011,Vietnam,20.72
+2012,Vietnam,20.899
+2013,Vietnam,21.059
+2014,Vietnam,21.191999999999997
+2015,Vietnam,21.289
+2016,Vietnam,21.346999999999998
+2017,Vietnam,21.354
+1990,Fiji,6.024
+1991,Fiji,5.96
+1992,Fiji,5.909
+1993,Fiji,5.871
+1994,Fiji,5.85
+1995,Fiji,5.845
+1996,Fiji,5.849
+1997,Fiji,5.865
+1998,Fiji,5.892
+1999,Fiji,5.926
+2000,Fiji,5.962000000000001
+2001,Fiji,6.002999999999999
+2002,Fiji,6.068
+2003,Fiji,6.15
+2004,Fiji,6.246
+2005,Fiji,6.35
+2006,Fiji,6.471
+2007,Fiji,6.64
+2008,Fiji,6.827000000000001
+2009,Fiji,7.002999999999999
+2010,Fiji,7.1339999999999995
+2011,Fiji,7.2170000000000005
+2012,Fiji,7.297000000000001
+2013,Fiji,7.372000000000001
+2014,Fiji,7.441
+2015,Fiji,7.502000000000001
+2016,Fiji,7.553
+2017,Fiji,7.593
+1990,Kiribati,4.555
+1991,Kiribati,4.561
+1992,Kiribati,4.569
+1993,Kiribati,4.577
+1994,Kiribati,4.584
+1995,Kiribati,4.5889999999999995
+1996,Kiribati,4.591
+1997,Kiribati,4.5969999999999995
+1998,Kiribati,4.604
+1999,Kiribati,4.612
+2000,Kiribati,4.618
+2001,Kiribati,4.62
+2002,Kiribati,4.623
+2003,Kiribati,4.628
+2004,Kiribati,4.6339999999999995
+2005,Kiribati,4.641
+2006,Kiribati,4.644
+2007,Kiribati,4.648
+2008,Kiribati,4.6530000000000005
+2009,Kiribati,4.659
+2010,Kiribati,4.666
+2011,Kiribati,4.671
+2012,Kiribati,4.678
+2013,Kiribati,4.686
+2014,Kiribati,4.696000000000001
+2015,Kiribati,4.708
+2016,Kiribati,4.723
+2017,Kiribati,4.7410000000000005
+1990,Marshall Islands,4.025
+1991,Marshall Islands,4.02
+1992,Marshall Islands,4.018
+1993,Marshall Islands,4.021
+1994,Marshall Islands,4.0280000000000005
+1995,Marshall Islands,4.037
+1996,Marshall Islands,4.052
+1997,Marshall Islands,4.077
+1998,Marshall Islands,4.109
+1999,Marshall Islands,4.143
+2000,Marshall Islands,4.176
+2001,Marshall Islands,4.21
+2002,Marshall Islands,4.255
+2003,Marshall Islands,4.301
+2004,Marshall Islands,4.342
+2005,Marshall Islands,4.369
+2006,Marshall Islands,4.378
+2007,Marshall Islands,4.375
+2008,Marshall Islands,4.369
+2009,Marshall Islands,4.3660000000000005
+2010,Marshall Islands,4.374
+2011,Marshall Islands,4.388
+2012,Marshall Islands,4.406000000000001
+2013,Marshall Islands,4.428
+2014,Marshall Islands,4.454
+2015,Marshall Islands,4.486000000000001
+2016,Marshall Islands,4.523
+2017,Marshall Islands,4.566
+1990,Federated States of Micronesia,4.744
+1991,Federated States of Micronesia,4.93
+1992,Federated States of Micronesia,5.087
+1993,Federated States of Micronesia,5.206
+1994,Federated States of Micronesia,5.28
+1995,Federated States of Micronesia,5.303
+1996,Federated States of Micronesia,5.265
+1997,Federated States of Micronesia,5.187
+1998,Federated States of Micronesia,5.09
+1999,Federated States of Micronesia,4.997
+2000,Federated States of Micronesia,4.927
+2001,Federated States of Micronesia,4.876
+2002,Federated States of Micronesia,4.833
+2003,Federated States of Micronesia,4.793
+2004,Federated States of Micronesia,4.748
+2005,Federated States of Micronesia,4.692
+2006,Federated States of Micronesia,4.579
+2007,Federated States of Micronesia,4.412
+2008,Federated States of Micronesia,4.238
+2009,Federated States of Micronesia,4.103
+2010,Federated States of Micronesia,4.051
+2011,Federated States of Micronesia,4.052
+2012,Federated States of Micronesia,4.058
+2013,Federated States of Micronesia,4.07
+2014,Federated States of Micronesia,4.0889999999999995
+2015,Federated States of Micronesia,4.113
+2016,Federated States of Micronesia,4.146
+2017,Federated States of Micronesia,4.188
+1990,Papua New Guinea,15.177999999999999
+1991,Papua New Guinea,15.33
+1992,Papua New Guinea,15.437999999999999
+1993,Papua New Guinea,15.501
+1994,Papua New Guinea,15.520999999999999
+1995,Papua New Guinea,15.499
+1996,Papua New Guinea,15.43
+1997,Papua New Guinea,15.297
+1998,Papua New Guinea,15.127
+1999,Papua New Guinea,14.947000000000001
+2000,Papua New Guinea,14.780999999999999
+2001,Papua New Guinea,14.597000000000001
+2002,Papua New Guinea,14.374
+2003,Papua New Guinea,14.139000000000001
+2004,Papua New Guinea,13.913
+2005,Papua New Guinea,13.720999999999998
+2006,Papua New Guinea,13.503
+2007,Papua New Guinea,13.267000000000001
+2008,Papua New Guinea,13.054
+2009,Papua New Guinea,12.902999999999999
+2010,Papua New Guinea,12.853
+2011,Papua New Guinea,12.822000000000001
+2012,Papua New Guinea,12.799000000000001
+2013,Papua New Guinea,12.788
+2014,Papua New Guinea,12.79
+2015,Papua New Guinea,12.81
+2016,Papua New Guinea,12.85
+2017,Papua New Guinea,12.913
+1990,Samoa,6.575
+1991,Samoa,6.597
+1992,Samoa,6.62
+1993,Samoa,6.643
+1994,Samoa,6.664
+1995,Samoa,6.683
+1996,Samoa,6.689
+1997,Samoa,6.692
+1998,Samoa,6.6979999999999995
+1999,Samoa,6.711
+2000,Samoa,6.737
+2001,Samoa,6.821000000000001
+2002,Samoa,6.992999999999999
+2003,Samoa,7.196000000000001
+2004,Samoa,7.37
+2005,Samoa,7.454
+2006,Samoa,7.441
+2007,Samoa,7.4
+2008,Samoa,7.35
+2009,Samoa,7.308
+2010,Samoa,7.291
+2011,Samoa,7.285
+2012,Samoa,7.2860000000000005
+2013,Samoa,7.292000000000001
+2014,Samoa,7.306
+2015,Samoa,7.327000000000001
+2016,Samoa,7.355
+2017,Samoa,7.393
+1990,Solomon Islands,2.927
+1991,Solomon Islands,2.7960000000000003
+1992,Solomon Islands,2.688
+1993,Solomon Islands,2.6060000000000003
+1994,Solomon Islands,2.5540000000000003
+1995,Solomon Islands,2.536
+1996,Solomon Islands,2.5469999999999997
+1997,Solomon Islands,2.5780000000000003
+1998,Solomon Islands,2.625
+1999,Solomon Islands,2.682
+2000,Solomon Islands,2.7430000000000003
+2001,Solomon Islands,2.8289999999999997
+2002,Solomon Islands,2.9560000000000004
+2003,Solomon Islands,3.105
+2004,Solomon Islands,3.2569999999999997
+2005,Solomon Islands,3.39
+2006,Solomon Islands,3.514
+2007,Solomon Islands,3.6460000000000004
+2008,Solomon Islands,3.7710000000000004
+2009,Solomon Islands,3.873
+2010,Solomon Islands,3.9360000000000004
+2011,Solomon Islands,3.971
+2012,Solomon Islands,4.004
+2013,Solomon Islands,4.033
+2014,Solomon Islands,4.058
+2015,Solomon Islands,4.077
+2016,Solomon Islands,4.091
+2017,Solomon Islands,4.0969999999999995
+1990,Tonga,2.609
+1991,Tonga,2.6439999999999997
+1992,Tonga,2.701
+1993,Tonga,2.775
+1994,Tonga,2.862
+1995,Tonga,2.958
+1996,Tonga,3.085
+1997,Tonga,3.261
+1998,Tonga,3.4589999999999996
+1999,Tonga,3.6519999999999997
+2000,Tonga,3.8080000000000003
+2001,Tonga,3.9389999999999996
+2002,Tonga,4.074
+2003,Tonga,4.196000000000001
+2004,Tonga,4.284
+2005,Tonga,4.321000000000001
+2006,Tonga,4.279
+2007,Tonga,4.178
+2008,Tonga,4.058
+2009,Tonga,3.96
+2010,Tonga,3.9210000000000003
+2011,Tonga,3.923
+2012,Tonga,3.928
+2013,Tonga,3.9389999999999996
+2014,Tonga,3.957
+2015,Tonga,3.983
+2016,Tonga,4.02
+2017,Tonga,4.07
+1990,Vanuatu,4.873
+1991,Vanuatu,4.787
+1992,Vanuatu,4.705
+1993,Vanuatu,4.626
+1994,Vanuatu,4.551
+1995,Vanuatu,4.482
+1996,Vanuatu,4.407
+1997,Vanuatu,4.33
+1998,Vanuatu,4.249
+1999,Vanuatu,4.163
+2000,Vanuatu,4.072
+2001,Vanuatu,3.9589999999999996
+2002,Vanuatu,3.825
+2003,Vanuatu,3.6830000000000003
+2004,Vanuatu,3.542
+2005,Vanuatu,3.4139999999999997
+2006,Vanuatu,3.283
+2007,Vanuatu,3.1460000000000004
+2008,Vanuatu,3.0180000000000002
+2009,Vanuatu,2.911
+2010,Vanuatu,2.84
+2011,Vanuatu,2.79
+2012,Vanuatu,2.7439999999999998
+2013,Vanuatu,2.7030000000000003
+2014,Vanuatu,2.668
+2015,Vanuatu,2.64
+2016,Vanuatu,2.622
+2017,Vanuatu,2.615
+1990,Armenia,9.651
+1991,Armenia,9.696
+1992,Armenia,9.736
+1993,Armenia,9.769
+1994,Armenia,9.794
+1995,Armenia,9.812000000000001
+1996,Armenia,9.809
+1997,Armenia,9.802999999999999
+1998,Armenia,9.797
+1999,Armenia,9.797
+2000,Armenia,9.809
+2001,Armenia,9.824
+2002,Armenia,9.849
+2003,Armenia,9.884
+2004,Armenia,9.931000000000001
+2005,Armenia,9.99
+2006,Armenia,10.067
+2007,Armenia,10.177
+2008,Armenia,10.305
+2009,Armenia,10.437999999999999
+2010,Armenia,10.561
+2011,Armenia,10.672
+2012,Armenia,10.811
+2013,Armenia,10.974
+2014,Armenia,11.16
+2015,Armenia,11.37
+2016,Armenia,11.6
+2017,Armenia,11.85
+1990,Azerbaijan,13.368
+1991,Azerbaijan,13.12
+1992,Azerbaijan,12.940999999999999
+1993,Azerbaijan,12.828
+1994,Azerbaijan,12.776
+1995,Azerbaijan,12.786
+1996,Azerbaijan,12.831
+1997,Azerbaijan,12.97
+1998,Azerbaijan,13.18
+1999,Azerbaijan,13.431
+2000,Azerbaijan,13.702
+2001,Azerbaijan,14.054
+2002,Azerbaijan,14.581
+2003,Azerbaijan,15.155999999999999
+2004,Azerbaijan,15.632
+2005,Azerbaijan,15.854000000000001
+2006,Azerbaijan,15.868
+2007,Azerbaijan,15.804
+2008,Azerbaijan,15.7
+2009,Azerbaijan,15.591
+2010,Azerbaijan,15.512
+2011,Azerbaijan,15.422
+2012,Azerbaijan,15.335
+2013,Azerbaijan,15.252
+2014,Azerbaijan,15.173
+2015,Azerbaijan,15.100999999999999
+2016,Azerbaijan,15.037
+2017,Azerbaijan,14.981
+1990,Georgia,12.645999999999999
+1991,Georgia,12.679
+1992,Georgia,12.693
+1993,Georgia,12.694
+1994,Georgia,12.682
+1995,Georgia,12.668
+1996,Georgia,12.540999999999999
+1997,Georgia,12.29
+1998,Georgia,12.012
+1999,Georgia,11.799000000000001
+2000,Georgia,11.741
+2001,Georgia,11.814
+2002,Georgia,11.969000000000001
+2003,Georgia,12.190999999999999
+2004,Georgia,12.459000000000001
+2005,Georgia,12.758
+2006,Georgia,13.174000000000001
+2007,Georgia,13.807
+2008,Georgia,14.536
+2009,Georgia,15.220999999999998
+2010,Georgia,15.708
+2011,Georgia,16.012999999999998
+2012,Georgia,16.319000000000003
+2013,Georgia,16.623
+2014,Georgia,16.919
+2015,Georgia,17.203
+2016,Georgia,17.474
+2017,Georgia,17.722
+1990,Kazakhstan,23.5
+1991,Kazakhstan,21.883000000000003
+1992,Kazakhstan,20.579
+1993,Kazakhstan,19.624000000000002
+1994,Kazakhstan,19.051
+1995,Kazakhstan,18.917
+1996,Kazakhstan,18.951
+1997,Kazakhstan,19.105999999999998
+1998,Kazakhstan,19.348
+1999,Kazakhstan,19.64
+2000,Kazakhstan,19.948
+2001,Kazakhstan,20.34
+2002,Kazakhstan,20.924
+2003,Kazakhstan,21.555
+2004,Kazakhstan,22.072
+2005,Kazakhstan,22.305
+2006,Kazakhstan,22.283
+2007,Kazakhstan,22.182
+2008,Kazakhstan,22.055
+2009,Kazakhstan,21.948
+2010,Kazakhstan,21.912
+2011,Kazakhstan,21.874000000000002
+2012,Kazakhstan,21.853
+2013,Kazakhstan,21.851
+2014,Kazakhstan,21.866999999999997
+2015,Kazakhstan,21.904
+2016,Kazakhstan,21.965999999999998
+2017,Kazakhstan,22.053
+1990,Kyrgyzstan,16.959
+1991,Kyrgyzstan,16.291
+1992,Kyrgyzstan,15.729000000000001
+1993,Kyrgyzstan,15.306
+1994,Kyrgyzstan,15.052999999999999
+1995,Kyrgyzstan,15.007
+1996,Kyrgyzstan,14.99
+1997,Kyrgyzstan,15.002
+1998,Kyrgyzstan,15.042
+1999,Kyrgyzstan,15.103
+2000,Kyrgyzstan,15.181
+2001,Kyrgyzstan,15.277999999999999
+2002,Kyrgyzstan,15.434000000000001
+2003,Kyrgyzstan,15.607999999999999
+2004,Kyrgyzstan,15.753
+2005,Kyrgyzstan,15.821
+2006,Kyrgyzstan,15.790999999999999
+2007,Kyrgyzstan,15.702
+2008,Kyrgyzstan,15.59
+2009,Kyrgyzstan,15.491
+2010,Kyrgyzstan,15.435
+2011,Kyrgyzstan,15.380999999999998
+2012,Kyrgyzstan,15.335
+2013,Kyrgyzstan,15.298
+2014,Kyrgyzstan,15.273
+2015,Kyrgyzstan,15.26
+2016,Kyrgyzstan,15.262
+2017,Kyrgyzstan,15.277000000000001
+1990,Mongolia,9.032
+1991,Mongolia,8.966000000000001
+1992,Mongolia,8.934
+1993,Mongolia,8.926
+1994,Mongolia,8.937999999999999
+1995,Mongolia,8.964
+1996,Mongolia,9.048
+1997,Mongolia,9.235
+1998,Mongolia,9.493
+1999,Mongolia,9.785
+2000,Mongolia,10.077
+2001,Mongolia,10.367
+2002,Mongolia,10.705
+2003,Mongolia,11.075
+2004,Mongolia,11.46
+2005,Mongolia,11.842
+2006,Mongolia,12.252
+2007,Mongolia,12.734000000000002
+2008,Mongolia,13.215
+2009,Mongolia,13.610999999999999
+2010,Mongolia,13.834000000000001
+2011,Mongolia,13.915
+2012,Mongolia,13.992
+2013,Mongolia,14.062999999999999
+2014,Mongolia,14.124
+2015,Mongolia,14.173
+2016,Mongolia,14.209000000000001
+2017,Mongolia,14.228
+1990,Tajikistan,7.475
+1991,Tajikistan,7.558
+1992,Tajikistan,7.611000000000001
+1993,Tajikistan,7.638
+1994,Tajikistan,7.651
+1995,Tajikistan,7.6610000000000005
+1996,Tajikistan,7.612
+1997,Tajikistan,7.482
+1998,Tajikistan,7.313
+1999,Tajikistan,7.146
+2000,Tajikistan,7.016
+2001,Tajikistan,6.915
+2002,Tajikistan,6.817
+2003,Tajikistan,6.722
+2004,Tajikistan,6.627999999999999
+2005,Tajikistan,6.5329999999999995
+2006,Tajikistan,6.412999999999999
+2007,Tajikistan,6.274
+2008,Tajikistan,6.138
+2009,Tajikistan,6.03
+2010,Tajikistan,5.972
+2011,Tajikistan,5.942
+2012,Tajikistan,5.915
+2013,Tajikistan,5.894
+2014,Tajikistan,5.88
+2015,Tajikistan,5.875
+2016,Tajikistan,5.879
+2017,Tajikistan,5.891
+1990,Turkmenistan,9.291
+1991,Turkmenistan,9.541
+1992,Turkmenistan,9.805
+1993,Turkmenistan,10.081
+1994,Turkmenistan,10.368
+1995,Turkmenistan,10.667
+1996,Turkmenistan,10.984000000000002
+1997,Turkmenistan,11.354000000000001
+1998,Turkmenistan,11.729000000000001
+1999,Turkmenistan,12.056
+2000,Turkmenistan,12.277000000000001
+2001,Turkmenistan,12.408
+2002,Turkmenistan,12.533
+2003,Turkmenistan,12.644
+2004,Turkmenistan,12.735
+2005,Turkmenistan,12.798
+2006,Turkmenistan,12.783
+2007,Turkmenistan,12.706
+2008,Turkmenistan,12.610999999999999
+2009,Turkmenistan,12.545
+2010,Turkmenistan,12.550999999999998
+2011,Turkmenistan,12.595999999999998
+2012,Turkmenistan,12.667
+2013,Turkmenistan,12.763
+2014,Turkmenistan,12.884
+2015,Turkmenistan,13.033
+2016,Turkmenistan,13.208
+2017,Turkmenistan,13.412
+1990,Uzbekistan,8.863999999999999
+1991,Uzbekistan,9.024
+1992,Uzbekistan,9.19
+1993,Uzbekistan,9.359
+1994,Uzbekistan,9.532
+1995,Uzbekistan,9.701
+1996,Uzbekistan,9.87
+1997,Uzbekistan,10.054
+1998,Uzbekistan,10.24
+1999,Uzbekistan,10.415
+2000,Uzbekistan,10.56
+2001,Uzbekistan,10.663
+2002,Uzbekistan,10.753
+2003,Uzbekistan,10.844000000000001
+2004,Uzbekistan,10.946
+2005,Uzbekistan,11.072000000000001
+2006,Uzbekistan,11.243
+2007,Uzbekistan,11.489
+2008,Uzbekistan,11.76
+2009,Uzbekistan,12.005
+2010,Uzbekistan,12.164000000000001
+2011,Uzbekistan,12.245
+2012,Uzbekistan,12.327
+2013,Uzbekistan,12.409
+2014,Uzbekistan,12.488
+2015,Uzbekistan,12.562999999999999
+2016,Uzbekistan,12.636
+2017,Uzbekistan,12.703
+1990,Albania,7.2170000000000005
+1991,Albania,7.4239999999999995
+1992,Albania,7.652
+1993,Albania,7.899
+1994,Albania,8.163
+1995,Albania,8.441
+1996,Albania,8.724
+1997,Albania,9.043
+1998,Albania,9.386000000000001
+1999,Albania,9.755
+2000,Albania,10.135
+2001,Albania,10.517000000000001
+2002,Albania,10.947000000000001
+2003,Albania,11.394
+2004,Albania,11.823
+2005,Albania,12.197000000000001
+2006,Albania,12.523
+2007,Albania,12.86
+2008,Albania,13.177999999999999
+2009,Albania,13.443
+2010,Albania,13.623
+2011,Albania,13.747
+2012,Albania,13.889000000000001
+2013,Albania,14.045
+2014,Albania,14.213
+2015,Albania,14.39
+2016,Albania,14.572000000000001
+2017,Albania,14.759
+1990,Bosnia and Herzegovina,19.162
+1991,Bosnia and Herzegovina,18.903
+1992,Bosnia and Herzegovina,18.69
+1993,Bosnia and Herzegovina,18.533
+1994,Bosnia and Herzegovina,18.453
+1995,Bosnia and Herzegovina,18.461
+1996,Bosnia and Herzegovina,18.511
+1997,Bosnia and Herzegovina,18.614
+1998,Bosnia and Herzegovina,18.741
+1999,Bosnia and Herzegovina,18.87
+2000,Bosnia and Herzegovina,18.977
+2001,Bosnia and Herzegovina,18.995
+2002,Bosnia and Herzegovina,18.956
+2003,Bosnia and Herzegovina,18.904
+2004,Bosnia and Herzegovina,18.881
+2005,Bosnia and Herzegovina,18.928
+2006,Bosnia and Herzegovina,19.049
+2007,Bosnia and Herzegovina,19.222
+2008,Bosnia and Herzegovina,19.416
+2009,Bosnia and Herzegovina,19.607
+2010,Bosnia and Herzegovina,19.77
+2011,Bosnia and Herzegovina,19.918
+2012,Bosnia and Herzegovina,20.073
+2013,Bosnia and Herzegovina,20.235
+2014,Bosnia and Herzegovina,20.403
+2015,Bosnia and Herzegovina,20.574
+2016,Bosnia and Herzegovina,20.749000000000002
+2017,Bosnia and Herzegovina,20.927
+1990,Bulgaria,24.369
+1991,Bulgaria,23.513
+1992,Bulgaria,22.743000000000002
+1993,Bulgaria,22.057
+1994,Bulgaria,21.456999999999997
+1995,Bulgaria,20.944000000000003
+1996,Bulgaria,20.338
+1997,Bulgaria,19.713
+1998,Bulgaria,19.167
+1999,Bulgaria,18.795
+2000,Bulgaria,18.682000000000002
+2001,Bulgaria,18.715
+2002,Bulgaria,18.815
+2003,Bulgaria,18.958
+2004,Bulgaria,19.121
+2005,Bulgaria,19.276
+2006,Bulgaria,19.425
+2007,Bulgaria,19.618
+2008,Bulgaria,19.842
+2009,Bulgaria,20.082
+2010,Bulgaria,20.317999999999998
+2011,Bulgaria,20.526
+2012,Bulgaria,20.763
+2013,Bulgaria,21.028000000000002
+2014,Bulgaria,21.322
+2015,Bulgaria,21.644000000000002
+2016,Bulgaria,21.994
+2017,Bulgaria,22.371
+1990,Croatia,21.581
+1991,Croatia,20.97
+1992,Croatia,20.572
+1993,Croatia,20.345
+1994,Croatia,20.256
+1995,Croatia,20.274
+1996,Croatia,20.531999999999996
+1997,Croatia,21.27
+1998,Croatia,22.206999999999997
+1999,Croatia,23.038
+2000,Croatia,23.419
+2001,Croatia,23.403000000000002
+2002,Croatia,23.230999999999998
+2003,Croatia,22.956999999999997
+2004,Croatia,22.636999999999997
+2005,Croatia,22.324
+2006,Croatia,21.859
+2007,Croatia,21.233
+2008,Croatia,20.613000000000003
+2009,Croatia,20.148
+2010,Croatia,19.977
+2011,Croatia,19.927
+2012,Croatia,19.936
+2013,Croatia,20.000999999999998
+2014,Croatia,20.121
+2015,Croatia,20.296
+2016,Croatia,20.528000000000002
+2017,Croatia,20.82
+1990,Czech Republic,22.941
+1991,Czech Republic,22.62
+1992,Czech Republic,22.464000000000002
+1993,Czech Republic,22.436999999999998
+1994,Czech Republic,22.506999999999998
+1995,Czech Republic,22.642
+1996,Czech Republic,23.011999999999997
+1997,Czech Republic,23.843000000000004
+1998,Czech Republic,24.873
+1999,Czech Republic,25.799
+2000,Czech Republic,26.281
+2001,Czech Republic,26.41
+2002,Czech Republic,26.502
+2003,Czech Republic,26.570999999999998
+2004,Czech Republic,26.63
+2005,Czech Republic,26.694000000000003
+2006,Czech Republic,26.715999999999998
+2007,Czech Republic,26.697
+2008,Czech Republic,26.658
+2009,Czech Republic,26.618000000000002
+2010,Czech Republic,26.594
+2011,Czech Republic,26.549
+2012,Czech Republic,26.522
+2013,Czech Republic,26.514
+2014,Czech Republic,26.524
+2015,Czech Republic,26.553
+2016,Czech Republic,26.604
+2017,Czech Republic,26.678
+1990,Hungary,30.622
+1991,Hungary,30.021
+1992,Hungary,29.503
+1993,Hungary,29.074
+1994,Hungary,28.741999999999997
+1995,Hungary,28.521
+1996,Hungary,28.264
+1997,Hungary,28.019000000000002
+1998,Hungary,27.818
+1999,Hungary,27.691
+2000,Hungary,27.676
+2001,Hungary,27.715
+2002,Hungary,27.803
+2003,Hungary,27.910999999999998
+2004,Hungary,28.009
+2005,Hungary,28.066
+2006,Hungary,27.844
+2007,Hungary,27.258000000000003
+2008,Hungary,26.554000000000002
+2009,Hungary,25.945
+2010,Hungary,25.623
+2011,Hungary,25.439
+2012,Hungary,25.311999999999998
+2013,Hungary,25.246
+2014,Hungary,25.246
+2015,Hungary,25.313000000000002
+2016,Hungary,25.451
+2017,Hungary,25.666
+1990,Macedonia,9.645
+1991,Macedonia,9.809
+1992,Macedonia,9.952
+1993,Macedonia,10.068999999999999
+1994,Macedonia,10.156
+1995,Macedonia,10.208
+1996,Macedonia,10.222000000000001
+1997,Macedonia,10.217
+1998,Macedonia,10.191
+1999,Macedonia,10.148
+2000,Macedonia,10.088
+2001,Macedonia,9.892000000000001
+2002,Macedonia,9.537
+2003,Macedonia,9.121
+2004,Macedonia,8.729
+2005,Macedonia,8.437000000000001
+2006,Macedonia,8.187000000000001
+2007,Macedonia,7.935
+2008,Macedonia,7.723
+2009,Macedonia,7.587999999999999
+2010,Macedonia,7.568
+2011,Macedonia,7.617999999999999
+2012,Macedonia,7.691
+2013,Macedonia,7.787999999999999
+2014,Macedonia,7.912000000000001
+2015,Macedonia,8.066
+2016,Macedonia,8.25
+2017,Macedonia,8.468
+1990,Montenegro,27.748
+1991,Montenegro,27.094
+1992,Montenegro,26.496
+1993,Montenegro,25.951
+1994,Montenegro,25.46
+1995,Montenegro,25.029
+1996,Montenegro,24.601
+1997,Montenegro,24.241
+1998,Montenegro,23.906
+1999,Montenegro,23.559
+2000,Montenegro,23.169
+2001,Montenegro,22.539
+2002,Montenegro,21.746
+2003,Montenegro,20.999000000000002
+2004,Montenegro,20.477
+2005,Montenegro,20.351
+2006,Montenegro,20.531999999999996
+2007,Montenegro,21.029
+2008,Montenegro,21.686
+2009,Montenegro,22.342
+2010,Montenegro,22.822
+2011,Montenegro,23.119
+2012,Montenegro,23.426
+2013,Montenegro,23.737
+2014,Montenegro,24.045
+2015,Montenegro,24.346999999999998
+2016,Montenegro,24.636999999999997
+2017,Montenegro,24.915
+1990,Poland,17.562
+1991,Poland,17.515
+1992,Poland,17.51
+1993,Poland,17.542
+1994,Poland,17.604
+1995,Poland,17.689
+1996,Poland,17.807000000000002
+1997,Poland,18.005
+1998,Poland,18.258
+1999,Poland,18.544
+2000,Poland,18.837
+2001,Poland,19.168
+2002,Poland,19.590999999999998
+2003,Poland,20.035
+2004,Poland,20.42
+2005,Poland,20.666
+2006,Poland,20.774
+2007,Poland,20.845
+2008,Poland,20.91
+2009,Poland,20.999000000000002
+2010,Poland,21.138
+2011,Poland,21.296999999999997
+2012,Poland,21.511
+2013,Poland,21.78
+2014,Poland,22.101999999999997
+2015,Poland,22.475
+2016,Poland,22.901999999999997
+2017,Poland,23.381999999999998
+1990,Romania,31.275
+1991,Romania,31.06
+1992,Romania,30.825
+1993,Romania,30.573
+1994,Romania,30.314
+1995,Romania,30.053
+1996,Romania,29.701
+1997,Romania,29.269000000000002
+1998,Romania,28.845
+1999,Romania,28.513
+2000,Romania,28.348000000000003
+2001,Romania,28.245
+2002,Romania,28.178
+2003,Romania,28.153000000000002
+2004,Romania,28.18
+2005,Romania,28.27
+2006,Romania,28.42
+2007,Romania,28.684
+2008,Romania,29.0
+2009,Romania,29.311
+2010,Romania,29.558000000000003
+2011,Romania,29.750999999999998
+2012,Romania,29.965
+2013,Romania,30.191
+2014,Romania,30.427
+2015,Romania,30.668000000000003
+2016,Romania,30.909000000000002
+2017,Romania,31.151
+1990,Serbia,21.076
+1991,Serbia,20.483
+1992,Serbia,19.965999999999998
+1993,Serbia,19.534000000000002
+1994,Serbia,19.188
+1995,Serbia,18.935
+1996,Serbia,18.671
+1997,Serbia,18.439
+1998,Serbia,18.267
+1999,Serbia,18.174
+2000,Serbia,18.182000000000002
+2001,Serbia,18.24
+2002,Serbia,18.365
+2003,Serbia,18.55
+2004,Serbia,18.785
+2005,Serbia,19.067
+2006,Serbia,19.601
+2007,Serbia,20.651999999999997
+2008,Serbia,21.944000000000003
+2009,Serbia,23.154
+2010,Serbia,23.901
+2011,Serbia,24.285
+2012,Serbia,24.684
+2013,Serbia,25.090999999999998
+2014,Serbia,25.497
+2015,Serbia,25.895
+2016,Serbia,26.279
+2017,Serbia,26.645
+1990,Slovakia,24.313000000000002
+1991,Slovakia,23.803
+1992,Slovakia,23.434
+1993,Slovakia,23.195
+1994,Slovakia,23.083000000000002
+1995,Slovakia,23.09
+1996,Slovakia,23.244
+1997,Slovakia,23.656
+1998,Slovakia,24.171
+1999,Slovakia,24.625999999999998
+2000,Slovakia,24.85
+2001,Slovakia,24.815
+2002,Slovakia,24.601
+2003,Slovakia,24.294
+2004,Slovakia,23.976
+2005,Slovakia,23.726
+2006,Slovakia,23.461
+2007,Slovakia,23.169
+2008,Slovakia,22.913
+2009,Slovakia,22.755
+2010,Slovakia,22.755
+2011,Slovakia,22.805999999999997
+2012,Slovakia,22.905
+2013,Slovakia,23.051
+2014,Slovakia,23.247
+2015,Slovakia,23.491999999999997
+2016,Slovakia,23.789
+2017,Slovakia,24.141
+1990,Slovenia,14.469000000000001
+1991,Slovenia,13.987
+1992,Slovenia,13.568
+1993,Slovenia,13.231
+1994,Slovenia,12.993
+1995,Slovenia,12.87
+1996,Slovenia,12.784
+1997,Slovenia,12.743
+1998,Slovenia,12.731
+1999,Slovenia,12.725
+2000,Slovenia,12.706
+2001,Slovenia,12.597000000000001
+2002,Slovenia,12.458
+2003,Slovenia,12.292
+2004,Slovenia,12.103
+2005,Slovenia,11.895999999999999
+2006,Slovenia,11.458
+2007,Slovenia,10.834000000000001
+2008,Slovenia,10.198
+2009,Slovenia,9.703
+2010,Slovenia,9.491
+2011,Slovenia,9.434
+2012,Slovenia,9.453
+2013,Slovenia,9.547
+2014,Slovenia,9.715
+2015,Slovenia,9.959
+2016,Slovenia,10.277000000000001
+2017,Slovenia,10.673
+1990,Belarus,24.541999999999998
+1991,Belarus,24.655
+1992,Belarus,24.811999999999998
+1993,Belarus,25.004
+1994,Belarus,25.226999999999997
+1995,Belarus,25.473000000000003
+1996,Belarus,25.779
+1997,Belarus,26.233
+1998,Belarus,26.721
+1999,Belarus,27.13
+2000,Belarus,27.343000000000004
+2001,Belarus,27.361
+2002,Belarus,27.293000000000003
+2003,Belarus,27.205
+2004,Belarus,27.163
+2005,Belarus,27.230999999999998
+2006,Belarus,27.513
+2007,Belarus,28.174
+2008,Belarus,29.022
+2009,Belarus,29.859
+2010,Belarus,30.469
+2011,Belarus,30.883000000000003
+2012,Belarus,31.32
+2013,Belarus,31.77
+2014,Belarus,32.221
+2015,Belarus,32.665
+2016,Belarus,33.094
+2017,Belarus,33.501999999999995
+1990,Estonia,11.422
+1991,Estonia,11.838
+1992,Estonia,12.325
+1993,Estonia,12.875
+1994,Estonia,13.489
+1995,Estonia,14.165999999999999
+1996,Estonia,14.9
+1997,Estonia,15.819
+1998,Estonia,16.871
+1999,Estonia,17.999000000000002
+2000,Estonia,19.13
+2001,Estonia,20.203
+2002,Estonia,21.454
+2003,Estonia,22.761999999999997
+2004,Estonia,23.975
+2005,Estonia,24.910999999999998
+2006,Estonia,25.588
+2007,Estonia,26.233
+2008,Estonia,26.813000000000002
+2009,Estonia,27.298000000000002
+2010,Estonia,27.658
+2011,Estonia,27.956
+2012,Estonia,28.302
+2013,Estonia,28.682
+2014,Estonia,29.093000000000004
+2015,Estonia,29.531
+2016,Estonia,29.99
+2017,Estonia,30.468000000000004
+1990,Latvia,17.537
+1991,Latvia,17.457
+1992,Latvia,17.423
+1993,Latvia,17.425
+1994,Latvia,17.449
+1995,Latvia,17.491
+1996,Latvia,17.657
+1997,Latvia,18.093
+1998,Latvia,18.7
+1999,Latvia,19.37
+2000,Latvia,19.989
+2001,Latvia,20.517
+2002,Latvia,21.098000000000003
+2003,Latvia,21.709
+2004,Latvia,22.311
+2005,Latvia,22.866
+2006,Latvia,23.384
+2007,Latvia,23.941
+2008,Latvia,24.484
+2009,Latvia,24.95
+2010,Latvia,25.27
+2011,Latvia,25.5
+2012,Latvia,25.765
+2013,Latvia,26.059
+2014,Latvia,26.374000000000002
+2015,Latvia,26.703000000000003
+2016,Latvia,27.043000000000003
+2017,Latvia,27.386999999999997
+1990,Lithuania,19.739
+1991,Lithuania,18.813
+1992,Lithuania,18.212
+1993,Lithuania,17.862000000000002
+1994,Lithuania,17.702
+1995,Lithuania,17.685
+1996,Lithuania,17.923
+1997,Lithuania,18.688
+1998,Lithuania,19.791
+1999,Lithuania,21.017
+2000,Lithuania,22.105
+2001,Lithuania,22.997
+2002,Lithuania,23.983
+2003,Lithuania,24.988000000000003
+2004,Lithuania,25.921
+2005,Lithuania,26.674
+2006,Lithuania,27.266
+2007,Lithuania,27.822
+2008,Lithuania,28.339000000000002
+2009,Lithuania,28.813000000000002
+2010,Lithuania,29.235
+2011,Lithuania,29.629
+2012,Lithuania,30.051
+2013,Lithuania,30.491
+2014,Lithuania,30.944000000000003
+2015,Lithuania,31.404
+2016,Lithuania,31.866
+2017,Lithuania,32.323
+1990,Moldova,29.337
+1991,Moldova,31.128
+1992,Moldova,32.564
+1993,Moldova,33.604
+1994,Moldova,34.215
+1995,Moldova,34.382
+1996,Moldova,34.012
+1997,Moldova,32.961
+1998,Moldova,31.593000000000004
+1999,Moldova,30.225
+2000,Moldova,29.122
+2001,Moldova,28.039
+2002,Moldova,26.892
+2003,Moldova,25.825
+2004,Moldova,24.951
+2005,Moldova,24.372
+2006,Moldova,23.855
+2007,Moldova,23.421999999999997
+2008,Moldova,23.098000000000003
+2009,Moldova,22.905
+2010,Moldova,22.864
+2011,Moldova,22.851999999999997
+2012,Moldova,22.906
+2013,Moldova,23.025
+2014,Moldova,23.208000000000002
+2015,Moldova,23.456999999999997
+2016,Moldova,23.772
+2017,Moldova,24.158
+1990,Russian Federation,14.427
+1991,Russian Federation,14.892000000000001
+1992,Russian Federation,15.376
+1993,Russian Federation,15.866
+1994,Russian Federation,16.362000000000002
+1995,Russian Federation,16.87
+1996,Russian Federation,17.349
+1997,Russian Federation,17.864
+1998,Russian Federation,18.396
+1999,Russian Federation,18.941
+2000,Russian Federation,19.489
+2001,Russian Federation,20.029
+2002,Russian Federation,20.638
+2003,Russian Federation,21.244
+2004,Russian Federation,21.787
+2005,Russian Federation,22.197
+2006,Russian Federation,22.497
+2007,Russian Federation,22.804000000000002
+2008,Russian Federation,23.095
+2009,Russian Federation,23.364
+2010,Russian Federation,23.599
+2011,Russian Federation,23.774
+2012,Russian Federation,23.956
+2013,Russian Federation,24.135
+2014,Russian Federation,24.311999999999998
+2015,Russian Federation,24.491
+2016,Russian Federation,24.675
+2017,Russian Federation,24.862
+1990,Ukraine,24.86
+1991,Ukraine,24.537
+1992,Ukraine,24.358
+1993,Ukraine,24.291999999999998
+1994,Ukraine,24.314
+1995,Ukraine,24.398000000000003
+1996,Ukraine,24.578000000000003
+1997,Ukraine,25.092
+1998,Ukraine,25.836
+1999,Ukraine,26.701999999999998
+2000,Ukraine,27.565
+2001,Ukraine,28.5
+2002,Ukraine,29.789
+2003,Ukraine,31.206
+2004,Ukraine,32.483000000000004
+2005,Ukraine,33.309
+2006,Ukraine,33.82
+2007,Ukraine,34.3
+2008,Ukraine,34.718
+2009,Ukraine,35.054
+2010,Ukraine,35.279
+2011,Ukraine,35.446
+2012,Ukraine,35.628
+2013,Ukraine,35.818000000000005
+2014,Ukraine,36.009
+2015,Ukraine,36.186
+2016,Ukraine,36.347
+2017,Ukraine,36.493
+1990,Brunei,6.636
+1991,Brunei,5.683
+1992,Brunei,4.84
+1993,Brunei,4.1339999999999995
+1994,Brunei,3.5869999999999997
+1995,Brunei,3.222
+1996,Brunei,2.96
+1997,Brunei,2.735
+1998,Brunei,2.553
+1999,Brunei,2.42
+2000,Brunei,2.344
+2001,Brunei,2.298
+2002,Brunei,2.26
+2003,Brunei,2.233
+2004,Brunei,2.22
+2005,Brunei,2.221
+2006,Brunei,2.2640000000000002
+2007,Brunei,2.362
+2008,Brunei,2.483
+2009,Brunei,2.5989999999999998
+2010,Brunei,2.678
+2011,Brunei,2.7260000000000004
+2012,Brunei,2.7739999999999996
+2013,Brunei,2.82
+2014,Brunei,2.864
+2015,Brunei,2.907
+2016,Brunei,2.946
+2017,Brunei,2.9810000000000003
+1990,Japan,14.719000000000001
+1991,Japan,14.800999999999998
+1992,Japan,14.877
+1993,Japan,14.945
+1994,Japan,15.004000000000001
+1995,Japan,15.054
+1996,Japan,15.062999999999999
+1997,Japan,15.057
+1998,Japan,15.045
+1999,Japan,15.038
+2000,Japan,15.045
+2001,Japan,15.023
+2002,Japan,14.985999999999999
+2003,Japan,14.948
+2004,Japan,14.924000000000001
+2005,Japan,14.927999999999999
+2006,Japan,14.925
+2007,Japan,14.927999999999999
+2008,Japan,14.952
+2009,Japan,15.009
+2010,Japan,15.115
+2011,Japan,15.247
+2012,Japan,15.436
+2013,Japan,15.679
+2014,Japan,15.978
+2015,Japan,16.33
+2016,Japan,16.738
+2017,Japan,17.202
+1990,South Korea,14.662
+1991,South Korea,14.895
+1992,South Korea,15.122
+1993,South Korea,15.339
+1994,South Korea,15.538
+1995,South Korea,15.715
+1996,South Korea,15.867
+1997,South Korea,16.028
+1998,South Korea,16.18
+1999,South Korea,16.309
+2000,South Korea,16.396
+2001,South Korea,16.432000000000002
+2002,South Korea,16.458
+2003,South Korea,16.477999999999998
+2004,South Korea,16.499000000000002
+2005,South Korea,16.524
+2006,South Korea,16.487000000000002
+2007,South Korea,16.395
+2008,South Korea,16.298
+2009,South Korea,16.248
+2010,South Korea,16.294
+2011,South Korea,16.435
+2012,South Korea,16.68
+2013,South Korea,17.028
+2014,South Korea,17.477
+2015,South Korea,18.028
+2016,South Korea,18.680999999999997
+2017,South Korea,19.44
+1990,Singapore,8.974
+1991,Singapore,9.111
+1992,Singapore,9.244
+1993,Singapore,9.372
+1994,Singapore,9.492
+1995,Singapore,9.6
+1996,Singapore,9.704
+1997,Singapore,9.814
+1998,Singapore,9.922
+1999,Singapore,10.016
+2000,Singapore,10.086
+2001,Singapore,10.117
+2002,Singapore,10.12
+2003,Singapore,10.115
+2004,Singapore,10.12
+2005,Singapore,10.154
+2006,Singapore,10.209
+2007,Singapore,10.275
+2008,Singapore,10.350999999999999
+2009,Singapore,10.44
+2010,Singapore,10.543
+2011,Singapore,10.655
+2012,Singapore,10.783
+2013,Singapore,10.929
+2014,Singapore,11.094000000000001
+2015,Singapore,11.28
+2016,Singapore,11.485999999999999
+2017,Singapore,11.708
+1990,Australia,26.252
+1991,Australia,25.430999999999997
+1992,Australia,24.717
+1993,Australia,24.115
+1994,Australia,23.633000000000003
+1995,Australia,23.278000000000002
+1996,Australia,22.914
+1997,Australia,22.581
+1998,Australia,22.318
+1999,Australia,22.156
+2000,Australia,22.128
+2001,Australia,22.155
+2002,Australia,22.217
+2003,Australia,22.307
+2004,Australia,22.414
+2005,Australia,22.531
+2006,Australia,22.691999999999997
+2007,Australia,22.982
+2008,Australia,23.33
+2009,Australia,23.658
+2010,Australia,23.879
+2011,Australia,23.985
+2012,Australia,24.088
+2013,Australia,24.185
+2014,Australia,24.274
+2015,Australia,24.355
+2016,Australia,24.424
+2017,Australia,24.483
+1990,New Zealand,24.959
+1991,New Zealand,24.368000000000002
+1992,New Zealand,23.831
+1993,New Zealand,23.355
+1994,New Zealand,22.944000000000003
+1995,New Zealand,22.603
+1996,New Zealand,22.183000000000003
+1997,New Zealand,21.741
+1998,New Zealand,21.349
+1999,New Zealand,21.076
+2000,New Zealand,20.988000000000003
+2001,New Zealand,21.013
+2002,New Zealand,21.151
+2003,New Zealand,21.358
+2004,New Zealand,21.595
+2005,New Zealand,21.819000000000003
+2006,New Zealand,22.055
+2007,New Zealand,22.401999999999997
+2008,New Zealand,22.776999999999997
+2009,New Zealand,23.092
+2010,New Zealand,23.256999999999998
+2011,New Zealand,23.305
+2012,New Zealand,23.339000000000002
+2013,New Zealand,23.353
+2014,New Zealand,23.338
+2015,New Zealand,23.288
+2016,New Zealand,23.197
+2017,New Zealand,23.057
+1990,Andorra,32.265
+1991,Andorra,32.564
+1992,Andorra,32.884
+1993,Andorra,33.305
+1994,Andorra,33.685
+1995,Andorra,34.135
+1996,Andorra,34.442
+1997,Andorra,34.97
+1998,Andorra,35.519
+1999,Andorra,35.986999999999995
+2000,Andorra,36.25
+2001,Andorra,35.838
+2002,Andorra,35.001999999999995
+2003,Andorra,33.971
+2004,Andorra,32.907
+2005,Andorra,31.895
+2006,Andorra,30.398000000000003
+2007,Andorra,28.529
+2008,Andorra,26.766
+2009,Andorra,25.486
+2010,Andorra,24.998
+2011,Andorra,24.74
+2012,Andorra,24.653000000000002
+2013,Andorra,24.619
+2014,Andorra,24.678
+2015,Andorra,24.802
+2016,Andorra,25.014
+2017,Andorra,25.304000000000002
+1990,Austria,29.569000000000003
+1991,Austria,29.276
+1992,Austria,29.018
+1993,Austria,28.805
+1994,Austria,28.643
+1995,Austria,28.541999999999998
+1996,Austria,28.416999999999998
+1997,Austria,28.294
+1998,Austria,28.180999999999997
+1999,Austria,28.086
+2000,Austria,28.013
+2001,Austria,27.921999999999997
+2002,Austria,27.85
+2003,Austria,27.789
+2004,Austria,27.733
+2005,Austria,27.673000000000002
+2006,Austria,27.534000000000002
+2007,Austria,27.361
+2008,Austria,27.195999999999998
+2009,Austria,27.081
+2010,Austria,27.052
+2011,Austria,27.03
+2012,Austria,27.048000000000002
+2013,Austria,27.105999999999998
+2014,Austria,27.206999999999997
+2015,Austria,27.349
+2016,Austria,27.526
+2017,Austria,27.741999999999997
+1990,Belgium,20.444000000000003
+1991,Belgium,20.254
+1992,Belgium,20.053
+1993,Belgium,19.844
+1994,Belgium,19.633
+1995,Belgium,19.423
+1996,Belgium,19.1
+1997,Belgium,18.694000000000003
+1998,Belgium,18.304000000000002
+1999,Belgium,18.018
+2000,Belgium,17.923
+2001,Belgium,18.219
+2002,Belgium,19.025
+2003,Belgium,20.101
+2004,Belgium,21.168000000000003
+2005,Belgium,21.89
+2006,Belgium,22.261999999999997
+2007,Belgium,22.605999999999998
+2008,Belgium,22.913
+2009,Belgium,23.174
+2010,Belgium,23.378
+2011,Belgium,23.522
+2012,Belgium,23.676
+2013,Belgium,23.836
+2014,Belgium,23.998
+2015,Belgium,24.16
+2016,Belgium,24.316
+2017,Belgium,24.465
+1990,Cyprus,19.201
+1991,Cyprus,19.611
+1992,Cyprus,19.941
+1993,Cyprus,20.189
+1994,Cyprus,20.357
+1995,Cyprus,20.449
+1996,Cyprus,20.403
+1997,Cyprus,20.217
+1998,Cyprus,19.96
+1999,Cyprus,19.701
+2000,Cyprus,19.504
+2001,Cyprus,19.317
+2002,Cyprus,19.13
+2003,Cyprus,18.965
+2004,Cyprus,18.844
+2005,Cyprus,18.789
+2006,Cyprus,18.76
+2007,Cyprus,18.769000000000002
+2008,Cyprus,18.815
+2009,Cyprus,18.894000000000002
+2010,Cyprus,18.999000000000002
+2011,Cyprus,19.090999999999998
+2012,Cyprus,19.213
+2013,Cyprus,19.365
+2014,Cyprus,19.548
+2015,Cyprus,19.762
+2016,Cyprus,20.006
+2017,Cyprus,20.284000000000002
+1990,Denmark,25.037
+1991,Denmark,25.070999999999998
+1992,Denmark,25.158
+1993,Denmark,25.289
+1994,Denmark,25.456
+1995,Denmark,25.651
+1996,Denmark,25.933000000000003
+1997,Denmark,26.423000000000002
+1998,Denmark,27.013
+1999,Denmark,27.588
+2000,Denmark,28.025
+2001,Denmark,28.320999999999998
+2002,Denmark,28.625999999999998
+2003,Denmark,28.906
+2004,Denmark,29.122
+2005,Denmark,29.24
+2006,Denmark,29.014
+2007,Denmark,28.408
+2008,Denmark,27.642
+2009,Denmark,26.916
+2010,Denmark,26.408
+2011,Denmark,25.994
+2012,Denmark,25.643
+2013,Denmark,25.354
+2014,Denmark,25.131
+2015,Denmark,24.971999999999998
+2016,Denmark,24.879
+2017,Denmark,24.851
+1990,Finland,23.813000000000002
+1991,Finland,23.805
+1992,Finland,23.818
+1993,Finland,23.851
+1994,Finland,23.898000000000003
+1995,Finland,23.96
+1996,Finland,24.01
+1997,Finland,24.092
+1998,Finland,24.205
+1999,Finland,24.345
+2000,Finland,24.511999999999997
+2001,Finland,24.781
+2002,Finland,25.250999999999998
+2003,Finland,25.789
+2004,Finland,26.252
+2005,Finland,26.487
+2006,Finland,26.476
+2007,Finland,26.339000000000002
+2008,Finland,26.15
+2009,Finland,25.975
+2010,Finland,25.881
+2011,Finland,25.799
+2012,Finland,25.746
+2013,Finland,25.724
+2014,Finland,25.732
+2015,Finland,25.774
+2016,Finland,25.85
+2017,Finland,25.959
+1990,France,37.854
+1991,France,36.591
+1992,France,35.51
+1993,France,34.61
+1994,France,33.898
+1995,France,33.388000000000005
+1996,France,32.846
+1997,France,32.382
+1998,France,31.991
+1999,France,31.664
+2000,France,31.399
+2001,France,31.123
+2002,France,30.914
+2003,France,30.735
+2004,France,30.552
+2005,France,30.33
+2006,France,29.976
+2007,France,29.548000000000002
+2008,France,29.099
+2009,France,28.678
+2010,France,28.335
+2011,France,27.971999999999998
+2012,France,27.64
+2013,France,27.342
+2014,France,27.076
+2015,France,26.843000000000004
+2016,France,26.645
+2017,France,26.482
+1990,Germany,29.11
+1991,Germany,28.781999999999996
+1992,Germany,28.483
+1993,Germany,28.211
+1994,Germany,27.968000000000004
+1995,Germany,27.756999999999998
+1996,Germany,27.478
+1997,Germany,27.194000000000003
+1998,Germany,26.934
+1999,Germany,26.724
+2000,Germany,26.586
+2001,Germany,26.478
+2002,Germany,26.421999999999997
+2003,Germany,26.395
+2004,Germany,26.374000000000002
+2005,Germany,26.336
+2006,Germany,26.226
+2007,Germany,26.088
+2008,Germany,25.947
+2009,Germany,25.826999999999998
+2010,Germany,25.753
+2011,Germany,25.671999999999997
+2012,Germany,25.636
+2013,Germany,25.643
+2014,Germany,25.693
+2015,Germany,25.788
+2016,Germany,25.948
+2017,Germany,26.12
+1990,Greece,26.349
+1991,Greece,26.059
+1992,Greece,25.781
+1993,Greece,25.515
+1994,Greece,25.261999999999997
+1995,Greece,25.022
+1996,Greece,24.686
+1997,Greece,24.305
+1998,Greece,23.956999999999997
+1999,Greece,23.715
+2000,Greece,23.65
+2001,Greece,23.671999999999997
+2002,Greece,23.741999999999997
+2003,Greece,23.842
+2004,Greece,23.951
+2005,Greece,24.046
+2006,Greece,24.088
+2007,Greece,24.109
+2008,Greece,24.122
+2009,Greece,24.145
+2010,Greece,24.19
+2011,Greece,24.21
+2012,Greece,24.248
+2013,Greece,24.305999999999997
+2014,Greece,24.384
+2015,Greece,24.482
+2016,Greece,24.601999999999997
+2017,Greece,24.746
+1990,Iceland,13.181
+1991,Iceland,12.98
+1992,Iceland,12.825999999999999
+1993,Iceland,12.718
+1994,Iceland,12.658
+1995,Iceland,12.642000000000001
+1996,Iceland,12.671
+1997,Iceland,12.752
+1998,Iceland,12.870999999999999
+1999,Iceland,13.014000000000001
+2000,Iceland,13.173
+2001,Iceland,13.372
+2002,Iceland,13.655999999999999
+2003,Iceland,13.994000000000002
+2004,Iceland,14.353
+2005,Iceland,14.695
+2006,Iceland,15.012
+2007,Iceland,15.347999999999999
+2008,Iceland,15.675999999999998
+2009,Iceland,15.979000000000001
+2010,Iceland,16.254
+2011,Iceland,16.492
+2012,Iceland,16.742
+2013,Iceland,17.006
+2014,Iceland,17.277
+2015,Iceland,17.554000000000002
+2016,Iceland,17.834
+2017,Iceland,18.113
+1990,Ireland,20.628
+1991,Ireland,21.427
+1992,Ireland,22.272
+1993,Ireland,23.159000000000002
+1994,Ireland,24.081999999999997
+1995,Ireland,25.039
+1996,Ireland,26.05
+1997,Ireland,27.273000000000003
+1998,Ireland,28.494
+1999,Ireland,29.467
+2000,Ireland,29.918000000000003
+2001,Ireland,30.04
+2002,Ireland,30.145
+2003,Ireland,30.237
+2004,Ireland,30.315
+2005,Ireland,30.377
+2006,Ireland,30.185
+2007,Ireland,29.625999999999998
+2008,Ireland,28.936
+2009,Ireland,28.331999999999997
+2010,Ireland,28.015
+2011,Ireland,27.81
+2012,Ireland,27.677
+2013,Ireland,27.622
+2014,Ireland,27.648000000000003
+2015,Ireland,27.759
+2016,Ireland,27.961
+2017,Ireland,28.259
+1990,Israel,5.897
+1991,Israel,5.769
+1992,Israel,5.675
+1993,Israel,5.6129999999999995
+1994,Israel,5.581
+1995,Israel,5.5760000000000005
+1996,Israel,5.612
+1997,Israel,5.6979999999999995
+1998,Israel,5.813
+1999,Israel,5.937
+2000,Israel,6.047000000000001
+2001,Israel,6.146
+2002,Israel,6.255
+2003,Israel,6.369
+2004,Israel,6.478
+2005,Israel,6.5760000000000005
+2006,Israel,6.657
+2007,Israel,6.736000000000001
+2008,Israel,6.813
+2009,Israel,6.89
+2010,Israel,6.9670000000000005
+2011,Israel,7.037999999999999
+2012,Israel,7.111000000000001
+2013,Israel,7.188
+2014,Israel,7.267
+2015,Israel,7.349
+2016,Israel,7.432
+2017,Israel,7.518
+1990,Italy,33.319
+1991,Italy,32.415
+1992,Italy,31.589000000000002
+1993,Italy,30.839000000000002
+1994,Italy,30.162
+1995,Italy,29.563000000000002
+1996,Italy,28.904
+1997,Italy,28.284000000000002
+1998,Italy,27.701
+1999,Italy,27.154
+2000,Italy,26.645
+2001,Italy,26.090999999999998
+2002,Italy,25.574
+2003,Italy,25.08
+2004,Italy,24.595
+2005,Italy,24.104
+2006,Italy,23.42
+2007,Italy,22.641
+2008,Italy,21.919
+2009,Italy,21.386
+2010,Italy,21.162
+2011,Italy,21.065
+2012,Italy,21.026999999999997
+2013,Italy,21.046999999999997
+2014,Italy,21.128
+2015,Italy,21.271
+2016,Italy,21.476999999999997
+2017,Italy,21.747
+1990,Luxembourg,25.186999999999998
+1991,Luxembourg,24.788
+1992,Luxembourg,24.523000000000003
+1993,Luxembourg,24.369
+1994,Luxembourg,24.305999999999997
+1995,Luxembourg,24.313000000000002
+1996,Luxembourg,24.385
+1997,Luxembourg,24.651
+1998,Luxembourg,25.068
+1999,Luxembourg,25.6
+2000,Luxembourg,26.201999999999998
+2001,Luxembourg,27.115
+2002,Luxembourg,28.848000000000003
+2003,Luxembourg,30.984
+2004,Luxembourg,33.006
+2005,Luxembourg,34.218
+2006,Luxembourg,34.728
+2007,Luxembourg,35.177
+2008,Luxembourg,35.56
+2009,Luxembourg,35.85
+2010,Luxembourg,36.021
+2011,Luxembourg,36.093
+2012,Luxembourg,36.086
+2013,Luxembourg,35.992
+2014,Luxembourg,35.817
+2015,Luxembourg,35.56
+2016,Luxembourg,35.225
+2017,Luxembourg,34.815
+1990,Malta,11.947000000000001
+1991,Malta,12.145
+1992,Malta,12.31
+1993,Malta,12.442
+1994,Malta,12.542
+1995,Malta,12.605
+1996,Malta,12.592
+1997,Malta,12.519
+1998,Malta,12.427
+1999,Malta,12.363
+2000,Malta,12.365
+2001,Malta,12.413
+2002,Malta,12.48
+2003,Malta,12.564
+2004,Malta,12.667
+2005,Malta,12.785
+2006,Malta,12.97
+2007,Malta,13.265999999999998
+2008,Malta,13.624
+2009,Malta,13.994000000000002
+2010,Malta,14.321
+2011,Malta,14.591
+2012,Malta,14.877
+2013,Malta,15.179
+2014,Malta,15.494000000000002
+2015,Malta,15.819
+2016,Malta,16.151
+2017,Malta,16.494
+1990,Netherlands,18.72
+1991,Netherlands,18.563
+1992,Netherlands,18.430999999999997
+1993,Netherlands,18.33
+1994,Netherlands,18.262999999999998
+1995,Netherlands,18.237000000000002
+1996,Netherlands,18.215
+1997,Netherlands,18.208
+1998,Netherlands,18.211
+1999,Netherlands,18.222
+2000,Netherlands,18.236
+2001,Netherlands,18.227999999999998
+2002,Netherlands,18.215
+2003,Netherlands,18.203
+2004,Netherlands,18.195999999999998
+2005,Netherlands,18.199
+2006,Netherlands,18.173
+2007,Netherlands,18.131
+2008,Netherlands,18.101
+2009,Netherlands,18.11
+2010,Netherlands,18.185
+2011,Netherlands,18.302
+2012,Netherlands,18.477
+2013,Netherlands,18.709
+2014,Netherlands,19.0
+2015,Netherlands,19.35
+2016,Netherlands,19.761
+2017,Netherlands,20.236
+1990,Norway,15.333
+1991,Norway,15.29
+1992,Norway,15.280999999999999
+1993,Norway,15.299000000000001
+1994,Norway,15.339
+1995,Norway,15.397
+1996,Norway,15.493
+1997,Norway,15.687999999999999
+1998,Norway,15.95
+1999,Norway,16.244
+2000,Norway,16.535999999999998
+2001,Norway,16.845
+2002,Norway,17.243
+2003,Norway,17.66
+2004,Norway,18.015
+2005,Norway,18.226
+2006,Norway,18.291
+2007,Norway,18.34
+2008,Norway,18.384
+2009,Norway,18.435
+2010,Norway,18.506
+2011,Norway,18.551
+2012,Norway,18.608
+2013,Norway,18.677
+2014,Norway,18.761
+2015,Norway,18.861
+2016,Norway,18.977999999999998
+2017,Norway,19.117
+1990,Portugal,32.508
+1991,Portugal,32.415
+1992,Portugal,32.31
+1993,Portugal,32.2
+1994,Portugal,32.091
+1995,Portugal,31.985
+1996,Portugal,31.816999999999997
+1997,Portugal,31.584
+1998,Portugal,31.328000000000003
+1999,Portugal,31.088
+2000,Portugal,30.903000000000002
+2001,Portugal,30.739
+2002,Portugal,30.605
+2003,Portugal,30.486
+2004,Portugal,30.364
+2005,Portugal,30.221
+2006,Portugal,29.997
+2007,Portugal,29.730999999999998
+2008,Portugal,29.471999999999998
+2009,Portugal,29.259
+2010,Portugal,29.133000000000003
+2011,Portugal,29.039
+2012,Portugal,29.014
+2013,Portugal,29.055999999999997
+2014,Portugal,29.162
+2015,Portugal,29.329
+2016,Portugal,29.56
+2017,Portugal,29.853
+1990,Spain,33.644
+1991,Spain,33.01
+1992,Spain,32.446
+1993,Spain,31.951999999999998
+1994,Spain,31.526
+1995,Spain,31.169
+1996,Spain,30.726
+1997,Spain,30.281
+1998,Spain,29.901999999999997
+1999,Spain,29.651999999999997
+2000,Spain,29.592
+2001,Spain,29.585
+2002,Spain,29.636999999999997
+2003,Spain,29.723000000000003
+2004,Spain,29.816
+2005,Spain,29.889
+2006,Spain,29.861
+2007,Spain,29.749000000000002
+2008,Spain,29.605999999999998
+2009,Spain,29.476
+2010,Spain,29.41
+2011,Spain,29.34
+2012,Spain,29.309
+2013,Spain,29.318
+2014,Spain,29.369
+2015,Spain,29.462
+2016,Spain,29.598000000000003
+2017,Spain,29.776999999999997
+1990,Sweden,19.408
+1991,Sweden,19.622
+1992,Sweden,19.851
+1993,Sweden,20.089000000000002
+1994,Sweden,20.33
+1995,Sweden,20.569000000000003
+1996,Sweden,20.805999999999997
+1997,Sweden,21.094
+1998,Sweden,21.394000000000002
+1999,Sweden,21.664
+2000,Sweden,21.862
+2001,Sweden,21.98
+2002,Sweden,22.101
+2003,Sweden,22.215
+2004,Sweden,22.31
+2005,Sweden,22.377
+2006,Sweden,22.248
+2007,Sweden,21.924
+2008,Sweden,21.546
+2009,Sweden,21.24
+2010,Sweden,21.125
+2011,Sweden,21.105999999999998
+2012,Sweden,21.123
+2013,Sweden,21.177
+2014,Sweden,21.269000000000002
+2015,Sweden,21.401
+2016,Sweden,21.576
+2017,Sweden,21.796
+1990,Switzerland,25.335
+1991,Switzerland,24.726999999999997
+1992,Switzerland,24.193
+1993,Switzerland,23.738000000000003
+1994,Switzerland,23.368000000000002
+1995,Switzerland,23.090999999999998
+1996,Switzerland,22.819000000000003
+1997,Switzerland,22.57
+1998,Switzerland,22.359
+1999,Switzerland,22.201999999999998
+2000,Switzerland,22.113000000000003
+2001,Switzerland,22.059
+2002,Switzerland,22.046
+2003,Switzerland,22.057
+2004,Switzerland,22.074
+2005,Switzerland,22.079
+2006,Switzerland,22.01
+2007,Switzerland,21.894000000000002
+2008,Switzerland,21.768
+2009,Switzerland,21.669
+2010,Switzerland,21.629
+2011,Switzerland,21.615
+2012,Switzerland,21.64
+2013,Switzerland,21.705
+2014,Switzerland,21.808000000000003
+2015,Switzerland,21.951
+2016,Switzerland,22.135
+2017,Switzerland,22.36
+1990,United Kingdom,20.553
+1991,United Kingdom,20.566999999999997
+1992,United Kingdom,20.605999999999998
+1993,United Kingdom,20.666999999999998
+1994,United Kingdom,20.749000000000002
+1995,United Kingdom,20.848000000000003
+1996,United Kingdom,20.903000000000002
+1997,United Kingdom,20.994
+1998,United Kingdom,21.105999999999998
+1999,United Kingdom,21.226999999999997
+2000,United Kingdom,21.342
+2001,United Kingdom,21.395
+2002,United Kingdom,21.469
+2003,United Kingdom,21.554000000000002
+2004,United Kingdom,21.64
+2005,United Kingdom,21.715999999999998
+2006,United Kingdom,21.631999999999998
+2007,United Kingdom,21.427
+2008,United Kingdom,21.193
+2009,United Kingdom,21.02
+2010,United Kingdom,20.991
+2011,United Kingdom,20.99
+2012,United Kingdom,21.034000000000002
+2013,United Kingdom,21.125999999999998
+2014,United Kingdom,21.268
+2015,United Kingdom,21.462
+2016,United Kingdom,21.712
+2017,United Kingdom,22.022
+1990,Argentina,26.666999999999998
+1991,Argentina,26.051
+1992,Argentina,25.458000000000002
+1993,Argentina,24.89
+1994,Argentina,24.349
+1995,Argentina,23.84
+1996,Argentina,23.244
+1997,Argentina,22.635
+1998,Argentina,22.057
+1999,Argentina,21.549
+2000,Argentina,21.145
+2001,Argentina,20.755
+2002,Argentina,20.395
+2003,Argentina,20.084
+2004,Argentina,19.838
+2005,Argentina,19.674
+2006,Argentina,19.509
+2007,Argentina,19.352999999999998
+2008,Argentina,19.233
+2009,Argentina,19.174
+2010,Argentina,19.204
+2011,Argentina,19.261
+2012,Argentina,19.352
+2013,Argentina,19.480999999999998
+2014,Argentina,19.652
+2015,Argentina,19.87
+2016,Argentina,20.142
+2017,Argentina,20.474
+1990,Chile,20.047
+1991,Chile,19.299
+1992,Chile,18.645
+1993,Chile,18.088
+1994,Chile,17.632
+1995,Chile,17.283
+1996,Chile,16.93
+1997,Chile,16.596
+1998,Chile,16.322
+1999,Chile,16.147000000000002
+2000,Chile,16.112000000000002
+2001,Chile,16.168
+2002,Chile,16.288
+2003,Chile,16.453
+2004,Chile,16.646
+2005,Chile,16.848
+2006,Chile,17.101
+2007,Chile,17.476
+2008,Chile,17.915
+2009,Chile,18.355999999999998
+2010,Chile,18.727999999999998
+2011,Chile,19.014
+2012,Chile,19.311
+2013,Chile,19.613
+2014,Chile,19.92
+2015,Chile,20.227
+2016,Chile,20.533
+2017,Chile,20.835
+1990,Uruguay,17.58
+1991,Uruguay,17.829
+1992,Uruguay,18.067
+1993,Uruguay,18.283
+1994,Uruguay,18.467
+1995,Uruguay,18.605
+1996,Uruguay,18.708
+1997,Uruguay,18.815
+1998,Uruguay,18.918
+1999,Uruguay,19.003
+2000,Uruguay,19.059
+2001,Uruguay,18.961
+2002,Uruguay,18.664
+2003,Uruguay,18.277
+2004,Uruguay,17.899
+2005,Uruguay,17.624000000000002
+2006,Uruguay,17.363
+2007,Uruguay,17.090999999999998
+2008,Uruguay,16.861
+2009,Uruguay,16.723
+2010,Uruguay,16.724
+2011,Uruguay,16.78
+2012,Uruguay,16.866
+2013,Uruguay,16.989
+2014,Uruguay,17.152
+2015,Uruguay,17.363
+2016,Uruguay,17.627
+2017,Uruguay,17.951
+1990,Canada,19.05
+1991,Canada,18.752
+1992,Canada,18.515
+1993,Canada,18.345
+1994,Canada,18.249000000000002
+1995,Canada,18.233
+1996,Canada,18.275
+1997,Canada,18.383
+1998,Canada,18.532
+1999,Canada,18.695999999999998
+2000,Canada,18.851
+2001,Canada,18.996
+2002,Canada,19.174
+2003,Canada,19.358
+2004,Canada,19.523
+2005,Canada,19.642
+2006,Canada,19.699
+2007,Canada,19.746
+2008,Canada,19.798
+2009,Canada,19.867
+2010,Canada,19.967
+2011,Canada,20.073
+2012,Canada,20.222
+2013,Canada,20.41
+2014,Canada,20.638
+2015,Canada,20.903000000000002
+2016,Canada,21.205
+2017,Canada,21.543000000000003
+1990,United States,18.632
+1991,United States,18.404
+1992,United States,18.227999999999998
+1993,United States,18.105999999999998
+1994,United States,18.044
+1995,United States,18.048
+1996,United States,18.063
+1997,United States,18.127
+1998,United States,18.230999999999998
+1999,United States,18.368
+2000,United States,18.529
+2001,United States,18.717
+2002,United States,19.000999999999998
+2003,United States,19.324
+2004,United States,19.625999999999998
+2005,United States,19.845
+2006,United States,19.961
+2007,United States,20.075
+2008,United States,20.192
+2009,United States,20.313
+2010,United States,20.442999999999998
+2011,United States,20.526999999999997
+2012,United States,20.629
+2013,United States,20.75
+2014,United States,20.889
+2015,United States,21.045
+2016,United States,21.219
+2017,United States,21.412
+1990,Antigua and Barbuda,4.581
+1991,Antigua and Barbuda,4.584
+1992,Antigua and Barbuda,4.613
+1993,Antigua and Barbuda,4.664
+1994,Antigua and Barbuda,4.734
+1995,Antigua and Barbuda,4.819
+1996,Antigua and Barbuda,5.044
+1997,Antigua and Barbuda,5.489
+1998,Antigua and Barbuda,6.04
+1999,Antigua and Barbuda,6.5729999999999995
+2000,Antigua and Barbuda,6.952999999999999
+2001,Antigua and Barbuda,7.169
+2002,Antigua and Barbuda,7.349
+2003,Antigua and Barbuda,7.513999999999999
+2004,Antigua and Barbuda,7.686
+2005,Antigua and Barbuda,7.888
+2006,Antigua and Barbuda,8.15
+2007,Antigua and Barbuda,8.482000000000001
+2008,Antigua and Barbuda,8.823
+2009,Antigua and Barbuda,9.106
+2010,Antigua and Barbuda,9.262
+2011,Antigua and Barbuda,9.312000000000001
+2012,Antigua and Barbuda,9.359
+2013,Antigua and Barbuda,9.397
+2014,Antigua and Barbuda,9.425
+2015,Antigua and Barbuda,9.437999999999999
+2016,Antigua and Barbuda,9.432
+2017,Antigua and Barbuda,9.405
+1990,The Bahamas,19.36
+1991,The Bahamas,18.644000000000002
+1992,The Bahamas,17.992
+1993,The Bahamas,17.403
+1994,The Bahamas,16.875999999999998
+1995,The Bahamas,16.416
+1996,The Bahamas,15.913
+1997,The Bahamas,15.435
+1998,The Bahamas,15.011
+1999,The Bahamas,14.67
+2000,The Bahamas,14.435
+2001,The Bahamas,14.24
+2002,The Bahamas,14.097000000000001
+2003,The Bahamas,13.985999999999999
+2004,The Bahamas,13.887
+2005,The Bahamas,13.780999999999999
+2006,The Bahamas,13.61
+2007,The Bahamas,13.413
+2008,The Bahamas,13.23
+2009,The Bahamas,13.099
+2010,The Bahamas,13.057
+2011,The Bahamas,13.034
+2012,The Bahamas,13.027999999999999
+2013,The Bahamas,13.042
+2014,The Bahamas,13.079
+2015,The Bahamas,13.140999999999998
+2016,The Bahamas,13.232000000000001
+2017,The Bahamas,13.356
+1990,Barbados,14.822000000000001
+1991,Barbados,14.482000000000001
+1992,Barbados,14.177999999999999
+1993,Barbados,13.914000000000001
+1994,Barbados,13.695
+1995,Barbados,13.527000000000001
+1996,Barbados,13.347999999999999
+1997,Barbados,13.177
+1998,Barbados,13.035
+1999,Barbados,12.943
+2000,Barbados,12.921
+2001,Barbados,12.944
+2002,Barbados,13.017999999999999
+2003,Barbados,13.127
+2004,Barbados,13.258
+2005,Barbados,13.394
+2006,Barbados,13.546
+2007,Barbados,13.767000000000001
+2008,Barbados,14.020999999999999
+2009,Barbados,14.272
+2010,Barbados,14.482999999999999
+2011,Barbados,14.629000000000001
+2012,Barbados,14.777999999999999
+2013,Barbados,14.929
+2014,Barbados,15.081
+2015,Barbados,15.231
+2016,Barbados,15.38
+2017,Barbados,15.525
+1990,Belize,13.982000000000001
+1991,Belize,13.867
+1992,Belize,13.754000000000001
+1993,Belize,13.645
+1994,Belize,13.542
+1995,Belize,13.446
+1996,Belize,13.297
+1997,Belize,13.120999999999999
+1998,Belize,12.96
+1999,Belize,12.853
+2000,Belize,12.84
+2001,Belize,12.975
+2002,Belize,13.366
+2003,Belize,13.927
+2004,Belize,14.564
+2005,Belize,15.174000000000001
+2006,Belize,15.772
+2007,Belize,16.527
+2008,Belize,17.302
+2009,Belize,17.942
+2010,Belize,18.275
+2011,Belize,18.412
+2012,Belize,18.543
+2013,Belize,18.664
+2014,Belize,18.772000000000002
+2015,Belize,18.862000000000002
+2016,Belize,18.934
+2017,Belize,18.986
+1990,Cuba,10.962
+1991,Cuba,10.702
+1992,Cuba,10.485
+1993,Cuba,10.32
+1994,Cuba,10.215
+1995,Cuba,10.182
+1996,Cuba,10.191
+1997,Cuba,10.231
+1998,Cuba,10.295
+1999,Cuba,10.376
+2000,Cuba,10.466
+2001,Cuba,10.597999999999999
+2002,Cuba,10.81
+2003,Cuba,11.064
+2004,Cuba,11.319
+2005,Cuba,11.532
+2006,Cuba,11.687999999999999
+2007,Cuba,11.835999999999999
+2008,Cuba,11.985
+2009,Cuba,12.144
+2010,Cuba,12.322000000000001
+2011,Cuba,12.502
+2012,Cuba,12.710999999999999
+2013,Cuba,12.948
+2014,Cuba,13.210999999999999
+2015,Cuba,13.5
+2016,Cuba,13.815999999999999
+2017,Cuba,14.159
+1990,Dominica,18.076
+1991,Dominica,17.92
+1992,Dominica,17.758
+1993,Dominica,17.589000000000002
+1994,Dominica,17.414
+1995,Dominica,17.233
+1996,Dominica,16.983
+1997,Dominica,16.689
+1998,Dominica,16.393
+1999,Dominica,16.137
+2000,Dominica,15.962
+2001,Dominica,15.793
+2002,Dominica,15.633
+2003,Dominica,15.505
+2004,Dominica,15.431
+2005,Dominica,15.433
+2006,Dominica,15.468
+2007,Dominica,15.556
+2008,Dominica,15.677
+2009,Dominica,15.811
+2010,Dominica,15.937000000000001
+2011,Dominica,16.021
+2012,Dominica,16.12
+2013,Dominica,16.232
+2014,Dominica,16.357
+2015,Dominica,16.493
+2016,Dominica,16.643
+2017,Dominica,16.805999999999997
+1990,Dominican Republic,10.284
+1991,Dominican Republic,10.550999999999998
+1992,Dominican Republic,10.812000000000001
+1993,Dominican Republic,11.062999999999999
+1994,Dominican Republic,11.300999999999998
+1995,Dominican Republic,11.517999999999999
+1996,Dominican Republic,11.712
+1997,Dominican Republic,11.91
+1998,Dominican Republic,12.099
+1999,Dominican Republic,12.263
+2000,Dominican Republic,12.387
+2001,Dominican Republic,12.47
+2002,Dominican Republic,12.549000000000001
+2003,Dominican Republic,12.623
+2004,Dominican Republic,12.69
+2005,Dominican Republic,12.75
+2006,Dominican Republic,12.787
+2007,Dominican Republic,12.823
+2008,Dominican Republic,12.860999999999999
+2009,Dominican Republic,12.907
+2010,Dominican Republic,12.964
+2011,Dominican Republic,13.014000000000001
+2012,Dominican Republic,13.078
+2013,Dominican Republic,13.155
+2014,Dominican Republic,13.244000000000002
+2015,Dominican Republic,13.345999999999998
+2016,Dominican Republic,13.460999999999999
+2017,Dominican Republic,13.589
+1990,Grenada,17.070999999999998
+1991,Grenada,17.113
+1992,Grenada,17.132
+1993,Grenada,17.133
+1994,Grenada,17.121
+1995,Grenada,17.099
+1996,Grenada,16.991
+1997,Grenada,16.775
+1998,Grenada,16.52
+1999,Grenada,16.291
+2000,Grenada,16.15
+2001,Grenada,16.049
+2002,Grenada,15.975
+2003,Grenada,15.923
+2004,Grenada,15.885
+2005,Grenada,15.857000000000001
+2006,Grenada,15.789000000000001
+2007,Grenada,15.708
+2008,Grenada,15.642000000000001
+2009,Grenada,15.617
+2010,Grenada,15.657
+2011,Grenada,15.696
+2012,Grenada,15.757
+2013,Grenada,15.842
+2014,Grenada,15.954
+2015,Grenada,16.094
+2016,Grenada,16.267
+2017,Grenada,16.476
+1990,Guyana,19.438
+1991,Guyana,19.445
+1992,Guyana,19.43
+1993,Guyana,19.398
+1994,Guyana,19.354
+1995,Guyana,19.298
+1996,Guyana,19.134
+1997,Guyana,18.764
+1998,Guyana,18.291
+1999,Guyana,17.809
+2000,Guyana,17.403
+2001,Guyana,16.993
+2002,Guyana,16.567999999999998
+2003,Guyana,16.14
+2004,Guyana,15.722000000000001
+2005,Guyana,15.327
+2006,Guyana,14.809000000000001
+2007,Guyana,14.235999999999999
+2008,Guyana,13.718
+2009,Guyana,13.345999999999998
+2010,Guyana,13.209000000000001
+2011,Guyana,13.152000000000001
+2012,Guyana,13.117
+2013,Guyana,13.109000000000002
+2014,Guyana,13.13
+2015,Guyana,13.182
+2016,Guyana,13.265999999999998
+2017,Guyana,13.386
+1990,Haiti,11.311
+1991,Haiti,11.117
+1992,Haiti,10.952
+1993,Haiti,10.824000000000002
+1994,Haiti,10.744000000000002
+1995,Haiti,10.720999999999998
+1996,Haiti,10.722999999999999
+1997,Haiti,10.745999999999999
+1998,Haiti,10.78
+1999,Haiti,10.814
+2000,Haiti,10.835
+2001,Haiti,10.83
+2002,Haiti,10.82
+2003,Haiti,10.814
+2004,Haiti,10.815999999999999
+2005,Haiti,10.835
+2006,Haiti,10.895999999999999
+2007,Haiti,11.038
+2008,Haiti,11.222000000000001
+2009,Haiti,11.41
+2010,Haiti,11.538
+2011,Haiti,11.605
+2012,Haiti,11.696
+2013,Haiti,11.787
+2014,Haiti,11.876
+2015,Haiti,11.964
+2016,Haiti,12.05
+2017,Haiti,12.133
+1990,Jamaica,11.164000000000001
+1991,Jamaica,10.975
+1992,Jamaica,10.807
+1993,Jamaica,10.661
+1994,Jamaica,10.538
+1995,Jamaica,10.44
+1996,Jamaica,10.324000000000002
+1997,Jamaica,10.207
+1998,Jamaica,10.112
+1999,Jamaica,10.059
+2000,Jamaica,10.07
+2001,Jamaica,10.134
+2002,Jamaica,10.265
+2003,Jamaica,10.446
+2004,Jamaica,10.658
+2005,Jamaica,10.880999999999998
+2006,Jamaica,11.130999999999998
+2007,Jamaica,11.458
+2008,Jamaica,11.812999999999999
+2009,Jamaica,12.142000000000001
+2010,Jamaica,12.392000000000001
+2011,Jamaica,12.562000000000001
+2012,Jamaica,12.73
+2013,Jamaica,12.892999999999999
+2014,Jamaica,13.049000000000001
+2015,Jamaica,13.195
+2016,Jamaica,13.329
+2017,Jamaica,13.447000000000001
+1990,Saint Lucia,17.579
+1991,Saint Lucia,18.147000000000002
+1992,Saint Lucia,18.674
+1993,Saint Lucia,19.121
+1994,Saint Lucia,19.444000000000003
+1995,Saint Lucia,19.6
+1996,Saint Lucia,19.657
+1997,Saint Lucia,19.687
+1998,Saint Lucia,19.698
+1999,Saint Lucia,19.702
+2000,Saint Lucia,19.708
+2001,Saint Lucia,19.686
+2002,Saint Lucia,19.619
+2003,Saint Lucia,19.507
+2004,Saint Lucia,19.357
+2005,Saint Lucia,19.172
+2006,Saint Lucia,18.787
+2007,Saint Lucia,18.183
+2008,Saint Lucia,17.547
+2009,Saint Lucia,17.046
+2010,Saint Lucia,16.828
+2011,Saint Lucia,16.72
+2012,Saint Lucia,16.65
+2013,Saint Lucia,16.62
+2014,Saint Lucia,16.632
+2015,Saint Lucia,16.69
+2016,Saint Lucia,16.795
+2017,Saint Lucia,16.951
+1990,Saint Vincent and the Grenadines,11.470999999999998
+1991,Saint Vincent and the Grenadines,11.213
+1992,Saint Vincent and the Grenadines,10.987
+1993,Saint Vincent and the Grenadines,10.805
+1994,Saint Vincent and the Grenadines,10.679
+1995,Saint Vincent and the Grenadines,10.620999999999999
+1996,Saint Vincent and the Grenadines,10.592
+1997,Saint Vincent and the Grenadines,10.579
+1998,Saint Vincent and the Grenadines,10.584000000000001
+1999,Saint Vincent and the Grenadines,10.603
+2000,Saint Vincent and the Grenadines,10.637
+2001,Saint Vincent and the Grenadines,10.702
+2002,Saint Vincent and the Grenadines,10.835
+2003,Saint Vincent and the Grenadines,11.015
+2004,Saint Vincent and the Grenadines,11.222000000000001
+2005,Saint Vincent and the Grenadines,11.435
+2006,Saint Vincent and the Grenadines,11.672
+2007,Saint Vincent and the Grenadines,11.981
+2008,Saint Vincent and the Grenadines,12.315
+2009,Saint Vincent and the Grenadines,12.625
+2010,Saint Vincent and the Grenadines,12.857000000000001
+2011,Saint Vincent and the Grenadines,13.008
+2012,Saint Vincent and the Grenadines,13.16
+2013,Saint Vincent and the Grenadines,13.311
+2014,Saint Vincent and the Grenadines,13.458
+2015,Saint Vincent and the Grenadines,13.6
+2016,Saint Vincent and the Grenadines,13.734000000000002
+2017,Saint Vincent and the Grenadines,13.859000000000002
+1990,Suriname,11.342
+1991,Suriname,11.232000000000001
+1992,Suriname,11.167
+1993,Suriname,11.138
+1994,Suriname,11.137
+1995,Suriname,11.155
+1996,Suriname,11.298
+1997,Suriname,11.686
+1998,Suriname,12.227
+1999,Suriname,12.821
+2000,Suriname,13.353
+2001,Suriname,13.779000000000002
+2002,Suriname,14.224
+2003,Suriname,14.68
+2004,Suriname,15.138
+2005,Suriname,15.588
+2006,Suriname,16.029
+2007,Suriname,16.521
+2008,Suriname,16.999000000000002
+2009,Suriname,17.393
+2010,Suriname,17.627
+2011,Suriname,17.742
+2012,Suriname,17.855
+2013,Suriname,17.965
+2014,Suriname,18.067
+2015,Suriname,18.159000000000002
+2016,Suriname,18.24
+2017,Suriname,18.309
+1990,Trinidad and Tobago,9.535
+1991,Trinidad and Tobago,9.224
+1992,Trinidad and Tobago,8.945
+1993,Trinidad and Tobago,8.699
+1994,Trinidad and Tobago,8.487
+1995,Trinidad and Tobago,8.312000000000001
+1996,Trinidad and Tobago,8.135
+1997,Trinidad and Tobago,7.96
+1998,Trinidad and Tobago,7.812
+1999,Trinidad and Tobago,7.715
+2000,Trinidad and Tobago,7.693
+2001,Trinidad and Tobago,7.768
+2002,Trinidad and Tobago,7.934
+2003,Trinidad and Tobago,8.149
+2004,Trinidad and Tobago,8.37
+2005,Trinidad and Tobago,8.551
+2006,Trinidad and Tobago,8.687999999999999
+2007,Trinidad and Tobago,8.827
+2008,Trinidad and Tobago,8.962
+2009,Trinidad and Tobago,9.09
+2010,Trinidad and Tobago,9.206
+2011,Trinidad and Tobago,9.307
+2012,Trinidad and Tobago,9.416
+2013,Trinidad and Tobago,9.53
+2014,Trinidad and Tobago,9.65
+2015,Trinidad and Tobago,9.774
+2016,Trinidad and Tobago,9.901
+2017,Trinidad and Tobago,10.032
+1990,Bolivia,9.288
+1991,Bolivia,9.221
+1992,Bolivia,9.157
+1993,Bolivia,9.095
+1994,Bolivia,9.037
+1995,Bolivia,8.984
+1996,Bolivia,8.911
+1997,Bolivia,8.825
+1998,Bolivia,8.742
+1999,Bolivia,8.677
+2000,Bolivia,8.647
+2001,Bolivia,8.632
+2002,Bolivia,8.623
+2003,Bolivia,8.621
+2004,Bolivia,8.629
+2005,Bolivia,8.646
+2006,Bolivia,8.692
+2007,Bolivia,8.783
+2008,Bolivia,8.894
+2009,Bolivia,9.001
+2010,Bolivia,9.076
+2011,Bolivia,9.117
+2012,Bolivia,9.16
+2013,Bolivia,9.204
+2014,Bolivia,9.246
+2015,Bolivia,9.288
+2016,Bolivia,9.328
+2017,Bolivia,9.366
+1990,Ecuador,11.082
+1991,Ecuador,11.277999999999999
+1992,Ecuador,11.511
+1993,Ecuador,11.777999999999999
+1994,Ecuador,12.073
+1995,Ecuador,12.392000000000001
+1996,Ecuador,12.751
+1997,Ecuador,13.197000000000001
+1998,Ecuador,13.68
+1999,Ecuador,14.142000000000001
+2000,Ecuador,14.523
+2001,Ecuador,14.87
+2002,Ecuador,15.229000000000001
+2003,Ecuador,15.550999999999998
+2004,Ecuador,15.783
+2005,Ecuador,15.874
+2006,Ecuador,15.834000000000001
+2007,Ecuador,15.69
+2008,Ecuador,15.505999999999998
+2009,Ecuador,15.341
+2010,Ecuador,15.254000000000001
+2011,Ecuador,15.2
+2012,Ecuador,15.152000000000001
+2013,Ecuador,15.113
+2014,Ecuador,15.083
+2015,Ecuador,15.064
+2016,Ecuador,15.058
+2017,Ecuador,15.064
+1990,Peru,19.741
+1991,Peru,19.542
+1992,Peru,19.355
+1993,Peru,19.186
+1994,Peru,19.04
+1995,Peru,18.922
+1996,Peru,18.781
+1997,Peru,18.628
+1998,Peru,18.48
+1999,Peru,18.351
+2000,Peru,18.258
+2001,Peru,18.178
+2002,Peru,18.118
+2003,Peru,18.062
+2004,Peru,17.998
+2005,Peru,17.913
+2006,Peru,17.72
+2007,Peru,17.430999999999997
+2008,Peru,17.13
+2009,Peru,16.893
+2010,Peru,16.794
+2011,Peru,16.759
+2012,Peru,16.738
+2013,Peru,16.736
+2014,Peru,16.756
+2015,Peru,16.801
+2016,Peru,16.874000000000002
+2017,Peru,16.977999999999998
+1990,Colombia,16.475
+1991,Colombia,16.461
+1992,Colombia,16.428
+1993,Colombia,16.387
+1994,Colombia,16.342
+1995,Colombia,16.297
+1996,Colombia,16.147000000000002
+1997,Colombia,15.862
+1998,Colombia,15.536
+1999,Colombia,15.251
+2000,Colombia,15.087
+2001,Colombia,14.988
+2002,Colombia,14.904000000000002
+2003,Colombia,14.843
+2004,Colombia,14.814
+2005,Colombia,14.821
+2006,Colombia,14.841
+2007,Colombia,14.882
+2008,Colombia,14.939
+2009,Colombia,15.007
+2010,Colombia,15.081
+2011,Colombia,15.142000000000001
+2012,Colombia,15.229000000000001
+2013,Colombia,15.341
+2014,Colombia,15.477
+2015,Colombia,15.636
+2016,Colombia,15.817
+2017,Colombia,16.019000000000002
+1990,Costa Rica,15.868
+1991,Costa Rica,16.0
+1992,Costa Rica,16.093
+1993,Costa Rica,16.156
+1994,Costa Rica,16.198
+1995,Costa Rica,16.226
+1996,Costa Rica,16.164
+1997,Costa Rica,15.982000000000001
+1998,Costa Rica,15.742
+1999,Costa Rica,15.501
+2000,Costa Rica,15.315
+2001,Costa Rica,15.148
+2002,Costa Rica,14.985999999999999
+2003,Costa Rica,14.835
+2004,Costa Rica,14.704
+2005,Costa Rica,14.599
+2006,Costa Rica,14.487
+2007,Costa Rica,14.377
+2008,Costa Rica,14.284
+2009,Costa Rica,14.225
+2010,Costa Rica,14.21
+2011,Costa Rica,14.2
+2012,Costa Rica,14.203
+2013,Costa Rica,14.22
+2014,Costa Rica,14.253
+2015,Costa Rica,14.302
+2016,Costa Rica,14.37
+2017,Costa Rica,14.46
+1990,El Salvador,8.187000000000001
+1991,El Salvador,8.217
+1992,El Salvador,8.277999999999999
+1993,El Salvador,8.365
+1994,El Salvador,8.472000000000001
+1995,El Salvador,8.593
+1996,El Salvador,8.746
+1997,El Salvador,8.972999999999999
+1998,El Salvador,9.245
+1999,El Salvador,9.53
+2000,El Salvador,9.795
+2001,El Salvador,10.049
+2002,El Salvador,10.338
+2003,El Salvador,10.618
+2004,El Salvador,10.839
+2005,El Salvador,10.950999999999999
+2006,El Salvador,10.977
+2007,El Salvador,10.995999999999999
+2008,El Salvador,11.015
+2009,El Salvador,11.045
+2010,El Salvador,11.094000000000001
+2011,El Salvador,11.147
+2012,El Salvador,11.222999999999999
+2013,El Salvador,11.321
+2014,El Salvador,11.439
+2015,El Salvador,11.578
+2016,El Salvador,11.741
+2017,El Salvador,11.93
+1990,Guatemala,11.366
+1991,Guatemala,11.18
+1992,Guatemala,11.008
+1993,Guatemala,10.849
+1994,Guatemala,10.706
+1995,Guatemala,10.58
+1996,Guatemala,10.435
+1997,Guatemala,10.288
+1998,Guatemala,10.152999999999999
+1999,Guatemala,10.044
+2000,Guatemala,9.977
+2001,Guatemala,9.923
+2002,Guatemala,9.878
+2003,Guatemala,9.847999999999999
+2004,Guatemala,9.838
+2005,Guatemala,9.855
+2006,Guatemala,9.874
+2007,Guatemala,9.914
+2008,Guatemala,9.964
+2009,Guatemala,10.015
+2010,Guatemala,10.058
+2011,Guatemala,10.089
+2012,Guatemala,10.12
+2013,Guatemala,10.151
+2014,Guatemala,10.182
+2015,Guatemala,10.212
+2016,Guatemala,10.241
+2017,Guatemala,10.269
+1990,Honduras,6.941
+1991,Honduras,6.984
+1992,Honduras,7.041
+1993,Honduras,7.11
+1994,Honduras,7.19
+1995,Honduras,7.279
+1996,Honduras,7.391
+1997,Honduras,7.529
+1998,Honduras,7.6770000000000005
+1999,Honduras,7.825
+2000,Honduras,7.959
+2001,Honduras,8.085
+2002,Honduras,8.238999999999999
+2003,Honduras,8.389
+2004,Honduras,8.501
+2005,Honduras,8.543
+2006,Honduras,8.538
+2007,Honduras,8.517000000000001
+2008,Honduras,8.492
+2009,Honduras,8.472000000000001
+2010,Honduras,8.468
+2011,Honduras,8.462
+2012,Honduras,8.462
+2013,Honduras,8.469
+2014,Honduras,8.484
+2015,Honduras,8.506
+2016,Honduras,8.537
+2017,Honduras,8.579
+1990,Mexico,14.753
+1991,Mexico,14.915999999999999
+1992,Mexico,15.071
+1993,Mexico,15.205
+1994,Mexico,15.31
+1995,Mexico,15.374
+1996,Mexico,15.399000000000001
+1997,Mexico,15.413
+1998,Mexico,15.423
+1999,Mexico,15.432
+2000,Mexico,15.449000000000002
+2001,Mexico,15.452
+2002,Mexico,15.463
+2003,Mexico,15.472999999999999
+2004,Mexico,15.474
+2005,Mexico,15.458
+2006,Mexico,15.284
+2007,Mexico,14.892999999999999
+2008,Mexico,14.427999999999999
+2009,Mexico,14.020999999999999
+2010,Mexico,13.792
+2011,Mexico,13.634
+2012,Mexico,13.505
+2013,Mexico,13.409
+2014,Mexico,13.347999999999999
+2015,Mexico,13.325
+2016,Mexico,13.344000000000001
+2017,Mexico,13.407
+1990,Nicaragua,10.464
+1991,Nicaragua,10.235
+1992,Nicaragua,10.064
+1993,Nicaragua,9.95
+1994,Nicaragua,9.892000000000001
+1995,Nicaragua,9.886000000000001
+1996,Nicaragua,9.933
+1997,Nicaragua,10.06
+1998,Nicaragua,10.231
+1999,Nicaragua,10.408
+2000,Nicaragua,10.547
+2001,Nicaragua,10.655
+2002,Nicaragua,10.773
+2003,Nicaragua,10.882
+2004,Nicaragua,10.968
+2005,Nicaragua,11.011
+2006,Nicaragua,10.949000000000002
+2007,Nicaragua,10.775
+2008,Nicaragua,10.564
+2009,Nicaragua,10.386
+2010,Nicaragua,10.305
+2011,Nicaragua,10.277000000000001
+2012,Nicaragua,10.265999999999998
+2013,Nicaragua,10.274000000000001
+2014,Nicaragua,10.302
+2015,Nicaragua,10.353
+2016,Nicaragua,10.427
+2017,Nicaragua,10.525
+1990,Panama,11.520999999999999
+1991,Panama,11.588
+1992,Panama,11.663
+1993,Panama,11.742
+1994,Panama,11.822000000000001
+1995,Panama,11.901
+1996,Panama,11.984000000000002
+1997,Panama,12.1
+1998,Panama,12.222999999999999
+1999,Panama,12.328
+2000,Panama,12.384
+2001,Panama,12.395
+2002,Panama,12.390999999999998
+2003,Panama,12.386
+2004,Panama,12.395
+2005,Panama,12.43
+2006,Panama,12.535
+2007,Panama,12.773
+2008,Panama,13.085999999999999
+2009,Panama,13.413
+2010,Panama,13.692
+2011,Panama,13.91
+2012,Panama,14.134
+2013,Panama,14.364
+2014,Panama,14.597000000000001
+2015,Panama,14.835
+2016,Panama,15.075
+2017,Panama,15.317
+1990,Venezuela,17.59
+1991,Venezuela,17.583
+1992,Venezuela,17.548
+1993,Venezuela,17.49
+1994,Venezuela,17.416
+1995,Venezuela,17.335
+1996,Venezuela,17.153
+1997,Venezuela,16.845
+1998,Venezuela,16.507
+1999,Venezuela,16.233
+2000,Venezuela,16.114
+2001,Venezuela,16.07
+2002,Venezuela,16.054000000000002
+2003,Venezuela,16.06
+2004,Venezuela,16.083
+2005,Venezuela,16.124000000000002
+2006,Venezuela,16.157
+2007,Venezuela,16.197
+2008,Venezuela,16.24
+2009,Venezuela,16.285999999999998
+2010,Venezuela,16.335
+2011,Venezuela,16.362000000000002
+2012,Venezuela,16.379
+2013,Venezuela,16.387999999999998
+2014,Venezuela,16.392
+2015,Venezuela,16.392
+2016,Venezuela,16.392
+2017,Venezuela,16.393
+1990,Brazil,11.743
+1991,Brazil,12.0
+1992,Brazil,12.290999999999999
+1993,Brazil,12.613
+1994,Brazil,12.964
+1995,Brazil,13.342
+1996,Brazil,13.76
+1997,Brazil,14.283
+1998,Brazil,14.835999999999999
+1999,Brazil,15.334000000000001
+2000,Brazil,15.686
+2001,Brazil,15.91
+2002,Brazil,16.125999999999998
+2003,Brazil,16.317999999999998
+2004,Brazil,16.465999999999998
+2005,Brazil,16.555
+2006,Brazil,16.452
+2007,Brazil,16.158
+2008,Brazil,15.815999999999999
+2009,Brazil,15.559000000000001
+2010,Brazil,15.509
+2011,Brazil,15.557
+2012,Brazil,15.651
+2013,Brazil,15.797
+2014,Brazil,16.004
+2015,Brazil,16.279
+2016,Brazil,16.633
+2017,Brazil,17.076
+1990,Paraguay,20.154
+1991,Paraguay,21.15
+1992,Paraguay,21.976999999999997
+1993,Paraguay,22.6
+1994,Paraguay,22.994
+1995,Paraguay,23.131
+1996,Paraguay,23.053
+1997,Paraguay,22.715
+1998,Paraguay,22.211
+1999,Paraguay,21.63
+2000,Paraguay,21.057
+2001,Paraguay,20.253
+2002,Paraguay,19.215
+2003,Paraguay,18.192999999999998
+2004,Paraguay,17.389
+2005,Paraguay,16.974
+2006,Paraguay,16.725
+2007,Paraguay,16.53
+2008,Paraguay,16.402
+2009,Paraguay,16.348
+2010,Paraguay,16.382
+2011,Paraguay,16.434
+2012,Paraguay,16.524
+2013,Paraguay,16.656
+2014,Paraguay,16.838
+2015,Paraguay,17.075
+2016,Paraguay,17.375
+2017,Paraguay,17.748
+1990,Algeria,1.6880000000000002
+1991,Algeria,1.681
+1992,Algeria,1.6769999999999998
+1993,Algeria,1.6769999999999998
+1994,Algeria,1.68
+1995,Algeria,1.685
+1996,Algeria,1.699
+1997,Algeria,1.73
+1998,Algeria,1.7730000000000001
+1999,Algeria,1.821
+2000,Algeria,1.871
+2001,Algeria,1.933
+2002,Algeria,2.017
+2003,Algeria,2.103
+2004,Algeria,2.171
+2005,Algeria,2.201
+2006,Algeria,2.191
+2007,Algeria,2.1590000000000003
+2008,Algeria,2.12
+2009,Algeria,2.085
+2010,Algeria,2.068
+2011,Algeria,2.062
+2012,Algeria,2.0580000000000003
+2013,Algeria,2.057
+2014,Algeria,2.0580000000000003
+2015,Algeria,2.062
+2016,Algeria,2.069
+2017,Algeria,2.08
+1990,Bahrain,5.91
+1991,Bahrain,5.922999999999999
+1992,Bahrain,5.9110000000000005
+1993,Bahrain,5.882000000000001
+1994,Bahrain,5.843
+1995,Bahrain,5.797000000000001
+1996,Bahrain,5.709
+1997,Bahrain,5.546
+1998,Bahrain,5.351
+1999,Bahrain,5.164
+2000,Bahrain,5.022
+2001,Bahrain,4.92
+2002,Bahrain,4.833
+2003,Bahrain,4.755
+2004,Bahrain,4.678
+2005,Bahrain,4.584
+2006,Bahrain,4.447
+2007,Bahrain,4.27
+2008,Bahrain,4.087
+2009,Bahrain,3.93
+2010,Bahrain,3.823
+2011,Bahrain,3.7239999999999998
+2012,Bahrain,3.6260000000000003
+2013,Bahrain,3.5389999999999997
+2014,Bahrain,3.468
+2015,Bahrain,3.415
+2016,Bahrain,3.375
+2017,Bahrain,3.3510000000000004
+1990,Egypt,1.311
+1991,Egypt,1.301
+1992,Egypt,1.296
+1993,Egypt,1.294
+1994,Egypt,1.295
+1995,Egypt,1.297
+1996,Egypt,1.305
+1997,Egypt,1.324
+1998,Egypt,1.3459999999999999
+1999,Egypt,1.3659999999999999
+2000,Egypt,1.3769999999999998
+2001,Egypt,1.381
+2002,Egypt,1.382
+2003,Egypt,1.381
+2004,Egypt,1.381
+2005,Egypt,1.385
+2006,Egypt,1.39
+2007,Egypt,1.3980000000000001
+2008,Egypt,1.406
+2009,Egypt,1.413
+2010,Egypt,1.419
+2011,Egypt,1.4240000000000002
+2012,Egypt,1.429
+2013,Egypt,1.432
+2014,Egypt,1.435
+2015,Egypt,1.4369999999999998
+2016,Egypt,1.4380000000000002
+2017,Egypt,1.4380000000000002
+1990,Iran,1.534
+1991,Iran,1.411
+1992,Iran,1.288
+1993,Iran,1.1640000000000001
+1994,Iran,1.04
+1995,Iran,0.917
+1996,Iran,0.768
+1997,Iran,0.591
+1998,Iran,0.415
+1999,Iran,0.26899999999999996
+2000,Iran,0.179
+2001,Iran,0.125
+2002,Iran,0.077
+2003,Iran,0.039
+2004,Iran,0.013000000000000001
+2005,Iran,0.003
+2006,Iran,0.003
+2007,Iran,0.004
+2008,Iran,0.005
+2009,Iran,0.006
+2010,Iran,0.006999999999999999
+2011,Iran,0.006999999999999999
+2012,Iran,0.008
+2013,Iran,0.008
+2014,Iran,0.009000000000000001
+2015,Iran,0.009000000000000001
+2016,Iran,0.01
+2017,Iran,0.01
+1990,Iraq,4.354
+1991,Iraq,4.207
+1992,Iraq,4.048
+1993,Iraq,3.8810000000000002
+1994,Iraq,3.7089999999999996
+1995,Iraq,3.533
+1996,Iraq,3.3280000000000003
+1997,Iraq,3.089
+1998,Iraq,2.846
+1999,Iraq,2.6260000000000003
+2000,Iraq,2.451
+2001,Iraq,2.276
+2002,Iraq,2.101
+2003,Iraq,1.95
+2004,Iraq,1.845
+2005,Iraq,1.8090000000000002
+2006,Iraq,1.8159999999999998
+2007,Iraq,1.838
+2008,Iraq,1.869
+2009,Iraq,1.902
+2010,Iraq,1.931
+2011,Iraq,1.954
+2012,Iraq,1.9769999999999999
+2013,Iraq,2.001
+2014,Iraq,2.026
+2015,Iraq,2.052
+2016,Iraq,2.0780000000000003
+2017,Iraq,2.104
+1990,Jordan,0.723
+1991,Jordan,0.705
+1992,Jordan,0.695
+1993,Jordan,0.69
+1994,Jordan,0.688
+1995,Jordan,0.688
+1996,Jordan,0.721
+1997,Jordan,0.8059999999999999
+1998,Jordan,0.919
+1999,Jordan,1.033
+2000,Jordan,1.123
+2001,Jordan,1.197
+2002,Jordan,1.2790000000000001
+2003,Jordan,1.355
+2004,Jordan,1.412
+2005,Jordan,1.436
+2006,Jordan,1.429
+2007,Jordan,1.412
+2008,Jordan,1.39
+2009,Jordan,1.371
+2010,Jordan,1.36
+2011,Jordan,1.355
+2012,Jordan,1.3519999999999999
+2013,Jordan,1.349
+2014,Jordan,1.347
+2015,Jordan,1.347
+2016,Jordan,1.347
+2017,Jordan,1.349
+1990,Kuwait,1.244
+1991,Kuwait,1.112
+1992,Kuwait,0.99
+1993,Kuwait,0.878
+1994,Kuwait,0.778
+1995,Kuwait,0.691
+1996,Kuwait,0.602
+1997,Kuwait,0.509
+1998,Kuwait,0.425
+1999,Kuwait,0.364
+2000,Kuwait,0.337
+2001,Kuwait,0.33
+2002,Kuwait,0.325
+2003,Kuwait,0.321
+2004,Kuwait,0.32
+2005,Kuwait,0.319
+2006,Kuwait,0.32299999999999995
+2007,Kuwait,0.33299999999999996
+2008,Kuwait,0.34600000000000003
+2009,Kuwait,0.36
+2010,Kuwait,0.37200000000000005
+2011,Kuwait,0.38299999999999995
+2012,Kuwait,0.39399999999999996
+2013,Kuwait,0.405
+2014,Kuwait,0.41700000000000004
+2015,Kuwait,0.428
+2016,Kuwait,0.441
+2017,Kuwait,0.45299999999999996
+1990,Lebanon,7.096
+1991,Lebanon,7.007000000000001
+1992,Lebanon,6.904
+1993,Lebanon,6.789
+1994,Lebanon,6.662999999999999
+1995,Lebanon,6.5329999999999995
+1996,Lebanon,6.381
+1997,Lebanon,6.1979999999999995
+1998,Lebanon,6.001
+1999,Lebanon,5.809
+2000,Lebanon,5.642
+2001,Lebanon,5.461
+2002,Lebanon,5.265
+2003,Lebanon,5.0889999999999995
+2004,Lebanon,4.967
+2005,Lebanon,4.934
+2006,Lebanon,4.966
+2007,Lebanon,5.041
+2008,Lebanon,5.138999999999999
+2009,Lebanon,5.2379999999999995
+2010,Lebanon,5.319
+2011,Lebanon,5.382000000000001
+2012,Lebanon,5.4479999999999995
+2013,Lebanon,5.517
+2014,Lebanon,5.5889999999999995
+2015,Lebanon,5.662999999999999
+2016,Lebanon,5.7379999999999995
+2017,Lebanon,5.813
+1990,Libya,1.089
+1991,Libya,0.907
+1992,Libya,0.742
+1993,Libya,0.601
+1994,Libya,0.48700000000000004
+1995,Libya,0.406
+1996,Libya,0.33899999999999997
+1997,Libya,0.27699999999999997
+1998,Libya,0.225
+1999,Libya,0.19
+2000,Libya,0.177
+2001,Libya,0.17800000000000002
+2002,Libya,0.182
+2003,Libya,0.188
+2004,Libya,0.195
+2005,Libya,0.20199999999999999
+2006,Libya,0.212
+2007,Libya,0.225
+2008,Libya,0.24
+2009,Libya,0.256
+2010,Libya,0.26899999999999996
+2011,Libya,0.281
+2012,Libya,0.293
+2013,Libya,0.305
+2014,Libya,0.317
+2015,Libya,0.32899999999999996
+2016,Libya,0.34
+2017,Libya,0.35200000000000004
+1990,Morocco,2.215
+1991,Morocco,2.226
+1992,Morocco,2.237
+1993,Morocco,2.247
+1994,Morocco,2.255
+1995,Morocco,2.262
+1996,Morocco,2.2680000000000002
+1997,Morocco,2.275
+1998,Morocco,2.282
+1999,Morocco,2.2880000000000003
+2000,Morocco,2.291
+2001,Morocco,2.294
+2002,Morocco,2.296
+2003,Morocco,2.2969999999999997
+2004,Morocco,2.296
+2005,Morocco,2.291
+2006,Morocco,2.273
+2007,Morocco,2.229
+2008,Morocco,2.174
+2009,Morocco,2.123
+2010,Morocco,2.094
+2011,Morocco,2.0780000000000003
+2012,Morocco,2.063
+2013,Morocco,2.05
+2014,Morocco,2.039
+2015,Morocco,2.03
+2016,Morocco,2.025
+2017,Morocco,2.022
+1990,Palestine,0.716
+1991,Palestine,0.55
+1992,Palestine,0.40299999999999997
+1993,Palestine,0.28600000000000003
+1994,Palestine,0.209
+1995,Palestine,0.182
+1996,Palestine,0.18899999999999997
+1997,Palestine,0.207
+1998,Palestine,0.23199999999999998
+1999,Palestine,0.259
+2000,Palestine,0.284
+2001,Palestine,0.31
+2002,Palestine,0.34299999999999997
+2003,Palestine,0.374
+2004,Palestine,0.397
+2005,Palestine,0.40700000000000003
+2006,Palestine,0.39799999999999996
+2007,Palestine,0.376
+2008,Palestine,0.349
+2009,Palestine,0.324
+2010,Palestine,0.309
+2011,Palestine,0.301
+2012,Palestine,0.293
+2013,Palestine,0.287
+2014,Palestine,0.281
+2015,Palestine,0.27699999999999997
+2016,Palestine,0.275
+2017,Palestine,0.27399999999999997
+1990,Oman,1.3840000000000001
+1991,Oman,1.34
+1992,Oman,1.315
+1993,Oman,1.3019999999999998
+1994,Oman,1.295
+1995,Oman,1.2930000000000001
+1996,Oman,1.315
+1997,Oman,1.3730000000000002
+1998,Oman,1.4480000000000002
+1999,Oman,1.525
+2000,Oman,1.598
+2001,Oman,1.695
+2002,Oman,1.827
+2003,Oman,1.9509999999999998
+2004,Oman,2.0340000000000003
+2005,Oman,2.066
+2006,Oman,2.077
+2007,Oman,2.079
+2008,Oman,2.06
+2009,Oman,2.032
+2010,Oman,2.0269999999999997
+2011,Oman,2.049
+2012,Oman,2.065
+2013,Oman,2.0469999999999997
+2014,Oman,2.017
+2015,Oman,1.9909999999999999
+2016,Oman,1.973
+2017,Oman,1.9480000000000002
+1990,Qatar,3.992
+1991,Qatar,3.7739999999999996
+1992,Qatar,3.5810000000000004
+1993,Qatar,3.418
+1994,Qatar,3.29
+1995,Qatar,3.207
+1996,Qatar,3.1239999999999997
+1997,Qatar,3.045
+1998,Qatar,2.9810000000000003
+1999,Qatar,2.945
+2000,Qatar,2.949
+2001,Qatar,3.0239999999999996
+2002,Qatar,3.2060000000000004
+2003,Qatar,3.4589999999999996
+2004,Qatar,3.7439999999999998
+2005,Qatar,4.018
+2006,Qatar,4.308
+2007,Qatar,4.664
+2008,Qatar,5.029
+2009,Qatar,5.327999999999999
+2010,Qatar,5.481
+2011,Qatar,5.558
+2012,Qatar,5.621
+2013,Qatar,5.681
+2014,Qatar,5.733
+2015,Qatar,5.77
+2016,Qatar,5.7860000000000005
+2017,Qatar,5.7829999999999995
+1990,Saudi Arabia,1.493
+1991,Saudi Arabia,1.402
+1992,Saudi Arabia,1.32
+1993,Saudi Arabia,1.249
+1994,Saudi Arabia,1.192
+1995,Saudi Arabia,1.1520000000000001
+1996,Saudi Arabia,1.119
+1997,Saudi Arabia,1.09
+1998,Saudi Arabia,1.0659999999999998
+1999,Saudi Arabia,1.0490000000000002
+2000,Saudi Arabia,1.042
+2001,Saudi Arabia,1.04
+2002,Saudi Arabia,1.0390000000000001
+2003,Saudi Arabia,1.041
+2004,Saudi Arabia,1.045
+2005,Saudi Arabia,1.05
+2006,Saudi Arabia,1.055
+2007,Saudi Arabia,1.062
+2008,Saudi Arabia,1.071
+2009,Saudi Arabia,1.081
+2010,Saudi Arabia,1.095
+2011,Saudi Arabia,1.112
+2012,Saudi Arabia,1.138
+2013,Saudi Arabia,1.171
+2014,Saudi Arabia,1.21
+2015,Saudi Arabia,1.254
+2016,Saudi Arabia,1.3030000000000002
+2017,Saudi Arabia,1.3559999999999999
+1990,Syria,1.376
+1991,Syria,1.382
+1992,Syria,1.392
+1993,Syria,1.4040000000000001
+1994,Syria,1.4169999999999998
+1995,Syria,1.433
+1996,Syria,1.4509999999999998
+1997,Syria,1.4780000000000002
+1998,Syria,1.5090000000000001
+1999,Syria,1.5390000000000001
+2000,Syria,1.564
+2001,Syria,1.588
+2002,Syria,1.614
+2003,Syria,1.6380000000000001
+2004,Syria,1.656
+2005,Syria,1.663
+2006,Syria,1.662
+2007,Syria,1.656
+2008,Syria,1.646
+2009,Syria,1.6340000000000001
+2010,Syria,1.6219999999999999
+2011,Syria,1.607
+2012,Syria,1.587
+2013,Syria,1.5630000000000002
+2014,Syria,1.534
+2015,Syria,1.5019999999999998
+2016,Syria,1.4680000000000002
+2017,Syria,1.433
+1990,Tunisia,1.7830000000000001
+1991,Tunisia,1.79
+1992,Tunisia,1.7990000000000002
+1993,Tunisia,1.808
+1994,Tunisia,1.818
+1995,Tunisia,1.828
+1996,Tunisia,1.84
+1997,Tunisia,1.859
+1998,Tunisia,1.879
+1999,Tunisia,1.896
+2000,Tunisia,1.9069999999999998
+2001,Tunisia,1.91
+2002,Tunisia,1.911
+2003,Tunisia,1.912
+2004,Tunisia,1.9140000000000001
+2005,Tunisia,1.92
+2006,Tunisia,1.932
+2007,Tunisia,1.952
+2008,Tunisia,1.976
+2009,Tunisia,1.9980000000000002
+2010,Tunisia,2.017
+2011,Tunisia,2.031
+2012,Tunisia,2.0469999999999997
+2013,Tunisia,2.065
+2014,Tunisia,2.085
+2015,Tunisia,2.106
+2016,Tunisia,2.127
+2017,Tunisia,2.149
+1990,Turkey,5.272
+1991,Turkey,5.575
+1992,Turkey,5.865
+1993,Turkey,6.135
+1994,Turkey,6.382000000000001
+1995,Turkey,6.6
+1996,Turkey,6.816
+1997,Turkey,7.042999999999999
+1998,Turkey,7.247000000000001
+1999,Turkey,7.39
+2000,Turkey,7.432
+2001,Turkey,7.414
+2002,Turkey,7.353
+2003,Turkey,7.257999999999999
+2004,Turkey,7.138999999999999
+2005,Turkey,7.004
+2006,Turkey,6.769
+2007,Turkey,6.352
+2008,Turkey,5.891
+2009,Turkey,5.506
+2010,Turkey,5.311
+2011,Turkey,5.206
+2012,Turkey,5.114
+2013,Turkey,5.037
+2014,Turkey,4.978
+2015,Turkey,4.939
+2016,Turkey,4.922
+2017,Turkey,4.93
+1990,United Arab Emirates,9.961
+1991,United Arab Emirates,10.183
+1992,United Arab Emirates,10.392000000000001
+1993,United Arab Emirates,10.583
+1994,United Arab Emirates,10.752
+1995,United Arab Emirates,10.89
+1996,United Arab Emirates,10.991
+1997,United Arab Emirates,11.061
+1998,United Arab Emirates,11.112
+1999,United Arab Emirates,11.157
+2000,United Arab Emirates,11.205
+2001,United Arab Emirates,11.23
+2002,United Arab Emirates,11.232999999999999
+2003,United Arab Emirates,11.242
+2004,United Arab Emirates,11.285
+2005,United Arab Emirates,11.389000000000001
+2006,United Arab Emirates,11.57
+2007,United Arab Emirates,11.863
+2008,United Arab Emirates,12.192
+2009,United Arab Emirates,12.472999999999999
+2010,United Arab Emirates,12.62
+2011,United Arab Emirates,12.694
+2012,United Arab Emirates,12.752
+2013,United Arab Emirates,12.785
+2014,United Arab Emirates,12.789000000000001
+2015,United Arab Emirates,12.773
+2016,United Arab Emirates,12.725
+2017,United Arab Emirates,12.63
+1990,Yemen,1.692
+1991,Yemen,1.639
+1992,Yemen,1.581
+1993,Yemen,1.52
+1994,Yemen,1.456
+1995,Yemen,1.39
+1996,Yemen,1.311
+1997,Yemen,1.22
+1998,Yemen,1.125
+1999,Yemen,1.033
+2000,Yemen,0.9520000000000001
+2001,Yemen,0.867
+2002,Yemen,0.772
+2003,Yemen,0.6809999999999999
+2004,Yemen,0.606
+2005,Yemen,0.5589999999999999
+2006,Yemen,0.529
+2007,Yemen,0.502
+2008,Yemen,0.48
+2009,Yemen,0.466
+2010,Yemen,0.461
+2011,Yemen,0.461
+2012,Yemen,0.462
+2013,Yemen,0.46399999999999997
+2014,Yemen,0.46799999999999997
+2015,Yemen,0.474
+2016,Yemen,0.483
+2017,Yemen,0.496
+1990,Afghanistan,1.2109999999999999
+1991,Afghanistan,1.1320000000000001
+1992,Afghanistan,1.051
+1993,Afghanistan,0.972
+1994,Afghanistan,0.8959999999999999
+1995,Afghanistan,0.821
+1996,Afghanistan,0.732
+1997,Afghanistan,0.63
+1998,Afghanistan,0.53
+1999,Afghanistan,0.45
+2000,Afghanistan,0.40299999999999997
+2001,Afghanistan,0.377
+2002,Afghanistan,0.354
+2003,Afghanistan,0.337
+2004,Afghanistan,0.326
+2005,Afghanistan,0.322
+2006,Afghanistan,0.405
+2007,Afghanistan,0.612
+2008,Afghanistan,0.872
+2009,Afghanistan,1.107
+2010,Afghanistan,1.238
+2011,Afghanistan,1.285
+2012,Afghanistan,1.328
+2013,Afghanistan,1.3659999999999999
+2014,Afghanistan,1.3980000000000001
+2015,Afghanistan,1.423
+2016,Afghanistan,1.44
+2017,Afghanistan,1.449
+1990,Bangladesh,0.20600000000000002
+1991,Bangladesh,0.214
+1992,Bangladesh,0.222
+1993,Bangladesh,0.231
+1994,Bangladesh,0.24
+1995,Bangladesh,0.248
+1996,Bangladesh,0.257
+1997,Bangladesh,0.267
+1998,Bangladesh,0.27699999999999997
+1999,Bangladesh,0.28600000000000003
+2000,Bangladesh,0.295
+2001,Bangladesh,0.303
+2002,Bangladesh,0.312
+2003,Bangladesh,0.321
+2004,Bangladesh,0.327
+2005,Bangladesh,0.332
+2006,Bangladesh,0.33399999999999996
+2007,Bangladesh,0.336
+2008,Bangladesh,0.337
+2009,Bangladesh,0.33899999999999997
+2010,Bangladesh,0.34
+2011,Bangladesh,0.341
+2012,Bangladesh,0.342
+2013,Bangladesh,0.344
+2014,Bangladesh,0.345
+2015,Bangladesh,0.34700000000000003
+2016,Bangladesh,0.348
+2017,Bangladesh,0.35
+1990,Bhutan,4.6160000000000005
+1991,Bhutan,4.7330000000000005
+1992,Bhutan,4.838
+1993,Bhutan,4.9239999999999995
+1994,Bhutan,4.986000000000001
+1995,Bhutan,5.019
+1996,Bhutan,5.0360000000000005
+1997,Bhutan,5.046
+1998,Bhutan,5.0489999999999995
+1999,Bhutan,5.042
+2000,Bhutan,5.026
+2001,Bhutan,4.957
+2002,Bhutan,4.788
+2003,Bhutan,4.569
+2004,Bhutan,4.348
+2005,Bhutan,4.172
+2006,Bhutan,4.015
+2007,Bhutan,3.841
+2008,Bhutan,3.678
+2009,Bhutan,3.55
+2010,Bhutan,3.485
+2011,Bhutan,3.4410000000000003
+2012,Bhutan,3.405
+2013,Bhutan,3.378
+2014,Bhutan,3.362
+2015,Bhutan,3.3560000000000003
+2016,Bhutan,3.363
+2017,Bhutan,3.383
+1990,India,5.474
+1991,India,5.642
+1992,India,5.807
+1993,India,5.965
+1994,India,6.115
+1995,India,6.252000000000001
+1996,India,6.379
+1997,India,6.5120000000000005
+1998,India,6.638999999999999
+1999,India,6.75
+2000,India,6.832999999999999
+2001,India,6.893
+2002,India,6.945
+2003,India,6.997000000000001
+2004,India,7.056
+2005,India,7.129
+2006,India,7.216
+2007,India,7.334
+2008,India,7.465
+2009,India,7.591
+2010,India,7.696000000000001
+2011,India,7.787000000000001
+2012,India,7.8870000000000005
+2013,India,7.992999999999999
+2014,India,8.106
+2015,India,8.226
+2016,India,8.349
+2017,India,8.474
+1990,Nepal,0.924
+1991,Nepal,1.067
+1992,Nepal,1.219
+1993,Nepal,1.3769999999999998
+1994,Nepal,1.538
+1995,Nepal,1.699
+1996,Nepal,1.8659999999999999
+1997,Nepal,2.056
+1998,Nepal,2.26
+1999,Nepal,2.4659999999999997
+2000,Nepal,2.662
+2001,Nepal,2.8560000000000003
+2002,Nepal,3.071
+2003,Nepal,3.278
+2004,Nepal,3.444
+2005,Nepal,3.537
+2006,Nepal,3.5810000000000004
+2007,Nepal,3.613
+2008,Nepal,3.639
+2009,Nepal,3.66
+2010,Nepal,3.681
+2011,Nepal,3.696
+2012,Nepal,3.714
+2013,Nepal,3.733
+2014,Nepal,3.7539999999999996
+2015,Nepal,3.7760000000000002
+2016,Nepal,3.799
+2017,Nepal,3.822
+1990,Pakistan,0.21899999999999997
+1991,Pakistan,0.225
+1992,Pakistan,0.23
+1993,Pakistan,0.23399999999999999
+1994,Pakistan,0.23600000000000002
+1995,Pakistan,0.23800000000000002
+1996,Pakistan,0.23800000000000002
+1997,Pakistan,0.237
+1998,Pakistan,0.237
+1999,Pakistan,0.23600000000000002
+2000,Pakistan,0.23399999999999999
+2001,Pakistan,0.23
+2002,Pakistan,0.222
+2003,Pakistan,0.21100000000000002
+2004,Pakistan,0.198
+2005,Pakistan,0.184
+2006,Pakistan,0.161
+2007,Pakistan,0.128
+2008,Pakistan,0.094
+2009,Pakistan,0.066
+2010,Pakistan,0.053
+2011,Pakistan,0.05
+2012,Pakistan,0.048
+2013,Pakistan,0.046
+2014,Pakistan,0.044000000000000004
+2015,Pakistan,0.043
+2016,Pakistan,0.042
+2017,Pakistan,0.042
+1990,Angola,4.143
+1991,Angola,4.154
+1992,Angola,4.186
+1993,Angola,4.235
+1994,Angola,4.296
+1995,Angola,4.367
+1996,Angola,4.4639999999999995
+1997,Angola,4.61
+1998,Angola,4.795
+1999,Angola,5.0089999999999995
+2000,Angola,5.242999999999999
+2001,Angola,5.532
+2002,Angola,5.928999999999999
+2003,Angola,6.402
+2004,Angola,6.912000000000001
+2005,Angola,7.414
+2006,Angola,7.94
+2007,Angola,8.587
+2008,Angola,9.255
+2009,Angola,9.814
+2010,Angola,10.119
+2011,Angola,10.218
+2012,Angola,10.31
+2013,Angola,10.392000000000001
+2014,Angola,10.460999999999999
+2015,Angola,10.515
+2016,Angola,10.552999999999999
+2017,Angola,10.573
+1990,Central African Republic,14.37
+1991,Central African Republic,14.037
+1992,Central African Republic,13.712
+1993,Central African Republic,13.394
+1994,Central African Republic,13.085
+1995,Central African Republic,12.786
+1996,Central African Republic,12.439
+1997,Central African Republic,12.077
+1998,Central African Republic,11.732999999999999
+1999,Central African Republic,11.437999999999999
+2000,Central African Republic,11.220999999999998
+2001,Central African Republic,11.015
+2002,Central African Republic,10.82
+2003,Central African Republic,10.659
+2004,Central African Republic,10.556
+2005,Central African Republic,10.533
+2006,Central African Republic,10.555
+2007,Central African Republic,10.610999999999999
+2008,Central African Republic,10.683
+2009,Central African Republic,10.751
+2010,Central African Republic,10.795
+2011,Central African Republic,10.802999999999999
+2012,Central African Republic,10.808
+2013,Central African Republic,10.806
+2014,Central African Republic,10.798
+2015,Central African Republic,10.785
+2016,Central African Republic,10.767000000000001
+2017,Central African Republic,10.742
+1990,Congo,12.594000000000001
+1991,Congo,11.89
+1992,Congo,11.284
+1993,Congo,10.795
+1994,Congo,10.442
+1995,Congo,10.244000000000002
+1996,Congo,10.101
+1997,Congo,9.98
+1998,Congo,9.887
+1999,Congo,9.834
+2000,Congo,9.824
+2001,Congo,9.842
+2002,Congo,9.884
+2003,Congo,9.942
+2004,Congo,10.006
+2005,Congo,10.068999999999999
+2006,Congo,10.122
+2007,Congo,10.187000000000001
+2008,Congo,10.262
+2009,Congo,10.344000000000001
+2010,Congo,10.433
+2011,Congo,10.514000000000001
+2012,Congo,10.612
+2013,Congo,10.725999999999999
+2014,Congo,10.855
+2015,Congo,10.998
+2016,Congo,11.155
+2017,Congo,11.325999999999999
+1990,Democratic Republic of the Congo,6.567
+1991,Democratic Republic of the Congo,6.45
+1992,Democratic Republic of the Congo,6.348
+1993,Democratic Republic of the Congo,6.268
+1994,Democratic Republic of the Congo,6.216
+1995,Democratic Republic of the Congo,6.195
+1996,Democratic Republic of the Congo,6.199
+1997,Democratic Republic of the Congo,6.215
+1998,Democratic Republic of the Congo,6.236000000000001
+1999,Democratic Republic of the Congo,6.254
+2000,Democratic Republic of the Congo,6.2589999999999995
+2001,Democratic Republic of the Congo,6.2010000000000005
+2002,Democratic Republic of the Congo,6.077000000000001
+2003,Democratic Republic of the Congo,5.934
+2004,Democratic Republic of the Congo,5.818
+2005,Democratic Republic of the Congo,5.775
+2006,Democratic Republic of the Congo,5.859
+2007,Democratic Republic of the Congo,6.075
+2008,Democratic Republic of the Congo,6.358
+2009,Democratic Republic of the Congo,6.643
+2010,Democratic Republic of the Congo,6.852
+2011,Democratic Republic of the Congo,6.986000000000001
+2012,Democratic Republic of the Congo,7.1160000000000005
+2013,Democratic Republic of the Congo,7.239
+2014,Democratic Republic of the Congo,7.352
+2015,Democratic Republic of the Congo,7.4510000000000005
+2016,Democratic Republic of the Congo,7.535
+2017,Democratic Republic of the Congo,7.598
+1990,Equatorial Guinea,8.766
+1991,Equatorial Guinea,8.554
+1992,Equatorial Guinea,8.427999999999999
+1993,Equatorial Guinea,8.366
+1994,Equatorial Guinea,8.349
+1995,Equatorial Guinea,8.357000000000001
+1996,Equatorial Guinea,8.443
+1997,Equatorial Guinea,8.692
+1998,Equatorial Guinea,9.067
+1999,Equatorial Guinea,9.536
+2000,Equatorial Guinea,10.06
+2001,Equatorial Guinea,10.769
+2002,Equatorial Guinea,11.913
+2003,Equatorial Guinea,13.288
+2004,Equatorial Guinea,14.626
+2005,Equatorial Guinea,15.583
+2006,Equatorial Guinea,16.180999999999997
+2007,Equatorial Guinea,16.73
+2008,Equatorial Guinea,17.204
+2009,Equatorial Guinea,17.578
+2010,Equatorial Guinea,17.825
+2011,Equatorial Guinea,18.012999999999998
+2012,Equatorial Guinea,18.195
+2013,Equatorial Guinea,18.366
+2014,Equatorial Guinea,18.521
+2015,Equatorial Guinea,18.655
+2016,Equatorial Guinea,18.767
+2017,Equatorial Guinea,18.851
+1990,Gabon,18.532
+1991,Gabon,17.141
+1992,Gabon,15.963
+1993,Gabon,15.014000000000001
+1994,Gabon,14.312000000000001
+1995,Gabon,13.886
+1996,Gabon,13.503
+1997,Gabon,13.181
+1998,Gabon,12.925
+1999,Gabon,12.739
+2000,Gabon,12.628
+2001,Gabon,12.533
+2002,Gabon,12.450999999999999
+2003,Gabon,12.388
+2004,Gabon,12.35
+2005,Gabon,12.344000000000001
+2006,Gabon,12.363
+2007,Gabon,12.43
+2008,Gabon,12.525
+2009,Gabon,12.628
+2010,Gabon,12.719000000000001
+2011,Gabon,12.783
+2012,Gabon,12.860999999999999
+2013,Gabon,12.953
+2014,Gabon,13.057
+2015,Gabon,13.173
+2016,Gabon,13.302
+2017,Gabon,13.44
+1990,Burundi,22.261999999999997
+1991,Burundi,22.397
+1992,Burundi,22.495
+1993,Burundi,22.561999999999998
+1994,Burundi,22.598000000000003
+1995,Burundi,22.613000000000003
+1996,Burundi,22.564
+1997,Burundi,22.430999999999997
+1998,Burundi,22.263
+1999,Burundi,22.113000000000003
+2000,Burundi,22.028000000000002
+2001,Burundi,21.973000000000003
+2002,Burundi,21.926
+2003,Burundi,21.884
+2004,Burundi,21.849
+2005,Burundi,21.819000000000003
+2006,Burundi,21.785
+2007,Burundi,21.745
+2008,Burundi,21.695999999999998
+2009,Burundi,21.636
+2010,Burundi,21.568
+2011,Burundi,21.471999999999998
+2012,Burundi,21.348000000000003
+2013,Burundi,21.198
+2014,Burundi,21.026
+2015,Burundi,20.837
+2016,Burundi,20.631999999999998
+2017,Burundi,20.415
+1990,Comoros,1.053
+1991,Comoros,1.016
+1992,Comoros,0.982
+1993,Comoros,0.955
+1994,Comoros,0.9359999999999999
+1995,Comoros,0.929
+1996,Comoros,0.9279999999999999
+1997,Comoros,0.9279999999999999
+1998,Comoros,0.929
+1999,Comoros,0.932
+2000,Comoros,0.9359999999999999
+2001,Comoros,0.96
+2002,Comoros,1.011
+2003,Comoros,1.072
+2004,Comoros,1.124
+2005,Comoros,1.147
+2006,Comoros,1.14
+2007,Comoros,1.119
+2008,Comoros,1.093
+2009,Comoros,1.073
+2010,Comoros,1.0659999999999998
+2011,Comoros,1.069
+2012,Comoros,1.075
+2013,Comoros,1.084
+2014,Comoros,1.097
+2015,Comoros,1.114
+2016,Comoros,1.136
+2017,Comoros,1.165
+1990,Djibouti,3.465
+1991,Djibouti,3.167
+1992,Djibouti,2.93
+1993,Djibouti,2.7560000000000002
+1994,Djibouti,2.6519999999999997
+1995,Djibouti,2.6210000000000004
+1996,Djibouti,2.682
+1997,Djibouti,2.8280000000000003
+1998,Djibouti,3.01
+1999,Djibouti,3.181
+2000,Djibouti,3.287
+2001,Djibouti,3.343
+2002,Djibouti,3.3930000000000002
+2003,Djibouti,3.435
+2004,Djibouti,3.464
+2005,Djibouti,3.477
+2006,Djibouti,3.457
+2007,Djibouti,3.406
+2008,Djibouti,3.341
+2009,Djibouti,3.282
+2010,Djibouti,3.2489999999999997
+2011,Djibouti,3.234
+2012,Djibouti,3.22
+2013,Djibouti,3.2089999999999996
+2014,Djibouti,3.201
+2015,Djibouti,3.196
+2016,Djibouti,3.194
+2017,Djibouti,3.197
+1990,Eritrea,3.821
+1991,Eritrea,4.559
+1992,Eritrea,5.276
+1993,Eritrea,5.897
+1994,Eritrea,6.343
+1995,Eritrea,6.528
+1996,Eritrea,6.537000000000001
+1997,Eritrea,6.534
+1998,Eritrea,6.524
+1999,Eritrea,6.502999999999999
+2000,Eritrea,6.478
+2001,Eritrea,6.402
+2002,Eritrea,6.257999999999999
+2003,Eritrea,6.08
+2004,Eritrea,5.899
+2005,Eritrea,5.747000000000001
+2006,Eritrea,5.593999999999999
+2007,Eritrea,5.426
+2008,Eritrea,5.272
+2009,Eritrea,5.162999999999999
+2010,Eritrea,5.129
+2011,Eritrea,5.138999999999999
+2012,Eritrea,5.157
+2013,Eritrea,5.186
+2014,Eritrea,5.228
+2015,Eritrea,5.287999999999999
+2016,Eritrea,5.367999999999999
+2017,Eritrea,5.47
+1990,Ethiopia,5.63
+1991,Ethiopia,5.642
+1992,Ethiopia,5.666
+1993,Ethiopia,5.7
+1994,Ethiopia,5.7410000000000005
+1995,Ethiopia,5.787999999999999
+1996,Ethiopia,5.861000000000001
+1997,Ethiopia,5.984
+1998,Ethiopia,6.132999999999999
+1999,Ethiopia,6.2829999999999995
+2000,Ethiopia,6.41
+2001,Ethiopia,6.513999999999999
+2002,Ethiopia,6.627000000000001
+2003,Ethiopia,6.733
+2004,Ethiopia,6.819
+2005,Ethiopia,6.867999999999999
+2006,Ethiopia,6.877000000000001
+2007,Ethiopia,6.876
+2008,Ethiopia,6.872000000000001
+2009,Ethiopia,6.87
+2010,Ethiopia,6.879
+2011,Ethiopia,6.888
+2012,Ethiopia,6.9079999999999995
+2013,Ethiopia,6.937
+2014,Ethiopia,6.974
+2015,Ethiopia,7.021
+2016,Ethiopia,7.075
+2017,Ethiopia,7.138
+1990,Kenya,15.561
+1991,Kenya,15.283
+1992,Kenya,15.022
+1993,Kenya,14.78
+1994,Kenya,14.561
+1995,Kenya,14.369000000000002
+1996,Kenya,14.163
+1997,Kenya,13.950999999999999
+1998,Kenya,13.754000000000001
+1999,Kenya,13.593
+2000,Kenya,13.485999999999999
+2001,Kenya,13.395
+2002,Kenya,13.315
+2003,Kenya,13.249
+2004,Kenya,13.200999999999999
+2005,Kenya,13.172
+2006,Kenya,13.12
+2007,Kenya,13.074000000000002
+2008,Kenya,13.036
+2009,Kenya,13.012
+2010,Kenya,13.008
+2011,Kenya,12.988
+2012,Kenya,12.974
+2013,Kenya,12.967
+2014,Kenya,12.967
+2015,Kenya,12.975999999999999
+2016,Kenya,12.995
+2017,Kenya,13.024000000000001
+1990,Madagascar,8.294
+1991,Madagascar,8.118
+1992,Madagascar,7.936
+1993,Madagascar,7.747000000000001
+1994,Madagascar,7.553999999999999
+1995,Madagascar,7.36
+1996,Madagascar,7.141
+1997,Madagascar,6.9079999999999995
+1998,Madagascar,6.672000000000001
+1999,Madagascar,6.442
+2000,Madagascar,6.227
+2001,Madagascar,5.98
+2002,Madagascar,5.707000000000001
+2003,Madagascar,5.456
+2004,Madagascar,5.275
+2005,Madagascar,5.207999999999999
+2006,Madagascar,5.221
+2007,Madagascar,5.26
+2008,Madagascar,5.313
+2009,Madagascar,5.369
+2010,Madagascar,5.416
+2011,Madagascar,5.452000000000001
+2012,Madagascar,5.49
+2013,Madagascar,5.529
+2014,Madagascar,5.57
+2015,Madagascar,5.612
+2016,Madagascar,5.656000000000001
+2017,Madagascar,5.7
+1990,Malawi,6.007000000000001
+1991,Malawi,5.98
+1992,Malawi,5.952999999999999
+1993,Malawi,5.928999999999999
+1994,Malawi,5.905
+1995,Malawi,5.881
+1996,Malawi,5.841
+1997,Malawi,5.791
+1998,Malawi,5.742999999999999
+1999,Malawi,5.707999999999999
+2000,Malawi,5.696000000000001
+2001,Malawi,5.695
+2002,Malawi,5.7010000000000005
+2003,Malawi,5.7139999999999995
+2004,Malawi,5.734
+2005,Malawi,5.757999999999999
+2006,Malawi,5.83
+2007,Malawi,5.985
+2008,Malawi,6.172000000000001
+2009,Malawi,6.336
+2010,Malawi,6.42
+2011,Malawi,6.431
+2012,Malawi,6.439
+2013,Malawi,6.442
+2014,Malawi,6.438
+2015,Malawi,6.426
+2016,Malawi,6.402
+2017,Malawi,6.367000000000001
+1990,Mauritius,10.045
+1991,Mauritius,10.192
+1992,Mauritius,10.335999999999999
+1993,Mauritius,10.470999999999998
+1994,Mauritius,10.593
+1995,Mauritius,10.700999999999999
+1996,Mauritius,10.793
+1997,Mauritius,10.886
+1998,Mauritius,10.972999999999999
+1999,Mauritius,11.048
+2000,Mauritius,11.105
+2001,Mauritius,11.087
+2002,Mauritius,10.988
+2003,Mauritius,10.849
+2004,Mauritius,10.714
+2005,Mauritius,10.617
+2006,Mauritius,10.514000000000001
+2007,Mauritius,10.399000000000001
+2008,Mauritius,10.302999999999999
+2009,Mauritius,10.257
+2010,Mauritius,10.29
+2011,Mauritius,10.365
+2012,Mauritius,10.465
+2013,Mauritius,10.591
+2014,Mauritius,10.744000000000002
+2015,Mauritius,10.925
+2016,Mauritius,11.136
+2017,Mauritius,11.38
+1990,Mozambique,3.85
+1991,Mozambique,4.01
+1992,Mozambique,4.195
+1993,Mozambique,4.402
+1994,Mozambique,4.629
+1995,Mozambique,4.874
+1996,Mozambique,5.1579999999999995
+1997,Mozambique,5.505
+1998,Mozambique,5.877000000000001
+1999,Mozambique,6.236000000000001
+2000,Mozambique,6.537999999999999
+2001,Mozambique,6.803
+2002,Mozambique,7.077000000000001
+2003,Mozambique,7.3260000000000005
+2004,Mozambique,7.513
+2005,Mozambique,7.604
+2006,Mozambique,7.617000000000001
+2007,Mozambique,7.615
+2008,Mozambique,7.608
+2009,Mozambique,7.604
+2010,Mozambique,7.614
+2011,Mozambique,7.63
+2012,Mozambique,7.656000000000001
+2013,Mozambique,7.691
+2014,Mozambique,7.735
+2015,Mozambique,7.787999999999999
+2016,Mozambique,7.849
+2017,Mozambique,7.919
+1990,Rwanda,20.128
+1991,Rwanda,20.143
+1992,Rwanda,20.158
+1993,Rwanda,20.182000000000002
+1994,Rwanda,20.025
+1995,Rwanda,19.887
+1996,Rwanda,19.848
+1997,Rwanda,19.779
+1998,Rwanda,19.694000000000003
+1999,Rwanda,19.612000000000002
+2000,Rwanda,19.547
+2001,Rwanda,19.465
+2002,Rwanda,19.382
+2003,Rwanda,19.294
+2004,Rwanda,19.195
+2005,Rwanda,19.08
+2006,Rwanda,18.847
+2007,Rwanda,18.495
+2008,Rwanda,18.093
+2009,Rwanda,17.707
+2010,Rwanda,17.399
+2011,Rwanda,17.104
+2012,Rwanda,16.827
+2013,Rwanda,16.567999999999998
+2014,Rwanda,16.331
+2015,Rwanda,16.116
+2016,Rwanda,15.924000000000001
+2017,Rwanda,15.755
+1990,Seychelles,8.03
+1991,Seychelles,8.341000000000001
+1992,Seychelles,8.683
+1993,Seychelles,9.055
+1994,Seychelles,9.453
+1995,Seychelles,9.87
+1996,Seychelles,10.321
+1997,Seychelles,10.873
+1998,Seychelles,11.46
+1999,Seychelles,11.995
+2000,Seychelles,12.385
+2001,Seychelles,12.687999999999999
+2002,Seychelles,12.987
+2003,Seychelles,13.251
+2004,Seychelles,13.440999999999999
+2005,Seychelles,13.522
+2006,Seychelles,13.395
+2007,Seychelles,12.979000000000001
+2008,Seychelles,12.46
+2009,Seychelles,12.005999999999998
+2010,Seychelles,11.777000000000001
+2011,Seychelles,11.648
+2012,Seychelles,11.536
+2013,Seychelles,11.447000000000001
+2014,Seychelles,11.384
+2015,Seychelles,11.352
+2016,Seychelles,11.356
+2017,Seychelles,11.401
+1990,Somalia,1.105
+1991,Somalia,1.139
+1992,Somalia,1.179
+1993,Somalia,1.226
+1994,Somalia,1.2790000000000001
+1995,Somalia,1.337
+1996,Somalia,1.4080000000000001
+1997,Somalia,1.4969999999999999
+1998,Somalia,1.5919999999999999
+1999,Somalia,1.679
+2000,Somalia,1.743
+2001,Somalia,1.788
+2002,Somalia,1.83
+2003,Somalia,1.867
+2004,Somalia,1.896
+2005,Somalia,1.9140000000000001
+2006,Somalia,1.9240000000000002
+2007,Somalia,1.932
+2008,Somalia,1.939
+2009,Somalia,1.946
+2010,Somalia,1.953
+2011,Somalia,1.9609999999999999
+2012,Somalia,1.9709999999999999
+2013,Somalia,1.983
+2014,Somalia,1.996
+2015,Somalia,2.011
+2016,Somalia,2.0269999999999997
+2017,Somalia,2.044
+1990,Tanzania,17.31
+1991,Tanzania,17.074
+1992,Tanzania,16.857
+1993,Tanzania,16.663
+1994,Tanzania,16.491
+1995,Tanzania,16.346
+1996,Tanzania,16.18
+1997,Tanzania,16.022000000000002
+1998,Tanzania,15.878
+1999,Tanzania,15.752
+2000,Tanzania,15.651
+2001,Tanzania,15.552999999999999
+2002,Tanzania,15.479000000000001
+2003,Tanzania,15.405999999999999
+2004,Tanzania,15.314
+2005,Tanzania,15.182
+2006,Tanzania,14.927999999999999
+2007,Tanzania,14.517999999999999
+2008,Tanzania,14.034
+2009,Tanzania,13.556
+2010,Tanzania,13.154000000000002
+2011,Tanzania,12.763
+2012,Tanzania,12.385
+2013,Tanzania,12.020999999999999
+2014,Tanzania,11.673
+2015,Tanzania,11.341
+2016,Tanzania,11.027999999999999
+2017,Tanzania,10.735
+1990,Uganda,15.530999999999999
+1991,Uganda,15.509
+1992,Uganda,15.51
+1993,Uganda,15.533
+1994,Uganda,15.574000000000002
+1995,Uganda,15.629000000000001
+1996,Uganda,15.717
+1997,Uganda,15.894
+1998,Uganda,16.101
+1999,Uganda,16.274
+2000,Uganda,16.351
+2001,Uganda,16.305
+2002,Uganda,16.192
+2003,Uganda,16.034000000000002
+2004,Uganda,15.855
+2005,Uganda,15.675
+2006,Uganda,15.429
+2007,Uganda,15.118
+2008,Uganda,14.774000000000001
+2009,Uganda,14.427999999999999
+2010,Uganda,14.107000000000001
+2011,Uganda,13.762
+2012,Uganda,13.415
+2013,Uganda,13.065999999999999
+2014,Uganda,12.718
+2015,Uganda,12.37
+2016,Uganda,12.025
+2017,Uganda,11.683
+1990,Zambia,11.272
+1991,Zambia,11.234000000000002
+1992,Zambia,11.179
+1993,Zambia,11.11
+1994,Zambia,11.030999999999999
+1995,Zambia,10.945
+1996,Zambia,10.825
+1997,Zambia,10.659
+1998,Zambia,10.467
+1999,Zambia,10.27
+2000,Zambia,10.089
+2001,Zambia,9.889
+2002,Zambia,9.668
+2003,Zambia,9.451
+2004,Zambia,9.266
+2005,Zambia,9.135
+2006,Zambia,9.024
+2007,Zambia,8.929
+2008,Zambia,8.851
+2009,Zambia,8.793
+2010,Zambia,8.756
+2011,Zambia,8.711
+2012,Zambia,8.673
+2013,Zambia,8.641
+2014,Zambia,8.616
+2015,Zambia,8.597999999999999
+2016,Zambia,8.588
+2017,Zambia,8.589
+1990,Botswana,12.343
+1991,Botswana,12.427
+1992,Botswana,12.549000000000001
+1993,Botswana,12.702
+1994,Botswana,12.879000000000001
+1995,Botswana,13.075999999999999
+1996,Botswana,13.272
+1997,Botswana,13.542
+1998,Botswana,13.86
+1999,Botswana,14.203
+2000,Botswana,14.544
+2001,Botswana,14.933
+2002,Botswana,15.405999999999999
+2003,Botswana,15.876
+2004,Botswana,16.250999999999998
+2005,Botswana,16.434
+2006,Botswana,16.512
+2007,Botswana,16.585
+2008,Botswana,16.65
+2009,Botswana,16.706
+2010,Botswana,16.747
+2011,Botswana,16.747
+2012,Botswana,16.714000000000002
+2013,Botswana,16.651
+2014,Botswana,16.561
+2015,Botswana,16.448
+2016,Botswana,16.315
+2017,Botswana,16.166
+1990,Lesotho,17.707
+1991,Lesotho,17.711
+1992,Lesotho,17.747
+1993,Lesotho,17.809
+1994,Lesotho,17.892
+1995,Lesotho,17.99
+1996,Lesotho,18.123
+1997,Lesotho,18.355
+1998,Lesotho,18.633
+1999,Lesotho,18.899
+2000,Lesotho,19.095
+2001,Lesotho,19.239
+2002,Lesotho,19.375999999999998
+2003,Lesotho,19.503
+2004,Lesotho,19.615
+2005,Lesotho,19.705
+2006,Lesotho,19.78
+2007,Lesotho,19.862000000000002
+2008,Lesotho,19.944000000000003
+2009,Lesotho,20.016
+2010,Lesotho,20.067999999999998
+2011,Lesotho,20.083
+2012,Lesotho,20.088
+2013,Lesotho,20.084
+2014,Lesotho,20.07
+2015,Lesotho,20.046
+2016,Lesotho,20.012999999999998
+2017,Lesotho,19.969
+1990,Namibia,2.17
+1991,Namibia,2.7060000000000004
+1992,Namibia,3.303
+1993,Namibia,3.948
+1994,Namibia,4.631
+1995,Namibia,5.3420000000000005
+1996,Namibia,6.11
+1997,Namibia,7.05
+1998,Namibia,8.169
+1999,Namibia,9.449
+2000,Namibia,10.809000000000001
+2001,Namibia,12.214
+2002,Namibia,14.032
+2003,Namibia,16.051
+2004,Namibia,17.926
+2005,Namibia,19.187
+2006,Namibia,19.915
+2007,Namibia,20.58
+2008,Namibia,21.123
+2009,Namibia,21.480999999999998
+2010,Namibia,21.592
+2011,Namibia,21.62
+2012,Namibia,21.635
+2013,Namibia,21.623
+2014,Namibia,21.569000000000003
+2015,Namibia,21.46
+2016,Namibia,21.284000000000002
+2017,Namibia,21.03
+1990,South Africa,18.278
+1991,South Africa,18.267
+1992,South Africa,18.248
+1993,South Africa,18.223
+1994,South Africa,18.195
+1995,South Africa,18.166
+1996,South Africa,18.097
+1997,South Africa,17.977999999999998
+1998,South Africa,17.852999999999998
+1999,South Africa,17.764
+2000,South Africa,17.754
+2001,South Africa,17.776
+2002,South Africa,17.846
+2003,South Africa,17.947
+2004,South Africa,18.058
+2005,South Africa,18.162
+2006,South Africa,18.256
+2007,South Africa,18.368
+2008,South Africa,18.491
+2009,South Africa,18.617
+2010,South Africa,18.736
+2011,South Africa,18.85
+2012,South Africa,18.971
+2013,South Africa,19.1
+2014,South Africa,19.236
+2015,South Africa,19.38
+2016,South Africa,19.535
+2017,South Africa,19.699
+1990,Swaziland,10.815999999999999
+1991,Swaziland,10.540999999999999
+1992,Swaziland,10.359000000000002
+1993,Swaziland,10.254000000000001
+1994,Swaziland,10.213
+1995,Swaziland,10.222000000000001
+1996,Swaziland,10.325999999999999
+1997,Swaziland,10.623
+1998,Swaziland,10.994000000000002
+1999,Swaziland,11.312999999999999
+2000,Swaziland,11.447000000000001
+2001,Swaziland,11.45
+2002,Swaziland,11.414000000000001
+2003,Swaziland,11.344000000000001
+2004,Swaziland,11.249
+2005,Swaziland,11.135
+2006,Swaziland,10.845
+2007,Swaziland,10.286
+2008,Swaziland,9.652000000000001
+2009,Swaziland,9.113999999999999
+2010,Swaziland,8.828
+2011,Swaziland,8.649
+2012,Swaziland,8.488
+2013,Swaziland,8.349
+2014,Swaziland,8.237
+2015,Swaziland,8.152999999999999
+2016,Swaziland,8.104
+2017,Swaziland,8.095
+1990,Zimbabwe,10.25
+1991,Zimbabwe,9.859
+1992,Zimbabwe,9.517999999999999
+1993,Zimbabwe,9.243
+1994,Zimbabwe,9.052
+1995,Zimbabwe,8.963
+1996,Zimbabwe,8.899
+1997,Zimbabwe,8.85
+1998,Zimbabwe,8.817
+1999,Zimbabwe,8.8
+2000,Zimbabwe,8.801
+2001,Zimbabwe,8.836
+2002,Zimbabwe,8.933
+2003,Zimbabwe,9.052
+2004,Zimbabwe,9.155
+2005,Zimbabwe,9.199
+2006,Zimbabwe,9.164
+2007,Zimbabwe,9.084
+2008,Zimbabwe,8.993
+2009,Zimbabwe,8.92
+2010,Zimbabwe,8.894
+2011,Zimbabwe,8.872
+2012,Zimbabwe,8.863
+2013,Zimbabwe,8.871
+2014,Zimbabwe,8.894
+2015,Zimbabwe,8.935
+2016,Zimbabwe,8.994
+2017,Zimbabwe,9.076
+1990,Benin,5.581
+1991,Benin,5.522
+1992,Benin,5.484
+1993,Benin,5.468
+1994,Benin,5.47
+1995,Benin,5.4910000000000005
+1996,Benin,5.553
+1997,Benin,5.665
+1998,Benin,5.796
+1999,Benin,5.912000000000001
+2000,Benin,5.977
+2001,Benin,5.999
+2002,Benin,6.017
+2003,Benin,6.031000000000001
+2004,Benin,6.042999999999999
+2005,Benin,6.056
+2006,Benin,6.065
+2007,Benin,6.077000000000001
+2008,Benin,6.0920000000000005
+2009,Benin,6.109
+2010,Benin,6.127999999999999
+2011,Benin,6.145
+2012,Benin,6.167999999999999
+2013,Benin,6.196000000000001
+2014,Benin,6.229
+2015,Benin,6.266
+2016,Benin,6.308
+2017,Benin,6.353
+1990,Burkina Faso,13.967
+1991,Burkina Faso,14.279000000000002
+1992,Burkina Faso,14.568
+1993,Burkina Faso,14.814
+1994,Burkina Faso,15.0
+1995,Burkina Faso,15.107999999999999
+1996,Burkina Faso,15.16
+1997,Burkina Faso,15.196
+1998,Burkina Faso,15.22
+1999,Burkina Faso,15.235
+2000,Burkina Faso,15.247
+2001,Burkina Faso,15.241
+2002,Burkina Faso,15.232000000000001
+2003,Burkina Faso,15.216
+2004,Burkina Faso,15.190999999999999
+2005,Burkina Faso,15.152999999999999
+2006,Burkina Faso,15.015999999999998
+2007,Burkina Faso,14.744000000000002
+2008,Burkina Faso,14.408
+2009,Burkina Faso,14.077
+2010,Burkina Faso,13.812000000000001
+2011,Burkina Faso,13.557
+2012,Burkina Faso,13.312999999999999
+2013,Burkina Faso,13.08
+2014,Burkina Faso,12.857999999999999
+2015,Burkina Faso,12.65
+2016,Burkina Faso,12.456
+2017,Burkina Faso,12.277999999999999
+1990,Cameroon,13.322000000000001
+1991,Cameroon,12.722000000000001
+1992,Cameroon,12.238
+1993,Cameroon,11.888
+1994,Cameroon,11.693
+1995,Cameroon,11.675
+1996,Cameroon,11.715
+1997,Cameroon,11.839
+1998,Cameroon,12.017000000000001
+1999,Cameroon,12.222000000000001
+2000,Cameroon,12.424000000000001
+2001,Cameroon,12.658
+2002,Cameroon,13.001
+2003,Cameroon,13.369000000000002
+2004,Cameroon,13.674000000000001
+2005,Cameroon,13.822000000000001
+2006,Cameroon,13.882
+2007,Cameroon,13.939
+2008,Cameroon,13.989
+2009,Cameroon,14.026
+2010,Cameroon,14.047
+2011,Cameroon,14.039000000000001
+2012,Cameroon,14.005
+2013,Cameroon,13.945
+2014,Cameroon,13.863
+2015,Cameroon,13.76
+2016,Cameroon,13.64
+2017,Cameroon,13.505
+1990,Cape Verde,8.74
+1991,Cape Verde,9.088
+1992,Cape Verde,9.417
+1993,Cape Verde,9.718
+1994,Cape Verde,9.978
+1995,Cape Verde,10.187000000000001
+1996,Cape Verde,10.362
+1997,Cape Verde,10.513
+1998,Cape Verde,10.655999999999999
+1999,Cape Verde,10.806
+2000,Cape Verde,10.977
+2001,Cape Verde,11.202
+2002,Cape Verde,11.504000000000001
+2003,Cape Verde,11.819
+2004,Cape Verde,12.082
+2005,Cape Verde,12.224
+2006,Cape Verde,12.265999999999998
+2007,Cape Verde,12.241
+2008,Cape Verde,12.183
+2009,Cape Verde,12.123
+2010,Cape Verde,12.091
+2011,Cape Verde,12.057
+2012,Cape Verde,12.019
+2013,Cape Verde,11.978
+2014,Cape Verde,11.936
+2015,Cape Verde,11.892999999999999
+2016,Cape Verde,11.850999999999999
+2017,Cape Verde,11.812000000000001
+1990,Chad,5.11
+1991,Chad,5.188
+1992,Chad,5.27
+1993,Chad,5.354
+1994,Chad,5.439
+1995,Chad,5.524
+1996,Chad,5.608
+1997,Chad,5.7010000000000005
+1998,Chad,5.7989999999999995
+1999,Chad,5.897
+2000,Chad,5.99
+2001,Chad,6.082000000000001
+2002,Chad,6.186
+2003,Chad,6.29
+2004,Chad,6.382999999999999
+2005,Chad,6.452999999999999
+2006,Chad,6.502999999999999
+2007,Chad,6.551
+2008,Chad,6.595
+2009,Chad,6.6339999999999995
+2010,Chad,6.667999999999999
+2011,Chad,6.69
+2012,Chad,6.712000000000001
+2013,Chad,6.735
+2014,Chad,6.757000000000001
+2015,Chad,6.779
+2016,Chad,6.801
+2017,Chad,6.8229999999999995
+1990,Cote d'Ivoire,9.072000000000001
+1991,Cote d'Ivoire,9.23
+1992,Cote d'Ivoire,9.385
+1993,Cote d'Ivoire,9.538
+1994,Cote d'Ivoire,9.687000000000001
+1995,Cote d'Ivoire,9.831
+1996,Cote d'Ivoire,9.978
+1997,Cote d'Ivoire,10.146
+1998,Cote d'Ivoire,10.307
+1999,Cote d'Ivoire,10.434000000000001
+2000,Cote d'Ivoire,10.495999999999999
+2001,Cote d'Ivoire,10.51
+2002,Cote d'Ivoire,10.52
+2003,Cote d'Ivoire,10.524000000000001
+2004,Cote d'Ivoire,10.520999999999999
+2005,Cote d'Ivoire,10.508
+2006,Cote d'Ivoire,10.377
+2007,Cote d'Ivoire,10.083
+2008,Cote d'Ivoire,9.717
+2009,Cote d'Ivoire,9.365
+2010,Cote d'Ivoire,9.104
+2011,Cote d'Ivoire,8.887
+2012,Cote d'Ivoire,8.682
+2013,Cote d'Ivoire,8.492
+2014,Cote d'Ivoire,8.318999999999999
+2015,Cote d'Ivoire,8.165
+2016,Cote d'Ivoire,8.032
+2017,Cote d'Ivoire,7.92
+1990,The Gambia,4.38
+1991,The Gambia,4.388
+1992,The Gambia,4.412
+1993,The Gambia,4.449
+1994,The Gambia,4.496
+1995,The Gambia,4.5489999999999995
+1996,The Gambia,4.638
+1997,The Gambia,4.793
+1998,The Gambia,4.985
+1999,The Gambia,5.183
+2000,The Gambia,5.352
+2001,The Gambia,5.506
+2002,The Gambia,5.678999999999999
+2003,The Gambia,5.84
+2004,The Gambia,5.957999999999999
+2005,The Gambia,6.001
+2006,The Gambia,5.9239999999999995
+2007,The Gambia,5.734
+2008,The Gambia,5.489
+2009,The Gambia,5.242999999999999
+2010,The Gambia,5.045
+2011,The Gambia,4.872
+2012,The Gambia,4.703
+2013,The Gambia,4.537
+2014,The Gambia,4.376
+2015,The Gambia,4.22
+2016,The Gambia,4.07
+2017,The Gambia,3.927
+1990,Ghana,15.360999999999999
+1991,Ghana,15.337
+1992,Ghana,15.29
+1993,Ghana,15.222000000000001
+1994,Ghana,15.14
+1995,Ghana,15.047
+1996,Ghana,14.866
+1997,Ghana,14.57
+1998,Ghana,14.257
+1999,Ghana,14.017999999999999
+2000,Ghana,13.943
+2001,Ghana,13.936
+2002,Ghana,13.942
+2003,Ghana,13.964
+2004,Ghana,14.001
+2005,Ghana,14.056
+2006,Ghana,14.284
+2007,Ghana,14.882
+2008,Ghana,15.63
+2009,Ghana,16.289
+2010,Ghana,16.593
+2011,Ghana,16.669
+2012,Ghana,16.738
+2013,Ghana,16.798
+2014,Ghana,16.846
+2015,Ghana,16.881
+2016,Ghana,16.897000000000002
+2017,Ghana,16.894000000000002
+1990,Guinea,1.4080000000000001
+1991,Guinea,1.466
+1992,Guinea,1.515
+1993,Guinea,1.5530000000000002
+1994,Guinea,1.578
+1995,Guinea,1.588
+1996,Guinea,1.5830000000000002
+1997,Guinea,1.5659999999999998
+1998,Guinea,1.5430000000000001
+1999,Guinea,1.5190000000000001
+2000,Guinea,1.501
+2001,Guinea,1.484
+2002,Guinea,1.466
+2003,Guinea,1.4480000000000002
+2004,Guinea,1.4340000000000002
+2005,Guinea,1.426
+2006,Guinea,1.42
+2007,Guinea,1.416
+2008,Guinea,1.412
+2009,Guinea,1.41
+2010,Guinea,1.411
+2011,Guinea,1.415
+2012,Guinea,1.422
+2013,Guinea,1.432
+2014,Guinea,1.445
+2015,Guinea,1.462
+2016,Guinea,1.4809999999999999
+2017,Guinea,1.5019999999999998
+1990,Guinea-Bissau,8.487
+1991,Guinea-Bissau,8.526
+1992,Guinea-Bissau,8.55
+1993,Guinea-Bissau,8.562000000000001
+1994,Guinea-Bissau,8.562000000000001
+1995,Guinea-Bissau,8.552999999999999
+1996,Guinea-Bissau,8.505
+1997,Guinea-Bissau,8.408999999999999
+1998,Guinea-Bissau,8.302
+1999,Guinea-Bissau,8.221
+2000,Guinea-Bissau,8.203
+2001,Guinea-Bissau,8.216000000000001
+2002,Guinea-Bissau,8.25
+2003,Guinea-Bissau,8.293
+2004,Guinea-Bissau,8.331
+2005,Guinea-Bissau,8.352
+2006,Guinea-Bissau,8.342
+2007,Guinea-Bissau,8.307
+2008,Guinea-Bissau,8.258
+2009,Guinea-Bissau,8.206
+2010,Guinea-Bissau,8.16
+2011,Guinea-Bissau,8.103
+2012,Guinea-Bissau,8.04
+2013,Guinea-Bissau,7.972
+2014,Guinea-Bissau,7.899
+2015,Guinea-Bissau,7.822
+2016,Guinea-Bissau,7.742999999999999
+2017,Guinea-Bissau,7.662999999999999
+1990,Liberia,14.087
+1991,Liberia,14.252
+1992,Liberia,14.344000000000001
+1993,Liberia,14.370999999999999
+1994,Liberia,14.342
+1995,Liberia,14.267000000000001
+1996,Liberia,14.113
+1997,Liberia,13.782
+1998,Liberia,13.368
+1999,Liberia,12.953
+2000,Liberia,12.615
+2001,Liberia,12.273
+2002,Liberia,11.921
+2003,Liberia,11.583
+2004,Liberia,11.285
+2005,Liberia,11.048
+2006,Liberia,10.783
+2007,Liberia,10.515999999999998
+2008,Liberia,10.287
+2009,Liberia,10.136000000000001
+2010,Liberia,10.103
+2011,Liberia,10.102
+2012,Liberia,10.113
+2013,Liberia,10.144
+2014,Liberia,10.196
+2015,Liberia,10.275
+2016,Liberia,10.387
+2017,Liberia,10.538
+1990,Mali,2.638
+1991,Mali,2.658
+1992,Mali,2.674
+1993,Mali,2.688
+1994,Mali,2.697
+1995,Mali,2.702
+1996,Mali,2.701
+1997,Mali,2.6919999999999997
+1998,Mali,2.68
+1999,Mali,2.67
+2000,Mali,2.6660000000000004
+2001,Mali,2.6630000000000003
+2002,Mali,2.659
+2003,Mali,2.656
+2004,Mali,2.653
+2005,Mali,2.6510000000000002
+2006,Mali,2.648
+2007,Mali,2.645
+2008,Mali,2.642
+2009,Mali,2.64
+2010,Mali,2.64
+2011,Mali,2.638
+2012,Mali,2.637
+2013,Mali,2.637
+2014,Mali,2.637
+2015,Mali,2.638
+2016,Mali,2.64
+2017,Mali,2.6430000000000002
+1990,Mauritania,0.9259999999999999
+1991,Mauritania,0.904
+1992,Mauritania,0.88
+1993,Mauritania,0.856
+1994,Mauritania,0.8320000000000001
+1995,Mauritania,0.807
+1996,Mauritania,0.7809999999999999
+1997,Mauritania,0.7509999999999999
+1998,Mauritania,0.721
+1999,Mauritania,0.6920000000000001
+2000,Mauritania,0.664
+2001,Mauritania,0.632
+2002,Mauritania,0.596
+2003,Mauritania,0.562
+2004,Mauritania,0.536
+2005,Mauritania,0.527
+2006,Mauritania,0.5429999999999999
+2007,Mauritania,0.584
+2008,Mauritania,0.637
+2009,Mauritania,0.685
+2010,Mauritania,0.716
+2011,Mauritania,0.733
+2012,Mauritania,0.748
+2013,Mauritania,0.762
+2014,Mauritania,0.774
+2015,Mauritania,0.784
+2016,Mauritania,0.79
+2017,Mauritania,0.7929999999999999
+1990,Niger,1.599
+1991,Niger,1.5919999999999999
+1992,Niger,1.59
+1993,Niger,1.5919999999999999
+1994,Niger,1.597
+1995,Niger,1.604
+1996,Niger,1.6219999999999999
+1997,Niger,1.6540000000000001
+1998,Niger,1.696
+1999,Niger,1.7380000000000002
+2000,Niger,1.775
+2001,Niger,1.811
+2002,Niger,1.851
+2003,Niger,1.89
+2004,Niger,1.9180000000000001
+2005,Niger,1.93
+2006,Niger,1.925
+2007,Niger,1.912
+2008,Niger,1.8969999999999998
+2009,Niger,1.885
+2010,Niger,1.881
+2011,Niger,1.885
+2012,Niger,1.895
+2013,Niger,1.91
+2014,Niger,1.932
+2015,Niger,1.959
+2016,Niger,1.9909999999999999
+2017,Niger,2.029
+1990,Nigeria,15.75
+1991,Nigeria,16.137
+1992,Nigeria,16.512999999999998
+1993,Nigeria,16.872
+1994,Nigeria,17.21
+1995,Nigeria,17.518
+1996,Nigeria,17.826
+1997,Nigeria,18.16
+1998,Nigeria,18.463
+1999,Nigeria,18.674
+2000,Nigeria,18.727
+2001,Nigeria,18.672
+2002,Nigeria,18.566
+2003,Nigeria,18.417
+2004,Nigeria,18.23
+2005,Nigeria,18.01
+2006,Nigeria,17.467
+2007,Nigeria,16.458
+2008,Nigeria,15.294
+2009,Nigeria,14.235
+2010,Nigeria,13.494000000000002
+2011,Nigeria,12.875
+2012,Nigeria,12.304
+2013,Nigeria,11.788
+2014,Nigeria,11.334000000000001
+2015,Nigeria,10.947000000000001
+2016,Nigeria,10.634
+2017,Nigeria,10.401
+1990,Sao Tome and Principe,9.583
+1991,Sao Tome and Principe,10.275
+1992,Sao Tome and Principe,10.925999999999998
+1993,Sao Tome and Principe,11.503
+1994,Sao Tome and Principe,11.970999999999998
+1995,Sao Tome and Principe,12.297
+1996,Sao Tome and Principe,12.558
+1997,Sao Tome and Principe,12.790999999999999
+1998,Sao Tome and Principe,12.984000000000002
+1999,Sao Tome and Principe,13.132
+2000,Sao Tome and Principe,13.225999999999999
+2001,Sao Tome and Principe,13.312999999999999
+2002,Sao Tome and Principe,13.402999999999999
+2003,Sao Tome and Principe,13.489
+2004,Sao Tome and Principe,13.561
+2005,Sao Tome and Principe,13.613
+2006,Sao Tome and Principe,13.605
+2007,Sao Tome and Principe,13.517999999999999
+2008,Sao Tome and Principe,13.4
+2009,Sao Tome and Principe,13.299000000000001
+2010,Sao Tome and Principe,13.259
+2011,Sao Tome and Principe,13.241
+2012,Sao Tome and Principe,13.227
+2013,Sao Tome and Principe,13.216
+2014,Sao Tome and Principe,13.21
+2015,Sao Tome and Principe,13.210999999999999
+2016,Sao Tome and Principe,13.22
+2017,Sao Tome and Principe,13.238
+1990,Senegal,1.6269999999999998
+1991,Senegal,1.569
+1992,Senegal,1.515
+1993,Senegal,1.4680000000000002
+1994,Senegal,1.429
+1995,Senegal,1.3980000000000001
+1996,Senegal,1.3730000000000002
+1997,Senegal,1.349
+1998,Senegal,1.328
+1999,Senegal,1.3119999999999998
+2000,Senegal,1.3030000000000002
+2001,Senegal,1.297
+2002,Senegal,1.2930000000000001
+2003,Senegal,1.29
+2004,Senegal,1.285
+2005,Senegal,1.2790000000000001
+2006,Senegal,1.261
+2007,Senegal,1.23
+2008,Senegal,1.198
+2009,Senegal,1.172
+2010,Senegal,1.162
+2011,Senegal,1.162
+2012,Senegal,1.163
+2013,Senegal,1.166
+2014,Senegal,1.17
+2015,Senegal,1.175
+2016,Senegal,1.1840000000000002
+2017,Senegal,1.195
+1990,Sierra Leone,12.008
+1991,Sierra Leone,12.138
+1992,Sierra Leone,12.277000000000001
+1993,Sierra Leone,12.425999999999998
+1994,Sierra Leone,12.583
+1995,Sierra Leone,12.747
+1996,Sierra Leone,12.935
+1997,Sierra Leone,13.164000000000001
+1998,Sierra Leone,13.392999999999999
+1999,Sierra Leone,13.581
+2000,Sierra Leone,13.687000000000001
+2001,Sierra Leone,13.75
+2002,Sierra Leone,13.812999999999999
+2003,Sierra Leone,13.87
+2004,Sierra Leone,13.914000000000001
+2005,Sierra Leone,13.937999999999999
+2006,Sierra Leone,13.887
+2007,Sierra Leone,13.709000000000001
+2008,Sierra Leone,13.465
+2009,Sierra Leone,13.212
+2010,Sierra Leone,13.007
+2011,Sierra Leone,12.821
+2012,Sierra Leone,12.635
+2013,Sierra Leone,12.449000000000002
+2014,Sierra Leone,12.265999999999998
+2015,Sierra Leone,12.085
+2016,Sierra Leone,11.908
+2017,Sierra Leone,11.735
+1990,Togo,9.095
+1991,Togo,8.562999999999999
+1992,Togo,8.093
+1993,Togo,7.688
+1994,Togo,7.353
+1995,Togo,7.093
+1996,Togo,6.835
+1997,Togo,6.6
+1998,Togo,6.4
+1999,Togo,6.245
+2000,Togo,6.148
+2001,Togo,6.066
+2002,Togo,5.995
+2003,Togo,5.94
+2004,Togo,5.907
+2005,Togo,5.903
+2006,Togo,5.914
+2007,Togo,5.941
+2008,Togo,5.977
+2009,Togo,6.017
+2010,Togo,6.056
+2011,Togo,6.086
+2012,Togo,6.122999999999999
+2013,Togo,6.166
+2014,Togo,6.212999999999999
+2015,Togo,6.267
+2016,Togo,6.325
+2017,Togo,6.388
+1990,American Samoa,4.551
+1991,American Samoa,4.505
+1992,American Samoa,4.468999999999999
+1993,American Samoa,4.444
+1994,American Samoa,4.428999999999999
+1995,American Samoa,4.422
+1996,American Samoa,4.425
+1997,American Samoa,4.445
+1998,American Samoa,4.478
+1999,American Samoa,4.516
+2000,American Samoa,4.555
+2001,American Samoa,4.598
+2002,American Samoa,4.657
+2003,American Samoa,4.721
+2004,American Samoa,4.779
+2005,American Samoa,4.8180000000000005
+2006,American Samoa,4.837
+2007,American Samoa,4.853
+2008,American Samoa,4.868
+2009,American Samoa,4.882
+2010,American Samoa,4.897
+2011,American Samoa,4.9110000000000005
+2012,American Samoa,4.928
+2013,American Samoa,4.95
+2014,American Samoa,4.976
+2015,American Samoa,5.005
+2016,American Samoa,5.0360000000000005
+2017,American Samoa,5.071000000000001
+1990,Bermuda,27.615
+1991,Bermuda,27.910999999999998
+1992,Bermuda,28.186
+1993,Bermuda,28.418000000000003
+1994,Bermuda,28.589000000000002
+1995,Bermuda,28.682
+1996,Bermuda,28.729
+1997,Bermuda,28.77
+1998,Bermuda,28.807
+1999,Bermuda,28.836
+2000,Bermuda,28.854
+2001,Bermuda,28.83
+2002,Bermuda,28.733
+2003,Bermuda,28.583000000000002
+2004,Bermuda,28.406
+2005,Bermuda,28.226999999999997
+2006,Bermuda,27.985
+2007,Bermuda,27.655
+2008,Bermuda,27.296
+2009,Bermuda,26.96
+2010,Bermuda,26.7
+2011,Bermuda,26.441
+2012,Bermuda,26.195999999999998
+2013,Bermuda,25.965999999999998
+2014,Bermuda,25.756
+2015,Bermuda,25.566999999999997
+2016,Bermuda,25.401999999999997
+2017,Bermuda,25.266
+1990,Greenland,13.763
+1991,Greenland,13.557
+1992,Greenland,13.388
+1993,Greenland,13.265999999999998
+1994,Greenland,13.196
+1995,Greenland,13.172
+1996,Greenland,13.17
+1997,Greenland,13.204
+1998,Greenland,13.265
+1999,Greenland,13.339
+2000,Greenland,13.418
+2001,Greenland,13.493
+2002,Greenland,13.602
+2003,Greenland,13.724
+2004,Greenland,13.838
+2005,Greenland,13.914000000000001
+2006,Greenland,13.937999999999999
+2007,Greenland,13.966
+2008,Greenland,14.003
+2009,Greenland,14.044
+2010,Greenland,14.092
+2011,Greenland,14.125
+2012,Greenland,14.18
+2013,Greenland,14.244000000000002
+2014,Greenland,14.33
+2015,Greenland,14.429
+2016,Greenland,14.545
+2017,Greenland,14.668
+1990,Guam,2.35
+1991,Guam,2.326
+1992,Guam,2.311
+1993,Guam,2.305
+1994,Guam,2.305
+1995,Guam,2.31
+1996,Guam,2.334
+1997,Guam,2.394
+1998,Guam,2.476
+1999,Guam,2.565
+2000,Guam,2.6439999999999997
+2001,Guam,2.715
+2002,Guam,2.8
+2003,Guam,2.884
+2004,Guam,2.951
+2005,Guam,2.986
+2006,Guam,2.989
+2007,Guam,2.986
+2008,Guam,2.98
+2009,Guam,2.9789999999999996
+2010,Guam,2.988
+2011,Guam,2.9989999999999997
+2012,Guam,3.014
+2013,Guam,3.035
+2014,Guam,3.0610000000000004
+2015,Guam,3.093
+2016,Guam,3.13
+2017,Guam,3.1719999999999997
+1990,Northern Mariana Islands,3.75
+1991,Northern Mariana Islands,3.6710000000000003
+1992,Northern Mariana Islands,3.614
+1993,Northern Mariana Islands,3.574
+1994,Northern Mariana Islands,3.5389999999999997
+1995,Northern Mariana Islands,3.4930000000000003
+1996,Northern Mariana Islands,3.478
+1997,Northern Mariana Islands,3.5239999999999996
+1998,Northern Mariana Islands,3.5869999999999997
+1999,Northern Mariana Islands,3.6210000000000004
+2000,Northern Mariana Islands,3.6260000000000003
+2001,Northern Mariana Islands,3.676
+2002,Northern Mariana Islands,3.765
+2003,Northern Mariana Islands,3.832
+2004,Northern Mariana Islands,3.8560000000000003
+2005,Northern Mariana Islands,3.853
+2006,Northern Mariana Islands,3.855
+2007,Northern Mariana Islands,3.864
+2008,Northern Mariana Islands,3.872
+2009,Northern Mariana Islands,3.884
+2010,Northern Mariana Islands,3.917
+2011,Northern Mariana Islands,3.9730000000000003
+2012,Northern Mariana Islands,4.023
+2013,Northern Mariana Islands,4.051
+2014,Northern Mariana Islands,4.064
+2015,Northern Mariana Islands,4.088
+2016,Northern Mariana Islands,4.151
+2017,Northern Mariana Islands,4.23
+1990,Puerto Rico,13.69
+1991,Puerto Rico,13.634
+1992,Puerto Rico,13.6
+1993,Puerto Rico,13.587
+1994,Puerto Rico,13.595
+1995,Puerto Rico,13.623
+1996,Puerto Rico,13.647
+1997,Puerto Rico,13.700999999999999
+1998,Puerto Rico,13.78
+1999,Puerto Rico,13.88
+2000,Puerto Rico,13.997
+2001,Puerto Rico,14.125
+2002,Puerto Rico,14.32
+2003,Puerto Rico,14.559000000000001
+2004,Puerto Rico,14.814
+2005,Puerto Rico,15.059000000000001
+2006,Puerto Rico,15.277000000000001
+2007,Puerto Rico,15.525
+2008,Puerto Rico,15.790999999999999
+2009,Puerto Rico,16.064
+2010,Puerto Rico,16.331
+2011,Puerto Rico,16.58
+2012,Puerto Rico,16.861
+2013,Puerto Rico,17.174
+2014,Puerto Rico,17.516
+2015,Puerto Rico,17.884
+2016,Puerto Rico,18.278
+2017,Puerto Rico,18.698
+1990,"Virgin Islands, U.S.",6.5889999999999995
+1991,"Virgin Islands, U.S.",6.539
+1992,"Virgin Islands, U.S.",6.521
+1993,"Virgin Islands, U.S.",6.531000000000001
+1994,"Virgin Islands, U.S.",6.568
+1995,"Virgin Islands, U.S.",6.635
+1996,"Virgin Islands, U.S.",6.63
+1997,"Virgin Islands, U.S.",6.676
+1998,"Virgin Islands, U.S.",6.756
+1999,"Virgin Islands, U.S.",6.854
+2000,"Virgin Islands, U.S.",6.959
+2001,"Virgin Islands, U.S.",6.9239999999999995
+2002,"Virgin Islands, U.S.",6.92
+2003,"Virgin Islands, U.S.",6.944
+2004,"Virgin Islands, U.S.",6.999
+2005,"Virgin Islands, U.S.",7.0889999999999995
+2006,"Virgin Islands, U.S.",7.077999999999999
+2007,"Virgin Islands, U.S.",7.1
+2008,"Virgin Islands, U.S.",7.155
+2009,"Virgin Islands, U.S.",7.245
+2010,"Virgin Islands, U.S.",7.374
+2011,"Virgin Islands, U.S.",7.419
+2012,"Virgin Islands, U.S.",7.518
+2013,"Virgin Islands, U.S.",7.667999999999999
+2014,"Virgin Islands, U.S.",7.8660000000000005
+2015,"Virgin Islands, U.S.",8.113999999999999
+2016,"Virgin Islands, U.S.",8.411
+2017,"Virgin Islands, U.S.",8.763
+1990,South Sudan,1.912
+1991,South Sudan,1.899
+1992,South Sudan,1.8880000000000001
+1993,South Sudan,1.879
+1994,South Sudan,1.8730000000000002
+1995,South Sudan,1.869
+1996,South Sudan,1.868
+1997,South Sudan,1.869
+1998,South Sudan,1.871
+1999,South Sudan,1.8719999999999999
+2000,South Sudan,1.8730000000000002
+2001,South Sudan,1.8730000000000002
+2002,South Sudan,1.8730000000000002
+2003,South Sudan,1.8730000000000002
+2004,South Sudan,1.8730000000000002
+2005,South Sudan,1.8719999999999999
+2006,South Sudan,1.868
+2007,South Sudan,1.8619999999999999
+2008,South Sudan,1.857
+2009,South Sudan,1.8530000000000002
+2010,South Sudan,1.851
+2011,South Sudan,1.849
+2012,South Sudan,1.849
+2013,South Sudan,1.85
+2014,South Sudan,1.8530000000000002
+2015,South Sudan,1.857
+2016,South Sudan,1.8630000000000002
+2017,South Sudan,1.87
+1990,Sudan,4.074
+1991,Sudan,4.277
+1992,Sudan,4.461
+1993,Sudan,4.611000000000001
+1994,Sudan,4.713
+1995,Sudan,4.749
+1996,Sudan,4.761
+1997,Sudan,4.768
+1998,Sudan,4.771
+1999,Sudan,4.771
+2000,Sudan,4.77
+2001,Sudan,4.7589999999999995
+2002,Sudan,4.73
+2003,Sudan,4.694
+2004,Sudan,4.6610000000000005
+2005,Sudan,4.643
+2006,Sudan,4.6339999999999995
+2007,Sudan,4.629
+2008,Sudan,4.627
+2009,Sudan,4.624
+2010,Sudan,4.618
+2011,Sudan,4.606
+2012,Sudan,4.5889999999999995
+2013,Sudan,4.5680000000000005
+2014,Sudan,4.544
+2015,Sudan,4.5169999999999995
+2016,Sudan,4.487
+2017,Sudan,4.454

@@ -1,0 +1,5461 @@
+year,country,value
+1990,China,37.5
+1991,China,38.1
+1992,China,37.2
+1993,China,36.6
+1994,China,36.0
+1995,China,34.9
+1996,China,34.6
+1997,China,34.2
+1998,China,34.2
+1999,China,33.6
+2000,China,32.8
+2001,China,33.5
+2002,China,34.1
+2003,China,35.5
+2004,China,35.2
+2005,China,35.8
+2006,China,37.3
+2007,China,38.0
+2008,China,38.0
+2009,China,37.7
+2010,China,38.3
+2011,China,39.6
+2012,China,40.9
+2013,China,42.1
+2014,China,42.6
+2015,China,43.5
+2016,China,44.7
+2017,China,46.5
+1990,North Korea,49.0
+1991,North Korea,48.9
+1992,North Korea,48.6
+1993,North Korea,48.3
+1994,North Korea,47.6
+1995,North Korea,46.5
+1996,North Korea,45.1
+1997,North Korea,43.8
+1998,North Korea,42.5
+1999,North Korea,40.8
+2000,North Korea,39.3
+2001,North Korea,38.0
+2002,North Korea,36.9
+2003,North Korea,36.2
+2004,North Korea,35.8
+2005,North Korea,35.6
+2006,North Korea,35.4
+2007,North Korea,35.4
+2008,North Korea,35.3
+2009,North Korea,35.4
+2010,North Korea,35.7
+2011,North Korea,36.0
+2012,North Korea,36.3
+2013,North Korea,36.7
+2014,North Korea,37.0
+2015,North Korea,37.3
+2016,North Korea,37.5
+2017,North Korea,37.8
+1990,Taiwan,12.6
+1991,Taiwan,13.8
+1992,Taiwan,14.5
+1993,Taiwan,15.1
+1994,Taiwan,15.6
+1995,Taiwan,16.4
+1996,Taiwan,17.8
+1997,Taiwan,20.6
+1998,Taiwan,24.0
+1999,Taiwan,27.4
+2000,Taiwan,29.4
+2001,Taiwan,32.2
+2002,Taiwan,35.2
+2003,Taiwan,36.7
+2004,Taiwan,36.8
+2005,Taiwan,37.1
+2006,Taiwan,39.3
+2007,Taiwan,42.1
+2008,Taiwan,44.1
+2009,Taiwan,46.2
+2010,Taiwan,47.7
+2011,Taiwan,47.3
+2012,Taiwan,49.2
+2013,Taiwan,51.4
+2014,Taiwan,51.8
+2015,Taiwan,53.3
+2016,Taiwan,53.1
+2017,Taiwan,52.8
+1990,Cambodia,6.9
+1991,Cambodia,7.4
+1992,Cambodia,7.9
+1993,Cambodia,8.1
+1994,Cambodia,8.4
+1995,Cambodia,8.6
+1996,Cambodia,9.1
+1997,Cambodia,9.6
+1998,Cambodia,9.8
+1999,Cambodia,10.5
+2000,Cambodia,11.3
+2001,Cambodia,12.3
+2002,Cambodia,13.4
+2003,Cambodia,14.8
+2004,Cambodia,16.2
+2005,Cambodia,18.2
+2006,Cambodia,18.5
+2007,Cambodia,19.1
+2008,Cambodia,19.9
+2009,Cambodia,20.5
+2010,Cambodia,21.1
+2011,Cambodia,21.7
+2012,Cambodia,22.4
+2013,Cambodia,23.1
+2014,Cambodia,23.7
+2015,Cambodia,24.3
+2016,Cambodia,25.0
+2017,Cambodia,25.8
+1990,Indonesia,22.9
+1991,Indonesia,23.6
+1992,Indonesia,24.3
+1993,Indonesia,24.9
+1994,Indonesia,25.6
+1995,Indonesia,26.3
+1996,Indonesia,26.9
+1997,Indonesia,27.3
+1998,Indonesia,27.2
+1999,Indonesia,27.6
+2000,Indonesia,28.3
+2001,Indonesia,28.6
+2002,Indonesia,29.8
+2003,Indonesia,31.4
+2004,Indonesia,34.2
+2005,Indonesia,35.2
+2006,Indonesia,36.0
+2007,Indonesia,36.4
+2008,Indonesia,38.0
+2009,Indonesia,39.6
+2010,Indonesia,41.4
+2011,Indonesia,43.1
+2012,Indonesia,44.2
+2013,Indonesia,45.2
+2014,Indonesia,46.6
+2015,Indonesia,48.0
+2016,Indonesia,48.6
+2017,Indonesia,49.2
+1990,Laos,4.9
+1991,Laos,5.3
+1992,Laos,4.9
+1993,Laos,4.5
+1994,Laos,4.3
+1995,Laos,4.2
+1996,Laos,4.4
+1997,Laos,5.8
+1998,Laos,7.0
+1999,Laos,8.6
+2000,Laos,10.6
+2001,Laos,11.6
+2002,Laos,12.5
+2003,Laos,12.5
+2004,Laos,13.0
+2005,Laos,13.7
+2006,Laos,14.5
+2007,Laos,15.5
+2008,Laos,16.2
+2009,Laos,17.4
+2010,Laos,18.6
+2011,Laos,20.1
+2012,Laos,21.3
+2013,Laos,22.7
+2014,Laos,23.7
+2015,Laos,24.7
+2016,Laos,25.8
+2017,Laos,26.9
+1990,Malaysia,20.7
+1991,Malaysia,21.3
+1992,Malaysia,21.9
+1993,Malaysia,22.8
+1994,Malaysia,22.9
+1995,Malaysia,22.3
+1996,Malaysia,23.0
+1997,Malaysia,24.3
+1998,Malaysia,25.5
+1999,Malaysia,25.9
+2000,Malaysia,26.7
+2001,Malaysia,28.3
+2002,Malaysia,29.1
+2003,Malaysia,28.6
+2004,Malaysia,29.2
+2005,Malaysia,30.2
+2006,Malaysia,30.9
+2007,Malaysia,30.9
+2008,Malaysia,29.6
+2009,Malaysia,28.3
+2010,Malaysia,29.4
+2011,Malaysia,31.3
+2012,Malaysia,31.7
+2013,Malaysia,32.6
+2014,Malaysia,31.5
+2015,Malaysia,31.2
+2016,Malaysia,31.7
+2017,Malaysia,31.7
+1990,Maldives,31.2
+1991,Maldives,32.6
+1992,Maldives,33.9
+1993,Maldives,35.6
+1994,Maldives,36.8
+1995,Maldives,37.8
+1996,Maldives,39.0
+1997,Maldives,39.6
+1998,Maldives,40.6
+1999,Maldives,42.6
+2000,Maldives,44.2
+2001,Maldives,46.0
+2002,Maldives,47.9
+2003,Maldives,49.6
+2004,Maldives,50.9
+2005,Maldives,52.0
+2006,Maldives,53.2
+2007,Maldives,54.7
+2008,Maldives,56.5
+2009,Maldives,59.4
+2010,Maldives,61.3
+2011,Maldives,63.4
+2012,Maldives,65.5
+2013,Maldives,66.7
+2014,Maldives,67.6
+2015,Maldives,68.5
+2016,Maldives,69.2
+2017,Maldives,69.8
+1990,Myanmar,12.6
+1991,Myanmar,12.7
+1992,Myanmar,13.1
+1993,Myanmar,13.5
+1994,Myanmar,13.6
+1995,Myanmar,13.8
+1996,Myanmar,14.2
+1997,Myanmar,15.1
+1998,Myanmar,16.1
+1999,Myanmar,17.2
+2000,Myanmar,18.5
+2001,Myanmar,19.7
+2002,Myanmar,21.1
+2003,Myanmar,23.1
+2004,Myanmar,22.7
+2005,Myanmar,23.8
+2006,Myanmar,24.7
+2007,Myanmar,25.9
+2008,Myanmar,26.5
+2009,Myanmar,27.4
+2010,Myanmar,28.7
+2011,Myanmar,29.7
+2012,Myanmar,30.7
+2013,Myanmar,31.9
+2014,Myanmar,33.1
+2015,Myanmar,34.2
+2016,Myanmar,35.2
+2017,Myanmar,36.2
+1990,Philippines,59.2
+1991,Philippines,59.0
+1992,Philippines,58.2
+1993,Philippines,59.3
+1994,Philippines,58.9
+1995,Philippines,58.1
+1996,Philippines,58.2
+1997,Philippines,58.2
+1998,Philippines,58.8
+1999,Philippines,59.9
+2000,Philippines,59.4
+2001,Philippines,58.7
+2002,Philippines,57.7
+2003,Philippines,56.8
+2004,Philippines,54.9
+2005,Philippines,54.8
+2006,Philippines,56.1
+2007,Philippines,56.6
+2008,Philippines,56.9
+2009,Philippines,56.4
+2010,Philippines,56.5
+2011,Philippines,56.8
+2012,Philippines,56.7
+2013,Philippines,56.6
+2014,Philippines,56.5
+2015,Philippines,55.5
+2016,Philippines,56.5
+2017,Philippines,57.5
+1990,Sri Lanka,47.0
+1991,Sri Lanka,48.5
+1992,Sri Lanka,47.9
+1993,Sri Lanka,48.7
+1994,Sri Lanka,47.7
+1995,Sri Lanka,45.9
+1996,Sri Lanka,45.1
+1997,Sri Lanka,42.3
+1998,Sri Lanka,43.7
+1999,Sri Lanka,42.9
+2000,Sri Lanka,42.6
+2001,Sri Lanka,44.7
+2002,Sri Lanka,46.2
+2003,Sri Lanka,45.8
+2004,Sri Lanka,46.3
+2005,Sri Lanka,45.5
+2006,Sri Lanka,46.0
+2007,Sri Lanka,46.4
+2008,Sri Lanka,45.9
+2009,Sri Lanka,47.7
+2010,Sri Lanka,48.4
+2011,Sri Lanka,48.3
+2012,Sri Lanka,49.0
+2013,Sri Lanka,50.9
+2014,Sri Lanka,51.8
+2015,Sri Lanka,53.1
+2016,Sri Lanka,54.3
+2017,Sri Lanka,55.3
+1990,Thailand,9.8
+1991,Thailand,8.8
+1992,Thailand,7.8
+1993,Thailand,6.1
+1994,Thailand,4.1
+1995,Thailand,2.2
+1996,Thailand,1.5
+1997,Thailand,4.2
+1998,Thailand,5.8
+1999,Thailand,5.4
+2000,Thailand,7.2
+2001,Thailand,10.3
+2002,Thailand,11.7
+2003,Thailand,14.2
+2004,Thailand,15.8
+2005,Thailand,17.7
+2006,Thailand,19.8
+2007,Thailand,21.7
+2008,Thailand,23.3
+2009,Thailand,25.4
+2010,Thailand,26.1
+2011,Thailand,27.4
+2012,Thailand,28.7
+2013,Thailand,30.2
+2014,Thailand,30.2
+2015,Thailand,30.4
+2016,Thailand,29.7
+2017,Thailand,29.7
+1990,Timor-Leste,47.7
+1991,Timor-Leste,48.4
+1992,Timor-Leste,49.0
+1993,Timor-Leste,49.8
+1994,Timor-Leste,50.5
+1995,Timor-Leste,51.2
+1996,Timor-Leste,51.9
+1997,Timor-Leste,53.1
+1998,Timor-Leste,53.6
+1999,Timor-Leste,53.7
+2000,Timor-Leste,53.8
+2001,Timor-Leste,54.5
+2002,Timor-Leste,55.1
+2003,Timor-Leste,55.3
+2004,Timor-Leste,55.6
+2005,Timor-Leste,56.6
+2006,Timor-Leste,58.1
+2007,Timor-Leste,59.0
+2008,Timor-Leste,60.0
+2009,Timor-Leste,61.0
+2010,Timor-Leste,61.5
+2011,Timor-Leste,62.0
+2012,Timor-Leste,62.1
+2013,Timor-Leste,62.3
+2014,Timor-Leste,62.2
+2015,Timor-Leste,62.1
+2016,Timor-Leste,62.1
+2017,Timor-Leste,62.0
+1990,Vietnam,24.7
+1991,Vietnam,25.2
+1992,Vietnam,25.7
+1993,Vietnam,26.2
+1994,Vietnam,26.8
+1995,Vietnam,27.4
+1996,Vietnam,28.1
+1997,Vietnam,28.7
+1998,Vietnam,29.4
+1999,Vietnam,30.0
+2000,Vietnam,30.4
+2001,Vietnam,30.7
+2002,Vietnam,30.7
+2003,Vietnam,31.1
+2004,Vietnam,31.4
+2005,Vietnam,31.6
+2006,Vietnam,32.0
+2007,Vietnam,30.6
+2008,Vietnam,28.8
+2009,Vietnam,29.4
+2010,Vietnam,30.0
+2011,Vietnam,30.7
+2012,Vietnam,31.4
+2013,Vietnam,32.1
+2014,Vietnam,32.7
+2015,Vietnam,33.4
+2016,Vietnam,34.1
+2017,Vietnam,34.9
+1990,Fiji,54.0
+1991,Fiji,54.1
+1992,Fiji,54.6
+1993,Fiji,54.4
+1994,Fiji,54.3
+1995,Fiji,54.4
+1996,Fiji,54.0
+1997,Fiji,52.9
+1998,Fiji,53.3
+1999,Fiji,52.8
+2000,Fiji,52.8
+2001,Fiji,53.7
+2002,Fiji,54.8
+2003,Fiji,54.4
+2004,Fiji,54.7
+2005,Fiji,54.8
+2006,Fiji,55.1
+2007,Fiji,56.1
+2008,Fiji,57.4
+2009,Fiji,59.5
+2010,Fiji,59.9
+2011,Fiji,60.7
+2012,Fiji,61.1
+2013,Fiji,61.4
+2014,Fiji,61.7
+2015,Fiji,62.1
+2016,Fiji,62.4
+2017,Fiji,62.6
+1990,Kiribati,55.8
+1991,Kiribati,56.0
+1992,Kiribati,55.8
+1993,Kiribati,56.1
+1994,Kiribati,54.4
+1995,Kiribati,52.2
+1996,Kiribati,52.4
+1997,Kiribati,52.3
+1998,Kiribati,52.0
+1999,Kiribati,51.4
+2000,Kiribati,51.4
+2001,Kiribati,51.6
+2002,Kiribati,52.0
+2003,Kiribati,52.4
+2004,Kiribati,53.0
+2005,Kiribati,53.5
+2006,Kiribati,53.9
+2007,Kiribati,53.8
+2008,Kiribati,54.3
+2009,Kiribati,54.5
+2010,Kiribati,54.8
+2011,Kiribati,55.3
+2012,Kiribati,55.9
+2013,Kiribati,56.4
+2014,Kiribati,56.9
+2015,Kiribati,57.6
+2016,Kiribati,58.2
+2017,Kiribati,58.8
+1990,Marshall Islands,24.3
+1991,Marshall Islands,26.8
+1992,Marshall Islands,27.0
+1993,Marshall Islands,27.7
+1994,Marshall Islands,27.9
+1995,Marshall Islands,27.6
+1996,Marshall Islands,27.6
+1997,Marshall Islands,27.3
+1998,Marshall Islands,26.8
+1999,Marshall Islands,26.1
+2000,Marshall Islands,25.5
+2001,Marshall Islands,25.2
+2002,Marshall Islands,24.7
+2003,Marshall Islands,24.5
+2004,Marshall Islands,24.4
+2005,Marshall Islands,24.3
+2006,Marshall Islands,24.5
+2007,Marshall Islands,24.9
+2008,Marshall Islands,25.3
+2009,Marshall Islands,25.7
+2010,Marshall Islands,26.0
+2011,Marshall Islands,26.6
+2012,Marshall Islands,27.2
+2013,Marshall Islands,27.8
+2014,Marshall Islands,28.4
+2015,Marshall Islands,28.9
+2016,Marshall Islands,29.6
+2017,Marshall Islands,30.1
+1990,Federated States of Micronesia,35.0
+1991,Federated States of Micronesia,35.3
+1992,Federated States of Micronesia,35.6
+1993,Federated States of Micronesia,36.0
+1994,Federated States of Micronesia,36.2
+1995,Federated States of Micronesia,36.5
+1996,Federated States of Micronesia,36.7
+1997,Federated States of Micronesia,36.9
+1998,Federated States of Micronesia,37.0
+1999,Federated States of Micronesia,37.1
+2000,Federated States of Micronesia,37.1
+2001,Federated States of Micronesia,37.3
+2002,Federated States of Micronesia,37.7
+2003,Federated States of Micronesia,38.1
+2004,Federated States of Micronesia,38.5
+2005,Federated States of Micronesia,38.8
+2006,Federated States of Micronesia,39.1
+2007,Federated States of Micronesia,39.4
+2008,Federated States of Micronesia,39.6
+2009,Federated States of Micronesia,39.9
+2010,Federated States of Micronesia,40.3
+2011,Federated States of Micronesia,40.6
+2012,Federated States of Micronesia,41.0
+2013,Federated States of Micronesia,41.4
+2014,Federated States of Micronesia,41.6
+2015,Federated States of Micronesia,41.8
+2016,Federated States of Micronesia,42.2
+2017,Federated States of Micronesia,42.4
+1990,Papua New Guinea,6.1
+1991,Papua New Guinea,6.6
+1992,Papua New Guinea,7.1
+1993,Papua New Guinea,7.8
+1994,Papua New Guinea,8.4
+1995,Papua New Guinea,9.0
+1996,Papua New Guinea,9.6
+1997,Papua New Guinea,10.1
+1998,Papua New Guinea,10.5
+1999,Papua New Guinea,11.0
+2000,Papua New Guinea,11.5
+2001,Papua New Guinea,11.7
+2002,Papua New Guinea,11.8
+2003,Papua New Guinea,11.8
+2004,Papua New Guinea,11.9
+2005,Papua New Guinea,12.0
+2006,Papua New Guinea,12.1
+2007,Papua New Guinea,12.3
+2008,Papua New Guinea,12.7
+2009,Papua New Guinea,13.1
+2010,Papua New Guinea,13.5
+2011,Papua New Guinea,14.0
+2012,Papua New Guinea,14.5
+2013,Papua New Guinea,15.1
+2014,Papua New Guinea,15.7
+2015,Papua New Guinea,16.3
+2016,Papua New Guinea,16.9
+2017,Papua New Guinea,17.4
+1990,Samoa,53.5
+1991,Samoa,53.7
+1992,Samoa,53.9
+1993,Samoa,54.1
+1994,Samoa,54.2
+1995,Samoa,54.4
+1996,Samoa,54.8
+1997,Samoa,55.1
+1998,Samoa,55.4
+1999,Samoa,55.2
+2000,Samoa,55.2
+2001,Samoa,55.3
+2002,Samoa,55.6
+2003,Samoa,56.0
+2004,Samoa,56.4
+2005,Samoa,56.8
+2006,Samoa,57.2
+2007,Samoa,57.7
+2008,Samoa,58.0
+2009,Samoa,58.3
+2010,Samoa,58.4
+2011,Samoa,58.6
+2012,Samoa,58.7
+2013,Samoa,58.9
+2014,Samoa,59.1
+2015,Samoa,59.4
+2016,Samoa,59.6
+2017,Samoa,59.9
+1990,Solomon Islands,28.2
+1991,Solomon Islands,28.5
+1992,Solomon Islands,28.9
+1993,Solomon Islands,29.4
+1994,Solomon Islands,29.9
+1995,Solomon Islands,30.4
+1996,Solomon Islands,30.8
+1997,Solomon Islands,31.0
+1998,Solomon Islands,30.8
+1999,Solomon Islands,30.5
+2000,Solomon Islands,30.1
+2001,Solomon Islands,29.8
+2002,Solomon Islands,29.5
+2003,Solomon Islands,29.5
+2004,Solomon Islands,29.7
+2005,Solomon Islands,29.7
+2006,Solomon Islands,30.0
+2007,Solomon Islands,30.2
+2008,Solomon Islands,30.6
+2009,Solomon Islands,30.9
+2010,Solomon Islands,31.2
+2011,Solomon Islands,31.8
+2012,Solomon Islands,32.4
+2013,Solomon Islands,32.9
+2014,Solomon Islands,33.4
+2015,Solomon Islands,33.8
+2016,Solomon Islands,34.2
+2017,Solomon Islands,34.6
+1990,Tonga,52.8
+1991,Tonga,53.1
+1992,Tonga,53.8
+1993,Tonga,54.1
+1994,Tonga,54.4
+1995,Tonga,55.1
+1996,Tonga,55.1
+1997,Tonga,54.8
+1998,Tonga,54.5
+1999,Tonga,53.5
+2000,Tonga,53.4
+2001,Tonga,53.4
+2002,Tonga,52.8
+2003,Tonga,52.7
+2004,Tonga,52.8
+2005,Tonga,52.9
+2006,Tonga,53.1
+2007,Tonga,53.1
+2008,Tonga,53.7
+2009,Tonga,53.7
+2010,Tonga,53.3
+2011,Tonga,53.6
+2012,Tonga,53.9
+2013,Tonga,54.1
+2014,Tonga,54.4
+2015,Tonga,54.8
+2016,Tonga,55.3
+2017,Tonga,55.8
+1990,Vanuatu,34.2
+1991,Vanuatu,34.3
+1992,Vanuatu,34.4
+1993,Vanuatu,34.5
+1994,Vanuatu,34.7
+1995,Vanuatu,34.8
+1996,Vanuatu,34.9
+1997,Vanuatu,34.8
+1998,Vanuatu,34.7
+1999,Vanuatu,34.0
+2000,Vanuatu,33.6
+2001,Vanuatu,33.2
+2002,Vanuatu,32.9
+2003,Vanuatu,32.9
+2004,Vanuatu,33.1
+2005,Vanuatu,33.1
+2006,Vanuatu,33.3
+2007,Vanuatu,33.3
+2008,Vanuatu,33.6
+2009,Vanuatu,33.9
+2010,Vanuatu,34.3
+2011,Vanuatu,34.7
+2012,Vanuatu,35.1
+2013,Vanuatu,35.4
+2014,Vanuatu,35.6
+2015,Vanuatu,35.9
+2016,Vanuatu,35.9
+2017,Vanuatu,36.1
+1990,Armenia,43.1
+1991,Armenia,43.3
+1992,Armenia,43.9
+1993,Armenia,47.4
+1994,Armenia,51.6
+1995,Armenia,54.0
+1996,Armenia,55.9
+1997,Armenia,58.7
+1998,Armenia,61.2
+1999,Armenia,64.3
+2000,Armenia,64.9
+2001,Armenia,65.7
+2002,Armenia,67.1
+2003,Armenia,68.2
+2004,Armenia,70.4
+2005,Armenia,71.5
+2006,Armenia,73.3
+2007,Armenia,73.6
+2008,Armenia,74.5
+2009,Armenia,74.5
+2010,Armenia,74.7
+2011,Armenia,74.4
+2012,Armenia,74.1
+2013,Armenia,75.1
+2014,Armenia,75.1
+2015,Armenia,73.4
+2016,Armenia,74.8
+2017,Armenia,75.7
+1990,Azerbaijan,45.3
+1991,Azerbaijan,46.4
+1992,Azerbaijan,47.3
+1993,Azerbaijan,49.9
+1994,Azerbaijan,52.7
+1995,Azerbaijan,56.6
+1996,Azerbaijan,60.8
+1997,Azerbaijan,64.9
+1998,Azerbaijan,68.0
+1999,Azerbaijan,70.3
+2000,Azerbaijan,71.0
+2001,Azerbaijan,72.2
+2002,Azerbaijan,72.6
+2003,Azerbaijan,72.4
+2004,Azerbaijan,73.2
+2005,Azerbaijan,72.7
+2006,Azerbaijan,74.2
+2007,Azerbaijan,76.2
+2008,Azerbaijan,76.0
+2009,Azerbaijan,76.5
+2010,Azerbaijan,76.6
+2011,Azerbaijan,76.8
+2012,Azerbaijan,77.4
+2013,Azerbaijan,78.0
+2014,Azerbaijan,78.6
+2015,Azerbaijan,79.5
+2016,Azerbaijan,80.2
+2017,Azerbaijan,80.3
+1990,Georgia,36.8
+1991,Georgia,36.8
+1992,Georgia,38.3
+1993,Georgia,42.7
+1994,Georgia,48.4
+1995,Georgia,53.1
+1996,Georgia,57.4
+1997,Georgia,62.4
+1998,Georgia,67.5
+1999,Georgia,69.8
+2000,Georgia,70.5
+2001,Georgia,67.5
+2002,Georgia,64.9
+2003,Georgia,64.8
+2004,Georgia,62.2
+2005,Georgia,61.4
+2006,Georgia,59.4
+2007,Georgia,58.4
+2008,Georgia,53.7
+2009,Georgia,50.3
+2010,Georgia,48.8
+2011,Georgia,48.1
+2012,Georgia,46.3
+2013,Georgia,44.5
+2014,Georgia,41.6
+2015,Georgia,40.6
+2016,Georgia,41.5
+2017,Georgia,42.4
+1990,Kazakhstan,31.9
+1991,Kazakhstan,30.8
+1992,Kazakhstan,30.9
+1993,Kazakhstan,32.3
+1994,Kazakhstan,35.4
+1995,Kazakhstan,36.9
+1996,Kazakhstan,40.1
+1997,Kazakhstan,44.3
+1998,Kazakhstan,48.1
+1999,Kazakhstan,49.7
+2000,Kazakhstan,47.2
+2001,Kazakhstan,44.4
+2002,Kazakhstan,42.6
+2003,Kazakhstan,39.2
+2004,Kazakhstan,35.3
+2005,Kazakhstan,31.4
+2006,Kazakhstan,28.5
+2007,Kazakhstan,28.7
+2008,Kazakhstan,32.2
+2009,Kazakhstan,35.2
+2010,Kazakhstan,35.8
+2011,Kazakhstan,37.2
+2012,Kazakhstan,38.5
+2013,Kazakhstan,40.7
+2014,Kazakhstan,43.8
+2015,Kazakhstan,46.2
+2016,Kazakhstan,47.4
+2017,Kazakhstan,48.1
+1990,Kyrgyzstan,26.9
+1991,Kyrgyzstan,27.9
+1992,Kyrgyzstan,30.9
+1993,Kyrgyzstan,34.2
+1994,Kyrgyzstan,38.0
+1995,Kyrgyzstan,40.6
+1996,Kyrgyzstan,43.0
+1997,Kyrgyzstan,45.5
+1998,Kyrgyzstan,47.5
+1999,Kyrgyzstan,48.7
+2000,Kyrgyzstan,47.8
+2001,Kyrgyzstan,45.8
+2002,Kyrgyzstan,42.7
+2003,Kyrgyzstan,39.8
+2004,Kyrgyzstan,38.1
+2005,Kyrgyzstan,36.9
+2006,Kyrgyzstan,35.5
+2007,Kyrgyzstan,35.0
+2008,Kyrgyzstan,36.3
+2009,Kyrgyzstan,38.2
+2010,Kyrgyzstan,39.0
+2011,Kyrgyzstan,39.3
+2012,Kyrgyzstan,39.8
+2013,Kyrgyzstan,40.3
+2014,Kyrgyzstan,42.0
+2015,Kyrgyzstan,43.8
+2016,Kyrgyzstan,47.4
+2017,Kyrgyzstan,48.8
+1990,Mongolia,48.5
+1991,Mongolia,48.3
+1992,Mongolia,46.3
+1993,Mongolia,45.4
+1994,Mongolia,45.8
+1995,Mongolia,44.5
+1996,Mongolia,45.0
+1997,Mongolia,45.7
+1998,Mongolia,47.0
+1999,Mongolia,46.8
+2000,Mongolia,44.6
+2001,Mongolia,42.1
+2002,Mongolia,39.6
+2003,Mongolia,37.5
+2004,Mongolia,35.8
+2005,Mongolia,35.2
+2006,Mongolia,35.5
+2007,Mongolia,37.1
+2008,Mongolia,37.9
+2009,Mongolia,38.4
+2010,Mongolia,38.4
+2011,Mongolia,39.7
+2012,Mongolia,40.7
+2013,Mongolia,41.9
+2014,Mongolia,43.0
+2015,Mongolia,43.5
+2016,Mongolia,44.2
+2017,Mongolia,44.7
+1990,Tajikistan,49.7
+1991,Tajikistan,51.1
+1992,Tajikistan,52.5
+1993,Tajikistan,56.0
+1994,Tajikistan,57.1
+1995,Tajikistan,61.1
+1996,Tajikistan,65.2
+1997,Tajikistan,70.5
+1998,Tajikistan,74.4
+1999,Tajikistan,76.2
+2000,Tajikistan,77.3
+2001,Tajikistan,77.8
+2002,Tajikistan,77.5
+2003,Tajikistan,77.5
+2004,Tajikistan,77.1
+2005,Tajikistan,76.6
+2006,Tajikistan,77.5
+2007,Tajikistan,78.6
+2008,Tajikistan,77.3
+2009,Tajikistan,76.6
+2010,Tajikistan,76.1
+2011,Tajikistan,75.4
+2012,Tajikistan,75.1
+2013,Tajikistan,74.9
+2014,Tajikistan,73.9
+2015,Tajikistan,73.0
+2016,Tajikistan,71.9
+2017,Tajikistan,72.8
+1990,Turkmenistan,39.5
+1991,Turkmenistan,40.6
+1992,Turkmenistan,42.1
+1993,Turkmenistan,41.7
+1994,Turkmenistan,45.6
+1995,Turkmenistan,50.2
+1996,Turkmenistan,52.0
+1997,Turkmenistan,53.2
+1998,Turkmenistan,54.7
+1999,Turkmenistan,56.6
+2000,Turkmenistan,60.5
+2001,Turkmenistan,61.5
+2002,Turkmenistan,59.6
+2003,Turkmenistan,59.6
+2004,Turkmenistan,57.4
+2005,Turkmenistan,55.7
+2006,Turkmenistan,56.3
+2007,Turkmenistan,58.7
+2008,Turkmenistan,62.5
+2009,Turkmenistan,68.0
+2010,Turkmenistan,71.8
+2011,Turkmenistan,74.3
+2012,Turkmenistan,76.4
+2013,Turkmenistan,77.6
+2014,Turkmenistan,78.4
+2015,Turkmenistan,78.2
+2016,Turkmenistan,78.3
+2017,Turkmenistan,79.0
+1990,Uzbekistan,40.6
+1991,Uzbekistan,42.5
+1992,Uzbekistan,46.3
+1993,Uzbekistan,49.2
+1994,Uzbekistan,51.5
+1995,Uzbekistan,53.2
+1996,Uzbekistan,53.4
+1997,Uzbekistan,53.8
+1998,Uzbekistan,53.8
+1999,Uzbekistan,53.0
+2000,Uzbekistan,52.3
+2001,Uzbekistan,51.2
+2002,Uzbekistan,49.7
+2003,Uzbekistan,48.1
+2004,Uzbekistan,46.3
+2005,Uzbekistan,45.0
+2006,Uzbekistan,46.0
+2007,Uzbekistan,46.3
+2008,Uzbekistan,46.6
+2009,Uzbekistan,47.1
+2010,Uzbekistan,48.6
+2011,Uzbekistan,49.2
+2012,Uzbekistan,49.7
+2013,Uzbekistan,49.9
+2014,Uzbekistan,50.8
+2015,Uzbekistan,51.9
+2016,Uzbekistan,52.8
+2017,Uzbekistan,53.8
+1990,Albania,52.8
+1991,Albania,51.8
+1992,Albania,53.5
+1993,Albania,57.5
+1994,Albania,62.7
+1995,Albania,66.4
+1996,Albania,68.7
+1997,Albania,70.3
+1998,Albania,70.6
+1999,Albania,71.0
+2000,Albania,69.7
+2001,Albania,67.4
+2002,Albania,65.6
+2003,Albania,63.9
+2004,Albania,63.8
+2005,Albania,65.4
+2006,Albania,66.3
+2007,Albania,66.1
+2008,Albania,66.3
+2009,Albania,68.2
+2010,Albania,67.8
+2011,Albania,68.2
+2012,Albania,68.8
+2013,Albania,69.2
+2014,Albania,69.4
+2015,Albania,70.0
+2016,Albania,70.8
+2017,Albania,71.4
+1990,Bosnia and Herzegovina,80.9
+1991,Bosnia and Herzegovina,78.4
+1992,Bosnia and Herzegovina,76.3
+1993,Bosnia and Herzegovina,75.6
+1994,Bosnia and Herzegovina,75.7
+1995,Bosnia and Herzegovina,77.1
+1996,Bosnia and Herzegovina,79.5
+1997,Bosnia and Herzegovina,82.5
+1998,Bosnia and Herzegovina,85.9
+1999,Bosnia and Herzegovina,86.5
+2000,Bosnia and Herzegovina,85.8
+2001,Bosnia and Herzegovina,85.1
+2002,Bosnia and Herzegovina,83.7
+2003,Bosnia and Herzegovina,83.3
+2004,Bosnia and Herzegovina,83.2
+2005,Bosnia and Herzegovina,81.3
+2006,Bosnia and Herzegovina,81.0
+2007,Bosnia and Herzegovina,78.8
+2008,Bosnia and Herzegovina,79.6
+2009,Bosnia and Herzegovina,80.5
+2010,Bosnia and Herzegovina,81.2
+2011,Bosnia and Herzegovina,81.8
+2012,Bosnia and Herzegovina,81.1
+2013,Bosnia and Herzegovina,79.6
+2014,Bosnia and Herzegovina,78.4
+2015,Bosnia and Herzegovina,78.0
+2016,Bosnia and Herzegovina,78.3
+2017,Bosnia and Herzegovina,79.1
+1990,Bulgaria,48.3
+1991,Bulgaria,51.5
+1992,Bulgaria,50.6
+1993,Bulgaria,51.5
+1994,Bulgaria,50.5
+1995,Bulgaria,52.4
+1996,Bulgaria,54.6
+1997,Bulgaria,54.2
+1998,Bulgaria,55.3
+1999,Bulgaria,56.1
+2000,Bulgaria,55.4
+2001,Bulgaria,55.5
+2002,Bulgaria,56.3
+2003,Bulgaria,56.4
+2004,Bulgaria,56.0
+2005,Bulgaria,55.7
+2006,Bulgaria,54.7
+2007,Bulgaria,55.5
+2008,Bulgaria,55.7
+2009,Bulgaria,57.8
+2010,Bulgaria,60.6
+2011,Bulgaria,63.1
+2012,Bulgaria,65.5
+2013,Bulgaria,66.2
+2014,Bulgaria,66.1
+2015,Bulgaria,67.5
+2016,Bulgaria,67.7
+2017,Bulgaria,67.9
+1990,Croatia,39.9
+1991,Croatia,42.0
+1992,Croatia,42.8
+1993,Croatia,45.3
+1994,Croatia,46.6
+1995,Croatia,45.9
+1996,Croatia,46.7
+1997,Croatia,46.6
+1998,Croatia,48.9
+1999,Croatia,49.7
+2000,Croatia,50.5
+2001,Croatia,50.8
+2002,Croatia,50.9
+2003,Croatia,50.4
+2004,Croatia,52.4
+2005,Croatia,52.3
+2006,Croatia,53.4
+2007,Croatia,53.0
+2008,Croatia,53.7
+2009,Croatia,58.1
+2010,Croatia,62.3
+2011,Croatia,64.0
+2012,Croatia,66.4
+2013,Croatia,69.7
+2014,Croatia,71.2
+2015,Croatia,71.0
+2016,Croatia,73.6
+2017,Croatia,74.4
+1990,Czech Republic,50.2
+1991,Czech Republic,49.5
+1992,Czech Republic,48.1
+1993,Czech Republic,48.6
+1994,Czech Republic,48.1
+1995,Czech Republic,48.1
+1996,Czech Republic,49.8
+1997,Czech Republic,49.4
+1998,Czech Republic,51.4
+1999,Czech Republic,51.4
+2000,Czech Republic,51.7
+2001,Czech Republic,52.8
+2002,Czech Republic,53.7
+2003,Czech Republic,54.3
+2004,Czech Republic,57.1
+2005,Czech Republic,59.1
+2006,Czech Republic,62.2
+2007,Czech Republic,63.4
+2008,Czech Republic,64.6
+2009,Czech Republic,67.5
+2010,Czech Republic,69.6
+2011,Czech Republic,71.1
+2012,Czech Republic,72.9
+2013,Czech Republic,74.3
+2014,Czech Republic,76.0
+2015,Czech Republic,76.5
+2016,Czech Republic,77.5
+2017,Czech Republic,78.0
+1990,Hungary,36.5
+1991,Hungary,37.1
+1992,Hungary,36.9
+1993,Hungary,39.3
+1994,Hungary,41.9
+1995,Hungary,44.1
+1996,Hungary,48.3
+1997,Hungary,49.8
+1998,Hungary,49.3
+1999,Hungary,50.0
+2000,Hungary,52.2
+2001,Hungary,53.3
+2002,Hungary,52.6
+2003,Hungary,52.8
+2004,Hungary,53.6
+2005,Hungary,53.9
+2006,Hungary,55.7
+2007,Hungary,57.2
+2008,Hungary,61.2
+2009,Hungary,64.4
+2010,Hungary,68.4
+2011,Hungary,71.6
+2012,Hungary,73.9
+2013,Hungary,76.6
+2014,Hungary,77.7
+2015,Hungary,75.8
+2016,Hungary,78.5
+2017,Hungary,79.5
+1990,Macedonia,66.1
+1991,Macedonia,66.8
+1992,Macedonia,66.5
+1993,Macedonia,66.9
+1994,Macedonia,69.3
+1995,Macedonia,70.6
+1996,Macedonia,71.2
+1997,Macedonia,72.5
+1998,Macedonia,73.4
+1999,Macedonia,75.8
+2000,Macedonia,75.4
+2001,Macedonia,73.3
+2002,Macedonia,71.3
+2003,Macedonia,72.1
+2004,Macedonia,74.2
+2005,Macedonia,74.6
+2006,Macedonia,74.0
+2007,Macedonia,73.8
+2008,Macedonia,75.3
+2009,Macedonia,75.2
+2010,Macedonia,76.9
+2011,Macedonia,78.9
+2012,Macedonia,79.2
+2013,Macedonia,79.8
+2014,Macedonia,79.6
+2015,Macedonia,78.5
+2016,Macedonia,77.4
+2017,Macedonia,78.8
+1990,Montenegro,59.7
+1991,Montenegro,60.4
+1992,Montenegro,60.6
+1993,Montenegro,60.9
+1994,Montenegro,61.0
+1995,Montenegro,61.1
+1996,Montenegro,61.0
+1997,Montenegro,60.4
+1998,Montenegro,60.1
+1999,Montenegro,59.8
+2000,Montenegro,60.8
+2001,Montenegro,60.8
+2002,Montenegro,61.4
+2003,Montenegro,61.3
+2004,Montenegro,61.6
+2005,Montenegro,61.8
+2006,Montenegro,62.9
+2007,Montenegro,63.9
+2008,Montenegro,65.2
+2009,Montenegro,67.0
+2010,Montenegro,68.5
+2011,Montenegro,69.7
+2012,Montenegro,70.5
+2013,Montenegro,70.3
+2014,Montenegro,70.6
+2015,Montenegro,71.7
+2016,Montenegro,71.9
+2017,Montenegro,72.3
+1990,Poland,33.6
+1991,Poland,31.7
+1992,Poland,33.5
+1993,Poland,36.1
+1994,Poland,36.0
+1995,Poland,36.1
+1996,Poland,37.7
+1997,Poland,37.8
+1998,Poland,38.6
+1999,Poland,38.7
+2000,Poland,41.7
+2001,Poland,43.6
+2002,Poland,44.8
+2003,Poland,46.2
+2004,Poland,46.6
+2005,Poland,47.6
+2006,Poland,48.6
+2007,Poland,48.9
+2008,Poland,50.5
+2009,Poland,53.3
+2010,Poland,56.7
+2011,Poland,58.5
+2012,Poland,60.6
+2013,Poland,63.1
+2014,Poland,65.9
+2015,Poland,66.7
+2016,Poland,67.3
+2017,Poland,68.1
+1990,Romania,38.2
+1991,Romania,39.8
+1992,Romania,38.9
+1993,Romania,39.1
+1994,Romania,38.3
+1995,Romania,37.7
+1996,Romania,37.7
+1997,Romania,40.1
+1998,Romania,44.6
+1999,Romania,49.4
+2000,Romania,51.7
+2001,Romania,52.1
+2002,Romania,52.4
+2003,Romania,53.1
+2004,Romania,53.7
+2005,Romania,53.8
+2006,Romania,54.1
+2007,Romania,54.1
+2008,Romania,53.3
+2009,Romania,54.3
+2010,Romania,56.8
+2011,Romania,61.1
+2012,Romania,61.8
+2013,Romania,63.3
+2014,Romania,63.8
+2015,Romania,64.6
+2016,Romania,64.8
+2017,Romania,65.1
+1990,Serbia,48.5
+1991,Serbia,51.9
+1992,Serbia,50.5
+1993,Serbia,50.5
+1994,Serbia,50.4
+1995,Serbia,49.5
+1996,Serbia,49.2
+1997,Serbia,49.2
+1998,Serbia,53.2
+1999,Serbia,54.4
+2000,Serbia,55.2
+2001,Serbia,56.9
+2002,Serbia,57.8
+2003,Serbia,58.2
+2004,Serbia,58.8
+2005,Serbia,59.1
+2006,Serbia,60.2
+2007,Serbia,61.2
+2008,Serbia,61.8
+2009,Serbia,63.6
+2010,Serbia,66.5
+2011,Serbia,68.3
+2012,Serbia,70.1
+2013,Serbia,72.1
+2014,Serbia,73.1
+2015,Serbia,73.1
+2016,Serbia,74.8
+2017,Serbia,75.6
+1990,Slovakia,37.1
+1991,Slovakia,38.1
+1992,Slovakia,39.9
+1993,Slovakia,42.6
+1994,Slovakia,44.5
+1995,Slovakia,44.8
+1996,Slovakia,46.2
+1997,Slovakia,44.6
+1998,Slovakia,44.0
+1999,Slovakia,45.9
+2000,Slovakia,47.8
+2001,Slovakia,49.4
+2002,Slovakia,50.3
+2003,Slovakia,51.7
+2004,Slovakia,54.3
+2005,Slovakia,55.4
+2006,Slovakia,57.7
+2007,Slovakia,58.4
+2008,Slovakia,59.9
+2009,Slovakia,63.3
+2010,Slovakia,66.5
+2011,Slovakia,68.2
+2012,Slovakia,70.6
+2013,Slovakia,73.4
+2014,Slovakia,74.1
+2015,Slovakia,73.4
+2016,Slovakia,75.1
+2017,Slovakia,75.9
+1990,Slovenia,32.7
+1991,Slovenia,32.3
+1992,Slovenia,32.0
+1993,Slovenia,30.6
+1994,Slovenia,31.9
+1995,Slovenia,36.7
+1996,Slovenia,39.4
+1997,Slovenia,41.1
+1998,Slovenia,43.3
+1999,Slovenia,45.8
+2000,Slovenia,48.1
+2001,Slovenia,48.5
+2002,Slovenia,50.8
+2003,Slovenia,51.8
+2004,Slovenia,53.9
+2005,Slovenia,56.7
+2006,Slovenia,56.7
+2007,Slovenia,58.0
+2008,Slovenia,62.5
+2009,Slovenia,68.0
+2010,Slovenia,72.9
+2011,Slovenia,76.6
+2012,Slovenia,78.1
+2013,Slovenia,79.8
+2014,Slovenia,84.2
+2015,Slovenia,82.2
+2016,Slovenia,81.7
+2017,Slovenia,82.0
+1990,Belarus,33.6
+1991,Belarus,32.0
+1992,Belarus,31.7
+1993,Belarus,30.8
+1994,Belarus,32.3
+1995,Belarus,32.0
+1996,Belarus,33.5
+1997,Belarus,34.5
+1998,Belarus,34.0
+1999,Belarus,34.6
+2000,Belarus,37.8
+2001,Belarus,37.0
+2002,Belarus,35.3
+2003,Belarus,36.8
+2004,Belarus,38.3
+2005,Belarus,38.0
+2006,Belarus,40.3
+2007,Belarus,43.3
+2008,Belarus,44.5
+2009,Belarus,46.7
+2010,Belarus,48.1
+2011,Belarus,48.7
+2012,Belarus,55.8
+2013,Belarus,59.0
+2014,Belarus,62.2
+2015,Belarus,65.7
+2016,Belarus,67.4
+2017,Belarus,67.5
+1990,Estonia,26.9
+1991,Estonia,25.2
+1992,Estonia,26.7
+1993,Estonia,23.6
+1994,Estonia,19.7
+1995,Estonia,24.6
+1996,Estonia,33.8
+1997,Estonia,35.3
+1998,Estonia,35.2
+1999,Estonia,39.4
+2000,Estonia,42.1
+2001,Estonia,42.2
+2002,Estonia,44.1
+2003,Estonia,48.4
+2004,Estonia,50.8
+2005,Estonia,52.8
+2006,Estonia,53.1
+2007,Estonia,54.3
+2008,Estonia,60.6
+2009,Estonia,66.8
+2010,Estonia,72.5
+2011,Estonia,72.8
+2012,Estonia,75.1
+2013,Estonia,78.5
+2014,Estonia,79.0
+2015,Estonia,81.2
+2016,Estonia,82.0
+2017,Estonia,82.7
+1990,Latvia,19.4
+1991,Latvia,18.5
+1992,Latvia,18.4
+1993,Latvia,15.8
+1994,Latvia,14.2
+1995,Latvia,18.7
+1996,Latvia,26.1
+1997,Latvia,28.7
+1998,Latvia,26.3
+1999,Latvia,28.4
+2000,Latvia,29.8
+2001,Latvia,29.2
+2002,Latvia,30.8
+2003,Latvia,33.5
+2004,Latvia,35.9
+2005,Latvia,36.6
+2006,Latvia,37.1
+2007,Latvia,40.8
+2008,Latvia,47.7
+2009,Latvia,53.6
+2010,Latvia,57.7
+2011,Latvia,62.1
+2012,Latvia,64.4
+2013,Latvia,64.6
+2014,Latvia,63.8
+2015,Latvia,65.5
+2016,Latvia,66.1
+2017,Latvia,66.0
+1990,Lithuania,24.8
+1991,Lithuania,22.4
+1992,Lithuania,24.7
+1993,Lithuania,22.4
+1994,Lithuania,23.5
+1995,Lithuania,26.6
+1996,Lithuania,30.3
+1997,Lithuania,32.6
+1998,Lithuania,32.6
+1999,Lithuania,34.0
+2000,Lithuania,34.7
+2001,Lithuania,32.9
+2002,Lithuania,33.8
+2003,Lithuania,34.2
+2004,Lithuania,34.3
+2005,Lithuania,32.9
+2006,Lithuania,33.1
+2007,Lithuania,33.9
+2008,Lithuania,40.0
+2009,Lithuania,48.1
+2010,Lithuania,52.6
+2011,Lithuania,55.8
+2012,Lithuania,57.7
+2013,Lithuania,58.9
+2014,Lithuania,61.0
+2015,Lithuania,63.3
+2016,Lithuania,66.2
+2017,Lithuania,65.7
+1990,Moldova,25.4
+1991,Moldova,25.7
+1992,Moldova,28.3
+1993,Moldova,31.1
+1994,Moldova,29.5
+1995,Moldova,30.3
+1996,Moldova,35.5
+1997,Moldova,40.9
+1998,Moldova,44.7
+1999,Moldova,45.9
+2000,Moldova,45.7
+2001,Moldova,45.8
+2002,Moldova,46.1
+2003,Moldova,46.0
+2004,Moldova,45.3
+2005,Moldova,44.1
+2006,Moldova,45.5
+2007,Moldova,46.0
+2008,Moldova,46.9
+2009,Moldova,47.1
+2010,Moldova,48.1
+2011,Moldova,52.0
+2012,Moldova,54.3
+2013,Moldova,57.0
+2014,Moldova,57.2
+2015,Moldova,57.9
+2016,Moldova,59.7
+2017,Moldova,61.3
+1990,Russian Federation,28.7
+1991,Russian Federation,28.6
+1992,Russian Federation,26.5
+1993,Russian Federation,21.3
+1994,Russian Federation,19.4
+1995,Russian Federation,23.1
+1996,Russian Federation,28.1
+1997,Russian Federation,32.0
+1998,Russian Federation,32.5
+1999,Russian Federation,28.9
+2000,Russian Federation,26.7
+2001,Russian Federation,26.2
+2002,Russian Federation,25.8
+2003,Russian Federation,25.1
+2004,Russian Federation,25.6
+2005,Russian Federation,24.5
+2006,Russian Federation,28.6
+2007,Russian Federation,31.2
+2008,Russian Federation,32.4
+2009,Russian Federation,36.0
+2010,Russian Federation,36.7
+2011,Russian Federation,39.3
+2012,Russian Federation,40.3
+2013,Russian Federation,41.7
+2014,Russian Federation,41.9
+2015,Russian Federation,44.8
+2016,Russian Federation,47.1
+2017,Russian Federation,47.7
+1990,Ukraine,33.6
+1991,Ukraine,32.7
+1992,Ukraine,32.4
+1993,Ukraine,33.6
+1994,Ukraine,33.7
+1995,Ukraine,33.1
+1996,Ukraine,36.9
+1997,Ukraine,41.2
+1998,Ukraine,45.3
+1999,Ukraine,44.5
+2000,Ukraine,41.9
+2001,Ukraine,40.4
+2002,Ukraine,38.6
+2003,Ukraine,38.7
+2004,Ukraine,37.8
+2005,Ukraine,39.1
+2006,Ukraine,41.3
+2007,Ukraine,39.9
+2008,Ukraine,42.3
+2009,Ukraine,51.1
+2010,Ukraine,55.8
+2011,Ukraine,58.6
+2012,Ukraine,59.2
+2013,Ukraine,59.0
+2014,Ukraine,58.3
+2015,Ukraine,46.9
+2016,Ukraine,47.4
+2017,Ukraine,50.4
+1990,Brunei,19.8
+1991,Brunei,20.6
+1992,Brunei,21.7
+1993,Brunei,23.1
+1994,Brunei,23.7
+1995,Brunei,24.7
+1996,Brunei,25.5
+1997,Brunei,27.3
+1998,Brunei,29.0
+1999,Brunei,31.1
+2000,Brunei,33.2
+2001,Brunei,34.8
+2002,Brunei,36.5
+2003,Brunei,38.2
+2004,Brunei,39.5
+2005,Brunei,40.5
+2006,Brunei,41.4
+2007,Brunei,42.2
+2008,Brunei,42.8
+2009,Brunei,42.8
+2010,Brunei,43.2
+2011,Brunei,43.4
+2012,Brunei,43.5
+2013,Brunei,43.8
+2014,Brunei,44.4
+2015,Brunei,44.8
+2016,Brunei,44.9
+2017,Brunei,44.5
+1990,Japan,59.4
+1991,Japan,59.9
+1992,Japan,60.2
+1993,Japan,61.2
+1994,Japan,62.6
+1995,Japan,63.1
+1996,Japan,65.4
+1997,Japan,66.9
+1998,Japan,67.2
+1999,Japan,68.7
+2000,Japan,71.3
+2001,Japan,73.5
+2002,Japan,75.9
+2003,Japan,77.7
+2004,Japan,80.2
+2005,Japan,81.9
+2006,Japan,84.6
+2007,Japan,86.9
+2008,Japan,88.9
+2009,Japan,90.7
+2010,Japan,92.0
+2011,Japan,93.1
+2012,Japan,95.1
+2013,Japan,96.5
+2014,Japan,97.1
+2015,Japan,98.2
+2016,Japan,98.3
+2017,Japan,98.1
+1990,South Korea,13.5
+1991,South Korea,12.6
+1992,South Korea,13.0
+1993,South Korea,13.2
+1994,South Korea,12.9
+1995,South Korea,13.9
+1996,South Korea,15.5
+1997,South Korea,18.5
+1998,South Korea,22.2
+1999,South Korea,25.5
+2000,South Korea,29.2
+2001,South Korea,33.3
+2002,South Korea,37.1
+2003,South Korea,39.6
+2004,South Korea,42.8
+2005,South Korea,45.8
+2006,South Korea,48.1
+2007,South Korea,49.8
+2008,South Korea,51.3
+2009,South Korea,52.6
+2010,South Korea,54.3
+2011,South Korea,56.2
+2012,South Korea,58.0
+2013,South Korea,60.3
+2014,South Korea,62.6
+2015,South Korea,64.1
+2016,South Korea,65.3
+2017,South Korea,65.5
+1990,Singapore,68.5
+1991,Singapore,69.1
+1992,Singapore,70.2
+1993,Singapore,70.9
+1994,Singapore,71.5
+1995,Singapore,72.8
+1996,Singapore,74.0
+1997,Singapore,75.5
+1998,Singapore,78.2
+1999,Singapore,80.4
+2000,Singapore,81.6
+2001,Singapore,82.8
+2002,Singapore,83.7
+2003,Singapore,86.3
+2004,Singapore,87.4
+2005,Singapore,87.7
+2006,Singapore,89.4
+2007,Singapore,90.1
+2008,Singapore,90.7
+2009,Singapore,93.8
+2010,Singapore,95.4
+2011,Singapore,96.4
+2012,Singapore,98.5
+2013,Singapore,99.6
+2014,Singapore,100.0
+2015,Singapore,100.0
+2016,Singapore,100.0
+2017,Singapore,100.0
+1990,Australia,47.2
+1991,Australia,50.6
+1992,Australia,52.6
+1993,Australia,55.2
+1994,Australia,56.0
+1995,Australia,57.0
+1996,Australia,57.8
+1997,Australia,59.1
+1998,Australia,59.8
+1999,Australia,60.6
+2000,Australia,61.6
+2001,Australia,63.7
+2002,Australia,65.0
+2003,Australia,66.4
+2004,Australia,68.0
+2005,Australia,69.2
+2006,Australia,70.4
+2007,Australia,71.0
+2008,Australia,72.2
+2009,Australia,73.5
+2010,Australia,75.4
+2011,Australia,77.5
+2012,Australia,79.9
+2013,Australia,81.4
+2014,Australia,81.8
+2015,Australia,81.4
+2016,Australia,81.4
+2017,Australia,81.2
+1990,New Zealand,33.8
+1991,New Zealand,36.6
+1992,New Zealand,37.9
+1993,New Zealand,39.6
+1994,New Zealand,42.3
+1995,New Zealand,42.0
+1996,New Zealand,43.9
+1997,New Zealand,45.7
+1998,New Zealand,48.4
+1999,New Zealand,49.3
+2000,New Zealand,51.9
+2001,New Zealand,53.3
+2002,New Zealand,54.2
+2003,New Zealand,55.3
+2004,New Zealand,57.2
+2005,New Zealand,59.0
+2006,New Zealand,60.9
+2007,New Zealand,60.9
+2008,New Zealand,62.4
+2009,New Zealand,64.3
+2010,New Zealand,66.5
+2011,New Zealand,69.0
+2012,New Zealand,70.7
+2013,New Zealand,73.5
+2014,New Zealand,73.9
+2015,New Zealand,73.8
+2016,New Zealand,73.2
+2017,New Zealand,72.7
+1990,Andorra,66.4
+1991,Andorra,67.2
+1992,Andorra,67.9
+1993,Andorra,69.5
+1994,Andorra,70.8
+1995,Andorra,72.2
+1996,Andorra,73.6
+1997,Andorra,74.6
+1998,Andorra,76.0
+1999,Andorra,77.6
+2000,Andorra,79.1
+2001,Andorra,80.6
+2002,Andorra,82.2
+2003,Andorra,83.2
+2004,Andorra,83.8
+2005,Andorra,84.8
+2006,Andorra,85.9
+2007,Andorra,86.7
+2008,Andorra,87.6
+2009,Andorra,88.5
+2010,Andorra,89.4
+2011,Andorra,90.3
+2012,Andorra,90.9
+2013,Andorra,91.9
+2014,Andorra,93.3
+2015,Andorra,94.4
+2016,Andorra,94.7
+2017,Andorra,95.1
+1990,Austria,43.8
+1991,Austria,44.1
+1992,Austria,45.6
+1993,Austria,45.7
+1994,Austria,47.2
+1995,Austria,50.0
+1996,Austria,52.9
+1997,Austria,55.1
+1998,Austria,57.2
+1999,Austria,58.2
+2000,Austria,59.3
+2001,Austria,61.3
+2002,Austria,63.0
+2003,Austria,64.4
+2004,Austria,66.2
+2005,Austria,68.6
+2006,Austria,72.0
+2007,Austria,74.0
+2008,Austria,76.7
+2009,Austria,77.6
+2010,Austria,80.0
+2011,Austria,83.1
+2012,Austria,85.9
+2013,Austria,88.7
+2014,Austria,90.1
+2015,Austria,90.8
+2016,Austria,92.3
+2017,Austria,92.6
+1990,Belgium,37.4
+1991,Belgium,38.2
+1992,Belgium,39.2
+1993,Belgium,40.0
+1994,Belgium,40.5
+1995,Belgium,42.3
+1996,Belgium,44.2
+1997,Belgium,45.2
+1998,Belgium,45.8
+1999,Belgium,45.9
+2000,Belgium,45.7
+2001,Belgium,47.4
+2002,Belgium,50.1
+2003,Belgium,53.3
+2004,Belgium,56.3
+2005,Belgium,58.1
+2006,Belgium,60.2
+2007,Belgium,60.5
+2008,Belgium,62.1
+2009,Belgium,64.2
+2010,Belgium,66.2
+2011,Belgium,67.3
+2012,Belgium,69.4
+2013,Belgium,71.5
+2014,Belgium,73.6
+2015,Belgium,74.3
+2016,Belgium,75.4
+2017,Belgium,75.6
+1990,Cyprus,28.4
+1991,Cyprus,29.0
+1992,Cyprus,30.0
+1993,Cyprus,29.9
+1994,Cyprus,29.7
+1995,Cyprus,29.7
+1996,Cyprus,29.2
+1997,Cyprus,28.7
+1998,Cyprus,28.9
+1999,Cyprus,30.1
+2000,Cyprus,30.7
+2001,Cyprus,32.1
+2002,Cyprus,33.6
+2003,Cyprus,34.8
+2004,Cyprus,35.8
+2005,Cyprus,38.2
+2006,Cyprus,41.7
+2007,Cyprus,44.4
+2008,Cyprus,47.8
+2009,Cyprus,50.3
+2010,Cyprus,53.2
+2011,Cyprus,56.0
+2012,Cyprus,58.4
+2013,Cyprus,60.2
+2014,Cyprus,61.2
+2015,Cyprus,61.6
+2016,Cyprus,62.0
+2017,Cyprus,62.0
+1990,Denmark,52.6
+1991,Denmark,53.7
+1992,Denmark,55.0
+1993,Denmark,56.2
+1994,Denmark,57.1
+1995,Denmark,58.1
+1996,Denmark,59.5
+1997,Denmark,61.8
+1998,Denmark,63.1
+1999,Denmark,61.4
+2000,Denmark,64.7
+2001,Denmark,66.5
+2002,Denmark,66.7
+2003,Denmark,68.6
+2004,Denmark,71.2
+2005,Denmark,74.6
+2006,Denmark,75.7
+2007,Denmark,76.0
+2008,Denmark,78.5
+2009,Denmark,82.2
+2010,Denmark,86.3
+2011,Denmark,91.0
+2012,Denmark,94.8
+2013,Denmark,96.7
+2014,Denmark,98.1
+2015,Denmark,98.7
+2016,Denmark,97.3
+2017,Denmark,96.5
+1990,Finland,51.5
+1991,Finland,53.6
+1992,Finland,56.0
+1993,Finland,59.4
+1994,Finland,62.3
+1995,Finland,64.0
+1996,Finland,66.4
+1997,Finland,67.5
+1998,Finland,69.1
+1999,Finland,69.2
+2000,Finland,70.1
+2001,Finland,71.1
+2002,Finland,72.8
+2003,Finland,73.7
+2004,Finland,73.9
+2005,Finland,75.8
+2006,Finland,77.6
+2007,Finland,77.8
+2008,Finland,80.5
+2009,Finland,83.0
+2010,Finland,85.4
+2011,Finland,87.6
+2012,Finland,89.9
+2013,Finland,91.9
+2014,Finland,93.8
+2015,Finland,95.7
+2016,Finland,95.4
+2017,Finland,94.8
+1990,France,40.4
+1991,France,41.7
+1992,France,43.3
+1993,France,44.5
+1994,France,46.3
+1995,France,47.3
+1996,France,48.1
+1997,France,48.8
+1998,France,48.3
+1999,France,49.5
+2000,France,51.7
+2001,France,53.0
+2002,France,55.7
+2003,France,59.2
+2004,France,63.3
+2005,France,65.1
+2006,France,67.9
+2007,France,70.0
+2008,France,71.7
+2009,France,72.6
+2010,France,74.3
+2011,France,76.2
+2012,France,78.9
+2013,France,81.4
+2014,France,83.1
+2015,France,83.2
+2016,France,84.5
+2017,France,85.0
+1990,Germany,50.3
+1991,Germany,50.2
+1992,Germany,51.7
+1993,Germany,52.9
+1994,Germany,54.1
+1995,Germany,55.2
+1996,Germany,56.7
+1997,Germany,58.3
+1998,Germany,60.6
+1999,Germany,61.8
+2000,Germany,63.4
+2001,Germany,66.1
+2002,Germany,67.9
+2003,Germany,69.8
+2004,Germany,73.4
+2005,Germany,76.2
+2006,Germany,78.8
+2007,Germany,80.7
+2008,Germany,82.8
+2009,Germany,84.6
+2010,Germany,86.4
+2011,Germany,87.9
+2012,Germany,90.5
+2013,Germany,91.8
+2014,Germany,93.7
+2015,Germany,93.0
+2016,Germany,92.3
+2017,Germany,92.0
+1990,Greece,38.1
+1991,Greece,37.4
+1992,Greece,37.5
+1993,Greece,38.7
+1994,Greece,38.5
+1995,Greece,38.2
+1996,Greece,38.6
+1997,Greece,40.1
+1998,Greece,41.1
+1999,Greece,41.7
+2000,Greece,43.3
+2001,Greece,45.2
+2002,Greece,47.7
+2003,Greece,48.3
+2004,Greece,47.7
+2005,Greece,48.2
+2006,Greece,49.9
+2007,Greece,49.5
+2008,Greece,51.6
+2009,Greece,52.3
+2010,Greece,55.1
+2011,Greece,57.1
+2012,Greece,59.4
+2013,Greece,62.8
+2014,Greece,63.7
+2015,Greece,62.8
+2016,Greece,63.1
+2017,Greece,63.3
+1990,Iceland,58.4
+1991,Iceland,60.6
+1992,Iceland,62.7
+1993,Iceland,64.9
+1994,Iceland,67.4
+1995,Iceland,68.1
+1996,Iceland,69.9
+1997,Iceland,70.5
+1998,Iceland,71.3
+1999,Iceland,72.8
+2000,Iceland,74.9
+2001,Iceland,77.1
+2002,Iceland,80.3
+2003,Iceland,83.0
+2004,Iceland,85.3
+2005,Iceland,87.6
+2006,Iceland,89.5
+2007,Iceland,92.2
+2008,Iceland,94.5
+2009,Iceland,96.1
+2010,Iceland,97.8
+2011,Iceland,98.9
+2012,Iceland,99.3
+2013,Iceland,99.5
+2014,Iceland,99.7
+2015,Iceland,99.6
+2016,Iceland,99.5
+2017,Iceland,99.0
+1990,Ireland,52.0
+1991,Ireland,52.9
+1992,Ireland,54.6
+1993,Ireland,55.6
+1994,Ireland,57.0
+1995,Ireland,56.0
+1996,Ireland,56.3
+1997,Ireland,56.7
+1998,Ireland,57.7
+1999,Ireland,59.0
+2000,Ireland,60.5
+2001,Ireland,63.5
+2002,Ireland,66.7
+2003,Ireland,71.6
+2004,Ireland,73.5
+2005,Ireland,74.8
+2006,Ireland,76.7
+2007,Ireland,79.9
+2008,Ireland,82.5
+2009,Ireland,84.2
+2010,Ireland,89.8
+2011,Ireland,91.6
+2012,Ireland,94.7
+2013,Ireland,96.7
+2014,Ireland,98.7
+2015,Ireland,99.7
+2016,Ireland,99.9
+2017,Ireland,99.8
+1990,Israel,59.4
+1991,Israel,58.8
+1992,Israel,57.3
+1993,Israel,57.1
+1994,Israel,55.5
+1995,Israel,54.0
+1996,Israel,54.3
+1997,Israel,53.8
+1998,Israel,54.5
+1999,Israel,55.9
+2000,Israel,55.7
+2001,Israel,56.1
+2002,Israel,57.1
+2003,Israel,59.7
+2004,Israel,62.0
+2005,Israel,63.8
+2006,Israel,66.1
+2007,Israel,67.6
+2008,Israel,69.7
+2009,Israel,72.2
+2010,Israel,73.8
+2011,Israel,75.2
+2012,Israel,77.4
+2013,Israel,77.9
+2014,Israel,78.9
+2015,Israel,78.2
+2016,Israel,79.1
+2017,Israel,79.7
+1990,Italy,43.7
+1991,Italy,42.6
+1992,Italy,43.7
+1993,Italy,45.8
+1994,Italy,46.5
+1995,Italy,46.9
+1996,Italy,47.7
+1997,Italy,48.0
+1998,Italy,47.9
+1999,Italy,49.0
+2000,Italy,50.1
+2001,Italy,50.8
+2002,Italy,52.4
+2003,Italy,54.0
+2004,Italy,56.9
+2005,Italy,58.6
+2006,Italy,60.2
+2007,Italy,62.0
+2008,Italy,64.3
+2009,Italy,67.0
+2010,Italy,70.0
+2011,Italy,71.7
+2012,Italy,73.7
+2013,Italy,75.8
+2014,Italy,78.2
+2015,Italy,78.7
+2016,Italy,80.3
+2017,Italy,80.8
+1990,Luxembourg,39.1
+1991,Luxembourg,40.0
+1992,Luxembourg,40.7
+1993,Luxembourg,41.7
+1994,Luxembourg,43.0
+1995,Luxembourg,45.2
+1996,Luxembourg,47.3
+1997,Luxembourg,49.7
+1998,Luxembourg,52.3
+1999,Luxembourg,54.5
+2000,Luxembourg,56.0
+2001,Luxembourg,57.6
+2002,Luxembourg,58.9
+2003,Luxembourg,61.1
+2004,Luxembourg,64.1
+2005,Luxembourg,67.2
+2006,Luxembourg,69.2
+2007,Luxembourg,71.5
+2008,Luxembourg,74.4
+2009,Luxembourg,76.6
+2010,Luxembourg,78.3
+2011,Luxembourg,79.3
+2012,Luxembourg,82.1
+2013,Luxembourg,83.7
+2014,Luxembourg,84.3
+2015,Luxembourg,84.6
+2016,Luxembourg,85.2
+2017,Luxembourg,85.4
+1990,Malta,74.7
+1991,Malta,74.4
+1992,Malta,74.3
+1993,Malta,75.1
+1994,Malta,75.8
+1995,Malta,76.8
+1996,Malta,78.3
+1997,Malta,79.1
+1998,Malta,80.7
+1999,Malta,81.5
+2000,Malta,82.7
+2001,Malta,84.0
+2002,Malta,85.4
+2003,Malta,86.2
+2004,Malta,87.1
+2005,Malta,88.4
+2006,Malta,88.6
+2007,Malta,89.2
+2008,Malta,91.2
+2009,Malta,93.6
+2010,Malta,95.3
+2011,Malta,98.9
+2012,Malta,99.6
+2013,Malta,100.0
+2014,Malta,100.0
+2015,Malta,100.0
+2016,Malta,100.0
+2017,Malta,99.9
+1990,Netherlands,62.0
+1991,Netherlands,63.5
+1992,Netherlands,64.6
+1993,Netherlands,64.4
+1994,Netherlands,66.1
+1995,Netherlands,66.8
+1996,Netherlands,67.1
+1997,Netherlands,69.1
+1998,Netherlands,70.1
+1999,Netherlands,69.8
+2000,Netherlands,70.3
+2001,Netherlands,72.0
+2002,Netherlands,73.5
+2003,Netherlands,75.3
+2004,Netherlands,79.3
+2005,Netherlands,82.6
+2006,Netherlands,84.9
+2007,Netherlands,86.8
+2008,Netherlands,88.4
+2009,Netherlands,90.7
+2010,Netherlands,92.7
+2011,Netherlands,93.7
+2012,Netherlands,94.6
+2013,Netherlands,96.8
+2014,Netherlands,98.6
+2015,Netherlands,98.9
+2016,Netherlands,98.8
+2017,Netherlands,98.6
+1990,Norway,63.6
+1991,Norway,66.3
+1992,Norway,67.8
+1993,Norway,70.7
+1994,Norway,71.8
+1995,Norway,72.3
+1996,Norway,73.7
+1997,Norway,72.8
+1998,Norway,71.5
+1999,Norway,71.9
+2000,Norway,71.5
+2001,Norway,73.4
+2002,Norway,74.4
+2003,Norway,76.8
+2004,Norway,79.1
+2005,Norway,81.7
+2006,Norway,84.3
+2007,Norway,86.4
+2008,Norway,86.6
+2009,Norway,87.7
+2010,Norway,90.0
+2011,Norway,92.1
+2012,Norway,95.8
+2013,Norway,96.8
+2014,Norway,99.5
+2015,Norway,99.9
+2016,Norway,99.9
+2017,Norway,99.9
+1990,Portugal,19.9
+1991,Portugal,19.2
+1992,Portugal,20.7
+1993,Portugal,22.8
+1994,Portugal,26.6
+1995,Portugal,26.8
+1996,Portugal,28.1
+1997,Portugal,30.1
+1998,Portugal,32.2
+1999,Portugal,34.9
+2000,Portugal,37.4
+2001,Portugal,38.5
+2002,Portugal,40.3
+2003,Portugal,43.6
+2004,Portugal,48.7
+2005,Portugal,49.3
+2006,Portugal,52.0
+2007,Portugal,55.2
+2008,Portugal,58.3
+2009,Portugal,60.7
+2010,Portugal,63.7
+2011,Portugal,66.7
+2012,Portugal,70.6
+2013,Portugal,73.3
+2014,Portugal,75.4
+2015,Portugal,78.1
+2016,Portugal,78.6
+2017,Portugal,78.4
+1990,Spain,36.5
+1991,Spain,37.3
+1992,Spain,40.2
+1993,Spain,43.3
+1994,Spain,45.7
+1995,Spain,46.7
+1996,Spain,47.7
+1997,Spain,48.4
+1998,Spain,48.3
+1999,Spain,48.3
+2000,Spain,49.9
+2001,Spain,51.7
+2002,Spain,53.6
+2003,Spain,54.9
+2004,Spain,58.6
+2005,Spain,61.6
+2006,Spain,65.6
+2007,Spain,68.8
+2008,Spain,73.4
+2009,Spain,78.8
+2010,Spain,83.5
+2011,Spain,86.8
+2012,Spain,90.0
+2013,Spain,93.4
+2014,Spain,94.5
+2015,Spain,94.3
+2016,Spain,94.9
+2017,Spain,94.8
+1990,Sweden,63.9
+1991,Sweden,65.2
+1992,Sweden,67.9
+1993,Sweden,69.7
+1994,Sweden,71.6
+1995,Sweden,74.7
+1996,Sweden,76.9
+1997,Sweden,78.2
+1998,Sweden,78.6
+1999,Sweden,78.9
+2000,Sweden,79.7
+2001,Sweden,80.3
+2002,Sweden,82.3
+2003,Sweden,83.5
+2004,Sweden,83.7
+2005,Sweden,87.1
+2006,Sweden,89.4
+2007,Sweden,91.3
+2008,Sweden,93.5
+2009,Sweden,95.6
+2010,Sweden,98.6
+2011,Sweden,99.6
+2012,Sweden,99.9
+2013,Sweden,100.0
+2014,Sweden,100.0
+2015,Sweden,100.0
+2016,Sweden,100.0
+2017,Sweden,100.0
+1990,Switzerland,51.6
+1991,Switzerland,52.1
+1992,Switzerland,54.6
+1993,Switzerland,57.9
+1994,Switzerland,59.9
+1995,Switzerland,63.3
+1996,Switzerland,67.9
+1997,Switzerland,69.7
+1998,Switzerland,71.1
+1999,Switzerland,73.2
+2000,Switzerland,73.6
+2001,Switzerland,76.2
+2002,Switzerland,77.8
+2003,Switzerland,79.0
+2004,Switzerland,81.4
+2005,Switzerland,84.5
+2006,Switzerland,86.6
+2007,Switzerland,88.9
+2008,Switzerland,91.0
+2009,Switzerland,92.2
+2010,Switzerland,95.7
+2011,Switzerland,98.0
+2012,Switzerland,99.2
+2013,Switzerland,99.8
+2014,Switzerland,100.0
+2015,Switzerland,100.0
+2016,Switzerland,100.0
+2017,Switzerland,100.0
+1990,United Kingdom,65.0
+1991,United Kingdom,66.7
+1992,United Kingdom,69.2
+1993,United Kingdom,70.6
+1994,United Kingdom,72.6
+1995,United Kingdom,72.8
+1996,United Kingdom,73.4
+1997,United Kingdom,74.4
+1998,United Kingdom,75.4
+1999,United Kingdom,76.3
+2000,United Kingdom,77.2
+2001,United Kingdom,78.1
+2002,United Kingdom,78.8
+2003,United Kingdom,79.8
+2004,United Kingdom,82.2
+2005,United Kingdom,83.6
+2006,United Kingdom,83.5
+2007,United Kingdom,85.5
+2008,United Kingdom,87.4
+2009,United Kingdom,90.6
+2010,United Kingdom,93.9
+2011,United Kingdom,97.5
+2012,United Kingdom,99.6
+2013,United Kingdom,99.9
+2014,United Kingdom,100.0
+2015,United Kingdom,100.0
+2016,United Kingdom,100.0
+2017,United Kingdom,100.0
+1990,Argentina,51.8
+1991,Argentina,51.4
+1992,Argentina,50.2
+1993,Argentina,49.9
+1994,Argentina,49.4
+1995,Argentina,49.5
+1996,Argentina,48.5
+1997,Argentina,47.9
+1998,Argentina,47.3
+1999,Argentina,47.4
+2000,Argentina,48.9
+2001,Argentina,49.1
+2002,Argentina,49.0
+2003,Argentina,49.4
+2004,Argentina,50.7
+2005,Argentina,50.4
+2006,Argentina,49.6
+2007,Argentina,48.1
+2008,Argentina,48.0
+2009,Argentina,47.8
+2010,Argentina,48.3
+2011,Argentina,47.8
+2012,Argentina,47.5
+2013,Argentina,47.4
+2014,Argentina,48.7
+2015,Argentina,50.0
+2016,Argentina,50.7
+2017,Argentina,51.5
+1990,Chile,45.6
+1991,Chile,48.0
+1992,Chile,48.7
+1993,Chile,46.9
+1994,Chile,45.9
+1995,Chile,45.0
+1996,Chile,44.8
+1997,Chile,45.6
+1998,Chile,46.1
+1999,Chile,47.3
+2000,Chile,47.5
+2001,Chile,46.7
+2002,Chile,48.4
+2003,Chile,48.3
+2004,Chile,48.8
+2005,Chile,49.9
+2006,Chile,50.6
+2007,Chile,51.0
+2008,Chile,51.5
+2009,Chile,51.2
+2010,Chile,52.6
+2011,Chile,54.3
+2012,Chile,55.4
+2013,Chile,55.9
+2014,Chile,56.9
+2015,Chile,57.6
+2016,Chile,58.1
+2017,Chile,58.6
+1990,Uruguay,45.5
+1991,Uruguay,45.4
+1992,Uruguay,45.2
+1993,Uruguay,43.7
+1994,Uruguay,43.8
+1995,Uruguay,43.7
+1996,Uruguay,44.1
+1997,Uruguay,42.7
+1998,Uruguay,42.3
+1999,Uruguay,43.5
+2000,Uruguay,46.5
+2001,Uruguay,48.5
+2002,Uruguay,49.2
+2003,Uruguay,49.9
+2004,Uruguay,49.8
+2005,Uruguay,49.4
+2006,Uruguay,49.1
+2007,Uruguay,46.4
+2008,Uruguay,46.7
+2009,Uruguay,46.2
+2010,Uruguay,45.7
+2011,Uruguay,44.3
+2012,Uruguay,43.5
+2013,Uruguay,43.7
+2014,Uruguay,45.3
+2015,Uruguay,46.1
+2016,Uruguay,47.0
+2017,Uruguay,48.0
+1990,Canada,48.3
+1991,Canada,50.1
+1992,Canada,51.7
+1993,Canada,52.7
+1994,Canada,54.4
+1995,Canada,55.6
+1996,Canada,57.2
+1997,Canada,58.4
+1998,Canada,59.8
+1999,Canada,60.6
+2000,Canada,62.2
+2001,Canada,63.2
+2002,Canada,64.0
+2003,Canada,64.7
+2004,Canada,66.0
+2005,Canada,66.1
+2006,Canada,67.8
+2007,Canada,69.1
+2008,Canada,71.1
+2009,Canada,73.5
+2010,Canada,75.5
+2011,Canada,77.7
+2012,Canada,77.9
+2013,Canada,79.0
+2014,Canada,77.3
+2015,Canada,76.6
+2016,Canada,77.1
+2017,Canada,77.4
+1990,United States,40.5
+1991,United States,41.5
+1992,United States,43.0
+1993,United States,42.8
+1994,United States,43.1
+1995,United States,43.5
+1996,United States,44.2
+1997,United States,44.7
+1998,United States,45.1
+1999,United States,45.1
+2000,United States,45.0
+2001,United States,44.8
+2002,United States,44.6
+2003,United States,45.0
+2004,United States,46.2
+2005,United States,46.3
+2006,United States,47.2
+2007,United States,48.9
+2008,United States,51.0
+2009,United States,53.3
+2010,United States,55.6
+2011,United States,56.4
+2012,United States,57.2
+2013,United States,58.0
+2014,United States,58.1
+2015,United States,57.2
+2016,United States,55.8
+2017,United States,55.6
+1990,Antigua and Barbuda,58.8
+1991,Antigua and Barbuda,59.2
+1992,Antigua and Barbuda,59.6
+1993,Antigua and Barbuda,60.0
+1994,Antigua and Barbuda,60.3
+1995,Antigua and Barbuda,60.6
+1996,Antigua and Barbuda,60.9
+1997,Antigua and Barbuda,61.4
+1998,Antigua and Barbuda,61.9
+1999,Antigua and Barbuda,63.1
+2000,Antigua and Barbuda,64.4
+2001,Antigua and Barbuda,65.8
+2002,Antigua and Barbuda,66.7
+2003,Antigua and Barbuda,67.8
+2004,Antigua and Barbuda,68.9
+2005,Antigua and Barbuda,69.2
+2006,Antigua and Barbuda,70.1
+2007,Antigua and Barbuda,70.9
+2008,Antigua and Barbuda,71.1
+2009,Antigua and Barbuda,71.6
+2010,Antigua and Barbuda,72.2
+2011,Antigua and Barbuda,72.8
+2012,Antigua and Barbuda,73.0
+2013,Antigua and Barbuda,73.7
+2014,Antigua and Barbuda,75.0
+2015,Antigua and Barbuda,75.5
+2016,Antigua and Barbuda,75.4
+2017,Antigua and Barbuda,75.7
+1990,The Bahamas,35.0
+1991,The Bahamas,35.5
+1992,The Bahamas,35.6
+1993,The Bahamas,35.9
+1994,The Bahamas,35.6
+1995,The Bahamas,36.1
+1996,The Bahamas,35.6
+1997,The Bahamas,35.5
+1998,The Bahamas,36.0
+1999,The Bahamas,36.6
+2000,The Bahamas,37.3
+2001,The Bahamas,38.6
+2002,The Bahamas,39.9
+2003,The Bahamas,44.7
+2004,The Bahamas,45.0
+2005,The Bahamas,45.1
+2006,The Bahamas,45.2
+2007,The Bahamas,45.4
+2008,The Bahamas,45.8
+2009,The Bahamas,45.8
+2010,The Bahamas,46.2
+2011,The Bahamas,46.5
+2012,The Bahamas,46.7
+2013,The Bahamas,47.0
+2014,The Bahamas,46.7
+2015,The Bahamas,47.1
+2016,The Bahamas,47.3
+2017,The Bahamas,47.6
+1990,Barbados,52.9
+1991,Barbados,52.7
+1992,Barbados,53.1
+1993,Barbados,53.3
+1994,Barbados,53.4
+1995,Barbados,52.9
+1996,Barbados,53.2
+1997,Barbados,54.2
+1998,Barbados,54.3
+1999,Barbados,55.0
+2000,Barbados,55.3
+2001,Barbados,57.3
+2002,Barbados,57.0
+2003,Barbados,57.6
+2004,Barbados,58.6
+2005,Barbados,59.3
+2006,Barbados,60.3
+2007,Barbados,61.7
+2008,Barbados,62.9
+2009,Barbados,63.5
+2010,Barbados,64.1
+2011,Barbados,64.6
+2012,Barbados,65.8
+2013,Barbados,66.3
+2014,Barbados,66.6
+2015,Barbados,66.6
+2016,Barbados,66.8
+2017,Barbados,67.0
+1990,Belize,30.7
+1991,Belize,29.2
+1992,Belize,28.0
+1993,Belize,28.5
+1994,Belize,28.2
+1995,Belize,25.9
+1996,Belize,23.9
+1997,Belize,21.7
+1998,Belize,21.5
+1999,Belize,22.3
+2000,Belize,23.7
+2001,Belize,24.8
+2002,Belize,26.4
+2003,Belize,28.1
+2004,Belize,30.1
+2005,Belize,31.1
+2006,Belize,32.9
+2007,Belize,34.4
+2008,Belize,35.7
+2009,Belize,36.8
+2010,Belize,37.7
+2011,Belize,37.6
+2012,Belize,38.6
+2013,Belize,38.7
+2014,Belize,39.3
+2015,Belize,38.8
+2016,Belize,38.6
+2017,Belize,38.9
+1990,Cuba,35.3
+1991,Cuba,35.7
+1992,Cuba,36.2
+1993,Cuba,36.4
+1994,Cuba,35.9
+1995,Cuba,37.3
+1996,Cuba,39.9
+1997,Cuba,41.9
+1998,Cuba,43.7
+1999,Cuba,46.8
+2000,Cuba,49.7
+2001,Cuba,52.5
+2002,Cuba,56.6
+2003,Cuba,58.7
+2004,Cuba,60.4
+2005,Cuba,61.2
+2006,Cuba,65.3
+2007,Cuba,67.2
+2008,Cuba,68.2
+2009,Cuba,69.0
+2010,Cuba,69.7
+2011,Cuba,71.9
+2012,Cuba,70.9
+2013,Cuba,71.3
+2014,Cuba,71.5
+2015,Cuba,70.3
+2016,Cuba,70.4
+2017,Cuba,70.6
+1990,Dominica,40.9
+1991,Dominica,40.1
+1992,Dominica,39.5
+1993,Dominica,39.5
+1994,Dominica,39.3
+1995,Dominica,39.4
+1996,Dominica,39.4
+1997,Dominica,39.6
+1998,Dominica,40.2
+1999,Dominica,41.0
+2000,Dominica,41.8
+2001,Dominica,43.3
+2002,Dominica,43.9
+2003,Dominica,44.6
+2004,Dominica,45.1
+2005,Dominica,45.3
+2006,Dominica,45.5
+2007,Dominica,45.7
+2008,Dominica,46.2
+2009,Dominica,46.0
+2010,Dominica,45.8
+2011,Dominica,45.5
+2012,Dominica,45.6
+2013,Dominica,45.4
+2014,Dominica,46.1
+2015,Dominica,46.2
+2016,Dominica,46.1
+2017,Dominica,46.3
+1990,Dominican Republic,33.6
+1991,Dominican Republic,32.5
+1992,Dominican Republic,30.9
+1993,Dominican Republic,28.7
+1994,Dominican Republic,26.4
+1995,Dominican Republic,24.9
+1996,Dominican Republic,24.0
+1997,Dominican Republic,23.7
+1998,Dominican Republic,24.0
+1999,Dominican Republic,25.0
+2000,Dominican Republic,27.2
+2001,Dominican Republic,28.8
+2002,Dominican Republic,29.7
+2003,Dominican Republic,29.6
+2004,Dominican Republic,29.2
+2005,Dominican Republic,29.0
+2006,Dominican Republic,28.6
+2007,Dominican Republic,29.1
+2008,Dominican Republic,29.1
+2009,Dominican Republic,28.3
+2010,Dominican Republic,27.2
+2011,Dominican Republic,26.9
+2012,Dominican Republic,25.3
+2013,Dominican Republic,23.0
+2014,Dominican Republic,22.3
+2015,Dominican Republic,21.6
+2016,Dominican Republic,21.6
+2017,Dominican Republic,22.6
+1990,Grenada,44.7
+1991,Grenada,46.1
+1992,Grenada,47.5
+1993,Grenada,49.2
+1994,Grenada,50.2
+1995,Grenada,51.3
+1996,Grenada,52.7
+1997,Grenada,54.1
+1998,Grenada,55.5
+1999,Grenada,57.2
+2000,Grenada,58.8
+2001,Grenada,59.8
+2002,Grenada,60.3
+2003,Grenada,61.4
+2004,Grenada,62.1
+2005,Grenada,62.2
+2006,Grenada,62.2
+2007,Grenada,62.9
+2008,Grenada,61.9
+2009,Grenada,61.9
+2010,Grenada,62.2
+2011,Grenada,62.3
+2012,Grenada,64.2
+2013,Grenada,64.4
+2014,Grenada,64.9
+2015,Grenada,64.6
+2016,Grenada,63.6
+2017,Grenada,64.4
+1990,Guyana,39.5
+1991,Guyana,40.7
+1992,Guyana,43.9
+1993,Guyana,45.1
+1994,Guyana,45.2
+1995,Guyana,41.7
+1996,Guyana,40.6
+1997,Guyana,39.8
+1998,Guyana,40.7
+1999,Guyana,41.8
+2000,Guyana,43.3
+2001,Guyana,42.0
+2002,Guyana,40.9
+2003,Guyana,40.0
+2004,Guyana,39.7
+2005,Guyana,38.0
+2006,Guyana,37.9
+2007,Guyana,38.7
+2008,Guyana,39.9
+2009,Guyana,40.8
+2010,Guyana,39.3
+2011,Guyana,38.0
+2012,Guyana,38.4
+2013,Guyana,40.2
+2014,Guyana,41.8
+2015,Guyana,43.2
+2016,Guyana,44.6
+2017,Guyana,45.8
+1990,Haiti,0.1
+1991,Haiti,0.2
+1992,Haiti,0.2
+1993,Haiti,0.3
+1994,Haiti,0.4
+1995,Haiti,0.5
+1996,Haiti,0.7
+1997,Haiti,1.0
+1998,Haiti,1.3
+1999,Haiti,1.6
+2000,Haiti,2.2
+2001,Haiti,2.6
+2002,Haiti,3.1
+2003,Haiti,3.6
+2004,Haiti,4.0
+2005,Haiti,4.3
+2006,Haiti,4.5
+2007,Haiti,4.9
+2008,Haiti,5.3
+2009,Haiti,5.6
+2010,Haiti,6.0
+2011,Haiti,6.4
+2012,Haiti,6.9
+2013,Haiti,7.4
+2014,Haiti,8.0
+2015,Haiti,8.8
+2016,Haiti,9.5
+2017,Haiti,10.1
+1990,Jamaica,89.7
+1991,Jamaica,91.3
+1992,Jamaica,89.6
+1993,Jamaica,87.5
+1994,Jamaica,85.9
+1995,Jamaica,84.2
+1996,Jamaica,82.7
+1997,Jamaica,81.6
+1998,Jamaica,81.4
+1999,Jamaica,80.8
+2000,Jamaica,82.8
+2001,Jamaica,83.1
+2002,Jamaica,86.1
+2003,Jamaica,88.6
+2004,Jamaica,89.4
+2005,Jamaica,81.1
+2006,Jamaica,82.1
+2007,Jamaica,75.8
+2008,Jamaica,69.9
+2009,Jamaica,64.9
+2010,Jamaica,71.3
+2011,Jamaica,64.9
+2012,Jamaica,63.6
+2013,Jamaica,63.7
+2014,Jamaica,63.4
+2015,Jamaica,63.1
+2016,Jamaica,64.6
+2017,Jamaica,65.5
+1990,Saint Lucia,34.9
+1991,Saint Lucia,35.3
+1992,Saint Lucia,36.0
+1993,Saint Lucia,36.4
+1994,Saint Lucia,36.3
+1995,Saint Lucia,36.8
+1996,Saint Lucia,37.0
+1997,Saint Lucia,37.5
+1998,Saint Lucia,39.1
+1999,Saint Lucia,41.4
+2000,Saint Lucia,42.9
+2001,Saint Lucia,44.0
+2002,Saint Lucia,44.6
+2003,Saint Lucia,45.9
+2004,Saint Lucia,46.5
+2005,Saint Lucia,47.6
+2006,Saint Lucia,49.0
+2007,Saint Lucia,50.5
+2008,Saint Lucia,52.3
+2009,Saint Lucia,52.4
+2010,Saint Lucia,53.1
+2011,Saint Lucia,52.9
+2012,Saint Lucia,53.4
+2013,Saint Lucia,53.3
+2014,Saint Lucia,53.9
+2015,Saint Lucia,53.8
+2016,Saint Lucia,53.4
+2017,Saint Lucia,53.6
+1990,Saint Vincent and the Grenadines,57.3
+1991,Saint Vincent and the Grenadines,56.7
+1992,Saint Vincent and the Grenadines,56.5
+1993,Saint Vincent and the Grenadines,56.4
+1994,Saint Vincent and the Grenadines,56.3
+1995,Saint Vincent and the Grenadines,56.2
+1996,Saint Vincent and the Grenadines,55.9
+1997,Saint Vincent and the Grenadines,54.9
+1998,Saint Vincent and the Grenadines,54.9
+1999,Saint Vincent and the Grenadines,55.4
+2000,Saint Vincent and the Grenadines,57.1
+2001,Saint Vincent and the Grenadines,57.5
+2002,Saint Vincent and the Grenadines,58.7
+2003,Saint Vincent and the Grenadines,60.1
+2004,Saint Vincent and the Grenadines,61.4
+2005,Saint Vincent and the Grenadines,61.7
+2006,Saint Vincent and the Grenadines,62.1
+2007,Saint Vincent and the Grenadines,63.0
+2008,Saint Vincent and the Grenadines,62.9
+2009,Saint Vincent and the Grenadines,63.1
+2010,Saint Vincent and the Grenadines,63.8
+2011,Saint Vincent and the Grenadines,64.2
+2012,Saint Vincent and the Grenadines,64.3
+2013,Saint Vincent and the Grenadines,64.3
+2014,Saint Vincent and the Grenadines,64.6
+2015,Saint Vincent and the Grenadines,64.6
+2016,Saint Vincent and the Grenadines,64.3
+2017,Saint Vincent and the Grenadines,64.7
+1990,Suriname,31.3
+1991,Suriname,31.1
+1992,Suriname,31.9
+1993,Suriname,30.9
+1994,Suriname,32.0
+1995,Suriname,34.4
+1996,Suriname,35.2
+1997,Suriname,35.4
+1998,Suriname,35.8
+1999,Suriname,35.9
+2000,Suriname,37.1
+2001,Suriname,37.9
+2002,Suriname,37.3
+2003,Suriname,37.3
+2004,Suriname,37.2
+2005,Suriname,36.9
+2006,Suriname,37.1
+2007,Suriname,37.2
+2008,Suriname,37.0
+2009,Suriname,37.5
+2010,Suriname,38.4
+2011,Suriname,39.6
+2012,Suriname,41.3
+2013,Suriname,42.4
+2014,Suriname,43.7
+2015,Suriname,43.4
+2016,Suriname,43.7
+2017,Suriname,43.7
+1990,Trinidad and Tobago,45.3
+1991,Trinidad and Tobago,46.7
+1992,Trinidad and Tobago,47.3
+1993,Trinidad and Tobago,46.1
+1994,Trinidad and Tobago,47.0
+1995,Trinidad and Tobago,48.6
+1996,Trinidad and Tobago,46.9
+1997,Trinidad and Tobago,49.2
+1998,Trinidad and Tobago,46.6
+1999,Trinidad and Tobago,45.1
+2000,Trinidad and Tobago,46.2
+2001,Trinidad and Tobago,45.1
+2002,Trinidad and Tobago,44.2
+2003,Trinidad and Tobago,42.7
+2004,Trinidad and Tobago,42.4
+2005,Trinidad and Tobago,42.1
+2006,Trinidad and Tobago,43.1
+2007,Trinidad and Tobago,42.5
+2008,Trinidad and Tobago,40.5
+2009,Trinidad and Tobago,43.1
+2010,Trinidad and Tobago,45.7
+2011,Trinidad and Tobago,48.9
+2012,Trinidad and Tobago,49.9
+2013,Trinidad and Tobago,49.6
+2014,Trinidad and Tobago,50.2
+2015,Trinidad and Tobago,50.9
+2016,Trinidad and Tobago,51.0
+2017,Trinidad and Tobago,50.9
+1990,Bolivia,7.9
+1991,Bolivia,8.6
+1992,Bolivia,9.8
+1993,Bolivia,10.7
+1994,Bolivia,12.1
+1995,Bolivia,13.1
+1996,Bolivia,14.7
+1997,Bolivia,15.8
+1998,Bolivia,17.3
+1999,Bolivia,18.8
+2000,Bolivia,20.4
+2001,Bolivia,22.1
+2002,Bolivia,23.5
+2003,Bolivia,25.1
+2004,Bolivia,26.2
+2005,Bolivia,27.8
+2006,Bolivia,28.7
+2007,Bolivia,29.5
+2008,Bolivia,30.3
+2009,Bolivia,30.8
+2010,Bolivia,31.3
+2011,Bolivia,31.8
+2012,Bolivia,32.4
+2013,Bolivia,33.2
+2014,Bolivia,33.7
+2015,Bolivia,34.7
+2016,Bolivia,35.4
+2017,Bolivia,36.1
+1990,Ecuador,22.0
+1991,Ecuador,20.2
+1992,Ecuador,21.2
+1993,Ecuador,22.4
+1994,Ecuador,24.0
+1995,Ecuador,25.1
+1996,Ecuador,24.7
+1997,Ecuador,26.6
+1998,Ecuador,26.3
+1999,Ecuador,27.1
+2000,Ecuador,27.4
+2001,Ecuador,28.4
+2002,Ecuador,26.4
+2003,Ecuador,25.2
+2004,Ecuador,25.1
+2005,Ecuador,22.8
+2006,Ecuador,21.7
+2007,Ecuador,20.4
+2008,Ecuador,19.1
+2009,Ecuador,18.1
+2010,Ecuador,17.6
+2011,Ecuador,18.2
+2012,Ecuador,19.5
+2013,Ecuador,21.1
+2014,Ecuador,22.6
+2015,Ecuador,24.1
+2016,Ecuador,25.2
+2017,Ecuador,26.1
+1990,Peru,39.3
+1991,Peru,40.9
+1992,Peru,38.2
+1993,Peru,37.4
+1994,Peru,38.0
+1995,Peru,38.0
+1996,Peru,37.6
+1997,Peru,37.8
+1998,Peru,38.3
+1999,Peru,40.3
+2000,Peru,41.8
+2001,Peru,45.0
+2002,Peru,46.3
+2003,Peru,46.0
+2004,Peru,46.2
+2005,Peru,46.0
+2006,Peru,46.6
+2007,Peru,46.5
+2008,Peru,45.1
+2009,Peru,42.6
+2010,Peru,42.0
+2011,Peru,42.3
+2012,Peru,43.1
+2013,Peru,44.4
+2014,Peru,47.1
+2015,Peru,48.8
+2016,Peru,49.9
+2017,Peru,50.5
+1990,Colombia,30.2
+1991,Colombia,28.2
+1992,Colombia,27.8
+1993,Colombia,28.7
+1994,Colombia,28.1
+1995,Colombia,27.8
+1996,Colombia,28.1
+1997,Colombia,31.0
+1998,Colombia,32.7
+1999,Colombia,34.6
+2000,Colombia,36.7
+2001,Colombia,38.3
+2002,Colombia,35.9
+2003,Colombia,39.6
+2004,Colombia,40.6
+2005,Colombia,43.2
+2006,Colombia,43.0
+2007,Colombia,44.7
+2008,Colombia,45.1
+2009,Colombia,44.2
+2010,Colombia,45.6
+2011,Colombia,48.0
+2012,Colombia,48.6
+2013,Colombia,49.3
+2014,Colombia,48.6
+2015,Colombia,48.6
+2016,Colombia,49.2
+2017,Colombia,50.0
+1990,Costa Rica,38.0
+1991,Costa Rica,38.7
+1992,Costa Rica,37.4
+1993,Costa Rica,38.1
+1994,Costa Rica,36.5
+1995,Costa Rica,36.1
+1996,Costa Rica,38.6
+1997,Costa Rica,37.3
+1998,Costa Rica,37.0
+1999,Costa Rica,36.0
+2000,Costa Rica,38.3
+2001,Costa Rica,39.1
+2002,Costa Rica,39.7
+2003,Costa Rica,40.5
+2004,Costa Rica,41.4
+2005,Costa Rica,44.4
+2006,Costa Rica,43.0
+2007,Costa Rica,46.2
+2008,Costa Rica,46.3
+2009,Costa Rica,47.9
+2010,Costa Rica,45.6
+2011,Costa Rica,47.8
+2012,Costa Rica,48.5
+2013,Costa Rica,48.6
+2014,Costa Rica,48.4
+2015,Costa Rica,47.2
+2016,Costa Rica,46.0
+2017,Costa Rica,46.3
+1990,El Salvador,19.4
+1991,El Salvador,18.9
+1992,El Salvador,17.8
+1993,El Salvador,16.8
+1994,El Salvador,15.7
+1995,El Salvador,17.1
+1996,El Salvador,17.5
+1997,El Salvador,16.8
+1998,El Salvador,15.7
+1999,El Salvador,16.6
+2000,El Salvador,17.3
+2001,El Salvador,18.5
+2002,El Salvador,19.9
+2003,El Salvador,19.9
+2004,El Salvador,19.7
+2005,El Salvador,20.6
+2006,El Salvador,23.2
+2007,El Salvador,23.8
+2008,El Salvador,27.2
+2009,El Salvador,28.7
+2010,El Salvador,31.9
+2011,El Salvador,33.4
+2012,El Salvador,36.8
+2013,El Salvador,36.9
+2014,El Salvador,34.7
+2015,El Salvador,34.3
+2016,El Salvador,34.7
+2017,El Salvador,35.0
+1990,Guatemala,39.2
+1991,Guatemala,36.1
+1992,Guatemala,35.2
+1993,Guatemala,34.7
+1994,Guatemala,34.7
+1995,Guatemala,39.8
+1996,Guatemala,42.9
+1997,Guatemala,41.0
+1998,Guatemala,41.5
+1999,Guatemala,45.9
+2000,Guatemala,45.7
+2001,Guatemala,47.3
+2002,Guatemala,49.2
+2003,Guatemala,48.3
+2004,Guatemala,48.4
+2005,Guatemala,47.2
+2006,Guatemala,46.4
+2007,Guatemala,48.0
+2008,Guatemala,46.9
+2009,Guatemala,43.2
+2010,Guatemala,42.0
+2011,Guatemala,42.1
+2012,Guatemala,42.2
+2013,Guatemala,42.2
+2014,Guatemala,42.4
+2015,Guatemala,42.5
+2016,Guatemala,42.2
+2017,Guatemala,42.6
+1990,Honduras,31.0
+1991,Honduras,31.4
+1992,Honduras,31.4
+1993,Honduras,31.9
+1994,Honduras,32.3
+1995,Honduras,31.9
+1996,Honduras,32.2
+1997,Honduras,32.5
+1998,Honduras,32.4
+1999,Honduras,32.5
+2000,Honduras,33.5
+2001,Honduras,34.1
+2002,Honduras,34.9
+2003,Honduras,35.5
+2004,Honduras,36.3
+2005,Honduras,37.2
+2006,Honduras,38.4
+2007,Honduras,39.8
+2008,Honduras,41.0
+2009,Honduras,41.8
+2010,Honduras,42.4
+2011,Honduras,42.5
+2012,Honduras,43.1
+2013,Honduras,42.9
+2014,Honduras,43.0
+2015,Honduras,43.6
+2016,Honduras,44.1
+2017,Honduras,44.7
+1990,Mexico,25.8
+1991,Mexico,27.1
+1992,Mexico,28.0
+1993,Mexico,29.2
+1994,Mexico,30.6
+1995,Mexico,32.1
+1996,Mexico,33.5
+1997,Mexico,33.9
+1998,Mexico,34.3
+1999,Mexico,35.8
+2000,Mexico,37.3
+2001,Mexico,38.3
+2002,Mexico,38.3
+2003,Mexico,38.5
+2004,Mexico,39.6
+2005,Mexico,39.3
+2006,Mexico,40.0
+2007,Mexico,40.7
+2008,Mexico,39.1
+2009,Mexico,38.4
+2010,Mexico,39.2
+2011,Mexico,40.7
+2012,Mexico,42.2
+2013,Mexico,44.7
+2014,Mexico,45.7
+2015,Mexico,46.1
+2016,Mexico,45.8
+2017,Mexico,45.5
+1990,Nicaragua,33.5
+1991,Nicaragua,32.3
+1992,Nicaragua,33.3
+1993,Nicaragua,33.4
+1994,Nicaragua,34.2
+1995,Nicaragua,35.8
+1996,Nicaragua,37.5
+1997,Nicaragua,40.1
+1998,Nicaragua,41.3
+1999,Nicaragua,42.1
+2000,Nicaragua,43.9
+2001,Nicaragua,44.9
+2002,Nicaragua,45.9
+2003,Nicaragua,46.9
+2004,Nicaragua,48.4
+2005,Nicaragua,49.1
+2006,Nicaragua,51.7
+2007,Nicaragua,52.3
+2008,Nicaragua,52.9
+2009,Nicaragua,53.8
+2010,Nicaragua,55.6
+2011,Nicaragua,54.8
+2012,Nicaragua,54.1
+2013,Nicaragua,54.0
+2014,Nicaragua,53.7
+2015,Nicaragua,56.9
+2016,Nicaragua,58.6
+2017,Nicaragua,59.4
+1990,Panama,33.6
+1991,Panama,33.7
+1992,Panama,33.4
+1993,Panama,32.1
+1994,Panama,32.1
+1995,Panama,31.7
+1996,Panama,34.0
+1997,Panama,32.4
+1998,Panama,33.0
+1999,Panama,35.0
+2000,Panama,39.3
+2001,Panama,40.5
+2002,Panama,41.2
+2003,Panama,41.3
+2004,Panama,43.8
+2005,Panama,44.4
+2006,Panama,44.0
+2007,Panama,45.0
+2008,Panama,44.5
+2009,Panama,44.9
+2010,Panama,46.5
+2011,Panama,46.8
+2012,Panama,47.0
+2013,Panama,48.9
+2014,Panama,49.5
+2015,Panama,51.6
+2016,Panama,53.1
+2017,Panama,53.5
+1990,Venezuela,20.7
+1991,Venezuela,20.8
+1992,Venezuela,21.1
+1993,Venezuela,21.5
+1994,Venezuela,22.0
+1995,Venezuela,24.0
+1996,Venezuela,27.2
+1997,Venezuela,29.7
+1998,Venezuela,28.5
+1999,Venezuela,28.6
+2000,Venezuela,28.2
+2001,Venezuela,28.0
+2002,Venezuela,28.6
+2003,Venezuela,27.5
+2004,Venezuela,30.0
+2005,Venezuela,30.9
+2006,Venezuela,29.6
+2007,Venezuela,28.4
+2008,Venezuela,27.9
+2009,Venezuela,29.0
+2010,Venezuela,31.9
+2011,Venezuela,32.9
+2012,Venezuela,31.8
+2013,Venezuela,32.6
+2014,Venezuela,33.1
+2015,Venezuela,33.6
+2016,Venezuela,33.9
+2017,Venezuela,33.9
+1990,Brazil,19.2
+1991,Brazil,20.5
+1992,Brazil,21.5
+1993,Brazil,21.7
+1994,Brazil,22.1
+1995,Brazil,22.4
+1996,Brazil,23.1
+1997,Brazil,24.3
+1998,Brazil,26.0
+1999,Brazil,27.2
+2000,Brazil,28.5
+2001,Brazil,29.1
+2002,Brazil,29.4
+2003,Brazil,29.7
+2004,Brazil,30.1
+2005,Brazil,31.0
+2006,Brazil,31.5
+2007,Brazil,31.7
+2008,Brazil,31.7
+2009,Brazil,31.6
+2010,Brazil,31.4
+2011,Brazil,31.7
+2012,Brazil,32.1
+2013,Brazil,33.0
+2014,Brazil,34.1
+2015,Brazil,35.6
+2016,Brazil,36.3
+2017,Brazil,36.6
+1990,Paraguay,43.3
+1991,Paraguay,43.1
+1992,Paraguay,40.6
+1993,Paraguay,38.0
+1994,Paraguay,37.0
+1995,Paraguay,36.3
+1996,Paraguay,35.9
+1997,Paraguay,37.7
+1998,Paraguay,39.1
+1999,Paraguay,39.2
+2000,Paraguay,40.1
+2001,Paraguay,39.9
+2002,Paraguay,39.5
+2003,Paraguay,37.5
+2004,Paraguay,35.3
+2005,Paraguay,34.1
+2006,Paraguay,32.7
+2007,Paraguay,32.4
+2008,Paraguay,30.5
+2009,Paraguay,28.4
+2010,Paraguay,28.1
+2011,Paraguay,28.8
+2012,Paraguay,29.6
+2013,Paraguay,29.3
+2014,Paraguay,30.3
+2015,Paraguay,31.8
+2016,Paraguay,32.7
+2017,Paraguay,33.5
+1990,Algeria,16.8
+1991,Algeria,17.8
+1992,Algeria,18.5
+1993,Algeria,19.1
+1994,Algeria,19.0
+1995,Algeria,19.5
+1996,Algeria,20.0
+1997,Algeria,20.1
+1998,Algeria,20.8
+1999,Algeria,21.3
+2000,Algeria,22.5
+2001,Algeria,23.7
+2002,Algeria,25.0
+2003,Algeria,27.1
+2004,Algeria,28.3
+2005,Algeria,29.6
+2006,Algeria,30.9
+2007,Algeria,32.1
+2008,Algeria,33.4
+2009,Algeria,34.7
+2010,Algeria,35.9
+2011,Algeria,36.9
+2012,Algeria,38.1
+2013,Algeria,38.7
+2014,Algeria,39.2
+2015,Algeria,40.1
+2016,Algeria,41.6
+2017,Algeria,43.0
+1990,Bahrain,29.8
+1991,Bahrain,28.5
+1992,Bahrain,27.6
+1993,Bahrain,27.2
+1994,Bahrain,26.9
+1995,Bahrain,26.2
+1996,Bahrain,26.6
+1997,Bahrain,28.3
+1998,Bahrain,29.1
+1999,Bahrain,31.5
+2000,Bahrain,31.1
+2001,Bahrain,34.3
+2002,Bahrain,36.8
+2003,Bahrain,38.4
+2004,Bahrain,39.5
+2005,Bahrain,41.5
+2006,Bahrain,44.7
+2007,Bahrain,47.3
+2008,Bahrain,50.3
+2009,Bahrain,53.4
+2010,Bahrain,56.3
+2011,Bahrain,58.6
+2012,Bahrain,60.0
+2013,Bahrain,61.3
+2014,Bahrain,62.4
+2015,Bahrain,62.8
+2016,Bahrain,63.2
+2017,Bahrain,63.7
+1990,Egypt,2.9
+1991,Egypt,4.2
+1992,Egypt,5.7
+1993,Egypt,5.5
+1994,Egypt,6.0
+1995,Egypt,7.4
+1996,Egypt,8.3
+1997,Egypt,8.9
+1998,Egypt,10.3
+1999,Egypt,11.0
+2000,Egypt,12.8
+2001,Egypt,12.0
+2002,Egypt,11.8
+2003,Egypt,11.9
+2004,Egypt,12.6
+2005,Egypt,13.5
+2006,Egypt,14.1
+2007,Egypt,15.3
+2008,Egypt,15.8
+2009,Egypt,15.6
+2010,Egypt,15.9
+2011,Egypt,16.5
+2012,Egypt,16.8
+2013,Egypt,18.2
+2014,Egypt,19.1
+2015,Egypt,19.0
+2016,Egypt,19.9
+2017,Egypt,20.6
+1990,Iran,1.7
+1991,Iran,2.3
+1992,Iran,3.0
+1993,Iran,3.7
+1994,Iran,4.5
+1995,Iran,5.1
+1996,Iran,5.6
+1997,Iran,6.1
+1998,Iran,6.4
+1999,Iran,6.9
+2000,Iran,7.2
+2001,Iran,7.4
+2002,Iran,7.2
+2003,Iran,7.1
+2004,Iran,7.3
+2005,Iran,7.8
+2006,Iran,8.5
+2007,Iran,8.9
+2008,Iran,10.6
+2009,Iran,12.6
+2010,Iran,14.4
+2011,Iran,16.5
+2012,Iran,18.3
+2013,Iran,20.3
+2014,Iran,22.9
+2015,Iran,25.3
+2016,Iran,26.7
+2017,Iran,27.5
+1990,Iraq,26.8
+1991,Iraq,25.9
+1992,Iraq,25.4
+1993,Iraq,25.0
+1994,Iraq,25.6
+1995,Iraq,25.5
+1996,Iraq,25.0
+1997,Iraq,24.4
+1998,Iraq,26.2
+1999,Iraq,27.2
+2000,Iraq,27.3
+2001,Iraq,30.1
+2002,Iraq,30.4
+2003,Iraq,32.5
+2004,Iraq,34.8
+2005,Iraq,36.9
+2006,Iraq,39.5
+2007,Iraq,41.5
+2008,Iraq,43.9
+2009,Iraq,46.0
+2010,Iraq,48.0
+2011,Iraq,50.7
+2012,Iraq,53.1
+2013,Iraq,55.9
+2014,Iraq,58.7
+2015,Iraq,62.3
+2016,Iraq,64.0
+2017,Iraq,64.7
+1990,Jordan,27.8
+1991,Jordan,29.3
+1992,Jordan,30.4
+1993,Jordan,30.6
+1994,Jordan,31.6
+1995,Jordan,32.0
+1996,Jordan,32.6
+1997,Jordan,33.8
+1998,Jordan,34.8
+1999,Jordan,35.8
+2000,Jordan,36.8
+2001,Jordan,38.0
+2002,Jordan,39.2
+2003,Jordan,40.6
+2004,Jordan,42.1
+2005,Jordan,43.4
+2006,Jordan,44.8
+2007,Jordan,46.4
+2008,Jordan,48.1
+2009,Jordan,49.7
+2010,Jordan,51.3
+2011,Jordan,52.6
+2012,Jordan,53.6
+2013,Jordan,54.9
+2014,Jordan,55.3
+2015,Jordan,55.9
+2016,Jordan,56.5
+2017,Jordan,56.9
+1990,Kuwait,26.4
+1991,Kuwait,30.9
+1992,Kuwait,32.3
+1993,Kuwait,33.3
+1994,Kuwait,31.6
+1995,Kuwait,31.7
+1996,Kuwait,32.7
+1997,Kuwait,30.9
+1998,Kuwait,32.3
+1999,Kuwait,30.8
+2000,Kuwait,31.1
+2001,Kuwait,34.4
+2002,Kuwait,34.8
+2003,Kuwait,34.5
+2004,Kuwait,33.9
+2005,Kuwait,33.1
+2006,Kuwait,33.3
+2007,Kuwait,34.8
+2008,Kuwait,35.6
+2009,Kuwait,38.5
+2010,Kuwait,43.1
+2011,Kuwait,45.7
+2012,Kuwait,45.8
+2013,Kuwait,47.0
+2014,Kuwait,48.2
+2015,Kuwait,49.5
+2016,Kuwait,50.2
+2017,Kuwait,50.8
+1990,Lebanon,52.8
+1991,Lebanon,54.0
+1992,Lebanon,54.9
+1993,Lebanon,55.7
+1994,Lebanon,56.7
+1995,Lebanon,57.6
+1996,Lebanon,58.9
+1997,Lebanon,60.1
+1998,Lebanon,61.5
+1999,Lebanon,63.0
+2000,Lebanon,64.3
+2001,Lebanon,65.6
+2002,Lebanon,66.8
+2003,Lebanon,68.0
+2004,Lebanon,68.9
+2005,Lebanon,69.8
+2006,Lebanon,70.7
+2007,Lebanon,71.3
+2008,Lebanon,71.9
+2009,Lebanon,72.4
+2010,Lebanon,73.3
+2011,Lebanon,73.6
+2012,Lebanon,74.4
+2013,Lebanon,74.9
+2014,Lebanon,75.3
+2015,Lebanon,75.9
+2016,Lebanon,76.4
+2017,Lebanon,76.9
+1990,Libya,17.3
+1991,Libya,18.0
+1992,Libya,18.7
+1993,Libya,19.4
+1994,Libya,20.0
+1995,Libya,20.6
+1996,Libya,21.8
+1997,Libya,21.3
+1998,Libya,21.5
+1999,Libya,21.9
+2000,Libya,22.6
+2001,Libya,23.3
+2002,Libya,24.4
+2003,Libya,25.9
+2004,Libya,26.7
+2005,Libya,27.9
+2006,Libya,29.7
+2007,Libya,30.0
+2008,Libya,28.5
+2009,Libya,27.2
+2010,Libya,26.9
+2011,Libya,26.0
+2012,Libya,26.6
+2013,Libya,28.1
+2014,Libya,28.4
+2015,Libya,28.4
+2016,Libya,29.7
+2017,Libya,29.9
+1990,Morocco,16.1
+1991,Morocco,16.7
+1992,Morocco,17.3
+1993,Morocco,17.7
+1994,Morocco,18.5
+1995,Morocco,19.0
+1996,Morocco,19.5
+1997,Morocco,19.9
+1998,Morocco,20.5
+1999,Morocco,21.1
+2000,Morocco,22.4
+2001,Morocco,23.3
+2002,Morocco,24.6
+2003,Morocco,25.6
+2004,Morocco,26.8
+2005,Morocco,27.8
+2006,Morocco,29.1
+2007,Morocco,30.0
+2008,Morocco,30.7
+2009,Morocco,31.2
+2010,Morocco,31.9
+2011,Morocco,32.5
+2012,Morocco,33.4
+2013,Morocco,34.2
+2014,Morocco,34.7
+2015,Morocco,35.5
+2016,Morocco,36.3
+2017,Morocco,37.1
+1990,Palestine,43.1
+1991,Palestine,43.8
+1992,Palestine,44.6
+1993,Palestine,45.6
+1994,Palestine,46.6
+1995,Palestine,47.7
+1996,Palestine,48.6
+1997,Palestine,49.5
+1998,Palestine,50.6
+1999,Palestine,51.6
+2000,Palestine,52.5
+2001,Palestine,53.1
+2002,Palestine,53.3
+2003,Palestine,53.8
+2004,Palestine,54.0
+2005,Palestine,54.7
+2006,Palestine,55.4
+2007,Palestine,56.3
+2008,Palestine,57.5
+2009,Palestine,58.9
+2010,Palestine,60.4
+2011,Palestine,62.0
+2012,Palestine,63.5
+2013,Palestine,65.6
+2014,Palestine,66.1
+2015,Palestine,66.5
+2016,Palestine,67.5
+2017,Palestine,68.6
+1990,Oman,0.0
+1991,Oman,0.0
+1992,Oman,0.0
+1993,Oman,0.0
+1994,Oman,0.0
+1995,Oman,0.0
+1996,Oman,0.0
+1997,Oman,0.0
+1998,Oman,0.0
+1999,Oman,0.0
+2000,Oman,0.0
+2001,Oman,0.0
+2002,Oman,0.0
+2003,Oman,0.0
+2004,Oman,0.0
+2005,Oman,0.1
+2006,Oman,0.1
+2007,Oman,0.2
+2008,Oman,0.3
+2009,Oman,0.5
+2010,Oman,0.5
+2011,Oman,0.5
+2012,Oman,0.9
+2013,Oman,1.9
+2014,Oman,2.8
+2015,Oman,3.9
+2016,Oman,5.5
+2017,Oman,6.2
+1990,Qatar,14.8
+1991,Qatar,15.8
+1992,Qatar,16.7
+1993,Qatar,17.8
+1994,Qatar,19.5
+1995,Qatar,22.3
+1996,Qatar,18.4
+1997,Qatar,16.0
+1998,Qatar,14.2
+1999,Qatar,12.7
+2000,Qatar,11.9
+2001,Qatar,12.2
+2002,Qatar,10.8
+2003,Qatar,10.7
+2004,Qatar,11.0
+2005,Qatar,11.5
+2006,Qatar,12.1
+2007,Qatar,13.9
+2008,Qatar,15.2
+2009,Qatar,17.1
+2010,Qatar,19.7
+2011,Qatar,21.9
+2012,Qatar,24.0
+2013,Qatar,25.8
+2014,Qatar,27.4
+2015,Qatar,29.2
+2016,Qatar,29.8
+2017,Qatar,29.7
+1990,Saudi Arabia,3.7
+1991,Saudi Arabia,4.0
+1992,Saudi Arabia,4.8
+1993,Saudi Arabia,5.6
+1994,Saudi Arabia,6.5
+1995,Saudi Arabia,7.2
+1996,Saudi Arabia,8.1
+1997,Saudi Arabia,8.4
+1998,Saudi Arabia,9.0
+1999,Saudi Arabia,9.5
+2000,Saudi Arabia,9.9
+2001,Saudi Arabia,9.7
+2002,Saudi Arabia,8.8
+2003,Saudi Arabia,8.3
+2004,Saudi Arabia,8.3
+2005,Saudi Arabia,7.9
+2006,Saudi Arabia,8.0
+2007,Saudi Arabia,8.2
+2008,Saudi Arabia,9.2
+2009,Saudi Arabia,9.5
+2010,Saudi Arabia,9.9
+2011,Saudi Arabia,10.5
+2012,Saudi Arabia,11.3
+2013,Saudi Arabia,11.6
+2014,Saudi Arabia,12.4
+2015,Saudi Arabia,13.4
+2016,Saudi Arabia,14.4
+2017,Saudi Arabia,15.3
+1990,Syria,35.3
+1991,Syria,35.5
+1992,Syria,35.4
+1993,Syria,36.8
+1994,Syria,37.6
+1995,Syria,38.4
+1996,Syria,39.7
+1997,Syria,40.9
+1998,Syria,41.9
+1999,Syria,43.5
+2000,Syria,45.5
+2001,Syria,46.8
+2002,Syria,47.6
+2003,Syria,50.1
+2004,Syria,50.5
+2005,Syria,50.7
+2006,Syria,52.0
+2007,Syria,52.9
+2008,Syria,52.9
+2009,Syria,54.1
+2010,Syria,54.5
+2011,Syria,55.5
+2012,Syria,56.2
+2013,Syria,56.4
+2014,Syria,56.6
+2015,Syria,56.8
+2016,Syria,57.2
+2017,Syria,57.6
+1990,Tunisia,4.5
+1991,Tunisia,4.2
+1992,Tunisia,4.0
+1993,Tunisia,4.1
+1994,Tunisia,4.3
+1995,Tunisia,4.7
+1996,Tunisia,5.7
+1997,Tunisia,6.2
+1998,Tunisia,6.6
+1999,Tunisia,7.3
+2000,Tunisia,8.1
+2001,Tunisia,8.8
+2002,Tunisia,9.5
+2003,Tunisia,10.2
+2004,Tunisia,11.1
+2005,Tunisia,11.9
+2006,Tunisia,12.7
+2007,Tunisia,13.7
+2008,Tunisia,14.6
+2009,Tunisia,15.5
+2010,Tunisia,16.3
+2011,Tunisia,17.3
+2012,Tunisia,18.3
+2013,Tunisia,19.2
+2014,Tunisia,20.1
+2015,Tunisia,21.0
+2016,Tunisia,21.7
+2017,Tunisia,22.5
+1990,Turkey,43.8
+1991,Turkey,44.4
+1992,Turkey,45.0
+1993,Turkey,45.8
+1994,Turkey,46.3
+1995,Turkey,47.3
+1996,Turkey,48.9
+1997,Turkey,50.7
+1998,Turkey,52.7
+1999,Turkey,54.1
+2000,Turkey,56.1
+2001,Turkey,57.9
+2002,Turkey,60.6
+2003,Turkey,60.0
+2004,Turkey,60.1
+2005,Turkey,59.7
+2006,Turkey,60.2
+2007,Turkey,61.3
+2008,Turkey,62.1
+2009,Turkey,61.7
+2010,Turkey,61.8
+2011,Turkey,62.4
+2012,Turkey,62.2
+2013,Turkey,61.0
+2014,Turkey,59.8
+2015,Turkey,60.0
+2016,Turkey,60.5
+2017,Turkey,61.7
+1990,United Arab Emirates,0.8
+1991,United Arab Emirates,0.9
+1992,United Arab Emirates,1.1
+1993,United Arab Emirates,1.4
+1994,United Arab Emirates,1.6
+1995,United Arab Emirates,1.9
+1996,United Arab Emirates,2.4
+1997,United Arab Emirates,2.9
+1998,United Arab Emirates,2.7
+1999,United Arab Emirates,2.3
+2000,United Arab Emirates,2.5
+2001,United Arab Emirates,3.0
+2002,United Arab Emirates,3.8
+2003,United Arab Emirates,2.6
+2004,United Arab Emirates,1.8
+2005,United Arab Emirates,2.3
+2006,United Arab Emirates,2.7
+2007,United Arab Emirates,2.3
+2008,United Arab Emirates,1.8
+2009,United Arab Emirates,1.9
+2010,United Arab Emirates,2.1
+2011,United Arab Emirates,2.5
+2012,United Arab Emirates,2.7
+2013,United Arab Emirates,3.0
+2014,United Arab Emirates,3.3
+2015,United Arab Emirates,3.8
+2016,United Arab Emirates,4.1
+2017,United Arab Emirates,4.5
+1990,Yemen,1.5
+1991,Yemen,1.3
+1992,Yemen,1.1
+1993,Yemen,0.8
+1994,Yemen,0.6
+1995,Yemen,0.6
+1996,Yemen,0.6
+1997,Yemen,0.7
+1998,Yemen,0.8
+1999,Yemen,1.1
+2000,Yemen,1.7
+2001,Yemen,2.4
+2002,Yemen,2.8
+2003,Yemen,3.5
+2004,Yemen,4.2
+2005,Yemen,5.0
+2006,Yemen,5.8
+2007,Yemen,5.9
+2008,Yemen,7.1
+2009,Yemen,8.2
+2010,Yemen,9.4
+2011,Yemen,10.4
+2012,Yemen,11.5
+2013,Yemen,12.3
+2014,Yemen,13.1
+2015,Yemen,13.4
+2016,Yemen,13.8
+2017,Yemen,14.1
+1990,Afghanistan,6.0
+1991,Afghanistan,5.7
+1992,Afghanistan,5.1
+1993,Afghanistan,4.1
+1994,Afghanistan,2.9
+1995,Afghanistan,2.2
+1996,Afghanistan,1.9
+1997,Afghanistan,1.8
+1998,Afghanistan,1.8
+1999,Afghanistan,1.9
+2000,Afghanistan,2.0
+2001,Afghanistan,2.3
+2002,Afghanistan,3.3
+2003,Afghanistan,3.6
+2004,Afghanistan,4.4
+2005,Afghanistan,5.6
+2006,Afghanistan,6.9
+2007,Afghanistan,8.3
+2008,Afghanistan,9.8
+2009,Afghanistan,11.4
+2010,Afghanistan,12.5
+2011,Afghanistan,13.8
+2012,Afghanistan,15.1
+2013,Afghanistan,16.0
+2014,Afghanistan,17.0
+2015,Afghanistan,17.7
+2016,Afghanistan,18.3
+2017,Afghanistan,18.9
+1990,Bangladesh,72.0
+1991,Bangladesh,74.2
+1992,Bangladesh,74.5
+1993,Bangladesh,75.7
+1994,Bangladesh,75.5
+1995,Bangladesh,75.4
+1996,Bangladesh,75.2
+1997,Bangladesh,74.9
+1998,Bangladesh,75.3
+1999,Bangladesh,74.5
+2000,Bangladesh,71.6
+2001,Bangladesh,70.3
+2002,Bangladesh,68.8
+2003,Bangladesh,66.7
+2004,Bangladesh,65.0
+2005,Bangladesh,62.3
+2006,Bangladesh,62.4
+2007,Bangladesh,61.2
+2008,Bangladesh,61.2
+2009,Bangladesh,62.1
+2010,Bangladesh,62.4
+2011,Bangladesh,63.6
+2012,Bangladesh,65.1
+2013,Bangladesh,66.4
+2014,Bangladesh,66.2
+2015,Bangladesh,67.5
+2016,Bangladesh,69.3
+2017,Bangladesh,70.1
+1990,Bhutan,40.5
+1991,Bhutan,41.3
+1992,Bhutan,42.0
+1993,Bhutan,42.5
+1994,Bhutan,43.6
+1995,Bhutan,44.0
+1996,Bhutan,45.0
+1997,Bhutan,46.3
+1998,Bhutan,48.0
+1999,Bhutan,50.1
+2000,Bhutan,51.3
+2001,Bhutan,52.8
+2002,Bhutan,53.9
+2003,Bhutan,55.9
+2004,Bhutan,57.6
+2005,Bhutan,58.9
+2006,Bhutan,60.3
+2007,Bhutan,61.5
+2008,Bhutan,63.0
+2009,Bhutan,63.8
+2010,Bhutan,65.1
+2011,Bhutan,66.4
+2012,Bhutan,67.5
+2013,Bhutan,68.5
+2014,Bhutan,69.2
+2015,Bhutan,70.0
+2016,Bhutan,70.8
+2017,Bhutan,71.7
+1990,India,39.5
+1991,India,38.8
+1992,India,38.5
+1993,India,38.8
+1994,India,39.0
+1995,India,39.2
+1996,India,39.7
+1997,India,38.5
+1998,India,38.4
+1999,India,38.5
+2000,India,38.8
+2001,India,39.2
+2002,India,39.8
+2003,India,40.5
+2004,India,41.3
+2005,India,40.9
+2006,India,40.2
+2007,India,39.6
+2008,India,38.6
+2009,India,38.1
+2010,India,37.5
+2011,India,36.8
+2012,India,36.8
+2013,India,38.5
+2014,India,40.1
+2015,India,41.6
+2016,India,42.1
+2017,India,43.0
+1990,Nepal,31.8
+1991,Nepal,31.5
+1992,Nepal,30.8
+1993,Nepal,28.3
+1994,Nepal,26.0
+1995,Nepal,24.5
+1996,Nepal,24.1
+1997,Nepal,23.8
+1998,Nepal,24.0
+1999,Nepal,24.4
+2000,Nepal,24.9
+2001,Nepal,25.9
+2002,Nepal,26.7
+2003,Nepal,27.4
+2004,Nepal,27.8
+2005,Nepal,27.8
+2006,Nepal,27.7
+2007,Nepal,27.6
+2008,Nepal,27.2
+2009,Nepal,27.0
+2010,Nepal,26.9
+2011,Nepal,26.5
+2012,Nepal,26.2
+2013,Nepal,26.1
+2014,Nepal,26.5
+2015,Nepal,26.8
+2016,Nepal,27.3
+2017,Nepal,27.9
+1990,Pakistan,33.1
+1991,Pakistan,31.4
+1992,Pakistan,29.7
+1993,Pakistan,28.1
+1994,Pakistan,26.9
+1995,Pakistan,25.3
+1996,Pakistan,24.1
+1997,Pakistan,22.9
+1998,Pakistan,22.7
+1999,Pakistan,22.3
+2000,Pakistan,22.3
+2001,Pakistan,21.8
+2002,Pakistan,21.3
+2003,Pakistan,20.8
+2004,Pakistan,20.4
+2005,Pakistan,20.2
+2006,Pakistan,20.6
+2007,Pakistan,21.0
+2008,Pakistan,20.8
+2009,Pakistan,20.8
+2010,Pakistan,20.9
+2011,Pakistan,20.9
+2012,Pakistan,20.9
+2013,Pakistan,21.4
+2014,Pakistan,21.1
+2015,Pakistan,22.2
+2016,Pakistan,22.9
+2017,Pakistan,23.6
+1990,Angola,1.9
+1991,Angola,1.6
+1992,Angola,1.3
+1993,Angola,0.9
+1994,Angola,0.8
+1995,Angola,1.0
+1996,Angola,2.2
+1997,Angola,3.0
+1998,Angola,1.5
+1999,Angola,2.6
+2000,Angola,3.3
+2001,Angola,4.2
+2002,Angola,5.4
+2003,Angola,6.0
+2004,Angola,5.7
+2005,Angola,7.2
+2006,Angola,8.4
+2007,Angola,9.9
+2008,Angola,11.3
+2009,Angola,13.1
+2010,Angola,14.5
+2011,Angola,15.9
+2012,Angola,17.2
+2013,Angola,18.6
+2014,Angola,20.7
+2015,Angola,22.0
+2016,Angola,23.6
+2017,Angola,24.4
+1990,Central African Republic,0.2
+1991,Central African Republic,0.1
+1992,Central African Republic,0.0
+1993,Central African Republic,0.0
+1994,Central African Republic,0.0
+1995,Central African Republic,0.0
+1996,Central African Republic,0.0
+1997,Central African Republic,0.0
+1998,Central African Republic,0.0
+1999,Central African Republic,0.0
+2000,Central African Republic,0.0
+2001,Central African Republic,0.0
+2002,Central African Republic,0.0
+2003,Central African Republic,0.0
+2004,Central African Republic,0.1
+2005,Central African Republic,0.1
+2006,Central African Republic,0.1
+2007,Central African Republic,0.1
+2008,Central African Republic,0.1
+2009,Central African Republic,0.1
+2010,Central African Republic,0.1
+2011,Central African Republic,0.1
+2012,Central African Republic,0.1
+2013,Central African Republic,0.1
+2014,Central African Republic,0.1
+2015,Central African Republic,0.1
+2016,Central African Republic,0.1
+2017,Central African Republic,0.1
+1990,Congo,3.6
+1991,Congo,5.1
+1992,Congo,5.9
+1993,Congo,6.6
+1994,Congo,4.9
+1995,Congo,4.8
+1996,Congo,4.6
+1997,Congo,4.0
+1998,Congo,6.3
+1999,Congo,6.5
+2000,Congo,8.3
+2001,Congo,11.4
+2002,Congo,13.6
+2003,Congo,13.7
+2004,Congo,14.6
+2005,Congo,14.9
+2006,Congo,15.9
+2007,Congo,16.7
+2008,Congo,17.3
+2009,Congo,18.3
+2010,Congo,19.7
+2011,Congo,21.4
+2012,Congo,21.5
+2013,Congo,22.3
+2014,Congo,22.9
+2015,Congo,23.6
+2016,Congo,24.2
+2017,Congo,24.5
+1990,Democratic Republic of the Congo,15.6
+1991,Democratic Republic of the Congo,15.3
+1992,Democratic Republic of the Congo,15.3
+1993,Democratic Republic of the Congo,15.7
+1994,Democratic Republic of the Congo,16.1
+1995,Democratic Republic of the Congo,15.8
+1996,Democratic Republic of the Congo,15.5
+1997,Democratic Republic of the Congo,16.6
+1998,Democratic Republic of the Congo,16.5
+1999,Democratic Republic of the Congo,16.7
+2000,Democratic Republic of the Congo,16.6
+2001,Democratic Republic of the Congo,16.9
+2002,Democratic Republic of the Congo,17.6
+2003,Democratic Republic of the Congo,17.5
+2004,Democratic Republic of the Congo,18.5
+2005,Democratic Republic of the Congo,19.2
+2006,Democratic Republic of the Congo,19.3
+2007,Democratic Republic of the Congo,19.5
+2008,Democratic Republic of the Congo,19.6
+2009,Democratic Republic of the Congo,19.6
+2010,Democratic Republic of the Congo,19.7
+2011,Democratic Republic of the Congo,19.9
+2012,Democratic Republic of the Congo,20.3
+2013,Democratic Republic of the Congo,21.1
+2014,Democratic Republic of the Congo,21.8
+2015,Democratic Republic of the Congo,22.5
+2016,Democratic Republic of the Congo,23.4
+2017,Democratic Republic of the Congo,24.1
+1990,Equatorial Guinea,0.2
+1991,Equatorial Guinea,0.2
+1992,Equatorial Guinea,0.4
+1993,Equatorial Guinea,0.6
+1994,Equatorial Guinea,0.8
+1995,Equatorial Guinea,1.0
+1996,Equatorial Guinea,1.6
+1997,Equatorial Guinea,4.3
+1998,Equatorial Guinea,7.1
+1999,Equatorial Guinea,9.6
+2000,Equatorial Guinea,12.9
+2001,Equatorial Guinea,16.5
+2002,Equatorial Guinea,20.2
+2003,Equatorial Guinea,21.9
+2004,Equatorial Guinea,26.2
+2005,Equatorial Guinea,27.1
+2006,Equatorial Guinea,26.3
+2007,Equatorial Guinea,27.5
+2008,Equatorial Guinea,29.2
+2009,Equatorial Guinea,29.6
+2010,Equatorial Guinea,31.1
+2011,Equatorial Guinea,33.4
+2012,Equatorial Guinea,34.4
+2013,Equatorial Guinea,35.6
+2014,Equatorial Guinea,35.2
+2015,Equatorial Guinea,36.0
+2016,Equatorial Guinea,36.2
+2017,Equatorial Guinea,36.4
+1990,Gabon,9.0
+1991,Gabon,9.9
+1992,Gabon,11.0
+1993,Gabon,12.6
+1994,Gabon,12.3
+1995,Gabon,11.7
+1996,Gabon,12.4
+1997,Gabon,13.0
+1998,Gabon,13.8
+1999,Gabon,15.2
+2000,Gabon,15.0
+2001,Gabon,14.9
+2002,Gabon,15.5
+2003,Gabon,15.3
+2004,Gabon,15.6
+2005,Gabon,15.4
+2006,Gabon,15.3
+2007,Gabon,15.1
+2008,Gabon,15.6
+2009,Gabon,16.4
+2010,Gabon,18.2
+2011,Gabon,19.1
+2012,Gabon,20.0
+2013,Gabon,21.3
+2014,Gabon,21.9
+2015,Gabon,22.5
+2016,Gabon,23.6
+2017,Gabon,24.6
+1990,Burundi,2.3
+1991,Burundi,2.5
+1992,Burundi,2.7
+1993,Burundi,2.6
+1994,Burundi,2.8
+1995,Burundi,2.8
+1996,Burundi,2.8
+1997,Burundi,3.4
+1998,Burundi,4.2
+1999,Burundi,5.5
+2000,Burundi,6.8
+2001,Burundi,8.5
+2002,Burundi,9.7
+2003,Burundi,10.7
+2004,Burundi,11.0
+2005,Burundi,11.4
+2006,Burundi,12.3
+2007,Burundi,13.3
+2008,Burundi,14.0
+2009,Burundi,14.5
+2010,Burundi,14.7
+2011,Burundi,14.8
+2012,Burundi,14.9
+2013,Burundi,15.4
+2014,Burundi,15.7
+2015,Burundi,16.0
+2016,Burundi,16.8
+2017,Burundi,17.0
+1990,Comoros,15.9
+1991,Comoros,16.6
+1992,Comoros,17.3
+1993,Comoros,18.0
+1994,Comoros,18.5
+1995,Comoros,19.1
+1996,Comoros,19.7
+1997,Comoros,20.3
+1998,Comoros,24.5
+1999,Comoros,26.2
+2000,Comoros,27.5
+2001,Comoros,28.9
+2002,Comoros,30.0
+2003,Comoros,31.1
+2004,Comoros,29.9
+2005,Comoros,30.7
+2006,Comoros,31.0
+2007,Comoros,31.5
+2008,Comoros,31.8
+2009,Comoros,32.2
+2010,Comoros,32.8
+2011,Comoros,33.0
+2012,Comoros,33.5
+2013,Comoros,34.2
+2014,Comoros,34.7
+2015,Comoros,35.3
+2016,Comoros,35.8
+2017,Comoros,36.3
+1990,Djibouti,21.1
+1991,Djibouti,20.4
+1992,Djibouti,19.4
+1993,Djibouti,18.7
+1994,Djibouti,18.2
+1995,Djibouti,17.7
+1996,Djibouti,17.5
+1997,Djibouti,17.8
+1998,Djibouti,18.2
+1999,Djibouti,19.0
+2000,Djibouti,20.1
+2001,Djibouti,21.3
+2002,Djibouti,22.2
+2003,Djibouti,23.1
+2004,Djibouti,23.8
+2005,Djibouti,24.7
+2006,Djibouti,25.4
+2007,Djibouti,26.2
+2008,Djibouti,27.0
+2009,Djibouti,27.6
+2010,Djibouti,28.3
+2011,Djibouti,28.9
+2012,Djibouti,29.5
+2013,Djibouti,30.1
+2014,Djibouti,30.7
+2015,Djibouti,31.4
+2016,Djibouti,32.0
+2017,Djibouti,32.7
+1990,Eritrea,2.9
+1991,Eritrea,1.9
+1992,Eritrea,1.7
+1993,Eritrea,1.8
+1994,Eritrea,1.8
+1995,Eritrea,2.2
+1996,Eritrea,2.1
+1997,Eritrea,2.4
+1998,Eritrea,2.9
+1999,Eritrea,3.8
+2000,Eritrea,5.3
+2001,Eritrea,5.9
+2002,Eritrea,7.2
+2003,Eritrea,8.3
+2004,Eritrea,8.9
+2005,Eritrea,10.2
+2006,Eritrea,11.3
+2007,Eritrea,12.7
+2008,Eritrea,12.9
+2009,Eritrea,13.4
+2010,Eritrea,13.8
+2011,Eritrea,14.5
+2012,Eritrea,15.2
+2013,Eritrea,15.9
+2014,Eritrea,16.7
+2015,Eritrea,17.2
+2016,Eritrea,18.2
+2017,Eritrea,19.2
+1990,Ethiopia,16.0
+1991,Ethiopia,16.2
+1992,Ethiopia,16.1
+1993,Ethiopia,16.4
+1994,Ethiopia,16.9
+1995,Ethiopia,17.6
+1996,Ethiopia,18.9
+1997,Ethiopia,20.2
+1998,Ethiopia,21.8
+1999,Ethiopia,23.6
+2000,Ethiopia,25.4
+2001,Ethiopia,27.0
+2002,Ethiopia,28.8
+2003,Ethiopia,30.3
+2004,Ethiopia,31.4
+2005,Ethiopia,32.8
+2006,Ethiopia,33.8
+2007,Ethiopia,34.9
+2008,Ethiopia,36.1
+2009,Ethiopia,37.1
+2010,Ethiopia,38.3
+2011,Ethiopia,39.8
+2012,Ethiopia,41.3
+2013,Ethiopia,42.9
+2014,Ethiopia,44.1
+2015,Ethiopia,45.2
+2016,Ethiopia,46.3
+2017,Ethiopia,46.9
+1990,Kenya,36.3
+1991,Kenya,36.3
+1992,Kenya,36.1
+1993,Kenya,36.0
+1994,Kenya,35.8
+1995,Kenya,35.5
+1996,Kenya,35.2
+1997,Kenya,34.9
+1998,Kenya,34.5
+1999,Kenya,34.7
+2000,Kenya,34.4
+2001,Kenya,34.8
+2002,Kenya,34.7
+2003,Kenya,34.6
+2004,Kenya,34.7
+2005,Kenya,34.6
+2006,Kenya,34.9
+2007,Kenya,35.1
+2008,Kenya,35.3
+2009,Kenya,35.7
+2010,Kenya,35.7
+2011,Kenya,35.8
+2012,Kenya,36.4
+2013,Kenya,37.3
+2014,Kenya,38.7
+2015,Kenya,39.5
+2016,Kenya,40.2
+2017,Kenya,40.9
+1990,Madagascar,19.8
+1991,Madagascar,20.3
+1992,Madagascar,20.8
+1993,Madagascar,19.9
+1994,Madagascar,21.7
+1995,Madagascar,22.5
+1996,Madagascar,22.7
+1997,Madagascar,23.3
+1998,Madagascar,23.7
+1999,Madagascar,25.2
+2000,Madagascar,26.3
+2001,Madagascar,27.6
+2002,Madagascar,28.7
+2003,Madagascar,29.1
+2004,Madagascar,30.2
+2005,Madagascar,31.4
+2006,Madagascar,32.2
+2007,Madagascar,33.2
+2008,Madagascar,33.3
+2009,Madagascar,33.3
+2010,Madagascar,33.3
+2011,Madagascar,33.4
+2012,Madagascar,33.8
+2013,Madagascar,34.3
+2014,Madagascar,34.7
+2015,Madagascar,35.1
+2016,Madagascar,35.6
+2017,Madagascar,36.2
+1990,Malawi,17.4
+1991,Malawi,17.1
+1992,Malawi,16.0
+1993,Malawi,15.7
+1994,Malawi,15.6
+1995,Malawi,16.4
+1996,Malawi,17.9
+1997,Malawi,19.6
+1998,Malawi,20.8
+1999,Malawi,22.6
+2000,Malawi,24.0
+2001,Malawi,26.0
+2002,Malawi,27.6
+2003,Malawi,28.8
+2004,Malawi,29.7
+2005,Malawi,30.9
+2006,Malawi,32.0
+2007,Malawi,33.3
+2008,Malawi,33.7
+2009,Malawi,33.8
+2010,Malawi,33.6
+2011,Malawi,34.0
+2012,Malawi,34.9
+2013,Malawi,35.8
+2014,Malawi,36.6
+2015,Malawi,37.1
+2016,Malawi,37.7
+2017,Malawi,38.5
+1990,Mauritius,48.5
+1991,Mauritius,47.4
+1992,Mauritius,47.1
+1993,Mauritius,44.9
+1994,Mauritius,44.9
+1995,Mauritius,45.0
+1996,Mauritius,46.3
+1997,Mauritius,46.4
+1998,Mauritius,47.5
+1999,Mauritius,47.0
+2000,Mauritius,48.7
+2001,Mauritius,49.1
+2002,Mauritius,47.8
+2003,Mauritius,50.3
+2004,Mauritius,52.2
+2005,Mauritius,53.8
+2006,Mauritius,54.1
+2007,Mauritius,55.0
+2008,Mauritius,54.5
+2009,Mauritius,55.0
+2010,Mauritius,55.6
+2011,Mauritius,55.3
+2012,Mauritius,55.7
+2013,Mauritius,57.4
+2014,Mauritius,56.7
+2015,Mauritius,56.0
+2016,Mauritius,56.8
+2017,Mauritius,57.9
+1990,Mozambique,19.0
+1991,Mozambique,17.9
+1992,Mozambique,16.4
+1993,Mozambique,15.3
+1994,Mozambique,14.3
+1995,Mozambique,13.4
+1996,Mozambique,12.0
+1997,Mozambique,13.2
+1998,Mozambique,14.3
+1999,Mozambique,15.3
+2000,Mozambique,16.0
+2001,Mozambique,17.3
+2002,Mozambique,18.2
+2003,Mozambique,18.9
+2004,Mozambique,19.2
+2005,Mozambique,19.4
+2006,Mozambique,19.4
+2007,Mozambique,19.4
+2008,Mozambique,19.5
+2009,Mozambique,20.1
+2010,Mozambique,20.5
+2011,Mozambique,21.2
+2012,Mozambique,21.8
+2013,Mozambique,22.4
+2014,Mozambique,23.1
+2015,Mozambique,23.8
+2016,Mozambique,24.6
+2017,Mozambique,25.8
+1990,Rwanda,0.4
+1991,Rwanda,0.3
+1992,Rwanda,0.2
+1993,Rwanda,0.3
+1994,Rwanda,0.1
+1995,Rwanda,0.2
+1996,Rwanda,0.2
+1997,Rwanda,0.2
+1998,Rwanda,0.3
+1999,Rwanda,0.6
+2000,Rwanda,1.1
+2001,Rwanda,2.4
+2002,Rwanda,3.9
+2003,Rwanda,5.4
+2004,Rwanda,6.6
+2005,Rwanda,8.0
+2006,Rwanda,9.5
+2007,Rwanda,11.2
+2008,Rwanda,12.6
+2009,Rwanda,13.9
+2010,Rwanda,14.5
+2011,Rwanda,15.0
+2012,Rwanda,15.6
+2013,Rwanda,16.2
+2014,Rwanda,16.7
+2015,Rwanda,17.6
+2016,Rwanda,18.7
+2017,Rwanda,19.3
+1990,Seychelles,57.2
+1991,Seychelles,55.9
+1992,Seychelles,54.2
+1993,Seychelles,52.3
+1994,Seychelles,50.0
+1995,Seychelles,48.1
+1996,Seychelles,46.5
+1997,Seychelles,45.5
+1998,Seychelles,44.9
+1999,Seychelles,45.4
+2000,Seychelles,45.8
+2001,Seychelles,46.3
+2002,Seychelles,46.5
+2003,Seychelles,46.9
+2004,Seychelles,47.1
+2005,Seychelles,48.2
+2006,Seychelles,49.3
+2007,Seychelles,50.1
+2008,Seychelles,50.9
+2009,Seychelles,51.6
+2010,Seychelles,51.8
+2011,Seychelles,52.3
+2012,Seychelles,52.1
+2013,Seychelles,51.9
+2014,Seychelles,51.7
+2015,Seychelles,51.7
+2016,Seychelles,51.7
+2017,Seychelles,52.1
+1990,Somalia,6.7
+1991,Somalia,5.6
+1992,Somalia,4.1
+1993,Somalia,2.8
+1994,Somalia,1.9
+1995,Somalia,1.3
+1996,Somalia,1.1
+1997,Somalia,1.2
+1998,Somalia,1.2
+1999,Somalia,1.4
+2000,Somalia,1.7
+2001,Somalia,2.1
+2002,Somalia,2.4
+2003,Somalia,2.7
+2004,Somalia,3.0
+2005,Somalia,3.2
+2006,Somalia,3.1
+2007,Somalia,3.3
+2008,Somalia,3.1
+2009,Somalia,2.9
+2010,Somalia,3.0
+2011,Somalia,3.1
+2012,Somalia,3.2
+2013,Somalia,3.5
+2014,Somalia,3.8
+2015,Somalia,4.3
+2016,Somalia,4.7
+2017,Somalia,5.1
+1990,Tanzania,32.9
+1991,Tanzania,33.2
+1992,Tanzania,33.2
+1993,Tanzania,33.1
+1994,Tanzania,33.3
+1995,Tanzania,33.8
+1996,Tanzania,34.4
+1997,Tanzania,35.2
+1998,Tanzania,35.9
+1999,Tanzania,37.3
+2000,Tanzania,39.0
+2001,Tanzania,40.5
+2002,Tanzania,41.8
+2003,Tanzania,42.5
+2004,Tanzania,43.2
+2005,Tanzania,44.2
+2006,Tanzania,44.9
+2007,Tanzania,45.4
+2008,Tanzania,45.4
+2009,Tanzania,45.6
+2010,Tanzania,45.8
+2011,Tanzania,45.9
+2012,Tanzania,45.6
+2013,Tanzania,45.5
+2014,Tanzania,46.0
+2015,Tanzania,46.1
+2016,Tanzania,46.5
+2017,Tanzania,47.0
+1990,Uganda,28.6
+1991,Uganda,27.2
+1992,Uganda,26.4
+1993,Uganda,24.9
+1994,Uganda,23.0
+1995,Uganda,21.2
+1996,Uganda,19.4
+1997,Uganda,18.7
+1998,Uganda,17.9
+1999,Uganda,17.8
+2000,Uganda,17.6
+2001,Uganda,17.4
+2002,Uganda,17.6
+2003,Uganda,18.1
+2004,Uganda,18.3
+2005,Uganda,18.9
+2006,Uganda,19.0
+2007,Uganda,19.4
+2008,Uganda,20.0
+2009,Uganda,20.6
+2010,Uganda,22.0
+2011,Uganda,22.9
+2012,Uganda,23.6
+2013,Uganda,24.0
+2014,Uganda,24.8
+2015,Uganda,26.2
+2016,Uganda,27.5
+2017,Uganda,28.0
+1990,Zambia,16.1
+1991,Zambia,17.0
+1992,Zambia,17.5
+1993,Zambia,17.3
+1994,Zambia,16.9
+1995,Zambia,16.5
+1996,Zambia,16.6
+1997,Zambia,17.2
+1998,Zambia,18.0
+1999,Zambia,19.5
+2000,Zambia,21.0
+2001,Zambia,22.8
+2002,Zambia,24.6
+2003,Zambia,26.0
+2004,Zambia,27.3
+2005,Zambia,28.5
+2006,Zambia,29.4
+2007,Zambia,30.6
+2008,Zambia,31.1
+2009,Zambia,32.2
+2010,Zambia,32.6
+2011,Zambia,33.3
+2012,Zambia,34.3
+2013,Zambia,35.3
+2014,Zambia,36.1
+2015,Zambia,36.7
+2016,Zambia,37.2
+2017,Zambia,37.8
+1990,Botswana,33.4
+1991,Botswana,34.4
+1992,Botswana,35.4
+1993,Botswana,36.5
+1994,Botswana,37.8
+1995,Botswana,39.2
+1996,Botswana,41.1
+1997,Botswana,42.7
+1998,Botswana,43.4
+1999,Botswana,43.9
+2000,Botswana,43.9
+2001,Botswana,43.8
+2002,Botswana,43.5
+2003,Botswana,43.9
+2004,Botswana,42.7
+2005,Botswana,42.3
+2006,Botswana,42.1
+2007,Botswana,42.3
+2008,Botswana,42.4
+2009,Botswana,42.5
+2010,Botswana,42.9
+2011,Botswana,43.0
+2012,Botswana,43.9
+2013,Botswana,44.4
+2014,Botswana,44.8
+2015,Botswana,45.6
+2016,Botswana,46.9
+2017,Botswana,47.7
+1990,Lesotho,14.9
+1991,Lesotho,15.9
+1992,Lesotho,16.4
+1993,Lesotho,16.8
+1994,Lesotho,16.6
+1995,Lesotho,16.5
+1996,Lesotho,16.3
+1997,Lesotho,15.2
+1998,Lesotho,13.6
+1999,Lesotho,11.8
+2000,Lesotho,9.3
+2001,Lesotho,7.9
+2002,Lesotho,6.1
+2003,Lesotho,4.7
+2004,Lesotho,3.6
+2005,Lesotho,3.1
+2006,Lesotho,2.9
+2007,Lesotho,2.7
+2008,Lesotho,2.5
+2009,Lesotho,3.0
+2010,Lesotho,3.3
+2011,Lesotho,3.6
+2012,Lesotho,3.8
+2013,Lesotho,4.0
+2014,Lesotho,4.4
+2015,Lesotho,5.0
+2016,Lesotho,6.3
+2017,Lesotho,7.9
+1990,Namibia,17.5
+1991,Namibia,18.1
+1992,Namibia,18.2
+1993,Namibia,18.5
+1994,Namibia,18.1
+1995,Namibia,17.4
+1996,Namibia,16.7
+1997,Namibia,16.0
+1998,Namibia,14.5
+1999,Namibia,13.7
+2000,Namibia,12.8
+2001,Namibia,13.1
+2002,Namibia,12.9
+2003,Namibia,13.7
+2004,Namibia,14.9
+2005,Namibia,16.7
+2006,Namibia,18.9
+2007,Namibia,21.0
+2008,Namibia,22.9
+2009,Namibia,24.9
+2010,Namibia,26.5
+2011,Namibia,28.5
+2012,Namibia,30.0
+2013,Namibia,30.9
+2014,Namibia,32.0
+2015,Namibia,32.9
+2016,Namibia,33.6
+2017,Namibia,34.0
+1990,South Africa,3.6
+1991,South Africa,3.9
+1992,South Africa,3.3
+1993,South Africa,5.2
+1994,South Africa,4.8
+1995,South Africa,5.3
+1996,South Africa,4.6
+1997,South Africa,2.1
+1998,South Africa,0.8
+1999,South Africa,0.2
+2000,South Africa,0.0
+2001,South Africa,0.1
+2002,South Africa,0.1
+2003,South Africa,0.1
+2004,South Africa,0.2
+2005,South Africa,0.7
+2006,South Africa,1.6
+2007,South Africa,3.9
+2008,South Africa,6.4
+2009,South Africa,9.5
+2010,South Africa,13.2
+2011,South Africa,17.1
+2012,South Africa,19.7
+2013,South Africa,22.4
+2014,South Africa,23.9
+2015,South Africa,24.5
+2016,South Africa,24.6
+2017,South Africa,24.7
+1990,Swaziland,14.8
+1991,Swaziland,15.2
+1992,Swaziland,15.9
+1993,Swaziland,16.5
+1994,Swaziland,15.9
+1995,Swaziland,14.4
+1996,Swaziland,12.8
+1997,Swaziland,12.0
+1998,Swaziland,10.0
+1999,Swaziland,8.1
+2000,Swaziland,5.4
+2001,Swaziland,3.7
+2002,Swaziland,2.5
+2003,Swaziland,2.0
+2004,Swaziland,1.9
+2005,Swaziland,1.9
+2006,Swaziland,2.3
+2007,Swaziland,2.7
+2008,Swaziland,2.9
+2009,Swaziland,3.2
+2010,Swaziland,3.8
+2011,Swaziland,4.9
+2012,Swaziland,5.7
+2013,Swaziland,6.8
+2014,Swaziland,8.6
+2015,Swaziland,10.5
+2016,Swaziland,12.4
+2017,Swaziland,14.4
+1990,Zimbabwe,31.5
+1991,Zimbabwe,31.8
+1992,Zimbabwe,30.2
+1993,Zimbabwe,28.1
+1994,Zimbabwe,26.2
+1995,Zimbabwe,23.0
+1996,Zimbabwe,22.9
+1997,Zimbabwe,22.4
+1998,Zimbabwe,20.7
+1999,Zimbabwe,19.2
+2000,Zimbabwe,17.7
+2001,Zimbabwe,17.9
+2002,Zimbabwe,17.9
+2003,Zimbabwe,17.1
+2004,Zimbabwe,16.8
+2005,Zimbabwe,17.0
+2006,Zimbabwe,17.7
+2007,Zimbabwe,18.6
+2008,Zimbabwe,18.2
+2009,Zimbabwe,18.7
+2010,Zimbabwe,19.8
+2011,Zimbabwe,21.5
+2012,Zimbabwe,23.3
+2013,Zimbabwe,24.8
+2014,Zimbabwe,26.2
+2015,Zimbabwe,27.1
+2016,Zimbabwe,28.0
+2017,Zimbabwe,29.0
+1990,Benin,2.1
+1991,Benin,2.1
+1992,Benin,2.2
+1993,Benin,2.3
+1994,Benin,2.3
+1995,Benin,2.3
+1996,Benin,2.4
+1997,Benin,2.4
+1998,Benin,2.5
+1999,Benin,2.6
+2000,Benin,2.7
+2001,Benin,2.9
+2002,Benin,3.1
+2003,Benin,3.5
+2004,Benin,4.1
+2005,Benin,5.0
+2006,Benin,5.8
+2007,Benin,6.8
+2008,Benin,7.0
+2009,Benin,7.4
+2010,Benin,7.7
+2011,Benin,7.6
+2012,Benin,7.5
+2013,Benin,8.0
+2014,Benin,8.7
+2015,Benin,9.5
+2016,Benin,10.5
+2017,Benin,11.4
+1990,Burkina Faso,25.6
+1991,Burkina Faso,25.9
+1992,Burkina Faso,25.9
+1993,Burkina Faso,26.0
+1994,Burkina Faso,26.2
+1995,Burkina Faso,26.5
+1996,Burkina Faso,26.8
+1997,Burkina Faso,26.7
+1998,Burkina Faso,26.5
+1999,Burkina Faso,27.0
+2000,Burkina Faso,27.1
+2001,Burkina Faso,27.5
+2002,Burkina Faso,27.9
+2003,Burkina Faso,28.4
+2004,Burkina Faso,29.0
+2005,Burkina Faso,29.8
+2006,Burkina Faso,30.2
+2007,Burkina Faso,30.6
+2008,Burkina Faso,30.8
+2009,Burkina Faso,31.0
+2010,Burkina Faso,30.3
+2011,Burkina Faso,30.3
+2012,Burkina Faso,29.3
+2013,Burkina Faso,29.0
+2014,Burkina Faso,29.0
+2015,Burkina Faso,29.4
+2016,Burkina Faso,29.8
+2017,Burkina Faso,30.4
+1990,Cameroon,17.0
+1991,Cameroon,16.9
+1992,Cameroon,16.8
+1993,Cameroon,17.6
+1994,Cameroon,18.3
+1995,Cameroon,18.9
+1996,Cameroon,19.4
+1997,Cameroon,19.6
+1998,Cameroon,20.1
+1999,Cameroon,20.5
+2000,Cameroon,20.7
+2001,Cameroon,21.2
+2002,Cameroon,21.5
+2003,Cameroon,22.2
+2004,Cameroon,22.8
+2005,Cameroon,23.3
+2006,Cameroon,23.5
+2007,Cameroon,24.0
+2008,Cameroon,24.4
+2009,Cameroon,24.6
+2010,Cameroon,25.1
+2011,Cameroon,25.9
+2012,Cameroon,26.9
+2013,Cameroon,28.1
+2014,Cameroon,29.1
+2015,Cameroon,30.3
+2016,Cameroon,31.2
+2017,Cameroon,32.4
+1990,Cape Verde,73.6
+1991,Cape Verde,73.1
+1992,Cape Verde,72.3
+1993,Cape Verde,70.3
+1994,Cape Verde,67.8
+1995,Cape Verde,64.3
+1996,Cape Verde,58.8
+1997,Cape Verde,55.6
+1998,Cape Verde,55.0
+1999,Cape Verde,55.5
+2000,Cape Verde,57.1
+2001,Cape Verde,57.7
+2002,Cape Verde,58.8
+2003,Cape Verde,60.2
+2004,Cape Verde,61.7
+2005,Cape Verde,63.3
+2006,Cape Verde,64.5
+2007,Cape Verde,66.5
+2008,Cape Verde,66.4
+2009,Cape Verde,66.6
+2010,Cape Verde,66.4
+2011,Cape Verde,66.7
+2012,Cape Verde,67.2
+2013,Cape Verde,67.6
+2014,Cape Verde,67.8
+2015,Cape Verde,68.4
+2016,Cape Verde,68.8
+2017,Cape Verde,69.3
+1990,Chad,32.7
+1991,Chad,33.7
+1992,Chad,33.6
+1993,Chad,32.8
+1994,Chad,32.6
+1995,Chad,32.2
+1996,Chad,30.3
+1997,Chad,29.4
+1998,Chad,28.6
+1999,Chad,27.6
+2000,Chad,27.0
+2001,Chad,26.3
+2002,Chad,25.7
+2003,Chad,24.6
+2004,Chad,24.2
+2005,Chad,23.5
+2006,Chad,21.1
+2007,Chad,22.8
+2008,Chad,23.7
+2009,Chad,24.4
+2010,Chad,24.6
+2011,Chad,25.2
+2012,Chad,25.8
+2013,Chad,26.5
+2014,Chad,27.1
+2015,Chad,27.7
+2016,Chad,28.2
+2017,Chad,28.7
+1990,Cote d'Ivoire,25.6
+1991,Cote d'Ivoire,25.4
+1992,Cote d'Ivoire,25.0
+1993,Cote d'Ivoire,24.2
+1994,Cote d'Ivoire,23.5
+1995,Cote d'Ivoire,23.0
+1996,Cote d'Ivoire,22.9
+1997,Cote d'Ivoire,23.1
+1998,Cote d'Ivoire,23.2
+1999,Cote d'Ivoire,23.4
+2000,Cote d'Ivoire,23.7
+2001,Cote d'Ivoire,24.4
+2002,Cote d'Ivoire,25.1
+2003,Cote d'Ivoire,25.5
+2004,Cote d'Ivoire,25.8
+2005,Cote d'Ivoire,26.1
+2006,Cote d'Ivoire,26.3
+2007,Cote d'Ivoire,27.0
+2008,Cote d'Ivoire,28.1
+2009,Cote d'Ivoire,29.1
+2010,Cote d'Ivoire,29.7
+2011,Cote d'Ivoire,30.3
+2012,Cote d'Ivoire,30.3
+2013,Cote d'Ivoire,30.5
+2014,Cote d'Ivoire,30.9
+2015,Cote d'Ivoire,31.7
+2016,Cote d'Ivoire,32.7
+2017,Cote d'Ivoire,33.7
+1990,The Gambia,32.6
+1991,The Gambia,32.8
+1992,The Gambia,33.2
+1993,The Gambia,33.7
+1994,The Gambia,33.6
+1995,The Gambia,33.6
+1996,The Gambia,33.3
+1997,The Gambia,32.9
+1998,The Gambia,32.6
+1999,The Gambia,32.8
+2000,The Gambia,32.9
+2001,The Gambia,32.4
+2002,The Gambia,31.9
+2003,The Gambia,31.7
+2004,The Gambia,32.0
+2005,The Gambia,32.0
+2006,The Gambia,31.9
+2007,The Gambia,31.9
+2008,The Gambia,32.7
+2009,The Gambia,33.0
+2010,The Gambia,33.4
+2011,The Gambia,33.6
+2012,The Gambia,33.6
+2013,The Gambia,33.8
+2014,The Gambia,34.1
+2015,The Gambia,34.6
+2016,The Gambia,35.2
+2017,The Gambia,35.6
+1990,Ghana,29.0
+1991,Ghana,29.6
+1992,Ghana,29.9
+1993,Ghana,30.4
+1994,Ghana,30.0
+1995,Ghana,29.2
+1996,Ghana,28.8
+1997,Ghana,28.3
+1998,Ghana,28.4
+1999,Ghana,28.4
+2000,Ghana,28.4
+2001,Ghana,27.8
+2002,Ghana,27.5
+2003,Ghana,27.1
+2004,Ghana,26.9
+2005,Ghana,26.9
+2006,Ghana,26.8
+2007,Ghana,27.2
+2008,Ghana,27.8
+2009,Ghana,27.8
+2010,Ghana,28.0
+2011,Ghana,28.1
+2012,Ghana,28.4
+2013,Ghana,28.6
+2014,Ghana,28.9
+2015,Ghana,29.0
+2016,Ghana,29.2
+2017,Ghana,30.2
+1990,Guinea,21.7
+1991,Guinea,21.5
+1992,Guinea,21.4
+1993,Guinea,21.3
+1994,Guinea,21.2
+1995,Guinea,21.5
+1996,Guinea,21.8
+1997,Guinea,22.9
+1998,Guinea,23.6
+1999,Guinea,24.3
+2000,Guinea,26.3
+2001,Guinea,26.0
+2002,Guinea,26.3
+2003,Guinea,26.6
+2004,Guinea,26.7
+2005,Guinea,27.5
+2006,Guinea,26.9
+2007,Guinea,27.2
+2008,Guinea,27.8
+2009,Guinea,28.1
+2010,Guinea,28.1
+2011,Guinea,28.3
+2012,Guinea,28.4
+2013,Guinea,28.3
+2014,Guinea,28.1
+2015,Guinea,28.7
+2016,Guinea,29.5
+2017,Guinea,30.2
+1990,Guinea-Bissau,1.0
+1991,Guinea-Bissau,1.2
+1992,Guinea-Bissau,1.5
+1993,Guinea-Bissau,1.8
+1994,Guinea-Bissau,2.3
+1995,Guinea-Bissau,2.7
+1996,Guinea-Bissau,3.3
+1997,Guinea-Bissau,4.0
+1998,Guinea-Bissau,4.7
+1999,Guinea-Bissau,5.6
+2000,Guinea-Bissau,6.4
+2001,Guinea-Bissau,7.4
+2002,Guinea-Bissau,8.3
+2003,Guinea-Bissau,9.3
+2004,Guinea-Bissau,10.0
+2005,Guinea-Bissau,11.5
+2006,Guinea-Bissau,12.3
+2007,Guinea-Bissau,12.7
+2008,Guinea-Bissau,13.6
+2009,Guinea-Bissau,14.0
+2010,Guinea-Bissau,14.7
+2011,Guinea-Bissau,15.5
+2012,Guinea-Bissau,16.3
+2013,Guinea-Bissau,16.7
+2014,Guinea-Bissau,17.3
+2015,Guinea-Bissau,18.0
+2016,Guinea-Bissau,18.7
+2017,Guinea-Bissau,19.5
+1990,Liberia,27.6
+1991,Liberia,28.3
+1992,Liberia,29.3
+1993,Liberia,29.1
+1994,Liberia,28.6
+1995,Liberia,30.4
+1996,Liberia,28.8
+1997,Liberia,29.7
+1998,Liberia,30.5
+1999,Liberia,32.3
+2000,Liberia,34.3
+2001,Liberia,36.2
+2002,Liberia,37.6
+2003,Liberia,38.8
+2004,Liberia,39.8
+2005,Liberia,40.6
+2006,Liberia,41.2
+2007,Liberia,41.7
+2008,Liberia,42.3
+2009,Liberia,42.3
+2010,Liberia,42.3
+2011,Liberia,42.6
+2012,Liberia,42.2
+2013,Liberia,42.6
+2014,Liberia,43.7
+2015,Liberia,44.5
+2016,Liberia,45.1
+2017,Liberia,45.8
+1990,Mali,14.7
+1991,Mali,16.4
+1992,Mali,18.0
+1993,Mali,20.0
+1994,Mali,21.6
+1995,Mali,22.9
+1996,Mali,24.2
+1997,Mali,25.9
+1998,Mali,27.5
+1999,Mali,28.8
+2000,Mali,29.7
+2001,Mali,30.9
+2002,Mali,31.1
+2003,Mali,32.3
+2004,Mali,33.4
+2005,Mali,34.5
+2006,Mali,34.9
+2007,Mali,35.5
+2008,Mali,35.6
+2009,Mali,35.4
+2010,Mali,35.5
+2011,Mali,36.0
+2012,Mali,36.4
+2013,Mali,36.9
+2014,Mali,37.4
+2015,Mali,37.4
+2016,Mali,36.7
+2017,Mali,37.4
+1990,Mauritania,10.0
+1991,Mauritania,11.0
+1992,Mauritania,11.7
+1993,Mauritania,12.4
+1994,Mauritania,13.0
+1995,Mauritania,13.9
+1996,Mauritania,14.4
+1997,Mauritania,15.4
+1998,Mauritania,16.3
+1999,Mauritania,17.5
+2000,Mauritania,18.6
+2001,Mauritania,19.5
+2002,Mauritania,20.5
+2003,Mauritania,21.6
+2004,Mauritania,22.4
+2005,Mauritania,23.1
+2006,Mauritania,24.0
+2007,Mauritania,24.8
+2008,Mauritania,25.6
+2009,Mauritania,26.1
+2010,Mauritania,26.9
+2011,Mauritania,27.6
+2012,Mauritania,28.2
+2013,Mauritania,29.0
+2014,Mauritania,29.7
+2015,Mauritania,30.4
+2016,Mauritania,31.1
+2017,Mauritania,31.8
+1990,Niger,25.9
+1991,Niger,26.4
+1992,Niger,26.6
+1993,Niger,27.1
+1994,Niger,27.6
+1995,Niger,27.9
+1996,Niger,28.7
+1997,Niger,29.1
+1998,Niger,29.8
+1999,Niger,30.4
+2000,Niger,31.0
+2001,Niger,31.6
+2002,Niger,33.0
+2003,Niger,34.2
+2004,Niger,35.6
+2005,Niger,35.9
+2006,Niger,36.7
+2007,Niger,37.7
+2008,Niger,38.8
+2009,Niger,39.3
+2010,Niger,40.1
+2011,Niger,40.3
+2012,Niger,40.7
+2013,Niger,40.8
+2014,Niger,40.7
+2015,Niger,40.8
+2016,Niger,40.8
+2017,Niger,41.3
+1990,Nigeria,39.8
+1991,Nigeria,40.5
+1992,Nigeria,40.7
+1993,Nigeria,41.1
+1994,Nigeria,41.3
+1995,Nigeria,41.5
+1996,Nigeria,42.1
+1997,Nigeria,42.5
+1998,Nigeria,43.0
+1999,Nigeria,43.5
+2000,Nigeria,43.8
+2001,Nigeria,44.4
+2002,Nigeria,44.9
+2003,Nigeria,45.4
+2004,Nigeria,45.8
+2005,Nigeria,46.4
+2006,Nigeria,46.1
+2007,Nigeria,45.5
+2008,Nigeria,47.9
+2009,Nigeria,49.0
+2010,Nigeria,49.8
+2011,Nigeria,50.6
+2012,Nigeria,51.0
+2013,Nigeria,51.6
+2014,Nigeria,51.5
+2015,Nigeria,51.7
+2016,Nigeria,51.5
+2017,Nigeria,52.1
+1990,Sao Tome and Principe,48.8
+1991,Sao Tome and Principe,48.6
+1992,Sao Tome and Principe,48.6
+1993,Sao Tome and Principe,48.4
+1994,Sao Tome and Principe,48.2
+1995,Sao Tome and Principe,47.9
+1996,Sao Tome and Principe,47.4
+1997,Sao Tome and Principe,47.0
+1998,Sao Tome and Principe,46.7
+1999,Sao Tome and Principe,47.0
+2000,Sao Tome and Principe,46.6
+2001,Sao Tome and Principe,46.6
+2002,Sao Tome and Principe,46.2
+2003,Sao Tome and Principe,44.7
+2004,Sao Tome and Principe,43.9
+2005,Sao Tome and Principe,43.1
+2006,Sao Tome and Principe,41.1
+2007,Sao Tome and Principe,38.1
+2008,Sao Tome and Principe,40.7
+2009,Sao Tome and Principe,41.8
+2010,Sao Tome and Principe,42.8
+2011,Sao Tome and Principe,43.2
+2012,Sao Tome and Principe,42.7
+2013,Sao Tome and Principe,43.2
+2014,Sao Tome and Principe,43.9
+2015,Sao Tome and Principe,44.7
+2016,Sao Tome and Principe,45.6
+2017,Sao Tome and Principe,46.2
+1990,Senegal,34.0
+1991,Senegal,34.6
+1992,Senegal,35.0
+1993,Senegal,35.5
+1994,Senegal,35.4
+1995,Senegal,35.6
+1996,Senegal,35.8
+1997,Senegal,36.1
+1998,Senegal,36.5
+1999,Senegal,36.6
+2000,Senegal,37.0
+2001,Senegal,37.3
+2002,Senegal,37.6
+2003,Senegal,37.9
+2004,Senegal,37.9
+2005,Senegal,38.2
+2006,Senegal,38.7
+2007,Senegal,39.2
+2008,Senegal,40.1
+2009,Senegal,40.9
+2010,Senegal,41.1
+2011,Senegal,41.2
+2012,Senegal,41.4
+2013,Senegal,41.4
+2014,Senegal,41.4
+2015,Senegal,41.6
+2016,Senegal,41.8
+2017,Senegal,42.0
+1990,Sierra Leone,24.5
+1991,Sierra Leone,24.4
+1992,Sierra Leone,24.2
+1993,Sierra Leone,24.8
+1994,Sierra Leone,25.2
+1995,Sierra Leone,25.0
+1996,Sierra Leone,24.8
+1997,Sierra Leone,24.8
+1998,Sierra Leone,24.9
+1999,Sierra Leone,25.3
+2000,Sierra Leone,25.5
+2001,Sierra Leone,25.6
+2002,Sierra Leone,25.8
+2003,Sierra Leone,25.6
+2004,Sierra Leone,25.6
+2005,Sierra Leone,25.7
+2006,Sierra Leone,26.0
+2007,Sierra Leone,26.3
+2008,Sierra Leone,27.0
+2009,Sierra Leone,27.3
+2010,Sierra Leone,27.3
+2011,Sierra Leone,28.1
+2012,Sierra Leone,28.4
+2013,Sierra Leone,29.3
+2014,Sierra Leone,30.1
+2015,Sierra Leone,31.0
+2016,Sierra Leone,32.0
+2017,Sierra Leone,32.8
+1990,Togo,26.8
+1991,Togo,26.9
+1992,Togo,27.1
+1993,Togo,26.9
+1994,Togo,26.7
+1995,Togo,26.5
+1996,Togo,26.7
+1997,Togo,26.6
+1998,Togo,26.5
+1999,Togo,27.1
+2000,Togo,27.4
+2001,Togo,27.3
+2002,Togo,27.1
+2003,Togo,26.6
+2004,Togo,26.8
+2005,Togo,26.2
+2006,Togo,25.4
+2007,Togo,23.4
+2008,Togo,25.2
+2009,Togo,26.1
+2010,Togo,26.8
+2011,Togo,27.4
+2012,Togo,28.3
+2013,Togo,29.4
+2014,Togo,30.3
+2015,Togo,31.5
+2016,Togo,32.4
+2017,Togo,33.1
+1990,American Samoa,55.4
+1991,American Samoa,55.9
+1992,American Samoa,56.3
+1993,American Samoa,56.8
+1994,American Samoa,57.1
+1995,American Samoa,57.5
+1996,American Samoa,58.0
+1997,American Samoa,58.2
+1998,American Samoa,58.5
+1999,American Samoa,60.3
+2000,American Samoa,60.0
+2001,American Samoa,59.7
+2002,American Samoa,59.6
+2003,American Samoa,59.3
+2004,American Samoa,59.3
+2005,American Samoa,59.9
+2006,American Samoa,60.7
+2007,American Samoa,61.4
+2008,American Samoa,62.4
+2009,American Samoa,63.3
+2010,American Samoa,63.7
+2011,American Samoa,64.3
+2012,American Samoa,64.9
+2013,American Samoa,65.7
+2014,American Samoa,66.2
+2015,American Samoa,67.3
+2016,American Samoa,67.2
+2017,American Samoa,67.2
+1990,Bermuda,37.7
+1991,Bermuda,38.8
+1992,Bermuda,39.9
+1993,Bermuda,41.4
+1994,Bermuda,43.0
+1995,Bermuda,45.0
+1996,Bermuda,46.2
+1997,Bermuda,48.1
+1998,Bermuda,50.0
+1999,Bermuda,52.3
+2000,Bermuda,54.2
+2001,Bermuda,55.9
+2002,Bermuda,57.3
+2003,Bermuda,58.4
+2004,Bermuda,59.3
+2005,Bermuda,59.1
+2006,Bermuda,59.9
+2007,Bermuda,60.8
+2008,Bermuda,61.6
+2009,Bermuda,62.8
+2010,Bermuda,64.1
+2011,Bermuda,65.5
+2012,Bermuda,66.6
+2013,Bermuda,67.5
+2014,Bermuda,69.6
+2015,Bermuda,70.8
+2016,Bermuda,70.8
+2017,Bermuda,71.1
+1990,Greenland,56.3
+1991,Greenland,57.6
+1992,Greenland,59.3
+1993,Greenland,60.6
+1994,Greenland,61.9
+1995,Greenland,63.0
+1996,Greenland,64.7
+1997,Greenland,66.6
+1998,Greenland,68.2
+1999,Greenland,68.8
+2000,Greenland,69.7
+2001,Greenland,71.2
+2002,Greenland,72.9
+2003,Greenland,74.6
+2004,Greenland,76.9
+2005,Greenland,79.1
+2006,Greenland,81.3
+2007,Greenland,81.5
+2008,Greenland,83.4
+2009,Greenland,85.1
+2010,Greenland,87.0
+2011,Greenland,88.5
+2012,Greenland,90.0
+2013,Greenland,91.3
+2014,Greenland,91.6
+2015,Greenland,94.8
+2016,Greenland,95.2
+2017,Greenland,95.4
+1990,Guam,45.0
+1991,Guam,44.5
+1992,Guam,44.3
+1993,Guam,44.2
+1994,Guam,44.0
+1995,Guam,44.9
+1996,Guam,45.8
+1997,Guam,45.8
+1998,Guam,46.2
+1999,Guam,47.7
+2000,Guam,47.6
+2001,Guam,47.7
+2002,Guam,47.9
+2003,Guam,47.3
+2004,Guam,46.9
+2005,Guam,46.9
+2006,Guam,47.2
+2007,Guam,47.7
+2008,Guam,48.5
+2009,Guam,49.0
+2010,Guam,49.5
+2011,Guam,50.3
+2012,Guam,50.8
+2013,Guam,51.4
+2014,Guam,51.6
+2015,Guam,52.2
+2016,Guam,51.7
+2017,Guam,51.6
+1990,Northern Mariana Islands,41.8
+1991,Northern Mariana Islands,43.0
+1992,Northern Mariana Islands,44.1
+1993,Northern Mariana Islands,44.9
+1994,Northern Mariana Islands,45.6
+1995,Northern Mariana Islands,46.4
+1996,Northern Mariana Islands,47.0
+1997,Northern Mariana Islands,47.5
+1998,Northern Mariana Islands,48.0
+1999,Northern Mariana Islands,50.4
+2000,Northern Mariana Islands,50.5
+2001,Northern Mariana Islands,53.2
+2002,Northern Mariana Islands,52.8
+2003,Northern Mariana Islands,52.0
+2004,Northern Mariana Islands,51.7
+2005,Northern Mariana Islands,51.8
+2006,Northern Mariana Islands,52.4
+2007,Northern Mariana Islands,53.4
+2008,Northern Mariana Islands,54.4
+2009,Northern Mariana Islands,55.2
+2010,Northern Mariana Islands,56.0
+2011,Northern Mariana Islands,56.7
+2012,Northern Mariana Islands,57.1
+2013,Northern Mariana Islands,57.7
+2014,Northern Mariana Islands,58.3
+2015,Northern Mariana Islands,59.5
+2016,Northern Mariana Islands,59.1
+2017,Northern Mariana Islands,58.9
+1990,Puerto Rico,38.5
+1991,Puerto Rico,38.5
+1992,Puerto Rico,37.9
+1993,Puerto Rico,37.2
+1994,Puerto Rico,38.9
+1995,Puerto Rico,38.1
+1996,Puerto Rico,39.7
+1997,Puerto Rico,41.5
+1998,Puerto Rico,41.6
+1999,Puerto Rico,44.4
+2000,Puerto Rico,45.5
+2001,Puerto Rico,45.6
+2002,Puerto Rico,48.1
+2003,Puerto Rico,49.8
+2004,Puerto Rico,50.4
+2005,Puerto Rico,50.8
+2006,Puerto Rico,52.1
+2007,Puerto Rico,53.7
+2008,Puerto Rico,55.0
+2009,Puerto Rico,55.4
+2010,Puerto Rico,58.2
+2011,Puerto Rico,57.3
+2012,Puerto Rico,59.7
+2013,Puerto Rico,61.3
+2014,Puerto Rico,63.8
+2015,Puerto Rico,65.1
+2016,Puerto Rico,63.3
+2017,Puerto Rico,62.4
+1990,"Virgin Islands, U.S.",42.3
+1991,"Virgin Islands, U.S.",43.8
+1992,"Virgin Islands, U.S.",44.9
+1993,"Virgin Islands, U.S.",45.7
+1994,"Virgin Islands, U.S.",46.5
+1995,"Virgin Islands, U.S.",47.4
+1996,"Virgin Islands, U.S.",48.0
+1997,"Virgin Islands, U.S.",49.2
+1998,"Virgin Islands, U.S.",50.0
+1999,"Virgin Islands, U.S.",51.0
+2000,"Virgin Islands, U.S.",51.9
+2001,"Virgin Islands, U.S.",52.6
+2002,"Virgin Islands, U.S.",54.4
+2003,"Virgin Islands, U.S.",55.7
+2004,"Virgin Islands, U.S.",56.9
+2005,"Virgin Islands, U.S.",57.5
+2006,"Virgin Islands, U.S.",57.9
+2007,"Virgin Islands, U.S.",58.2
+2008,"Virgin Islands, U.S.",58.6
+2009,"Virgin Islands, U.S.",58.8
+2010,"Virgin Islands, U.S.",59.5
+2011,"Virgin Islands, U.S.",60.0
+2012,"Virgin Islands, U.S.",60.0
+2013,"Virgin Islands, U.S.",59.7
+2014,"Virgin Islands, U.S.",59.3
+2015,"Virgin Islands, U.S.",59.0
+2016,"Virgin Islands, U.S.",59.0
+2017,"Virgin Islands, U.S.",58.8
+1990,South Sudan,21.5
+1991,South Sudan,21.4
+1992,South Sudan,20.2
+1993,South Sudan,19.0
+1994,South Sudan,18.3
+1995,South Sudan,17.4
+1996,South Sudan,17.2
+1997,South Sudan,18.7
+1998,South Sudan,19.0
+1999,South Sudan,20.1
+2000,South Sudan,21.1
+2001,South Sudan,23.0
+2002,South Sudan,23.9
+2003,South Sudan,23.8
+2004,South Sudan,23.3
+2005,South Sudan,23.2
+2006,South Sudan,22.5
+2007,South Sudan,22.4
+2008,South Sudan,22.5
+2009,South Sudan,22.7
+2010,South Sudan,23.0
+2011,South Sudan,23.5
+2012,South Sudan,23.7
+2013,South Sudan,23.8
+2014,South Sudan,24.3
+2015,South Sudan,24.3
+2016,South Sudan,24.7
+2017,South Sudan,25.1
+1990,Sudan,0.5
+1991,Sudan,0.5
+1992,Sudan,0.6
+1993,Sudan,0.7
+1994,Sudan,0.9
+1995,Sudan,1.2
+1996,Sudan,1.7
+1997,Sudan,2.4
+1998,Sudan,3.1
+1999,Sudan,3.9
+2000,Sudan,5.1
+2001,Sudan,6.2
+2002,Sudan,7.5
+2003,Sudan,9.0
+2004,Sudan,10.1
+2005,Sudan,10.3
+2006,Sudan,11.3
+2007,Sudan,12.3
+2008,Sudan,13.2
+2009,Sudan,14.3
+2010,Sudan,15.5
+2011,Sudan,16.8
+2012,Sudan,17.6
+2013,Sudan,18.7
+2014,Sudan,19.4
+2015,Sudan,20.6
+2016,Sudan,21.7
+2017,Sudan,22.7
