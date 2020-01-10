@@ -9016,677 +9016,1110 @@ id,name,unit,dataset_id
 9009,Ricebran Oil - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
 9010,Alcoholic Beverages - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
 9011,"Beverages, Fermented - Fat supply quantity (g/capita/day) (FAO (2019))",g/capita/day,69
-9012,Blended And Mix (FAO (2019)),tonnes,70
-9013,Bulgur Wheat Total (FAO (2019)),tonnes,70
-9014,Cereals (FAO (2019)),tonnes,70
-9015,Coarse Grains (FAO (2019)),tonnes,70
-9016,Dried Fruits Total (FAO (2019)),tonnes,70
-9017,Edible Fat Total (FAO (2019)),tonnes,70
-9018,"Milk,Total (FAO (2019))",tonnes,70
-9019,Non-Cereals (FAO (2019)),tonnes,70
-9020,Other Non-Cereals (FAO (2019)),tonnes,70
-9021,"Pulses,Total (FAO (2019))",tonnes,70
-9022,Rice Total (FAO (2019)),tonnes,70
-9023,Sugar Total (FAO (2019)),tonnes,70
-9024,Vegetable Oils (FAO (2019)),tonnes,70
-9025,Wheat & Wheat Flour (FAO (2019)),tonnes,70
-9026,Fish & Products (FAO (2019)),tonnes,70
-9027,Meat & Products (FAO (2019)),tonnes,70
-9028,Other Dairy Products (FAO (2019)),tonnes,70
-9029,Butter Oil Total (FAO (2019)),tonnes,70
-9030,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
-9031,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
-9032,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value Local Currency, 2010 prices (FAO (2019))",millions,71
-9033,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added (FAO (2019))",,71
-9034,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added, 2010 prices (FAO (2019))",,71
-9035,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added US$ (FAO (2019))",,71
-9036,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added US$, 2010 prices (FAO (2019))",,71
-9037,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index (FAO (2019))",index,71
-9038,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index, 2010 prices (FAO (2019))",index,71
-9039,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index US$ (FAO (2019))",index,71
-9040,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index US$, 2010 prices (FAO (2019))",index,71
-9041,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
-9042,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
-9043,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value US$, 2010 prices (FAO (2019))",millions,71
-9044,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
-9045,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
-9046,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency, 2010 prices (FAO (2019))",millions,71
-9047,"Gross Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
-9048,Arable land - Share in Agricultural land (FAO (2019)),%,72
-9049,Land under permanent crops - Share in Agricultural land (FAO (2019)),%,72
-9050,Cropland - Share in Agricultural land (FAO (2019)),%,72
-9051,Cropland - Share in Land area (FAO (2019)),%,72
-9052,Land under perm. meadows and pastures - Share in Agricultural land (FAO (2019)),%,72
-9053,Land under perm. meadows and pastures - Share in Land area (FAO (2019)),%,72
-9054,Agriculture area actually irrigated - Share in Agricultural land (FAO (2019)),%,72
-9055,Land area equipped for irrigation - Share in Agricultural land (FAO (2019)),%,72
-9056,Agricultural land - Share in Land area (FAO (2019)),%,72
-9057,Forest land - Share in Land area (FAO (2019)),%,72
-9058,Primary Forest - Share in Forest land (FAO (2019)),%,72
-9059,Planted Forest - Share in Forest land (FAO (2019)),%,72
-9060,Other naturally regenerated forest - Share in Forest land (FAO (2019)),%,72
-9061,Agriculture area under organic agric. - Share in Agricultural land (FAO (2019)),%,72
-9062,Nutrient nitrogen N (total) - Production (FAO (2019)),tonnes,73
-9063,Nutrient nitrogen N (total) - Import Quantity (FAO (2019)),tonnes,73
-9064,Nutrient nitrogen N (total) - Export Quantity (FAO (2019)),tonnes,73
-9065,Nutrient nitrogen N (total) - Agricultural Use (FAO (2019)),tonnes,73
-9066,Nutrient phosphate P2O5 (total) - Production (FAO (2019)),tonnes,73
-9067,Nutrient phosphate P2O5 (total) - Import Quantity (FAO (2019)),tonnes,73
-9068,Nutrient phosphate P2O5 (total) - Export Quantity (FAO (2019)),tonnes,73
-9069,Nutrient phosphate P2O5 (total) - Agricultural Use (FAO (2019)),tonnes,73
-9070,Nutrient potash K2O (total) - Production (FAO (2019)),tonnes,73
-9071,Nutrient potash K2O (total) - Import Quantity (FAO (2019)),tonnes,73
-9072,Nutrient potash K2O (total) - Export Quantity (FAO (2019)),tonnes,73
-9073,Nutrient potash K2O (total) - Agricultural Use (FAO (2019)),tonnes,73
-9074,"Agriculture research spending - Share of Value Added (Agriculture, Forestry and Fishing) (FAO (2019))",,74
-9075,Agriculture research spending - 2011 PPP$ (FAO (2019)),I$,74
-9076,Gas-Diesel oil - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9077,Gas-Diesel oil - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9078,Gas-Diesel oil - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9079,Gas-Diesel oil - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9080,Gas-Diesel oil - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9081,Gas-Diesel oil - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9082,Gas-Diesel oil - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9083,Gas-Diesel oil - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9084,Gas-Diesel oil - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9085,Gas-Diesel oil - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9086,Motor Gasoline - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9087,Motor Gasoline - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9088,Motor Gasoline - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9089,Motor Gasoline - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9090,Motor Gasoline - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9091,Motor Gasoline - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9092,Motor Gasoline - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9093,Motor Gasoline - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9094,Motor Gasoline - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9095,Motor Gasoline - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9096,Natural gas (including LNG) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9097,Natural gas (including LNG) - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9098,Natural gas (including LNG) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9099,Natural gas (including LNG) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9100,Natural gas (including LNG) - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9101,Natural gas (including LNG) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9102,Natural gas (including LNG) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9103,Natural gas (including LNG) - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9104,Natural gas (including LNG) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9105,Natural gas (including LNG) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9106,Liquefied petroleum gas (LPG) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9107,Liquefied petroleum gas (LPG) - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9108,Liquefied petroleum gas (LPG) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9109,Liquefied petroleum gas (LPG) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9110,Liquefied petroleum gas (LPG) - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9111,Liquefied petroleum gas (LPG) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9112,Liquefied petroleum gas (LPG) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9113,Liquefied petroleum gas (LPG) - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9114,Liquefied petroleum gas (LPG) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9115,Liquefied petroleum gas (LPG) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9116,Fuel oil - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9117,Fuel oil - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9118,Fuel oil - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9119,Fuel oil - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9120,Fuel oil - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9121,Fuel oil - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9122,Fuel oil - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9123,Fuel oil - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9124,Fuel oil - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9125,Fuel oil - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9126,Coal - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9127,Coal - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9128,Coal - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9129,Coal - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9130,Coal - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9131,Coal - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9132,Coal - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9133,Coal - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9134,Coal - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9135,Coal - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9136,Electricity - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9137,Electricity - Consumption in Agriculture - million kWh (FAO (2019)),million kWh,74
-9138,Electricity - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9139,Electricity - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9140,Electricity - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9141,Electricity - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9142,Electricity - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9143,Gas-diesel oils used in fisheries - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9144,Gas-diesel oils used in fisheries - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9145,Gas-diesel oils used in fisheries - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9146,Gas-diesel oils used in fisheries - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9147,Gas-diesel oils used in fisheries - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9148,Gas-diesel oils used in fisheries - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9149,Gas-diesel oils used in fisheries - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9150,Gas-diesel oils used in fisheries - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9151,Gas-diesel oils used in fisheries - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9152,Gas-diesel oils used in fisheries - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9153,Fuel oil used in fisheries - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9154,Fuel oil used in fisheries - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9155,Fuel oil used in fisheries - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9156,Fuel oil used in fisheries - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9157,Fuel oil used in fisheries - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9158,Fuel oil used in fisheries - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9159,Fuel oil used in fisheries - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9160,Fuel oil used in fisheries - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9161,Fuel oil used in fisheries - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9162,Fuel oil used in fisheries - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9163,Energy for power irrigation - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9164,Energy for power irrigation - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
-9165,Energy for power irrigation - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9166,Energy for power irrigation - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9167,Energy for power irrigation - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
-9168,Energy for power irrigation - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9169,Energy for power irrigation - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9170,Energy for power irrigation - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9171,Transport fuel used in agriculture (excl. fishery) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9172,Transport fuel used in agriculture (excl. fishery) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9173,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9174,Transport fuel used in agriculture (excl. fishery) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9175,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9176,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9177,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9178,Total Energy - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9179,Total Energy - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9180,Total Energy - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9181,Total Energy - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9182,Total Energy - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9183,Total Energy - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9184,Total Energy - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9185,Energy used in fishery - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
-9186,Energy used in fishery - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9187,Energy used in fishery - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9188,Energy used in fishery - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9189,Energy used in fishery - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9190,Energy used in fishery - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9191,Energy used in fishery - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9192,Electricity - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9193,Energy for power irrigation - Implied emission factor for CO2 - g/kWh (FAO (2019)),g/kWh,74
-9194,Energy for power irrigation - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
-9195,Asses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9196,Asses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9197,Asses - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9198,Asses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9199,Asses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9200,Asses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9201,Asses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9202,Asses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9203,Asses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9204,Camels - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9205,Camels - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9206,Camels - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9207,Camels - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9208,Camels - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9209,Camels - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9210,Camels - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9211,Camels - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9212,Camels - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9213,"Cattle, dairy - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9214,"Cattle, dairy - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9215,"Cattle, dairy - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
-9216,"Cattle, dairy - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9217,"Cattle, dairy - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9218,"Cattle, dairy - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9219,"Cattle, dairy - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9220,"Cattle, dairy - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9221,"Cattle, dairy - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9222,"Cattle, non-dairy - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9223,"Cattle, non-dairy - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9224,"Cattle, non-dairy - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
-9225,"Cattle, non-dairy - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9226,"Cattle, non-dairy - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9227,"Cattle, non-dairy - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9228,"Cattle, non-dairy - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9229,"Cattle, non-dairy - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9230,"Cattle, non-dairy - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9231,"Chickens, broilers - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9232,"Chickens, broilers - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9233,"Chickens, broilers - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
-9234,"Chickens, broilers - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9235,"Chickens, broilers - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9236,"Chickens, broilers - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9237,"Chickens, broilers - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9238,"Chickens, broilers - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9239,"Chickens, broilers - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9240,"Chickens, layers - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9241,"Chickens, layers - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9242,"Chickens, layers - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
-9243,"Chickens, layers - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9244,"Chickens, layers - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9245,"Chickens, layers - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9246,"Chickens, layers - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9247,"Chickens, layers - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9248,"Chickens, layers - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9249,Goats - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9250,Goats - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9251,Goats - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9252,Goats - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9253,Goats - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9254,Goats - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9255,Goats - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9256,Goats - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9257,Goats - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9258,Horses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9259,Horses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9260,Horses - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9261,Horses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9262,Horses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9263,Horses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9264,Horses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9265,Horses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9266,Horses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9267,Mules - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9268,Mules - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9269,Mules - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9270,Mules - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9271,Mules - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9272,Mules - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9273,Mules - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9274,Mules - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9275,Mules - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9276,Sheep - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9277,Sheep - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9278,Sheep - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9279,Sheep - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9280,Sheep - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9281,Sheep - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9282,Sheep - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9283,Sheep - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9284,Sheep - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9285,All Animals - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9286,All Animals - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9287,All Animals - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9288,All Animals - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9289,All Animals - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9290,All Animals - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9291,All Animals - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9292,All Animals - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9293,Camels and Llamas - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9294,Camels and Llamas - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9295,Camels and Llamas - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9296,Camels and Llamas - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9297,Camels and Llamas - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9298,Camels and Llamas - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9299,Camels and Llamas - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9300,Camels and Llamas - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9301,Cattle - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9302,Cattle - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9303,Cattle - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9304,Cattle - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9305,Cattle - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9306,Cattle - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9307,Cattle - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9308,Cattle - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9309,Chickens - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9310,Chickens - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9311,Chickens - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9312,Chickens - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9313,Chickens - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9314,Chickens - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9315,Chickens - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9316,Chickens - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9317,Mules and Asses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9318,Mules and Asses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9319,Mules and Asses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9320,Mules and Asses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9321,Mules and Asses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9322,Mules and Asses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9323,Mules and Asses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9324,Mules and Asses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9325,Poultry Birds - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9326,Poultry Birds - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9327,Poultry Birds - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9328,Poultry Birds - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9329,Poultry Birds - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9330,Poultry Birds - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9331,Poultry Birds - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9332,Poultry Birds - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9333,Sheep and Goats - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9334,Sheep and Goats - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9335,Sheep and Goats - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9336,Sheep and Goats - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9337,Sheep and Goats - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9338,Sheep and Goats - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9339,Sheep and Goats - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9340,Sheep and Goats - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9341,Buffaloes - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9342,Buffaloes - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9343,Buffaloes - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9344,Buffaloes - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9345,Buffaloes - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9346,Buffaloes - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9347,Buffaloes - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9348,Buffaloes - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9349,Ducks - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9350,Ducks - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9351,Ducks - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9352,Ducks - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9353,Ducks - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9354,Ducks - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9355,Ducks - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9356,Ducks - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9357,Ducks - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9358,"Swine, breeding - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9359,"Swine, breeding - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9360,"Swine, breeding - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9361,"Swine, breeding - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9362,"Swine, breeding - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9363,"Swine, breeding - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9364,"Swine, breeding - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9365,"Swine, breeding - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9366,"Swine, market - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
-9367,"Swine, market - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
-9368,"Swine, market - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9369,"Swine, market - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9370,"Swine, market - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9371,"Swine, market - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9372,"Swine, market - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
-9373,"Swine, market - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
-9374,Turkeys - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9375,Turkeys - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9376,Turkeys - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9377,Turkeys - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9378,Turkeys - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9379,Turkeys - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9380,Turkeys - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9381,Turkeys - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9382,Turkeys - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9383,Swine - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9384,Swine - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9385,Swine - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9386,Swine - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9387,Swine - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9388,Swine - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9389,Swine - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9390,Swine - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9391,Buffaloes - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9392,Llamas - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
-9393,Llamas - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
-9394,Llamas - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
-9395,Llamas - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9396,Llamas - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9397,Llamas - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9398,Llamas - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9399,Llamas - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
-9400,Llamas - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
-9401,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) (FAO (2019))",Gigagrams,77
-9402,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from CO2 (FAO (2019))",Gigagrams,77
-9403,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from CH4 (FAO (2019))",Gigagrams,77
-9404,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from N2O (FAO (2019))",Gigagrams,77
-9405,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from F-gases (FAO (2019))",Gigagrams,77
-9406,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total emissions (FAO (2019))",%,77
-9407,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total CO2 emissions (FAO (2019))",%,77
-9408,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total CH4 emissions (FAO (2019))",%,77
-9409,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total N2O emissions (FAO (2019))",%,77
-9410,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of CO2 in sector emissions (FAO (2019))",%,77
-9411,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of CH4 in sector emissions (FAO (2019))",%,77
-9412,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of N2O in sector emissions (FAO (2019))",%,77
-9413,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of F-gases in sector emissions (FAO (2019))",Gigagrams,77
-9414,Transport - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9415,Transport - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9416,Transport - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9417,Transport - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9418,Transport - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9419,Transport - Share of sector in total emissions (FAO (2019)),%,77
-9420,Transport - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9421,Transport - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9422,Transport - Share of sector in total N2O emissions (FAO (2019)),%,77
-9423,Transport - Share of CO2 in sector emissions (FAO (2019)),%,77
-9424,Transport - Share of CH4 in sector emissions (FAO (2019)),%,77
-9425,Transport - Share of N2O in sector emissions (FAO (2019)),%,77
-9426,Transport - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9427,"Residential, commercial, institutional and AFF - Emissions (CO2eq) (FAO (2019))",Gigagrams,77
-9428,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from CO2 (FAO (2019))",Gigagrams,77
-9429,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from CH4 (FAO (2019))",Gigagrams,77
-9430,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from N2O (FAO (2019))",Gigagrams,77
-9431,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from F-gases (FAO (2019))",Gigagrams,77
-9432,"Residential, commercial, institutional and AFF - Share of sector in total emissions (FAO (2019))",%,77
-9433,"Residential, commercial, institutional and AFF - Share of sector in total CO2 emissions (FAO (2019))",%,77
-9434,"Residential, commercial, institutional and AFF - Share of sector in total CH4 emissions (FAO (2019))",%,77
-9435,"Residential, commercial, institutional and AFF - Share of sector in total N2O emissions (FAO (2019))",%,77
-9436,"Residential, commercial, institutional and AFF - Share of CO2 in sector emissions (FAO (2019))",%,77
-9437,"Residential, commercial, institutional and AFF - Share of CH4 in sector emissions (FAO (2019))",%,77
-9438,"Residential, commercial, institutional and AFF - Share of N2O in sector emissions (FAO (2019))",%,77
-9439,"Residential, commercial, institutional and AFF - Share of F-gases in sector emissions (FAO (2019))",Gigagrams,77
-9440,Industrial processes and product use - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9441,Industrial processes and product use - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9442,Industrial processes and product use - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9443,Industrial processes and product use - Share of sector in total emissions (FAO (2019)),%,77
-9444,Industrial processes and product use - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9445,Industrial processes and product use - Share of sector in total N2O emissions (FAO (2019)),%,77
-9446,Industrial processes and product use - Share of CO2 in sector emissions (FAO (2019)),%,77
-9447,Industrial processes and product use - Share of N2O in sector emissions (FAO (2019)),%,77
-9448,Waste - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9449,Waste - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9450,Waste - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9451,Waste - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9452,Waste - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9453,Waste - Share of sector in total emissions (FAO (2019)),%,77
-9454,Waste - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9455,Waste - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9456,Waste - Share of sector in total N2O emissions (FAO (2019)),%,77
-9457,Waste - Share of CO2 in sector emissions (FAO (2019)),%,77
-9458,Waste - Share of CH4 in sector emissions (FAO (2019)),%,77
-9459,Waste - Share of N2O in sector emissions (FAO (2019)),%,77
-9460,Waste - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9461,Other sources - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9462,Other sources - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9463,Other sources - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9464,Other sources - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9465,Other sources - Share of sector in total emissions (FAO (2019)),%,77
-9466,Other sources - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9467,Other sources - Share of sector in total N2O emissions (FAO (2019)),%,77
-9468,Other sources - Share of CO2 in sector emissions (FAO (2019)),%,77
-9469,Other sources - Share of N2O in sector emissions (FAO (2019)),%,77
-9470,Other sources - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9471,Agriculture total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9472,Agriculture total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9473,Agriculture total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9474,Agriculture total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9475,Agriculture total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9476,Agriculture total - Share of sector in total emissions (FAO (2019)),%,77
-9477,Agriculture total - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9478,Agriculture total - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9479,Agriculture total - Share of sector in total N2O emissions (FAO (2019)),%,77
-9480,Agriculture total - Share of CO2 in sector emissions (FAO (2019)),%,77
-9481,Agriculture total - Share of CH4 in sector emissions (FAO (2019)),%,77
-9482,Agriculture total - Share of N2O in sector emissions (FAO (2019)),%,77
-9483,Agriculture total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9484,Land use sources - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9485,Land use sources - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9486,Land use sources - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9487,Land use sources - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9488,Land use sources - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9489,Land use sources - Share of sector in total emissions (FAO (2019)),%,77
-9490,Land use sources - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9491,Land use sources - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9492,Land use sources - Share of sector in total N2O emissions (FAO (2019)),%,77
-9493,Land use sources - Share of CO2 in sector emissions (FAO (2019)),%,77
-9494,Land use sources - Share of CH4 in sector emissions (FAO (2019)),%,77
-9495,Land use sources - Share of N2O in sector emissions (FAO (2019)),%,77
-9496,Land use sources - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9497,Forest - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9498,Forest - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9499,Forest - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9500,Forest - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9501,Forest - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9502,Energy total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9503,Energy total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9504,Energy total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9505,Energy total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9506,Energy total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9507,Energy total - Share of sector in total emissions (FAO (2019)),%,77
-9508,Energy total - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9509,Energy total - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9510,Energy total - Share of sector in total N2O emissions (FAO (2019)),%,77
-9511,Energy total - Share of CO2 in sector emissions (FAO (2019)),%,77
-9512,Energy total - Share of CH4 in sector emissions (FAO (2019)),%,77
-9513,Energy total - Share of N2O in sector emissions (FAO (2019)),%,77
-9514,Energy total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9515,Land Use total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9516,Land Use total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9517,Land Use total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9518,Sources total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9519,Sources total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9520,Sources total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9521,Sources total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9522,Sources total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9523,Sources total - Share of sector in total emissions (FAO (2019)),%,77
-9524,Sources total - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9525,Sources total - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9526,Sources total - Share of sector in total N2O emissions (FAO (2019)),%,77
-9527,Sources total - Share of CO2 in sector emissions (FAO (2019)),%,77
-9528,Sources total - Share of CH4 in sector emissions (FAO (2019)),%,77
-9529,Sources total - Share of N2O in sector emissions (FAO (2019)),%,77
-9530,Sources total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9531,Sources total excl. AFOLU - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9532,Sources total excl. AFOLU - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9533,Sources total excl. AFOLU - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9534,Sources total excl. AFOLU - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9535,Sources total excl. AFOLU - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9536,Sources total excl. AFOLU - Share of sector in total emissions (FAO (2019)),%,77
-9537,Sources total excl. AFOLU - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9538,Sources total excl. AFOLU - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9539,Sources total excl. AFOLU - Share of sector in total N2O emissions (FAO (2019)),%,77
-9540,Sources total excl. AFOLU - Share of CO2 in sector emissions (FAO (2019)),%,77
-9541,Sources total excl. AFOLU - Share of CH4 in sector emissions (FAO (2019)),%,77
-9542,Sources total excl. AFOLU - Share of N2O in sector emissions (FAO (2019)),%,77
-9543,Sources total excl. AFOLU - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9544,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total F-gases emissions (FAO (2019))",Gigagrams,77
-9545,Transport - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9546,"Residential, commercial, institutional and AFF - Share of sector in total F-gases emissions (FAO (2019))",Gigagrams,77
-9547,Industrial processes and product use - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9548,Industrial processes and product use - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9549,Industrial processes and product use - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9550,Industrial processes and product use - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9551,Industrial processes and product use - Share of CH4 in sector emissions (FAO (2019)),%,77
-9552,Industrial processes and product use - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9553,Waste - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9554,Other sources - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9555,Agriculture total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9556,Land use sources - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9557,Energy total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9558,Sources total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9559,Sources total excl. AFOLU - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9560,Other sources - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9561,Other sources - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9562,Other sources - Share of CH4 in sector emissions (FAO (2019)),%,77
-9563,International bunkers - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
-9564,International bunkers - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
-9565,International bunkers - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
-9566,International bunkers - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
-9567,International bunkers - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
-9568,International bunkers - Share of sector in total emissions (FAO (2019)),%,77
-9569,International bunkers - Share of sector in total CO2 emissions (FAO (2019)),%,77
-9570,International bunkers - Share of sector in total CH4 emissions (FAO (2019)),%,77
-9571,International bunkers - Share of sector in total N2O emissions (FAO (2019)),%,77
-9572,International bunkers - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
-9573,International bunkers - Share of CO2 in sector emissions (FAO (2019)),%,77
-9574,International bunkers - Share of CH4 in sector emissions (FAO (2019)),%,77
-9575,International bunkers - Share of N2O in sector emissions (FAO (2019)),%,77
-9576,International bunkers - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
-9577,Apples and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9578,Bananas - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9579,Barley and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9580,Beer - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9581,"Beverages, Alcoholic - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9582,"Cereals, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9583,"Citrus, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9584,Cocoa Beans and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9585,Coconuts - Incl Copra - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9586,Coffee and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9587,Cottonseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9588,Dates - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9589,"Fruits, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9590,Grapes and products (excl wine) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9591,Groundnut Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9592,Infant food - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9593,Maize and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9594,Millet and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9595,Nuts and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9596,"Oilcrops Oil, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9597,Olive Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9598,Olives (including preserved) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9599,"Oranges, Mandarines - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9600,Palm Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9601,Pepper - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9602,Pineapples and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9603,Potatoes and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9604,"Pulses, Other and products - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9605,Rape and Mustard Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9606,Rice (Milled Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9607,Rice (Paddy Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9608,Rice (Paddy Equivalent) - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
-9609,Rice (Paddy Equivalent) - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
-9610,Rice (Paddy Equivalent) - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9611,Rice (Paddy Equivalent) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9612,Roots & Tuber Dry Equiv - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9613,Roots & Tuber Dry Equiv - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
-9614,Roots & Tuber Dry Equiv - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
-9615,Roots & Tuber Dry Equiv - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9616,Roots & Tuber Dry Equiv - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9617,Sesame seed - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9618,Sesameseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9619,Soyabean Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9620,"Spices, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9621,Sugar (Raw Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9622,"Sugar, Raw Equivalent - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9623,"Sugar, Raw Equivalent - Food supply quantity (kg/capita/yr) (FAO (2019))",kg,78
-9624,"Sugar, Raw Equivalent - Food supply (kcal/capita/day) (FAO (2019))",kcal/capita/day,78
-9625,"Sugar, Refined Equiv - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9626,"Sugar, Refined Equiv - Food supply quantity (kg/capita/yr) (FAO (2019))",kg,78
-9627,"Sugar, Refined Equiv - Food supply (kcal/capita/day) (FAO (2019))",kcal/capita/day,78
-9628,Sunflowerseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9629,"Sweeteners, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9630,Tea (including mate) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9631,Tomatoes and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9632,"Vegetables, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9633,Wheat and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9634,Wine - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9635,Alcoholic Beverages - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9636,Cereals - Excluding Beer - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9637,Fruits - Excluding Wine - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9638,Miscellaneous - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9639,Oilcrops - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9640,Pulses - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9641,Spices - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9642,Starchy Roots - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9643,Stimulants - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9644,Sugar & Sweeteners - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9645,Treenuts - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9646,Vegetable Oils - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9647,Vegetables - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9648,Beans - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9649,"Beverages, Fermented - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9650,Cassava and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9651,Grapefruit and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9652,Groundnuts (in Shell Eq) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9653,Groundnuts (in Shell Eq) - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
-9654,Groundnuts (in Shell Eq) - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
-9655,Groundnuts (in Shell Eq) - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9656,Groundnuts (in Shell Eq) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9657,Groundnuts (Shelled Eq) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9658,"Lemons, Limes and products - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9659,Maize Germ Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9660,Oats - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9661,Onions - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9662,Peas - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9663,Pimento - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9664,Plantains - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9665,"Roots, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9666,Rye and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9667,Soyabeans - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9668,Sweet potatoes - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9669,Cloves - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9670,Coconut Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9671,Sorghum and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9672,Palmkernel Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9673,"Oilcrops, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9674,Sunflower seed - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9675,Yams - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9676,"Sugar, Raw Equivalent - Protein supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9677,Ricebran Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9678,Sugar cane - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9679,Sugar non-centrifugal - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9680,Sugar Crops - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9681,"Sugar, Raw Equivalent - Fat supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
-9682,Sugar beet - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9683,Molasses - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
-9684,Molasses - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
-9685,Molasses - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
+9012,Population - Domestic supply quantity (FAO (2019)),1000 tonnes,69
+9013,Cereals - Excluding Beer - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9014,Cereals - Excluding Beer - Tourist consumption (FAO (2019)),1000 tonnes,69
+9015,Cereals - Excluding Beer - Residuals (FAO (2019)),1000 tonnes,69
+9016,Wheat and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9017,Wheat and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9018,Wheat and products - Residuals (FAO (2019)),1000 tonnes,69
+9019,Rice (Milled Equivalent) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9020,Rice (Milled Equivalent) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9021,Rice (Milled Equivalent) - Residuals (FAO (2019)),1000 tonnes,69
+9022,Barley and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9023,Barley and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9024,Barley and products - Residuals (FAO (2019)),1000 tonnes,69
+9025,Maize and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9026,Maize and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9027,Maize and products - Residuals (FAO (2019)),1000 tonnes,69
+9028,Rye and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9029,Rye and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9030,Rye and products - Residuals (FAO (2019)),1000 tonnes,69
+9031,Oats - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9032,Oats - Tourist consumption (FAO (2019)),1000 tonnes,69
+9033,Oats - Residuals (FAO (2019)),1000 tonnes,69
+9034,Millet and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9035,Millet and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9036,Millet and products - Residuals (FAO (2019)),1000 tonnes,69
+9037,Sorghum and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9038,Sorghum and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9039,Sorghum and products - Residuals (FAO (2019)),1000 tonnes,69
+9040,"Cereals, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9041,"Cereals, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9042,"Cereals, Other - Residuals (FAO (2019))",1000 tonnes,69
+9043,Starchy Roots - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9044,Starchy Roots - Tourist consumption (FAO (2019)),1000 tonnes,69
+9045,Starchy Roots - Residuals (FAO (2019)),1000 tonnes,69
+9046,Cassava and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9047,Cassava and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9048,Cassava and products - Residuals (FAO (2019)),1000 tonnes,69
+9049,Potatoes and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9050,Potatoes and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9051,Potatoes and products - Residuals (FAO (2019)),1000 tonnes,69
+9052,Sweet potatoes - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9053,Sweet potatoes - Tourist consumption (FAO (2019)),1000 tonnes,69
+9054,Sweet potatoes - Residuals (FAO (2019)),1000 tonnes,69
+9055,Yams - Processing (FAO (2019)),1000 tonnes,69
+9056,Yams - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9057,Yams - Tourist consumption (FAO (2019)),1000 tonnes,69
+9058,Yams - Residuals (FAO (2019)),1000 tonnes,69
+9059,"Roots, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9060,"Roots, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9061,"Roots, Other - Residuals (FAO (2019))",1000 tonnes,69
+9062,Sugar Crops - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9063,Sugar Crops - Tourist consumption (FAO (2019)),1000 tonnes,69
+9064,Sugar Crops - Residuals (FAO (2019)),1000 tonnes,69
+9065,Sugar cane - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9066,Sugar cane - Tourist consumption (FAO (2019)),1000 tonnes,69
+9067,Sugar cane - Residuals (FAO (2019)),1000 tonnes,69
+9068,Sugar beet - Seed (FAO (2019)),1000 tonnes,69
+9069,Sugar beet - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9070,Sugar beet - Tourist consumption (FAO (2019)),1000 tonnes,69
+9071,Sugar beet - Residuals (FAO (2019)),1000 tonnes,69
+9072,Sugar & Sweeteners - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9073,Sugar & Sweeteners - Tourist consumption (FAO (2019)),1000 tonnes,69
+9074,Sugar & Sweeteners - Residuals (FAO (2019)),1000 tonnes,69
+9075,Sugar non-centrifugal - Seed (FAO (2019)),1000 tonnes,69
+9076,Sugar non-centrifugal - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9077,Sugar non-centrifugal - Tourist consumption (FAO (2019)),1000 tonnes,69
+9078,Sugar non-centrifugal - Residuals (FAO (2019)),1000 tonnes,69
+9079,Sugar (Raw Equivalent) - Seed (FAO (2019)),1000 tonnes,69
+9080,Sugar (Raw Equivalent) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9081,Sugar (Raw Equivalent) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9082,Sugar (Raw Equivalent) - Residuals (FAO (2019)),1000 tonnes,69
+9083,Sugar (Raw Equivalent) - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9084,Sugar (Raw Equivalent) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9085,"Sweeteners, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9086,"Sweeteners, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9087,"Sweeteners, Other - Residuals (FAO (2019))",1000 tonnes,69
+9088,Honey - Seed (FAO (2019)),1000 tonnes,69
+9089,Honey - Losses (FAO (2019)),1000 tonnes,69
+9090,Honey - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9091,Honey - Tourist consumption (FAO (2019)),1000 tonnes,69
+9092,Honey - Residuals (FAO (2019)),1000 tonnes,69
+9093,Honey - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9094,Pulses - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9095,Pulses - Tourist consumption (FAO (2019)),1000 tonnes,69
+9096,Pulses - Residuals (FAO (2019)),1000 tonnes,69
+9097,Beans - Processing (FAO (2019)),1000 tonnes,69
+9098,Beans - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9099,Beans - Tourist consumption (FAO (2019)),1000 tonnes,69
+9100,Beans - Residuals (FAO (2019)),1000 tonnes,69
+9101,Peas - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9102,Peas - Tourist consumption (FAO (2019)),1000 tonnes,69
+9103,Peas - Residuals (FAO (2019)),1000 tonnes,69
+9104,"Pulses, Other and products - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9105,"Pulses, Other and products - Tourist consumption (FAO (2019))",1000 tonnes,69
+9106,"Pulses, Other and products - Residuals (FAO (2019))",1000 tonnes,69
+9107,Treenuts - Feed (FAO (2019)),1000 tonnes,69
+9108,Treenuts - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9109,Treenuts - Tourist consumption (FAO (2019)),1000 tonnes,69
+9110,Treenuts - Residuals (FAO (2019)),1000 tonnes,69
+9111,Nuts and products - Feed (FAO (2019)),1000 tonnes,69
+9112,Nuts and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9113,Nuts and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9114,Nuts and products - Residuals (FAO (2019)),1000 tonnes,69
+9115,Oilcrops - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9116,Oilcrops - Tourist consumption (FAO (2019)),1000 tonnes,69
+9117,Oilcrops - Residuals (FAO (2019)),1000 tonnes,69
+9118,Soyabeans - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9119,Soyabeans - Tourist consumption (FAO (2019)),1000 tonnes,69
+9120,Soyabeans - Residuals (FAO (2019)),1000 tonnes,69
+9121,Groundnuts (Shelled Eq) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9122,Groundnuts (Shelled Eq) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9123,Groundnuts (Shelled Eq) - Residuals (FAO (2019)),1000 tonnes,69
+9124,Sunflower seed - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9125,Sunflower seed - Tourist consumption (FAO (2019)),1000 tonnes,69
+9126,Sunflower seed - Residuals (FAO (2019)),1000 tonnes,69
+9127,Rape and Mustardseed - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9128,Rape and Mustardseed - Tourist consumption (FAO (2019)),1000 tonnes,69
+9129,Rape and Mustardseed - Residuals (FAO (2019)),1000 tonnes,69
+9130,Cottonseed - Residuals (FAO (2019)),1000 tonnes,69
+9131,Coconuts - Incl Copra - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9132,Coconuts - Incl Copra - Tourist consumption (FAO (2019)),1000 tonnes,69
+9133,Coconuts - Incl Copra - Residuals (FAO (2019)),1000 tonnes,69
+9134,Sesame seed - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9135,Sesame seed - Tourist consumption (FAO (2019)),1000 tonnes,69
+9136,Sesame seed - Residuals (FAO (2019)),1000 tonnes,69
+9137,Olives (including preserved) - Seed (FAO (2019)),1000 tonnes,69
+9138,Olives (including preserved) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9139,Olives (including preserved) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9140,Olives (including preserved) - Residuals (FAO (2019)),1000 tonnes,69
+9141,"Oilcrops, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9142,"Oilcrops, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9143,"Oilcrops, Other - Residuals (FAO (2019))",1000 tonnes,69
+9144,Vegetable Oils - Seed (FAO (2019)),1000 tonnes,69
+9145,Vegetable Oils - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9146,Vegetable Oils - Tourist consumption (FAO (2019)),1000 tonnes,69
+9147,Vegetable Oils - Residuals (FAO (2019)),1000 tonnes,69
+9148,Soyabean Oil - Seed (FAO (2019)),1000 tonnes,69
+9149,Soyabean Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9150,Soyabean Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9151,Soyabean Oil - Residuals (FAO (2019)),1000 tonnes,69
+9152,Groundnut Oil - Seed (FAO (2019)),1000 tonnes,69
+9153,Groundnut Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9154,Groundnut Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9155,Groundnut Oil - Residuals (FAO (2019)),1000 tonnes,69
+9156,Sunflowerseed Oil - Seed (FAO (2019)),1000 tonnes,69
+9157,Sunflowerseed Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9158,Sunflowerseed Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9159,Sunflowerseed Oil - Residuals (FAO (2019)),1000 tonnes,69
+9160,Rape and Mustard Oil - Seed (FAO (2019)),1000 tonnes,69
+9161,Rape and Mustard Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9162,Rape and Mustard Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9163,Rape and Mustard Oil - Residuals (FAO (2019)),1000 tonnes,69
+9164,Cottonseed Oil - Seed (FAO (2019)),1000 tonnes,69
+9165,Cottonseed Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9166,Cottonseed Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9167,Cottonseed Oil - Residuals (FAO (2019)),1000 tonnes,69
+9168,Palmkernel Oil - Seed (FAO (2019)),1000 tonnes,69
+9169,Palmkernel Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9170,Palmkernel Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9171,Palmkernel Oil - Residuals (FAO (2019)),1000 tonnes,69
+9172,Palm Oil - Seed (FAO (2019)),1000 tonnes,69
+9173,Palm Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9174,Palm Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9175,Palm Oil - Residuals (FAO (2019)),1000 tonnes,69
+9176,Coconut Oil - Seed (FAO (2019)),1000 tonnes,69
+9177,Coconut Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9178,Coconut Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9179,Coconut Oil - Residuals (FAO (2019)),1000 tonnes,69
+9180,Sesameseed Oil - Seed (FAO (2019)),1000 tonnes,69
+9181,Sesameseed Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9182,Sesameseed Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9183,Sesameseed Oil - Residuals (FAO (2019)),1000 tonnes,69
+9184,Olive Oil - Seed (FAO (2019)),1000 tonnes,69
+9185,Olive Oil - Losses (FAO (2019)),1000 tonnes,69
+9186,Olive Oil - Processing (FAO (2019)),1000 tonnes,69
+9187,Olive Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9188,Olive Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9189,Olive Oil - Residuals (FAO (2019)),1000 tonnes,69
+9190,Ricebran Oil - Feed (FAO (2019)),1000 tonnes,69
+9191,Ricebran Oil - Seed (FAO (2019)),1000 tonnes,69
+9192,Ricebran Oil - Losses (FAO (2019)),1000 tonnes,69
+9193,Ricebran Oil - Processing (FAO (2019)),1000 tonnes,69
+9194,Ricebran Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9195,Ricebran Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9196,Ricebran Oil - Residuals (FAO (2019)),1000 tonnes,69
+9197,Maize Germ Oil - Feed (FAO (2019)),1000 tonnes,69
+9198,Maize Germ Oil - Seed (FAO (2019)),1000 tonnes,69
+9199,Maize Germ Oil - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9200,Maize Germ Oil - Tourist consumption (FAO (2019)),1000 tonnes,69
+9201,Maize Germ Oil - Residuals (FAO (2019)),1000 tonnes,69
+9202,"Oilcrops Oil, Other - Seed (FAO (2019))",1000 tonnes,69
+9203,"Oilcrops Oil, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9204,"Oilcrops Oil, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9205,"Oilcrops Oil, Other - Residuals (FAO (2019))",1000 tonnes,69
+9206,Vegetables - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9207,Vegetables - Tourist consumption (FAO (2019)),1000 tonnes,69
+9208,Vegetables - Residuals (FAO (2019)),1000 tonnes,69
+9209,Tomatoes and products - Seed (FAO (2019)),1000 tonnes,69
+9210,Tomatoes and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9211,Tomatoes and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9212,Tomatoes and products - Residuals (FAO (2019)),1000 tonnes,69
+9213,Onions - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9214,Onions - Tourist consumption (FAO (2019)),1000 tonnes,69
+9215,Onions - Residuals (FAO (2019)),1000 tonnes,69
+9216,"Vegetables, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9217,"Vegetables, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9218,"Vegetables, Other - Residuals (FAO (2019))",1000 tonnes,69
+9219,Fruits - Excluding Wine - Seed (FAO (2019)),1000 tonnes,69
+9220,Fruits - Excluding Wine - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9221,Fruits - Excluding Wine - Tourist consumption (FAO (2019)),1000 tonnes,69
+9222,Fruits - Excluding Wine - Residuals (FAO (2019)),1000 tonnes,69
+9223,"Oranges, Mandarines - Seed (FAO (2019))",1000 tonnes,69
+9224,"Oranges, Mandarines - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9225,"Oranges, Mandarines - Tourist consumption (FAO (2019))",1000 tonnes,69
+9226,"Oranges, Mandarines - Residuals (FAO (2019))",1000 tonnes,69
+9227,"Lemons, Limes and products - Feed (FAO (2019))",1000 tonnes,69
+9228,"Lemons, Limes and products - Seed (FAO (2019))",1000 tonnes,69
+9229,"Lemons, Limes and products - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9230,"Lemons, Limes and products - Tourist consumption (FAO (2019))",1000 tonnes,69
+9231,"Lemons, Limes and products - Residuals (FAO (2019))",1000 tonnes,69
+9232,Grapefruit and products - Seed (FAO (2019)),1000 tonnes,69
+9233,Grapefruit and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9234,Grapefruit and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9235,Grapefruit and products - Residuals (FAO (2019)),1000 tonnes,69
+9236,"Citrus, Other - Feed (FAO (2019))",1000 tonnes,69
+9237,"Citrus, Other - Seed (FAO (2019))",1000 tonnes,69
+9238,"Citrus, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9239,"Citrus, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9240,"Citrus, Other - Residuals (FAO (2019))",1000 tonnes,69
+9241,Bananas - Seed (FAO (2019)),1000 tonnes,69
+9242,Bananas - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9243,Bananas - Tourist consumption (FAO (2019)),1000 tonnes,69
+9244,Bananas - Residuals (FAO (2019)),1000 tonnes,69
+9245,Plantains - Seed (FAO (2019)),1000 tonnes,69
+9246,Plantains - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9247,Plantains - Tourist consumption (FAO (2019)),1000 tonnes,69
+9248,Plantains - Residuals (FAO (2019)),1000 tonnes,69
+9249,Apples and products - Seed (FAO (2019)),1000 tonnes,69
+9250,Apples and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9251,Apples and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9252,Apples and products - Residuals (FAO (2019)),1000 tonnes,69
+9253,Pineapples and products - Feed (FAO (2019)),1000 tonnes,69
+9254,Pineapples and products - Seed (FAO (2019)),1000 tonnes,69
+9255,Pineapples and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9256,Pineapples and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9257,Pineapples and products - Residuals (FAO (2019)),1000 tonnes,69
+9258,Dates - Seed (FAO (2019)),1000 tonnes,69
+9259,Dates - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9260,Dates - Tourist consumption (FAO (2019)),1000 tonnes,69
+9261,Dates - Residuals (FAO (2019)),1000 tonnes,69
+9262,Grapes and products (excl wine) - Seed (FAO (2019)),1000 tonnes,69
+9263,Grapes and products (excl wine) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9264,Grapes and products (excl wine) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9265,Grapes and products (excl wine) - Residuals (FAO (2019)),1000 tonnes,69
+9266,"Fruits, Other - Seed (FAO (2019))",1000 tonnes,69
+9267,"Fruits, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9268,"Fruits, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9269,"Fruits, Other - Residuals (FAO (2019))",1000 tonnes,69
+9270,Stimulants - Seed (FAO (2019)),1000 tonnes,69
+9271,Stimulants - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9272,Stimulants - Tourist consumption (FAO (2019)),1000 tonnes,69
+9273,Stimulants - Residuals (FAO (2019)),1000 tonnes,69
+9274,Coffee and products - Feed (FAO (2019)),1000 tonnes,69
+9275,Coffee and products - Seed (FAO (2019)),1000 tonnes,69
+9276,Coffee and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9277,Coffee and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9278,Coffee and products - Residuals (FAO (2019)),1000 tonnes,69
+9279,Coffee and products - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9280,Cocoa Beans and products - Seed (FAO (2019)),1000 tonnes,69
+9281,Cocoa Beans and products - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9282,Cocoa Beans and products - Tourist consumption (FAO (2019)),1000 tonnes,69
+9283,Cocoa Beans and products - Residuals (FAO (2019)),1000 tonnes,69
+9284,Tea (including mate) - Seed (FAO (2019)),1000 tonnes,69
+9285,Tea (including mate) - Processing (FAO (2019)),1000 tonnes,69
+9286,Tea (including mate) - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9287,Tea (including mate) - Tourist consumption (FAO (2019)),1000 tonnes,69
+9288,Tea (including mate) - Residuals (FAO (2019)),1000 tonnes,69
+9289,Tea (including mate) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9290,Spices - Seed (FAO (2019)),1000 tonnes,69
+9291,Spices - Processing (FAO (2019)),1000 tonnes,69
+9292,Spices - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9293,Spices - Tourist consumption (FAO (2019)),1000 tonnes,69
+9294,Spices - Residuals (FAO (2019)),1000 tonnes,69
+9295,Pepper - Feed (FAO (2019)),1000 tonnes,69
+9296,Pepper - Seed (FAO (2019)),1000 tonnes,69
+9297,Pepper - Processing (FAO (2019)),1000 tonnes,69
+9298,Pepper - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9299,Pepper - Tourist consumption (FAO (2019)),1000 tonnes,69
+9300,Pepper - Residuals (FAO (2019)),1000 tonnes,69
+9301,Pimento - Feed (FAO (2019)),1000 tonnes,69
+9302,Pimento - Seed (FAO (2019)),1000 tonnes,69
+9303,Pimento - Processing (FAO (2019)),1000 tonnes,69
+9304,Pimento - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9305,Pimento - Tourist consumption (FAO (2019)),1000 tonnes,69
+9306,Pimento - Residuals (FAO (2019)),1000 tonnes,69
+9307,Cloves - Seed (FAO (2019)),1000 tonnes,69
+9308,Cloves - Processing (FAO (2019)),1000 tonnes,69
+9309,Cloves - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9310,Cloves - Tourist consumption (FAO (2019)),1000 tonnes,69
+9311,Cloves - Residuals (FAO (2019)),1000 tonnes,69
+9312,"Spices, Other - Feed (FAO (2019))",1000 tonnes,69
+9313,"Spices, Other - Seed (FAO (2019))",1000 tonnes,69
+9314,"Spices, Other - Processing (FAO (2019))",1000 tonnes,69
+9315,"Spices, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9316,"Spices, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9317,"Spices, Other - Residuals (FAO (2019))",1000 tonnes,69
+9318,Alcoholic Beverages - Feed (FAO (2019)),1000 tonnes,69
+9319,Alcoholic Beverages - Seed (FAO (2019)),1000 tonnes,69
+9320,Alcoholic Beverages - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9321,Alcoholic Beverages - Tourist consumption (FAO (2019)),1000 tonnes,69
+9322,Alcoholic Beverages - Residuals (FAO (2019)),1000 tonnes,69
+9323,Wine - Feed (FAO (2019)),1000 tonnes,69
+9324,Wine - Seed (FAO (2019)),1000 tonnes,69
+9325,Wine - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9326,Wine - Tourist consumption (FAO (2019)),1000 tonnes,69
+9327,Wine - Residuals (FAO (2019)),1000 tonnes,69
+9328,Wine - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9329,Beer - Feed (FAO (2019)),1000 tonnes,69
+9330,Beer - Seed (FAO (2019)),1000 tonnes,69
+9331,Beer - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9332,Beer - Tourist consumption (FAO (2019)),1000 tonnes,69
+9333,Beer - Residuals (FAO (2019)),1000 tonnes,69
+9334,Beer - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,69
+9335,"Beverages, Fermented - Feed (FAO (2019))",1000 tonnes,69
+9336,"Beverages, Fermented - Seed (FAO (2019))",1000 tonnes,69
+9337,"Beverages, Fermented - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9338,"Beverages, Fermented - Tourist consumption (FAO (2019))",1000 tonnes,69
+9339,"Beverages, Fermented - Residuals (FAO (2019))",1000 tonnes,69
+9340,"Beverages, Alcoholic - Feed (FAO (2019))",1000 tonnes,69
+9341,"Beverages, Alcoholic - Seed (FAO (2019))",1000 tonnes,69
+9342,"Beverages, Alcoholic - Losses (FAO (2019))",1000 tonnes,69
+9343,"Beverages, Alcoholic - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9344,"Beverages, Alcoholic - Tourist consumption (FAO (2019))",1000 tonnes,69
+9345,"Beverages, Alcoholic - Residuals (FAO (2019))",1000 tonnes,69
+9346,"Beverages, Alcoholic - Fat supply quantity (g/capita/day) (FAO (2019))",g/capita/day,69
+9347,"Alcohol, Non-Food - Feed (FAO (2019))",1000 tonnes,69
+9348,"Alcohol, Non-Food - Seed (FAO (2019))",1000 tonnes,69
+9349,"Alcohol, Non-Food - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9350,"Alcohol, Non-Food - Tourist consumption (FAO (2019))",1000 tonnes,69
+9351,"Alcohol, Non-Food - Residuals (FAO (2019))",1000 tonnes,69
+9352,"Alcohol, Non-Food - Food (FAO (2019))",1000 tonnes,69
+9353,"Alcohol, Non-Food - Food supply quantity (kg/capita/yr) (FAO (2019))",kg,69
+9354,Meat - Seed (FAO (2019)),1000 tonnes,69
+9355,Meat - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9356,Meat - Tourist consumption (FAO (2019)),1000 tonnes,69
+9357,Meat - Residuals (FAO (2019)),1000 tonnes,69
+9358,Bovine Meat - Seed (FAO (2019)),1000 tonnes,69
+9359,Bovine Meat - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9360,Bovine Meat - Tourist consumption (FAO (2019)),1000 tonnes,69
+9361,Bovine Meat - Residuals (FAO (2019)),1000 tonnes,69
+9362,Mutton & Goat Meat - Seed (FAO (2019)),1000 tonnes,69
+9363,Mutton & Goat Meat - Processing (FAO (2019)),1000 tonnes,69
+9364,Mutton & Goat Meat - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9365,Mutton & Goat Meat - Tourist consumption (FAO (2019)),1000 tonnes,69
+9366,Mutton & Goat Meat - Residuals (FAO (2019)),1000 tonnes,69
+9367,Pigmeat - Feed (FAO (2019)),1000 tonnes,69
+9368,Pigmeat - Seed (FAO (2019)),1000 tonnes,69
+9369,Pigmeat - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9370,Pigmeat - Tourist consumption (FAO (2019)),1000 tonnes,69
+9371,Pigmeat - Residuals (FAO (2019)),1000 tonnes,69
+9372,Poultry Meat - Seed (FAO (2019)),1000 tonnes,69
+9373,Poultry Meat - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9374,Poultry Meat - Tourist consumption (FAO (2019)),1000 tonnes,69
+9375,Poultry Meat - Residuals (FAO (2019)),1000 tonnes,69
+9376,"Meat, Other - Seed (FAO (2019))",1000 tonnes,69
+9377,"Meat, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9378,"Meat, Other - Tourist consumption (FAO (2019))",1000 tonnes,69
+9379,"Meat, Other - Residuals (FAO (2019))",1000 tonnes,69
+9380,Offals - Seed (FAO (2019)),1000 tonnes,69
+9381,Offals - Processing (FAO (2019)),1000 tonnes,69
+9382,Offals - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9383,Offals - Tourist consumption (FAO (2019)),1000 tonnes,69
+9384,Offals - Residuals (FAO (2019)),1000 tonnes,69
+9385,"Offals, Edible - Seed (FAO (2019))",1000 tonnes,69
+9386,"Offals, Edible - Processing (FAO (2019))",1000 tonnes,69
+9387,"Offals, Edible - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9388,"Offals, Edible - Tourist consumption (FAO (2019))",1000 tonnes,69
+9389,"Offals, Edible - Residuals (FAO (2019))",1000 tonnes,69
+9390,Animal fats - Seed (FAO (2019)),1000 tonnes,69
+9391,Animal fats - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9392,Animal fats - Tourist consumption (FAO (2019)),1000 tonnes,69
+9393,Animal fats - Residuals (FAO (2019)),1000 tonnes,69
+9394,"Butter, Ghee - Seed (FAO (2019))",1000 tonnes,69
+9395,"Butter, Ghee - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9396,"Butter, Ghee - Tourist consumption (FAO (2019))",1000 tonnes,69
+9397,"Butter, Ghee - Residuals (FAO (2019))",1000 tonnes,69
+9398,Cream - Feed (FAO (2019)),1000 tonnes,69
+9399,Cream - Seed (FAO (2019)),1000 tonnes,69
+9400,Cream - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9401,Cream - Tourist consumption (FAO (2019)),1000 tonnes,69
+9402,Cream - Residuals (FAO (2019)),1000 tonnes,69
+9403,"Fats, Animals, Raw - Seed (FAO (2019))",1000 tonnes,69
+9404,"Fats, Animals, Raw - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9405,"Fats, Animals, Raw - Tourist consumption (FAO (2019))",1000 tonnes,69
+9406,"Fats, Animals, Raw - Residuals (FAO (2019))",1000 tonnes,69
+9407,Eggs - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9408,Eggs - Tourist consumption (FAO (2019)),1000 tonnes,69
+9409,Eggs - Residuals (FAO (2019)),1000 tonnes,69
+9410,Milk - Excluding Butter - Seed (FAO (2019)),1000 tonnes,69
+9411,Milk - Excluding Butter - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9412,Milk - Excluding Butter - Tourist consumption (FAO (2019)),1000 tonnes,69
+9413,Milk - Excluding Butter - Residuals (FAO (2019)),1000 tonnes,69
+9414,"Fish, Seafood - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9415,Freshwater Fish - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9416,Miscellaneous - Feed (FAO (2019)),1000 tonnes,69
+9417,Miscellaneous - Seed (FAO (2019)),1000 tonnes,69
+9418,Miscellaneous - Processing (FAO (2019)),1000 tonnes,69
+9419,Miscellaneous - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9420,Miscellaneous - Tourist consumption (FAO (2019)),1000 tonnes,69
+9421,Miscellaneous - Residuals (FAO (2019)),1000 tonnes,69
+9422,Infant food - Feed (FAO (2019)),1000 tonnes,69
+9423,Infant food - Seed (FAO (2019)),1000 tonnes,69
+9424,Infant food - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9425,Infant food - Tourist consumption (FAO (2019)),1000 tonnes,69
+9426,Infant food - Residuals (FAO (2019)),1000 tonnes,69
+9427,Palm kernels - Residuals (FAO (2019)),1000 tonnes,69
+9428,"Fish, Body Oil - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9429,"Fish, Liver Oil - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9430,Demersal Fish - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9431,Pelagic Fish - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9432,"Marine Fish, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9433,Crustaceans - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9434,Cephalopods - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9435,"Molluscs, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9436,"Aquatic Products, Other - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9437,"Aquatic Animals, Others - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9438,Aquatic Plants - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9439,Cottonseed - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9440,Palm kernels - Seed (FAO (2019)),1000 tonnes,69
+9441,Palm kernels - Other uses (non-food) (FAO (2019)),1000 tonnes,69
+9442,Palm kernels - Tourist consumption (FAO (2019)),1000 tonnes,69
+9443,Cottonseed - Tourist consumption (FAO (2019)),1000 tonnes,69
+9444,"Meat, Aquatic Mammals - Other uses (non-food) (FAO (2019))",1000 tonnes,69
+9445,Blended And Mix (FAO (2019)),tonnes,70
+9446,Bulgur Wheat Total (FAO (2019)),tonnes,70
+9447,Cereals (FAO (2019)),tonnes,70
+9448,Coarse Grains (FAO (2019)),tonnes,70
+9449,Dried Fruits Total (FAO (2019)),tonnes,70
+9450,Edible Fat Total (FAO (2019)),tonnes,70
+9451,"Milk,Total (FAO (2019))",tonnes,70
+9452,Non-Cereals (FAO (2019)),tonnes,70
+9453,Other Non-Cereals (FAO (2019)),tonnes,70
+9454,"Pulses,Total (FAO (2019))",tonnes,70
+9455,Rice Total (FAO (2019)),tonnes,70
+9456,Sugar Total (FAO (2019)),tonnes,70
+9457,Vegetable Oils (FAO (2019)),tonnes,70
+9458,Wheat & Wheat Flour (FAO (2019)),tonnes,70
+9459,Fish & Products (FAO (2019)),tonnes,70
+9460,Meat & Products (FAO (2019)),tonnes,70
+9461,Other Dairy Products (FAO (2019)),tonnes,70
+9462,Butter Oil Total (FAO (2019)),tonnes,70
+9463,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
+9464,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
+9465,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Value Local Currency, 2010 prices (FAO (2019))",millions,71
+9466,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added (FAO (2019))",,71
+9467,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added, 2010 prices (FAO (2019))",,71
+9468,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added US$ (FAO (2019))",,71
+9469,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Share of Value Added US$, 2010 prices (FAO (2019))",,71
+9470,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index (FAO (2019))",index,71
+9471,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index, 2010 prices (FAO (2019))",index,71
+9472,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index US$ (FAO (2019))",index,71
+9473,"Gross Fixed Capital Formation (Agriculture, Forestry and Fishing) - Agriculture orientation index US$, 2010 prices (FAO (2019))",index,71
+9474,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
+9475,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
+9476,"Consumption of Fixed Capital (Agriculture, Forestry and Fishing) - Value US$, 2010 prices (FAO (2019))",millions,71
+9477,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
+9478,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value US$ (FAO (2019))",millions,71
+9479,"Net Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency, 2010 prices (FAO (2019))",millions,71
+9480,"Gross Capital Stocks (Agriculture, Forestry and Fishing) - Value Local Currency (FAO (2019))",millions,71
+9481,Arable land - Share in Agricultural land (FAO (2019)),%,72
+9482,Land under permanent crops - Share in Agricultural land (FAO (2019)),%,72
+9483,Cropland - Share in Agricultural land (FAO (2019)),%,72
+9484,Cropland - Share in Land area (FAO (2019)),%,72
+9485,Land under perm. meadows and pastures - Share in Agricultural land (FAO (2019)),%,72
+9486,Land under perm. meadows and pastures - Share in Land area (FAO (2019)),%,72
+9487,Agriculture area actually irrigated - Share in Agricultural land (FAO (2019)),%,72
+9488,Land area equipped for irrigation - Share in Agricultural land (FAO (2019)),%,72
+9489,Agricultural land - Share in Land area (FAO (2019)),%,72
+9490,Forest land - Share in Land area (FAO (2019)),%,72
+9491,Primary Forest - Share in Forest land (FAO (2019)),%,72
+9492,Planted Forest - Share in Forest land (FAO (2019)),%,72
+9493,Other naturally regenerated forest - Share in Forest land (FAO (2019)),%,72
+9494,Agriculture area under organic agric. - Share in Agricultural land (FAO (2019)),%,72
+9495,Nutrient nitrogen N (total) - Production (FAO (2019)),tonnes,73
+9496,Nutrient nitrogen N (total) - Import Quantity (FAO (2019)),tonnes,73
+9497,Nutrient nitrogen N (total) - Export Quantity (FAO (2019)),tonnes,73
+9498,Nutrient nitrogen N (total) - Agricultural Use (FAO (2019)),tonnes,73
+9499,Nutrient phosphate P2O5 (total) - Production (FAO (2019)),tonnes,73
+9500,Nutrient phosphate P2O5 (total) - Import Quantity (FAO (2019)),tonnes,73
+9501,Nutrient phosphate P2O5 (total) - Export Quantity (FAO (2019)),tonnes,73
+9502,Nutrient phosphate P2O5 (total) - Agricultural Use (FAO (2019)),tonnes,73
+9503,Nutrient potash K2O (total) - Production (FAO (2019)),tonnes,73
+9504,Nutrient potash K2O (total) - Import Quantity (FAO (2019)),tonnes,73
+9505,Nutrient potash K2O (total) - Export Quantity (FAO (2019)),tonnes,73
+9506,Nutrient potash K2O (total) - Agricultural Use (FAO (2019)),tonnes,73
+9507,"Agriculture research spending - Share of Value Added (Agriculture, Forestry and Fishing) (FAO (2019))",,74
+9508,Agriculture research spending - 2011 PPP$ (FAO (2019)),I$,74
+9509,Gas-Diesel oil - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9510,Gas-Diesel oil - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9511,Gas-Diesel oil - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9512,Gas-Diesel oil - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9513,Gas-Diesel oil - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9514,Gas-Diesel oil - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9515,Gas-Diesel oil - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9516,Gas-Diesel oil - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9517,Gas-Diesel oil - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9518,Gas-Diesel oil - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9519,Motor Gasoline - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9520,Motor Gasoline - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9521,Motor Gasoline - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9522,Motor Gasoline - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9523,Motor Gasoline - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9524,Motor Gasoline - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9525,Motor Gasoline - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9526,Motor Gasoline - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9527,Motor Gasoline - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9528,Motor Gasoline - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9529,Natural gas (including LNG) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9530,Natural gas (including LNG) - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9531,Natural gas (including LNG) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9532,Natural gas (including LNG) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9533,Natural gas (including LNG) - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9534,Natural gas (including LNG) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9535,Natural gas (including LNG) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9536,Natural gas (including LNG) - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9537,Natural gas (including LNG) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9538,Natural gas (including LNG) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9539,Liquefied petroleum gas (LPG) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9540,Liquefied petroleum gas (LPG) - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9541,Liquefied petroleum gas (LPG) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9542,Liquefied petroleum gas (LPG) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9543,Liquefied petroleum gas (LPG) - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9544,Liquefied petroleum gas (LPG) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9545,Liquefied petroleum gas (LPG) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9546,Liquefied petroleum gas (LPG) - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9547,Liquefied petroleum gas (LPG) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9548,Liquefied petroleum gas (LPG) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9549,Fuel oil - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9550,Fuel oil - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9551,Fuel oil - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9552,Fuel oil - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9553,Fuel oil - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9554,Fuel oil - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9555,Fuel oil - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9556,Fuel oil - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9557,Fuel oil - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9558,Fuel oil - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9559,Coal - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9560,Coal - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9561,Coal - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9562,Coal - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9563,Coal - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9564,Coal - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9565,Coal - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9566,Coal - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9567,Coal - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9568,Coal - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9569,Electricity - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9570,Electricity - Consumption in Agriculture - million kWh (FAO (2019)),million kWh,74
+9571,Electricity - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9572,Electricity - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9573,Electricity - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9574,Electricity - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9575,Electricity - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9576,Gas-diesel oils used in fisheries - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9577,Gas-diesel oils used in fisheries - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9578,Gas-diesel oils used in fisheries - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9579,Gas-diesel oils used in fisheries - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9580,Gas-diesel oils used in fisheries - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9581,Gas-diesel oils used in fisheries - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9582,Gas-diesel oils used in fisheries - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9583,Gas-diesel oils used in fisheries - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9584,Gas-diesel oils used in fisheries - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9585,Gas-diesel oils used in fisheries - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9586,Fuel oil used in fisheries - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9587,Fuel oil used in fisheries - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9588,Fuel oil used in fisheries - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9589,Fuel oil used in fisheries - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9590,Fuel oil used in fisheries - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9591,Fuel oil used in fisheries - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9592,Fuel oil used in fisheries - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9593,Fuel oil used in fisheries - Implied emission factor for CO2 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9594,Fuel oil used in fisheries - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9595,Fuel oil used in fisheries - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9596,Energy for power irrigation - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9597,Energy for power irrigation - Implied emission factor for CH4 - Kg/TJ (FAO (2019)),Kg/TJ,74
+9598,Energy for power irrigation - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9599,Energy for power irrigation - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9600,Energy for power irrigation - Implied emission factor for N2O - Kg/TJ (FAO (2019)),Kg/TJ,74
+9601,Energy for power irrigation - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9602,Energy for power irrigation - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9603,Energy for power irrigation - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9604,Transport fuel used in agriculture (excl. fishery) - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9605,Transport fuel used in agriculture (excl. fishery) - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9606,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9607,Transport fuel used in agriculture (excl. fishery) - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9608,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9609,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9610,Transport fuel used in agriculture (excl. fishery) - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9611,Total Energy - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9612,Total Energy - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9613,Total Energy - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9614,Total Energy - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9615,Total Energy - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9616,Total Energy - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9617,Total Energy - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9618,Energy used in fishery - Consumption in Agriculture - Terajoule (FAO (2019)),Terajoule,74
+9619,Energy used in fishery - Emissions (CH4) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9620,Energy used in fishery - Emissions (CO2eq) from CH4 (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9621,Energy used in fishery - Emissions (N2O) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9622,Energy used in fishery - Emissions (CO2eq) from N2O (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9623,Energy used in fishery - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9624,Energy used in fishery - Emissions (CO2eq) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9625,Electricity - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9626,Energy for power irrigation - Implied emission factor for CO2 - g/kWh (FAO (2019)),g/kWh,74
+9627,Energy for power irrigation - Emissions (CO2) (Energy) - Gigagrams (FAO (2019)),Gigagrams,74
+9628,Asses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9629,Asses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9630,Asses - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9631,Asses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9632,Asses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9633,Asses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9634,Asses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9635,Asses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9636,Asses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9637,Camels - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9638,Camels - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9639,Camels - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9640,Camels - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9641,Camels - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9642,Camels - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9643,Camels - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9644,Camels - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9645,Camels - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9646,"Cattle, dairy - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9647,"Cattle, dairy - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9648,"Cattle, dairy - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
+9649,"Cattle, dairy - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9650,"Cattle, dairy - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9651,"Cattle, dairy - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9652,"Cattle, dairy - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9653,"Cattle, dairy - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9654,"Cattle, dairy - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9655,"Cattle, non-dairy - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9656,"Cattle, non-dairy - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9657,"Cattle, non-dairy - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
+9658,"Cattle, non-dairy - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9659,"Cattle, non-dairy - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9660,"Cattle, non-dairy - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9661,"Cattle, non-dairy - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9662,"Cattle, non-dairy - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9663,"Cattle, non-dairy - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9664,"Chickens, broilers - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9665,"Chickens, broilers - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9666,"Chickens, broilers - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
+9667,"Chickens, broilers - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9668,"Chickens, broilers - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9669,"Chickens, broilers - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9670,"Chickens, broilers - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9671,"Chickens, broilers - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9672,"Chickens, broilers - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9673,"Chickens, layers - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9674,"Chickens, layers - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9675,"Chickens, layers - Implied emission factor for N2O (Manure on pasture) (FAO (2019))",kg N2O-N/kg N,74
+9676,"Chickens, layers - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9677,"Chickens, layers - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9678,"Chickens, layers - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9679,"Chickens, layers - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9680,"Chickens, layers - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9681,"Chickens, layers - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9682,Goats - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9683,Goats - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9684,Goats - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9685,Goats - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9686,Goats - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9687,Goats - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9688,Goats - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9689,Goats - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9690,Goats - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9691,Horses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9692,Horses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9693,Horses - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9694,Horses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9695,Horses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9696,Horses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9697,Horses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9698,Horses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9699,Horses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9700,Mules - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9701,Mules - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9702,Mules - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9703,Mules - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9704,Mules - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9705,Mules - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9706,Mules - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9707,Mules - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9708,Mules - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9709,Sheep - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9710,Sheep - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9711,Sheep - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9712,Sheep - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9713,Sheep - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9714,Sheep - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9715,Sheep - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9716,Sheep - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9717,Sheep - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9718,All Animals - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9719,All Animals - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9720,All Animals - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9721,All Animals - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9722,All Animals - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9723,All Animals - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9724,All Animals - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9725,All Animals - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9726,Camels and Llamas - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9727,Camels and Llamas - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9728,Camels and Llamas - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9729,Camels and Llamas - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9730,Camels and Llamas - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9731,Camels and Llamas - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9732,Camels and Llamas - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9733,Camels and Llamas - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9734,Cattle - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9735,Cattle - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9736,Cattle - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9737,Cattle - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9738,Cattle - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9739,Cattle - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9740,Cattle - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9741,Cattle - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9742,Chickens - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9743,Chickens - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9744,Chickens - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9745,Chickens - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9746,Chickens - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9747,Chickens - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9748,Chickens - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9749,Chickens - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9750,Mules and Asses - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9751,Mules and Asses - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9752,Mules and Asses - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9753,Mules and Asses - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9754,Mules and Asses - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9755,Mules and Asses - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9756,Mules and Asses - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9757,Mules and Asses - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9758,Poultry Birds - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9759,Poultry Birds - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9760,Poultry Birds - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9761,Poultry Birds - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9762,Poultry Birds - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9763,Poultry Birds - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9764,Poultry Birds - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9765,Poultry Birds - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9766,Sheep and Goats - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9767,Sheep and Goats - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9768,Sheep and Goats - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9769,Sheep and Goats - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9770,Sheep and Goats - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9771,Sheep and Goats - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9772,Sheep and Goats - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9773,Sheep and Goats - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9774,Buffaloes - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9775,Buffaloes - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9776,Buffaloes - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9777,Buffaloes - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9778,Buffaloes - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9779,Buffaloes - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9780,Buffaloes - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9781,Buffaloes - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9782,Ducks - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9783,Ducks - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9784,Ducks - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9785,Ducks - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9786,Ducks - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9787,Ducks - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9788,Ducks - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9789,Ducks - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9790,Ducks - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9791,"Swine, breeding - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9792,"Swine, breeding - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9793,"Swine, breeding - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9794,"Swine, breeding - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9795,"Swine, breeding - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9796,"Swine, breeding - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9797,"Swine, breeding - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9798,"Swine, breeding - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9799,"Swine, market - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019))",gigagrams,74
+9800,"Swine, market - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019))",gigagrams,74
+9801,"Swine, market - Direct emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9802,"Swine, market - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9803,"Swine, market - Indirect emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9804,"Swine, market - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9805,"Swine, market - Emissions (N2O) (Manure on pasture) (FAO (2019))",gigagrams,74
+9806,"Swine, market - Emissions (CO2eq) (Manure on pasture) (FAO (2019))",gigagrams,74
+9807,Turkeys - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9808,Turkeys - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9809,Turkeys - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9810,Turkeys - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9811,Turkeys - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9812,Turkeys - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9813,Turkeys - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9814,Turkeys - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9815,Turkeys - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9816,Swine - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9817,Swine - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9818,Swine - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9819,Swine - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9820,Swine - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9821,Swine - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9822,Swine - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9823,Swine - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9824,Buffaloes - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9825,Llamas - Indirect emissions (N2O that leaches) (Manure on pasture) (FAO (2019)),gigagrams,74
+9826,Llamas - Indirect emissions (N2O that volatilises) (Manure on pasture) (FAO (2019)),gigagrams,74
+9827,Llamas - Implied emission factor for N2O (Manure on pasture) (FAO (2019)),kg N2O-N/kg N,74
+9828,Llamas - Direct emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9829,Llamas - Direct emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9830,Llamas - Indirect emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9831,Llamas - Indirect emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9832,Llamas - Emissions (N2O) (Manure on pasture) (FAO (2019)),gigagrams,74
+9833,Llamas - Emissions (CO2eq) (Manure on pasture) (FAO (2019)),gigagrams,74
+9834,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) (FAO (2019))",Gigagrams,77
+9835,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from CO2 (FAO (2019))",Gigagrams,77
+9836,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from CH4 (FAO (2019))",Gigagrams,77
+9837,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from N2O (FAO (2019))",Gigagrams,77
+9838,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Emissions (CO2eq) from F-gases (FAO (2019))",Gigagrams,77
+9839,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total emissions (FAO (2019))",%,77
+9840,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total CO2 emissions (FAO (2019))",%,77
+9841,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total CH4 emissions (FAO (2019))",%,77
+9842,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total N2O emissions (FAO (2019))",%,77
+9843,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of CO2 in sector emissions (FAO (2019))",%,77
+9844,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of CH4 in sector emissions (FAO (2019))",%,77
+9845,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of N2O in sector emissions (FAO (2019))",%,77
+9846,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of F-gases in sector emissions (FAO (2019))",Gigagrams,77
+9847,Transport - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9848,Transport - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9849,Transport - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9850,Transport - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9851,Transport - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9852,Transport - Share of sector in total emissions (FAO (2019)),%,77
+9853,Transport - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9854,Transport - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9855,Transport - Share of sector in total N2O emissions (FAO (2019)),%,77
+9856,Transport - Share of CO2 in sector emissions (FAO (2019)),%,77
+9857,Transport - Share of CH4 in sector emissions (FAO (2019)),%,77
+9858,Transport - Share of N2O in sector emissions (FAO (2019)),%,77
+9859,Transport - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9860,"Residential, commercial, institutional and AFF - Emissions (CO2eq) (FAO (2019))",Gigagrams,77
+9861,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from CO2 (FAO (2019))",Gigagrams,77
+9862,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from CH4 (FAO (2019))",Gigagrams,77
+9863,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from N2O (FAO (2019))",Gigagrams,77
+9864,"Residential, commercial, institutional and AFF - Emissions (CO2eq) from F-gases (FAO (2019))",Gigagrams,77
+9865,"Residential, commercial, institutional and AFF - Share of sector in total emissions (FAO (2019))",%,77
+9866,"Residential, commercial, institutional and AFF - Share of sector in total CO2 emissions (FAO (2019))",%,77
+9867,"Residential, commercial, institutional and AFF - Share of sector in total CH4 emissions (FAO (2019))",%,77
+9868,"Residential, commercial, institutional and AFF - Share of sector in total N2O emissions (FAO (2019))",%,77
+9869,"Residential, commercial, institutional and AFF - Share of CO2 in sector emissions (FAO (2019))",%,77
+9870,"Residential, commercial, institutional and AFF - Share of CH4 in sector emissions (FAO (2019))",%,77
+9871,"Residential, commercial, institutional and AFF - Share of N2O in sector emissions (FAO (2019))",%,77
+9872,"Residential, commercial, institutional and AFF - Share of F-gases in sector emissions (FAO (2019))",Gigagrams,77
+9873,Industrial processes and product use - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9874,Industrial processes and product use - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9875,Industrial processes and product use - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9876,Industrial processes and product use - Share of sector in total emissions (FAO (2019)),%,77
+9877,Industrial processes and product use - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9878,Industrial processes and product use - Share of sector in total N2O emissions (FAO (2019)),%,77
+9879,Industrial processes and product use - Share of CO2 in sector emissions (FAO (2019)),%,77
+9880,Industrial processes and product use - Share of N2O in sector emissions (FAO (2019)),%,77
+9881,Waste - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9882,Waste - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9883,Waste - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9884,Waste - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9885,Waste - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9886,Waste - Share of sector in total emissions (FAO (2019)),%,77
+9887,Waste - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9888,Waste - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9889,Waste - Share of sector in total N2O emissions (FAO (2019)),%,77
+9890,Waste - Share of CO2 in sector emissions (FAO (2019)),%,77
+9891,Waste - Share of CH4 in sector emissions (FAO (2019)),%,77
+9892,Waste - Share of N2O in sector emissions (FAO (2019)),%,77
+9893,Waste - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9894,Other sources - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9895,Other sources - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9896,Other sources - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9897,Other sources - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9898,Other sources - Share of sector in total emissions (FAO (2019)),%,77
+9899,Other sources - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9900,Other sources - Share of sector in total N2O emissions (FAO (2019)),%,77
+9901,Other sources - Share of CO2 in sector emissions (FAO (2019)),%,77
+9902,Other sources - Share of N2O in sector emissions (FAO (2019)),%,77
+9903,Other sources - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9904,Agriculture total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9905,Agriculture total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9906,Agriculture total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9907,Agriculture total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9908,Agriculture total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9909,Agriculture total - Share of sector in total emissions (FAO (2019)),%,77
+9910,Agriculture total - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9911,Agriculture total - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9912,Agriculture total - Share of sector in total N2O emissions (FAO (2019)),%,77
+9913,Agriculture total - Share of CO2 in sector emissions (FAO (2019)),%,77
+9914,Agriculture total - Share of CH4 in sector emissions (FAO (2019)),%,77
+9915,Agriculture total - Share of N2O in sector emissions (FAO (2019)),%,77
+9916,Agriculture total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9917,Land use sources - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9918,Land use sources - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9919,Land use sources - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9920,Land use sources - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9921,Land use sources - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9922,Land use sources - Share of sector in total emissions (FAO (2019)),%,77
+9923,Land use sources - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9924,Land use sources - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9925,Land use sources - Share of sector in total N2O emissions (FAO (2019)),%,77
+9926,Land use sources - Share of CO2 in sector emissions (FAO (2019)),%,77
+9927,Land use sources - Share of CH4 in sector emissions (FAO (2019)),%,77
+9928,Land use sources - Share of N2O in sector emissions (FAO (2019)),%,77
+9929,Land use sources - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9930,Forest - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9931,Forest - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9932,Forest - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9933,Forest - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9934,Forest - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9935,Energy total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9936,Energy total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9937,Energy total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9938,Energy total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9939,Energy total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9940,Energy total - Share of sector in total emissions (FAO (2019)),%,77
+9941,Energy total - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9942,Energy total - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9943,Energy total - Share of sector in total N2O emissions (FAO (2019)),%,77
+9944,Energy total - Share of CO2 in sector emissions (FAO (2019)),%,77
+9945,Energy total - Share of CH4 in sector emissions (FAO (2019)),%,77
+9946,Energy total - Share of N2O in sector emissions (FAO (2019)),%,77
+9947,Energy total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9948,Land Use total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9949,Land Use total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9950,Land Use total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9951,Sources total - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9952,Sources total - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9953,Sources total - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9954,Sources total - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9955,Sources total - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9956,Sources total - Share of sector in total emissions (FAO (2019)),%,77
+9957,Sources total - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9958,Sources total - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9959,Sources total - Share of sector in total N2O emissions (FAO (2019)),%,77
+9960,Sources total - Share of CO2 in sector emissions (FAO (2019)),%,77
+9961,Sources total - Share of CH4 in sector emissions (FAO (2019)),%,77
+9962,Sources total - Share of N2O in sector emissions (FAO (2019)),%,77
+9963,Sources total - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9964,Sources total excl. AFOLU - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9965,Sources total excl. AFOLU - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9966,Sources total excl. AFOLU - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9967,Sources total excl. AFOLU - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+9968,Sources total excl. AFOLU - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9969,Sources total excl. AFOLU - Share of sector in total emissions (FAO (2019)),%,77
+9970,Sources total excl. AFOLU - Share of sector in total CO2 emissions (FAO (2019)),%,77
+9971,Sources total excl. AFOLU - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9972,Sources total excl. AFOLU - Share of sector in total N2O emissions (FAO (2019)),%,77
+9973,Sources total excl. AFOLU - Share of CO2 in sector emissions (FAO (2019)),%,77
+9974,Sources total excl. AFOLU - Share of CH4 in sector emissions (FAO (2019)),%,77
+9975,Sources total excl. AFOLU - Share of N2O in sector emissions (FAO (2019)),%,77
+9976,Sources total excl. AFOLU - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9977,"Energy (energy, manufacturing and construction industries and fugitive emissions) - Share of sector in total F-gases emissions (FAO (2019))",Gigagrams,77
+9978,Transport - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9979,"Residential, commercial, institutional and AFF - Share of sector in total F-gases emissions (FAO (2019))",Gigagrams,77
+9980,Industrial processes and product use - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9981,Industrial processes and product use - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+9982,Industrial processes and product use - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9983,Industrial processes and product use - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9984,Industrial processes and product use - Share of CH4 in sector emissions (FAO (2019)),%,77
+9985,Industrial processes and product use - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+9986,Waste - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9987,Other sources - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9988,Agriculture total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9989,Land use sources - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9990,Energy total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9991,Sources total - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9992,Sources total excl. AFOLU - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+9993,Other sources - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9994,Other sources - Share of sector in total CH4 emissions (FAO (2019)),%,77
+9995,Other sources - Share of CH4 in sector emissions (FAO (2019)),%,77
+9996,International bunkers - Emissions (CO2eq) (FAO (2019)),Gigagrams,77
+9997,International bunkers - Emissions (CO2eq) from CO2 (FAO (2019)),Gigagrams,77
+9998,International bunkers - Emissions (CO2eq) from CH4 (FAO (2019)),Gigagrams,77
+9999,International bunkers - Emissions (CO2eq) from N2O (FAO (2019)),Gigagrams,77
+10000,International bunkers - Emissions (CO2eq) from F-gases (FAO (2019)),Gigagrams,77
+10001,International bunkers - Share of sector in total emissions (FAO (2019)),%,77
+10002,International bunkers - Share of sector in total CO2 emissions (FAO (2019)),%,77
+10003,International bunkers - Share of sector in total CH4 emissions (FAO (2019)),%,77
+10004,International bunkers - Share of sector in total N2O emissions (FAO (2019)),%,77
+10005,International bunkers - Share of sector in total F-gases emissions (FAO (2019)),Gigagrams,77
+10006,International bunkers - Share of CO2 in sector emissions (FAO (2019)),%,77
+10007,International bunkers - Share of CH4 in sector emissions (FAO (2019)),%,77
+10008,International bunkers - Share of N2O in sector emissions (FAO (2019)),%,77
+10009,International bunkers - Share of F-gases in sector emissions (FAO (2019)),Gigagrams,77
+10010,Apples and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10011,Bananas - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10012,Barley and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10013,Beer - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10014,"Beverages, Alcoholic - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10015,"Cereals, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10016,"Citrus, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10017,Cocoa Beans and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10018,Coconuts - Incl Copra - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10019,Coffee and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10020,Cottonseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10021,Dates - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10022,"Fruits, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10023,Grapes and products (excl wine) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10024,Groundnut Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10025,Infant food - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10026,Maize and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10027,Millet and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10028,Nuts and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10029,"Oilcrops Oil, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10030,Olive Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10031,Olives (including preserved) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10032,"Oranges, Mandarines - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10033,Palm Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10034,Pepper - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10035,Pineapples and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10036,Potatoes and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10037,"Pulses, Other and products - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10038,Rape and Mustard Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10039,Rice (Milled Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10040,Rice (Paddy Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10041,Rice (Paddy Equivalent) - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
+10042,Rice (Paddy Equivalent) - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
+10043,Rice (Paddy Equivalent) - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10044,Rice (Paddy Equivalent) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10045,Roots & Tuber Dry Equiv - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10046,Roots & Tuber Dry Equiv - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
+10047,Roots & Tuber Dry Equiv - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
+10048,Roots & Tuber Dry Equiv - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10049,Roots & Tuber Dry Equiv - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10050,Sesame seed - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10051,Sesameseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10052,Soyabean Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10053,"Spices, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10054,Sugar (Raw Equivalent) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10055,"Sugar, Raw Equivalent - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10056,"Sugar, Raw Equivalent - Food supply quantity (kg/capita/yr) (FAO (2019))",kg,78
+10057,"Sugar, Raw Equivalent - Food supply (kcal/capita/day) (FAO (2019))",kcal/capita/day,78
+10058,"Sugar, Refined Equiv - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10059,"Sugar, Refined Equiv - Food supply quantity (kg/capita/yr) (FAO (2019))",kg,78
+10060,"Sugar, Refined Equiv - Food supply (kcal/capita/day) (FAO (2019))",kcal/capita/day,78
+10061,Sunflowerseed Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10062,"Sweeteners, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10063,Tea (including mate) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10064,Tomatoes and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10065,"Vegetables, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10066,Wheat and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10067,Wine - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10068,Alcoholic Beverages - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10069,Cereals - Excluding Beer - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10070,Fruits - Excluding Wine - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10071,Miscellaneous - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10072,Oilcrops - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10073,Pulses - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10074,Spices - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10075,Starchy Roots - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10076,Stimulants - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10077,Sugar & Sweeteners - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10078,Treenuts - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10079,Vegetable Oils - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10080,Vegetables - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10081,Beans - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10082,"Beverages, Fermented - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10083,Cassava and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10084,Grapefruit and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10085,Groundnuts (in Shell Eq) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10086,Groundnuts (in Shell Eq) - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
+10087,Groundnuts (in Shell Eq) - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
+10088,Groundnuts (in Shell Eq) - Protein supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10089,Groundnuts (in Shell Eq) - Fat supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10090,Groundnuts (Shelled Eq) - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10091,"Lemons, Limes and products - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10092,Maize Germ Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10093,Oats - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10094,Onions - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10095,Peas - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10096,Pimento - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10097,Plantains - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10098,"Roots, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10099,Rye and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10100,Soyabeans - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10101,Sweet potatoes - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10102,Cloves - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10103,Coconut Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10104,Sorghum and products - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10105,Palmkernel Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10106,"Oilcrops, Other - Food supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10107,Sunflower seed - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10108,Yams - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10109,"Sugar, Raw Equivalent - Protein supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10110,Ricebran Oil - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10111,Sugar cane - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10112,Sugar non-centrifugal - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10113,Sugar Crops - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10114,"Sugar, Raw Equivalent - Fat supply quantity (g/capita/day) (FAO (2019))",g/capita/day,78
+10115,Sugar beet - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10116,Molasses - Food supply quantity (g/capita/day) (FAO (2019)),g/capita/day,78
+10117,Molasses - Food supply quantity (kg/capita/yr) (FAO (2019)),kg,78
+10118,Molasses - Food supply (kcal/capita/day) (FAO (2019)),kcal/capita/day,78
