@@ -1,5 +1,5 @@
-The `input/` and `output/` directories for this repo have not been included because the dataset is huge (≈1GB compressed).
+The `input/` and `output/` directories for this repo have not been fully included because the dataset is huge (≈1GB compressed).
 
-You can download the dataset from: http://www.fao.org/faostat/en/#home
+To populate the directories run the `1-download-data.ipynb` notebook.
 
-(You can also find previous extracts in the backup disk of the live server.)
+(Internal: You can also find previous versions of the dataset in the backup disk of the live server.)
