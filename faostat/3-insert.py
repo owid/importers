@@ -61,7 +61,7 @@ sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv'))
 datasets
 
 
-# In[ ]:
+# In[1]:
 
 
 with connection as c:
@@ -106,9 +106,24 @@ with connection as c:
 
             print("Inserting values...")
             db.upsert_many("""
-                INSERT INTO data_values (value, year, entityId, variableId)
-                VALUES (%s, %s, %s, %s)
+                INSERT INTO 
+                    data_values (value, year, entityId, variableId)
+                VALUES 
+                    (%s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    year = VALUES(year)
             """, values)
+            
+            # We have a dummy ON DUPLICATE handler that updates the year which is essentially 
+            # a no update operation. We do this only to avoid a duplicate key error. It occurs 
+            # when FAO uses an Item Group and Item with the same name. For example, 'Eggs' is 
+            # both an Item Group and a standalone Item in: 
+            # Commodity Balances - Livestock and Fish Primary Equivalent
+            
+            # This is not ideal because we could be masking other duplication issues, we should 
+            # ideally have the differentiation between groups and itemsin the database, but this 
+            # requires effort and time, both of which are currently in short supply.
+            
             print("Inserted %d values for variable" % len(values))
 
 print("All done. Phew!")
