@@ -164,7 +164,7 @@ for dataset in datasets:
     
 
 
-# In[15]:
+# In[13]:
 
 
 pd.DataFrame(owid_datasets)[['id', 'name', 'description']].to_csv(
@@ -173,7 +173,7 @@ pd.DataFrame(owid_datasets)[['id', 'name', 'description']].to_csv(
 )
 
 
-# In[16]:
+# In[14]:
 
 
 pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
@@ -188,7 +188,7 @@ pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
 
 # ### File loading utilities
 
-# In[17]:
+# In[15]:
 
 
 def load_dataset(code):
@@ -218,7 +218,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract the column types for each dataset (for diagnostic purposes)
 
-# In[18]:
+# In[16]:
 
 
 # all_dataset_columns = pd.DataFrame({
@@ -227,7 +227,7 @@ def unzip_csv(zip_filepath):
 # })
 
 
-# In[19]:
+# In[17]:
 
 
 # all_dataset_columns.merge(pd.DataFrame(owid_datasets), on='code')
@@ -235,7 +235,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract all unique dimension values (for diagnostic purposes)
 
-# In[22]:
+# In[18]:
 
 
 # for dataset in owid_datasets:
@@ -249,7 +249,7 @@ def unzip_csv(zip_filepath):
 
 # ### Year conversion utility
 
-# In[20]:
+# In[19]:
 
 
 def year_to_int(year):
@@ -260,7 +260,7 @@ def year_to_int(year):
         return year
 
 
-# In[22]:
+# In[20]:
 
 
 # pd.Series(['2012-2014', '2013-2015']).map(year_to_int)
@@ -268,7 +268,7 @@ def year_to_int(year):
 
 # ### Column types parameters
 
-# In[23]:
+# In[21]:
 
 
 params_by_cols = {
@@ -302,7 +302,7 @@ params_by_cols = {
 
 # #### Old column types (left just for reference)
 
-# In[26]:
+# In[22]:
 
 
 # column_types = [
@@ -343,7 +343,7 @@ params_by_cols = {
 # 
 # - Every dataset has a `Year` field (which we might need to transform to a single year from a range)
 
-# In[24]:
+# In[26]:
 
 
 def process_dataset(code):
@@ -382,33 +382,38 @@ def process_dataset(code):
             'source_id': dataset['id'] # not a nice way to do it, but we know that source id == dataset id
         })
         
-        datapoints = df.rename(columns={"Value": "value", params['entity']: "entity", "Year": "year"})
+        datapoints = df.rename(columns={"Value": "value", params['entity']: "entity", "Year": "year"})[['entity', 'year', 'value']]
         
         # Some years are defined as 3-year ranges, e.g. "2013-2015"
         # We want to convert these to a single year
         datapoints['year'] = datapoints['year'].map(year_to_int)
         
+        # Drop rows where any column is nan.
+        # And drop duplicate rows. Note that the value also has to be identical, so we are not discarding
+        # any distinct datapoints accidentally.
+        datapoints = datapoints.dropna(how='any').drop_duplicates()
+        
         output_path = os.path.join(OUTPUT_PATH, 'datapoints/%s.csv' % str(var_id))
-        datapoints[['entity', 'year', 'value']].to_csv(output_path, index=False)
+        datapoints.to_csv(output_path, index=False)
     
     return variables
 
 
 # ### Process the data files
 
-# In[28]:
+# In[27]:
 
 
 get_ipython().system('mkdir -p $OUTPUT_PATH/datapoints')
 
 
-# In[ ]:
+# In[28]:
 
 
 print("Extracting datapoints & variables...")
 
 
-# In[30]:
+# In[29]:
 
 
 variables = []
@@ -421,13 +426,13 @@ pd.DataFrame(variables)[['id', 'name', 'code', 'unit', 'description', 'dataset_i
 
 # ## Extract **entities** (for standardization)
 
-# In[ ]:
+# In[30]:
 
 
 print("Extracting unique entities...")
 
 
-# In[2]:
+# In[31]:
 
 
 entities = set()
