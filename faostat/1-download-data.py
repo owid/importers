@@ -35,7 +35,7 @@ get_ipython().system('unzip $DATA_PATH/FAOSTAT.zip -d $DATA_PATH/FAOSTAT')
 # In[ ]:
 
 
-get_ipython().system('rm FAOSTAT.zip')
+get_ipython().system('rm $DATA_PATH/FAOSTAT.zip')
 
 
 # ### Downloading the metadata
