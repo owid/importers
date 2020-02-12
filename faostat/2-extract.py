@@ -195,7 +195,7 @@ def load_dataset(code):
     dataset = find(lambda d: d['code'] == code, owid_datasets)
     zip_filepath = os.path.join(DATA_PATH, dataset['zip_filename'])
     csv_filepath = unzip_csv(zip_filepath)
-    df = pd.read_csv(csv_filepath, encoding='latin-1', low_memory=False)
+    df = pd.read_csv(csv_filepath, encoding='latin-1', low_memory=True)
     os.remove(csv_filepath)
     return df
 
