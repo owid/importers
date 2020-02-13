@@ -173,7 +173,7 @@ pd.DataFrame(owid_datasets)[['id', 'name', 'description']].to_csv(
 )
 
 
-# In[14]:
+# In[ ]:
 
 
 pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
@@ -188,7 +188,7 @@ pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
 
 # ### File loading utilities
 
-# In[15]:
+# In[ ]:
 
 
 def load_dataset(code):
@@ -218,7 +218,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract the column types for each dataset (for diagnostic purposes)
 
-# In[16]:
+# In[ ]:
 
 
 # all_dataset_columns = pd.DataFrame({
@@ -227,7 +227,7 @@ def unzip_csv(zip_filepath):
 # })
 
 
-# In[17]:
+# In[ ]:
 
 
 # all_dataset_columns.merge(pd.DataFrame(owid_datasets), on='code')
@@ -235,7 +235,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract all unique dimension values (for diagnostic purposes)
 
-# In[18]:
+# In[ ]:
 
 
 # for dataset in owid_datasets:
@@ -247,9 +247,9 @@ def unzip_csv(zip_filepath):
 #     ).to_csv(os.path.join('dimensions', dataset['name'] + '.csv'))
 
 
-# ### Year conversion utility
+# ### Type conversion utilities
 
-# In[19]:
+# In[ ]:
 
 
 def year_to_int(year):
@@ -260,7 +260,7 @@ def year_to_int(year):
         return year
 
 
-# In[20]:
+# In[ ]:
 
 
 # pd.Series(['2012-2014', '2013-2015']).map(year_to_int)
@@ -268,33 +268,37 @@ def year_to_int(year):
 
 # ### Column types parameters
 
-# In[21]:
+# In[ ]:
 
+
+# We have to include the Item Code in the variable name because there are Items that have 
+# an identical name to their Item Group, e.g. "Miscellaneous" is both an item group and an item.
+# The only way to differentiate is to use the code.
 
 params_by_cols = {
     tuple(['Area Code', 'Area', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag']): {
         'entity': 'Area',
-        'breakdown': ['Item', 'Element', 'Unit'],
+        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
         'code': ['Item Code', 'Element Code', 'Unit']
     },
     tuple(['Area Code', 'Area', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
         'entity': 'Area',
-        'breakdown': ['Item', 'Element', 'Unit'],
+        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
         'code': ['Item Code', 'Element Code', 'Unit']
     },
     tuple(['Country Code', 'Country', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag']): {
         'entity': 'Country',
-        'breakdown': ['Item', 'Element', 'Unit'],
+        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
         'code': ['Item Code', 'Element Code', 'Unit']
     },
     tuple(['Area Code', 'Area', 'Item Code', 'Item', 'ISO Currency Code', 'Currency', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
         'entity': 'Area',
-        'breakdown': ['Item', 'Currency'],
+        'breakdown': ['Item', 'Item Code', 'Currency'],
         'code': ['Item Code', 'ISO Currency Code']
     },
     tuple(['Area Code', 'Area', 'Source Code', 'FAO Source', 'Indicator Code', 'Indicator', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
         'entity': 'Area',
-        'breakdown': ['Indicator', 'FAO Source', 'Unit'],
+        'breakdown': ['Indicator', 'Indicator Code', 'FAO Source', 'Source Code', 'Unit'],
         'code': ['Indicator Code', 'Source Code', 'Unit']
     }
 }
@@ -302,7 +306,7 @@ params_by_cols = {
 
 # #### Old column types (left just for reference)
 
-# In[22]:
+# In[ ]:
 
 
 # column_types = [
@@ -343,7 +347,7 @@ params_by_cols = {
 # 
 # - Every dataset has a `Year` field (which we might need to transform to a single year from a range)
 
-# In[26]:
+# In[ ]:
 
 
 def process_dataset(code):
@@ -388,6 +392,11 @@ def process_dataset(code):
         # We want to convert these to a single year
         datapoints['year'] = datapoints['year'].map(year_to_int)
         
+        # Convert all values to numeric
+        # In some cases, FAO defines values as '<0.1' or '<0.5'. These will be converted
+        # to nan, and they will be dropped in the next step.
+        datapoints['value'] = pd.to_numeric(datapoints['value'], errors='coerce')
+        
         # Drop rows where any column is nan.
         # And drop duplicate rows. Note that the value also has to be identical, so we are not discarding
         # any distinct datapoints accidentally.
@@ -401,19 +410,19 @@ def process_dataset(code):
 
 # ### Process the data files
 
-# In[27]:
+# In[ ]:
 
 
 get_ipython().system('mkdir -p $OUTPUT_PATH/datapoints')
 
 
-# In[28]:
+# In[ ]:
 
 
 print("Extracting datapoints & variables...")
 
 
-# In[29]:
+# In[ ]:
 
 
 variables = []
@@ -426,13 +435,13 @@ pd.DataFrame(variables)[['id', 'name', 'code', 'unit', 'description', 'dataset_i
 
 # ## Extract **entities** (for standardization)
 
-# In[30]:
+# In[ ]:
 
 
 print("Extracting unique entities...")
 
 
-# In[31]:
+# In[ ]:
 
 
 entities = set()
