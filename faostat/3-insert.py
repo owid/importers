@@ -13,7 +13,9 @@ sys.path.append("..")
 
 import os
 import pandas as pd
+import numpy as np
 from tqdm import tqdm
+from glob import glob
 
 from db import connection
 from db_utils import DBUtils
@@ -28,7 +30,7 @@ OUTPUT_PATH = 'output/'
 STANDARDIZATION_PATH = 'standardization/'
 
 
-# ## Load entities
+# ## Load datasets, entities, variables & sources
 
 # In[2]:
 
@@ -60,6 +62,76 @@ sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv'))
 
 datasets
 
+
+# ## Integrity checks
+
+# In[6]:
+
+
+def print_err(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
+def assert_unique(df, subset, message="Duplicate row found"):
+    duplicate_mask = df.duplicated(subset=subset)
+    if duplicate_mask.any() == True:
+        print_err(message)
+        print_err(df[duplicate_mask])
+        return 1
+    return 0
+
+
+# In[7]:
+
+
+print("Running integrity checks...")
+
+
+# In[63]:
+
+
+errors = 0
+
+# Dataset IDs should be unique
+errors += assert_unique(datasets, ['id'])
+
+# Dataset names should be unique
+errors += assert_unique(datasets, ['name'])
+
+# Variable names should be unique
+errors += assert_unique(variables, ['name'])
+
+# Variable codes should be unique
+errors += assert_unique(variables, ['code'])
+
+# all entities should have a db_entity_id
+if entities['db_entity_id'].isnull().any() == True:
+    print_err("Entities are missing database ID")
+    print_err(entities[entities['db_entity_id'].isnull()])
+    errors += 1
+
+# all entities in the data should exist in standardization file
+for filepath in tqdm(sorted(glob(os.path.join(OUTPUT_PATH, 'datapoints/*.csv')))):
+    df = pd.read_csv(filepath)
+    # UNIQUE (entity, year) constraint
+    errors += assert_unique(df, ['entity', 'year'], "Duplicate row in %s" % filepath)
+    # No empty values
+    if df['value'].isnull().any():
+        print("%s contains empty values in 'value' column" % filepath)
+        errors += 1
+    # No non-numeric values
+    if not df['value'].map(np.isreal).all():
+        print("Non-numeric values in %s" % filepath)
+        print(df[pd.to_numeric(df['value'], errors='coerce').isnull()])
+        errors += 1
+
+if errors != 0:
+    print_err("\nIntegrity checks failed. There were %s errors.\n" % str(errors))
+    sys.exit(1)
+else:
+    print("\nIntegrity checks passed.\n")
+
+
+# ## Insert database rows
 
 # In[1]:
 
