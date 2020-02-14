@@ -5,7 +5,7 @@
 
 # ## Dependencies and globals
 
-# In[1]:
+# In[8]:
 
 
 import sys
@@ -32,7 +32,7 @@ STANDARDIZATION_PATH = 'standardization/'
 
 # ## Load datasets, entities, variables & sources
 
-# In[2]:
+# In[9]:
 
 
 entities = pd.read_csv(
@@ -41,7 +41,7 @@ entities = pd.read_csv(
 )
 
 
-# In[3]:
+# In[10]:
 
 
 db_entity_id_by_name = { 
@@ -49,23 +49,19 @@ db_entity_id_by_name = {
 }
 
 
-# In[4]:
+# In[41]:
 
 
-variables = pd.read_csv(os.path.join(OUTPUT_PATH, 'variables.csv'))
-datasets = pd.read_csv(os.path.join(OUTPUT_PATH, 'datasets.csv'))
-sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv'))
-
-
-# In[5]:
-
-
-datasets
+# We replace nan's with "" (empty string) because every column is a string type, 
+# there should be no numeric values
+variables = pd.read_csv(os.path.join(OUTPUT_PATH, 'variables.csv')).fillna("")
+datasets = pd.read_csv(os.path.join(OUTPUT_PATH, 'datasets.csv')).fillna("")
+sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv')).fillna("")
 
 
 # ## Integrity checks
 
-# In[6]:
+# In[13]:
 
 
 def print_err(*args, **kwargs):
@@ -80,13 +76,13 @@ def assert_unique(df, subset, message="Duplicate row found"):
     return 0
 
 
-# In[7]:
+# In[14]:
 
 
 print("Running integrity checks...")
 
 
-# In[63]:
+# In[15]:
 
 
 errors = 0
