@@ -148,7 +148,7 @@ for dataset in datasets:
     # SOURCE
     
     source_desc = {}
-    source_desc['dataPublishedBy'] = "Food and Agriculture Organization of the United Nations (FAO) (2019)"
+    source_desc['dataPublishedBy'] = "Food and Agriculture Organization of the United Nations (FAO) (2020)"
     source_desc['dataPublisherSource'] = get_metadata_field(code, 'Source data')
     source_desc['link'] = "http://www.fao.org/faostat/en/?#data/"
     source_desc['retrievedDate'] = datetime.datetime.now().strftime("%d-%b-%Y")
@@ -173,7 +173,7 @@ pd.DataFrame(owid_datasets)[['id', 'name', 'description']].to_csv(
 )
 
 
-# In[ ]:
+# In[14]:
 
 
 pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
@@ -188,7 +188,7 @@ pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
 
 # ### File loading utilities
 
-# In[ ]:
+# In[15]:
 
 
 def load_dataset(code):
@@ -218,7 +218,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract the column types for each dataset (for diagnostic purposes)
 
-# In[ ]:
+# In[16]:
 
 
 # all_dataset_columns = pd.DataFrame({
@@ -227,7 +227,7 @@ def unzip_csv(zip_filepath):
 # })
 
 
-# In[ ]:
+# In[17]:
 
 
 # all_dataset_columns.merge(pd.DataFrame(owid_datasets), on='code')
@@ -235,7 +235,7 @@ def unzip_csv(zip_filepath):
 
 # #### Extract all unique dimension values (for diagnostic purposes)
 
-# In[ ]:
+# In[18]:
 
 
 # for dataset in owid_datasets:
@@ -249,7 +249,7 @@ def unzip_csv(zip_filepath):
 
 # ### Type conversion utilities
 
-# In[ ]:
+# In[19]:
 
 
 def year_to_int(year):
@@ -260,7 +260,7 @@ def year_to_int(year):
         return year
 
 
-# In[ ]:
+# In[20]:
 
 
 # pd.Series(['2012-2014', '2013-2015']).map(year_to_int)
@@ -268,7 +268,7 @@ def year_to_int(year):
 
 # ### Column types parameters
 
-# In[ ]:
+# In[21]:
 
 
 # We have to include the Item Code in the variable name because there are Items that have 
@@ -306,7 +306,7 @@ params_by_cols = {
 
 # #### Old column types (left just for reference)
 
-# In[ ]:
+# In[22]:
 
 
 # column_types = [
@@ -347,7 +347,7 @@ params_by_cols = {
 # 
 # - Every dataset has a `Year` field (which we might need to transform to a single year from a range)
 
-# In[ ]:
+# In[23]:
 
 
 def process_dataset(code):
@@ -410,19 +410,19 @@ def process_dataset(code):
 
 # ### Process the data files
 
-# In[ ]:
+# In[24]:
 
 
 get_ipython().system('mkdir -p $OUTPUT_PATH/datapoints')
 
 
-# In[ ]:
+# In[25]:
 
 
 print("Extracting datapoints & variables...")
 
 
-# In[ ]:
+# In[26]:
 
 
 variables = []
@@ -435,13 +435,13 @@ pd.DataFrame(variables)[['id', 'name', 'code', 'unit', 'description', 'dataset_i
 
 # ## Extract **entities** (for standardization)
 
-# In[ ]:
+# In[27]:
 
 
 print("Extracting unique entities...")
 
 
-# In[ ]:
+# In[28]:
 
 
 entities = set()
