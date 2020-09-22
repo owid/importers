@@ -48,7 +48,7 @@ def create_description(row, additional_info):
         "dataPublishedBy": "United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects: The 2019 Revision, DVD Edition.",
         "dataPublisherSource": None,
         "link": "https://population.un.org/wpp2019/Download/Standard/Interpolated/",
-        "retrievedDate": datetime.datetime.now().strftime("%d-%b-%Y"),
+        "retrievedDate": datetime.datetime.now().strftime("%d %B %Y"),
         "additionalInfo": additional_info[row["dataset_name"]],
     }
 
@@ -121,15 +121,14 @@ class DataVariables():
             "UN WPP - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
             "UN WPP - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
             "UN WPP - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands"
-            #UN WPP - Interpolated demographic indicators by region, subregion and country, annually for 1950-2099
         }
         self.datasets = pd.read_csv("output/datasets.csv")
-        self.df = pd.DataFrame()
+        self.datavars = pd.DataFrame()
 
     def get_variables(self, path, skiprows=8, prefix=None):
 
-        for sh in ["ESTIMATES", "MEDIUM VARIANT"]:
-            data = pd.read_excel(path, skiprows=skiprows, sheet_name=sh)
+        for sheet_name in ["ESTIMATES", "MEDIUM VARIANT"]:
+            data = pd.read_excel(path, skiprows=skiprows, sheet_name=sheet_name)
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
@@ -170,8 +169,8 @@ class DataVariables():
             24: "Percentage"
         }
 
-        for sh in ["ESTIMATES", "MEDIUM VARIANT"]:
-            data = pd.read_excel(path, skiprows=skiprows, sheet_name=sh)
+        for sheet_name in ["ESTIMATES", "MEDIUM VARIANT"]:
+            data = pd.read_excel(path, skiprows=skiprows, sheet_name=sheet_name)
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
@@ -194,78 +193,98 @@ class DataVariables():
 
     def get_df(self):
 
-        self.df["id"] = self.ids
-        self.df["name"] = self.names
-        self.df["unit"] = self.units
-        self.df["dataset_id"] = self.dataset_ids
+        self.datavars["id"] = self.ids
+        self.datavars["name"] = self.names
+        self.datavars["unit"] = self.units
+        self.datavars["dataset_id"] = self.dataset_ids
 
-        return self.df
+        return self.datavars
 
 
 def create_variables():
 
-    dv = DataVariables()
-    for f in glob("input/*.xlsx"):
+    datavars = DataVariables()
+    for filename in glob("input/*.xlsx"):
+        if filename == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
+            datavars.get_custom_variable(
+                filename, prefix="Annually interpolated demographic indicators"
+            )
+        else:
+            datavars.get_variables(filename, prefix=NAME_TO_PREFIX[filename])
 
-            if f == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
-                dv.get_custom_variable(f, prefix="Annually interpolated demographic indicators")
-            else:
-                dv.get_variables(f, prefix=NAME_TO_PREFIX[f])
-
-    variables = dv.get_df()
+    variables = datavars.get_df()
     variables.to_csv("output/variables.csv", index=False)
 
 
-def normalize_country(row):
-    row["country"] = row["country"].str.replace(r"\s*[^A-Za-z\s]*$", "")
-    return row
+def normalize_country(series):
+    series = series.str.replace(r"\s*[^A-Za-z\s]*$", "")
+    return series
 
-def get_variables(path, variables, skiprows=8, prefix=None, custom=False):
-        
-    for sh in ["ESTIMATES", "MEDIUM VARIANT"]:
-        data = pd.read_excel(path, skiprows=skiprows, sheet_name=sh)
 
-        val = data[data.columns[0]][0]
-        index_to_remove = val.find(":")
-        res = "UN WPP - " + val[index_to_remove+2:]
+def standardize_country(series, country_mapping):
+    series = series.replace(country_mapping)
+    return series
 
+
+def get_datapoints(path, variables, country_mapping, skiprows=8, prefix=None):
+
+    for sheet_name in ["ESTIMATES", "MEDIUM VARIANT"]:
+        data = pd.read_excel(path, skiprows=skiprows, sheet_name=sheet_name)
         title = data[data.columns[0]][1]
-        
         index_col = 8
-        
+
         for item in data.loc[7, data.columns[8]: data.columns[-1]].values:
-            
+
             if prefix:
                 var_name = title + ": " + prefix + " - " + item
             else:
                 var_name = title + ": " + item
-            
-            var_id = variables[variables["name"] == var_name]["id"].values[0] 
-            
+
+            var_id = variables[variables["name"] == var_name]["id"].values[0]
+
             data2 = data.iloc[8:]
-           
+
             data_res = pd.DataFrame()
             data_res["country"] = data2[data2.columns[2]]
             data_res["year"] = data2[data2.columns[7]]
             data_res["value"] = data2["Unnamed: %s" % str(index_col)]
-            
-            data_res["country"] = normalize_country(data_res)
+
+            data_res["country"] = normalize_country(data_res["country"])
+            data_res["country"] = standardize_country(data_res["country"], country_mapping)
             data_res = data_res[data_res["value"] != "..."]
             data_res.to_csv("output/datapoints/datapoints_%s.csv" % str(var_id), index=False)
-            
+
             index_col += 1
 
 
 def create_datapoints():
 
-    variables = pd.read_csv("output/variables.csv")
+    country_mapping = pd.read_csv("standardization/entities_standardized.csv")
+    country_mapping = dict(zip(country_mapping.name, country_mapping.standardized_name))
 
-    for f in glob("input/*.xlsx"):
-       
-        if f == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
-            get_variables(f, variables, prefix="Annually interpolated demographic indicators")
+    variables = pd.read_csv("output/variables.csv")
+    for filename in glob("input/*.xlsx"):
+        if filename == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
+            get_datapoints(
+                filename, variables, prefix="Annually interpolated demographic indicators",
+                country_mapping=country_mapping
+            )
         else:
-            get_variables(f, variables, prefix=NAME_TO_PREFIX[f])  
+            get_datapoints(
+                filename, variables, prefix=NAME_TO_PREFIX[filename],
+                country_mapping=country_mapping
+            )
+
+
+def create_country_list():
+
+    countries = set()
+    for filename in glob("output/datapoints/*.csv"):
+        data = pd.read_csv(filename)
+        for j in data["country"]:
+            countries.add(j)
+    countries = pd.DataFrame({"name": [*countries]}).sort_values("name")
+    countries.to_csv("output/distinct_countries_standardized.csv", index=False)
 
 
 def main():
@@ -273,6 +292,7 @@ def main():
     create_sources()
     create_variables()
     create_datapoints()
+    create_country_list()
 
 if __name__ == "__main__":
     main()
