@@ -8,8 +8,8 @@ import pandas as pd
 from db import connection
 from db_utils import DBUtils
 
-with connection as cnx:
-    db = DBUtils(cnx)
+with connection.cursor() as cursor:
+    db = DBUtils(cursor)
     
     # upsert datasets
     dataset_name_ids = {}
