@@ -13,7 +13,7 @@ with connection.cursor() as cursor:
     
     # Upsert entities
     entities = pd.read_csv("output/distinct_countries_standardized.csv")
-    for entity_name in new_entities.name:
+    for entity_name in entities.name:
         db_entity_id = db.get_or_create_entity(entity_name)
         entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
     print(entities)
