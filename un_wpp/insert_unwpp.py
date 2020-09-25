@@ -12,14 +12,14 @@ with connection.cursor() as cursor:
     db = DBUtils(cursor)
     
     # Upsert entities
-    entities = pd.read_csv("distinct_countries_standardized.csv")
+    entities = pd.read_csv("output/distinct_countries_standardized.csv")
     for entity_name in new_entities.name:
         db_entity_id = db.get_or_create_entity(entity_name)
         entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
     print(entities)
     
     # Upsert datasets
-    datasets = pd.read_csv("datasets.csv")
+    datasets = pd.read_csv("output/datasets.csv")
     for dataset_name in datasets.name:
         db_dataset_id = db.upsert_dataset(name=row.name, namespace="unwpp", user_id=46)
         datasets.loc[datasets.name == dataset_name, "db_dataset_id"] = db_dataset_id
