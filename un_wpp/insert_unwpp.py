@@ -1,6 +1,9 @@
 import datetime
 import os
 from glob import glob
+import sys
+sys.path.append("/home/owid/importers/importers")
+
 import pandas as pd
 from db import connection
 from db_utils import DBUtils
