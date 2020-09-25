@@ -11,46 +11,19 @@ from db_utils import DBUtils
 with connection.cursor() as cursor:
     db = DBUtils(cursor)
     
+    # Upsert entities
+    entities = pd.read_csv("distinct_countries_standardized.csv")
+    for entity_name in new_entities.name:
+        db_entity_id = db.get_or_create_entity(entity_name)
+        entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
+    print(entities)
+    
     # Upsert datasets
-    dataset_name_ids = {}
-    datasets = pd.read_csv("output/datasets.csv")
-    for row in datasets.itertuples():
-        dataset_id = db.upsert_dataset(name=row.name, namespace="unwpp", user_id=46)
-        dataset_name_ids[row.name] = dataset_id
-    print(dataset_name_ids)
-        
-    # # upsert sources
-    # dataset_to_source_ids = {}
-    # source_name = "United Nations – Population Division (2019 Revision)"
-    # for additional_info, dataset_name in datasets_dict.items():
-    #     description = {}
-    #     description["dataPublishedBy"] = "United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects: The 2019 Revision, DVD Edition."
-    #     description["dataPublisherSource"] = None
-    #     description["link"] = "https://population.un.org/wpp2019/Download/Standard/Interpolated/"
-    #     description["retrievedDate"] = datetime.datetime.now().strftime("%d-%b-%Y")
-    #     description["additionalInfo"] = additional_info
-        
-    #     source_id = db.upsert_source(name=source_name, description=json.dumps(description), dataset_id=dataset_name_ids[dataset_name])
-    #     dataset_to_source_ids[dataset_name_ids[dataset_name]] = source_id
-    #     print(dataset_name, source_id)
-    
-    # entities = pd.read_csv("distinct_countries_standardized.csv")
-    # datasets = pd.read_csv("datasets.csv")
-    # sources = pd.read_csv("sources.csv")
-    # variables = pd.read_csv("variables.csv")
-    
-    # new_entities = entities[entities["db_entity_id"].isnull()]
-    # for _, entity in new_entities.iterrows():
-    #     entity_id = entity.name
-    #     entity_name = entity["name"]
-    #     db_entity_id = db.get_or_create_entity(entity_name)
-    #     entities.loc[entity_id, "db_entity_id"] = db_entity_id
-    
-    # # upsert datasets
-    # dataset_name_ids = {}
-    # for i, row in datasets.iterrows():
-    #     dataset_id = db.upsert_dataset(name=row["name"], namespace="unwpp", user_id=15)
-    #     dataset_name_ids[row["name"]] = dataset_id
+    datasets = pd.read_csv("datasets.csv")
+    for dataset_name in datasets.name:
+        db_dataset_id = db.upsert_dataset(name=row.name, namespace="unwpp", user_id=46)
+        datasets.loc[datasets.name == dataset_name, "db_dataset_id"] = db_dataset_id
+    print(datasets)
         
     # # upsert sources
     # dataset_to_source_ids = {}
