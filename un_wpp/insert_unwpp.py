@@ -35,7 +35,7 @@ with connection.cursor() as cursor:
             description=json.dumps(source_row.description),
             dataset_id=source_row.db_dataset_id
         )
-        sources.iloc[i, "db_source_id"] = db_source_id
+        sources.at[i, "db_source_id"] = db_source_id
     print(sources)
 
     # # upsert variables
