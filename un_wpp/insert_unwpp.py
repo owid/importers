@@ -11,33 +11,28 @@ from db_utils import DBUtils
 with connection.cursor() as cursor:
     db = DBUtils(cursor)
     
-    # upsert datasets
+    # Upsert datasets
     dataset_name_ids = {}
-    for f in os.listdir("sources/"):
-        if f == ".DS_Store":
-            continue
-        data = pd.read_excel("sources/"+f)
-        val = data[data.columns[0]][8]
-        index_to_remove = val.find(":")
-        res = "UN WPP - " + val[index_to_remove+2:]
-        dataset_id = db.upsert_dataset(name=res, namespace="unwpp", user_id=15)
-        dataset_name_ids[res] = dataset_id
-        print(f, dataset_id)
+    datasets = pd.read_csv("output/datasets.csv")
+    for row in datasets.itertuples():
+        dataset_id = db.upsert_dataset(name=row.name, namespace="unwpp", user_id=46)
+        dataset_name_ids[row.name] = dataset_id
+    print(dataset_name_ids)
         
-    # upsert sources
-    dataset_to_source_ids = {}
-    source_name = "United Nations – Population Division (2019 Revision)"
-    for additional_info, dataset_name in datasets_dict.items():
-        description = {}
-        description["dataPublishedBy"] = "United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects: The 2019 Revision, DVD Edition."
-        description["dataPublisherSource"] = None
-        description["link"] = "https://population.un.org/wpp2019/Download/Standard/Interpolated/"
-        description["retrievedDate"] = datetime.datetime.now().strftime("%d-%b-%Y")
-        description["additionalInfo"] = additional_info
+    # # upsert sources
+    # dataset_to_source_ids = {}
+    # source_name = "United Nations – Population Division (2019 Revision)"
+    # for additional_info, dataset_name in datasets_dict.items():
+    #     description = {}
+    #     description["dataPublishedBy"] = "United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects: The 2019 Revision, DVD Edition."
+    #     description["dataPublisherSource"] = None
+    #     description["link"] = "https://population.un.org/wpp2019/Download/Standard/Interpolated/"
+    #     description["retrievedDate"] = datetime.datetime.now().strftime("%d-%b-%Y")
+    #     description["additionalInfo"] = additional_info
         
-        source_id = db.upsert_source(name=source_name, description=json.dumps(description), dataset_id=dataset_name_ids[dataset_name])
-        dataset_to_source_ids[dataset_name_ids[dataset_name]] = source_id
-        print(dataset_name, source_id)
+    #     source_id = db.upsert_source(name=source_name, description=json.dumps(description), dataset_id=dataset_name_ids[dataset_name])
+    #     dataset_to_source_ids[dataset_name_ids[dataset_name]] = source_id
+    #     print(dataset_name, source_id)
     
     # entities = pd.read_csv("distinct_countries_standardized.csv")
     # datasets = pd.read_csv("datasets.csv")
