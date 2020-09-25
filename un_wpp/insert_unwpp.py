@@ -30,7 +30,7 @@ with connection.cursor() as cursor:
     sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
     for i, source_row in sources.iterrows():
         db_source_id = db.upsert_source(
-            name=source_row.name,
+            name=source_row.name_x,
             description=source_row.description,
             dataset_id=source_row.db_dataset_id
         )
