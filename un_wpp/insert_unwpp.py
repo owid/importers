@@ -29,7 +29,11 @@ with connection.cursor() as cursor:
     sources = pd.read_csv("output/sources.csv")
     sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
     for i, source_row in sources.iterrows():
-        db_source_id = db.upsert_source(name=row.name, description=json.dumps(row.description), dataset_id=row.db_dataset_id)
+        db_source_id = db.upsert_source(
+            name=source_row.name,
+            description=json.dumps(source_row.description),
+            dataset_id=source_row.db_dataset_id
+        )
         sources.iloc[i, "db_source_id"] = db_source_id
     print(sources)
         
