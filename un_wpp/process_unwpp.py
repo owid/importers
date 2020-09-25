@@ -3,6 +3,9 @@ from glob import glob
 import pandas as pd
 
 
+DATASET_YEAR = 2019
+
+
 NAME_TO_PREFIX = {
     "input/WPP2019_INT_F03_3_POPULATION_BY_AGE_ANNUAL_FEMALE.xlsx": \
         "Female population by age (thousands)",
@@ -39,7 +42,7 @@ def create_datasets():
         data = pd.read_excel(filename, usecols=[0], nrows=9)
         names.append(data.iloc[8, 0])
     datasets = pd.DataFrame({"name": names})
-    datasets.loc[:, "name"] = "UN WPP - " + datasets["name"].str.replace("^[^:]+: ", "")
+    datasets.loc[:, "name"] = f"UN WPP {DATASET_YEAR} - " + datasets["name"].str.replace("^[^:]+: ", "")
     datasets.to_csv("output/datasets.csv", index_label="id")
 
 
@@ -57,19 +60,19 @@ def create_sources():
 
     ## Sources
     keys = [
-        "UN WPP - Total population (both sexes combined) by single age, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Male population by single age, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Female population by single age, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Interpolated demographic indicators by region, subregion and country, annually for 1950-2099",
-        "UN WPP - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
-        "UN WPP - Percentage of total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
-        "UN WPP - Percentage of male total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
-        "UN WPP - Percentage of female total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
-        "UN WPP - Dependency ratios (total, child, old-age) for different age groups and for both sexes combined by region, subregion and country, annually interpolated for 1950-2100",
-        "UN WPP - Male dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100",
-        "UN WPP - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100"
+        f"UN WPP {DATASET_YEAR} - Total population (both sexes combined) by single age, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Male population by single age, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Female population by single age, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Interpolated demographic indicators by region, subregion and country, annually for 1950-2099",
+        f"UN WPP {DATASET_YEAR} - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)",
+        f"UN WPP {DATASET_YEAR} - Percentage of total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
+        f"UN WPP {DATASET_YEAR} - Percentage of male total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
+        f"UN WPP {DATASET_YEAR} - Percentage of female total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
+        f"UN WPP {DATASET_YEAR} - Dependency ratios (total, child, old-age) for different age groups and for both sexes combined by region, subregion and country, annually interpolated for 1950-2100",
+        f"UN WPP {DATASET_YEAR} - Male dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100",
+        f"UN WPP {DATASET_YEAR} - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100"
     ]
 
     vals = [
@@ -109,18 +112,18 @@ class DataVariables():
         self.units = []
         self.dataset_ids = []
         self.doc_to_unit = {
-            "UN WPP - Female population by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            "UN WPP - Male population by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            "UN WPP - Total population (both sexes combined) by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            "UN WPP - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100": "Female dependency ratios for different age groups",
-            "UN WPP - Male dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100": "Male dependency ratios for different age groups",
-            "UN WPP - Dependency ratios (total, child, old-age) for different age groups and for both sexes combined by region, subregion and country, annually interpolated for 1950-2100": "Dependency ratios (both sexes combined) for different age groups",
-            "UN WPP - Percentage of female total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
-            "UN WPP - Percentage of male total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
-            "UN WPP - Percentage of total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
-            "UN WPP - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            "UN WPP - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            "UN WPP - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands"
+            f"UN WPP {DATASET_YEAR} - Female population by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
+            f"UN WPP {DATASET_YEAR} - Male population by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
+            f"UN WPP {DATASET_YEAR} - Total population (both sexes combined) by single age, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
+            f"UN WPP {DATASET_YEAR} - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100": "Female dependency ratios for different age groups",
+            f"UN WPP {DATASET_YEAR} - Male dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100": "Male dependency ratios for different age groups",
+            f"UN WPP {DATASET_YEAR} - Dependency ratios (total, child, old-age) for different age groups and for both sexes combined by region, subregion and country, annually interpolated for 1950-2100": "Dependency ratios (both sexes combined) for different age groups",
+            f"UN WPP {DATASET_YEAR} - Percentage of female total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
+            f"UN WPP {DATASET_YEAR} - Percentage of male total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
+            f"UN WPP {DATASET_YEAR} - Percentage of total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
+            f"UN WPP {DATASET_YEAR} - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
+            f"UN WPP {DATASET_YEAR} - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
+            f"UN WPP {DATASET_YEAR} - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands"
         }
         self.datasets = pd.read_csv("output/datasets.csv")
         self.datavars = pd.DataFrame()
@@ -132,7 +135,7 @@ class DataVariables():
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
-            res = "UN WPP - " + val[index_to_remove+2:]
+            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove+2:]
 
             title = data[data.columns[0]][1]
             print(title)
@@ -174,7 +177,7 @@ class DataVariables():
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
-            res = "UN WPP - " + val[index_to_remove+2:]
+            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove+2:]
 
             title = data[data.columns[0]][1]
             print(title)
