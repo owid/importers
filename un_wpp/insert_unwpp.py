@@ -1,5 +1,6 @@
 import datetime
 import os
+import json
 from glob import glob
 import sys
 sys.path.append("/home/owid/importers/importers")
@@ -31,7 +32,7 @@ with connection.cursor() as cursor:
     for i, source_row in sources.iterrows():
         db_source_id = db.upsert_source(
             name=source_row.name_x,
-            description=source_row.description,
+            description=json.dumps(source_row.description),
             dataset_id=source_row.db_dataset_id
         )
         sources.iloc[i, "db_source_id"] = db_source_id
