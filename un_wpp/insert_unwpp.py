@@ -25,14 +25,13 @@ with connection.cursor() as cursor:
         datasets.loc[datasets.name == dataset_name, "db_dataset_id"] = db_dataset_id
     print(datasets)
         
-    # # upsert sources
-    # dataset_to_source_ids = {}
-    # for i, row in sources.iterrows():
-
-    #     dataset_name = datasets[datasets["id"] == row["dataset_id"]]["name"].values[0]
-    #     source_id = db.upsert_source(name=row["name"], description=json.dumps(row["description"]), dataset_id=dataset_name_ids[dataset_name])
-
-    #     dataset_to_source_ids[dataset_name] = source_id
+    # Upsert sources
+    sources = pd.read_csv("output/sources.csv")
+    sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
+    for i, source_row in sources.iterrows():
+        db_source_id = db.upsert_source(name=row.name, description=json.dumps(row.description), dataset_id=row.db_dataset_id)
+        sources.iloc[i, "db_source_id"] = db_source_id
+    print(sources)
         
     # # upsert variables
     # names_to_ids = {}
