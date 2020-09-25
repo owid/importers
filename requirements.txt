@@ -1,6 +1,6 @@
-pandas
-numpy
-xlrd
+pandas==1.1.1
+numpy==1.19.1
+xlrd==1.2.0
 tqdm
 python-dotenv
 pymysql
