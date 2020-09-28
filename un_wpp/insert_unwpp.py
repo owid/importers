@@ -50,9 +50,7 @@ def main():
         # Upsert variables
         print("---\nUpserting variables...")
         variables = pd.read_csv("output/variables.csv")
-        print(variables.shape)
         variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
-        print(variables.shape)
         for i, variable_row in variables.iterrows():
             db_variable_id = db.upsert_variable(
                 name=variable_row["name"],
@@ -70,10 +68,8 @@ def main():
         print(f"Upserted {len(variables)} variables.")
 
         # Upserting datapoints
-        datapoint_files = tqdm(glob("output/datapoints/datapoints_*.csv"))
         print("---\nUpserting datapoint files...")
-
-        for datapoint_file in datapoint_files:
+        for datapoint_file in tqdm(glob("output/datapoints/datapoints_*.csv")):
 
             variable_id = int(re.search("\\d+", datapoint_file)[0])
             db_variable_id = variables.iloc[variable_id]["db_variable_id"]
