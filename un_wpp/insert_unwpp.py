@@ -68,7 +68,7 @@ def main():
         print(f"Upserted {len(variables)} variables.")
 
         # Upserting datapoints
-        print("---\nUpserting datapoint files...")
+        print("---\nUpserting datapoints...")
         for datapoint_file in tqdm(glob("output/datapoints/datapoints_*.csv")):
 
             variable_id = int(re.search("\\d+", datapoint_file)[0])
