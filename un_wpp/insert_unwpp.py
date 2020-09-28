@@ -38,27 +38,27 @@ with connection.cursor() as cursor:
         sources.at[i, "db_source_id"] = db_source_id
     print(sources)
 
-    # # upsert variables
-    # names_to_ids = {}
-    # for i, row in variables.iterrows():
-
-    #     dataset_name = datasets[datasets["id"] == row["dataset_id"]]["name"].values[0]
-    #     dataset_id = dataset_name_ids[dataset_name]
-    #     source_id = dataset_to_source_ids[dataset_name]<‡
-
-    #     variable_id = db.upsert_variable(
-    #                                     name=row["name"], 
-    #                                     code=None, 
-    #                                     unit=row["unit"], 
-    #                                     short_unit=None, 
-    #                                     source_id=source_id, 
-    #                                     dataset_id=dataset_id, 
-    #                                     description=None, 
-    #                                     timespan=", 
-    #                                     coverage=", 
-    #                                     display={}
-    #                                     )
-    #     names_to_ids[row["name"]] = variable_id
+    # Upsert variables
+    variables = pd.read_csv("output/variables.csv")
+    print(variables.shape)
+    variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
+    print(variables.shape)
+    import pdb; pdb.set_trace()
+    for i, variable_row in variables.iterrows():
+        db_variable_id = db.upsert_variable(
+            name=variable_row["name"], 
+            code=None, 
+            unit=variable_row["unit"], 
+            short_unit=None, 
+            source_id=variable_row["source_id"], 
+            dataset_id=variable_row["dataset_id"], 
+            description=None, 
+            timespan="",
+            coverage="",
+            display={}
+        )
+        variables.at[i, "db_variable_id"] = db_variable_id
+    print(variables)
 
     # # Inserting datapoints
     # datapoints_files = glob("datapoints/*.csv")
