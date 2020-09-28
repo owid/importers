@@ -79,8 +79,8 @@ def main():
 
             data_tuples = zip(
                 data["value"],
-                int(data["year"]),
-                int(data["db_entity_id"]),
+                data["year"].astype(int),
+                data["db_entity_id"].astype(int),
                 [int(db_variable_id)] * len(data)
             )
 
