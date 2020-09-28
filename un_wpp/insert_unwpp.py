@@ -2,13 +2,12 @@ import re
 import json
 from glob import glob
 import sys
+sys.path.append("/home/owid/importers/importers")
 
 from tqdm import tqdm
 import pandas as pd
 from db import connection
 from db_utils import DBUtils
-
-sys.path.append("/home/owid/importers/importers")
 
 def main():
 
