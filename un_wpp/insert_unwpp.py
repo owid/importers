@@ -21,9 +21,9 @@ with connection.cursor() as cursor:
 
     # Upsert datasets
     datasets = pd.read_csv("output/datasets.csv")
-    for dataset_name in datasets.name:
-        db_dataset_id = db.upsert_dataset(name=dataset_name, namespace="unwpp", user_id=46)
-        datasets.loc[datasets.name == dataset_name, "db_dataset_id"] = db_dataset_id
+    for i, dataset_row in datasets.iterrows():
+        db_dataset_id = db.upsert_dataset(name=dataset_row["name"], namespace="unwpp", user_id=46)
+        datasets.at[i, "db_dataset_id"] = db_dataset_id
     print(datasets)
 
     # Upsert sources
@@ -50,8 +50,8 @@ with connection.cursor() as cursor:
             code=None, 
             unit=variable_row["unit"], 
             short_unit=None, 
-            source_id=variable_row["source_id"], 
-            dataset_id=variable_row["dataset_id"], 
+            source_id=variable_row["db_source_id"], 
+            dataset_id=variable_row["db_dataset_id"], 
             description=None, 
             timespan="",
             coverage="",
