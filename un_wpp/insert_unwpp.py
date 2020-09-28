@@ -77,24 +77,25 @@ def main():
             data = pd.read_csv(datapoint_file)
             data = pd.merge(data, entities, left_on="country", right_on="name")
 
-            for i, data_row in data.iterrows():
+            data_tuples = zip(
+                data["value"],
+                int(data["year"]),
+                int(data["db_entity_id"]),
+                [int(db_variable_id)] * len(data)
+            )
 
-                query = f"""
-                    INSERT INTO data_values
-                        (value, year, entityId, variableId)
-                    VALUES (
-                        {data_row["value"]},
-                        {int(data_row["year"])},
-                        {int(db_entity_id)},
-                        {int(db_variable_id)}
-                    )
-                    ON DUPLICATE KEY UPDATE
-                        value = VALUES(value),
-                        year = VALUES(year),
-                        entityId = VALUES(entityId),
-                        variableId = VALUES(variableId)
-                """
-                db.upsert_one(query)
+            query = f"""
+                INSERT INTO data_values
+                    (value, year, entityId, variableId)
+                VALUES (%s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    value = VALUES(value),
+                    year = VALUES(year),
+                    entityId = VALUES(entityId),
+                    variableId = VALUES(variableId)
+            """
+
+            db.upsert_many(query, data_tuples)
 
         print(f"Upserted {len(datapoint_files)} datapoint files.")
 
