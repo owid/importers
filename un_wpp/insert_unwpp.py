@@ -1,93 +1,108 @@
-import datetime
-import os
+import re
 import json
 from glob import glob
 import sys
-sys.path.append("/home/owid/importers/importers")
 
+from tqdm import tqdm
 import pandas as pd
 from db import connection
 from db_utils import DBUtils
 
-with connection.cursor() as cursor:
-    db = DBUtils(cursor)
+sys.path.append("/home/owid/importers/importers")
 
-    # Upsert entities
-    entities = pd.read_csv("output/distinct_countries_standardized.csv")
-    for entity_name in entities.name:
-        db_entity_id = db.get_or_create_entity(entity_name)
-        entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
-    print(entities)
+def main():
 
-    # Upsert datasets
-    datasets = pd.read_csv("output/datasets.csv")
-    for i, dataset_row in datasets.iterrows():
-        db_dataset_id = db.upsert_dataset(name=dataset_row["name"], namespace="unwpp", user_id=46)
-        datasets.at[i, "db_dataset_id"] = db_dataset_id
-    print(datasets)
+    with connection.cursor() as cursor:
+        db = DBUtils(cursor)
 
-    # Upsert sources
-    sources = pd.read_csv("output/sources.csv")
-    sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
-    for i, source_row in sources.iterrows():
-        db_source_id = db.upsert_source(
-            name=source_row.name_x,
-            description=json.dumps(source_row.description),
-            dataset_id=source_row.db_dataset_id
-        )
-        sources.at[i, "db_source_id"] = db_source_id
-    print(sources)
+        # Upsert entities
+        print("---\nUpserting entities...")
+        entities = pd.read_csv("output/distinct_countries_standardized.csv")
+        for entity_name in entities.name:
+            db_entity_id = db.get_or_create_entity(entity_name)
+            entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
+        print(f"Upserted {len(entities)} entities.")
 
-    # Upsert variables
-    variables = pd.read_csv("output/variables.csv")
-    print(variables.shape)
-    variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
-    print(variables.shape)
-    for i, variable_row in variables.iterrows():
-        db_variable_id = db.upsert_variable(
-            name=variable_row["name"], 
-            code=None, 
-            unit=variable_row["unit"], 
-            short_unit=None, 
-            source_id=variable_row["db_source_id"], 
-            dataset_id=variable_row["db_dataset_id"], 
-            description=None, 
-            timespan="",
-            coverage="",
-            display={}
-        )
-        variables.at[i, "db_variable_id"] = db_variable_id
-    print(variables)
+        # Upsert datasets
+        print("---\nUpserting datasets...")
+        datasets = pd.read_csv("output/datasets.csv")
+        for i, dataset_row in datasets.iterrows():
+            db_dataset_id = db.upsert_dataset(
+                name=dataset_row["name"],
+                namespace="unwpp",
+                user_id=46
+            )
+            datasets.at[i, "db_dataset_id"] = db_dataset_id
+        print(f"Upserted {len(datasets)} datasets.")
 
-    # Upserting datapoints
-    datapoints_files = glob("output/datapoints/datapoints_*.csv")
-    for datapoint_file in datapoints_files: 
-        import pdb; pdb.set_trace()
+        # Upsert sources
+        print("---\nUpserting sources...")
+        sources = pd.read_csv("output/sources.csv")
+        sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
+        for i, source_row in sources.iterrows():
+            db_source_id = db.upsert_source(
+                name=source_row.name_x,
+                description=json.dumps(source_row.description),
+                dataset_id=source_row.db_dataset_id
+            )
+            sources.at[i, "db_source_id"] = db_source_id
+        print(f"Upserted {len(sources)} sources.")
 
-        # to get variable id
-        v_id = int(datapoint_file.split("_")[1].split(".")[0])
+        # Upsert variables
+        print("---\nUpserting variables...")
+        variables = pd.read_csv("output/variables.csv")
+        print(variables.shape)
+        variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
+        print(variables.shape)
+        for i, variable_row in variables.iterrows():
+            db_variable_id = db.upsert_variable(
+                name=variable_row["name"],
+                code=None,
+                unit=variable_row["unit"],
+                short_unit=None,
+                source_id=variable_row["db_source_id"],
+                dataset_id=variable_row["db_dataset_id"],
+                description=None,
+                timespan="",
+                coverage="",
+                display={}
+            )
+            variables.at[i, "db_variable_id"] = db_variable_id
+        print(f"Upserted {len(variables)} variables.")
 
-        # to get variable name
-        variable_name = variables[variables["id"]==v_id]["name"].values[0]
+        # Upserting datapoints
+        datapoint_files = tqdm(glob("output/datapoints/datapoints_*.csv"))
+        print("---\nUpserting datapoint files...")
 
-        # to get variable id from db
-        variable_id = names_to_ids[variable_name]
-        data = pd.read_csv(datapoint_file)
+        for datapoint_file in datapoint_files:
 
-        for i, row in data.iterrows():
-            entity_id = entities[entities["name"] == row["country"]]["db_entity_id"].values[0]
+            variable_id = int(re.search("\\d+", datapoint_file)[0])
+            db_variable_id = variables.iloc[variable_id]["db_variable_id"]
 
-            year = row["year"]
-            val = row["value"]
+            data = pd.read_csv(datapoint_file)
+            data = pd.merge(data, entities, left_on="country", right_on="name")
 
-            db.upsert_one("""
-                INSERT INTO data_values
-                    (value, year, entityId, variableId)
-                VALUES
-                    (%s, %s, %s, %s)
-                ON DUPLICATE KEY UPDATE
-                    value = VALUES(value),
-                    year = VALUES(year),
-                    entityId = VALUES(entityId),
-                    variableId = VALUES(variableId)
-            """, [val, int(year), str(int(entity_id)), str(variable_id)])
+            for i, data_row in data.iterrows():
+
+                query = f"""
+                    INSERT INTO data_values
+                        (value, year, entityId, variableId)
+                    VALUES (
+                        {data_row["value"]},
+                        {int(data_row["year"])},
+                        {int(db_entity_id)},
+                        {int(db_variable_id)}
+                    )
+                    ON DUPLICATE KEY UPDATE
+                        value = VALUES(value),
+                        year = VALUES(year),
+                        entityId = VALUES(entityId),
+                        variableId = VALUES(variableId)
+                """
+                db.upsert_one(query)
+
+        print(f"Upserted {len(datapoint_files)} datapoint files.")
+
+
+if __name__ == "__main__":
+    main()
