@@ -43,7 +43,6 @@ with connection.cursor() as cursor:
     print(variables.shape)
     variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
     print(variables.shape)
-    import pdb; pdb.set_trace()
     for i, variable_row in variables.iterrows():
         db_variable_id = db.upsert_variable(
             name=variable_row["name"], 
@@ -60,34 +59,35 @@ with connection.cursor() as cursor:
         variables.at[i, "db_variable_id"] = db_variable_id
     print(variables)
 
-    # # Inserting datapoints
-    # datapoints_files = glob("datapoints/*.csv")
-    # for x in datapoints_files: 
-    #     # to get variable is
-    #     v_id = int(x.split("_")[1].split(".")[0])
+    # Upserting datapoints
+    datapoints_files = glob("datapoints/*.csv")
+    for datapoint_file in datapoints_files: 
+        import pdb; pdb.set_trace()
 
-    #     # to get variable name
-    #     variable_name = variables[variables["id"]==v_id]["name"].values[0]
+        # to get variable id
+        v_id = int(datapoint_file.split("_")[1].split(".")[0])
 
-    #     # to get variable id from db
-    #     variable_id = names_to_ids[variable_name]
-    #     data = pd.read_csv(x)
+        # to get variable name
+        variable_name = variables[variables["id"]==v_id]["name"].values[0]
 
-    #     for i, row in data.iterrows():
-    #         entity_id = entities[entities["name"] == row["country"]]["db_entity_id"].values[0]
+        # to get variable id from db
+        variable_id = names_to_ids[variable_name]
+        data = pd.read_csv(datapoint_file)
 
-    #         year = row["year"]
-    #         val = row["value"]
+        for i, row in data.iterrows():
+            entity_id = entities[entities["name"] == row["country"]]["db_entity_id"].values[0]
 
-    #         db.upsert_one("""
-    #             INSERT INTO data_values
-    #                 (value, year, entityId, variableId)
-    #             VALUES
-    #                 (%s, %s, %s, %s)
-    #             ON DUPLICATE KEY UPDATE
-    #                 value = VALUES(value),
-    #                 year = VALUES(year),
-    #                 entityId = VALUES(entityId),
-    #                 variableId = VALUES(variableId)
-    #         """, [val, int(year), str(int(entity_id)), str(variable_id)])
-    # 
+            year = row["year"]
+            val = row["value"]
+
+            db.upsert_one("""
+                INSERT INTO data_values
+                    (value, year, entityId, variableId)
+                VALUES
+                    (%s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    value = VALUES(value),
+                    year = VALUES(year),
+                    entityId = VALUES(entityId),
+                    variableId = VALUES(variableId)
+            """, [val, int(year), str(int(entity_id)), str(variable_id)])
