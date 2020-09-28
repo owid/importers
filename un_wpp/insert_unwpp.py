@@ -60,7 +60,7 @@ with connection.cursor() as cursor:
     print(variables)
 
     # Upserting datapoints
-    datapoints_files = glob("datapoints/*.csv")
+    datapoints_files = glob("output/datapoints/datapoints_*.csv")
     for datapoint_file in datapoints_files: 
         import pdb; pdb.set_trace()
 
