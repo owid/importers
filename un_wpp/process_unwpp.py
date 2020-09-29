@@ -49,7 +49,7 @@ def create_datasets():
 def create_description(row, additional_info):
     return {
         "dataPublishedBy": "United Nations, Department of Economic and Social Affairs, Population Division (2019). World Population Prospects: The 2019 Revision, DVD Edition.",
-        "dataPublisherSource": None,
+        "dataPublisherSource": "",
         "link": "https://population.un.org/wpp2019/Download/Standard/Interpolated/",
         "retrievedDate": datetime.datetime.now().strftime("%d %B %Y"),
         "additionalInfo": additional_info[row["dataset_name"]],
