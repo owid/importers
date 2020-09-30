@@ -2,7 +2,7 @@ import re
 import json
 from glob import glob
 import sys
-sys.path.append("/home/owid/importers/importers")
+sys.path.append("/mnt/importers/scripts/importers")
 
 from tqdm import tqdm
 import pandas as pd
