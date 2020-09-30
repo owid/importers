@@ -41,7 +41,7 @@ def main():
         for i, source_row in sources.iterrows():
             db_source_id = db.upsert_source(
                 name=source_row.name_x,
-                description=json.dumps(source_row.description),
+                description=json.dumps(eval(source_row.description)),
                 dataset_id=source_row.db_dataset_id
             )
             sources.at[i, "db_source_id"] = db_source_id
