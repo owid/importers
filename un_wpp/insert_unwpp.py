@@ -9,6 +9,9 @@ import pandas as pd
 from db import connection
 from db_utils import DBUtils
 
+NAMESPACE = "unwpp2019"
+USER_ID = 46
+
 def main():
 
     with connection.cursor() as cursor:
@@ -28,8 +31,8 @@ def main():
         for i, dataset_row in datasets.iterrows():
             db_dataset_id = db.upsert_dataset(
                 name=dataset_row["name"],
-                namespace="unwpp",
-                user_id=46
+                namespace=NAMESPACE,
+                user_id=USER_ID
             )
             datasets.at[i, "db_dataset_id"] = db_dataset_id
         print(f"Upserted {len(datasets)} datasets.")
