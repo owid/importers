@@ -65,16 +65,17 @@ def main():
         # Upsert variables
         print("---\nUpserting variables...")
         variables = pd.read_csv(os.path.join(DATA_PATH, "variables.csv"))
+        variables = variables.fillna("")
         variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
         for i, variable_row in tqdm(variables.iterrows()):
             db_variable_id = db.upsert_variable(
                 name=variable_row["name"],
                 code=None,
-                unit=variable_row["unit"] if !pd.isna(variable_row["unit"]) else "",
+                unit=variable_row["unit"],
                 short_unit=None,
                 source_id=variable_row["db_source_id"],
                 dataset_id=variable_row["db_dataset_id"],
-                description=variable_row["notes"] if !pd.isna(variable_row["notes"]) else "",
+                description=variable_row["notes"],
                 timespan="",
                 coverage="",
                 display={}
