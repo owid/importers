@@ -85,13 +85,13 @@ def main():
 
         # Upserting datapoints
         print("---\nUpserting datapoints...")
-        datapoint_files = glob("output/datapoints/datapoints_*.csv")
+        datapoint_files = glob(os.path.join(DATA_PATH, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
 
             variable_id = int(re.search("\\d+", datapoint_file)[0])
             db_variable_id = variables.iloc[variable_id]["db_variable_id"]
 
-            data = pd.read_csv(os.path.join(DATA_PATH, d)
+            data = pd.read_csv(datapoint_file)
             data = pd.merge(data, entities, left_on="country", right_on="name")
 
             data_tuples = zip(
