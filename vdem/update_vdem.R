@@ -60,7 +60,7 @@ create_variables <- function() {
         varbook$aggregation,
         varbook$source,
         sep = "\n"
-    ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "")
+    ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "") %>% str_replace_all('"', "'")
     varbook[
         scale == "We provide two versions of this index. The first is the normalized output from the the hierarchical latent variable analysis. It is on an unbounded interval scale. The second, denoted by *_osp, is a version of this output which we scale using a standard normal cumulative distribution function. It is thus scaled low to high (0-1).",
         scale := "Normalized output from the the hierarchical latent variable analysis on an unbounded interval scale"
@@ -68,7 +68,7 @@ create_variables <- function() {
     unit <- paste(
         varbook$scale,
         sep = "\n"
-    ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "")
+    ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "") %>% str_replace_all('"', "'")
     tag <- varbook$tag
     name <- varbook$name
     id <- seq_along(name)
@@ -136,8 +136,8 @@ create_entities <- function() {
 }
 
 # file.remove(list.files("output", full.names = TRUE, recursive = TRUE))
-# create_dataset()
-# create_sources()
+create_dataset()
+create_sources()
 create_variables()
-# create_datapoints()
-# create_entities()
+create_datapoints()
+create_entities()
