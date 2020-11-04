@@ -6,11 +6,11 @@ rm(list = setdiff(ls(), c("codebook", "vdem")))
 
 # Download and load data
 # download.file(url = "https://github.com/vdeminstitute/vdemdata/raw/master/data/codebook.RData", destfile = "input/codebook.RData")
-# load("input/codebook.RData")
+load("input/codebook.RData")
 setDT(codebook)
 
 # download.file(url = "https://github.com/vdeminstitute/vdemdata/raw/master/data/vdem.RData", destfile = "input/vdem.RData")
-# load("input/vdem.RData")
+load("input/vdem.RData")
 setDT(vdem)
 
 standard_countries <- fread("input/vdem_country_standardized.csv")
@@ -118,8 +118,22 @@ create_datapoints <- function() {
     # fwrite(data.table(Country = country_names), "output/non_standard_country_names.csv")
 }
 
+create_entities <- function() {
+    files <- list.files("output/datapoints", pattern = "csv$", full.names = TRUE)
+    entities <- c()
+    for (f in files) {
+        message(f)
+        tmp <- fread(f, showProgress = FALSE, select = "country")
+        entities <- unique(c(entities, tmp$country))
+    }
+    entities <- data.table(name = entities)
+    setorder(entities, name)
+    fwrite(entities, "output/distinct_countries_standardized.csv")
+}
+
 file.remove(list.files("output", full.names = TRUE, recursive = TRUE))
 create_dataset()
 create_sources()
 create_variables()
 create_datapoints()
+create_entities()
