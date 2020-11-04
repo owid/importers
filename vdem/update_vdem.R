@@ -61,6 +61,10 @@ create_variables <- function() {
         varbook$source,
         sep = "\n"
     ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "")
+    varbook[
+        scale == "We provide two versions of this index. The first is the normalized output from the the hierarchical latent variable analysis. It is on an unbounded interval scale. The second, denoted by *_osp, is a version of this output which we scale using a standard normal cumulative distribution function. It is thus scaled low to high (0-1).",
+        scale := "Normalized output from the the hierarchical latent variable analysis on an unbounded interval scale"
+    ]
     unit <- paste(
         varbook$scale,
         sep = "\n"
@@ -131,9 +135,9 @@ create_entities <- function() {
     fwrite(entities, "output/distinct_countries_standardized.csv")
 }
 
-file.remove(list.files("output", full.names = TRUE, recursive = TRUE))
-create_dataset()
-create_sources()
+# file.remove(list.files("output", full.names = TRUE, recursive = TRUE))
+# create_dataset()
+# create_sources()
 create_variables()
-create_datapoints()
-create_entities()
+# create_datapoints()
+# create_entities()
