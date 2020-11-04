@@ -1,0 +1,503 @@
+country,year,value
+Sweden,1887,102
+Sweden,1890,88
+Sweden,1893,76
+Sweden,1896,74
+Sweden,1899,93
+Sweden,1902,107
+Sweden,1905,107
+Sweden,1908,108
+Sweden,1911,91
+Sweden,1914,73
+Sweden,1917,86
+Sweden,1920,62
+Switzerland,1848,11
+Switzerland,1851,16
+Switzerland,1854,16
+Switzerland,1857,20
+Switzerland,1860,37
+Switzerland,1863,37
+Switzerland,1866,39
+Switzerland,1869,31
+Switzerland,1872,30
+Switzerland,1875,33
+Switzerland,1878,37
+Switzerland,1881,35
+Switzerland,1884,37
+Switzerland,1887,35
+Switzerland,1890,35
+Switzerland,1893,29
+Switzerland,1896,30
+Switzerland,1899,32
+Switzerland,1902,35
+Switzerland,1905,35
+Switzerland,1908,34
+Switzerland,1911,38
+Switzerland,1914,37
+Switzerland,1917,42
+Switzerland,1919,41
+Japan,1890,79
+Japan,1892,81
+Japan,1894,60
+Japan,1898,120
+Japan,1902,95
+Japan,1903,85
+Japan,1904,90
+Japan,1908,70
+Japan,1912,95
+Japan,1915,108
+Japan,1917,121
+Japan,1920,1.1
+Russia,1906,97
+Russia,1907,98
+Russia,1912,98
+United States,1790,30
+United States,1792,51
+United States,1794,47
+United States,1796,49
+United States,1798,46
+United States,1800,38
+United States,1802,39
+United States,1804,28
+United States,1806,26
+United States,1808,48
+United States,1810,36
+United States,1812,68
+United States,1814,64
+United States,1816,40
+United States,1818,26
+United States,1820,32
+United States,1822,24
+United States,1824,104
+United States,1826,100
+United States,1828,72
+United States,1830,66
+United States,1832,63
+United States,1834,75
+United States,1836,100
+United States,1838,109
+United States,1840,99
+United States,1842,73
+United States,1844,79
+United States,1846,112
+United States,1848,108
+United States,1850,86
+United States,1852,71
+United States,1854,54
+United States,1856,90
+United States,1858,98
+United States,1860,45
+United States,1862,72
+United States,1864,38
+United States,1866,47
+United States,1868,67
+United States,1870,104
+United States,1872,89
+United States,1874,106
+United States,1876,136
+United States,1878,132
+United States,1880,131
+United States,1882,118
+United States,1884,141
+United States,1886,154
+United States,1888,152
+United States,1890,86
+United States,1892,124
+United States,1894,93
+United States,1896,124
+United States,1898,161
+United States,1900,151
+United States,1902,163
+United States,1904,151
+United States,1906,176
+United States,1908,135
+United States,1910,167
+United States,1912,171
+United States,1914,162
+United States,1916,196
+United States,1918,213
+United States,1920,192
+Portugal,1856,41
+Portugal,1858,24
+Portugal,1860,15
+Portugal,1861,40
+Portugal,1864,32
+Portugal,1865,47
+Portugal,1868,13
+Portugal,1869,20
+Portugal,1870,20
+Portugal,1871,27
+Portugal,1874,8
+Portugal,1878,22
+Portugal,1879,21
+Portugal,1881,8
+Portugal,1884,31
+Portugal,1887,36
+Portugal,1889,38
+Portugal,1890,33
+Portugal,1892,45
+Portugal,1894,33
+Portugal,1897,23
+Portugal,1899,39
+Portugal,1900,28
+Portugal,1901,41
+Portugal,1905,32
+Portugal,1906,45
+Portugal,1908,58
+Portugal,1915,26
+Portugal,1919,38
+Bolivia,1884,24
+Canada,1841,27
+Canada,1844,40
+Canada,1848,24
+Canada,1851,24
+Canada,1854,39
+Canada,1858,39
+Canada,1861,37
+Canada,1863,35
+Canada,1867,62
+Canada,1872,95
+Canada,1874,65
+Canada,1878,63
+Canada,1882,73
+Canada,1887,79
+Canada,1891,90
+Canada,1896,86
+Canada,1900,79
+Canada,1904,75
+Canada,1908,85
+Canada,1911,85
+Canada,1917,82
+Australia,1887,37
+Australia,1889,66
+Australia,1891,44
+Australia,1894,37
+Australia,1895,42
+Australia,1898,52
+Australia,1901,25
+France,1791,264
+France,1792,200
+France,1795,200
+France,1798,44
+France,1815,50
+France,1816,92
+France,1817,12
+France,1819,13
+France,1820,160
+France,1824,17
+France,1827,180
+France,1830,104
+France,1831,104
+France,1834,75
+France,1837,146
+France,1839,199
+France,1842,193
+France,1846,168
+France,1848,200
+France,1849,180
+France,1852,7
+France,1857,7
+France,1863,32
+France,1869,71
+France,1876,98
+France,1877,130
+France,1881,168
+France,1885,283
+France,1889,168
+France,1893,138
+France,1898,178
+France,1902,127
+France,1906,115
+France,1910,85
+France,1914,102
+France,1919,86
+Germany,1848,190
+Germany,1867,66
+Germany,1871,63
+Germany,1874,91
+Germany,1877,93
+Germany,1878,94
+Germany,1881,50
+Germany,1884,67
+Germany,1887,98
+Germany,1890,73
+Germany,1893,72
+Germany,1898,56
+Germany,1903,81
+Germany,1907,43
+Germany,1912,91
+Germany,1920,84
+Italy,1861,62
+Italy,1865,156
+Italy,1867,151
+Italy,1870,195
+Italy,1874,232
+Italy,1876,94
+Italy,1880,181
+Italy,1882,147
+Italy,1886,145
+Italy,1890,48
+Italy,1892,93
+Italy,1895,104
+Italy,1897,99
+Italy,1900,116
+Italy,1904,76
+Italy,1909,48
+Italy,1913,62
+Italy,1919,100
+Netherlands,1850,13
+Netherlands,1853,25
+Netherlands,1858,29
+Netherlands,1860,18
+Netherlands,1862,31
+Netherlands,1866,30
+Netherlands,1868,20
+Netherlands,1871,15
+Netherlands,1873,16
+Netherlands,1877,16
+Netherlands,1883,18
+Netherlands,1884,19
+Netherlands,1886,23
+Netherlands,1887,19
+Netherlands,1888,27
+Netherlands,1891,25
+Netherlands,1894,25
+Netherlands,1897,22
+Netherlands,1901,25
+Netherlands,1905,25
+Netherlands,1909,25
+Netherlands,1913,20
+Netherlands,1917,22
+Netherlands,1918,22
+Spain,1834,77
+Spain,1836,56
+Spain,1839,70
+Spain,1846,60
+Spain,1850,16
+Spain,1851,48
+Spain,1853,81
+Spain,1863,31
+Spain,1871,52
+Spain,1872,78
+Spain,1873,20
+Spain,1879,64
+Spain,1881,62
+Spain,1884,67
+Spain,1886,106
+Spain,1891,110
+Spain,1893,108
+Spain,1896,102
+Spain,1898,104
+Spain,1899,115
+Spain,1901,84
+Spain,1903,104
+Spain,1905,107
+Spain,1907,73
+Spain,1910,115
+Spain,1914,84
+Spain,1916,88
+Spain,1918,92
+United Kingdom,1802,269
+United Kingdom,1806,228
+United Kingdom,1807,213
+United Kingdom,1818,175
+United Kingdom,1826,198
+United Kingdom,1830,196
+United Kingdom,1831,235
+United Kingdom,1832,175
+United Kingdom,1835,273
+United Kingdom,1837,314
+United Kingdom,1841,271
+United Kingdom,1847,292
+United Kingdom,1852,324
+United Kingdom,1857,264
+United Kingdom,1859,298
+United Kingdom,1865,289
+United Kingdom,1868,271
+United Kingdom,1874,242
+United Kingdom,1880,237
+United Kingdom,1885,247
+United Kingdom,1886,191
+United Kingdom,1892,268
+United Kingdom,1895,177
+United Kingdom,1900,183
+United Kingdom,1906,156
+United Kingdom,1910,272
+United Kingdom,1918,127
+Austria,1897,59
+Austria,1900,53
+Austria,1907,51
+Austria,1911,84
+Austria,1920,69
+Belgium,1847,21
+Belgium,1848,25
+Belgium,1850,22
+Belgium,1852,23
+Belgium,1854,26
+Belgium,1856,31
+Belgium,1857,38
+Belgium,1859,27
+Belgium,1861,22
+Belgium,1863,24
+Belgium,1864,52
+Belgium,1866,18
+Belgium,1868,33
+Belgium,1870,52
+Belgium,1872,20
+Belgium,1874,26
+Belgium,1876,21
+Belgium,1878,18
+Belgium,1880,40
+Belgium,1882,20
+Belgium,1884,2
+Belgium,1886,37
+Belgium,1888,3
+Belgium,1890,29
+Belgium,1892,60
+Belgium,1894,28
+Belgium,1896,28
+Belgium,1898,27
+Belgium,1900,32
+Belgium,1902,20
+Belgium,1904,22
+Belgium,1906,15
+Belgium,1908,22
+Belgium,1910,15
+Belgium,1912,44
+Belgium,1914,26
+Belgium,1919,70
+Bulgaria,1879,30
+Bulgaria,1880,50
+Bulgaria,1884,71
+Bulgaria,1887,32
+Bulgaria,1894,27
+Bulgaria,1899,19
+Bulgaria,1901,29
+Bulgaria,1902,28
+Bulgaria,1908,19
+Bulgaria,1911,6
+Bulgaria,1913,48
+Bulgaria,1914,47
+Bulgaria,1919,47
+Bulgaria,1920,50
+Cuba,1904,36
+Cuba,1908,38
+Cuba,1910,44
+Cuba,1914,31
+Cuba,1918,33
+Denmark,1849,42
+Denmark,1864,39
+Denmark,1866,20
+Denmark,1876,26
+Denmark,1879,37
+Denmark,1881,33
+Denmark,1884,19
+Denmark,1887,27
+Denmark,1890,24
+Denmark,1892,31
+Denmark,1895,25
+Denmark,1898,23
+Denmark,1901,16
+Denmark,1903,73
+Denmark,1906,24
+Denmark,1909,24
+Denmark,1910,24
+Denmark,1913,32
+Denmark,1915,32
+Denmark,1918,39
+Denmark,1920,48
+Greece,1844,28
+Greece,1850,30
+Greece,1859,19
+Greece,1865,40
+Greece,1868,70
+Greece,1869,50
+Greece,1872,65
+Greece,1873,85
+Greece,1874,94
+Greece,1875,30
+Greece,1879,85
+Greece,1881,100
+Greece,1885,40
+Greece,1887,60
+Greece,1890,15
+Greece,1892,47
+Greece,1895,20
+Greece,1899,35
+Greece,1902,70
+Greece,1905,53
+Greece,1906,47
+Greece,1910,122
+Greece,1912,10
+Greece,1915,95
+Greece,1920,110
+New Zealand,1890,25
+New Zealand,1893,13
+New Zealand,1896,26
+New Zealand,1899,19
+New Zealand,1902,19
+New Zealand,1905,16
+New Zealand,1908,26
+New Zealand,1911,33
+New Zealand,1914,33
+New Zealand,1919,21
+Norway,1882,31
+Norway,1885,30
+Norway,1888,38
+Norway,1891,51
+Norway,1894,40
+Norway,1897,25
+Norway,1900,31
+Norway,1903,47
+Norway,1906,36
+Norway,1909,46
+Norway,1912,24
+Norway,1915,21
+Norway,1918,50
+Romania,1920,27
+Serbia,1880,18
+Serbia,1884,55
+Serbia,1886,42
+Serbia,1888,150
+Serbia,1889,15
+Serbia,1893,64
+Serbia,1895,30
+Serbia,1903,66
+Serbia,1905,55
+Serbia,1906,47
+Serbia,1908,78
+Serbia,1912,41
+Hungary,1865,94
+Hungary,1869,116
+Hungary,1872,116
+Hungary,1875,36
+Hungary,1878,76
+Hungary,1881,88
+Hungary,1884,75
+Hungary,1887,78
+Hungary,1892,86
+Hungary,1896,50
+Hungary,1901,79
+Hungary,1905,159
+Hungary,1906,71
+Hungary,1910,51
+Hungary,1920,73
+Baden,1851,10
+Baden,1854,13
+Baden,1855,13
+Baden,1857,12
+Baden,1859,7
+Baden,1861,3
+Baden,1863,3
+Baden,1865,20
+Baden,1867,3
+Baden,1869,5
+Bavaria,1848,34
+Bavaria,1849,33
+Bavaria,1855,35
+Bavaria,1858,60
+Bavaria,1869,63
+Wurtemberg,1868,16
+Hesse-Darmstadt,1862,13
+Hesse-Darmstadt,1865,13
+Hesse-Darmstadt,1866,13

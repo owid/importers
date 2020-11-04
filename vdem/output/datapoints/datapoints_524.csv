@@ -1,0 +1,399 @@
+country,year,value
+Sweden,1872,45198
+Sweden,1875,49765
+Sweden,1878,54821
+Sweden,1881,66591
+Sweden,1884,73636
+Sweden,1887,278039
+Sweden,1890,288096
+Sweden,1893,298810
+Sweden,1896,309889
+Sweden,1899,339876
+Sweden,1902,382075
+Switzerland,1848,228877
+Switzerland,1851,276997
+Switzerland,1854,236760
+Switzerland,1857,244774
+Switzerland,1860,265730
+Switzerland,1863,259398
+Switzerland,1866,284020
+Switzerland,1869,308510
+Switzerland,1872,392843
+Switzerland,1875,375666
+Switzerland,1878,360542
+Switzerland,1881,395400
+Switzerland,1884,404028
+Switzerland,1887,359317
+Switzerland,1890,415098
+Switzerland,1893,391610
+Switzerland,1896,398625
+Switzerland,1899,401750
+Switzerland,1902,431670
+Japan,1890,422594
+Japan,1892,398036
+Japan,1894,390687
+Japan,1898,401390
+Japan,1902,868768
+Brazil,1894,345097
+Brazil,1898,462188
+Brazil,1902,645531
+Brazil,1906,294401
+Brazil,1910,707651
+Brazil,1914,580917
+Brazil,1918,390131
+Brazil,1919,403315
+United States,1790,57036
+United States,1792,103742
+United States,1794,91360
+United States,1796,114704
+United States,1798,170620
+United States,1800,198295
+United States,1802,167568
+United States,1804,241377
+United States,1806,202782
+United States,1808,409522
+United States,1810,356534
+United States,1812,447762
+United States,1814,298341
+United States,1816,334201
+United States,1818,307016
+United States,1820,447659
+United States,1822,430683
+United States,1824,472822
+United States,1826,623650
+United States,1828,616239
+United States,1830,983495
+United States,1832,1159116
+United States,1834,1302488
+United States,1836,1352045
+United States,1838,1746481
+United States,1840,1996495
+United States,1842,1839392
+United States,1844,2491200
+United States,1846,2235263
+United States,1848,2561133
+United States,1850,2311293
+United States,1852,2765468
+United States,1854,3072810
+United States,1856,3749806
+United States,1858,3605877
+United States,1860,3820790
+United States,1862,3213797
+United States,1864,3896070
+United States,1866,4113271
+United States,1868,5884620
+United States,1870,5151030
+United States,1872,6604705
+United States,1874,6207020
+United States,1876,8317582
+United States,1878,7062827
+United States,1880,9073155
+United States,1882,7995274
+United States,1884,9891709
+United States,1886,8578047
+United States,1888,11461731
+United States,1890,9782378
+United States,1892,11848009
+United States,1894,11263855
+United States,1896,13657029
+United States,1898,10935745
+United States,1900,13709295
+Portugal,1861,194818
+Portugal,1864,238462
+Portugal,1865,239060
+Portugal,1868,266018
+Portugal,1869,222055
+Portugal,1870,230789
+Portugal,1871,291402
+Portugal,1874,242714
+Portugal,1878,523929
+Portugal,1879,539915
+Portugal,1881,491766
+Peru,1890,4290
+Peru,1894,4541
+Peru,1895,4310
+Peru,1899,58285
+Argentina,1853,106
+Argentina,1862,133
+Argentina,1868,127
+Argentina,1874,25548
+Argentina,1880,225
+Argentina,1886,213
+Argentina,1892,215
+Argentina,1898,256
+Argentina,1904,295
+Canada,1867,268217
+Canada,1872,318342
+Canada,1874,322619
+Canada,1878,533941
+Canada,1882,515504
+Canada,1887,722722
+Canada,1891,899046
+Canada,1896,970384
+Canada,1900,950763
+Australia,1856,38044
+Australia,1858,38924
+Australia,1859,52153
+Australia,1860,46308
+Australia,1864,66775
+Australia,1869,87137
+Australia,1872,91784
+Australia,1874,60031
+Australia,1877,98503
+Australia,1880,178807
+Australia,1882,164515
+Australia,1885,129888
+Australia,1887,128787
+Australia,1889,150816
+Australia,1891,180449
+Australia,1894,200956
+Australia,1895,151680
+Australia,1898,176998
+Australia,1901,396622
+France,1795,7500000
+France,1830,86915
+France,1831,125090
+France,1834,129211
+France,1837,151720
+France,1839,164862
+France,1842,173694
+France,1846,199827
+France,1848,6867072
+France,1849,6765000
+France,1852,6222983
+France,1857,6136000
+France,1863,7290000
+France,1869,8125000
+France,1876,9961000
+France,1877,4028000
+France,1881,10125000
+France,1885,10181000
+France,1889,10387000
+France,1893,10446178
+France,1898,10635206
+France,1902,11058702
+Germany,1871,3905490
+Germany,1874,5219900
+Germany,1877,5422647
+Germany,1878,5780900
+Germany,1881,5118332
+Germany,1884,5681628
+Germany,1887,7570710
+Germany,1890,7261600
+Germany,1893,7702265
+Germany,1898,7786714
+Germany,1903,9533814
+Germany,1912,12260731
+Italy,1861,239583
+Italy,1865,271923
+Italy,1867,276523
+Italy,1870,240974
+Italy,1874,318517
+Italy,1876,358253
+Italy,1880,369624
+Italy,1882,1223851
+Italy,1886,1415801
+Italy,1890,1477173
+Italy,1892,1639298
+Italy,1895,1256244
+Italy,1897,1241486
+Italy,1900,1310480
+Netherlands,1848,44805
+Netherlands,1850,55579
+Netherlands,1852,36446
+Netherlands,1853,60432
+Netherlands,1854,39033
+Netherlands,1856,39464
+Netherlands,1858,34011
+Netherlands,1860,35296
+Netherlands,1862,36903
+Netherlands,1864,46371
+Netherlands,1866,71908
+Netherlands,1868,65532
+Netherlands,1869,65535
+Netherlands,1871,60443
+Netherlands,1873,60804
+Netherlands,1875,70388
+Netherlands,1877,61024
+Netherlands,1879,66213
+Netherlands,1881,67623
+Netherlands,1883,76056
+Netherlands,1884,88806
+Netherlands,1886,102971
+Netherlands,1887,74431
+Netherlands,1888,238785
+Netherlands,1891,214547
+Netherlands,1894,171267
+Netherlands,1897,418630
+Netherlands,1901,396727
+Spain,1836,45380
+Spain,1865,223211
+Spain,1872,1878105
+Spain,1873,1855115
+Spain,1876,2189008
+Spain,1879,652000
+Spain,1881,604758
+Spain,1884,587458
+Spain,1899,2798262
+United Kingdom,1832,827776
+United Kingdom,1835,611137
+United Kingdom,1837,798025
+United Kingdom,1841,593445
+United Kingdom,1847,482429
+United Kingdom,1852,743904
+United Kingdom,1857,716552
+United Kingdom,1859,565500
+United Kingdom,1865,854856
+United Kingdom,1868,2333251
+United Kingdom,1874,2466037
+United Kingdom,1880,3359416
+United Kingdom,1885,4638235
+United Kingdom,1886,2974163
+United Kingdom,1892,4598319
+United Kingdom,1895,3866282
+United Kingdom,1900,3523482
+Austria,1873,153164
+Austria,1879,155928
+Austria,1885,238904
+Austria,1891,304501
+Austria,1897,1035621
+Austria,1900,1072762
+Austria,1907,4676350
+Austria,1911,4625082
+Austria,1919,2998297
+Austria,1920,3011783
+Belgium,1831,28612
+Belgium,1835,23000
+Belgium,1837,24526
+Belgium,1839,23661
+Belgium,1841,24887
+Belgium,1843,21865
+Belgium,1845,22771
+Belgium,1847,22572
+Belgium,1848,79076
+Belgium,1850,40435
+Belgium,1852,42053
+Belgium,1854,45884
+Belgium,1856,45573
+Belgium,1857,90543
+Belgium,1859,49672
+Belgium,1861,47555
+Belgium,1863,52519
+Belgium,1864,103717
+Belgium,1866,51465
+Belgium,1868,55297
+Belgium,1870,107099
+Belgium,1872,54933
+Belgium,1874,52074
+Belgium,1876,63278
+Belgium,1878,57640
+Belgium,1880,62936
+Belgium,1882,55517
+Belgium,1884,69276
+Belgium,1886,57962
+Belgium,1888,73276
+Belgium,1890,59452
+Belgium,1892,136707
+Belgium,1894,1733568
+Belgium,1896,991372
+Belgium,1898,980147
+Belgium,1900,2050914
+Bulgaria,1887,3039
+Bulgaria,1899,379077
+Bulgaria,1901,344787
+Denmark,1849,66300
+Denmark,1852,56500
+Denmark,1854,34900
+Denmark,1855,54600
+Denmark,1858,54600
+Denmark,1861,77700
+Denmark,1864,64700
+Denmark,1866,81770
+Denmark,1869,80000
+Denmark,1872,112400
+Denmark,1873,146200
+Denmark,1876,142700
+Denmark,1879,145100
+Denmark,1881,177000
+Denmark,1884,142000
+Denmark,1887,227000
+Denmark,1890,232000
+Denmark,1892,224000
+Denmark,1895,221070
+Denmark,1898,225090
+Denmark,1901,228576
+Greece,1844,70
+Greece,1847,70
+Greece,1850,70
+Greece,1853,70
+Greece,1856,70
+Greece,1859,70
+Greece,1861,70
+Greece,1862,45
+Greece,1865,45
+Greece,1868,70
+Greece,1869,70
+Greece,1872,70
+Greece,1873,70
+Greece,1874,70
+Greece,1875,70
+Greece,1879,45
+Greece,1881,52
+Greece,1885,60
+Greece,1887,60
+Greece,1890,71
+Greece,1892,85
+Greece,1895,68
+Greece,1899,60
+Greece,1902,60
+New Zealand,1853,5849
+New Zealand,1855,9891
+New Zealand,1860,13196
+New Zealand,1866,29320
+New Zealand,1871,41527
+New Zealand,1875,56471
+New Zealand,1879,82271
+New Zealand,1881,120972
+New Zealand,1884,137686
+New Zealand,1887,175410
+New Zealand,1890,136337
+New Zealand,1893,302997
+New Zealand,1896,337024
+New Zealand,1899,373744
+New Zealand,1902,415789
+Norway,1829,27877
+Norway,1832,31296
+Norway,1835,34791
+Norway,1838,34989
+Norway,1841,35481
+Norway,1844,34559
+Norway,1847,35258
+Norway,1850,36770
+Norway,1853,33370
+Norway,1856,33150
+Norway,1859,37203
+Norway,1862,35148
+Norway,1865,33831
+Norway,1868,38724
+Norway,1870,36647
+Norway,1873,37399
+Norway,1876,36344
+Norway,1879,42430
+Norway,1882,72128
+Norway,1885,92308
+Norway,1888,90416
+Norway,1891,102931
+Norway,1894,165999
+Norway,1897,167207
+Norway,1900,238617
+Serbia,1889,254000
+Hungary,1896,654803
+Hungary,1901,694147
+Tuscany,1859,35240
+Wurtemberg,1868,222843
+Papal States,1849,250000
+Piedmont-Sardinia,1848,53924
+Piedmont-Sardinia,1849,57229
+Piedmont-Sardinia,1853,54495
+Piedmont-Sardinia,1857,69470
+Piedmont-Sardinia,1860,138127

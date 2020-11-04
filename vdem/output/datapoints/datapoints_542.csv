@@ -1,0 +1,357 @@
+country,year,value
+Sweden,1875,19.5
+Sweden,1878,20.3
+Sweden,1881,23.7
+Sweden,1884,25.2
+Sweden,1887,35.9
+Sweden,1890,38.5
+Sweden,1893,42.4
+Sweden,1896,45.3
+Sweden,1899,40.3
+Sweden,1902,47.3
+Switzerland,1848,44.6
+Switzerland,1851,53.6
+Switzerland,1854,45.7
+Switzerland,1857,46.5
+Switzerland,1860,49.1
+Switzerland,1863,46.6
+Switzerland,1866,50.6
+Switzerland,1869,54.2
+Switzerland,1872,62.1
+Switzerland,1875,59.1
+Switzerland,1878,56.9
+Switzerland,1881,62.1
+Switzerland,1884,63.1
+Switzerland,1887,55.3
+Switzerland,1890,62.5
+Switzerland,1893,58.4
+Switzerland,1896,55.9
+Switzerland,1899,54.5
+Switzerland,1902,56.8
+Japan,1890,93.73
+Japan,1892,91.59
+Japan,1894,84.84
+Japan,1898,79.91
+Japan,1902,88.39
+United States,1790,16.4
+United States,1792,28.4
+United States,1794,20.9
+United States,1796,23.1
+United States,1798,30.8
+United States,1800,29.2
+United States,1802,29.8
+United States,1804,23.8
+United States,1806,35
+United States,1808,35
+United States,1810,40
+United States,1812,39.7
+United States,1814,48.1
+United States,1816,16.1
+United States,1818,33.2
+United States,1820,10.2
+United States,1822,42
+United States,1824,26.9
+United States,1826,46.5
+United States,1828,55.2
+United States,1830,54.4
+United States,1832,55.4
+United States,1834,62.1
+United States,1836,54.4
+United States,1838,69.9
+United States,1840,77.5
+United States,1842,62.1
+United States,1844,74.5
+United States,1846,58.9
+United States,1848,67.3
+United States,1850,56.6
+United States,1852,63.2
+United States,1854,60.2
+United States,1856,70.9
+United States,1858,62.1
+United States,1860,72.1
+United States,1862,56.3
+United States,1864,66.2
+United States,1866,62.4
+United States,1868,71.8
+United States,1870,66.8
+United States,1872,72.2
+United States,1874,65
+United States,1876,82.9
+United States,1878,65.3
+United States,1880,79.3
+United States,1882,66.1
+United States,1884,78.8
+United States,1886,64
+United States,1888,79.9
+United States,1890,64.9
+United States,1892,76.25
+United States,1894,67.4
+United States,1896,78.1
+United States,1898,60
+United States,1900,73.6
+Portugal,1861,64.5
+Portugal,1864,68.1
+Portugal,1865,72
+Portugal,1868,72.6
+Portugal,1869,60.3
+Portugal,1870,54.6
+Portugal,1871,64.5
+Portugal,1874,56.4
+Portugal,1878,63.5
+Portugal,1879,64.9
+Portugal,1881,58.4
+Canada,1867,73.1
+Canada,1872,70.3
+Canada,1874,69.3
+Canada,1878,69.1
+Canada,1882,70.3
+Canada,1887,70.1
+Canada,1891,64.4
+Canada,1896,72.9
+Canada,1900,77.4
+Australia,1856,48.51
+Australia,1858,43.09
+Australia,1859,52.54
+Australia,1860,42.91
+Australia,1864,51.4
+Australia,1869,53.7
+Australia,1872,48.44
+Australia,1874,47.21
+Australia,1877,48.31
+Australia,1880,61.94
+Australia,1882,56.69
+Australia,1885,61.1
+Australia,1887,57.84
+Australia,1889,59.93
+Australia,1891,64.4
+Australia,1894,78.56
+Australia,1895,59.92
+Australia,1898,58.61
+Australia,1901,62.84
+Chile,1873,53
+Chile,1876,75.7
+Chile,1879,70
+France,1792,10
+France,1831,75.1
+France,1834,75.6
+France,1837,76.3
+France,1839,81.9
+France,1842,78.9
+France,1848,83.5
+France,1849,68.1
+France,1852,63.3
+France,1857,64.5
+France,1863,72.9
+France,1869,78.1
+France,1876,74
+France,1877,80.5
+France,1881,68.6
+France,1885,77.6
+France,1889,76.6
+France,1893,71.1
+France,1898,76.1
+France,1902,79.2
+Germany,1867,65
+Germany,1871,54.2
+Germany,1874,61.2
+Germany,1877,60.6
+Germany,1878,63.3
+Germany,1881,56.3
+Germany,1884,60.5
+Germany,1887,77.5
+Germany,1890,71.5
+Germany,1893,72.4
+Germany,1898,68.1
+Germany,1903,76.1
+Italy,1861,57.2
+Italy,1865,53.9
+Italy,1867,54.8
+Italy,1870,45.5
+Italy,1874,55.7
+Italy,1876,59.2
+Italy,1880,59.4
+Italy,1882,60.7
+Italy,1886,58.5
+Italy,1890,53.7
+Italy,1892,55.9
+Italy,1895,59.3
+Italy,1897,58.5
+Italy,1900,58.3
+Netherlands,1848,80.4
+Netherlands,1850,67.6
+Netherlands,1852,48.3
+Netherlands,1853,71
+Netherlands,1854,50.7
+Netherlands,1856,48.7
+Netherlands,1858,41.9
+Netherlands,1860,41.1
+Netherlands,1862,42.2
+Netherlands,1864,52.4
+Netherlands,1866,73.9
+Netherlands,1868,65.5
+Netherlands,1869,67.4
+Netherlands,1871,60.2
+Netherlands,1873,61.1
+Netherlands,1875,66.3
+Netherlands,1877,56.6
+Netherlands,1879,57.5
+Netherlands,1881,58.2
+Netherlands,1883,62.1
+Netherlands,1884,69.1
+Netherlands,1886,75.6
+Netherlands,1887,55.1
+Netherlands,1888,81.7
+Netherlands,1891,71.6
+Netherlands,1894,57.2
+Netherlands,1897,78
+Netherlands,1901,73.1
+Spain,1834,58.9
+Spain,1836,69.8
+Spain,1839,64
+Spain,1840,69.6
+Spain,1841,61.5
+Spain,1844,67.35
+Spain,1846,68
+Spain,1850,67.4
+Spain,1851,69.8
+Spain,1853,69.7
+Spain,1857,63.5
+Spain,1858,69.35
+Spain,1863,61.6
+Spain,1864,61.9
+Spain,1865,53.4
+Spain,1869,58.9
+Spain,1872,46.6
+Spain,1873,40.8
+Spain,1876,60.7
+Spain,1879,68.5
+Spain,1881,71.4
+Spain,1884,72.5
+Spain,1886,69.75
+Spain,1899,66
+United Kingdom,1832,70.4
+United Kingdom,1835,65
+United Kingdom,1837,63.6
+United Kingdom,1841,63.4
+United Kingdom,1847,53.4
+United Kingdom,1852,57.9
+United Kingdom,1857,58.9
+United Kingdom,1859,63.7
+United Kingdom,1865,62.5
+United Kingdom,1868,68.5
+United Kingdom,1874,66.4
+United Kingdom,1880,72.2
+United Kingdom,1885,81.2
+United Kingdom,1886,74.2
+United Kingdom,1892,77.4
+United Kingdom,1895,78.4
+United Kingdom,1900,75.1
+Austria,1907,84.6
+Austria,1911,80.2
+Austria,1919,84.6
+Austria,1920,46.7
+Belgium,1831,62.2
+Belgium,1837,56
+Belgium,1839,66.4
+Belgium,1841,77
+Belgium,1843,86
+Belgium,1845,77
+Belgium,1847,77.7
+Belgium,1848,56
+Belgium,1850,69.1
+Belgium,1852,69.2
+Belgium,1854,61
+Belgium,1856,60.6
+Belgium,1857,69.1
+Belgium,1859,55.9
+Belgium,1861,58.4
+Belgium,1863,74.5
+Belgium,1864,76.7
+Belgium,1866,70
+Belgium,1868,55.6
+Belgium,1870,68
+Belgium,1872,55.5
+Belgium,1874,64.1
+Belgium,1876,67.5
+Belgium,1878,62.5
+Belgium,1880,67.2
+Belgium,1882,75.1
+Belgium,1884,79.1
+Belgium,1886,64
+Belgium,1888,73
+Belgium,1890,64.3
+Belgium,1892,76.6
+Belgium,1894,85.4
+Belgium,1896,82.1
+Belgium,1898,82.6
+Belgium,1900,90.4
+Bulgaria,1879,32
+Bulgaria,1884,28.9
+Bulgaria,1887,33
+Bulgaria,1899,49.5
+Bulgaria,1901,42.7
+Denmark,1849,32.5
+Denmark,1852,26.6
+Denmark,1853,40.4
+Denmark,1854,20.3
+Denmark,1855,15.8
+Denmark,1858,23.8
+Denmark,1861,32.7
+Denmark,1864,26.3
+Denmark,1866,32.5
+Denmark,1869,30.2
+Denmark,1872,40.4
+Denmark,1873,51.7
+Denmark,1876,48.6
+Denmark,1879,47.2
+Denmark,1881,55.6
+Denmark,1884,59
+Denmark,1887,69.6
+Denmark,1890,66.3
+Denmark,1892,63.8
+Denmark,1895,60.2
+Denmark,1898,59.8
+Denmark,1901,61.4
+New Zealand,1879,66.5
+New Zealand,1881,66.5
+New Zealand,1884,60.6
+New Zealand,1887,67.1
+New Zealand,1890,80.4
+New Zealand,1893,75.3
+New Zealand,1896,76.1
+New Zealand,1899,77.6
+New Zealand,1902,76.7
+Norway,1829,45.3
+Norway,1832,48
+Norway,1835,52.3
+Norway,1838,50.3
+Norway,1841,50.9
+Norway,1844,49.4
+Norway,1847,49.1
+Norway,1850,50.3
+Norway,1853,45.4
+Norway,1856,44.1
+Norway,1859,47.7
+Norway,1862,44.6
+Norway,1865,41.8
+Norway,1868,47.6
+Norway,1870,45.1
+Norway,1873,45.6
+Norway,1876,43.1
+Norway,1879,48.7
+Norway,1882,72.5
+Norway,1885,75.1
+Norway,1888,70.4
+Norway,1891,73.7
+Norway,1894,90.2
+Norway,1897,85.3
+Norway,1900,57.3
+Serbia,1889,71.07
+Bavaria,1869,51
+Tuscany,1859,50
+Papal States,1849,33.33
+Piedmont-Sardinia,1848,64.68
+Piedmont-Sardinia,1849,65.93
+Piedmont-Sardinia,1853,59.99
+Piedmont-Sardinia,1857,64.72
+Piedmont-Sardinia,1860,53.47
