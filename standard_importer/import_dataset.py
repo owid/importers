@@ -28,7 +28,7 @@ def main():
 
         # Upsert entities
         print("---\nUpserting entities...")
-        entities = pd.read_csv("output/distinct_countries_standardized.csv")
+        entities = pd.read_csv(os.path.join(DATA_PATH, "distinct_countries_standardized.csv"))
         for entity_name in tqdm(entities.name):
             db_entity_id = db.get_or_create_entity(entity_name)
             entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
@@ -37,7 +37,7 @@ def main():
 
         # Upsert datasets
         print("---\nUpserting datasets...")
-        datasets = pd.read_csv("output/datasets.csv")
+        datasets = pd.read_csv(os.path.join(DATA_PATH, "datasets.csv"))
         for i, dataset_row in tqdm(datasets.iterrows()):
             db_dataset_id = db.upsert_dataset(
                 name=dataset_row["name"],
@@ -50,7 +50,7 @@ def main():
 
         # Upsert sources
         print("---\nUpserting sources...")
-        sources = pd.read_csv("output/sources.csv")
+        sources = pd.read_csv(os.path.join(DATA_PATH, "sources.csv"))
         sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id")
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
@@ -64,7 +64,7 @@ def main():
 
         # Upsert variables
         print("---\nUpserting variables...")
-        variables = pd.read_csv("output/variables.csv")
+        variables = pd.read_csv(os.path.join(DATA_PATH, "variables.csv"))
         variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
         for i, variable_row in tqdm(variables.iterrows()):
             db_variable_id = db.upsert_variable(
@@ -91,7 +91,7 @@ def main():
             variable_id = int(re.search("\\d+", datapoint_file)[0])
             db_variable_id = variables.iloc[variable_id]["db_variable_id"]
 
-            data = pd.read_csv(datapoint_file)
+            data = pd.read_csv(os.path.join(DATA_PATH, d)
             data = pd.merge(data, entities, left_on="country", right_on="name")
 
             data_tuples = zip(
