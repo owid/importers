@@ -54,6 +54,7 @@ create_variables <- function() {
     }
     notes <- paste(
         varbook$question,
+        varbook$responses,
         varbook$clarification,
         varbook$notes,
         varbook$aggregation,
@@ -61,7 +62,6 @@ create_variables <- function() {
         sep = "\n"
     ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "")
     unit <- paste(
-        varbook$responses,
         varbook$scale,
         sep = "\n"
     ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "")
