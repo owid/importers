@@ -70,11 +70,11 @@ def main():
             db_variable_id = db.upsert_variable(
                 name=variable_row["name"],
                 code=None,
-                unit=variable_row["unit"],
+                unit=variable_row["unit"] if !pd.isna(variable_row["unit"]) else "",
                 short_unit=None,
                 source_id=variable_row["db_source_id"],
                 dataset_id=variable_row["db_dataset_id"],
-                description=variable_row["notes"],
+                description=variable_row["notes"] if !pd.isna(variable_row["notes"]) else "",
                 timespan="",
                 coverage="",
                 display={}
