@@ -74,7 +74,7 @@ def main():
                 short_unit=None,
                 source_id=variable_row["db_source_id"],
                 dataset_id=variable_row["db_dataset_id"],
-                description=variables["notes"],
+                description=variable_row["notes"],
                 timespan="",
                 coverage="",
                 display={}
