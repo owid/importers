@@ -1,6 +1,7 @@
 import datetime
 from glob import glob
 import pandas as pd
+from tqdm import tqdm
 
 
 DATASET_YEAR = 2019
@@ -255,6 +256,11 @@ def get_datapoints(path, variables, country_mapping, skiprows=8, prefix=None):
             data_res["country"] = normalize_country(data_res["country"])
             data_res["country"] = standardize_country(data_res["country"], country_mapping)
             data_res = data_res[data_res["value"] != "..."]
+
+            # Remove death estimates for the *current* year to only show projections instead
+            if "estimates" in var_name.lower() and "deaths" in var_name.lower():
+                data_res = data_res[data_res["year"] < datetime.date.today().year]
+
             data_res.to_csv("output/datapoints/datapoints_%s.csv" % str(var_id), index=False)
 
             index_col += 1
@@ -266,7 +272,7 @@ def create_datapoints():
     country_mapping = dict(zip(country_mapping.name, country_mapping.standardized_name))
 
     variables = pd.read_csv("output/variables.csv")
-    for filename in glob("input/*.xlsx"):
+    for filename in tqdm(glob("input/*.xlsx")):
         if filename == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
             get_datapoints(
                 filename, variables, prefix="Annually interpolated demographic indicators",
