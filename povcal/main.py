@@ -15,6 +15,8 @@ sys.path.append("../..")
 from importers.utils import write_file
 import glob
 
+from HeadCount_Files_Downloader import HeadCount_Files_Downloader
+
 absolute_poverty_lines = ["1.90"]
 
 
@@ -116,8 +118,14 @@ def add_derived_columns(df):
 
 
 def main():
-    download_headcount_files_by_poverty_line()
-    generate_country_year_variables()
+    headcountsDownloader = HeadCount_Files_Downloader(
+        minimum_poverty_line=0,
+        maximum_poverty_line=60,
+        output_dir="output/headcounts_by_poverty_line",
+        max_workers=20,
+    )
+    headcountsDownloader.download_headcount_files_by_poverty_line()
+    # generate_country_year_variables()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
     # raw_data_formatted = rename_columns(raw_data_filtered)
