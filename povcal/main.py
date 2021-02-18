@@ -19,6 +19,8 @@ from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 absolute_poverty_lines = ["1.90"]
 
+HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
+
 
 def combine_country_year_headcount_files():
     path = "data_by_poverty_line"
@@ -121,11 +123,11 @@ def main():
     headcountsDownloader = HeadCount_Files_Downloader(
         minimum_poverty_line=0,
         maximum_poverty_line=60,
-        output_dir="output/headcounts_by_poverty_line",
+        output_dir=HEADCOUNTS_DIR,
         max_workers=20,
     )
     headcountsDownloader.download_headcount_files_by_poverty_line()
-    # generate_country_year_variables()
+    generate_country_year_variables()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
     # raw_data_formatted = rename_columns(raw_data_filtered)
