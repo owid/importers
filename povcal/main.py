@@ -18,13 +18,13 @@ import glob
 from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 absolute_poverty_lines = ["1.90"]
+# absolute_poverty_lines = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30.00"]
 
 HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
 
 
 def combine_country_year_headcount_files():
-    path = "data_by_poverty_line"
-    all_files = glob.glob(path + "/*.csv")
+    all_files = glob.glob(HEADCOUNTS_DIR + "/*.csv")
 
     li = []
 
@@ -39,18 +39,18 @@ def combine_country_year_headcount_files():
 
 def medians_by_country_year(df):
     dfg = df.sort_values(by=["HeadCount"]).groupby(["CountryName", "RequestYear"])
-    median_poverty_line_by_country_year = {}
+    median_income_by_country_year = {}
     for country_year_tuple in dfg.groups.keys():
         country_year_df = dfg.get_group(country_year_tuple)
-        median_poverty_line = country_year_df.iloc[
+        median_income = country_year_df.iloc[
             [country_year_df.HeadCount.searchsorted(0.5)]
         ]
-        median_poverty_line_by_country_year[
-            country_year_tuple
-        ] = median_poverty_line.iloc[0].poverty_line
+        median_income_by_country_year[country_year_tuple] = median_income.iloc[
+            0
+        ].poverty_line
 
     df = pd.DataFrame.from_dict(
-        median_poverty_line_by_country_year, orient="index"
+        median_income_by_country_year, orient="index"
     ).reset_index()
     df = df.rename(columns={"index": "country_year", 0: "poverty_line"})
     df[["country", "year"]] = pd.DataFrame(df["country_year"].tolist(), index=df.index)
@@ -58,16 +58,15 @@ def medians_by_country_year(df):
     return df[["country", "year", "poverty_line"]]
 
 
-def generate_country_year_variables():
+def extract_deciles_from_headcount_files():
     df = combine_country_year_headcount_files()
     df = medians_by_country_year(df)
-    pdb.set_trace()
+    df.to_html("output/deciles_by_country_year.html")
 
 
 def combine_raw_data():
     data_files = [
-        f"data_by_poverty_line/{poverty_line}"
-        for poverty_line in absolute_poverty_lines
+        f"{HEADCOUNTS_DIR}/{poverty_line}" for poverty_line in absolute_poverty_lines
     ]
     data_csvs = [
         pd.read_csv(filename, index_col=None, header=0) for filename in data_files
@@ -126,8 +125,8 @@ def main():
         output_dir=HEADCOUNTS_DIR,
         max_workers=20,
     )
-    headcountsDownloader.download_headcount_files_by_poverty_line()
-    generate_country_year_variables()
+    # headcountsDownloader.download_headcount_files_by_poverty_line()
+    extract_deciles_from_headcount_files()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
     # raw_data_formatted = rename_columns(raw_data_filtered)
