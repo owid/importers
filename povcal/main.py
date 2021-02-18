@@ -92,14 +92,12 @@ def download_data_and_write_csv(poverty_line):
     print(f"{filename} completed")
 
 
-def download_raw_data():
-    poverty_lines = []
-    for dollar in range(1, 3, 1):
-        poverty_lines.extend(
-            [round(cent, 2) for cent in arange(dollar - 1, 0.50, 0.01)]
-        )
+def generate_poverty_lines(minimum=0.00, maximum=60.00, interval=0.01):
+    return [round(cent, 2) for cent in arange(minimum, maximum + interval, interval)]
 
-    print(poverty_lines)
+
+def download_raw_data(options):
+    poverty_lines = generate_poverty_lines()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
         while len(poverty_lines):
@@ -178,7 +176,7 @@ def add_derived_columns(df):
 
 
 def main():
-    # download_raw_data()
+    download_raw_data()
     generate_country_year_variables()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
