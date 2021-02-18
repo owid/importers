@@ -51,7 +51,8 @@ class test_HeadCount_Files_Downloader(unittest.TestCase):
         self.downloader.download_one_headcount_file(0.50)
 
     def MANUAL_test_end_to_end(self):
-        # self.skipTest()
+        self.skipTest()
+        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
         self.downloader.download_headcount_files_by_poverty_line()
 
 

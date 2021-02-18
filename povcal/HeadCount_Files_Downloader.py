@@ -6,7 +6,6 @@ import time
 import pdb
 from os import path
 from io import StringIO
-from pathlib import Path
 
 
 class HeadCount_Files_Downloader:
@@ -21,9 +20,6 @@ class HeadCount_Files_Downloader:
         self.maximum_poverty_line = maximum_poverty_line
         self.output_dir = output_dir
         self.max_workers = max_workers
-
-    def ensure_output_dir_exists(self):
-        Path(self.output_dir).mkdir(parents=True, exist_ok=True)
 
     def download_headcount_files_by_poverty_line(self):
         """
