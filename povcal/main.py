@@ -20,6 +20,19 @@ import glob
 absolute_poverty_lines = ["1.90"]
 
 
+def all_cents_between_dollars(minimum_dollar, maximum_dollar):
+    return [
+        round(cent, 2) for cent in arange(minimum_dollar, maximum_dollar + 0.01, 0.01)
+    ]
+
+
+def generate_poverty_lines(minimum_dollar=0.00, maximum_dollar=60.00, interval=0.01):
+    return [
+        "{:.2f}".format(line)
+        for line in all_cents_between_dollars(minimum_dollar, maximum_dollar)
+    ]
+
+
 def combine_country_year_headcount_files():
     path = "data_by_poverty_line"
     all_files = glob.glob(path + "/*.csv")
@@ -62,41 +75,54 @@ def generate_country_year_variables():
     pdb.set_trace()
 
 
-def download_data_and_write_csv(poverty_line):
-    rounded_poverty_line = "{:.2f}".format(round(poverty_line, 2))
+def output_filename(poverty_line, output_folder="output/data_by_poverty_line"):
+    return f"{output_folder}/{poverty_line}.csv"
 
-    filename = f"data_by_poverty_line2/{rounded_poverty_line}.csv"
-    if path.exists(filename):
-        return
-    else:
-        print(f"request starting for {rounded_poverty_line}")
 
-    payload = {
+def request_headcounts_by_poverty_line(poverty_line):
+    api_address = "http://iresearch.worldbank.org/PovcalNet/PovcalNetAPI.ashx"
+    params = {
         "Countries": "all",
         "YearSelected": "all",
-        "PovertyLine": rounded_poverty_line,
+        "PovertyLine": poverty_line,
         "display": "C",
     }
     result = requests.get(
-        "http://iresearch.worldbank.org/PovcalNet/PovcalNetAPI.ashx",
-        params=payload,
+        api_address,
+        params=params,
         timeout=10,
     )
+    return result.text
 
-    df = pd.read_csv(StringIO(result.text))
+
+def csv_to_dataframe(csv):
+    return pd.read_csv(StringIO(result.text))
+
+
+def headcount_by_country_year(df):
     df = df[df.CoverageType.isin(["N", "A"])]
     df = df[["CountryName", "RequestYear", "HeadCount"]]
 
+
+def download_data_and_write_csv(poverty_line):
+    filename = output_filename(poverty_line)
+
+    if path.exists(filename):
+        print(f"data exists for {poverty_line}. Skipping.")
+    else:
+        print(f"request starting for {poverty_line}")
+
+    api_result = request_headcounts_by_poverty_line(poverty_line)
+
+    df = csv_to_dataframe(api_result)
+    df = headcount_by_country_year(df)
+
     df.to_csv(filename)
 
-    print(f"{filename} completed")
+    print(f"{filename} written")
 
 
-def generate_poverty_lines(minimum=0.00, maximum=60.00, interval=0.01):
-    return [round(cent, 2) for cent in arange(minimum, maximum + interval, interval)]
-
-
-def download_raw_data(options):
+def download_headcount_files_by_poverty_line():
     poverty_lines = generate_poverty_lines()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
@@ -176,7 +202,7 @@ def add_derived_columns(df):
 
 
 def main():
-    download_raw_data()
+    download_headcount_files_by_poverty_line()
     generate_country_year_variables()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
