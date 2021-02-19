@@ -96,15 +96,23 @@ class HeadCount_Files_Downloader:
 
 
 def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
-    return [
-        "{:.2f}".format(line)
-        for line in all_cents_between_dollars(minimum_dollar, maximum_dollar)
-    ]
+    lines = all_cents_between_dollars(minimum_dollar, min(60, maximum_dollar), 0.01)
+    lines.extend(
+        all_cents_between_dollars(
+            max(60.10, minimum_dollar), min(150, maximum_dollar), 0.10
+        )
+    )
+    lines.extend(
+        all_cents_between_dollars(max(155, minimum_dollar), min(400, maximum_dollar), 5)
+    )
+
+    return ["{:.2f}".format(line) for line in lines]
 
 
-def all_cents_between_dollars(minimum_dollar, maximum_dollar):
+def all_cents_between_dollars(minimum_dollar, maximum_dollar, increment=0.01):
     return [
-        round(cent, 2) for cent in arange(minimum_dollar, maximum_dollar + 0.01, 0.01)
+        round(cent, 2)
+        for cent in arange(minimum_dollar, maximum_dollar + increment, increment)
     ]
 
 

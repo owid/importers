@@ -127,13 +127,13 @@ def add_derived_columns(df):
 
 
 def main():
-    # headcountsDownloader = HeadCount_Files_Downloader(
-    #     minimum_poverty_line=0,
-    #     maximum_poverty_line=60,
-    #     output_dir=HEADCOUNTS_DIR,
-    #     max_workers=20,
-    # )
-    # headcountsDownloader.download_headcount_files_by_poverty_line()
+    headcountsDownloader = HeadCount_Files_Downloader(
+        minimum_poverty_line=0,
+        maximum_poverty_line=400,
+        output_dir=HEADCOUNTS_DIR,
+        max_workers=20,
+    )
+    headcountsDownloader.download_headcount_files_by_poverty_line()
     extract_deciles_from_headcount_files_and_write_to_csv()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
