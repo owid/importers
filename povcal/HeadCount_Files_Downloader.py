@@ -61,10 +61,17 @@ class HeadCount_Files_Downloader:
 
         if path.exists(filename):
             print(f"data exists for {poverty_line}. Skipping.")
+            return
         else:
             print(f"request starting for {poverty_line}")
 
-        api_result = self.request_headcounts_by_poverty_line(poverty_line)
+        try:
+            api_result = self.request_headcounts_by_poverty_line(poverty_line)
+        except Exception as error:
+            print(f"{filename} failed. Will retry.")
+            print(type(error))
+            print(error.args)
+            raise error
 
         df = csv_to_dataframe(api_result)
         df = self.filter_necessary_data(df)
@@ -86,7 +93,7 @@ class HeadCount_Files_Downloader:
         result = requests.get(
             api_address,
             params=params,
-            timeout=10,
+            timeout=30,
         )
         return result.text
 

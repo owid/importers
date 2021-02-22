@@ -18,6 +18,7 @@ import glob
 from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 absolute_poverty_lines = ["1.90"]
+relative_poverty_lines = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 # absolute_poverty_lines = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30.00"]
 
 HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
@@ -29,7 +30,7 @@ def combine_country_year_headcount_files():
     li = []
 
     for filename in all_files:
-        df = pd.read_csv(filename, index_col=0, header=0)
+        df = pd.read_csv(filename, header=0)
         df["poverty_line"] = os.path.basename(os.path.splitext(filename)[0])
         li.append(df)
 
@@ -42,7 +43,7 @@ def population_under_income_line_by_country_year(df):
     median_income_by_country_year = {}
     for country_year_tuple in dfg.groups.keys():
         country_year_df = dfg.get_group(country_year_tuple)
-        for income_line in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:
+        for income_line in relative_poverty_lines:
             median_income = country_year_df.iloc[
                 [country_year_df.HeadCount.searchsorted(income_line)]
             ]
@@ -52,24 +53,32 @@ def population_under_income_line_by_country_year(df):
                 median_income.iloc[0].poverty_line
             )
 
-    pdb.set_trace()
     df = pd.DataFrame.from_dict(
         median_income_by_country_year, orient="index"
     ).reset_index()
-    df = df.rename(columns={"index": "country_year", 0: str(income_line)})
+    df = df.rename(columns={"index": "country_year"})
+    for index, poverty_line in enumerate(relative_poverty_lines):
+        df = df.rename(columns={index: str(poverty_line)})
+
     df[["country", "year"]] = pd.DataFrame(df["country_year"].tolist(), index=df.index)
     df.drop(columns=["country_year"])
-    return df[["country", "year", str(income_line)]]
+    return df[
+        [
+            "country",
+            "year",
+            *[str(income_line) for income_line in relative_poverty_lines],
+        ]
+    ]
 
 
 def extract_deciles_from_headcount_files_and_write_to_csv():
     # df = combine_country_year_headcount_files()
     # df.to_csv("TEMP_combined.csv")
     df = pd.read_csv("TEMP_combined.csv")
-    population_under_income_line_by_country_year(df)
-    pdb.set_trace()
+    combined_df = population_under_income_line_by_country_year(df)
     # df.to_csv("output/deciles_by_country_year.csv")
-    df.to_html("output/deciles_by_country_year.html")
+    # combined_df.to_html("output/deciles_by_country_year.html")
+    return combined_df
 
 
 def combine_raw_data():
@@ -127,14 +136,14 @@ def add_derived_columns(df):
 
 
 def main():
-    headcountsDownloader = HeadCount_Files_Downloader(
-        minimum_poverty_line=0,
-        maximum_poverty_line=400,
-        output_dir=HEADCOUNTS_DIR,
-        max_workers=20,
-    )
-    headcountsDownloader.download_headcount_files_by_poverty_line()
-    extract_deciles_from_headcount_files_and_write_to_csv()
+    # headcountsDownloader = HeadCount_Files_Downloader(
+    #     minimum_poverty_line=60,
+    #     maximum_poverty_line=400,
+    #     output_dir=HEADCOUNTS_DIR,
+    #     max_workers=1,
+    # )
+    # headcountsDownloader.download_headcount_files_by_poverty_line()
+    deciles_df = extract_deciles_from_headcount_files_and_write_to_csv()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
     # raw_data_formatted = rename_columns(raw_data_filtered)
