@@ -88,12 +88,11 @@ def combine_raw_data():
     ]
     data_csvs = [pd.read_csv(filename, header=0) for filename in data_files]
 
-    combined_data_frame = pd.concat(data_csvs, axis=0, ignore_index=True)
+    combined_data_frame = pd.concat(data_csvs, axis=0)
     return combined_data_frame
 
 
 def drop_unnecessary_columns(raw_data):
-    pdb.set_trace()
     return raw_data.drop(
         columns=[
             "isInterpolated",
@@ -112,45 +111,63 @@ def drop_unnecessary_columns(raw_data):
 def rename_columns(df):
     return df.rename(columns={"HeadCount": "poverty_percentage"})
 
-
-def add_derived_columns(df):
+def add_absolute_poverty_column(df):
     df["poverty_absolute"] = (
         df.poverty_percentage * df.ReqYearPopulation * 1000000
     ).astype(int)
+    return df
 
+def add_absolute_poverty_gap_column(df):
     df["absolute_poverty_gap"] = df.PovGap * 365 * df.ReqYearPopulation
+    return df
 
+def add_decile_averages_column(df):
     for decile in range(1, 11):
         df[f"Decile{decile}_average"] = df[f"Decile{decile}"] * df.Mean / 30
+    return df
 
+def add_mean_column(df):
     df["Mean"] = df.Mean / 365 / 12
+    return df
 
+def add_welfare_measure_column(df):
     df["welfare_measure"] = df.DataType.apply(
         lambda x: "consumption" if x == "X" else "income"
     )
-    df = df.drop(columns=["DataType"])
+    return df
 
+def add_survey_year_column(df):
     df["survey_year"] = df.RequestYear == df.DataYear
+    return df
+
+def add_derived_columns(df):
+    df = add_absolute_poverty_column(df)
+    df = add_absolute_poverty_gap_column(df)
+    df = add_decile_averages_column(df)
+    df = add_mean_column(df)
+    df = add_welfare_measure_column(df)
+    df = df.drop(columns=["DataType"])
+    df = add_survey_year_column(df)
 
     return df
 
 
 def main():
-    headcountsDownloader = HeadCount_Files_Downloader(
-        minimum_poverty_line=0,
-        maximum_poverty_line=400,
-        output_dir=HEADCOUNTS_DIR,
-        detailed_data_dir=DETAILED_DATA_DIR,
-        detailed_poverty_lines=ABSOLUTE_POVERTY_LINES,
-        max_workers=1,
-    )
-    headcountsDownloader.download_headcount_files_by_poverty_line()
+    # headcountsDownloader = HeadCount_Files_Downloader(
+    #     minimum_poverty_line=0,
+    #     maximum_poverty_line=400,
+    #     output_dir=HEADCOUNTS_DIR,
+    #     detailed_data_dir=DETAILED_DATA_DIR,
+    #     detailed_poverty_lines=ABSOLUTE_POVERTY_LINES,
+    #     max_workers=1,
+    # )
+    # headcountsDownloader.download_headcount_files_by_poverty_line()
     # deciles_df = extract_deciles_from_headcount_files_and_write_to_csv()
-    # raw_data = combine_raw_data()
-    # raw_data_filtered = drop_unnecessary_columns(raw_data)
-    # raw_data_formatted = rename_columns(raw_data_filtered)
-    # df = add_derived_columns(raw_data_formatted)
-    # pdb.set_trace()
+    raw_data = combine_raw_data()
+    raw_data_filtered = drop_unnecessary_columns(raw_data)
+    raw_data_formatted = rename_columns(raw_data_filtered)
+    df = add_derived_columns(raw_data_formatted)
+    pdb.set_trace()
 
 
 if __name__ == "__main__":
