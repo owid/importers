@@ -14,11 +14,15 @@ class HeadCount_Files_Downloader:
         minimum_poverty_line,
         maximum_poverty_line,
         output_dir,
+        detailed_data_dir,
+        detailed_poverty_lines,
         max_workers=20,
     ):
         self.minimum_poverty_line = minimum_poverty_line
         self.maximum_poverty_line = maximum_poverty_line
         self.output_dir = output_dir
+        self.detailed_data_dir = detailed_data_dir
+        self.detailed_poverty_lines = detailed_poverty_lines
         self.max_workers = max_workers
 
     def download_headcount_files_by_poverty_line(self):
@@ -48,39 +52,58 @@ class HeadCount_Files_Downloader:
                     poverty_line = future_to_poverty_line[future]
                     try:
                         future.result()
-                    except Exception:
+                    except Exception as error:
+                        print(f"{filename} failed. Will retry.")
+                        print(type(error))
+                        print(error.args)
                         failed.add(poverty_line)
 
                 poverty_lines = list(failed)
-                print(f"{len(poverty_lines)} failed requests")
-                print("Retrying in 10 seconds...")
-                time.sleep(10)
+                if poverty_lines:
+                    print(f"{len(poverty_lines)} failed requests")
+                    print("Retrying in 10 seconds...")
+                    time.sleep(10)
+
+            print("Files successfully downloaded.")
+
+    def requires_detailed_download(self, poverty_line):
+        return poverty_line in self.detailed_poverty_lines
+
+    def file_already_downloaded(self, poverty_line):
+        if self.requires_detailed_download(poverty_line) and not path.exists(
+            self.detailed_data_output_filename(poverty_line)
+        ):
+            return False
+        if not path.exists(self.headcount_output_filename(poverty_line)):
+            return False
+        return True
 
     def download_one_headcount_file(self, poverty_line):
-        filename = self.output_filename(poverty_line)
+        filename = self.headcount_output_filename(poverty_line)
 
-        if path.exists(filename):
+        if self.file_already_downloaded(poverty_line):
             print(f"data exists for {poverty_line}. Skipping.")
             return
         else:
             print(f"request starting for {poverty_line}")
 
-        try:
-            api_result = self.request_headcounts_by_poverty_line(poverty_line)
-        except Exception as error:
-            print(f"{filename} failed. Will retry.")
-            print(type(error))
-            print(error.args)
-            raise error
+        api_result = self.request_headcounts_by_poverty_line(poverty_line)
 
         df = csv_to_dataframe(api_result)
+
+        if self.requires_detailed_download(poverty_line):
+            df.to_csv(self.detailed_data_output_filename(poverty_line), index=False)
+
         df = self.filter_necessary_data(df)
 
         df.to_csv(filename, index=False)
         print(f"{filename} written")
 
-    def output_filename(self, poverty_line):
+    def headcount_output_filename(self, poverty_line):
         return f"{self.output_dir}/{poverty_line}.csv"
+
+    def detailed_data_output_filename(self, poverty_line):
+        return f"{self.detailed_data_dir}/{poverty_line}.csv"
 
     def request_headcounts_by_poverty_line(self, poverty_line):
         api_address = "http://iresearch.worldbank.org/PovcalNet/PovcalNetAPI.ashx"
