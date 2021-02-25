@@ -17,7 +17,7 @@ import glob
 
 from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
-RELATIVE_POVERTY_LINES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+DECILE_THRESHOLDS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 ABSOLUTE_POVERTY_LINES = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30.00"]
 
 HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
@@ -34,51 +34,64 @@ def combine_country_year_headcount_files():
         df["poverty_line"] = os.path.basename(os.path.splitext(filename)[0])
         li.append(df)
 
-    frame = pd.concat(li, axis=0, ignore_index=True)
-    return frame[frame.CountryName.isin(["United States", "China"])]
+    frame = pd.concat(li, ignore_index=True)
+    return frame
 
 
 def population_under_income_line_by_country_year(df):
     dfg = df.sort_values(by=["HeadCount"]).groupby(["CountryName", "RequestYear"])
-    median_income_by_country_year = {}
+    decile_thresholds_by_country_year = {}
     for country_year_tuple in dfg.groups.keys():
         country_year_df = dfg.get_group(country_year_tuple)
-        for income_line in RELATIVE_POVERTY_LINES:
-            median_income = country_year_df.iloc[
-                [country_year_df.HeadCount.searchsorted(income_line)]
-            ]
-            if country_year_tuple not in median_income_by_country_year:
-                median_income_by_country_year[country_year_tuple] = []
-            median_income_by_country_year[country_year_tuple].append(
-                median_income.iloc[0].poverty_line
+        for relative_income_line in DECILE_THRESHOLDS:
+            actual_income_line = -1
+            try:
+                actual_income_line = (
+                    country_year_df.iloc[
+                        [country_year_df.HeadCount.searchsorted(relative_income_line)]
+                    ]
+                    .iloc[0]
+                    .poverty_line
+                )
+            except IndexError:
+                print(
+                    f"headcount for income line {relative_income_line} not found for {country_year_tuple}"
+                )
+
+            if country_year_tuple not in decile_thresholds_by_country_year:
+                decile_thresholds_by_country_year[country_year_tuple] = []
+            decile_thresholds_by_country_year[country_year_tuple].append(
+                actual_income_line
             )
 
     df = pd.DataFrame.from_dict(
-        median_income_by_country_year, orient="index"
+        decile_thresholds_by_country_year, orient="index"
     ).reset_index()
     df = df.rename(columns={"index": "country_year"})
-    for index, poverty_line in enumerate(RELATIVE_POVERTY_LINES):
+    for index, poverty_line in enumerate(DECILE_THRESHOLDS):
         df = df.rename(columns={index: str(poverty_line)})
 
-    df[["country", "year"]] = pd.DataFrame(df["country_year"].tolist(), index=df.index)
+    df[["CountryName", "RequestYear"]] = pd.DataFrame(
+        df["country_year"].tolist(), index=df.index
+    )
     df.drop(columns=["country_year"])
     return df[
         [
-            "country",
-            "year",
-            *[str(income_line) for income_line in RELATIVE_POVERTY_LINES],
+            "CountryName",
+            "RequestYear",
+            *[str(income_line) for income_line in DECILE_THRESHOLDS],
         ]
     ]
 
 
 def extract_deciles_from_headcount_files_and_write_to_csv():
     # df = combine_country_year_headcount_files()
-    # df.to_csv("TEMP_combined.csv")
+    # df.to_csv("TEMP_combined.csv", index=False)
     df = pd.read_csv("TEMP_combined.csv")
     combined_df = population_under_income_line_by_country_year(df)
-    # df.to_csv("output/deciles_by_country_year.csv")
-    # combined_df.to_html("output/deciles_by_country_year.html")
-    return combined_df
+    df.to_csv("output/deciles_by_country_year.csv")
+    combined_df.to_html("output/deciles_by_country_year.html")
+    # return combined_df
 
 
 def combine_raw_data():
