@@ -89,10 +89,41 @@ def extract_deciles_from_headcount_files_and_write_to_csv():
     # df.to_csv("TEMP_combined.csv", index=False)
     df = pd.read_csv("TEMP_combined.csv")
     combined_df = population_under_income_line_by_country_year(df)
-    df.to_csv("output/deciles_by_country_year.csv")
-    combined_df.to_html("output/deciles_by_country_year.html")
-    # return combined_df
+def generate_absolute_poverty_line_df():
+    absolute_poverty_line_frames = []
+    for poverty_line in ABSOLUTE_POVERTY_LINES:
+        filename = f"{DETAILED_DATA_DIR}/{poverty_line}.csv"
 
+        df = pd.read_csv(filename, header=0)
+
+        suffix_coverage_type_in_country_names(df, "R")
+        suffix_coverage_type_in_country_names(df, "U")
+
+        df = df[
+            ["CountryName", "RequestYear", "HeadCount", "ReqYearPopulation", "PovGap"]
+        ]
+
+        df = add_absolute_poverty_count_column(df)
+        df = add_absolute_poverty_gap_column(df)
+
+        df = df.drop(columns=["ReqYearPopulation"])
+
+        df = df.rename(
+            columns={
+                "HeadCount": f"{poverty_line}_HeadCount",
+                "PovGap": f"{poverty_line}_PovGap",
+                "poverty_absolute": f"{poverty_line}_poverty_absolute",
+                "absolute_poverty_gap": f"{poverty_line}_absolute_poverty_gap",
+            }
+        )
+        absolute_poverty_line_frames.append(df)
+
+    df = reduce(
+        lambda df1, df2: pd.merge(df1, df2, on=["CountryName", "RequestYear"]),
+        absolute_poverty_line_frames,
+    )
+
+    return df
 
 def combine_raw_data():
     data_files = [
@@ -175,12 +206,7 @@ def main():
     #     max_workers=1,
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
-    # deciles_df = extract_deciles_from_headcount_files_and_write_to_csv()
-    raw_data = combine_raw_data()
-    raw_data_filtered = drop_unnecessary_columns(raw_data)
-    raw_data_formatted = rename_columns(raw_data_filtered)
-    df = add_derived_columns(raw_data_formatted)
-    pdb.set_trace()
+    absolute_poverty_line_df = generate_absolute_poverty_line_df()
 
 
 if __name__ == "__main__":
