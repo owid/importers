@@ -89,6 +89,10 @@ def extract_deciles_from_headcount_files_and_write_to_csv():
     # df.to_csv("TEMP_combined.csv", index=False)
     df = pd.read_csv("TEMP_combined.csv")
     combined_df = population_under_income_line_by_country_year(df)
+def suffix_coverage_type_in_country_names(df, coverageType):
+    df.loc[df.CoverageType == coverageType, "CountryName"] = df.loc[
+        df.CoverageType == coverageType, "CountryName"
+    ].map(lambda x: f"{x}_{coverageType}")
 def generate_absolute_poverty_line_df():
     absolute_poverty_line_frames = []
     for poverty_line in ABSOLUTE_POVERTY_LINES:
