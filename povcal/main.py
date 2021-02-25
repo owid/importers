@@ -159,24 +159,27 @@ def drop_unnecessary_columns(raw_data):
 def rename_columns(df):
     return df.rename(columns={"HeadCount": "poverty_percentage"})
 
-def add_absolute_poverty_column(df):
-    df["poverty_absolute"] = (
-        df.poverty_percentage * df.ReqYearPopulation * 1000000
-    ).astype(int)
+
+def add_absolute_poverty_count_column(df):
+    df["poverty_absolute"] = (df.HeadCount * df.ReqYearPopulation * 1000000).astype(int)
     return df
+
 
 def add_absolute_poverty_gap_column(df):
     df["absolute_poverty_gap"] = df.PovGap * 365 * df.ReqYearPopulation
     return df
+
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
         df[f"Decile{decile}_average"] = df[f"Decile{decile}"] * df.Mean / 30
     return df
 
+
 def add_mean_column(df):
     df["Mean"] = df.Mean / 365 / 12
     return df
+
 
 def add_welfare_measure_column(df):
     df["welfare_measure"] = df.DataType.apply(
@@ -184,12 +187,14 @@ def add_welfare_measure_column(df):
     )
     return df
 
+
 def add_survey_year_column(df):
     df["survey_year"] = df.RequestYear == df.DataYear
     return df
 
+
 def add_derived_columns(df):
-    df = add_absolute_poverty_column(df)
+    df = add_absolute_poverty_count_column(df)
     df = add_absolute_poverty_gap_column(df)
     df = add_decile_averages_column(df)
     df = add_mean_column(df)
