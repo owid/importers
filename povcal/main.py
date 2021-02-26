@@ -14,6 +14,7 @@ import time
 sys.path.append("../..")
 from importers.utils import write_file
 import glob
+from functools import reduce
 
 from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
@@ -84,15 +85,44 @@ def population_under_income_line_by_country_year(df):
     ]
 
 
-def extract_deciles_from_headcount_files_and_write_to_csv():
+def extract_deciles_from_headcount_files():
     # df = combine_country_year_headcount_files()
     # df.to_csv("TEMP_combined.csv", index=False)
     df = pd.read_csv("TEMP_combined.csv")
     combined_df = population_under_income_line_by_country_year(df)
+    return combined_df
+
+
 def suffix_coverage_type_in_country_names(df, coverageType):
     df.loc[df.CoverageType == coverageType, "CountryName"] = df.loc[
         df.CoverageType == coverageType, "CountryName"
     ].map(lambda x: f"{x}_{coverageType}")
+
+
+def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, year):
+    filename = f"{HEADCOUNTS_DIR}/{poverty_line}.csv"
+    df = pd.read_csv(filename)
+    return df[
+        (df.CountryName == countryName) & (df.RequestYear == year)
+    ].HeadCount.iloc[0]
+
+
+def generate_relative_poverty_line_df(decile_df):
+    df = decile_df[["CountryName", "RequestYear"]]
+    df["median_income_line"] = decile_df["0.5"]
+    df["40%_median_income_line"] = decile_df["0.4"] * 0.4
+    df["40%_median_income_line_formatted"] = df["40%_median_income_line"].map(
+        lambda x: "{:.2f}".format(x)
+    )
+    df["40%_headcount"] = df.apply(
+        lambda x: get_headcount_for_country_year_and_poverty_line(
+            x.CountryName, x["40%_median_income_line_formatted"], x.RequestYear
+        ),
+        axis=1,
+    )
+    return df
+
+
 def generate_absolute_poverty_line_df():
     absolute_poverty_line_frames = []
     for poverty_line in ABSOLUTE_POVERTY_LINES:
@@ -128,6 +158,7 @@ def generate_absolute_poverty_line_df():
     )
 
     return df
+
 
 def combine_raw_data():
     data_files = [
@@ -215,7 +246,18 @@ def main():
     #     max_workers=1,
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
-    absolute_poverty_line_df = generate_absolute_poverty_line_df()
+    # deciles_df = extract_deciles_from_headcount_files()
+    # deciles_df.to_csv("output/deciles_by_country_year.csv", index=False)
+    # combined_df.to_html("output/deciles_by_country_year.html")
+    deciles_df = pd.read_csv("output/deciles_by_country_year.csv", header=0)
+    # absolute_poverty_line_df = generate_absolute_poverty_line_df()
+    relative_poverty_line_df = generate_relative_poverty_line_df(deciles_df)
+    pdb.set_trace()
+    # raw_data = combine_raw_data()
+    # raw_data_filtered = drop_unnecessary_columns(raw_data)
+    # raw_data_formatted = rename_columns(raw_data_filtered)
+    # df = add_derived_columns(raw_data_formatted)
+    # pdb.set_trace()
 
 
 if __name__ == "__main__":
