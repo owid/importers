@@ -125,12 +125,12 @@ def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, y
 
 def generate_relative_poverty_line_df(decile_df):
     df = decile_df[["CountryName", "RequestYear"]]
-    df["median_income_line"] = decile_df["0.5"]
+    df["median_income_line"] = decile_df[f"decile_threshold_0.5"]
 
     for relative_income_line in RELATIVE_POVERTY_LINES:
         relative_income_line_in_dollars = int(relative_income_line * 100)
         df[f"{relative_income_line_in_dollars}%_median_income_line"] = (
-            decile_df[str(relative_income_line)] * relative_income_line
+            decile_df[f"decile_threshold_{relative_income_line}"] * relative_income_line
         )
 
         df[f"{relative_income_line_in_dollars}%_median_income_line_formatted"] = df[
