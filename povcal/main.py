@@ -188,10 +188,10 @@ def generate_absolute_poverty_line_df():
 
         df = df.rename(
             columns={
-                "HeadCount": f"{poverty_line}_HeadCount",
-                "PovGap": f"{poverty_line}_PovGap",
-                "poverty_absolute": f"{poverty_line}_poverty_absolute",
-                "absolute_poverty_gap": f"{poverty_line}_absolute_poverty_gap",
+                "HeadCount": f"${poverty_line}_HeadCount",
+                "PovGap": f"${poverty_line}_PovGap",
+                "poverty_absolute": f"${poverty_line}_poverty_absolute",
+                "absolute_poverty_gap": f"${poverty_line}_absolute_poverty_gap",
             }
         )
         absolute_poverty_line_frames.append(df)
