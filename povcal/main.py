@@ -82,8 +82,8 @@ def population_under_income_line_by_country_year(df):
         decile_thresholds_by_country_year, orient="index"
     ).reset_index()
     df = df.rename(columns={"index": "country_year"})
-    for index, poverty_line in enumerate(DECILE_THRESHOLDS):
-        df = df.rename(columns={index: str(poverty_line)})
+    for col_index, poverty_line in enumerate(DECILE_THRESHOLDS):
+        df = df.rename(columns={col_index: f"decile_threshold_{poverty_line}"})
 
     df[["CountryName", "RequestYear"]] = pd.DataFrame(
         df["country_year"].tolist(), index=df.index
@@ -93,7 +93,7 @@ def population_under_income_line_by_country_year(df):
         [
             "CountryName",
             "RequestYear",
-            *[str(income_line) for income_line in DECILE_THRESHOLDS],
+            *[f"decile_threshold_{income_line}" for income_line in DECILE_THRESHOLDS],
         ]
     ]
 
