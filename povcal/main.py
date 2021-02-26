@@ -266,7 +266,6 @@ def add_derived_columns(df):
     df = add_decile_averages_column(df)
     df = add_mean_column(df)
     df = add_welfare_measure_column(df)
-    df = df.drop(columns=["DataType"])
     df = add_survey_year_column(df)
 
     return df
@@ -329,6 +328,21 @@ def generate_country_year_variable_df():
     df = suffix_coverage_types(df)
     df = drop_unnecessary_columns(df)
     return df
+
+
+def generate_mega_csv():
+    dfs = [
+        pd.read_csv(DECILES_CSV_FILENAME, header=0),
+        pd.read_csv(ABSOLUTE_POVERTY_LINES_CSV_FILENAME, header=0),
+        pd.read_csv(COUNTRY_YEAR_VARIABLE_CSV_FILENAME, header=0),
+    ]
+
+    return reduce(
+        lambda df1, df2: pd.merge(df1, df2, on=["CountryName", "RequestYear"]),
+        dfs,
+    )
+
+
 def main():
     # poverty_lines = generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE)
     # headcountsDownloader = HeadCount_Files_Downloader(
@@ -346,13 +360,15 @@ def main():
     #     ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
     # )
 
-    # generate_relative_poverty_line_df(
-    #     pd.read_csv(DECILES_CSV_FILENAME, header=0)
-    # ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
+    generate_relative_poverty_line_df(
+        pd.read_csv(DECILES_CSV_FILENAME, header=0)
+    ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
 
     # generate_country_year_variable_df().to_csv(
     #     COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
     # )
+
+    generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
 
 
 if __name__ == "__main__":
