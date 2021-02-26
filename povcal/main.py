@@ -27,9 +27,13 @@ ABSOLUTE_POVERTY_LINES = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30
 RELATIVE_POVERTY_LINES = [0.4, 0.5, 0.6]
 MIN_POV_LINE = 0
 MAX_POV_LINE = 400
+
 DECILES_CSV_FILENAME = "output/deciles_by_country_year.csv"
 ABSOLUTE_POVERTY_LINES_CSV_FILENAME = "output/absolute_poverty_lines.csv"
 RELATIVE_POVERTY_LINES_CSV_FILENAME = "output/relative_poverty_lines.csv"
+COUNTRY_YEAR_VARIABLE_CSV_FILENAME = "output/country_year_variable.csv"
+MEGA_CSV_FILENAME = "output/mega.csv"
+
 HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
 DETAILED_DATA_DIR = "output/detailed_data_by_poverty_line"
 
@@ -154,6 +158,12 @@ def generate_relative_poverty_line_df(decile_df):
     ]
 
 
+def suffix_coverage_types(df):
+    suffix_coverage_type_in_country_names(df, "R")
+    suffix_coverage_type_in_country_names(df, "U")
+    return df
+
+
 def generate_absolute_poverty_line_df():
     absolute_poverty_line_frames = []
     for poverty_line in ABSOLUTE_POVERTY_LINES:
@@ -161,8 +171,7 @@ def generate_absolute_poverty_line_df():
 
         df = pd.read_csv(filename, header=0)
 
-        suffix_coverage_type_in_country_names(df, "R")
-        suffix_coverage_type_in_country_names(df, "U")
+        suffix_coverage_types(df)
 
         df = df[
             ["CountryName", "RequestYear", "HeadCount", "ReqYearPopulation", "PovGap"]
@@ -191,15 +200,8 @@ def generate_absolute_poverty_line_df():
     return df
 
 
-def combine_raw_data():
-    data_files = [
-        f"{DETAILED_DATA_DIR}/{poverty_line}.csv"
-        for poverty_line in ABSOLUTE_POVERTY_LINES
-    ]
-    data_csvs = [pd.read_csv(filename, header=0) for filename in data_files]
-
-    combined_data_frame = pd.concat(data_csvs, axis=0)
-    return combined_data_frame
+def country_year_variables_df():
+    return pd.read_csv(f"{DETAILED_DATA_DIR}/{ABSOLUTE_POVERTY_LINES[0]}.csv", header=0)
 
 
 def drop_unnecessary_columns(raw_data):
@@ -214,12 +216,11 @@ def drop_unnecessary_columns(raw_data):
             "Polarization",
             "PovGapSqr",
             "pr.mld",
+            "DataType",
+            "HeadCount",
+            "CoverageType",
         ]
     )
-
-
-def rename_columns(df):
-    return df.rename(columns={"HeadCount": "poverty_percentage"})
 
 
 def add_absolute_poverty_count_column(df):
@@ -318,6 +319,12 @@ def find_closest_number(myList, myNumber):
         return before
 
 
+def generate_country_year_variable_df():
+    df = country_year_variables_df()
+    df = add_derived_columns(df)
+    df = suffix_coverage_types(df)
+    df = drop_unnecessary_columns(df)
+    return df
 def main():
     # poverty_lines = generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE)
     # headcountsDownloader = HeadCount_Files_Downloader(
@@ -328,19 +335,20 @@ def main():
     #     max_workers=1,
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
+
     # extract_deciles_from_headcount_files().to_csv(DECILES_CSV_FILENAME, index=False)
+
     # generate_absolute_poverty_line_df().to_csv(
     #     ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
     # )
+
     # generate_relative_poverty_line_df(
     #     pd.read_csv(DECILES_CSV_FILENAME, header=0)
     # ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
-    # pdb.set_trace()
-    # raw_data = combine_raw_data()
-    # raw_data_filtered = drop_unnecessary_columns(raw_data)
-    # raw_data_formatted = rename_columns(raw_data_filtered)
-    # df = add_derived_columns(raw_data_formatted)
-    # pdb.set_trace()
+
+    # generate_country_year_variable_df().to_csv(
+    #     COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
+    # )
 
 
 if __name__ == "__main__":
