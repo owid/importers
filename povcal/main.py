@@ -99,9 +99,7 @@ def population_under_income_line_by_country_year(df):
 
 
 def extract_deciles_from_headcount_files():
-    # df = combine_country_year_headcount_files()
-    # df.to_csv("TEMP_combined.csv", index=False)
-    df = pd.read_csv("TEMP_combined.csv")
+    df = combine_country_year_headcount_files()
     combined_df = population_under_income_line_by_country_year(df)
     return combined_df
 
@@ -354,19 +352,19 @@ def main():
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
 
-    # extract_deciles_from_headcount_files().to_csv(DECILES_CSV_FILENAME, index=False)
+    extract_deciles_from_headcount_files().to_csv(DECILES_CSV_FILENAME, index=False)
 
-    # generate_absolute_poverty_line_df().to_csv(
-    #     ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
-    # )
+    generate_absolute_poverty_line_df().to_csv(
+        ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
+    )
 
     generate_relative_poverty_line_df(
         pd.read_csv(DECILES_CSV_FILENAME, header=0)
     ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
 
-    # generate_country_year_variable_df().to_csv(
-    #     COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
-    # )
+    generate_country_year_variable_df().to_csv(
+        COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
+    )
 
     generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
 
