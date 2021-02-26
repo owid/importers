@@ -15,12 +15,21 @@ sys.path.append("../..")
 from importers.utils import write_file
 import glob
 from functools import reduce
+from bisect import bisect_left
+
 
 from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
+pd.options.mode.chained_assignment = None  # default='warn'
+
 DECILE_THRESHOLDS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
 ABSOLUTE_POVERTY_LINES = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30.00"]
-
+RELATIVE_POVERTY_LINES = [0.4, 0.5, 0.6]
+MIN_POV_LINE = 0
+MAX_POV_LINE = 400
+DECILES_CSV_FILENAME = "output/deciles_by_country_year.csv"
+ABSOLUTE_POVERTY_LINES_CSV_FILENAME = "output/absolute_poverty_lines.csv"
+RELATIVE_POVERTY_LINES_CSV_FILENAME = "output/relative_poverty_lines.csv"
 HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
 DETAILED_DATA_DIR = "output/detailed_data_by_poverty_line"
 
@@ -100,7 +109,10 @@ def suffix_coverage_type_in_country_names(df, coverageType):
 
 
 def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, year):
-    filename = f"{HEADCOUNTS_DIR}/{poverty_line}.csv"
+    closest_pov_line = poverty_line_as_string(
+        get_closest_downloaded_headcount_file_for_poverty_line(float(poverty_line))
+    )
+    filename = f"{HEADCOUNTS_DIR}/{closest_pov_line}.csv"
     df = pd.read_csv(filename)
     return df[
         (df.CountryName == countryName) & (df.RequestYear == year)
@@ -110,17 +122,36 @@ def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, y
 def generate_relative_poverty_line_df(decile_df):
     df = decile_df[["CountryName", "RequestYear"]]
     df["median_income_line"] = decile_df["0.5"]
-    df["40%_median_income_line"] = decile_df["0.4"] * 0.4
-    df["40%_median_income_line_formatted"] = df["40%_median_income_line"].map(
-        lambda x: "{:.2f}".format(x)
-    )
-    df["40%_headcount"] = df.apply(
-        lambda x: get_headcount_for_country_year_and_poverty_line(
-            x.CountryName, x["40%_median_income_line_formatted"], x.RequestYear
-        ),
-        axis=1,
-    )
-    return df
+
+    for relative_income_line in RELATIVE_POVERTY_LINES:
+        relative_income_line_in_dollars = int(relative_income_line * 100)
+        df[f"{relative_income_line_in_dollars}%_median_income_line"] = (
+            decile_df[str(relative_income_line)] * relative_income_line
+        )
+
+        df[f"{relative_income_line_in_dollars}%_median_income_line_formatted"] = df[
+            f"{relative_income_line_in_dollars}%_median_income_line"
+        ].map(lambda x: poverty_line_as_string(x))
+
+        df[f"{relative_income_line_in_dollars}%_headcount"] = df.apply(
+            lambda x: get_headcount_for_country_year_and_poverty_line(
+                x.CountryName,
+                x[f"{relative_income_line_in_dollars}%_median_income_line_formatted"],
+                x.RequestYear,
+            ),
+            axis=1,
+        )
+
+    return df[
+        [
+            "CountryName",
+            "RequestYear",
+            *[
+                f"{int(relative_income_line * 100)}%_headcount"
+                for relative_income_line in RELATIVE_POVERTY_LINES
+            ],
+        ]
+    ]
 
 
 def generate_absolute_poverty_line_df():
@@ -236,23 +267,75 @@ def add_derived_columns(df):
     return df
 
 
+def poverty_line_as_string(line):
+    return "{:.2f}".format(line)
+
+
+def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
+    lines = all_cents_between_dollars(minimum_dollar, min(60, maximum_dollar), 0.01)
+    lines.extend(
+        all_cents_between_dollars(
+            max(60.10, minimum_dollar), min(150, maximum_dollar), 0.10
+        )
+    )
+    lines.extend(
+        all_cents_between_dollars(max(155, minimum_dollar), min(400, maximum_dollar), 5)
+    )
+
+    return lines
+
+
+def all_cents_between_dollars(minimum_dollar, maximum_dollar, increment=0.01):
+    return [
+        round(cent, 2)
+        for cent in arange(minimum_dollar, maximum_dollar + increment, increment)
+    ]
+
+
+def get_closest_downloaded_headcount_file_for_poverty_line(poverty_line):
+    return find_closest_number(
+        generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE), poverty_line
+    )
+
+
+# https://stackoverflow.com/questions/12141150/from-list-of-integers-get-number-closest-to-a-given-value/12141511#12141511
+def find_closest_number(myList, myNumber):
+    """
+    Assumes myList is sorted. Returns closest value to myNumber.
+
+    If two numbers are equally close, return the smallest number.
+    """
+    pos = bisect_left(myList, myNumber)
+    if pos == 0:
+        return myList[0]
+    if pos == len(myList):
+        return myList[-1]
+    before = myList[pos - 1]
+    after = myList[pos]
+    if after - myNumber < myNumber - before:
+        return after
+    else:
+        return before
+
+
 def main():
+    # poverty_lines = generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE)
     # headcountsDownloader = HeadCount_Files_Downloader(
-    #     minimum_poverty_line=0,
-    #     maximum_poverty_line=400,
+    #     poverty_lines=[poverty_line_as_string(line) for line in poverty_lines],
     #     output_dir=HEADCOUNTS_DIR,
     #     detailed_data_dir=DETAILED_DATA_DIR,
     #     detailed_poverty_lines=ABSOLUTE_POVERTY_LINES,
     #     max_workers=1,
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
-    # deciles_df = extract_deciles_from_headcount_files()
-    # deciles_df.to_csv("output/deciles_by_country_year.csv", index=False)
-    # combined_df.to_html("output/deciles_by_country_year.html")
-    deciles_df = pd.read_csv("output/deciles_by_country_year.csv", header=0)
-    # absolute_poverty_line_df = generate_absolute_poverty_line_df()
-    relative_poverty_line_df = generate_relative_poverty_line_df(deciles_df)
-    pdb.set_trace()
+    # extract_deciles_from_headcount_files().to_csv(DECILES_CSV_FILENAME, index=False)
+    # generate_absolute_poverty_line_df().to_csv(
+    #     ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
+    # )
+    # generate_relative_poverty_line_df(
+    #     pd.read_csv(DECILES_CSV_FILENAME, header=0)
+    # ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
+    # pdb.set_trace()
     # raw_data = combine_raw_data()
     # raw_data_filtered = drop_unnecessary_columns(raw_data)
     # raw_data_formatted = rename_columns(raw_data_filtered)

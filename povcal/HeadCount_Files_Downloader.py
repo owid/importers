@@ -11,15 +11,13 @@ from io import StringIO
 class HeadCount_Files_Downloader:
     def __init__(
         self,
-        minimum_poverty_line,
-        maximum_poverty_line,
+        poverty_lines,
         output_dir,
         detailed_data_dir,
         detailed_poverty_lines,
         max_workers=20,
     ):
-        self.minimum_poverty_line = minimum_poverty_line
-        self.maximum_poverty_line = maximum_poverty_line
+        self.poverty_lines = poverty_lines
         self.output_dir = output_dir
         self.detailed_data_dir = detailed_data_dir
         self.detailed_poverty_lines = detailed_poverty_lines
@@ -32,9 +30,7 @@ class HeadCount_Files_Downloader:
         Each headcount file provides headcount population under the poverty line
         for each country-year available and will be written to output/ directory.
         """
-        poverty_lines = generate_poverty_lines_between(
-            self.minimum_poverty_line, self.maximum_poverty_line
-        )
+        poverty_lines = self.poverty_lines
 
         with concurrent.futures.ThreadPoolExecutor(
             max_workers=self.max_workers
@@ -123,27 +119,6 @@ class HeadCount_Files_Downloader:
     def filter_necessary_data(self, df):
         df = df[df.CoverageType.isin(["N", "A"])]
         return df[["CountryName", "RequestYear", "HeadCount"]]
-
-
-def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
-    lines = all_cents_between_dollars(minimum_dollar, min(60, maximum_dollar), 0.01)
-    lines.extend(
-        all_cents_between_dollars(
-            max(60.10, minimum_dollar), min(150, maximum_dollar), 0.10
-        )
-    )
-    lines.extend(
-        all_cents_between_dollars(max(155, minimum_dollar), min(400, maximum_dollar), 5)
-    )
-
-    return ["{:.2f}".format(line) for line in lines]
-
-
-def all_cents_between_dollars(minimum_dollar, maximum_dollar, increment=0.01):
-    return [
-        round(cent, 2)
-        for cent in arange(minimum_dollar, maximum_dollar + increment, increment)
-    ]
 
 
 def csv_to_dataframe(csv):
