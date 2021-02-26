@@ -342,6 +342,7 @@ def generate_mega_csv():
 
 
 def main():
+    start_time = time.time()
     # poverty_lines = generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE)
     # headcountsDownloader = HeadCount_Files_Downloader(
     #     poverty_lines=[poverty_line_as_string(line) for line in poverty_lines],
@@ -367,6 +368,8 @@ def main():
     )
 
     generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
+
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 
 if __name__ == "__main__":
