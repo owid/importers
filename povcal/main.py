@@ -83,25 +83,38 @@ def population_under_income_line_by_country_year(df):
     ).reset_index()
     df = df.rename(columns={"index": "country_year"})
     for col_index, poverty_line in enumerate(DECILE_THRESHOLDS):
-        df = df.rename(columns={col_index: f"decile_threshold_{poverty_line}"})
+        df = df.rename(columns={col_index: f"P{int(poverty_line * 100)}"})
 
     df[["CountryName", "RequestYear"]] = pd.DataFrame(
         df["country_year"].tolist(), index=df.index
     )
     df.drop(columns=["country_year"])
-    return df[
+
+    df = df[
         [
             "CountryName",
             "RequestYear",
-            *[f"decile_threshold_{income_line}" for income_line in DECILE_THRESHOLDS],
+            *[f"P{int(income_line * 100)}" for income_line in DECILE_THRESHOLDS],
         ]
     ]
+
+    df = add_decile_ratios(df)
+    return df
+
+
+def add_decile_ratios(df):
+    df["P90:P10 ratio"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P10"])).map(
+        poverty_line_as_string
+    )
+    df["P90:P50 ratio"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P50"])).map(
+        poverty_line_as_string
+    )
+    return df
 
 
 def extract_deciles_from_headcount_files():
     df = combine_country_year_headcount_files()
-    combined_df = population_under_income_line_by_country_year(df)
-    return combined_df
+    return population_under_income_line_by_country_year(df)
 
 
 def suffix_coverage_type_in_country_names(df, coverageType):
@@ -123,7 +136,7 @@ def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, y
 
 def generate_relative_poverty_line_df(decile_df):
     df = decile_df[["CountryName", "RequestYear"]]
-    df["median_income_line"] = decile_df[f"decile_threshold_0.5"]
+    df["median_income_line"] = decile_df[f"P50"]
 
     for relative_income_line in RELATIVE_POVERTY_LINES:
         relative_income_line_as_percentage = int(relative_income_line * 100)
@@ -355,19 +368,19 @@ def main():
 
     extract_deciles_from_headcount_files().to_csv(DECILES_CSV_FILENAME, index=False)
 
-    generate_absolute_poverty_line_df().to_csv(
-        ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
-    )
+    # generate_absolute_poverty_line_df().to_csv(
+    #     ABSOLUTE_POVERTY_LINES_CSV_FILENAME, index=False
+    # )
 
-    generate_relative_poverty_line_df(
-        pd.read_csv(DECILES_CSV_FILENAME, header=0)
-    ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
+    # generate_relative_poverty_line_df(
+    #     pd.read_csv(DECILES_CSV_FILENAME, header=0)
+    # ).to_csv(RELATIVE_POVERTY_LINES_CSV_FILENAME, index=False)
 
-    generate_country_year_variable_df().to_csv(
-        COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
-    )
+    # generate_country_year_variable_df().to_csv(
+    #     COUNTRY_YEAR_VARIABLE_CSV_FILENAME, index=False
+    # )
 
-    generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
+    # generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
