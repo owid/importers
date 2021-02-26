@@ -128,19 +128,23 @@ def generate_relative_poverty_line_df(decile_df):
     df["median_income_line"] = decile_df[f"decile_threshold_0.5"]
 
     for relative_income_line in RELATIVE_POVERTY_LINES:
-        relative_income_line_in_dollars = int(relative_income_line * 100)
-        df[f"{relative_income_line_in_dollars}%_median_income_line"] = (
-            decile_df[f"decile_threshold_{relative_income_line}"] * relative_income_line
+        relative_income_line_as_percentage = int(relative_income_line * 100)
+        df[f"{relative_income_line_as_percentage}%_median_income_line"] = (
+            df["median_income_line"] * relative_income_line
         )
 
-        df[f"{relative_income_line_in_dollars}%_median_income_line_formatted"] = df[
-            f"{relative_income_line_in_dollars}%_median_income_line"
+        df[f"{relative_income_line_as_percentage}%_median_income_line_formatted"] = df[
+            f"{relative_income_line_as_percentage}%_median_income_line"
         ].map(lambda x: poverty_line_as_string(x))
 
-        df[f"{relative_income_line_in_dollars}%_headcount"] = df.apply(
+        df[
+            f"{relative_income_line_as_percentage}%_relative_poverty_headcount"
+        ] = df.apply(
             lambda x: get_headcount_for_country_year_and_poverty_line(
                 x.CountryName,
-                x[f"{relative_income_line_in_dollars}%_median_income_line_formatted"],
+                x[
+                    f"{relative_income_line_as_percentage}%_median_income_line_formatted"
+                ],
                 x.RequestYear,
             ),
             axis=1,
@@ -151,7 +155,7 @@ def generate_relative_poverty_line_df(decile_df):
             "CountryName",
             "RequestYear",
             *[
-                f"{int(relative_income_line * 100)}%_headcount"
+                f"{int(relative_income_line * 100)}%_relative_poverty_headcount"
                 for relative_income_line in RELATIVE_POVERTY_LINES
             ],
         ]
