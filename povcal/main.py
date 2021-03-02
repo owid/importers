@@ -109,12 +109,6 @@ def extract_deciles_from_headcount_files():
     return population_under_income_line_by_country_year(df)
 
 
-def suffix_coverage_type_in_country_names(df, coverageType):
-    df.loc[df.CoverageType == coverageType, "CountryName"] = df.loc[
-        df.CoverageType == coverageType, "CountryName"
-    ].map(lambda x: f"{x}_{coverageType}")
-
-
 def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, year):
     closest_pov_line = poverty_line_as_string(
         get_closest_downloaded_headcount_file_for_poverty_line(float(poverty_line))

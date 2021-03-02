@@ -135,3 +135,9 @@ def suffix_coverage_types(df):
     suffix_coverage_type_in_country_names(df, "R")
     suffix_coverage_type_in_country_names(df, "U")
     return df
+
+
+def suffix_coverage_type_in_country_names(df, coverageType):
+    df.loc[df.CoverageType == coverageType, "CountryName"] = df.loc[
+        df.CoverageType == coverageType, "CountryName"
+    ].map(lambda x: f"{x}_{coverageType}")
