@@ -53,24 +53,16 @@ def combine_country_year_headcount_files():
 
 
 def population_under_income_line_by_country_year(df):
-    dfg = df.sort_values(by=["HeadCount"]).groupby(["CountryName", "RequestYear"])
+    dfg = df.groupby(["CountryName", "RequestYear"])
     decile_thresholds_by_country_year = {}
     for country_year_tuple in dfg.groups.keys():
-        country_year_df = dfg.get_group(country_year_tuple)
+        country_year_df = dfg.get_group(country_year_tuple).sort_values(
+            by=["poverty_line"], ascending=False
+        )
         for relative_income_line in DECILE_THRESHOLDS:
             actual_income_line = -1
-            try:
-                actual_income_line = (
-                    country_year_df.iloc[
-                        [country_year_df.HeadCount.searchsorted(relative_income_line)]
-                    ]
-                    .iloc[0]
-                    .poverty_line
-                )
-            except IndexError:
-                print(
-                    f"headcount for income line {relative_income_line} not found for {country_year_tuple}"
-                )
+            idx = country_year_df["HeadCount"].sub(relative_income_line).abs().idxmin()
+            actual_income_line = country_year_df.loc[idx]["poverty_line"]
 
             if country_year_tuple not in decile_thresholds_by_country_year:
                 decile_thresholds_by_country_year[country_year_tuple] = []
