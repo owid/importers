@@ -239,7 +239,7 @@ def drop_unnecessary_columns(raw_data):
 
 
 def add_absolute_poverty_count_column(df):
-    df["poverty_absolute"] = (df.HeadCount * df.ReqYearPopulation * 1000000).astype(int)
+    df["poverty_absolute"] = (df.HeadCount * df.ReqYearPopulation * 1000000).round(2)
     return df
 
 
