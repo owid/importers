@@ -38,17 +38,17 @@ HEADCOUNTS_DIR = "output/headcounts_by_poverty_line"
 DETAILED_DATA_DIR = "output/detailed_data_by_poverty_line"
 
 
-def combine_country_year_headcount_files():
+def all_country_year_headcount_files():
     all_files = glob.glob(HEADCOUNTS_DIR + "/*.csv")
-
-    li = []
 
     for filename in all_files:
         df = pd.read_csv(filename, header=0)
         df["poverty_line"] = os.path.basename(os.path.splitext(filename)[0])
-        li.append(df)
+        yield df
 
-    frame = pd.concat(li, ignore_index=True)
+
+def combine_country_year_headcount_files():
+    frame = pd.concat(all_country_year_headcount_files(), ignore_index=True)
     return frame
 
 
