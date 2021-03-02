@@ -18,7 +18,7 @@ from functools import reduce
 from bisect import bisect_left
 
 
-from HeadCount_Files_Downloader import HeadCount_Files_Downloader
+from HeadCount_Files_Downloader import HeadCount_Files_Downloader, suffix_coverage_types
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -171,12 +171,6 @@ def generate_relative_poverty_line_df(decile_df):
             ],
         ]
     ]
-
-
-def suffix_coverage_types(df):
-    suffix_coverage_type_in_country_names(df, "R")
-    suffix_coverage_type_in_country_names(df, "U")
-    return df
 
 
 def generate_absolute_poverty_line_df():
