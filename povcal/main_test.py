@@ -7,11 +7,14 @@ import io
 
 class test_main(unittest.TestCase):
     def test_mega(self):
-        self.skipTest("manual")
+        # self.skipTest("manual")
         df = pd.read_csv("output/mega.csv", header=0)
-        df["implied_median"] = df.Median / (365 / 12)
+        df["implied_median"] = df.Median / (365.25 / 12)
         df.implied_median = df.implied_median.round(2)
         df["diff"] = df.P50 - df.implied_median
+        df = df[["CountryName", "RequestYear", "P50", "implied_median", "diff"]]
+        df = df.sort_values(by=["diff"])
+        df.to_csv("temp.csv")
         pdb.set_trace()
 
     # def test_equals(self):
@@ -27,6 +30,7 @@ class test_main(unittest.TestCase):
     #     #     self.assertEqual(output, file.read())
 
     def test_random_downloads(self):
+        self.skipTest("manual")
         downloader = HeadCount_Files_Downloader(
             poverty_lines=[],
             output_dir=HEADCOUNTS_DIR,
