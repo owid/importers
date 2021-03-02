@@ -1,6 +1,7 @@
 from numpy import arange
 import requests
 import pandas as pd
+import numpy as np
 import concurrent.futures
 import time
 import pdb
@@ -86,6 +87,7 @@ class HeadCount_Files_Downloader:
         api_result = self.request_headcounts_by_poverty_line(poverty_line)
 
         df = csv_to_dataframe(api_result)
+        df = mark_missing_values_as_NaN(df)
 
         if self.requires_detailed_download(poverty_line):
             df.to_csv(self.detailed_data_output_filename(poverty_line), index=False)
@@ -123,3 +125,7 @@ class HeadCount_Files_Downloader:
 
 def csv_to_dataframe(csv):
     return pd.read_csv(StringIO(csv))
+
+
+def mark_missing_values_as_NaN(df):
+    return df.replace(-1, np.NaN)
