@@ -50,7 +50,9 @@ class HeadCount_Files_Downloader:
                     try:
                         future.result()
                     except Exception as error:
-                        print(f"{filename} failed. Will retry.")
+                        print(
+                            f"{self.headcount_output_filename(poverty_line)} failed. Will retry."
+                        )
                         print(type(error))
                         print(error.args)
                         failed.add(poverty_line)
