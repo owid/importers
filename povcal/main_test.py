@@ -9,13 +9,16 @@ class test_main(unittest.TestCase):
     def test_mega(self):
         # self.skipTest("manual")
         df = pd.read_csv("output/mega.csv", header=0)
-        df["implied_median"] = df.Median / (365.25 / 12)
+        df["implied_median"] = df.Median / (365 / 12)
         df.implied_median = df.implied_median.round(2)
         df["diff"] = df.P50 - df.implied_median
-        df = df[["CountryName", "RequestYear", "P50", "implied_median", "diff"]]
-        df = df.sort_values(by=["diff"])
+        df["diff_abs"] = df["diff"].abs()
+        df = df[
+            ["CountryName", "RequestYear", "P50", "implied_median", "diff", "diff_abs"]
+        ]
+        df = df.sort_values(by=["diff_abs"], ascending=False)
+        df = df.reset_index(drop=True)
         df.to_csv("temp.csv")
-        pdb.set_trace()
 
     # def test_equals(self):
     #     # downloader = HeadCount_Files_Downloader(
