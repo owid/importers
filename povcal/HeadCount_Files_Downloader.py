@@ -91,11 +91,12 @@ class HeadCount_Files_Downloader:
         df = csv_to_dataframe(api_result)
         df = mark_missing_values_as_NaN(df)
         df = suffix_coverage_types(df)
+        df = rename_columns(df)
 
         if self.requires_detailed_download(poverty_line):
             df.to_csv(self.detailed_data_output_filename(poverty_line), index=False)
 
-        df = self.filter_necessary_data(df)
+        df = self.filter_only_headcount(df)
 
         df.to_csv(filename, index=False)
         print(f"{filename} written")
@@ -121,8 +122,8 @@ class HeadCount_Files_Downloader:
         )
         return result.text
 
-    def filter_necessary_data(self, df):
-        return df[["CountryName", "RequestYear", "HeadCount"]]
+    def filter_only_headcount(self, df):
+        return df[["CountryName", "RequestYear", "headcount_ratio"]]
 
 
 def csv_to_dataframe(csv):
@@ -143,3 +144,24 @@ def suffix_coverage_type_in_country_names(df, coverageType):
     df.loc[df.CoverageType == coverageType, "CountryName"] = df.loc[
         df.CoverageType == coverageType, "CountryName"
     ].map(lambda x: f"{x}_{coverageType}")
+
+
+def rename_columns(df):
+    return df.rename(
+        columns={
+            "HeadCount": "headcount_ratio",
+            "Decile1": "decile1",
+            "Decile2": "decile2",
+            "Decile3": "decile3",
+            "Decile4": "decile4",
+            "Decile5": "decile5",
+            "Decile6": "decile6",
+            "Decile7": "decile7",
+            "Decile8": "decile8",
+            "Decile9": "decile9",
+            "Decile10": "decile10",
+            "Mean": "mean",
+            "Gini": "gini",
+            "PovGap": "poverty_gap",
+        }
+    )
