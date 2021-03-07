@@ -61,7 +61,12 @@ def population_under_income_line_by_country_year(df):
         )
         for relative_income_line in DECILE_THRESHOLDS:
             actual_income_line = -1
-            idx = country_year_df["HeadCount"].sub(relative_income_line).abs().idxmin()
+            idx = (
+                country_year_df["headcount_ratio"]
+                .sub(relative_income_line)
+                .abs()
+                .idxmin()
+            )
             actual_income_line = country_year_df.loc[idx]["poverty_line"]
 
             if country_year_tuple not in decile_thresholds_by_country_year:
@@ -115,9 +120,9 @@ def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, y
     )
     filename = f"{HEADCOUNTS_DIR}/{closest_pov_line}.csv"
     df = pd.read_csv(filename)
-    return df[
-        (df.CountryName == countryName) & (df.RequestYear == year)
-    ].HeadCount.iloc[0]
+    return df[(df.CountryName == countryName) & (df.RequestYear == year)][
+        "headcount_ratio"
+    ].iloc[0]
 
 
 def generate_relative_poverty_line_df(decile_df):
@@ -135,7 +140,7 @@ def generate_relative_poverty_line_df(decile_df):
         ].map(lambda x: poverty_line_as_string(x))
 
         df[
-            f"{relative_income_line_as_percentage}%_relative_poverty_headcount"
+            f"{relative_income_line_as_percentage}%_of_median_headcount_ratio"
         ] = df.apply(
             lambda x: get_headcount_for_country_year_and_poverty_line(
                 x.CountryName,
@@ -152,7 +157,7 @@ def generate_relative_poverty_line_df(decile_df):
             "CountryName",
             "RequestYear",
             *[
-                f"{int(relative_income_line * 100)}%_relative_poverty_headcount"
+                f"{int(relative_income_line * 100)}%_of_median_headcount_ratio"
                 for relative_income_line in RELATIVE_POVERTY_LINES
             ],
         ]
@@ -166,10 +171,14 @@ def generate_absolute_poverty_line_df():
 
         df = pd.read_csv(filename, header=0)
 
-        suffix_coverage_types(df)
-
         df = df[
-            ["CountryName", "RequestYear", "HeadCount", "ReqYearPopulation", "PovGap"]
+            [
+                "CountryName",
+                "RequestYear",
+                "headcount_ratio",
+                "ReqYearPopulation",
+                "poverty_gap",
+            ]
         ]
 
         df = add_absolute_poverty_count_column(df)
@@ -179,8 +188,8 @@ def generate_absolute_poverty_line_df():
 
         df = df.rename(
             columns={
-                "HeadCount": f"${poverty_line}_HeadCount",
-                "PovGap": f"${poverty_line}_PovGap",
+                "headcount_ratio": f"${poverty_line}_headcount_ratio",
+                "poverty_gap": f"${poverty_line}_poverty_gap",
                 "poverty_absolute": f"${poverty_line}_poverty_absolute",
                 "absolute_poverty_gap": f"${poverty_line}_absolute_poverty_gap",
             }
@@ -212,30 +221,32 @@ def drop_unnecessary_columns(raw_data):
             "PovGapSqr",
             "pr.mld",
             "DataType",
-            "HeadCount",
+            "headcount_ratio",
             "CoverageType",
         ]
     )
 
 
 def add_absolute_poverty_count_column(df):
-    df["poverty_absolute"] = (df.HeadCount * df.ReqYearPopulation * 1000000).round(2)
+    df["poverty_absolute"] = (
+        df["headcount_ratio"] * df.ReqYearPopulation * 1000000
+    ).round(2)
     return df
 
 
 def add_absolute_poverty_gap_column(df):
-    df["absolute_poverty_gap"] = df.PovGap * 365 * df.ReqYearPopulation
+    df["absolute_poverty_gap"] = df["headcount_ratio"] * 365 * df.ReqYearPopulation
     return df
 
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
-        df[f"Decile{decile}_average"] = df[f"Decile{decile}"] * df.Mean / 30
+        df[f"decile{decile}_average"] = df[f"decile{decile}"] * df["mean"] / 30
     return df
 
 
 def add_mean_column(df):
-    df["Mean"] = df.Mean / 365 / 12
+    df["mean"] = df["mean"] / 365 / 12
     return df
 
 
@@ -252,8 +263,8 @@ def add_survey_year_column(df):
 
 
 def add_derived_columns(df):
-    df = add_absolute_poverty_count_column(df)
-    df = add_absolute_poverty_gap_column(df)
+    # df = add_absolute_poverty_count_column(df)
+    # df = add_absolute_poverty_gap_column(df)
     df = add_decile_averages_column(df)
     df = add_mean_column(df)
     df = add_welfare_measure_column(df)
@@ -274,7 +285,9 @@ def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
         )
     )
     lines.extend(
-        all_cents_between_dollars(max(155, minimum_dollar), min(400, maximum_dollar), 5)
+        all_cents_between_dollars(
+            max(150.50, minimum_dollar), min(400, maximum_dollar), 0.50
+        )
     )
 
     return lines
@@ -316,16 +329,19 @@ def find_closest_number(myList, myNumber):
 def generate_country_year_variable_df():
     df = country_year_variables_df()
     df = add_derived_columns(df)
-    df = suffix_coverage_types(df)
     df = drop_unnecessary_columns(df)
     return df
 
 
 def generate_mega_csv():
     dfs = [
-        pd.read_csv(DECILES_CSV_FILENAME, header=0),
-        pd.read_csv(ABSOLUTE_POVERTY_LINES_CSV_FILENAME, header=0),
-        pd.read_csv(COUNTRY_YEAR_VARIABLE_CSV_FILENAME, header=0),
+        pd.read_csv(filename, header=0)
+        for filename in [
+            DECILES_CSV_FILENAME,
+            ABSOLUTE_POVERTY_LINES_CSV_FILENAME,
+            RELATIVE_POVERTY_LINES_CSV_FILENAME,
+            COUNTRY_YEAR_VARIABLE_CSV_FILENAME,
+        ]
     ]
 
     return reduce(
