@@ -14,7 +14,14 @@ class test_main(unittest.TestCase):
         df["diff"] = df.P50 - df.implied_median
         df["diff_abs"] = df["diff"].abs()
         df = df[
-            ["CountryName", "RequestYear", "P50", "implied_median", "diff", "diff_abs"]
+            [
+                "CountryName",
+                "RequestYear",
+                "P50",
+                "implied_median",
+                "diff",
+                "diff_abs",
+            ]
         ]
         df = df.sort_values(by=["diff_abs"], ascending=False)
         df = df.reset_index(drop=True)
