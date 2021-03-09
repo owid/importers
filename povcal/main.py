@@ -350,6 +350,14 @@ def generate_mega_csv():
     )
 
 
+def set_P50_equal_to_implied_daily_median(df):
+    df["implied_daily_median"] = df["Median"] / (365 / 12)
+    df["P50"] = np.where(
+        pd.isna(df["implied_daily_median"]), df["P50"], df["implied_daily_median"]
+    ).round(2)
+    return df.drop(columns=["implied_daily_median"])
+
+
 def main():
     start_time = time.time()
     # poverty_lines = generate_poverty_lines_between(MIN_POV_LINE, MAX_POV_LINE)
@@ -380,7 +388,7 @@ def main():
     )
     print(f"Completed {COUNTRY_YEAR_VARIABLE_CSV_FILENAME}")
 
-    generate_mega_csv().to_csv(MEGA_CSV_FILENAME, index=False)
+    set_P50_equal_to_implied_daily_median(df).to_csv(MEGA_CSV_FILENAME, index=False)
     print(f"Completed {MEGA_CSV_FILENAME}")
 
     print("--- %s seconds ---" % (time.time() - start_time))
