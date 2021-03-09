@@ -60,18 +60,50 @@ def main():
 
         data_df = get_mega_csv()
 
-        pdb.set_trace()
-        for variable in variable_metadata:
+        for variable in variable_metadata.itertuples():
             # insert row in variables table
-            print("Inserting variable: %s" % variable["name"])
+            print("Inserting variable: %s" % variable.name)
             db_variable_id = db.upsert_variable(
-                name=variable["name"],
-                code=variable["code"],
-                unit=variable["unit"],
-                description=variable["description"],
-                short_unit=None,
+                name=variable.name,
+                code=None,
+                unit=variable.unit,
+                description=variable.description,
+                short_unit=variable.short_unit,
                 source_id=db_source_id,
                 dataset_id=db_dataset_id,
+            )
+
+            # TODO: REMOVE THIS after relative poverty line data
+            if (
+                variable.slug[-21:] == "of_median_poverty_gap"
+                or variable.slug[-29:] == "of_median_number_people_under"
+                or variable.slug[-30:] == "of_median_absolute_poverty_gap"
+                or variable.slug == "welfare_measure"
+                or variable.slug == "survey_year"
+            ):
+                continue
+
+            values = [
+                (
+                    float(row[variable.slug]) if row[variable.slug] == "NaN" else "",
+                    int(row["RequestYear"]),
+                    entity_name_map[row["CountryName"]],
+                    db_variable_id,
+                )
+                for _, row in data_df.iterrows()
+            ]
+
+            print("Inserting values...")
+            db.upsert_many(
+                """
+                INSERT INTO
+                    data_values (value, year, entityId, variableId)
+                VALUES
+                    (%s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    year = VALUES(year)
+            """,
+                values,
             )
 
 
