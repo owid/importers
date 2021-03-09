@@ -22,6 +22,18 @@ def get_mega_csv():
     return pd.read_csv("output/mega.csv")
 
 
+def map_of_entity_name_to_DB_entity_name(dbUtil):
+    entities = pd.read_csv(
+        "entities/standardized_entities.csv",
+    )
+
+    entities["code"] = entities["Our World In Data Name"].map(
+        dbUtil.get_or_create_entity
+    )
+
+    return {row["Country"]: row["code"] for _, row in entities.iterrows()}
+
+
 def main():
     variable_metadata = pd.read_csv(VARIABLE_METADATA_SPREADSHEET_URL)
     dataset_metadata = pd.read_csv(DATASET_METADATA_SPREADSHEET_URL).iloc[0].fillna("")
