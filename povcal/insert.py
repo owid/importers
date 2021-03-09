@@ -35,12 +35,13 @@ def map_of_entity_name_to_DB_entity_name(dbUtil):
 
 
 def main():
-    variable_metadata = pd.read_csv(VARIABLE_METADATA_SPREADSHEET_URL)
+    variable_metadata = pd.read_csv(VARIABLE_METADATA_SPREADSHEET_URL).fillna("")
     dataset_metadata = pd.read_csv(DATASET_METADATA_SPREADSHEET_URL).iloc[0].fillna("")
     sources_metadata = pd.read_csv(SOURCES_METADATA_SPREADSHEET_URL).iloc[0].fillna("")
 
     with connection.cursor() as c:
         db = DBUtils(c)
+        entity_name_map = map_of_entity_name_to_DB_entity_name(db)
 
         print(f"Inserting dataset: {dataset_metadata.Name}")
         db_dataset_id = db.upsert_dataset(
