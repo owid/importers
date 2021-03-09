@@ -388,6 +388,8 @@ def main():
     )
     print(f"Completed {COUNTRY_YEAR_VARIABLE_CSV_FILENAME}")
 
+    df = generate_mega_csv()
+
     set_P50_equal_to_implied_daily_median(df).to_csv(MEGA_CSV_FILENAME, index=False)
     print(f"Completed {MEGA_CSV_FILENAME}")
 
