@@ -1,7 +1,7 @@
 from os import path
 import os.path
 from io import StringIO
-from numpy import arange
+import numpy as np
 from math import floor, ceil
 import requests
 import json
@@ -18,7 +18,7 @@ from functools import reduce
 from bisect import bisect_left
 
 
-from HeadCount_Files_Downloader import HeadCount_Files_Downloader, suffix_coverage_types
+from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -100,10 +100,10 @@ def population_under_income_line_by_country_year(df):
 
 
 def add_decile_ratios(df):
-    df["P90:P10 ratio"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P10"])).map(
+    df["P90:P10"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P10"])).map(
         poverty_line_as_string
     )
-    df["P90:P50 ratio"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P50"])).map(
+    df["P90:P50"] = (pd.to_numeric(df["P90"]) / pd.to_numeric(df["P50"])).map(
         poverty_line_as_string
     )
     return df
@@ -111,6 +111,8 @@ def add_decile_ratios(df):
 
 def extract_deciles_from_headcount_files():
     df = combine_country_year_headcount_files()
+    # df.to_csv("TEMP_combined.csv", index=False)
+    # df = pd.read_csv("TEMP_combined.csv")
     return population_under_income_line_by_country_year(df)
 
 
@@ -181,7 +183,7 @@ def generate_absolute_poverty_line_df():
             ]
         ]
 
-        df = add_absolute_poverty_count_column(df)
+        df = add_number_people_under_poverty_line_column(df)
         df = add_absolute_poverty_gap_column(df)
 
         df = df.drop(columns=["ReqYearPopulation"])
@@ -190,7 +192,7 @@ def generate_absolute_poverty_line_df():
             columns={
                 "headcount_ratio": f"${poverty_line}_headcount_ratio",
                 "poverty_gap": f"${poverty_line}_poverty_gap",
-                "poverty_absolute": f"${poverty_line}_poverty_absolute",
+                "number_people_under": f"${poverty_line}_number_people_under",
                 "absolute_poverty_gap": f"${poverty_line}_absolute_poverty_gap",
             }
         )
@@ -227,8 +229,8 @@ def drop_unnecessary_columns(raw_data):
     )
 
 
-def add_absolute_poverty_count_column(df):
-    df["poverty_absolute"] = (
+def add_number_people_under_poverty_line_column(df):
+    df["number_people_under"] = (
         df["headcount_ratio"] * df.ReqYearPopulation * 1000000
     ).round(2)
     return df
@@ -263,12 +265,10 @@ def add_survey_year_column(df):
 
 
 def add_derived_columns(df):
-    # df = add_absolute_poverty_count_column(df)
-    # df = add_absolute_poverty_gap_column(df)
     df = add_decile_averages_column(df)
     df = add_mean_column(df)
-    df = add_welfare_measure_column(df)
-    df = add_survey_year_column(df)
+    # df = add_welfare_measure_column(df)
+    # df = add_survey_year_column(df)
 
     return df
 
@@ -296,7 +296,7 @@ def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
 def all_cents_between_dollars(minimum_dollar, maximum_dollar, increment=0.01):
     return [
         round(cent, 2)
-        for cent in arange(minimum_dollar, maximum_dollar + increment, increment)
+        for cent in np.arange(minimum_dollar, maximum_dollar + increment, increment)
     ]
 
 
