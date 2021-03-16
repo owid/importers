@@ -151,17 +151,18 @@ def generate_relative_poverty_line_df(decile_df):
             f"{relative_income_line_as_percentage}%_median_income_line"
         ].map(lambda x: poverty_line_as_string(x))
 
-        df[
-            f"{relative_income_line_as_percentage}%_of_median_headcount_ratio"
-        ] = df.apply(
-            lambda x: get_headcount_for_country_year_and_poverty_line(
-                x.CountryName,
-                x[
-                    f"{relative_income_line_as_percentage}%_median_income_line_formatted"
-                ],
-                x.RequestYear,
-            ),
-            axis=1,
+        df[f"{relative_income_line_as_percentage}%_of_median_headcount_ratio"] = (
+            df.apply(
+                lambda x: get_headcount_for_country_year_and_poverty_line(
+                    x.CountryName,
+                    x[
+                        f"{relative_income_line_as_percentage}%_median_income_line_formatted"
+                    ],
+                    x.RequestYear,
+                ),
+                axis=1,
+            )
+            * 100
         )
 
     return df[
@@ -195,6 +196,7 @@ def generate_absolute_poverty_line_df():
 
         df = add_number_people_under_poverty_line_column(df)
         df = add_absolute_poverty_gap_column(df)
+        df["headcount_ratio"] = df["headcount_ratio"] * 100
 
         df = df.drop(columns=["ReqYearPopulation"])
 
@@ -253,7 +255,7 @@ def add_absolute_poverty_gap_column(df):
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
-        df[f"decile{decile}_average"] = df[f"decile{decile}"] * df["mean"] / 30
+        df[f"decile{decile}_average"] = df[f"decile{decile}"] * (df["mean"] / 30) * 100
     return df
 
 
@@ -340,6 +342,7 @@ def generate_country_year_variable_df():
     df = country_year_variables_df()
     df = add_derived_columns(df)
     df = drop_unnecessary_columns(df)
+    df["gini"] = df["gini"] * 100
     return df
 
 
