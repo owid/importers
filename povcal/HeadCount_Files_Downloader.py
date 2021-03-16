@@ -94,7 +94,9 @@ class HeadCount_Files_Downloader:
         df = rename_columns(df)
 
         if self.requires_detailed_download(poverty_line):
-            df.to_csv(self.detailed_data_output_filename(poverty_line), index=False)
+            detailed_filename = self.detailed_data_output_filename(poverty_line)
+            df.to_csv(detailed_filename, index=False)
+            print(f"{detailed_filename} written")
 
         df = self.filter_only_headcount(df)
 
