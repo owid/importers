@@ -260,7 +260,7 @@ def add_decile_averages_column(df):
 
 
 def add_mean_column(df):
-    df["mean"] = df["mean"] / 365 / 12
+    df["mean"] = df["mean"] / (365 / 12)
     return df
 
 
