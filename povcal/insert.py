@@ -105,6 +105,7 @@ def main():
                 VALUES
                     (%s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
+                    value = VALUES(value),
                     year = VALUES(year)
             """,
                 values,
