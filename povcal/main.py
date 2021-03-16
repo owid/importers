@@ -342,6 +342,7 @@ def generate_country_year_variable_df():
     df = country_year_variables_df()
     df = add_derived_columns(df)
     df = drop_unnecessary_columns(df)
+    df = df.rename(columns={"ReqYearPopulation": "Population"})
     df["gini"] = df["gini"] * 100
     return df
 
