@@ -23,7 +23,17 @@ from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 pd.options.mode.chained_assignment = None  # default='warn'
 
 DECILE_THRESHOLDS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-ABSOLUTE_POVERTY_LINES = ["1.90", "3.20", "5.50", "10.00", "15.00", "20.00", "30.00"]
+ABSOLUTE_POVERTY_LINES = [
+    "1.00",
+    "1.90",
+    "3.20",
+    "5.50",
+    "10.00",
+    "15.00",
+    "20.00",
+    "30.00",
+    "45.00",
+]
 RELATIVE_POVERTY_LINES = [0.40, 0.50, 0.60]
 MIN_POV_LINE = 0
 MAX_POV_LINE = 400
