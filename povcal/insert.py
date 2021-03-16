@@ -7,6 +7,7 @@ from db_utils import DBUtils
 import requests
 import pdb
 import csv
+import numpy as np
 import pandas as pd
 
 VARIABLE_METADATA_SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkfC-f9XCIjzyhv8yVAtbWZJD10XMjT15FCH9QAe0c9FLg1QeeKHGNlR5u07oaPSBgYAAv1WQtfY5f/pub?gid=0&single=true&output=csv"
@@ -32,10 +33,6 @@ def map_of_entity_name_to_DB_entity_name(dbUtil):
     )
 
     return {row["Country"]: row["code"] for _, row in entities.iterrows()}
-
-
-def is_not_nan(value):
-    return value == value
 
 
 def main():
@@ -89,7 +86,9 @@ def main():
 
             values = [
                 (
-                    float(row[variable.slug]) if is_not_nan(row[variable.slug]) else "",
+                    float(row[variable.slug])
+                    if not np.isnan(row[variable.slug])
+                    else "",
                     int(row["RequestYear"]),
                     entity_name_map[row["CountryName"]],
                     db_variable_id,
