@@ -165,6 +165,12 @@ def generate_relative_poverty_line_df(decile_df):
             * 100
         )
 
+        df[
+            f"{relative_income_line_as_percentage}%_of_median_headcount_ratio"
+        ] = round_down_all_values_above_99_point_99(
+            df[f"{relative_income_line_as_percentage}%_of_median_headcount_ratio"]
+        )
+
     return df[
         [
             "CountryName",
@@ -175,6 +181,10 @@ def generate_relative_poverty_line_df(decile_df):
             ],
         ]
     ]
+
+
+def round_down_all_values_above_99_point_99(series):
+    return series.map(lambda x: 99.99 if x > 99.99 else x)
 
 
 def generate_absolute_poverty_line_df():
@@ -197,6 +207,9 @@ def generate_absolute_poverty_line_df():
         df = add_number_people_under_poverty_line_column(df)
         df = add_absolute_poverty_gap_column(df)
         df["headcount_ratio"] = df["headcount_ratio"] * 100
+        df["headcount_ratio"] = round_down_all_values_above_99_point_99(
+            df["headcount_ratio"]
+        )
 
         df = df.drop(columns=["ReqYearPopulation"])
 
