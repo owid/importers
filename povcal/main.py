@@ -250,7 +250,6 @@ def drop_unnecessary_columns(raw_data):
             "DataType",
             "headcount_ratio",
             "CoverageType",
-            *[f"decile{x}" for x in range(1, 11)],
         ]
     )
 
