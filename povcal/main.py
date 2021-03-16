@@ -269,7 +269,7 @@ def add_absolute_poverty_gap_column(df):
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
-        df[f"decile{decile}_average"] = df[f"decile{decile}"] * (df["mean"] / 30) * 100
+        df[f"decile{decile}_average"] = df[f"decile{decile}"] * (df["mean"] / 30)
     return df
 
 
