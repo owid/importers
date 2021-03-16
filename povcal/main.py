@@ -394,7 +394,7 @@ def main():
     #     output_dir=HEADCOUNTS_DIR,
     #     detailed_data_dir=DETAILED_DATA_DIR,
     #     detailed_poverty_lines=ABSOLUTE_POVERTY_LINES,
-    #     max_workers=1,
+    #     max_workers=2,
     # )
     # headcountsDownloader.download_headcount_files_by_poverty_line()
 
