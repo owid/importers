@@ -34,6 +34,10 @@ def map_of_entity_name_to_DB_entity_name(dbUtil):
     return {row["Country"]: row["code"] for _, row in entities.iterrows()}
 
 
+def is_not_nan(value):
+    return value == value
+
+
 def main():
     variable_metadata = pd.read_csv(VARIABLE_METADATA_SPREADSHEET_URL).fillna("")
     dataset_metadata = pd.read_csv(DATASET_METADATA_SPREADSHEET_URL).iloc[0].fillna("")
@@ -85,7 +89,7 @@ def main():
 
             values = [
                 (
-                    float(row[variable.slug]) if row[variable.slug] == "NaN" else "",
+                    float(row[variable.slug]) if is_not_nan(row[variable.slug]) else "",
                     int(row["RequestYear"]),
                     entity_name_map[row["CountryName"]],
                     db_variable_id,
