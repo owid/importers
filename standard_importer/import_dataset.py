@@ -20,6 +20,10 @@ from db import connection
 from db_utils import DBUtils
 from utils import import_from
 
+import logging
+logging.basicConfig()
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 DATASET_DIR = "who_gho"
 DATASET_VERSION = import_from(DATASET_DIR, 'DATASET_VERSION')
@@ -77,6 +81,12 @@ def main():
         print("---\nUpserting variables...")
         variables = pd.read_csv(os.path.join(DATA_PATH, "variables.csv"))
         variables = variables.fillna("")
+        if 'notes' in variables:
+            logger.warning(
+                'The "notes" column in `variables.csv` is '
+                'deprecated, and should be named "description" instead.'
+            )
+            variables.rename(columns={'notes': 'description'}, inplace=True)
         if 'source_id' in variables:
             on = 'source_id'
         else:
