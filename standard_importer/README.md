@@ -1,10 +1,9 @@
 # OWID standard importer
 
-This is a standard importer to load data into the OWID database. Can be run with `python3 import_dataset.py` after setting the right values at the top of the script:
+This is a standard importer to load data into the OWID database. Can be run with `python3 -m standard_importer.import_dataset` after setting the right values at the top of the script:
 
 ```
 DATASET_DIR = "vdem"  # Directory in this Git repo where data is located
-DATASET_VERSION = 10  # Will be appended to DATASET_DIR to create a namespace, e.g. "vdem10"
 USER_ID = 46          # ID of OWID user loading the data
 ```
 
@@ -43,10 +42,17 @@ Located in `output/sources.csv`:
 Located in `output/variables.csv`:
 
 * `dataset_id`: foreign key matching each variable with a dataset ID
+* `source_id`: foreign key matching each variable with a source ID
 * `id`: temporary variable ID for loading process
 * `name`: name of the variable
-* `unit`: unit of the variable
-* `notes`: long description of the variable
+* `description`: long description of the variable
+* `code`: original variable code used by the data source
+* `unit`: unit of measurement
+* `short_unit`: short unit of measurement, for chart axis display
+* `timespan`: timespan covered by the variable
+* `coverage`: type of geographical coverage
+* `display`: JSON object that defines how the variable should be displayed
+* `original_metadata`: JSON object representing original uncleaned metadata from the data source
 
 
 ### Datapoint files
