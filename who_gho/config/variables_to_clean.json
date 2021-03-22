@@ -124,6 +124,21 @@
       "display": {"name": null, "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
       "replaces": null
     },
+    {
+      "originalMetadata": {
+        "IndicatorCode": "MALARIA003",
+        "IndicatorName": "Estimated number of malaria deaths"
+      },
+      "name": "Estimated number of malaria deaths",
+      "unit": null,
+      "shortUnit": null,
+      "description": null,
+      "code": "MALARIA003",
+      "coverage": null,
+      "timespan": null,
+      "display": {"name": null, "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
+      "replaces": null
+    },
 
     {
       "originalMetadata": {
