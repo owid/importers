@@ -36,7 +36,7 @@ ABSOLUTE_POVERTY_LINES = [
 ]
 RELATIVE_POVERTY_LINES = [0.40, 0.50, 0.60]
 MIN_POV_LINE = 0
-MAX_POV_LINE = 400
+MAX_POV_LINE = 1400
 
 DECILES_CSV_FILENAME = "output/deciles_by_country_year.csv"
 ABSOLUTE_POVERTY_LINES_CSV_FILENAME = "output/absolute_poverty_lines.csv"
