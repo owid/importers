@@ -297,7 +297,6 @@ def add_survey_year_column(df):
 def add_derived_columns(df):
     df = add_mean_column(df)
     df = add_decile_averages_column(df)
-    df = add_mean_column(df)
     # df = add_welfare_measure_column(df)
     # df = add_survey_year_column(df)
 
