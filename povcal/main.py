@@ -79,6 +79,9 @@ def population_under_income_line_by_country_year(df):
                 .abs()
                 .idxmin()
             )
+            if np.isnan(idx):
+                actual_income_line = np.nan
+            else:
             actual_income_line = country_year_df.loc[idx]["poverty_line"]
 
             if country_year_tuple not in decile_thresholds_by_country_year:
