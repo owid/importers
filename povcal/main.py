@@ -273,7 +273,7 @@ def add_absolute_poverty_gap_column(df):
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
-        df[f"decile{decile}_average"] = df[f"decile{decile}"] * (df["mean"] / 30)
+        df[f"decile{decile}_average"] = df[f"decile{decile}"] * df["mean"]
     return df
 
 
@@ -295,6 +295,7 @@ def add_survey_year_column(df):
 
 
 def add_derived_columns(df):
+    df = add_mean_column(df)
     df = add_decile_averages_column(df)
     df = add_mean_column(df)
     # df = add_welfare_measure_column(df)
@@ -362,6 +363,8 @@ def generate_country_year_variable_df():
     df = drop_unnecessary_columns(df)
     df = df.rename(columns={"ReqYearPopulation": "Population"})
     df["gini"] = df["gini"] * 100
+    for decile in range(1, 11):
+        df[f"decile{decile}"] = df[f"decile{decile}"] * 100
     return df
 
 
