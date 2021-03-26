@@ -66,6 +66,8 @@ def population_under_income_line_by_country_year(df):
     dfg = df.groupby(["CountryName", "RequestYear"])
     decile_thresholds_by_country_year = {}
     for country_year_tuple in dfg.groups.keys():
+        if country_year_tuple[0] == "XX":
+            continue
         country_year_df = dfg.get_group(country_year_tuple).sort_values(
             by=["poverty_line"], ascending=False
         )
