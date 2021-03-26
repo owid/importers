@@ -87,20 +87,42 @@ class HeadCount_Files_Downloader:
             print(f"request starting for {poverty_line}")
 
         api_result = self.request_headcounts_by_poverty_line(poverty_line)
+        region_data = self.request_headcounts_by_poverty_line(
+            poverty_line, regional_data=True
+        )
 
         df = csv_to_dataframe(api_result)
         df = mark_missing_values_as_NaN(df)
         df = suffix_coverage_types(df)
         df = rename_columns(df)
 
+        r_df = csv_to_dataframe(region_data)
+        r_df = mark_missing_values_as_NaN(r_df)
+        r_df = r_df.iloc[::-1]
+        r_df = r_df.rename(
+            columns={
+                "requestYear": "RequestYear",
+                "regionTitle": "CountryName",
+                "hc": "headcount_ratio",
+                "regionCID": "CountryCode",
+                "povertyLine": "PovertyLine",
+                "pg": "poverty_gap",
+                "population": "ReqYearPopulation",
+            }
+        )
+        r_df = r_df.drop(columns=["p2"])
+
         if self.requires_detailed_download(poverty_line):
             detailed_filename = self.detailed_data_output_filename(poverty_line)
-            df.to_csv(detailed_filename, index=False)
+            detailed_df = pd.concat([df, r_df], ignore_index=True)
+            detailed_df.to_csv(detailed_filename, index=False)
             print(f"{detailed_filename} written")
 
         df = self.filter_only_headcount(df)
+        r_df = r_df[["CountryName", "RequestYear", "headcount_ratio"]]
+        combined_df = pd.concat([df, r_df], ignore_index=True)
 
-        df.to_csv(filename, index=False)
+        combined_df.to_csv(filename, index=False)
         print(f"{filename} written")
 
     def headcount_output_filename(self, poverty_line):
@@ -109,7 +131,7 @@ class HeadCount_Files_Downloader:
     def detailed_data_output_filename(self, poverty_line):
         return f"{self.detailed_data_dir}/{poverty_line}.csv"
 
-    def request_headcounts_by_poverty_line(self, poverty_line):
+    def request_headcounts_by_poverty_line(self, poverty_line, regional_data=False):
         api_address = "http://iresearch.worldbank.org/PovcalNet/PovcalNetAPI.ashx"
         params = {
             "Countries": "all",
@@ -117,6 +139,10 @@ class HeadCount_Files_Downloader:
             "PovertyLine": poverty_line,
             "display": "C",
         }
+        if regional_data:
+            params["display"] = "R"
+            params["GroupedBy"] = "WB"
+
         result = requests.get(
             api_address,
             params=params,
