@@ -316,7 +316,7 @@ def generate_poverty_lines_between(minimum_dollar, maximum_dollar):
     )
     lines.extend(
         all_cents_between_dollars(
-            max(150.50, minimum_dollar), min(400, maximum_dollar), 0.50
+            max(150.50, minimum_dollar), min(1400, maximum_dollar), 0.50
         )
     )
 
