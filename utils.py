@@ -1,13 +1,9 @@
-
 import re
 from typing import Iterable, Any, Generator
 
 def write_file(file_path, content):
     with open(file_path, 'w') as f:
         f.write(content)
-
-# def qgrid(df):
-#     return qg.show_grid(df, show_toolbar=True)
 
 def batchify(iterable: Iterable[Any], batch_size: int = 1000) -> Generator[Iterable[Any], None, None]:
     """yields batches of an iterable in batches of size n.
@@ -55,5 +51,5 @@ def snake_case2camel_case(s) -> str:
     return s2
 
 def import_from(module: str, name: str) -> Any:
-    module = __import__(module, fromlist=[name])
+    module = __import__(re.sub('/', '.', module), fromlist=[name])
     return getattr(module, name)

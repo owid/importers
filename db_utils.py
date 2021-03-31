@@ -203,9 +203,9 @@ class DBUtils:
     def upsert_variable(self, name, code, unit, short_unit, source_id, 
                         dataset_id, description=None, timespan='', coverage='', 
                         display=None, original_metadata=None):
-        if display is None:
+        if display is None or display == '':
             display = {}
-        if original_metadata is None:
+        if original_metadata is None or original_metadata == '':
             original_metadata = {}
         if not isinstance(display, str):
             display = json.dumps(display)
