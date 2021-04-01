@@ -6,7 +6,6 @@ Usage:
 
     python -m who_gho.clean
 
-TODO:
 Instructions for manually standardizing entity names:
 
 0. Retrieve all unique entity names in the dataset:
@@ -156,6 +155,10 @@ def delete_input() -> None:
 
     WARNING: this method deletes all input data and is only intended for use
     immediately prior to `download_data()`.
+
+    Returns:
+
+        None.
     """
     assert DOWNLOAD_INPUTS, (
         'You may only delete existing data inputs if `DOWNLOAD_DATA=True`. '
@@ -168,6 +171,28 @@ def delete_input() -> None:
 
 def load_variables_to_clean() -> List[dict]:
     """loads the array of variables to clean.
+
+    Returns:
+
+        variables: List[dict]. Array of variables to clean. Example:
+
+            [
+                {
+                    "originalMetadata": {
+                        "IndicatorCode": "MDG_0000000007",
+                        "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
+                    },
+                    "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
+                    "unit": "%",
+                    "shortUnit": "%",
+                    "description": "The share of newborns who die before reaching the age of five",
+                    "code": "MDG_0000000007",
+                    "coverage": null,
+                    "timespan": null,
+                    "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
+                },
+                ...
+            ]
     """
     with open(os.path.join(CURRENT_DIR, 'config', 'variables_to_clean.json'), 'r') as f:
         variables = json.load(f)['variables']
@@ -175,8 +200,19 @@ def load_variables_to_clean() -> List[dict]:
 
 
 def download_data(variable_codes: List[str]) -> None:
-    """Downloads the raw WHO GHO data and saves it
-    in csv format to `{INPATH}`.
+    """Downloads the raw WHO GHO data for aa subset of variable codes and saves 
+    the data in csv format to `{INPATH}`.
+
+    Arguments:
+
+        variable_codes: List[str]. List of variable codes for which to download
+            WHO GHO data. Example:
+
+                ["MDG_0000000017", "WHS4_100", ...]
+    
+    Returns:
+
+        None.
     """
     logger.info(f'Downloading data...')
     batch_size = 200
@@ -218,10 +254,10 @@ def delete_output(keep_paths: List[str]) -> None:
 
     Arguments:
 
-        keep_paths: List[str]. List of subpaths in `{CURRENT_DIR}/output` that 
-            you do NOT want deleted. They will be temporarily move to `{CURRENT_DIR}`
-            and then back into `{CURRENT_DIR}/output` after everything else in 
-            `{CURRENT_DIR}/output` has been deleted.
+        keep_paths: List[str]. List of subpaths in `{CURRENT_DIR}/output`
+            that you do NOT want deleted. They will be temporarily moved to
+            `{CURRENT_DIR}` and then back into `{CURRENT_DIR}/output` after
+            everything else in `{CURRENT_DIR}/output` has been deleted.
 
     Returns:
 
@@ -243,7 +279,12 @@ def delete_output(keep_paths: List[str]) -> None:
 
 
 def mk_input_output_dirs() -> None:
-    """creates input and output directories, if they do not already exist."""
+    """creates input and output directories, if they do not already exist.
+    
+    Returns:
+        
+        None.
+    """
     if not os.path.exists(INPATH): 
         os.makedirs(INPATH)
 
@@ -251,8 +292,21 @@ def mk_input_output_dirs() -> None:
         os.makedirs(OUTPATH)
 
 
-def clean_datasets():
-    """Constructs a dataframe where each row represents a dataset to be upserted."""
+def clean_datasets() -> pd.DataFrame:
+    """Constructs a dataframe where each row represents a dataset to be
+    upserted.
+
+    Note: often, this dataframe will only consist of a single row.
+    
+    Returns:
+
+        df: pd.DataFrame. Dataframe where each row represents a dataset to be 
+            upserted. Example:
+
+            id                                               name
+        0   0  Global Health Observatory - World Health Organ...
+
+    """
     data = [
         {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
     ]
@@ -260,7 +314,7 @@ def clean_datasets():
     return df
 
 
-def clean_and_create_datapoints(variable_codes: List[str], entity2owid_name: dict) -> dict:
+def clean_and_create_datapoints(variable_codes: List[str], entity2owid_name: Dict[str, str]) -> Dict[str, dict]:
     """Cleans all entity-variable-year data observations and saves all
     data points to csv in the `{OUTPATH}/datapoints` directory.
 
@@ -268,28 +322,26 @@ def clean_and_create_datapoints(variable_codes: List[str], entity2owid_name: dic
 
     Arguments:
 
-        entity2owid_name: dict. Dict of "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}"
-            mappings. Example::
+        variable_codes: List[str]. List of variable codes for which to download
+            WHO GHO data. Example:
 
-                {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
+            ["MDG_0000000017", "WHS4_100", ...]
+
+        entity2owid_name: Dict[str, str]. Dict of 
+            "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}" 
+            key-value mappings. Example:
+
+            {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
 
     Returns:
 
-        df_variables: pd.DataFrame. Dataframe where each row represents a single
-            variable. Each row contains the variable's WHO indicator code,
-            the variable's name, and a temporary ID assigned to the variable
-            that matches it to the corresponding csv that has just been created
-            in `{OUTPATH}/datapoints`.
+        var_code2meta: Dict[str, Dict]. Dict where keys are variable codes and
+            values are dict representing some basic metadata derived from the 
+            data points. The metadata dicts also contain a temporary ID 
+            assigned to the variable that matches it to the corresponding csv 
+            that has just been created in `{OUTPATH}/datapoints` is Example:
 
-            Example::
-
-                      indicator_code                         indicator_name   id
-            0         EG.CFT.ACCS.ZS  Access to clean fuels and technolo...  194
-            1         EG.ELC.ACCS.ZS            Access to electricity (%...  198
-            2      EG.ELC.ACCS.RU.ZS  Access to electricity, rural (% of...  196
-            3      EG.ELC.ACCS.UR.ZS  Access to electricity, urban (% of...  197
-            4         FX.OWN.TOTL.ZS  Account ownership at a financial i...  335
-            ...
+            {'HIV_0000000006': {'id': 0, 'timespan': '1990-2019'}, ...}
 
 
     """
@@ -375,26 +427,25 @@ def clean_variables(dataset_id: int,
 
         variables: List[dict]. List of variables to clean. Example:
 
-                [
-                    {
-                        "originalMetadata": {
-                            "IndicatorCode": "MDG_0000000007",
-                            "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
-                        },
-                        "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
-                        "unit": "%",
-                        "shortUnit": "%",
-                        "description": "The share of newborns who die before reaching the age of five",
-                        "code": "MDG_0000000007",
-                        "coverage": null,
-                        "timespan": null,
-                        "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 2},
-                        "replaces": null
+            [
+                {
+                    "originalMetadata": {
+                        "IndicatorCode": "MDG_0000000007",
+                        "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
                     },
-                    ...
-                ]
+                    "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
+                    "unit": "%",
+                    "shortUnit": "%",
+                    "description": "The share of newborns who die before reaching the age of five",
+                    "code": "MDG_0000000007",
+                    "coverage": null,
+                    "timespan": null,
+                    "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
+                },
+                ...
+            ]
 
-        var_code2meta: Dict[dict]. Dict of `variable code` -> `{variable meta}`
+        var_code2meta: Dict[str, dict]. Dict of `variable code` -> `{variable meta}`
             mappings. Contains some metadata for each variable that was 
             constructed during the `clean_and_create_datapoints` step. All
             variable codes in `variables` MUST have a corresponding key in 
@@ -477,7 +528,7 @@ def clean_sources(dataset_id: int, dataset_name: str) -> pd.DataFrame:
         dataset_id: int. Integer representing the dataset id for all variables
             and sources.
 
-        dataseet_name: str. Dataset name.
+        dataset_name: str. Dataset name.
 
     Returns:
 
@@ -517,7 +568,7 @@ def get_distinct_entities() -> List[str]:
         df_temp = pd.read_csv(os.path.join(OUTPATH, 'datapoints', fname))
         entities.update(df_temp['country'].unique().tolist())
     
-    entities = list(entities)
+    entities = sorted(entities)
     assert pd.notnull(entities).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
@@ -525,8 +576,20 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def _fetch_data_many_variables(variable_codes: List[str]) -> pd.DataFrame:
+def _fetch_data_many_variables(variable_codes: List[str]) -> List[pd.DataFrame]:
     """Fetches datapoints for many WHO GHO variables asynchronously.
+
+    Arguments:
+
+        variable_codes: List[str]. List of variable codes for which to download
+            WHO GHO data. Example:
+
+            ["MDG_0000000017", "WHS4_100", ...]
+    
+    Returns:
+
+        dataframes: List[pd.DataFrame]. List of pandas dataframes, where each
+            dataframe contains the datapoints for a single variable.
     """
     asyncio.set_event_loop(asyncio.new_event_loop())
     loop = asyncio.get_event_loop()
@@ -550,6 +613,22 @@ def _fetch_data_many_variables(variable_codes: List[str]) -> pd.DataFrame:
 
 async def _gather_fetch_tasks(variable_codes: List[str], 
                               loop: asyncio.unix_events._UnixSelectorEventLoop) -> asyncio.Future:
+    """Utility method for 
+
+    Arguments:
+
+        variable_codes: List[str]. List of variable codes for which to download
+            WHO GHO data. Example:
+
+            ["MDG_0000000017", "WHS4_100", ...]
+        
+        loop: asyncio.unix_events._UnixSelectorEventLoop. Asynchronous Event 
+            loop. e.g. `loop = asyncio.get_event_loop()`.
+    
+    Returns:
+
+        asyncio.Future.
+    """
     async with ClientSession() as session:
         async_tasks = []
         for code in variable_codes:
@@ -561,7 +640,17 @@ async def _gather_fetch_tasks(variable_codes: List[str],
 
 
 async def _fetch_data_one_variable(code: str, session: ClientSession = None) -> dict:
-    """Fetches data points for one variable.
+    """Fetches data points for one variable, asynchronously.
+
+    Arguments:
+
+        code: str. WHO GHO variable code.
+
+        session: ClientSession = None.
+
+    Returns:
+
+        res_json: dict. Dict containing the WHO GHO variable data.
     """
     if session is None:
         session = ClientSession()
@@ -581,6 +670,11 @@ async def _fetch_data_one_variable(code: str, session: ClientSession = None) -> 
 def _fetch_meta_all_variables() -> List[dict]:
     """retrieves the name and code for all indicators in the WHO GHO
     dataset.
+
+    Returns:
+
+        indicators: List[dict]. List of WHO GHO variables, as retrieved from
+            https://ghoapi.azureedge.net/api/indicator.
     """
     url_indicators = "https://ghoapi.azureedge.net/api/indicator"
     indicators = json.loads(requests.get(url_indicators).content)['value']
@@ -590,9 +684,20 @@ def _fetch_meta_all_variables() -> List[dict]:
 
 def _fetch_description_many_variables(codes: List[str]) -> List[str]:
     """Fetches the description for multiple variables.
+
+    Arguments:
+
+        codes: List[str]. List of variable codes for which to download WHO GHO 
+            data. Example:
+
+                ["MDG_0000000017", "WHS4_100", ...]
+    
+    Returns:
+
+        descs: List[str]. List of variable descriptions.
     """
     indicators = _fetch_meta_all_variables()
-    var_code2name = {ind['IndicatorCode']: ind['IndicatorName'] for ind in indicators if ind['IndicatorCode']  in codes}
+    var_code2name = {ind['IndicatorCode']: ind['IndicatorName'] for ind in indicators if ind['IndicatorCode'] in codes}
     names = [var_code2name[code] for code in codes]
     var_name2url = _fetch_description_urls()
     descs = []
@@ -605,6 +710,14 @@ def _fetch_description_many_variables(codes: List[str]) -> List[str]:
 
 def _fetch_description_one_variable(url: str) -> str:
     """Fetches the description for one variable.
+
+    Arguments:
+
+        url: str. URL where a variable's description is available.
+
+    Returns:
+
+        text: str. String representing the variable's description.
     """
     headings_to_use = ['rationale', 'definition', 'method of measurement', 'method of estimation']
     soup = BeautifulSoup(requests.get(url).content, features="lxml")
@@ -619,7 +732,12 @@ def _fetch_description_one_variable(url: str) -> str:
 
 
 def _fetch_description_urls() -> Dict[str, str]:
-    """Fetches urls for variable descriptions.
+    """Fetches variable urls for where descriptions are available to be scraped.
+
+    Returns:
+
+        res: Dict[str, str]. Dict where keys represent a variable's name and 
+            values represent a variable's URL.
     """
     soup = BeautifulSoup(requests.get("https://www.who.int/data/gho/data/indicators").content, features="lxml")
     a_tags = soup.find('div', {'id': 'PageContent_T0AFD33E6006_Col00'}) \
@@ -635,6 +753,15 @@ def _fetch_description_urls() -> Dict[str, str]:
 
 def _clean_datapoints_custom(df: pd.DataFrame) -> pd.DataFrame:
     """custom logic for cleaning specific variables.
+
+    Arguments:
+
+        df: pd.DataFrame. Dataframe containing all datapoints to be cleaned.
+    
+    Returns:
+
+        df: pd.DataFrame. Same dataframe as input, after custom data cleaning
+            has been applied.
     """
     # WHOSIS_000001: Life expectancy at birth (years).
     # There is one data point for Canada in 1920 that is clearly a
