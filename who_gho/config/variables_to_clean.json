@@ -13,8 +13,7 @@
       "code": "MDG_0000000007",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1, "conversionFactor": 0.1},
-      "replaces": null
+      "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1, "conversionFactor": 0.1}
     },
     {
       "originalMetadata": {
@@ -28,8 +27,7 @@
       "code": "MDG_0000000001",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Infant mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1, "conversionFactor": 0.1},
-      "replaces": null
+      "display": {"name": "Infant mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1, "conversionFactor": 0.1}
     },
     {
       "originalMetadata": {
@@ -43,8 +41,7 @@
       "code": "MDG_0000000026",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Maternal mortality ratio", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Maternal mortality ratio", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     },
     {
       "originalMetadata": {
@@ -58,8 +55,7 @@
       "code": "WHOSIS_000001",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Life expectancy at birth", "unit": "years", "shortUnit": "years", "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Life expectancy at birth", "unit": "years", "shortUnit": "years", "numDecimalPlaces": 1}
     },
     {
       "originalMetadata": {
@@ -73,8 +69,7 @@
       "code": "WHS4_100",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Share of one-year-olds vaccinated against diphtheria, pertussis, and tetanus (DTP3)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Share of one-year-olds vaccinated against diphtheria, pertussis, and tetanus (DTP3)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
     },
 
     {
@@ -89,8 +84,7 @@
       "code": "WHS4_544",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Share of one-year-olds vaccinated against polio (Pol3)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Share of one-year-olds vaccinated against polio (Pol3)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
     },
 
     {
@@ -105,8 +99,7 @@
       "code": "WHS8_110",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Share of one-year-olds vaccinated against measles (MCV1)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Share of one-year-olds vaccinated against measles (MCV1)", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
     },
 
     {
@@ -121,8 +114,7 @@
       "code": "MALARIA001",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Reported number of deaths from malaria", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Reported number of deaths from malaria", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     },
     {
       "originalMetadata": {
@@ -136,8 +128,7 @@
       "code": "MALARIA003",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Estimated number of deaths from malaria", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Estimated number of deaths from malaria", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     },
 
     {
@@ -152,8 +143,7 @@
       "code": "HIV_0000000006",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Number of deaths from HIV/AIDS", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Number of deaths from HIV/AIDS", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     },
 
     {
@@ -168,8 +158,7 @@
       "code": "TB_e_mort_exc_tbhiv_num",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Number of deaths from tuberculosis among HIV-negative people", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Number of deaths from tuberculosis among HIV-negative people", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     },
     {
       "originalMetadata": {
@@ -183,8 +172,7 @@
       "code": "MDG_0000000017",
       "coverage": null,
       "timespan": null,
-      "display": {"name": "Death rate from tuberculosis among HIV-negative people", "unit": null, "shortUnit": null, "numDecimalPlaces": 1},
-      "replaces": null
+      "display": {"name": "Death rate from tuberculosis among HIV-negative people", "unit": null, "shortUnit": null, "numDecimalPlaces": 1}
     }
   ]
 }

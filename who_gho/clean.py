@@ -478,12 +478,6 @@ def clean_variables(dataset_id: int,
                 )
             variable[field] = meta[field]
 
-    # Removes the "replaces" field if it exists, since it is not part of the SQL
-    # schema.
-    for variable in variables:
-        if 'replaces' in variable:
-            variable.pop('replaces')
-
     # converts the "originalMetadata" and "display" json fields to strings
     # for variable in variables:
     #     for field in ['originalMetadata', 'display']:
