@@ -200,20 +200,42 @@ class DBUtils:
             self.counts['sources_updated'] += 1
         return row[0]
 
-    def upsert_variable(self, name, code, unit, short_unit, source_id, dataset_id, description=None, timespan='', coverage='', display={}):
+    def upsert_variable(self, name, code, unit, short_unit, source_id, 
+                        dataset_id, description=None, timespan='', coverage='', 
+                        display=None, original_metadata=None):
+        if display is None or display == '':
+            display = {}
+        if original_metadata is None or original_metadata == '':
+            original_metadata = {}
+        if not isinstance(display, str):
+            display = json.dumps(display)
+        if not isinstance(original_metadata, str):
+            original_metadata = json.dumps(original_metadata)
         operation = self.upsert_one("""
-            INSERT INTO variables
-                (name, code, description, unit, shortUnit, timespan, coverage, display, sourceId, datasetId, createdAt, updatedAt)
+            INSERT INTO variables (
+                name, code, description, unit, shortUnit, timespan, coverage, 
+                display, originalMetadata, sourceId, datasetId, createdAt, 
+                updatedAt
+            )
             VALUES
-                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
+                (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW(), NOW())
             ON DUPLICATE KEY UPDATE
                 name = VALUES(name),
                 code = VALUES(code),
+                description = VALUES(description),
+                unit = VALUES(unit),
+                shortUnit = VALUES(shortUnit),
                 timespan = VALUES(timespan),
-                datasetId = VALUES(datasetId),
+                coverage = VALUES(coverage),
+                display = VALUES(display),
+                originalMetadata = VALUES(originalMetadata),
                 sourceId = VALUES(sourceId),
+                datasetId = VALUES(datasetId),
                 updatedAt = VALUES(updatedAt)
-        """, [name, code, description, unit, short_unit, timespan, coverage, json.dumps(display), source_id, dataset_id])
+        """, [
+            name, code, description, unit, short_unit, timespan, coverage, 
+            display, original_metadata, source_id, dataset_id
+        ])
 
         if operation == INSERT:
             self.counts['variables_inserted'] += 1
