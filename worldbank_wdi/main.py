@@ -6,7 +6,7 @@ Usage:
     python -m worldbank_wdi.main
 """
 
-from worldbank_wdi import DATASET_VERSION, DATASET_DIR
+from worldbank_wdi import DATASET_NAMESPACE, DATASET_DIR
 
 from worldbank_wdi import (
     download, 
@@ -21,7 +21,7 @@ def main():
     download.main()
     init_variables_to_upsert.main()
     clean.main()
-    import_dataset.main(DATASET_DIR, DATASET_VERSION)
+    import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
 
     match_variables.main()
     prepare_chart_updates.main()

@@ -34,7 +34,7 @@ CURRENT_DIR = os.path.dirname(__file__)
 # CURRENT_DIR = os.path.join(os.getcwd(), 'standard_importer')
 
 
-def main(dataset_dir: str, dataset_version: str):
+def main(dataset_dir: str, dataset_namespace: str):
     data_path = os.path.join(dataset_dir, "output")
 
     with connection.cursor() as cursor:
@@ -56,7 +56,7 @@ def main(dataset_dir: str, dataset_version: str):
         for i, dataset_row in tqdm(datasets.iterrows()):
             db_dataset_id = db.upsert_dataset(
                 name=dataset_row["name"],
-                namespace=f"{re.sub(r'/', '_', dataset_dir)}@{dataset_version}",
+                namespace=dataset_namespace,
                 user_id=USER_ID
             )
             datasets.at[i, "db_dataset_id"] = db_dataset_id
