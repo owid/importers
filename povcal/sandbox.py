@@ -55,12 +55,17 @@ def extract_entity_names():
 
 def redo_files():
     all_files = glob.glob(HEADCOUNTS_DIR + "/*.csv")
+    num_fails = 0
     for filename in all_files:
-        print(filename)
+        # print(filename)
         df = pd.read_csv(filename, header=0)
-        df = rename_columns(df)
-        df.to_csv(filename, index=False)
+        if df.duplicated(subset=["CountryName", "RequestYear"]).any():
+            num_fails += 1
+            os.remove(filename)
+        # df = rename_columns(df)
+        # df.to_csv(filename, index=False)
+    print(num_fails)
 
 
 if __name__ == "__main__":
-    extract_entity_names()
+    redo_files()

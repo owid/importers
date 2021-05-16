@@ -112,6 +112,12 @@ class HeadCount_Files_Downloader:
         )
         r_df = r_df.drop(columns=["p2"])
 
+        if (
+            r_df.CountryName.str.contains("XX", regex=False).any()
+            or r_df.duplicated(subset=["CountryName", "RequestYear"]).any()
+        ):
+            raise Exception("corrupt data")
+
         if self.requires_detailed_download(poverty_line):
             detailed_filename = self.detailed_data_output_filename(poverty_line)
             detailed_df = pd.concat([df, r_df], ignore_index=True)

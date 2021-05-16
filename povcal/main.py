@@ -22,7 +22,7 @@ from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
-DECILE_THRESHOLDS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+DECILE_THRESHOLDS = np.arange(0, 1, 0.1)
 ABSOLUTE_POVERTY_LINES = [
     "1.00",
     "1.90",
@@ -82,7 +82,13 @@ def population_under_income_line_by_country_year(df):
             if np.isnan(idx):
                 actual_income_line = np.nan
             else:
-            actual_income_line = country_year_df.loc[idx]["poverty_line"]
+                closest_row = country_year_df.loc[idx]
+                actual_income_line = (
+                    closest_row["poverty_line"]
+                    if abs(relative_income_line - closest_row["headcount_ratio"])
+                    <= 0.01
+                    else np.nan
+                )
 
             if country_year_tuple not in decile_thresholds_by_country_year:
                 decile_thresholds_by_country_year[country_year_tuple] = []
@@ -95,6 +101,7 @@ def population_under_income_line_by_country_year(df):
     ).reset_index()
     df = df.rename(columns={"index": "country_year"})
     for col_index, poverty_line in enumerate(DECILE_THRESHOLDS):
+        # df = df.rename(columns={col_index: f"P{round(poverty_line * 100, 2)}"})
         df = df.rename(columns={col_index: f"P{int(poverty_line * 100)}"})
 
     df[["CountryName", "RequestYear"]] = pd.DataFrame(
@@ -106,6 +113,7 @@ def population_under_income_line_by_country_year(df):
         [
             "CountryName",
             "RequestYear",
+            # *[f"P{round(income_line * 100, 2)}" for income_line in DECILE_THRESHOLDS],
             *[f"P{int(income_line * 100)}" for income_line in DECILE_THRESHOLDS],
         ]
     ]
@@ -273,7 +281,7 @@ def add_absolute_poverty_gap_column(df):
 
 def add_decile_averages_column(df):
     for decile in range(1, 11):
-        df[f"decile{decile}_average"] = df[f"decile{decile}"] * df["mean"]
+        df[f"decile{decile}_average"] = df[f"decile{decile}"] * df["mean"] * 10
     return df
 
 
@@ -356,14 +364,30 @@ def find_closest_number(myList, myNumber):
         return before
 
 
+# Some country-years strangely have all deciles as zeros instead of being marked as -1 or missing value
+def mark_zero_decile_columns_as_missing_values(df):
+    df["mark_as_na"] = (
+        df[[f"decile{decile}" for decile in range(1, 11)]]
+        .apply(lambda x: x == 0, axis=1)
+        .apply(any, axis=1)
+    )
+    for decile in range(1, 11):
+        df.loc[df["mark_as_na"] == True, f"decile{decile}"] = np.nan
+    df = df.drop(columns=["mark_as_na"])
+    return df
+
+
 def generate_country_year_variable_df():
     df = country_year_variables_df()
+    df = mark_zero_decile_columns_as_missing_values(df)
     df = add_derived_columns(df)
     df = drop_unnecessary_columns(df)
     df = df.rename(columns={"ReqYearPopulation": "Population"})
     df["gini"] = df["gini"] * 100
     for decile in range(1, 11):
         df[f"decile{decile}"] = df[f"decile{decile}"] * 100
+
+    df["Population"] *= 1000000
     return df
 
 
