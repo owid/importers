@@ -229,6 +229,7 @@ class DBUtils:
                 coverage = VALUES(coverage),
                 display = VALUES(display),
                 originalMetadata = VALUES(originalMetadata),
+                datasetId = VALUES(datasetId),
                 sourceId = VALUES(sourceId),
                 datasetId = VALUES(datasetId),
                 updatedAt = VALUES(updatedAt)

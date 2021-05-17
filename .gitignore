@@ -1,5 +1,14 @@
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
 .DS_Store
 .env
 env/
+.venv
 __pycache__/
 .ipynb_checkpoints/
+povcal/data_by_poverty_line/
+povcal/output/
