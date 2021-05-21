@@ -6,9 +6,18 @@ _Bulk import scripts for getting large datasets into grapher._
 
 Each large dataset has its own folder, which includes scripts to pull the data, transform it and upload it as a new version.
 
-## Development
+Historical data transformations might have used Jupyter notebooks, but all recent ones use Python scripts.
 
-Data transformations are written in Python and sometimes use Jupyter notebooks.
+## Rough convention
+
+Each major dataset has its own folder `dataset/`, and inside that you can find:
+
+- Scripts that transform it
+- `input/`: an original(ish) copy
+- `output/`: the transformed copy that will be uploaded
+- `standardisation/`: any country name transformations that were needed
+
+## Development
 
 You should install Python 3.8+ and install required packages:
 
