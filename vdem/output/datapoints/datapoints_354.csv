@@ -5,7 +5,6 @@ Mexico,1991,41
 Mexico,1994,71
 Mexico,1997,125
 Mexico,2000,65
-Mexico,2003,97
 Mexico,2009,71
 Mexico,2012,104
 Mexico,2015,56
@@ -20,6 +19,7 @@ Suriname,2000,3
 Suriname,2005,5
 Suriname,2010,6
 Suriname,2015,5
+Suriname,2020,8
 Sweden,1893,66
 Sweden,1896,58
 Sweden,1921,41
@@ -81,8 +81,6 @@ Switzerland,1951,48
 Switzerland,1955,47
 Switzerland,1959,47
 Switzerland,1963,48
-Switzerland,1967,45
-Switzerland,1971,44
 Switzerland,1975,46
 Switzerland,1979,44
 Switzerland,1983,42
@@ -97,13 +95,13 @@ Switzerland,2015,33
 Switzerland,2019,29
 Ghana,1956,15
 Ghana,1979,13
+Ghana,2020,1
 South Africa,1910,16
-South Africa,1915,39
-South Africa,1920,21
+South Africa,1915,27
 South Africa,1921,9
 South Africa,1924,18
 South Africa,1929,8
-South Africa,1933,61
+South Africa,1933,2
 South Africa,1938,8
 South Africa,1943,9
 South Africa,1948,9
@@ -119,7 +117,7 @@ South Africa,2019,44
 Japan,1890,41
 Japan,1892,38
 Japan,1894,39
-Japan,1898,29
+Japan,1898,21
 Japan,1924,103
 Japan,1937,37
 Japan,1946,96
@@ -145,10 +143,11 @@ Japan,2000,31
 Japan,2003,34
 Japan,2005,31
 Japan,2009,21
-Japan,2012,57
+Japan,2012,54
 Japan,2014,41
 Japan,2017,50
 Myanmar,2010,8
+Myanmar,2020,13
 Russia,1917,110
 Russia,1993,45
 Russia,1995,66
@@ -164,6 +163,7 @@ Albania,2009,4
 Albania,2013,16
 Albania,2017,19
 Egypt,1987,35
+Egypt,2020,20
 Colombia,1974,15
 Colombia,1978,5
 Colombia,1986,7
@@ -182,7 +182,6 @@ Poland,1993,74
 Poland,1997,60
 Poland,2001,53
 Poland,2005,56
-Poland,2007,53
 Poland,2011,40
 Poland,2015,42
 Brazil,1945,22
@@ -199,8 +198,8 @@ Brazil,1998,83
 Brazil,2002,84
 Brazil,2006,65
 Brazil,2010,53
-Brazil,2014,66
-Brazil,2018,29
+Brazil,2014,54
+Brazil,2018,37
 United States,1828,5
 United States,1830,17
 United States,1832,25
@@ -298,14 +297,14 @@ Bolivia,2002,27
 Bolivia,2005,8
 Bolivia,2014,10
 Bolivia,2019,9
+Bolivia,2020,16
 Honduras,1954,12
 Honduras,2001,5
 Honduras,2005,5
 Honduras,2013,27
 Honduras,2017,26
-Mali,1957,7
 Mali,1992,9
-Mali,2013,16
+Mali,2020,15
 Pakistan,1970,16
 Pakistan,1988,40
 Pakistan,1990,22
@@ -320,11 +319,10 @@ Peru,1985,12
 Peru,1990,32
 Peru,1992,6
 Peru,1995,8
-Peru,2000,9
 Peru,2001,17
 Peru,2006,17
-Peru,2011,21
 Peru,2016,20
+Peru,2020,15
 Senegal,1998,11
 Senegal,2001,11
 Senegal,2012,4
@@ -361,8 +359,10 @@ Argentina,2001,16
 Argentina,2003,13
 Argentina,2005,16
 Argentina,2013,19
-Argentina,2017,31
+Argentina,2015,14
 Argentina,2019,11
+Ethiopia,2010,9
+Ethiopia,2015,9
 India,1951,12
 India,1957,27
 India,1962,29
@@ -376,8 +376,6 @@ India,1991,59
 India,1996,46
 India,1998,32
 India,1999,33
-India,2004,43
-Kenya,1961,1
 Kenya,2002,14
 South Korea,1948,29
 South Korea,1950,24
@@ -396,24 +394,24 @@ South Korea,2000,17
 South Korea,2004,10
 South Korea,2008,18
 South Korea,2012,13
-South Korea,2016,123
+South Korea,2016,38
+South Korea,2020,6
 Kosovo,2001,12
-Kosovo,2004,9
 Kosovo,2007,13
 Kosovo,2010,14
 Kosovo,2014,16
 Kosovo,2017,9
 Kosovo,2019,25
 Lebanon,1943,6
-Nigeria,1959,134
+Nigeria,1959,75
 Nigeria,1979,78
 Nigeria,1999,66
 Nigeria,2003,34
+Nigeria,2019,18
 Philippines,1907,25
 Philippines,1909,2
-Philippines,1912,16
 Philippines,1919,0
-Philippines,1922,35
+Philippines,1922,26
 Philippines,1925,6
 Philippines,1928,7
 Philippines,1935,6
@@ -427,14 +425,16 @@ Philippines,2016,23
 Philippines,2019,36
 Tanzania,1995,4
 Tanzania,2000,5
-Tanzania,2005,11
-Tanzania,2015,42
+Tanzania,2005,5
+Tanzania,2015,32
+Tanzania,2020,4
 Taiwan,1995,7
 Taiwan,1996,46
 Taiwan,2001,46
 Taiwan,2004,34
 Taiwan,2005,21
 Taiwan,2016,3
+Taiwan,2020,5
 Thailand,1975,18
 Thailand,1976,56
 Thailand,1979,33
@@ -449,12 +449,9 @@ Thailand,2005,25
 Thailand,2007,24
 Thailand,2011,34
 Thailand,2019,81
-Uganda,1958,1
-Uganda,2011,12
 Venezuela,1958,18
 Venezuela,1963,29
 Venezuela,1968,21
-Venezuela,1973,9
 Venezuela,1978,11
 Venezuela,1983,10
 Venezuela,1988,18
@@ -463,6 +460,7 @@ Venezuela,1998,26
 Venezuela,2000,6
 Venezuela,2005,10
 Venezuela,2010,2
+Venezuela,2020,8
 Benin,1957,6
 Benin,1991,9
 Benin,1995,8
@@ -476,8 +474,9 @@ Burkina Faso,1997,2
 Burkina Faso,2002,10
 Burkina Faso,2012,19
 Burkina Faso,2015,18
+Burkina Faso,2020,13
 Cambodia,1998,15
-Cambodia,2003,26
+Cambodia,2003,24
 Cambodia,2008,3
 Indonesia,1955,45
 Indonesia,1971,20
@@ -486,30 +485,26 @@ Indonesia,1982,24
 Indonesia,1987,40
 Indonesia,1992,56
 Indonesia,1999,51
-Indonesia,2004,52
 Indonesia,2009,93
 Indonesia,2014,73
 Indonesia,2019,85
 Mozambique,1994,9
 Mozambique,2014,17
 Mozambique,2019,6
-Nepal,1991,4
-Nepal,1994,20
-Nepal,1999,11
 Nepal,2017,53
 Nicaragua,1936,13
 Nicaragua,1984,9
 Nicaragua,2006,23
 Nicaragua,2011,2
 Nicaragua,2016,2
-Niger,1993,11
+Niger,1993,13
 Niger,1995,12
 Niger,1996,3
 Niger,1999,17
-Niger,2004,22
 Niger,2009,7
 Niger,2011,23
 Niger,2016,20
+Niger,2020,13
 Zambia,1959,1
 Zambia,1962,7
 Zambia,1964,10
@@ -527,18 +522,17 @@ Zimbabwe,1939,0
 Zimbabwe,1946,3
 Zimbabwe,1948,1
 Zimbabwe,1954,2
-Zimbabwe,1958,0
 Zimbabwe,1965,5
-Zimbabwe,1979,0
 Zimbabwe,1980,20
 Zimbabwe,1985,15
 Zimbabwe,2008,10
+Zimbabwe,2013,2
 Zimbabwe,2018,1
 Guinea,1957,0
+Guinea,2020,3
 Cote d'Ivoire,2016,3
 Mauritania,1992,1
 Mauritania,2001,3
-Mauritania,2013,10
 Canada,1841,5
 Canada,1844,2
 Canada,1848,2
@@ -549,7 +543,7 @@ Canada,1861,33
 Canada,1863,27
 Canada,1867,18
 Canada,1872,5
-Canada,1921,64
+Canada,1921,50
 Canada,1925,24
 Canada,1926,20
 Canada,1935,7
@@ -583,45 +577,24 @@ Australia,1891,35
 Australia,1894,15
 Australia,1895,18
 Australia,1898,19
-Australia,1903,26
+Australia,1903,23
 Australia,1906,16
+Australia,1910,1
+Australia,1914,1
+Australia,1919,10
 Australia,1922,14
-Australia,1925,14
+Australia,1925,13
 Australia,1928,13
-Australia,1929,10
-Australia,1931,16
+Australia,1929,3
+Australia,1931,4
 Australia,1934,9
-Australia,1937,12
-Australia,1940,10
+Australia,1937,1
+Australia,1940,4
 Australia,1943,3
-Australia,1946,12
-Australia,1949,19
-Australia,1951,17
-Australia,1954,17
-Australia,1955,18
-Australia,1958,0
-Australia,1961,0
-Australia,1963,20
-Australia,1966,21
-Australia,1969,20
-Australia,1972,20
-Australia,1974,21
-Australia,1975,22
-Australia,1977,18
-Australia,1980,20
-Australia,1983,17
-Australia,1984,21
-Australia,1987,19
-Australia,1990,0
-Australia,1993,16
-Australia,1996,18
-Australia,1998,0
-Australia,2001,13
-Australia,2004,0
-Australia,2007,0
+Australia,1946,2
 Australia,2010,1
-Australia,2013,22
-Australia,2016,21
+Australia,2013,1
+Australia,2016,1
 Australia,2019,1
 Botswana,1969,3
 Botswana,1974,2
@@ -632,13 +605,11 @@ Botswana,2004,1
 Botswana,2009,4
 Botswana,2014,3
 Burundi,2005,15
-Burundi,2010,5
+Burundi,2010,4
+Burundi,2020,1
 Cape Verde,1995,1
 Cape Verde,2016,3
 Central African Republic,2005,7
-Chile,1915,21
-Chile,1918,26
-Chile,1921,12
 Chile,1925,39
 Chile,1932,34
 Chile,1937,29
@@ -652,15 +623,14 @@ Chile,1989,16
 Chile,1993,15
 Chile,1997,17
 Chile,2001,18
-Chile,2005,21
-Chile,2009,19
-Chile,2013,19
-Chile,2017,14
+Chile,2005,1
+Chile,2009,3
+Chile,2013,3
+Chile,2017,20
 Costa Rica,1913,6
 Costa Rica,1919,0
 Costa Rica,1923,4
 Costa Rica,1932,8
-Costa Rica,1942,2
 Costa Rica,1948,4
 Costa Rica,1949,3
 Costa Rica,1953,3
@@ -683,11 +653,9 @@ Timor,2017,8
 Timor,2018,5
 Ecuador,1979,3
 Ecuador,1984,3
-Ecuador,1986,8
 Ecuador,1988,8
 Ecuador,1990,14
 Ecuador,1992,15
-Ecuador,1994,7
 Ecuador,1996,8
 Ecuador,1997,10
 Ecuador,1998,24
@@ -719,7 +687,6 @@ France,1885,100
 France,1889,42
 France,1893,93
 France,1898,96
-France,1919,106
 France,1924,162
 France,1928,99
 France,1932,72
@@ -743,17 +710,17 @@ France,2002,0
 France,2007,3
 France,2012,2
 France,2017,8
-Germany,1867,47
-Germany,1871,56
+Germany,1867,34
+Germany,1871,57
 Germany,1874,49
 Germany,1877,40
 Germany,1878,57
 Germany,1881,50
-Germany,1884,73
+Germany,1884,51
 Germany,1887,80
 Germany,1890,66
-Germany,1893,48
-Germany,1898,53
+Germany,1893,53
+Germany,1898,56
 Germany,1919,75
 Germany,1924,69
 Germany,1928,62
@@ -789,11 +756,11 @@ Guatemala,2007,29
 Guatemala,2011,14
 Guatemala,2015,18
 Guatemala,2019,12
+Iran,2020,20
 Iraq,2005,44
 Iraq,2010,70
 Iraq,2014,29
 Iraq,2018,42
-Ireland,1922,17
 Ireland,1923,15
 Ireland,1927,13
 Ireland,1932,14
@@ -820,7 +787,7 @@ Ireland,1997,17
 Ireland,2002,21
 Ireland,2007,20
 Ireland,2011,19
-Ireland,2016,23
+Ireland,2020,35
 Italy,1861,14
 Italy,1865,16
 Italy,1867,43
@@ -848,19 +815,16 @@ Italy,1987,94
 Italy,1992,92
 Italy,1994,109
 Italy,1996,93
-Italy,2001,83
-Italy,2006,71
+Italy,2001,11
+Italy,2006,1
 Italy,2008,60
-Italy,2013,98
 Italy,2018,125
+Jordan,2020,5
 Latvia,1920,17
 Latvia,1922,6
 Latvia,1925,5
 Latvia,1928,6
 Latvia,1931,8
-Latvia,1990,15
-Latvia,1993,13
-Latvia,1995,17
 Latvia,1998,17
 Latvia,2002,20
 Latvia,2006,18
@@ -883,13 +847,14 @@ Malawi,1994,36
 Malawi,1999,29
 Malawi,2004,40
 Maldives,2005,18
-Maldives,2009,28
+Maldives,2009,7
 Maldives,2014,15
 Maldives,2019,8
 Mongolia,1990,6
 Mongolia,1992,1
 Mongolia,2012,11
 Mongolia,2016,1
+Mongolia,2020,1
 Morocco,1963,28
 Morocco,1977,15
 Morocco,1984,47
@@ -935,7 +900,6 @@ Netherlands,1981,26
 Netherlands,1982,36
 Netherlands,1986,27
 Netherlands,1989,22
-Netherlands,1991,22
 Netherlands,1994,31
 Netherlands,1998,29
 Netherlands,2002,24
@@ -949,7 +913,6 @@ Panama,1960,8
 Panama,1984,7
 Panama,1989,10
 Panama,1994,5
-Panama,1999,5
 Panama,2004,9
 Panama,2009,19
 Panama,2014,12
@@ -968,7 +931,7 @@ Spain,1851,46
 Spain,1853,36
 Spain,1863,26
 Spain,1871,51
-Spain,1872,42
+Spain,1872,14
 Spain,1873,7
 Spain,1879,9
 Spain,1881,22
@@ -994,6 +957,9 @@ Spain,2011,11
 Spain,2015,40
 Spain,2016,40
 Spain,2019,52
+Syria,2012,5
+Syria,2016,7
+Syria,2020,3
 Tunisia,2011,20
 Tunisia,2019,17
 Turkey,1954,5
@@ -1004,7 +970,6 @@ Turkey,1969,15
 Turkey,1973,45
 Turkey,1977,24
 Turkey,1983,71
-Turkey,1987,59
 Turkey,1991,88
 Turkey,1995,135
 Turkey,1999,111
@@ -1015,7 +980,6 @@ Turkey,2015,40
 Turkey,2018,67
 Ukraine,1994,20
 Ukraine,1998,29
-Ukraine,2002,35
 Ukraine,2006,81
 Ukraine,2007,72
 Ukraine,2012,40
@@ -1072,7 +1036,6 @@ Uruguay,2009,17
 Uruguay,2014,13
 Uruguay,2019,13
 Algeria,1997,62
-Algeria,2002,47
 Algeria,2007,33
 Algeria,2012,68
 Algeria,2017,0
@@ -1086,14 +1049,14 @@ Armenia,2017,9
 Armenia,2018,18
 Azerbaijan,1995,3
 Azerbaijan,2000,3
+Azerbaijan,2020,1
 Belarus,2016,8
 Belarus,2019,6
 Cameroon,1964,0
 Cameroon,1992,18
+Cameroon,2020,5
 Chad,1957,0
 Chad,1959,2
-Democratic Republic of Congo,1960,12
-Congo,1957,2
 Djibouti,1973,0
 Dominican Republic,1962,4
 Dominican Republic,1970,3
@@ -1103,12 +1066,9 @@ Dominican Republic,1990,33
 Dominican Republic,1994,13
 Dominican Republic,1998,17
 Dominican Republic,2002,36
-Dominican Republic,2006,22
-Dominican Republic,2010,11
+Dominican Republic,2010,3
 Dominican Republic,2016,18
-Gambia,1947,0
-Gambia,1960,5
-Gambia,1962,1
+Dominican Republic,2020,6
 Gambia,2002,1
 Gambia,2007,1
 Gambia,2012,1
@@ -1120,6 +1080,7 @@ Georgia,2003,32
 Georgia,2004,0
 Georgia,2008,6
 Georgia,2016,6
+Georgia,2020,5
 Guinea-Bissau,1994,6
 Guinea-Bissau,2004,17
 Guinea-Bissau,2008,3
@@ -1132,9 +1093,10 @@ Kazakhstan,2004,4
 Kazakhstan,2012,7
 Kazakhstan,2016,7
 Kyrgyzstan,2000,1
-Kyrgyzstan,2007,11
+Kyrgyzstan,2007,8
 Kyrgyzstan,2010,25
 Kyrgyzstan,2015,18
+Kyrgyzstan,2020,16
 Madagascar,1960,9
 Madagascar,1983,6
 Madagascar,1989,4
@@ -1151,14 +1113,11 @@ Moldova,2010,15
 Moldova,2014,21
 Moldova,2019,30
 Namibia,1989,4
-Namibia,1999,7
 Namibia,2004,4
 Namibia,2009,2
 Rwanda,2003,6
 Rwanda,2008,4
 Rwanda,2013,5
-Rwanda,2018,4
-Somalia,1956,3
 Somalia,1959,2
 Somalia,1969,2
 Sri Lanka,1947,10
@@ -1167,14 +1126,15 @@ Sri Lanka,1956,14
 Sri Lanka,1960,12
 Sri Lanka,1965,10
 Sri Lanka,1970,19
-Sri Lanka,1977,18
+Sri Lanka,1977,8
 Sri Lanka,2000,10
 Sri Lanka,2001,16
 Sri Lanka,2004,22
 Sri Lanka,2010,7
+Sri Lanka,2020,10
 Tajikistan,2000,2
 Tajikistan,2005,2
-Togo,1952,6
+Tajikistan,2020,5
 Togo,1958,3
 Togo,2007,4
 Trinidad and Tobago,1946,3
@@ -1184,6 +1144,8 @@ Trinidad and Tobago,1991,2
 Trinidad and Tobago,2015,1
 East Germany,1990,66
 Somaliland,2005,21
+Uzbekistan,2019,24
+Uzbekistan,2020,4
 Austria,1897,43
 Austria,1900,48
 Austria,1907,50
@@ -1287,15 +1249,16 @@ Bulgaria,2009,38
 Bulgaria,2013,36
 Bulgaria,2014,38
 Bulgaria,2017,27
-Comoros,1972,5
 Comoros,1992,7
 Comoros,2015,10
+Comoros,2020,1
 Croatia,1992,5
 Croatia,1995,11
 Croatia,2007,7
 Croatia,2011,6
 Croatia,2015,19
 Croatia,2016,13
+Croatia,2020,16
 Cuba,1939,15
 Cyprus,1960,0
 Cyprus,1970,7
@@ -1307,20 +1270,11 @@ Cyprus,2001,9
 Cyprus,2006,11
 Cyprus,2011,9
 Cyprus,2016,9
-Czech Republic,1920,31
-Czech Republic,1925,31
-Czech Republic,1929,32
-Czech Republic,1935,38
-Czech Republic,1946,46
-Czech Republic,1990,22
-Czech Republic,1992,16
-Czech Republic,1996,22
-Czech Republic,1998,24
-Czech Republic,2002,41
-Czech Republic,2006,26
-Czech Republic,2010,38
-Czech Republic,2013,33
-Czech Republic,2017,22
+Czechia,1925,31
+Czechia,1929,32
+Czechia,1935,38
+Czechia,1946,46
+Czechia,2013,33
 Denmark,1849,8
 Denmark,1864,11
 Denmark,1866,18
@@ -1333,7 +1287,6 @@ Denmark,1895,27
 Denmark,1898,16
 Denmark,1924,28
 Denmark,1926,30
-Denmark,1929,24
 Denmark,1932,27
 Denmark,1935,26
 Denmark,1939,26
@@ -1365,7 +1318,6 @@ Denmark,2007,25
 Denmark,2011,22
 Denmark,2015,34
 Denmark,2019,16
-Equatorial Guinea,1993,5
 Equatorial Guinea,1999,1
 Estonia,1919,25
 Estonia,1920,18
@@ -1395,9 +1347,6 @@ Finland,1910,28
 Finland,1911,28
 Finland,1913,28
 Finland,1916,23
-Finland,1917,26
-Finland,1919,28
-Finland,1922,35
 Finland,1924,38
 Finland,1927,34
 Finland,1929,28
@@ -1405,19 +1354,6 @@ Finland,1930,42
 Finland,1933,18
 Finland,1936,21
 Finland,1939,25
-Finland,1945,49
-Finland,1948,38
-Finland,1951,43
-Finland,1954,43
-Finland,1958,48
-Finland,1962,38
-Finland,1966,49
-Finland,1970,36
-Finland,1972,37
-Finland,1975,35
-Finland,1979,35
-Finland,1983,38
-Finland,1987,40
 Finland,1991,40
 Finland,1995,39
 Finland,1999,46
@@ -1473,9 +1409,9 @@ Guyana,1964,7
 Guyana,1968,4
 Guyana,2006,5
 Guyana,2011,7
+Guyana,2020,1
 Hong Kong,1991,3
 Hong Kong,1995,4
-Hong Kong,1996,6
 Hong Kong,1998,3
 Hong Kong,2000,2
 Hong Kong,2004,2
@@ -1485,25 +1421,25 @@ Hong Kong,2016,7
 Iceland,1916,4
 Iceland,1919,7
 Iceland,1923,1
-Iceland,1927,5
-Iceland,1931,4
-Iceland,1933,5
-Iceland,1934,10
-Iceland,1937,8
-Iceland,1942,10
-Iceland,1946,10
-Iceland,1949,9
-Iceland,1953,7
-Iceland,1956,8
-Iceland,1959,10
-Iceland,1963,9
-Iceland,1967,9
-Iceland,1971,10
-Iceland,1974,11
-Iceland,1978,14
-Iceland,1979,11
-Iceland,1983,10
-Iceland,1987,10
+Iceland,1927,3
+Iceland,1931,3
+Iceland,1933,4
+Iceland,1934,7
+Iceland,1937,6
+Iceland,1942,5
+Iceland,1946,7
+Iceland,1949,5
+Iceland,1953,5
+Iceland,1956,6
+Iceland,1959,7
+Iceland,1963,6
+Iceland,1967,6
+Iceland,1971,7
+Iceland,1974,7
+Iceland,1978,9
+Iceland,1979,7
+Iceland,1983,7
+Iceland,1987,7
 Iceland,1991,10
 Iceland,1995,9
 Iceland,1999,12
@@ -1518,7 +1454,6 @@ Israel,1951,15
 Israel,1955,13
 Israel,1959,12
 Israel,1961,17
-Israel,1965,11
 Israel,1969,12
 Israel,1973,10
 Israel,1977,15
@@ -1531,6 +1466,7 @@ Israel,2009,15
 Israel,2013,15
 Israel,2015,13
 Israel,2019,13
+Israel,2020,15
 Lithuania,1920,13
 Lithuania,1922,11
 Lithuania,1923,14
@@ -1542,6 +1478,7 @@ Lithuania,2004,25
 Lithuania,2008,15
 Lithuania,2012,33
 Lithuania,2016,17
+Lithuania,2020,7
 Luxembourg,1919,7
 Luxembourg,1922,4
 Luxembourg,1925,5
@@ -1565,16 +1502,17 @@ Luxembourg,1999,15
 Luxembourg,2004,10
 Luxembourg,2009,9
 Luxembourg,2013,13
-Macedonia,1994,7
-Macedonia,1998,14
-Macedonia,2002,16
-Macedonia,2006,17
-Macedonia,2008,13
-Macedonia,2011,15
-Macedonia,2014,19
-Macedonia,2016,10
+North Macedonia,1994,7
+North Macedonia,1998,14
+North Macedonia,2002,16
+North Macedonia,2006,17
+North Macedonia,2008,13
+North Macedonia,2011,15
+North Macedonia,2014,19
+North Macedonia,2016,10
+North Macedonia,2020,15
 Malaysia,1955,0
-Malaysia,1959,19
+Malaysia,1959,8
 Malaysia,1969,13
 Malaysia,1974,0
 Malaysia,1978,5
@@ -1583,10 +1521,10 @@ Malaysia,1986,1
 Malaysia,1990,8
 Malaysia,1995,6
 Malaysia,1999,10
-Malaysia,2004,12
+Malaysia,2004,7
 Malaysia,2008,23
 Malaysia,2013,38
-Malaysia,2018,47
+Malaysia,2018,18
 Malta,1921,7
 Malta,1924,7
 Malta,1927,3
@@ -1600,16 +1538,17 @@ Malta,1962,4
 Malta,1966,0
 Mauritius,1976,8
 Mauritius,1982,2
+Mauritius,2019,8
 Montenegro,1998,5
-Montenegro,2001,9
-Montenegro,2002,8
+Montenegro,2001,6
+Montenegro,2002,3
 Montenegro,2009,8
 Montenegro,2012,9
+Montenegro,2020,10
 New Zealand,1890,9
 New Zealand,1893,10
 New Zealand,1896,9
 New Zealand,1899,6
-New Zealand,1911,6
 New Zealand,1922,17
 New Zealand,1925,11
 New Zealand,1928,19
@@ -1637,6 +1576,7 @@ New Zealand,2008,9
 New Zealand,2011,14
 New Zealand,2014,14
 New Zealand,2017,9
+New Zealand,2020,10
 Norway,1888,25
 Norway,1894,15
 Norway,1897,10
@@ -1655,15 +1595,10 @@ Norway,1965,18
 Norway,1969,13
 Norway,1973,20
 Norway,1977,22
-Norway,1981,15
 Norway,1985,16
-Norway,1989,22
-Norway,1993,32
-Norway,1997,23
 Norway,2001,26
 Norway,2005,23
 Norway,2009,30
-Norway,2013,29
 Norway,2017,27
 Paraguay,1967,8
 Paraguay,1978,4
@@ -1671,11 +1606,10 @@ Paraguay,1983,7
 Paraguay,1988,7
 Paraguay,1991,19
 Paraguay,1993,9
-Paraguay,1998,8
 Paraguay,2003,10
 Paraguay,2008,15
 Paraguay,2013,2
-Paraguay,2018,13
+Paraguay,2018,3
 Romania,1928,16
 Romania,1931,12
 Romania,1932,14
@@ -1690,6 +1624,7 @@ Romania,2004,48
 Romania,2008,65
 Romania,2012,47
 Romania,2016,30
+Romania,2020,55
 Sao Tome and Principe,1994,14
 Sao Tome and Principe,1998,8
 Sao Tome and Principe,2002,8
@@ -1698,16 +1633,13 @@ Sao Tome and Principe,2010,7
 Sao Tome and Principe,2014,5
 Serbia,1884,14
 Serbia,1886,15
-Serbia,1888,13
+Serbia,1888,2
 Serbia,1889,0
-Serbia,1893,4
+Serbia,1893,1
 Serbia,1895,6
 Serbia,1920,50
 Serbia,1923,51
-Serbia,1990,7
 Serbia,1992,50
-Serbia,1993,39
-Serbia,1997,45
 Serbia,2000,23
 Serbia,2003,37
 Serbia,2007,47
@@ -1715,8 +1647,10 @@ Serbia,2008,30
 Serbia,2012,44
 Serbia,2014,19
 Serbia,2016,22
+Serbia,2020,11
 Seychelles,1993,1
 Seychelles,1998,1
+Seychelles,2020,0
 Singapore,1951,1
 Singapore,1955,2
 Singapore,1959,0
@@ -1725,18 +1659,14 @@ Singapore,1968,0
 Singapore,1972,0
 Singapore,1976,0
 Singapore,1984,0
-Singapore,1988,1
-Singapore,1991,3
+Singapore,1991,1
 Singapore,1997,0
 Singapore,2006,1
 Singapore,2011,0
-Slovakia,1998,23
-Slovakia,2002,25
 Slovakia,2006,20
 Slovakia,2010,22
 Slovakia,2012,16
-Slovakia,2016,19
-Slovenia,1990,11
+Slovakia,2020,17
 Slovenia,1992,14
 Slovenia,1996,16
 Slovenia,2000,11
@@ -1749,6 +1679,7 @@ Solomon Islands,1980,10
 Solomon Islands,1984,13
 Solomon Islands,1989,4
 Solomon Islands,1993,9
+Solomon Islands,2019,8
 Vanuatu,1975,2
 Vanuatu,1979,2
 Vanuatu,1991,10
@@ -1757,6 +1688,7 @@ Vanuatu,1998,11
 Vanuatu,2002,8
 Vanuatu,2012,8
 Vanuatu,2016,6
+Vanuatu,2020,7
 Hungary,1865,21
 Hungary,1869,40
 Hungary,1872,38
@@ -1772,7 +1704,6 @@ Hungary,1905,25
 Hungary,1906,33
 Hungary,1910,44
 Hungary,1922,26
-Hungary,1926,9
 Hungary,1931,10
 Hungary,1935,14
 Hungary,1939,29
@@ -1787,7 +1718,6 @@ Hungary,2010,47
 Hungary,2014,23
 Hungary,2018,20
 Zanzibar,1957,1
-Zanzibar,1961,3
 Zanzibar,1963,6
 Baden,1851,9
 Baden,1854,10
@@ -1801,7 +1731,7 @@ Baden,1867,3
 Baden,1869,5
 Bavaria,1848,29
 Bavaria,1849,27
-Bavaria,1869,17
+Bavaria,1869,7
 Wurtemberg,1868,13
 Hesse-Darmstadt,1862,6
 Hesse-Darmstadt,1865,6

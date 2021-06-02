@@ -1,3506 +1,498 @@
 country,year,value
-Mexico,1996,-0.727
-Mexico,1998,-0.511
-Mexico,2000,-0.383
-Mexico,2002,-0.31
-Mexico,2003,-0.332
-Mexico,2004,-0.374
-Mexico,2005,-0.347
-Mexico,2006,-0.431
-Mexico,2007,-0.494
-Mexico,2008,-0.668
-Mexico,2009,-0.56
-Mexico,2010,-0.551
-Mexico,2011,-0.549
-Mexico,2012,-0.534
-Mexico,2013,-0.544
-Mexico,2014,-0.423
-Mexico,2015,-0.447
-Mexico,2016,-0.556
-Mexico,2017,-0.567
-Mexico,2018,-0.674
-Suriname,1996,-0.081
-Suriname,1998,0.016
-Suriname,2000,-0.023
-Suriname,2002,-0.112
-Suriname,2003,-0.033
-Suriname,2004,-0.173
-Suriname,2005,-0.128
-Suriname,2006,-0.22
-Suriname,2007,-0.239
-Suriname,2008,-0.229
-Suriname,2009,-0.12
-Suriname,2010,-0.053
-Suriname,2011,-0.043
-Suriname,2012,-0.057
-Suriname,2013,-0.045
-Suriname,2014,-0.137
-Suriname,2015,-0.195
-Suriname,2016,-0.155
-Suriname,2017,-0.151
-Suriname,2018,-0.064
-Sweden,1996,1.796
-Sweden,1998,1.795
-Sweden,2000,1.83
-Sweden,2002,1.876
-Sweden,2003,1.926
-Sweden,2004,1.893
-Sweden,2005,1.81
-Sweden,2006,1.865
-Sweden,2007,1.91
-Sweden,2008,1.931
-Sweden,2009,1.966
-Sweden,2010,1.955
-Sweden,2011,1.941
-Sweden,2012,1.952
-Sweden,2013,1.973
-Sweden,2014,1.992
-Sweden,2015,2.038
-Sweden,2016,2.019
-Sweden,2017,1.936
-Sweden,2018,1.896
-Switzerland,1996,1.932
-Switzerland,1998,1.973
-Switzerland,2000,1.977
-Switzerland,2002,1.952
-Switzerland,2003,1.939
-Switzerland,2004,1.907
-Switzerland,2005,1.914
-Switzerland,2006,1.817
-Switzerland,2007,1.846
-Switzerland,2008,1.817
-Switzerland,2009,1.751
-Switzerland,2010,1.757
-Switzerland,2011,1.732
-Switzerland,2012,1.819
-Switzerland,2013,1.805
-Switzerland,2014,1.995
-Switzerland,2015,1.945
-Switzerland,2016,1.948
-Switzerland,2017,1.928
-Switzerland,2018,1.931
-Ghana,1996,-0.234
-Ghana,1998,-0.276
-Ghana,2000,0.155
-Ghana,2002,0.042
-Ghana,2003,0.069
-Ghana,2004,-0.119
-Ghana,2005,-0.116
-Ghana,2006,0.054
-Ghana,2007,0.036
-Ghana,2008,-0.068
-Ghana,2009,-0.042
-Ghana,2010,-0.028
-Ghana,2011,-0.005
-Ghana,2012,0.01
-Ghana,2013,0.149
-Ghana,2014,0.052
-Ghana,2015,0.142
-Ghana,2016,0.049
-Ghana,2017,0.13
-Ghana,2018,0.072
-South Africa,1996,0.088
-South Africa,1998,0.271
-South Africa,2000,0.203
-South Africa,2002,0.132
-South Africa,2003,0.124
-South Africa,2004,0.114
-South Africa,2005,0.115
-South Africa,2006,0.255
-South Africa,2007,0.095
-South Africa,2008,0.073
-South Africa,2009,0.124
-South Africa,2010,0.141
-South Africa,2011,0.152
-South Africa,2012,0.11
-South Africa,2013,0.158
-South Africa,2014,0.183
-South Africa,2015,0.088
-South Africa,2016,0.116
-South Africa,2017,-0.038
-South Africa,2018,-0.102
-Japan,1996,1.348
-Japan,1998,1.387
-Japan,2000,1.316
-Japan,2002,1.176
-Japan,2003,1.196
-Japan,2004,1.266
-Japan,2005,1.235
-Japan,2006,1.363
-Japan,2007,1.335
-Japan,2008,1.319
-Japan,2009,1.294
-Japan,2010,1.326
-Japan,2011,1.312
-Japan,2012,1.358
-Japan,2013,1.444
-Japan,2014,1.602
-Japan,2015,1.519
-Japan,2016,1.421
-Japan,2017,1.566
-Japan,2018,1.534
-Myanmar,1996,-1.581
-Myanmar,1998,-1.534
-Myanmar,2000,-1.424
-Myanmar,2002,-1.714
-Myanmar,2003,-1.701
-Myanmar,2004,-1.74
-Myanmar,2005,-1.732
-Myanmar,2006,-1.533
-Myanmar,2007,-1.548
-Myanmar,2008,-1.542
-Myanmar,2009,-1.532
-Myanmar,2010,-1.548
-Myanmar,2011,-1.438
-Myanmar,2012,-1.355
-Myanmar,2013,-1.234
-Myanmar,2014,-1.186
-Myanmar,2015,-1.237
-Myanmar,2016,-0.887
-Myanmar,2017,-0.945
-Myanmar,2018,-1.033
-Russia,1996,-0.794
-Russia,1998,-0.878
-Russia,2000,-1.098
-Russia,2002,-0.839
-Russia,2003,-0.911
-Russia,2004,-0.885
-Russia,2005,-0.927
-Russia,2006,-0.953
-Russia,2007,-0.97
-Russia,2008,-0.955
-Russia,2009,-0.776
-Russia,2010,-0.765
-Russia,2011,-0.726
-Russia,2012,-0.818
-Russia,2013,-0.784
-Russia,2014,-0.741
-Russia,2015,-0.764
-Russia,2016,-0.792
-Russia,2017,-0.794
-Russia,2018,-0.815
-Albania,1996,-0.684
-Albania,1998,-0.924
-Albania,2000,-1.009
-Albania,2002,-0.762
-Albania,2003,-0.723
-Albania,2004,-0.688
-Albania,2005,-0.736
-Albania,2006,-0.685
-Albania,2007,-0.646
-Albania,2008,-0.589
-Albania,2009,-0.5
-Albania,2010,-0.407
-Albania,2011,-0.455
-Albania,2012,-0.52
-Albania,2013,-0.518
-Albania,2014,-0.338
-Albania,2015,-0.328
-Albania,2016,-0.329
-Albania,2017,-0.402
-Albania,2018,-0.392
-Egypt,1996,0.001
-Egypt,1998,-0.04
-Egypt,2000,-0.011
-Egypt,2002,0.012
-Egypt,2003,0.021
-Egypt,2004,0.02
-Egypt,2005,-0.024
-Egypt,2006,-0.258
-Egypt,2007,-0.23
-Egypt,2008,-0.129
-Egypt,2009,-0.105
-Egypt,2010,-0.179
-Egypt,2011,-0.452
-Egypt,2012,-0.472
-Egypt,2013,-0.633
-Egypt,2014,-0.663
-Egypt,2015,-0.601
-Egypt,2016,-0.517
-Egypt,2017,-0.543
-Egypt,2018,-0.412
-Yemen,1996,-1.38
-Yemen,1998,-1.323
-Yemen,2000,-1.46
-Yemen,2002,-1.535
-Yemen,2003,-1.213
-Yemen,2004,-1.221
-Yemen,2005,-1.259
-Yemen,2006,-1.036
-Yemen,2007,-0.967
-Yemen,2008,-0.98
-Yemen,2009,-1.087
-Yemen,2010,-1.087
-Yemen,2011,-1.285
-Yemen,2012,-1.267
-Yemen,2013,-1.177
-Yemen,2014,-1.2
-Yemen,2015,-1.271
-Yemen,2016,-1.645
-Yemen,2017,-1.753
-Yemen,2018,-1.79
-Colombia,1996,-0.752
-Colombia,1998,-0.637
-Colombia,2000,-0.89
-Colombia,2002,-0.717
-Colombia,2003,-0.703
-Colombia,2004,-0.686
-Colombia,2005,-0.623
-Colombia,2006,-0.505
-Colombia,2007,-0.436
-Colombia,2008,-0.397
-Colombia,2009,-0.388
-Colombia,2010,-0.309
-Colombia,2011,-0.256
-Colombia,2012,-0.354
-Colombia,2013,-0.406
-Colombia,2014,-0.292
-Colombia,2015,-0.268
-Colombia,2016,-0.279
-Colombia,2017,-0.36
-Colombia,2018,-0.408
-Poland,1996,0.767
-Poland,1998,0.858
-Poland,2000,0.714
-Poland,2002,0.709
-Poland,2003,0.561
-Poland,2004,0.423
-Poland,2005,0.481
-Poland,2006,0.405
-Poland,2007,0.429
-Poland,2008,0.547
-Poland,2009,0.628
-Poland,2010,0.684
-Poland,2011,0.766
-Poland,2012,0.78
-Poland,2013,0.819
-Poland,2014,0.841
-Poland,2015,0.802
-Poland,2016,0.636
-Poland,2017,0.473
-Poland,2018,0.428
-Brazil,1996,-0.224
-Brazil,1998,-0.194
-Brazil,2000,-0.208
-Brazil,2002,-0.232
-Brazil,2003,-0.323
-Brazil,2004,-0.365
-Brazil,2005,-0.429
-Brazil,2006,-0.366
-Brazil,2007,-0.371
-Brazil,2008,-0.315
-Brazil,2009,-0.157
-Brazil,2010,0.044
-Brazil,2011,0.038
-Brazil,2012,-0.069
-Brazil,2013,-0.08
-Brazil,2014,-0.05
-Brazil,2015,-0.147
-Brazil,2016,-0.157
-Brazil,2017,-0.284
-Brazil,2018,-0.278
-United States,1996,1.5
-United States,1998,1.608
-United States,2000,1.593
-United States,2002,1.548
-United States,2003,1.591
-United States,2004,1.436
-United States,2005,1.54
-United States,2006,1.605
-United States,2007,1.628
-United States,2008,1.64
-United States,2009,1.598
-United States,2010,1.638
-United States,2011,1.6
-United States,2012,1.627
-United States,2013,1.557
-United States,2014,1.61
-United States,2015,1.596
-United States,2016,1.618
-United States,2017,1.645
-United States,2018,1.453
-Portugal,1996,1.286
-Portugal,1998,1.279
-Portugal,2000,1.225
-Portugal,2002,1.336
-Portugal,2003,1.31
-Portugal,2004,1.249
-Portugal,2005,1.235
-Portugal,2006,0.986
-Portugal,2007,1.017
-Portugal,2008,1.02
-Portugal,2009,1.065
-Portugal,2010,1.057
-Portugal,2011,1.024
-Portugal,2012,1.066
-Portugal,2013,1.059
-Portugal,2014,1.138
-Portugal,2015,1.147
-Portugal,2016,1.097
-Portugal,2017,1.132
-Portugal,2018,1.141
-El Salvador,1996,-0.87
-El Salvador,1998,-0.66
-El Salvador,2000,-0.74
-El Salvador,2002,-0.51
-El Salvador,2003,-0.456
-El Salvador,2004,-0.381
-El Salvador,2005,-0.454
-El Salvador,2006,-0.622
-El Salvador,2007,-0.645
-El Salvador,2008,-0.668
-El Salvador,2009,-0.748
-El Salvador,2010,-0.813
-El Salvador,2011,-0.722
-El Salvador,2012,-0.699
-El Salvador,2013,-0.619
-El Salvador,2014,-0.476
-El Salvador,2015,-0.585
-El Salvador,2016,-0.71
-El Salvador,2017,-0.856
-El Salvador,2018,-0.825
-Bangladesh,1996,-0.934
-Bangladesh,1998,-0.891
-Bangladesh,2000,-0.912
-Bangladesh,2002,-0.903
-Bangladesh,2003,-1.048
-Bangladesh,2004,-1.02
-Bangladesh,2005,-0.979
-Bangladesh,2006,-0.904
-Bangladesh,2007,-0.827
-Bangladesh,2008,-0.75
-Bangladesh,2009,-0.786
-Bangladesh,2010,-0.803
-Bangladesh,2011,-0.732
-Bangladesh,2012,-0.929
-Bangladesh,2013,-0.867
-Bangladesh,2014,-0.778
-Bangladesh,2015,-0.751
-Bangladesh,2016,-0.663
-Bangladesh,2017,-0.671
-Bangladesh,2018,-0.64
-Bolivia,1996,-0.262
-Bolivia,1998,-0.219
-Bolivia,2000,-0.388
-Bolivia,2002,-0.4
-Bolivia,2003,-0.452
-Bolivia,2004,-0.685
-Bolivia,2005,-0.756
-Bolivia,2006,-0.85
-Bolivia,2007,-0.83
-Bolivia,2008,-0.975
-Bolivia,2009,-1.108
-Bolivia,2010,-1.024
-Bolivia,2011,-0.979
-Bolivia,2012,-1.016
-Bolivia,2013,-1.046
-Bolivia,2014,-1.055
-Bolivia,2015,-1.141
-Bolivia,2016,-1.201
-Bolivia,2017,-1.208
-Bolivia,2018,-1.15
-Haiti,1996,-1.387
-Haiti,1998,-1.315
-Haiti,2000,-1.463
-Haiti,2002,-1.768
-Haiti,2003,-1.795
-Haiti,2004,-1.716
-Haiti,2005,-1.639
-Haiti,2006,-1.405
-Haiti,2007,-1.344
-Haiti,2008,-1.277
-Haiti,2009,-1.319
-Haiti,2010,-1.37
-Haiti,2011,-1.408
-Haiti,2012,-1.327
-Haiti,2013,-1.294
-Haiti,2014,-1.185
-Haiti,2015,-1.181
-Haiti,2016,-1.002
-Haiti,2017,-1.088
-Haiti,2018,-1.028
-Honduras,1996,-0.929
-Honduras,1998,-0.918
-Honduras,2000,-0.989
-Honduras,2002,-0.836
-Honduras,2003,-0.881
-Honduras,2004,-0.762
-Honduras,2005,-0.779
-Honduras,2006,-0.991
-Honduras,2007,-0.93
-Honduras,2008,-0.965
-Honduras,2009,-0.897
-Honduras,2010,-0.878
-Honduras,2011,-0.904
-Honduras,2012,-1.14
-Honduras,2013,-1.165
-Honduras,2014,-0.945
-Honduras,2015,-0.926
-Honduras,2016,-1.119
-Honduras,2017,-1.046
-Honduras,2018,-1.023
-Mali,1996,-0.297
-Mali,1998,-0.346
-Mali,2000,-0.347
-Mali,2002,-0.233
-Mali,2003,0
-Mali,2004,-0.187
-Mali,2005,-0.157
-Mali,2006,-0.29
-Mali,2007,-0.183
-Mali,2008,-0.321
-Mali,2009,-0.365
-Mali,2010,-0.45
-Mali,2011,-0.501
-Mali,2012,-0.671
-Mali,2013,-0.749
-Mali,2014,-0.644
-Mali,2015,-0.735
-Mali,2016,-0.782
-Mali,2017,-0.778
-Mali,2018,-0.798
-Pakistan,1996,-0.625
-Pakistan,1998,-0.756
-Pakistan,2000,-0.929
-Pakistan,2002,-0.778
-Pakistan,2003,-0.774
-Pakistan,2004,-0.877
-Pakistan,2005,-0.89
-Pakistan,2006,-0.856
-Pakistan,2007,-0.887
-Pakistan,2008,-0.969
-Pakistan,2009,-0.831
-Pakistan,2010,-0.739
-Pakistan,2011,-0.902
-Pakistan,2012,-0.884
-Pakistan,2013,-0.857
-Pakistan,2014,-0.76
-Pakistan,2015,-0.767
-Pakistan,2016,-0.804
-Pakistan,2017,-0.724
-Pakistan,2018,-0.673
-Peru,1996,-0.697
-Peru,1998,-0.708
-Peru,2000,-0.69
-Peru,2002,-0.468
-Peru,2003,-0.522
-Peru,2004,-0.489
-Peru,2005,-0.684
-Peru,2006,-0.687
-Peru,2007,-0.73
-Peru,2008,-0.704
-Peru,2009,-0.614
-Peru,2010,-0.563
-Peru,2011,-0.577
-Peru,2012,-0.574
-Peru,2013,-0.566
-Peru,2014,-0.521
-Peru,2015,-0.485
-Peru,2016,-0.482
-Peru,2017,-0.501
-Peru,2018,-0.517
-Senegal,1996,-0.182
-Senegal,1998,0
-Senegal,2000,0.033
-Senegal,2002,0.066
-Senegal,2003,-0.061
-Senegal,2004,0.004
-Senegal,2005,0.01
-Senegal,2006,-0.222
-Senegal,2007,-0.24
-Senegal,2008,-0.28
-Senegal,2009,-0.369
-Senegal,2010,-0.399
-Senegal,2011,-0.459
-Senegal,2012,-0.287
-Senegal,2013,-0.239
-Senegal,2014,-0.082
-Senegal,2015,-0.142
-Senegal,2016,-0.107
-Senegal,2017,-0.144
-Senegal,2018,-0.208
-South Sudan,2011,-1.384
-South Sudan,2012,-1.431
-South Sudan,2013,-1.512
-South Sudan,2014,-1.823
-South Sudan,2015,-1.855
-South Sudan,2016,-1.929
-South Sudan,2017,-1.938
-South Sudan,2018,-1.958
-Sudan,1996,-1.709
-Sudan,1998,-1.685
-Sudan,2000,-1.597
-Sudan,2002,-1.357
-Sudan,2003,-1.641
-Sudan,2004,-1.545
-Sudan,2005,-1.632
-Sudan,2006,-1.358
-Sudan,2007,-1.403
-Sudan,2008,-1.423
-Sudan,2009,-1.243
-Sudan,2010,-1.313
-Sudan,2011,-1.275
-Sudan,2012,-1.226
-Sudan,2013,-1.271
-Sudan,2014,-1.167
-Sudan,2015,-1.211
-Sudan,2016,-1.258
-Sudan,2017,-1.11
-Sudan,2018,-1.12
-Vietnam,1996,-0.482
-Vietnam,1998,-0.454
-Vietnam,2000,-0.362
-Vietnam,2002,-0.643
-Vietnam,2003,-0.581
-Vietnam,2004,-0.568
-Vietnam,2005,-0.325
-Vietnam,2006,-0.521
-Vietnam,2007,-0.492
-Vietnam,2008,-0.465
-Vietnam,2009,-0.54
-Vietnam,2010,-0.591
-Vietnam,2011,-0.545
-Vietnam,2012,-0.552
-Vietnam,2013,-0.515
-Vietnam,2014,-0.36
-Vietnam,2015,-0.339
-Vietnam,2016,0.075
-Vietnam,2017,0.069
-Vietnam,2018,-0.003
-Afghanistan,1996,-1.788
-Afghanistan,1998,-1.737
-Afghanistan,2000,-1.778
-Afghanistan,2002,-1.671
-Afghanistan,2003,-1.554
-Afghanistan,2004,-1.697
-Afghanistan,2005,-1.659
-Afghanistan,2006,-1.863
-Afghanistan,2007,-1.83
-Afghanistan,2008,-1.864
-Afghanistan,2009,-1.847
-Afghanistan,2010,-1.845
-Afghanistan,2011,-1.897
-Afghanistan,2012,-1.643
-Afghanistan,2013,-1.597
-Afghanistan,2014,-1.446
-Afghanistan,2015,-1.504
-Afghanistan,2016,-1.498
-Afghanistan,2017,-1.57
-Afghanistan,2018,-1.668
-Argentina,1996,0.076
-Argentina,1998,-0.006
-Argentina,2000,-0.15
-Argentina,2002,-0.758
-Argentina,2003,-0.774
-Argentina,2004,-0.807
-Argentina,2005,-0.555
-Argentina,2006,-0.569
-Argentina,2007,-0.592
-Argentina,2008,-0.677
-Argentina,2009,-0.675
-Argentina,2010,-0.591
-Argentina,2011,-0.561
-Argentina,2012,-0.68
-Argentina,2013,-0.708
-Argentina,2014,-0.886
-Argentina,2015,-0.771
-Argentina,2016,-0.394
-Argentina,2017,-0.246
-Argentina,2018,-0.24
-Ethiopia,1996,-0.966
-Ethiopia,1998,-0.798
-Ethiopia,2000,-0.929
-Ethiopia,2002,-0.94
-Ethiopia,2003,-0.828
-Ethiopia,2004,-0.861
-Ethiopia,2005,-0.936
-Ethiopia,2006,-0.66
-Ethiopia,2007,-0.649
-Ethiopia,2008,-0.697
-Ethiopia,2009,-0.827
-Ethiopia,2010,-0.802
-Ethiopia,2011,-0.74
-Ethiopia,2012,-0.677
-Ethiopia,2013,-0.647
-Ethiopia,2014,-0.472
-Ethiopia,2015,-0.509
-Ethiopia,2016,-0.492
-Ethiopia,2017,-0.454
-Ethiopia,2018,-0.428
-India,1996,0.313
-India,1998,0.354
-India,2000,0.33
-India,2002,0.003
-India,2003,0.131
-India,2004,0.04
-India,2005,0.128
-India,2006,0.177
-India,2007,0.094
-India,2008,0.086
-India,2009,0.014
-India,2010,-0.037
-India,2011,-0.091
-India,2012,-0.072
-India,2013,-0.057
-India,2014,-0.063
-India,2015,-0.047
-India,2016,-0.029
-India,2017,0.005
-India,2018,0.026
-Kenya,1996,-1.022
-Kenya,1998,-1.046
-Kenya,2000,-0.873
-Kenya,2002,-0.874
-Kenya,2003,-0.83
-Kenya,2004,-0.836
-Kenya,2005,-0.882
-Kenya,2006,-0.878
-Kenya,2007,-0.966
-Kenya,2008,-0.994
-Kenya,2009,-1.013
-Kenya,2010,-0.942
-Kenya,2011,-0.904
-Kenya,2012,-0.824
-Kenya,2013,-0.711
-Kenya,2014,-0.417
-Kenya,2015,-0.488
-Kenya,2016,-0.441
-Kenya,2017,-0.413
-Kenya,2018,-0.411
-North Korea,1996,-1.154
-North Korea,1998,-1.148
-North Korea,2000,-1.059
-North Korea,2002,-1.309
-North Korea,2003,-1.159
-North Korea,2004,-1.276
-North Korea,2005,-1.136
-North Korea,2006,-1.391
-North Korea,2007,-1.257
-North Korea,2008,-1.234
-North Korea,2009,-1.341
-North Korea,2010,-1.379
-North Korea,2011,-1.384
-North Korea,2012,-1.352
-North Korea,2013,-1.382
-North Korea,2014,-1.625
-North Korea,2015,-1.645
-North Korea,2016,-1.67
-North Korea,2017,-1.715
-North Korea,2018,-1.635
-South Korea,1996,0.799
-South Korea,1998,0.811
-South Korea,2000,0.881
-South Korea,2002,0.947
-South Korea,2003,0.834
-South Korea,2004,0.92
-South Korea,2005,0.99
-South Korea,2006,0.871
-South Korea,2007,1.029
-South Korea,2008,0.881
-South Korea,2009,0.994
-South Korea,2010,1.004
-South Korea,2011,1.026
-South Korea,2012,0.984
-South Korea,2013,0.954
-South Korea,2014,0.994
-South Korea,2015,0.932
-South Korea,2016,1.161
-South Korea,2017,1.163
-South Korea,2018,1.237
-Kosovo,2000,-0.008
-Kosovo,2002,-0.046
-Kosovo,2003,-0.822
-Kosovo,2004,-0.792
-Kosovo,2005,-0.816
-Kosovo,2006,-0.854
-Kosovo,2007,-0.753
-Kosovo,2008,-0.593
-Kosovo,2009,-0.598
-Kosovo,2010,-0.61
-Kosovo,2011,-0.521
-Kosovo,2012,-0.531
-Kosovo,2013,-0.548
-Kosovo,2014,-0.472
-Kosovo,2015,-0.465
-Kosovo,2016,-0.35
-Kosovo,2017,-0.421
-Kosovo,2018,-0.371
-Lebanon,1996,-0.283
-Lebanon,1998,-0.313
-Lebanon,2000,-0.165
-Lebanon,2002,-0.308
-Lebanon,2003,-0.387
-Lebanon,2004,-0.258
-Lebanon,2005,-0.331
-Lebanon,2006,-0.643
-Lebanon,2007,-0.696
-Lebanon,2008,-0.669
-Lebanon,2009,-0.681
-Lebanon,2010,-0.708
-Lebanon,2011,-0.691
-Lebanon,2012,-0.751
-Lebanon,2013,-0.776
-Lebanon,2014,-0.766
-Lebanon,2015,-0.826
-Lebanon,2016,-0.83
-Lebanon,2017,-0.824
-Lebanon,2018,-0.764
-Nigeria,1996,-1.29
-Nigeria,1998,-1.262
-Nigeria,2000,-1.099
-Nigeria,2002,-1.409
-Nigeria,2003,-1.427
-Nigeria,2004,-1.407
-Nigeria,2005,-1.354
-Nigeria,2006,-1.072
-Nigeria,2007,-1.066
-Nigeria,2008,-1.039
-Nigeria,2009,-1.153
-Nigeria,2010,-1.158
-Nigeria,2011,-1.182
-Nigeria,2012,-1.146
-Nigeria,2013,-1.114
-Nigeria,2014,-1.049
-Nigeria,2015,-0.962
-Nigeria,2016,-1.017
-Nigeria,2017,-0.872
-Nigeria,2018,-0.881
-Philippines,1996,0.075
-Philippines,1998,0.09
-Philippines,2000,-0.375
-Philippines,2002,-0.375
-Philippines,2003,-0.491
-Philippines,2004,-0.568
-Philippines,2005,-0.35
-Philippines,2006,-0.411
-Philippines,2007,-0.464
-Philippines,2008,-0.546
-Philippines,2009,-0.571
-Philippines,2010,-0.553
-Philippines,2011,-0.511
-Philippines,2012,-0.523
-Philippines,2013,-0.403
-Philippines,2014,-0.317
-Philippines,2015,-0.343
-Philippines,2016,-0.355
-Philippines,2017,-0.415
-Philippines,2018,-0.478
-Tanzania,1996,-0.186
-Tanzania,1998,-0.209
-Tanzania,2000,-0.347
-Tanzania,2002,-0.343
-Tanzania,2003,-0.249
-Tanzania,2004,-0.356
-Tanzania,2005,-0.279
-Tanzania,2006,-0.442
-Tanzania,2007,-0.373
-Tanzania,2008,-0.349
-Tanzania,2009,-0.48
-Tanzania,2010,-0.486
-Tanzania,2011,-0.511
-Tanzania,2012,-0.529
-Tanzania,2013,-0.473
-Tanzania,2014,-0.395
-Tanzania,2015,-0.372
-Tanzania,2016,-0.377
-Tanzania,2017,-0.445
-Tanzania,2018,-0.555
-Taiwan,1996,0.76
-Taiwan,1998,0.772
-Taiwan,2000,0.835
-Taiwan,2002,0.887
-Taiwan,2003,0.978
-Taiwan,2004,1
-Taiwan,2005,1.025
-Taiwan,2006,0.784
-Taiwan,2007,0.789
-Taiwan,2008,0.785
-Taiwan,2009,0.942
-Taiwan,2010,1.013
-Taiwan,2011,1.034
-Taiwan,2012,1.05
-Taiwan,2013,1.05
-Taiwan,2014,1.188
-Taiwan,2015,1.162
-Taiwan,2016,1.141
-Taiwan,2017,1.137
-Taiwan,2018,1.112
-Thailand,1996,0.54
-Thailand,1998,0.521
-Thailand,2000,0.581
-Thailand,2002,0.384
-Thailand,2003,0.162
-Thailand,2004,0.106
-Thailand,2005,0.046
-Thailand,2006,-0.056
-Thailand,2007,-0.119
-Thailand,2008,-0.14
-Thailand,2009,-0.23
-Thailand,2010,-0.205
-Thailand,2011,-0.204
-Thailand,2012,-0.151
-Thailand,2013,-0.121
-Thailand,2014,-0.191
-Thailand,2015,-0.148
-Thailand,2016,-0.005
-Thailand,2017,0.044
-Thailand,2018,0.023
-Uganda,1996,-0.58
-Uganda,1998,-0.528
-Uganda,2000,-0.786
-Uganda,2002,-0.61
-Uganda,2003,-0.492
-Uganda,2004,-0.63
-Uganda,2005,-0.581
-Uganda,2006,-0.327
-Uganda,2007,-0.36
-Uganda,2008,-0.351
-Uganda,2009,-0.414
-Uganda,2010,-0.398
-Uganda,2011,-0.361
-Uganda,2012,-0.348
-Uganda,2013,-0.341
-Uganda,2014,-0.388
-Uganda,2015,-0.39
-Uganda,2016,-0.251
-Uganda,2017,-0.296
-Uganda,2018,-0.295
-Venezuela,1996,-0.75
-Venezuela,1998,-0.679
-Venezuela,2000,-0.861
-Venezuela,2002,-1.133
-Venezuela,2003,-1.294
-Venezuela,2004,-1.244
-Venezuela,2005,-1.242
-Venezuela,2006,-1.425
-Venezuela,2007,-1.574
-Venezuela,2008,-1.624
-Venezuela,2009,-1.618
-Venezuela,2010,-1.654
-Venezuela,2011,-1.676
-Venezuela,2012,-1.69
-Venezuela,2013,-1.821
-Venezuela,2014,-1.916
-Venezuela,2015,-2.032
-Venezuela,2016,-2.241
-Venezuela,2017,-2.255
-Venezuela,2018,-2.339
-Benin,1996,0.052
-Benin,1998,0.042
-Benin,2000,-0.157
-Benin,2002,-0.229
-Benin,2003,-0.378
-Benin,2004,-0.51
-Benin,2005,-0.542
-Benin,2006,-0.534
-Benin,2007,-0.517
-Benin,2008,-0.534
-Benin,2009,-0.654
-Benin,2010,-0.673
-Benin,2011,-0.663
-Benin,2012,-0.586
-Benin,2013,-0.569
-Benin,2014,-0.488
-Benin,2015,-0.536
-Benin,2016,-0.609
-Benin,2017,-0.625
-Benin,2018,-0.675
-Bhutan,1996,-0.032
-Bhutan,1998,0.163
-Bhutan,2000,0.133
-Bhutan,2002,0.058
-Bhutan,2003,0.207
-Bhutan,2004,0.341
-Bhutan,2005,0.312
-Bhutan,2006,0.194
-Bhutan,2007,0.339
-Bhutan,2008,0.384
-Bhutan,2009,0.213
-Bhutan,2010,0.162
-Bhutan,2011,0.196
-Bhutan,2012,0.236
-Bhutan,2013,0.29
-Bhutan,2014,0.379
-Bhutan,2015,0.522
-Bhutan,2016,0.494
-Bhutan,2017,0.628
-Bhutan,2018,0.552
-Burkina Faso,1996,-0.933
-Burkina Faso,1998,-0.747
-Burkina Faso,2000,-0.62
-Burkina Faso,2002,-0.652
-Burkina Faso,2003,-0.54
-Burkina Faso,2004,-0.567
-Burkina Faso,2005,-0.52
-Burkina Faso,2006,-0.431
-Burkina Faso,2007,-0.399
-Burkina Faso,2008,-0.345
-Burkina Faso,2009,-0.207
-Burkina Faso,2010,-0.194
-Burkina Faso,2011,-0.359
-Burkina Faso,2012,-0.437
-Burkina Faso,2013,-0.53
-Burkina Faso,2014,-0.547
-Burkina Faso,2015,-0.523
-Burkina Faso,2016,-0.441
-Burkina Faso,2017,-0.398
-Burkina Faso,2018,-0.446
-Cambodia,1996,-1.194
-Cambodia,1998,-1.159
-Cambodia,2000,-1.059
-Cambodia,2002,-1.143
-Cambodia,2003,-1.253
-Cambodia,2004,-1.28
-Cambodia,2005,-1.234
-Cambodia,2006,-1.235
-Cambodia,2007,-1.142
-Cambodia,2008,-1.148
-Cambodia,2009,-1.118
-Cambodia,2010,-1.119
-Cambodia,2011,-1.045
-Cambodia,2012,-0.98
-Cambodia,2013,-1.004
-Cambodia,2014,-0.955
-Cambodia,2015,-0.978
-Cambodia,2016,-1.064
-Cambodia,2017,-1.056
-Cambodia,2018,-1.115
-Indonesia,1996,-0.49
-Indonesia,1998,-0.783
-Indonesia,2000,-0.717
-Indonesia,2002,-0.914
-Indonesia,2003,-0.851
-Indonesia,2004,-0.774
-Indonesia,2005,-0.822
-Indonesia,2006,-0.719
-Indonesia,2007,-0.681
-Indonesia,2008,-0.654
-Indonesia,2009,-0.603
-Indonesia,2010,-0.64
-Indonesia,2011,-0.593
-Indonesia,2012,-0.576
-Indonesia,2013,-0.531
-Indonesia,2014,-0.342
-Indonesia,2015,-0.422
-Indonesia,2016,-0.345
-Indonesia,2017,-0.346
-Indonesia,2018,-0.315
-Mozambique,1996,-0.806
-Mozambique,1998,-0.799
-Mozambique,2000,-0.727
-Mozambique,2002,-0.64
-Mozambique,2003,-0.673
-Mozambique,2004,-0.67
-Mozambique,2005,-0.617
-Mozambique,2006,-0.612
-Mozambique,2007,-0.598
-Mozambique,2008,-0.607
-Mozambique,2009,-0.591
-Mozambique,2010,-0.472
-Mozambique,2011,-0.567
-Mozambique,2012,-0.586
-Mozambique,2013,-0.816
-Mozambique,2014,-0.81
-Mozambique,2015,-0.849
-Mozambique,2016,-1.051
-Mozambique,2017,-0.988
-Mozambique,2018,-1.044
-Nepal,1996,-0.006
-Nepal,1998,-0.013
-Nepal,2000,-0.253
-Nepal,2002,-0.47
-Nepal,2003,-0.556
-Nepal,2004,-0.743
-Nepal,2005,-0.816
-Nepal,2006,-0.623
-Nepal,2007,-0.593
-Nepal,2008,-0.673
-Nepal,2009,-0.86
-Nepal,2010,-0.952
-Nepal,2011,-0.887
-Nepal,2012,-0.736
-Nepal,2013,-0.718
-Nepal,2014,-0.65
-Nepal,2015,-0.677
-Nepal,2016,-0.795
-Nepal,2017,-0.676
-Nepal,2018,-0.478
-Nicaragua,1996,-0.516
-Nicaragua,1998,-0.651
-Nicaragua,2000,-0.891
-Nicaragua,2002,-0.681
-Nicaragua,2003,-0.536
-Nicaragua,2004,-0.768
-Nicaragua,2005,-0.614
-Nicaragua,2006,-0.752
-Nicaragua,2007,-0.788
-Nicaragua,2008,-0.805
-Nicaragua,2009,-0.788
-Nicaragua,2010,-0.829
-Nicaragua,2011,-0.725
-Nicaragua,2012,-0.732
-Nicaragua,2013,-0.675
-Nicaragua,2014,-0.712
-Nicaragua,2015,-0.736
-Nicaragua,2016,-0.644
-Nicaragua,2017,-0.645
-Nicaragua,2018,-1.04
-Niger,1996,-0.655
-Niger,1998,-0.559
-Niger,2000,-0.723
-Niger,2002,-0.64
-Niger,2003,-0.519
-Niger,2004,-0.641
-Niger,2005,-0.707
-Niger,2006,-0.591
-Niger,2007,-0.599
-Niger,2008,-0.668
-Niger,2009,-0.479
-Niger,2010,-0.482
-Niger,2011,-0.39
-Niger,2012,-0.648
-Niger,2013,-0.66
-Niger,2014,-0.646
-Niger,2015,-0.571
-Niger,2016,-0.661
-Niger,2017,-0.681
-Niger,2018,-0.58
-Zambia,1996,-0.532
-Zambia,1998,-0.371
-Zambia,2000,-0.482
-Zambia,2002,-0.311
-Zambia,2003,-0.39
-Zambia,2004,-0.49
-Zambia,2005,-0.52
-Zambia,2006,-0.54
-Zambia,2007,-0.525
-Zambia,2008,-0.408
-Zambia,2009,-0.476
-Zambia,2010,-0.49
-Zambia,2011,-0.456
-Zambia,2012,-0.365
-Zambia,2013,-0.268
-Zambia,2014,-0.237
-Zambia,2015,-0.23
-Zambia,2016,-0.3
-Zambia,2017,-0.325
-Zambia,2018,-0.345
-Zimbabwe,1996,-0.814
-Zimbabwe,1998,-0.657
-Zimbabwe,2000,-1.341
-Zimbabwe,2002,-1.593
-Zimbabwe,2003,-1.701
-Zimbabwe,2004,-1.802
-Zimbabwe,2005,-1.818
-Zimbabwe,2006,-1.74
-Zimbabwe,2007,-1.799
-Zimbabwe,2008,-1.782
-Zimbabwe,2009,-1.852
-Zimbabwe,2010,-1.823
-Zimbabwe,2011,-1.78
-Zimbabwe,2012,-1.63
-Zimbabwe,2013,-1.579
-Zimbabwe,2014,-1.431
-Zimbabwe,2015,-1.318
-Zimbabwe,2016,-1.368
-Zimbabwe,2017,-1.378
-Zimbabwe,2018,-1.274
-Guinea,1996,-1.447
-Guinea,1998,-1.196
-Guinea,2000,-1.386
-Guinea,2002,-1.029
-Guinea,2003,-1.09
-Guinea,2004,-1.26
-Guinea,2005,-1.372
-Guinea,2006,-1.405
-Guinea,2007,-1.445
-Guinea,2008,-1.529
-Guinea,2009,-1.538
-Guinea,2010,-1.479
-Guinea,2011,-1.445
-Guinea,2012,-1.408
-Guinea,2013,-1.375
-Guinea,2014,-1.36
-Guinea,2015,-1.161
-Guinea,2016,-1.216
-Guinea,2017,-1.23
-Guinea,2018,-1.212
-Cote d'Ivoire,1996,-0.785
-Cote d'Ivoire,1998,-0.88
-Cote d'Ivoire,2000,-1.177
-Cote d'Ivoire,2002,-1.295
-Cote d'Ivoire,2003,-1.371
-Cote d'Ivoire,2004,-1.372
-Cote d'Ivoire,2005,-1.48
-Cote d'Ivoire,2006,-1.449
-Cote d'Ivoire,2007,-1.455
-Cote d'Ivoire,2008,-1.422
-Cote d'Ivoire,2009,-1.235
-Cote d'Ivoire,2010,-1.217
-Cote d'Ivoire,2011,-1.269
-Cote d'Ivoire,2012,-1.079
-Cote d'Ivoire,2013,-0.905
-Cote d'Ivoire,2014,-0.591
-Cote d'Ivoire,2015,-0.63
-Cote d'Ivoire,2016,-0.645
-Cote d'Ivoire,2017,-0.63
-Cote d'Ivoire,2018,-0.58
-Mauritania,1996,-0.504
-Mauritania,1998,-0.482
-Mauritania,2000,-0.424
-Mauritania,2002,-0.523
-Mauritania,2003,-0.524
-Mauritania,2004,-0.729
-Mauritania,2005,-0.711
-Mauritania,2006,-0.785
-Mauritania,2007,-0.703
-Mauritania,2008,-1.141
-Mauritania,2009,-0.805
-Mauritania,2010,-0.89
-Mauritania,2011,-0.915
-Mauritania,2012,-0.917
-Mauritania,2013,-0.998
-Mauritania,2014,-0.86
-Mauritania,2015,-0.866
-Mauritania,2016,-0.726
-Mauritania,2017,-0.599
-Mauritania,2018,-0.686
-Canada,1996,1.647
-Canada,1998,1.758
-Canada,2000,1.694
-Canada,2002,1.693
-Canada,2003,1.735
-Canada,2004,1.707
-Canada,2005,1.662
-Canada,2006,1.815
-Canada,2007,1.815
-Canada,2008,1.808
-Canada,2009,1.804
-Canada,2010,1.806
-Canada,2011,1.737
-Canada,2012,1.764
-Canada,2013,1.756
-Canada,2014,1.891
-Canada,2015,1.842
-Canada,2016,1.841
-Canada,2017,1.801
-Canada,2018,1.771
-Australia,1996,1.713
-Australia,1998,1.8
-Australia,2000,1.751
-Australia,2002,1.8
-Australia,2003,1.882
-Australia,2004,1.816
-Australia,2005,1.724
-Australia,2006,1.77
-Australia,2007,1.761
-Australia,2008,1.771
-Australia,2009,1.74
-Australia,2010,1.765
-Australia,2011,1.743
-Australia,2012,1.767
-Australia,2013,1.779
-Australia,2014,1.923
-Australia,2015,1.825
-Australia,2016,1.756
-Australia,2017,1.682
-Australia,2018,1.715
-Botswana,1996,0.585
-Botswana,1998,0.678
-Botswana,2000,0.595
-Botswana,2002,0.57
-Botswana,2003,0.731
-Botswana,2004,0.653
-Botswana,2005,0.64
-Botswana,2006,0.623
-Botswana,2007,0.65
-Botswana,2008,0.696
-Botswana,2009,0.666
-Botswana,2010,0.675
-Botswana,2011,0.668
-Botswana,2012,0.662
-Botswana,2013,0.596
-Botswana,2014,0.634
-Botswana,2015,0.596
-Botswana,2016,0.534
-Botswana,2017,0.519
-Botswana,2018,0.466
-Burundi,1996,-1.416
-Burundi,1998,-1.226
-Burundi,2000,-1.354
-Burundi,2002,-1.248
-Burundi,2003,-1.398
-Burundi,2004,-1.537
-Burundi,2005,-1.154
-Burundi,2006,-0.97
-Burundi,2007,-1.065
-Burundi,2008,-1.023
-Burundi,2009,-1.147
-Burundi,2010,-1.195
-Burundi,2011,-1.139
-Burundi,2012,-1.084
-Burundi,2013,-1.07
-Burundi,2014,-0.966
-Burundi,2015,-1.168
-Burundi,2016,-1.46
-Burundi,2017,-1.396
-Burundi,2018,-1.497
-Cape Verde,1996,1.044
-Cape Verde,1998,0.831
-Cape Verde,2000,0.782
-Cape Verde,2002,0.341
-Cape Verde,2003,0.294
-Cape Verde,2004,0.357
-Cape Verde,2005,0.402
-Cape Verde,2006,0.653
-Cape Verde,2007,0.628
-Cape Verde,2008,0.576
-Cape Verde,2009,0.536
-Cape Verde,2010,0.475
-Cape Verde,2011,0.511
-Cape Verde,2012,0.524
-Cape Verde,2013,0.536
-Cape Verde,2014,0.635
-Cape Verde,2015,0.591
-Cape Verde,2016,0.347
-Cape Verde,2017,0.415
-Cape Verde,2018,0.445
-Central African Republic,1996,-1.152
-Central African Republic,1998,-1.175
-Central African Republic,2000,-1.281
-Central African Republic,2002,-1.047
-Central African Republic,2003,-1.437
-Central African Republic,2004,-1.585
-Central African Republic,2005,-1.453
-Central African Republic,2006,-1.538
-Central African Republic,2007,-1.568
-Central African Republic,2008,-1.415
-Central African Republic,2009,-1.305
-Central African Republic,2010,-1.294
-Central African Republic,2011,-1.291
-Central African Republic,2012,-1.443
-Central African Republic,2013,-1.793
-Central African Republic,2014,-1.696
-Central African Republic,2015,-1.685
-Central African Republic,2016,-1.816
-Central African Republic,2017,-1.731
-Central African Republic,2018,-1.688
-Chile,1996,1.114
-Chile,1998,1.178
-Chile,2000,1.323
-Chile,2002,1.356
-Chile,2003,1.29
-Chile,2004,1.322
-Chile,2005,1.305
-Chile,2006,1.272
-Chile,2007,1.288
-Chile,2008,1.313
-Chile,2009,1.297
-Chile,2010,1.336
-Chile,2011,1.366
-Chile,2012,1.392
-Chile,2013,1.368
-Chile,2014,1.433
-Chile,2015,1.344
-Chile,2016,1.129
-Chile,2017,1.012
-Chile,2018,1.115
-Costa Rica,1996,0.618
-Costa Rica,1998,0.746
-Costa Rica,2000,0.634
-Costa Rica,2002,0.706
-Costa Rica,2003,0.703
-Costa Rica,2004,0.56
-Costa Rica,2005,0.559
-Costa Rica,2006,0.466
-Costa Rica,2007,0.382
-Costa Rica,2008,0.46
-Costa Rica,2009,0.564
-Costa Rica,2010,0.524
-Costa Rica,2011,0.451
-Costa Rica,2012,0.52
-Costa Rica,2013,0.552
-Costa Rica,2014,0.561
-Costa Rica,2015,0.505
-Costa Rica,2016,0.466
-Costa Rica,2017,0.455
-Costa Rica,2018,0.479
-Timor,1996,-1.569
-Timor,1998,-1.569
-Timor,2000,0.292
-Timor,2002,-0.828
-Timor,2003,-0.527
-Timor,2004,-0.687
-Timor,2005,-0.502
-Timor,2006,-1.094
-Timor,2007,-1.193
-Timor,2008,-1.047
-Timor,2009,-1.186
-Timor,2010,-1.167
-Timor,2011,-1.176
-Timor,2012,-1.145
-Timor,2013,-1.208
-Timor,2014,-1.122
-Timor,2015,-1.122
-Timor,2016,-1.158
-Timor,2017,-1.168
-Timor,2018,-1.128
-Ecuador,1996,-0.45
-Ecuador,1998,-0.552
-Ecuador,2000,-0.64
-Ecuador,2002,-0.721
-Ecuador,2003,-0.738
-Ecuador,2004,-0.747
-Ecuador,2005,-0.794
-Ecuador,2006,-1.033
-Ecuador,2007,-1.035
-Ecuador,2008,-1.167
-Ecuador,2009,-1.251
-Ecuador,2010,-1.204
-Ecuador,2011,-1.205
-Ecuador,2012,-1.135
-Ecuador,2013,-0.968
-Ecuador,2014,-1.058
-Ecuador,2015,-1.029
-Ecuador,2016,-0.761
-Ecuador,2017,-0.701
-Ecuador,2018,-0.63
-France,1996,1.484
-France,1998,1.403
-France,2000,1.459
-France,2002,1.241
-France,2003,1.367
-France,2004,1.443
-France,2005,1.419
-France,2006,1.474
-France,2007,1.472
-France,2008,1.507
-France,2009,1.453
-France,2010,1.52
-France,2011,1.447
-France,2012,1.454
-France,2013,1.427
-France,2014,1.475
-France,2015,1.413
-France,2016,1.413
-France,2017,1.438
-France,2018,1.44
-Germany,1996,1.61
-Germany,1998,1.664
-Germany,2000,1.638
-Germany,2002,1.666
-Germany,2003,1.675
-Germany,2004,1.639
-Germany,2005,1.664
-Germany,2006,1.783
-Germany,2007,1.773
-Germany,2008,1.746
-Germany,2009,1.656
-Germany,2010,1.631
-Germany,2011,1.616
-Germany,2012,1.665
-Germany,2013,1.65
-Germany,2014,1.857
-Germany,2015,1.795
-Germany,2016,1.622
-Germany,2017,1.608
-Germany,2018,1.63
-Guatemala,1996,-1.126
-Guatemala,1998,-1.066
-Guatemala,2000,-0.881
-Guatemala,2002,-0.974
-Guatemala,2003,-1.073
-Guatemala,2004,-1.01
-Guatemala,2005,-1.051
-Guatemala,2006,-1.094
-Guatemala,2007,-1.115
-Guatemala,2008,-1.11
-Guatemala,2009,-1.018
-Guatemala,2010,-0.96
-Guatemala,2011,-1.036
-Guatemala,2012,-1.076
-Guatemala,2013,-1.083
-Guatemala,2014,-0.962
-Guatemala,2015,-0.947
-Guatemala,2016,-1.02
-Guatemala,2017,-1.06
-Guatemala,2018,-1.051
-Iran,1996,-0.94
-Iran,1998,-0.672
-Iran,2000,-0.508
-Iran,2002,-0.778
-Iran,2003,-0.643
-Iran,2004,-0.665
-Iran,2005,-0.829
-Iran,2006,-0.947
-Iran,2007,-0.975
-Iran,2008,-0.91
-Iran,2009,-0.974
-Iran,2010,-1.022
-Iran,2011,-0.965
-Iran,2012,-0.916
-Iran,2013,-0.996
-Iran,2014,-1.056
-Iran,2015,-0.923
-Iran,2016,-0.679
-Iran,2017,-0.683
-Iran,2018,-0.694
-Iraq,1996,-1.563
-Iraq,1998,-1.548
-Iraq,2000,-1.388
-Iraq,2002,-1.509
-Iraq,2003,-1.641
-Iraq,2004,-1.828
-Iraq,2005,-1.713
-Iraq,2006,-1.679
-Iraq,2007,-1.838
-Iraq,2008,-1.769
-Iraq,2009,-1.698
-Iraq,2010,-1.558
-Iraq,2011,-1.453
-Iraq,2012,-1.458
-Iraq,2013,-1.45
-Iraq,2014,-1.335
-Iraq,2015,-1.418
-Iraq,2016,-1.626
-Iraq,2017,-1.637
-Iraq,2018,-1.759
-Ireland,1996,1.501
-Ireland,1998,1.633
-Ireland,2000,1.568
-Ireland,2002,1.627
-Ireland,2003,1.518
-Ireland,2004,1.529
-Ireland,2005,1.596
-Ireland,2006,1.722
-Ireland,2007,1.745
-Ireland,2008,1.716
-Ireland,2009,1.751
-Ireland,2010,1.768
-Ireland,2011,1.756
-Ireland,2012,1.734
-Ireland,2013,1.732
-Ireland,2014,1.779
-Ireland,2015,1.775
-Ireland,2016,1.517
-Ireland,2017,1.428
-Ireland,2018,1.464
-Italy,1996,1.056
-Italy,1998,0.833
-Italy,2000,0.861
-Italy,2002,0.764
-Italy,2003,0.716
-Italy,2004,0.602
-Italy,2005,0.518
-Italy,2006,0.388
-Italy,2007,0.479
-Italy,2008,0.455
-Italy,2009,0.405
-Italy,2010,0.43
-Italy,2011,0.467
-Italy,2012,0.403
-Italy,2013,0.403
-Italy,2014,0.377
-Italy,2015,0.275
-Italy,2016,0.329
-Italy,2017,0.325
-Italy,2018,0.247
-Jordan,1996,0.277
-Jordan,1998,0.354
-Jordan,2000,0.369
-Jordan,2002,0.112
-Jordan,2003,0.357
-Jordan,2004,0.316
-Jordan,2005,0.325
-Jordan,2006,0.333
-Jordan,2007,0.387
-Jordan,2008,0.412
-Jordan,2009,0.251
-Jordan,2010,0.193
-Jordan,2011,0.238
-Jordan,2012,0.369
-Jordan,2013,0.393
-Jordan,2014,0.464
-Jordan,2015,0.439
-Jordan,2016,0.304
-Jordan,2017,0.261
-Jordan,2018,0.234
-Latvia,1996,0.134
-Latvia,1998,0.292
-Latvia,2000,0.197
-Latvia,2002,0.342
-Latvia,2003,0.596
-Latvia,2004,0.587
-Latvia,2005,0.618
-Latvia,2006,0.669
-Latvia,2007,0.759
-Latvia,2008,0.809
-Latvia,2009,0.814
-Latvia,2010,0.788
-Latvia,2011,0.747
-Latvia,2012,0.785
-Latvia,2013,0.768
-Latvia,2014,0.872
-Latvia,2015,0.795
-Latvia,2016,0.959
-Latvia,2017,0.931
-Latvia,2018,0.957
-Lesotho,1996,0.098
-Lesotho,1998,0.196
-Lesotho,2000,0.142
-Lesotho,2002,0.088
-Lesotho,2003,0.092
-Lesotho,2004,-0.107
-Lesotho,2005,-0.121
-Lesotho,2006,-0.223
-Lesotho,2007,-0.295
-Lesotho,2008,-0.231
-Lesotho,2009,-0.212
-Lesotho,2010,-0.277
-Lesotho,2011,-0.252
-Lesotho,2012,-0.245
-Lesotho,2013,-0.202
-Lesotho,2014,-0.21
-Lesotho,2015,-0.174
-Lesotho,2016,-0.168
-Lesotho,2017,-0.275
-Lesotho,2018,-0.337
-Liberia,1996,-1.928
-Liberia,1998,-1.928
-Liberia,2000,-2.009
-Liberia,2002,-1.813
-Liberia,2003,-1.649
-Liberia,2004,-1.556
-Liberia,2005,-1.327
-Liberia,2006,-0.888
-Liberia,2007,-0.89
-Liberia,2008,-1.091
-Liberia,2009,-1.014
-Liberia,2010,-0.961
-Liberia,2011,-0.927
-Liberia,2012,-0.887
-Liberia,2013,-0.879
-Liberia,2014,-0.806
-Liberia,2015,-0.857
-Liberia,2016,-0.945
-Liberia,2017,-0.951
-Liberia,2018,-0.989
-Malawi,1996,-0.377
-Malawi,1998,-0.368
-Malawi,2000,-0.477
-Malawi,2002,-0.419
-Malawi,2003,-0.212
-Malawi,2004,-0.123
-Malawi,2005,-0.105
-Malawi,2006,-0.216
-Malawi,2007,-0.156
-Malawi,2008,-0.11
-Malawi,2009,-0.11
-Malawi,2010,-0.126
-Malawi,2011,-0.155
-Malawi,2012,-0.219
-Malawi,2013,-0.162
-Malawi,2014,-0.286
-Malawi,2015,-0.307
-Malawi,2016,-0.375
-Malawi,2017,-0.37
-Malawi,2018,-0.38
-Maldives,1996,0.017
-Maldives,1998,-0.264
-Maldives,2000,0.068
-Maldives,2002,-0.143
-Maldives,2003,-0.015
-Maldives,2004,-0.08
-Maldives,2005,0.041
-Maldives,2006,-0.067
-Maldives,2007,-0.164
-Maldives,2008,-0.185
-Maldives,2009,-0.19
-Maldives,2010,-0.337
-Maldives,2011,-0.554
-Maldives,2012,-0.542
-Maldives,2013,-0.747
-Maldives,2014,-0.53
-Maldives,2015,-0.576
-Maldives,2016,-0.408
-Maldives,2017,-0.615
-Maldives,2018,-0.55
-Mongolia,1996,0.201
-Mongolia,1998,0.203
-Mongolia,2000,-0.006
-Mongolia,2002,0.18
-Mongolia,2003,0.213
-Mongolia,2004,0.028
-Mongolia,2005,-0.219
-Mongolia,2006,-0.32
-Mongolia,2007,-0.347
-Mongolia,2008,-0.346
-Mongolia,2009,-0.261
-Mongolia,2010,-0.36
-Mongolia,2011,-0.267
-Mongolia,2012,-0.375
-Mongolia,2013,-0.371
-Mongolia,2014,-0.345
-Mongolia,2015,-0.38
-Mongolia,2016,-0.22
-Mongolia,2017,-0.303
-Mongolia,2018,-0.266
-Morocco,1996,0.221
-Morocco,1998,0.233
-Morocco,2000,0.129
-Morocco,2002,-0.02
-Morocco,2003,-0.076
-Morocco,2004,-0.033
-Morocco,2005,-0.165
-Morocco,2006,-0.29
-Morocco,2007,-0.299
-Morocco,2008,-0.303
-Morocco,2009,-0.21
-Morocco,2010,-0.172
-Morocco,2011,-0.228
-Morocco,2012,-0.209
-Morocco,2013,-0.248
-Morocco,2014,-0.065
-Morocco,2015,-0.089
-Morocco,2016,-0.158
-Morocco,2017,-0.162
-Morocco,2018,-0.138
-Netherlands,1996,1.695
-Netherlands,1998,1.786
-Netherlands,2000,1.774
-Netherlands,2002,1.74
-Netherlands,2003,1.747
-Netherlands,2004,1.758
-Netherlands,2005,1.764
-Netherlands,2006,1.783
-Netherlands,2007,1.787
-Netherlands,2008,1.761
-Netherlands,2009,1.815
-Netherlands,2010,1.819
-Netherlands,2011,1.822
-Netherlands,2012,1.861
-Netherlands,2013,1.835
-Netherlands,2014,1.98
-Netherlands,2015,1.944
-Netherlands,2016,1.894
-Netherlands,2017,1.83
-Netherlands,2018,1.816
-Panama,1996,-0.167
-Panama,1998,-0.053
-Panama,2000,-0.152
-Panama,2002,-0.062
-Panama,2003,-0.11
-Panama,2004,-0.103
-Panama,2005,-0.089
-Panama,2006,-0.133
-Panama,2007,-0.15
-Panama,2008,-0.175
-Panama,2009,-0.088
-Panama,2010,-0.074
-Panama,2011,0.019
-Panama,2012,-0.192
-Panama,2013,-0.216
-Panama,2014,-0.06
-Panama,2015,-0.106
-Panama,2016,0.05
-Panama,2017,0.038
-Panama,2018,-0.059
-Papua New Guinea,1996,-0.617
-Papua New Guinea,1998,-0.573
-Papua New Guinea,2000,-0.844
-Papua New Guinea,2002,-0.939
-Papua New Guinea,2003,-1.138
-Papua New Guinea,2004,-0.899
-Papua New Guinea,2005,-1.004
-Papua New Guinea,2006,-0.827
-Papua New Guinea,2007,-0.858
-Papua New Guinea,2008,-0.916
-Papua New Guinea,2009,-0.892
-Papua New Guinea,2010,-0.909
-Papua New Guinea,2011,-0.806
-Papua New Guinea,2012,-0.836
-Papua New Guinea,2013,-0.948
-Papua New Guinea,2014,-0.802
-Papua New Guinea,2015,-0.869
-Papua New Guinea,2016,-0.776
-Papua New Guinea,2017,-0.825
-Papua New Guinea,2018,-0.766
-Qatar,1996,-0.036
-Qatar,1998,0.195
-Qatar,2000,0.508
-Qatar,2002,0.546
-Qatar,2003,0.449
-Qatar,2004,0.349
-Qatar,2005,0.586
-Qatar,2006,0.634
-Qatar,2007,0.531
-Qatar,2008,0.678
-Qatar,2009,0.908
-Qatar,2010,0.852
-Qatar,2011,0.758
-Qatar,2012,0.958
-Qatar,2013,0.959
-Qatar,2014,0.864
-Qatar,2015,0.771
-Qatar,2016,0.794
-Qatar,2017,0.723
-Qatar,2018,0.735
-Sierra Leone,1996,-1.382
-Sierra Leone,1998,-1.111
-Sierra Leone,2000,-1.387
-Sierra Leone,2002,-1.237
-Sierra Leone,2003,-1.123
-Sierra Leone,2004,-1.133
-Sierra Leone,2005,-1.129
-Sierra Leone,2006,-0.987
-Sierra Leone,2007,-0.988
-Sierra Leone,2008,-0.935
-Sierra Leone,2009,-0.901
-Sierra Leone,2010,-0.934
-Sierra Leone,2011,-0.854
-Sierra Leone,2012,-0.854
-Sierra Leone,2013,-0.859
-Sierra Leone,2014,-0.922
-Sierra Leone,2015,-0.854
-Sierra Leone,2016,-0.777
-Sierra Leone,2017,-0.781
-Sierra Leone,2018,-0.77
-Spain,1996,1.435
-Spain,1998,1.344
-Spain,2000,1.434
-Spain,2002,1.257
-Spain,2003,1.281
-Spain,2004,1.145
-Spain,2005,1.128
-Spain,2006,1.131
-Spain,2007,1.168
-Spain,2008,1.194
-Spain,2009,1.163
-Spain,2010,1.189
-Spain,2011,1.198
-Spain,2012,1.065
-Spain,2013,1.021
-Spain,2014,0.953
-Spain,2015,0.902
-Spain,2016,0.979
-Spain,2017,1.008
-Spain,2018,0.969
-Syria,1996,-0.546
-Syria,1998,-0.524
-Syria,2000,-0.494
-Syria,2002,-0.548
-Syria,2003,-0.468
-Syria,2004,-0.472
-Syria,2005,-0.588
-Syria,2006,-0.943
-Syria,2007,-0.803
-Syria,2008,-0.694
-Syria,2009,-0.574
-Syria,2010,-0.586
-Syria,2011,-0.776
-Syria,2012,-1.126
-Syria,2013,-1.406
-Syria,2014,-1.362
-Syria,2015,-1.423
-Syria,2016,-1.991
-Syria,2017,-2.09
-Syria,2018,-2.048
-Tunisia,1996,-0.303
-Tunisia,1998,-0.235
-Tunisia,2000,-0.216
-Tunisia,2002,-0.122
-Tunisia,2003,-0.143
-Tunisia,2004,0.047
-Tunisia,2005,-0.013
-Tunisia,2006,0.114
-Tunisia,2007,0.086
-Tunisia,2008,0.073
-Tunisia,2009,0.13
-Tunisia,2010,0.062
-Tunisia,2011,-0.132
-Tunisia,2012,-0.129
-Tunisia,2013,-0.189
-Tunisia,2014,-0.11
-Tunisia,2015,-0.066
-Tunisia,2016,-0.003
-Tunisia,2017,0.062
-Tunisia,2018,0.039
-Turkey,1996,-0.139
-Turkey,1998,-0.063
-Turkey,2000,-0.012
-Turkey,2002,-0.027
-Turkey,2003,0.151
-Turkey,2004,0.126
-Turkey,2005,0.16
-Turkey,2006,0.048
-Turkey,2007,0.021
-Turkey,2008,0.083
-Turkey,2009,0.105
-Turkey,2010,0.111
-Turkey,2011,0.075
-Turkey,2012,0.036
-Turkey,2013,0.067
-Turkey,2014,0.005
-Turkey,2015,-0.113
-Turkey,2016,-0.209
-Turkey,2017,-0.25
-Turkey,2018,-0.319
-Ukraine,1996,-0.824
-Ukraine,1998,-1.003
-Ukraine,2000,-1.109
-Ukraine,2002,-0.808
-Ukraine,2003,-0.781
-Ukraine,2004,-0.757
-Ukraine,2005,-0.779
-Ukraine,2006,-0.796
-Ukraine,2007,-0.727
-Ukraine,2008,-0.681
-Ukraine,2009,-0.759
-Ukraine,2010,-0.808
-Ukraine,2011,-0.819
-Ukraine,2012,-0.783
-Ukraine,2013,-0.804
-Ukraine,2014,-0.791
-Ukraine,2015,-0.814
-Ukraine,2016,-0.766
-Ukraine,2017,-0.711
-Ukraine,2018,-0.718
-United Kingdom,1996,1.629
-United Kingdom,1998,1.776
-United Kingdom,2000,1.696
-United Kingdom,2002,1.684
-United Kingdom,2003,1.705
-United Kingdom,2004,1.627
-United Kingdom,2005,1.569
-United Kingdom,2006,1.786
-United Kingdom,2007,1.737
-United Kingdom,2008,1.708
-United Kingdom,2009,1.739
-United Kingdom,2010,1.764
-United Kingdom,2011,1.651
-United Kingdom,2012,1.719
-United Kingdom,2013,1.705
-United Kingdom,2014,1.89
-United Kingdom,2015,1.813
-United Kingdom,2016,1.692
-United Kingdom,2017,1.679
-United Kingdom,2018,1.639
-Uruguay,1996,0.562
-Uruguay,1998,0.658
-Uruguay,2000,0.59
-Uruguay,2002,0.684
-Uruguay,2003,0.662
-Uruguay,2004,0.457
-Uruguay,2005,0.471
-Uruguay,2006,0.563
-Uruguay,2007,0.605
-Uruguay,2008,0.595
-Uruguay,2009,0.718
-Uruguay,2010,0.739
-Uruguay,2011,0.699
-Uruguay,2012,0.593
-Uruguay,2013,0.564
-Uruguay,2014,0.711
-Uruguay,2015,0.712
-Uruguay,2016,0.63
-Uruguay,2017,0.586
-Uruguay,2018,0.599
-Algeria,1996,-1.218
-Algeria,1998,-1.161
-Algeria,2000,-1.211
-Algeria,2002,-0.63
-Algeria,2003,-0.588
-Algeria,2004,-0.621
-Algeria,2005,-0.751
-Algeria,2006,-0.709
-Algeria,2007,-0.773
-Algeria,2008,-0.741
-Algeria,2009,-0.794
-Algeria,2010,-0.785
-Algeria,2011,-0.808
-Algeria,2012,-0.772
-Algeria,2013,-0.689
-Algeria,2014,-0.773
-Algeria,2015,-0.864
-Algeria,2016,-0.857
-Algeria,2017,-0.864
-Algeria,2018,-0.775
-Angola,1996,-1.63
-Angola,1998,-1.701
-Angola,2000,-1.663
-Angola,2002,-1.617
-Angola,2003,-1.521
-Angola,2004,-1.496
-Angola,2005,-1.428
-Angola,2006,-1.3
-Angola,2007,-1.366
-Angola,2008,-1.367
-Angola,2009,-1.231
-Angola,2010,-1.265
-Angola,2011,-1.265
-Angola,2012,-1.27
-Angola,2013,-1.268
-Angola,2014,-1.118
-Angola,2015,-1.082
-Angola,2016,-1.087
-Angola,2017,-1.104
-Angola,2018,-1.048
-Armenia,1996,-0.469
-Armenia,1998,-0.365
-Armenia,2000,-0.479
-Armenia,2002,-0.423
-Armenia,2003,-0.303
-Armenia,2004,-0.423
-Armenia,2005,-0.4
-Armenia,2006,-0.546
-Armenia,2007,-0.498
-Armenia,2008,-0.341
-Armenia,2009,-0.476
-Armenia,2010,-0.489
-Armenia,2011,-0.441
-Armenia,2012,-0.418
-Armenia,2013,-0.344
-Armenia,2014,-0.366
-Armenia,2015,-0.388
-Armenia,2016,-0.119
-Armenia,2017,-0.156
-Armenia,2018,-0.15
-Azerbaijan,1996,-1.201
-Azerbaijan,1998,-1.14
-Azerbaijan,2000,-1.15
-Azerbaijan,2002,-0.909
-Azerbaijan,2003,-0.837
-Azerbaijan,2004,-0.875
-Azerbaijan,2005,-0.792
-Azerbaijan,2006,-0.885
-Azerbaijan,2007,-0.879
-Azerbaijan,2008,-0.832
-Azerbaijan,2009,-0.88
-Azerbaijan,2010,-0.893
-Azerbaijan,2011,-0.894
-Azerbaijan,2012,-0.835
-Azerbaijan,2013,-0.724
-Azerbaijan,2014,-0.672
-Azerbaijan,2015,-0.674
-Azerbaijan,2016,-0.52
-Azerbaijan,2017,-0.556
-Azerbaijan,2018,-0.6
-Belarus,1996,-0.799
-Belarus,1998,-0.935
-Belarus,2000,-1.134
-Belarus,2002,-1.336
-Belarus,2003,-1.194
-Belarus,2004,-1.262
-Belarus,2005,-1.228
-Belarus,2006,-1.334
-Belarus,2007,-1.209
-Belarus,2008,-1.063
-Belarus,2009,-1.03
-Belarus,2010,-1.07
-Belarus,2011,-1.107
-Belarus,2012,-0.937
-Belarus,2013,-0.901
-Belarus,2014,-0.84
-Belarus,2015,-0.813
-Belarus,2016,-0.716
-Belarus,2017,-0.819
-Belarus,2018,-0.833
-Cameroon,1996,-1.442
-Cameroon,1998,-1.071
-Cameroon,2000,-1.199
-Cameroon,2002,-1.23
-Cameroon,2003,-1.076
-Cameroon,2004,-1.186
-Cameroon,2005,-1.208
-Cameroon,2006,-1.155
-Cameroon,2007,-1.185
-Cameroon,2008,-1.1
-Cameroon,2009,-1.123
-Cameroon,2010,-1.071
-Cameroon,2011,-1.074
-Cameroon,2012,-1.042
-Cameroon,2013,-1.051
-Cameroon,2014,-0.896
-Cameroon,2015,-0.976
-Cameroon,2016,-1.036
-Cameroon,2017,-1.032
-Cameroon,2018,-1.08
-Chad,1996,-1.256
-Chad,1998,-1.193
-Chad,2000,-1.092
-Chad,2002,-1.049
-Chad,2003,-1.335
-Chad,2004,-1.407
-Chad,2005,-1.511
-Chad,2006,-1.549
-Chad,2007,-1.539
-Chad,2008,-1.617
-Chad,2009,-1.513
-Chad,2010,-1.503
-Chad,2011,-1.474
-Chad,2012,-1.466
-Chad,2013,-1.382
-Chad,2014,-1.139
-Chad,2015,-1.183
-Chad,2016,-1.378
-Chad,2017,-1.295
-Chad,2018,-1.305
-China,1996,-0.546
-China,1998,-0.457
-China,2000,-0.527
-China,2002,-0.498
-China,2003,-0.53
-China,2004,-0.529
-China,2005,-0.589
-China,2006,-0.639
-China,2007,-0.542
-China,2008,-0.42
-China,2009,-0.407
-China,2010,-0.41
-China,2011,-0.465
-China,2012,-0.543
-China,2013,-0.525
-China,2014,-0.414
-China,2015,-0.41
-China,2016,-0.334
-China,2017,-0.263
-China,2018,-0.202
-Democratic Republic of Congo,1996,-1.877
-Democratic Republic of Congo,1998,-2.13
-Democratic Republic of Congo,2000,-1.905
-Democratic Republic of Congo,2002,-1.658
-Democratic Republic of Congo,2003,-1.684
-Democratic Republic of Congo,2004,-1.715
-Democratic Republic of Congo,2005,-1.554
-Democratic Republic of Congo,2006,-1.617
-Democratic Republic of Congo,2007,-1.61
-Democratic Republic of Congo,2008,-1.559
-Democratic Republic of Congo,2009,-1.633
-Democratic Republic of Congo,2010,-1.621
-Democratic Republic of Congo,2011,-1.618
-Democratic Republic of Congo,2012,-1.657
-Democratic Republic of Congo,2013,-1.573
-Democratic Republic of Congo,2014,-1.451
-Democratic Republic of Congo,2015,-1.573
-Democratic Republic of Congo,2016,-1.619
-Democratic Republic of Congo,2017,-1.69
-Democratic Republic of Congo,2018,-1.784
-Congo,1996,-1.044
-Congo,1998,-1.65
-Congo,2000,-1.416
-Congo,2002,-1.248
-Congo,2003,-1.173
-Congo,2004,-1.188
-Congo,2005,-1.473
-Congo,2006,-1.267
-Congo,2007,-1.235
-Congo,2008,-1.195
-Congo,2009,-1.218
-Congo,2010,-1.22
-Congo,2011,-1.203
-Congo,2012,-1.143
-Congo,2013,-1.113
-Congo,2014,-1.109
-Congo,2015,-1.079
-Congo,2016,-1.096
-Congo,2017,-1.104
-Congo,2018,-1.101
-Djibouti,1996,-0.972
-Djibouti,1998,-0.847
-Djibouti,2000,-0.886
-Djibouti,2002,-0.917
-Djibouti,2003,-0.867
-Djibouti,2004,-0.851
-Djibouti,2005,-0.957
-Djibouti,2006,-0.877
-Djibouti,2007,-0.756
-Djibouti,2008,-0.645
-Djibouti,2009,-0.677
-Djibouti,2010,-0.729
-Djibouti,2011,-0.807
-Djibouti,2012,-0.791
-Djibouti,2013,-0.772
-Djibouti,2014,-0.874
-Djibouti,2015,-0.922
-Djibouti,2016,-0.976
-Djibouti,2017,-0.913
-Djibouti,2018,-0.923
-Dominican Republic,1996,-0.523
-Dominican Republic,1998,-0.473
-Dominican Republic,2000,-0.61
-Dominican Republic,2002,-0.673
-Dominican Republic,2003,-0.609
-Dominican Republic,2004,-0.672
-Dominican Republic,2005,-0.67
-Dominican Republic,2006,-0.576
-Dominican Republic,2007,-0.614
-Dominican Republic,2008,-0.66
-Dominican Republic,2009,-0.773
-Dominican Republic,2010,-0.808
-Dominican Republic,2011,-0.773
-Dominican Republic,2012,-0.688
-Dominican Republic,2013,-0.532
-Dominican Republic,2014,-0.406
-Dominican Republic,2015,-0.513
-Dominican Republic,2016,-0.395
-Dominican Republic,2017,-0.418
-Dominican Republic,2018,-0.396
-Eritrea,1996,-0.655
-Eritrea,1998,-0.424
-Eritrea,2000,-0.564
-Eritrea,2002,-0.562
-Eritrea,2003,-0.658
-Eritrea,2004,-0.864
-Eritrea,2005,-1.042
-Eritrea,2006,-1.189
-Eritrea,2007,-1.278
-Eritrea,2008,-1.302
-Eritrea,2009,-1.31
-Eritrea,2010,-1.349
-Eritrea,2011,-1.351
-Eritrea,2012,-1.387
-Eritrea,2013,-1.407
-Eritrea,2014,-1.53
-Eritrea,2015,-1.488
-Eritrea,2016,-1.625
-Eritrea,2017,-1.564
-Eritrea,2018,-1.586
-Gabon,1996,-0.653
-Gabon,1998,-0.353
-Gabon,2000,-0.206
-Gabon,2002,-0.224
-Gabon,2003,-0.37
-Gabon,2004,-0.516
-Gabon,2005,-0.45
-Gabon,2006,-0.737
-Gabon,2007,-0.702
-Gabon,2008,-0.627
-Gabon,2009,-0.546
-Gabon,2010,-0.517
-Gabon,2011,-0.461
-Gabon,2012,-0.469
-Gabon,2013,-0.54
-Gabon,2014,-0.509
-Gabon,2015,-0.55
-Gabon,2016,-0.605
-Gabon,2017,-0.682
-Gabon,2018,-0.706
-Gambia,1996,0.017
-Gambia,1998,-0.055
-Gambia,2000,-0.204
-Gambia,2002,-0.345
-Gambia,2003,0.103
-Gambia,2004,-0.401
-Gambia,2005,-0.379
-Gambia,2006,-0.36
-Gambia,2007,-0.312
-Gambia,2008,-0.413
-Gambia,2009,-0.506
-Gambia,2010,-0.555
-Gambia,2011,-0.543
-Gambia,2012,-0.577
-Gambia,2013,-0.643
-Gambia,2014,-0.689
-Gambia,2015,-0.721
-Gambia,2016,-0.774
-Gambia,2017,-0.435
-Gambia,2018,-0.431
-Georgia,1996,-1.256
-Georgia,1998,-1.242
-Georgia,2000,-0.933
-Georgia,2002,-1.056
-Georgia,2003,-0.898
-Georgia,2004,-0.658
-Georgia,2005,-0.709
-Georgia,2006,-0.464
-Georgia,2007,-0.347
-Georgia,2008,-0.267
-Georgia,2009,-0.205
-Georgia,2010,-0.21
-Georgia,2011,-0.124
-Georgia,2012,-0.015
-Georgia,2013,-0.006
-Georgia,2014,0.191
-Georgia,2015,0.272
-Georgia,2016,0.384
-Georgia,2017,0.329
-Georgia,2018,0.328
-Guinea-Bissau,1996,-1.673
-Guinea-Bissau,1998,-1.802
-Guinea-Bissau,2000,-1.315
-Guinea-Bissau,2002,-1.169
-Guinea-Bissau,2003,-1.141
-Guinea-Bissau,2004,-1.171
-Guinea-Bissau,2005,-1.25
-Guinea-Bissau,2006,-1.246
-Guinea-Bissau,2007,-1.314
-Guinea-Bissau,2008,-1.386
-Guinea-Bissau,2009,-1.336
-Guinea-Bissau,2010,-1.331
-Guinea-Bissau,2011,-1.306
-Guinea-Bissau,2012,-1.523
-Guinea-Bissau,2013,-1.586
-Guinea-Bissau,2014,-1.325
-Guinea-Bissau,2015,-1.284
-Guinea-Bissau,2016,-1.487
-Guinea-Bissau,2017,-1.436
-Guinea-Bissau,2018,-1.234
-Jamaica,1996,-0.335
-Jamaica,1998,-0.161
-Jamaica,2000,-0.399
-Jamaica,2002,-0.268
-Jamaica,2003,-0.439
-Jamaica,2004,-0.371
-Jamaica,2005,-0.423
-Jamaica,2006,-0.404
-Jamaica,2007,-0.365
-Jamaica,2008,-0.332
-Jamaica,2009,-0.425
-Jamaica,2010,-0.454
-Jamaica,2011,-0.399
-Jamaica,2012,-0.376
-Jamaica,2013,-0.35
-Jamaica,2014,-0.282
-Jamaica,2015,-0.227
-Jamaica,2016,-0.203
-Jamaica,2017,-0.157
-Jamaica,2018,-0.236
-Kazakhstan,1996,-1.187
-Kazakhstan,1998,-1.067
-Kazakhstan,2000,-1.107
-Kazakhstan,2002,-1.143
-Kazakhstan,2003,-1.031
-Kazakhstan,2004,-1.009
-Kazakhstan,2005,-0.865
-Kazakhstan,2006,-1.016
-Kazakhstan,2007,-0.948
-Kazakhstan,2008,-0.824
-Kazakhstan,2009,-0.646
-Kazakhstan,2010,-0.616
-Kazakhstan,2011,-0.574
-Kazakhstan,2012,-0.685
-Kazakhstan,2013,-0.692
-Kazakhstan,2014,-0.598
-Kazakhstan,2015,-0.439
-Kazakhstan,2016,-0.435
-Kazakhstan,2017,-0.411
-Kazakhstan,2018,-0.432
-Kyrgyzstan,1996,-0.725
-Kyrgyzstan,1998,-0.702
-Kyrgyzstan,2000,-0.871
-Kyrgyzstan,2002,-0.805
-Kyrgyzstan,2003,-0.741
-Kyrgyzstan,2004,-0.814
-Kyrgyzstan,2005,-1.114
-Kyrgyzstan,2006,-1.314
-Kyrgyzstan,2007,-1.318
-Kyrgyzstan,2008,-1.372
-Kyrgyzstan,2009,-1.325
-Kyrgyzstan,2010,-1.267
-Kyrgyzstan,2011,-1.19
-Kyrgyzstan,2012,-1.129
-Kyrgyzstan,2013,-1.109
-Kyrgyzstan,2014,-0.927
-Kyrgyzstan,2015,-0.989
-Kyrgyzstan,2016,-1.023
-Kyrgyzstan,2017,-0.925
-Kyrgyzstan,2018,-0.908
-Laos,1996,-1.048
-Laos,1998,-0.916
-Laos,2000,-0.988
-Laos,2002,-1.155
-Laos,2003,-1.273
-Laos,2004,-1.122
-Laos,2005,-1.179
-Laos,2006,-1.015
-Laos,2007,-0.957
-Laos,2008,-0.869
-Laos,2009,-1.053
-Laos,2010,-0.98
-Laos,2011,-1.001
-Laos,2012,-0.852
-Laos,2013,-0.8
-Laos,2014,-0.751
-Laos,2015,-0.799
-Laos,2016,-0.796
-Laos,2017,-0.882
-Laos,2018,-0.843
-Libya,1996,-1.183
-Libya,1998,-1.113
-Libya,2000,-0.99
-Libya,2002,-1.136
-Libya,2003,-0.896
-Libya,2004,-0.909
-Libya,2005,-0.975
-Libya,2006,-1.077
-Libya,2007,-0.951
-Libya,2008,-0.824
-Libya,2009,-0.934
-Libya,2010,-0.993
-Libya,2011,-1.2
-Libya,2012,-1.138
-Libya,2013,-1.337
-Libya,2014,-1.509
-Libya,2015,-1.629
-Libya,2016,-1.817
-Libya,2017,-1.784
-Libya,2018,-1.786
-Madagascar,1996,-0.404
-Madagascar,1998,-0.519
-Madagascar,2000,-0.244
-Madagascar,2002,-0.3
-Madagascar,2003,-0.235
-Madagascar,2004,-0.246
-Madagascar,2005,-0.353
-Madagascar,2006,-0.446
-Madagascar,2007,-0.384
-Madagascar,2008,-0.45
-Madagascar,2009,-0.734
-Madagascar,2010,-0.875
-Madagascar,2011,-0.888
-Madagascar,2012,-0.906
-Madagascar,2013,-0.913
-Madagascar,2014,-0.74
-Madagascar,2015,-0.687
-Madagascar,2016,-0.813
-Madagascar,2017,-0.86
-Madagascar,2018,-0.814
-Moldova,1996,-0.121
-Moldova,1998,-0.028
-Moldova,2000,-0.483
-Moldova,2002,-0.6
-Moldova,2003,-0.517
-Moldova,2004,-0.334
-Moldova,2005,-0.358
-Moldova,2006,-0.52
-Moldova,2007,-0.508
-Moldova,2008,-0.425
-Moldova,2009,-0.442
-Moldova,2010,-0.363
-Moldova,2011,-0.331
-Moldova,2012,-0.325
-Moldova,2013,-0.372
-Moldova,2014,-0.248
-Moldova,2015,-0.353
-Moldova,2016,-0.495
-Moldova,2017,-0.414
-Moldova,2018,-0.414
-Namibia,1996,0.251
-Namibia,1998,0.312
-Namibia,2000,0.221
-Namibia,2002,0.327
-Namibia,2003,0.316
-Namibia,2004,-0.003
-Namibia,2005,-0.066
-Namibia,2006,0.121
-Namibia,2007,0.102
-Namibia,2008,0.348
-Namibia,2009,0.188
-Namibia,2010,0.155
-Namibia,2011,0.132
-Namibia,2012,0.253
-Namibia,2013,0.267
-Namibia,2014,0.148
-Namibia,2015,0.19
-Namibia,2016,0.363
-Namibia,2017,0.241
-Namibia,2018,0.245
-Palestine/West Bank,1996,-0.04
-Palestine/West Bank,1998,-0.032
-Palestine/West Bank,2000,-0.081
-Palestine/West Bank,2002,-0.334
-Palestine/West Bank,2003,-0.088
-Palestine/West Bank,2004,-0.263
-Palestine/West Bank,2005,-0.336
-Palestine/West Bank,2006,-0.386
-Palestine/West Bank,2007,-0.62
-Palestine/West Bank,2008,-0.756
-Palestine/West Bank,2009,-0.31
-Palestine/West Bank,2010,-0.205
-Palestine/West Bank,2011,-0.433
-Palestine/West Bank,2012,-0.442
-Palestine/West Bank,2013,-0.398
-Palestine/West Bank,2014,-0.385
-Palestine/West Bank,2015,-0.506
-Palestine/West Bank,2016,-0.344
-Palestine/West Bank,2017,-0.416
-Palestine/West Bank,2018,-0.484
-Rwanda,1996,-1.502
-Rwanda,1998,-1.352
-Rwanda,2000,-1.223
-Rwanda,2002,-0.856
-Rwanda,2003,-0.804
-Rwanda,2004,-0.819
-Rwanda,2005,-0.917
-Rwanda,2006,-0.675
-Rwanda,2007,-0.577
-Rwanda,2008,-0.477
-Rwanda,2009,-0.501
-Rwanda,2010,-0.331
-Rwanda,2011,-0.314
-Rwanda,2012,-0.272
-Rwanda,2013,-0.155
-Rwanda,2014,0.057
-Rwanda,2015,0.05
-Rwanda,2016,0.102
-Rwanda,2017,0.129
-Rwanda,2018,0.118
-Somalia,1996,-2.145
-Somalia,1998,-2.228
-Somalia,2000,-2.275
-Somalia,2002,-1.937
-Somalia,2003,-2.124
-Somalia,2004,-2.268
-Somalia,2005,-2.173
-Somalia,2006,-2.34
-Somalia,2007,-2.406
-Somalia,2008,-2.606
-Somalia,2009,-2.447
-Somalia,2010,-2.406
-Somalia,2011,-2.333
-Somalia,2012,-2.423
-Somalia,2013,-2.404
-Somalia,2014,-2.349
-Somalia,2015,-2.3
-Somalia,2016,-2.346
-Somalia,2017,-2.313
-Somalia,2018,-2.333
-Sri Lanka,1996,0.161
-Sri Lanka,1998,0.096
-Sri Lanka,2000,0.152
-Sri Lanka,2002,0.33
-Sri Lanka,2003,0.245
-Sri Lanka,2004,0.176
-Sri Lanka,2005,0.153
-Sri Lanka,2006,0.175
-Sri Lanka,2007,0.13
-Sri Lanka,2008,-0.012
-Sri Lanka,2009,-0.107
-Sri Lanka,2010,-0.121
-Sri Lanka,2011,-0.122
-Sri Lanka,2012,-0.122
-Sri Lanka,2013,-0.277
-Sri Lanka,2014,-0.17
-Sri Lanka,2015,0.037
-Sri Lanka,2016,0.111
-Sri Lanka,2017,0.055
-Sri Lanka,2018,0.026
-Swaziland,1996,-0.474
-Swaziland,1998,-0.534
-Swaziland,2000,-0.599
-Swaziland,2002,-0.67
-Swaziland,2003,-0.734
-Swaziland,2004,-0.866
-Swaziland,2005,-0.901
-Swaziland,2006,-0.677
-Swaziland,2007,-0.756
-Swaziland,2008,-0.646
-Swaziland,2009,-0.622
-Swaziland,2010,-0.529
-Swaziland,2011,-0.494
-Swaziland,2012,-0.494
-Swaziland,2013,-0.459
-Swaziland,2014,-0.314
-Swaziland,2015,-0.324
-Swaziland,2016,-0.369
-Swaziland,2017,-0.284
-Swaziland,2018,-0.249
-Tajikistan,1996,-1.648
-Tajikistan,1998,-1.536
-Tajikistan,2000,-1.39
-Tajikistan,2002,-1.189
-Tajikistan,2003,-1.028
-Tajikistan,2004,-1.17
-Tajikistan,2005,-1.091
-Tajikistan,2006,-1.179
-Tajikistan,2007,-1.293
-Tajikistan,2008,-1.286
-Tajikistan,2009,-1.268
-Tajikistan,2010,-1.209
-Tajikistan,2011,-1.226
-Tajikistan,2012,-1.2
-Tajikistan,2013,-1.253
-Tajikistan,2014,-1.011
-Tajikistan,2015,-1.056
-Tajikistan,2016,-1.148
-Tajikistan,2017,-1.354
-Tajikistan,2018,-1.283
-Togo,1996,-0.731
-Togo,1998,-0.728
-Togo,2000,-0.702
-Togo,2002,-0.784
-Togo,2003,-0.93
-Togo,2004,-1.115
-Togo,2005,-1.08
-Togo,2006,-0.943
-Togo,2007,-0.923
-Togo,2008,-0.825
-Togo,2009,-0.882
-Togo,2010,-0.922
-Togo,2011,-0.878
-Togo,2012,-0.928
-Togo,2013,-0.973
-Togo,2014,-0.857
-Togo,2015,-0.799
-Togo,2016,-0.634
-Togo,2017,-0.715
-Togo,2018,-0.591
-Trinidad and Tobago,1996,0.534
-Trinidad and Tobago,1998,0.56
-Trinidad and Tobago,2000,0.454
-Trinidad and Tobago,2002,0.461
-Trinidad and Tobago,2003,0.277
-Trinidad and Tobago,2004,0.021
-Trinidad and Tobago,2005,-0.005
-Trinidad and Tobago,2006,-0.195
-Trinidad and Tobago,2007,-0.127
-Trinidad and Tobago,2008,-0.189
-Trinidad and Tobago,2009,-0.178
-Trinidad and Tobago,2010,-0.169
-Trinidad and Tobago,2011,-0.154
-Trinidad and Tobago,2012,-0.141
-Trinidad and Tobago,2013,-0.168
-Trinidad and Tobago,2014,-0.091
-Trinidad and Tobago,2015,-0.116
-Trinidad and Tobago,2016,-0.154
-Trinidad and Tobago,2017,-0.109
-Trinidad and Tobago,2018,-0.121
-Turkmenistan,1996,-1.487
-Turkmenistan,1998,-1.421
-Turkmenistan,2000,-1.328
-Turkmenistan,2002,-1.41
-Turkmenistan,2003,-1.422
-Turkmenistan,2004,-1.634
-Turkmenistan,2005,-1.614
-Turkmenistan,2006,-1.641
-Turkmenistan,2007,-1.572
-Turkmenistan,2008,-1.472
-Turkmenistan,2009,-1.47
-Turkmenistan,2010,-1.487
-Turkmenistan,2011,-1.457
-Turkmenistan,2012,-1.403
-Turkmenistan,2013,-1.387
-Turkmenistan,2014,-1.365
-Turkmenistan,2015,-1.418
-Turkmenistan,2016,-1.49
-Turkmenistan,2017,-1.488
-Turkmenistan,2018,-1.452
-Uzbekistan,1996,-1.239
-Uzbekistan,1998,-1.275
-Uzbekistan,2000,-1.225
-Uzbekistan,2002,-1.477
-Uzbekistan,2003,-1.31
-Uzbekistan,2004,-1.318
-Uzbekistan,2005,-1.462
-Uzbekistan,2006,-1.447
-Uzbekistan,2007,-1.222
-Uzbekistan,2008,-1.166
-Uzbekistan,2009,-1.322
-Uzbekistan,2010,-1.416
-Uzbekistan,2011,-1.446
-Uzbekistan,2012,-1.29
-Uzbekistan,2013,-1.227
-Uzbekistan,2014,-1.13
-Uzbekistan,2015,-1.111
-Uzbekistan,2016,-1.107
-Uzbekistan,2017,-1.108
-Uzbekistan,2018,-1.074
-Austria,1996,1.808
-Austria,1998,1.847
-Austria,2000,1.842
-Austria,2002,1.892
-Austria,2003,1.887
-Austria,2004,1.837
-Austria,2005,1.859
-Austria,2006,1.914
-Austria,2007,1.96
-Austria,2008,1.923
-Austria,2009,1.785
-Austria,2010,1.8
-Austria,2011,1.802
-Austria,2012,1.858
-Austria,2013,1.851
-Austria,2014,1.952
-Austria,2015,1.855
-Austria,2016,1.815
-Austria,2017,1.812
-Austria,2018,1.876
-Bahrain,1996,-0.01
-Bahrain,1998,0.377
-Bahrain,2000,0.298
-Bahrain,2002,0.568
-Bahrain,2003,0.62
-Bahrain,2004,0.709
-Bahrain,2005,0.606
-Bahrain,2006,0.38
-Bahrain,2007,0.533
-Bahrain,2008,0.533
-Bahrain,2009,0.517
-Bahrain,2010,0.436
-Bahrain,2011,0.352
-Bahrain,2012,0.258
-Bahrain,2013,0.331
-Bahrain,2014,0.414
-Bahrain,2015,0.425
-Bahrain,2016,0.456
-Bahrain,2017,0.447
-Bahrain,2018,0.413
-Barbados,1996,1.047
-Barbados,1998,1.27
-Barbados,2000,1.423
-Barbados,2002,1.524
-Barbados,2003,1.555
-Barbados,2004,1.442
-Barbados,2005,1.346
-Barbados,2006,1.237
-Barbados,2007,1.329
-Barbados,2008,1.309
-Barbados,2009,1.014
-Barbados,2010,1.081
-Barbados,2011,1.082
-Barbados,2012,1.032
-Barbados,2013,1.046
-Barbados,2014,1.082
-Barbados,2015,1.095
-Barbados,2016,0.795
-Barbados,2017,0.658
-Barbados,2018,0.395
-Belgium,1996,1.367
-Belgium,1998,1.255
-Belgium,2000,1.34
-Belgium,2002,1.374
-Belgium,2003,1.365
-Belgium,2004,1.328
-Belgium,2005,1.268
-Belgium,2006,1.236
-Belgium,2007,1.331
-Belgium,2008,1.345
-Belgium,2009,1.384
-Belgium,2010,1.393
-Belgium,2011,1.418
-Belgium,2012,1.427
-Belgium,2013,1.438
-Belgium,2014,1.523
-Belgium,2015,1.463
-Belgium,2016,1.391
-Belgium,2017,1.343
-Belgium,2018,1.368
-Bosnia and Herzegovina,1996,-0.242
-Bosnia and Herzegovina,1998,-0.642
-Bosnia and Herzegovina,2000,-0.612
-Bosnia and Herzegovina,2002,-0.66
-Bosnia and Herzegovina,2003,-0.628
-Bosnia and Herzegovina,2004,-0.502
-Bosnia and Herzegovina,2005,-0.518
-Bosnia and Herzegovina,2006,-0.496
-Bosnia and Herzegovina,2007,-0.47
-Bosnia and Herzegovina,2008,-0.412
-Bosnia and Herzegovina,2009,-0.358
-Bosnia and Herzegovina,2010,-0.351
-Bosnia and Herzegovina,2011,-0.333
-Bosnia and Herzegovina,2012,-0.207
-Bosnia and Herzegovina,2013,-0.152
-Bosnia and Herzegovina,2014,-0.186
-Bosnia and Herzegovina,2015,-0.281
-Bosnia and Herzegovina,2016,-0.217
-Bosnia and Herzegovina,2017,-0.211
-Bosnia and Herzegovina,2018,-0.233
-Bulgaria,1996,-0.345
-Bulgaria,1998,-0.213
-Bulgaria,2000,-0.121
-Bulgaria,2002,-0.033
-Bulgaria,2003,-0.14
-Bulgaria,2004,-0.113
-Bulgaria,2005,-0.096
-Bulgaria,2006,-0.094
-Bulgaria,2007,-0.046
-Bulgaria,2008,-0.107
-Bulgaria,2009,-0.038
-Bulgaria,2010,-0.069
-Bulgaria,2011,-0.112
-Bulgaria,2012,-0.085
-Bulgaria,2013,-0.102
-Bulgaria,2014,-0.046
-Bulgaria,2015,-0.097
-Bulgaria,2016,-0.061
-Bulgaria,2017,-0.041
-Bulgaria,2018,-0.03
-Comoros,1996,-0.879
-Comoros,1998,-1.087
-Comoros,2000,-1.291
-Comoros,2002,-0.951
-Comoros,2003,-0.869
-Comoros,2004,-1.024
-Comoros,2005,-0.995
-Comoros,2006,-0.953
-Comoros,2007,-1.011
-Comoros,2008,-1.033
-Comoros,2009,-1.13
-Comoros,2010,-1.046
-Comoros,2011,-1.003
-Comoros,2012,-1.016
-Comoros,2013,-0.937
-Comoros,2014,-0.892
-Comoros,2015,-0.815
-Comoros,2016,-0.999
-Comoros,2017,-1.055
-Comoros,2018,-1.081
-Croatia,1996,-0.634
-Croatia,1998,-0.357
-Croatia,2000,0.031
-Croatia,2002,-0.146
-Croatia,2003,-0.023
-Croatia,2004,0.085
-Croatia,2005,0.129
-Croatia,2006,0.006
-Croatia,2007,0.088
-Croatia,2008,0.086
-Croatia,2009,0.162
-Croatia,2010,0.202
-Croatia,2011,0.218
-Croatia,2012,0.246
-Croatia,2013,0.292
-Croatia,2014,0.32
-Croatia,2015,0.2
-Croatia,2016,0.409
-Croatia,2017,0.334
-Croatia,2018,0.325
-Cuba,1996,-1.137
-Cuba,1998,-1.039
-Cuba,2000,-1.042
-Cuba,2002,-1.167
-Cuba,2003,-1.215
-Cuba,2004,-1.106
-Cuba,2005,-1.081
-Cuba,2006,-0.759
-Cuba,2007,-0.685
-Cuba,2008,-0.825
-Cuba,2009,-0.708
-Cuba,2010,-0.718
-Cuba,2011,-0.691
-Cuba,2012,-0.706
-Cuba,2013,-0.697
-Cuba,2014,-0.658
-Cuba,2015,-0.701
-Cuba,2016,-0.442
-Cuba,2017,-0.431
-Cuba,2018,-0.444
-Cyprus,1996,0.857
-Cyprus,1998,0.978
-Cyprus,2000,1.04
-Cyprus,2002,1.016
-Cyprus,2003,0.969
-Cyprus,2004,0.923
-Cyprus,2005,0.887
-Cyprus,2006,1.105
-Cyprus,2007,1.12
-Cyprus,2008,1.216
-Cyprus,2009,1.213
-Cyprus,2010,1.216
-Cyprus,2011,1.073
-Cyprus,2012,1.1
-Cyprus,2013,1.037
-Cyprus,2014,1.077
-Cyprus,2015,1.04
-Cyprus,2016,0.721
-Cyprus,2017,0.885
-Cyprus,2018,0.753
-Czech Republic,1996,0.915
-Czech Republic,1998,0.923
-Czech Republic,2000,0.637
-Czech Republic,2002,0.864
-Czech Republic,2003,0.871
-Czech Republic,2004,0.783
-Czech Republic,2005,0.868
-Czech Republic,2006,0.873
-Czech Republic,2007,0.906
-Czech Republic,2008,0.914
-Czech Republic,2009,0.963
-Czech Republic,2010,0.949
-Czech Republic,2011,1.037
-Czech Republic,2012,1.042
-Czech Republic,2013,1.04
-Czech Republic,2014,1.152
-Czech Republic,2015,1.148
-Czech Republic,2016,1.036
-Czech Republic,2017,1.117
-Czech Republic,2018,1.05
-Denmark,1996,1.821
-Denmark,1998,1.882
-Denmark,2000,1.839
-Denmark,2002,1.916
-Denmark,2003,1.961
-Denmark,2004,1.952
-Denmark,2005,1.948
-Denmark,2006,1.998
-Denmark,2007,2.014
-Denmark,2008,1.967
-Denmark,2009,1.925
-Denmark,2010,1.898
-Denmark,2011,1.923
-Denmark,2012,1.874
-Denmark,2013,1.9
-Denmark,2014,2.096
-Denmark,2015,2.042
-Denmark,2016,1.912
-Denmark,2017,1.864
-Denmark,2018,1.833
-Equatorial Guinea,1996,-1.283
-Equatorial Guinea,1998,-1.555
-Equatorial Guinea,2000,-1.419
-Equatorial Guinea,2002,-1.461
-Equatorial Guinea,2003,-1.405
-Equatorial Guinea,2004,-1.484
-Equatorial Guinea,2005,-1.46
-Equatorial Guinea,2006,-1.371
-Equatorial Guinea,2007,-1.303
-Equatorial Guinea,2008,-1.269
-Equatorial Guinea,2009,-1.271
-Equatorial Guinea,2010,-1.301
-Equatorial Guinea,2011,-1.265
-Equatorial Guinea,2012,-1.296
-Equatorial Guinea,2013,-1.349
-Equatorial Guinea,2014,-1.449
-Equatorial Guinea,2015,-1.456
-Equatorial Guinea,2016,-1.516
-Equatorial Guinea,2017,-1.489
-Equatorial Guinea,2018,-1.415
-Estonia,1996,0.574
-Estonia,1998,0.665
-Estonia,2000,0.654
-Estonia,2002,0.825
-Estonia,2003,0.806
-Estonia,2004,0.947
-Estonia,2005,0.97
-Estonia,2006,1.141
-Estonia,2007,1.173
-Estonia,2008,1.199
-Estonia,2009,1.131
-Estonia,2010,1.16
-Estonia,2011,1.184
-Estonia,2012,1.157
-Estonia,2013,1.198
-Estonia,2014,1.373
-Estonia,2015,1.332
-Estonia,2016,1.226
-Estonia,2017,1.282
-Estonia,2018,1.241
-Fiji,1996,0.323
-Fiji,1998,0.222
-Fiji,2000,-0.42
-Fiji,2002,-0.325
-Fiji,2003,-0.049
-Fiji,2004,0.026
-Fiji,2005,-0.047
-Fiji,2006,-0.064
-Fiji,2007,-0.601
-Fiji,2008,-0.561
-Fiji,2009,-0.771
-Fiji,2010,-0.848
-Fiji,2011,-0.825
-Fiji,2012,-0.791
-Fiji,2013,-0.823
-Fiji,2014,-0.511
-Fiji,2015,-0.404
-Fiji,2016,-0.274
-Fiji,2017,-0.246
-Fiji,2018,-0.129
-Finland,1996,1.908
-Finland,1998,1.998
-Finland,2000,1.985
-Finland,2002,1.938
-Finland,2003,1.999
-Finland,2004,1.961
-Finland,2005,1.963
-Finland,2006,1.974
-Finland,2007,1.915
-Finland,2008,1.923
-Finland,2009,1.97
-Finland,2010,1.969
-Finland,2011,1.949
-Finland,2012,1.952
-Finland,2013,1.937
-Finland,2014,2.1
-Finland,2015,2.063
-Finland,2016,2.015
-Finland,2017,2.027
-Finland,2018,2.046
-Greece,1996,1.054
-Greece,1998,0.806
-Greece,2000,0.884
-Greece,2002,0.748
-Greece,2003,0.818
-Greece,2004,0.913
-Greece,2005,0.795
-Greece,2006,0.874
-Greece,2007,0.872
-Greece,2008,0.862
-Greece,2009,0.653
-Greece,2010,0.631
-Greece,2011,0.573
-Greece,2012,0.427
-Greece,2013,0.465
-Greece,2014,0.363
-Greece,2015,0.267
-Greece,2016,0.107
-Greece,2017,0.084
-Greece,2018,0.153
-Guyana,1996,-0.204
-Guyana,1998,-0.291
-Guyana,2000,-0.474
-Guyana,2002,-0.491
-Guyana,2003,-0.541
-Guyana,2004,-0.62
-Guyana,2005,-0.667
-Guyana,2006,-0.565
-Guyana,2007,-0.459
-Guyana,2008,-0.582
-Guyana,2009,-0.556
-Guyana,2010,-0.474
-Guyana,2011,-0.511
-Guyana,2012,-0.524
-Guyana,2013,-0.53
-Guyana,2014,-0.617
-Guyana,2015,-0.527
-Guyana,2016,-0.309
-Guyana,2017,-0.289
-Guyana,2018,-0.32
-Hong Kong,1996,0.751
-Hong Kong,1998,1.018
-Hong Kong,2000,0.819
-Hong Kong,2002,1.294
-Hong Kong,2003,1.573
-Hong Kong,2004,1.586
-Hong Kong,2005,1.613
-Hong Kong,2006,1.552
-Hong Kong,2007,1.526
-Hong Kong,2008,1.489
-Hong Kong,2009,1.496
-Hong Kong,2010,1.543
-Hong Kong,2011,1.555
-Hong Kong,2012,1.58
-Hong Kong,2013,1.574
-Hong Kong,2014,1.861
-Hong Kong,2015,1.826
-Hong Kong,2016,1.723
-Hong Kong,2017,1.718
-Hong Kong,2018,1.771
-Iceland,1996,1.602
-Iceland,1998,1.702
-Iceland,2000,1.827
-Iceland,2002,1.893
-Iceland,2003,1.959
-Iceland,2004,1.927
-Iceland,2005,1.951
-Iceland,2006,1.896
-Iceland,2007,1.846
-Iceland,2008,1.865
-Iceland,2009,1.714
-Iceland,2010,1.714
-Iceland,2011,1.698
-Iceland,2012,1.685
-Iceland,2013,1.662
-Iceland,2014,1.709
-Iceland,2015,1.667
-Iceland,2016,1.52
-Iceland,2017,1.607
-Iceland,2018,1.72
-Israel,1996,1.279
-Israel,1998,1.027
-Israel,2000,1.025
-Israel,2002,1.097
-Israel,2003,0.941
-Israel,2004,0.862
-Israel,2005,0.817
-Israel,2006,0.902
-Israel,2007,0.829
-Israel,2008,0.846
-Israel,2009,0.841
-Israel,2010,0.916
-Israel,2011,1.013
-Israel,2012,0.935
-Israel,2013,0.978
-Israel,2014,1.108
-Israel,2015,1.162
-Israel,2016,1.072
-Israel,2017,1.021
-Israel,2018,0.994
-Kuwait,1996,0.599
-Kuwait,1998,0.637
-Kuwait,2000,0.573
-Kuwait,2002,0.614
-Kuwait,2003,0.574
-Kuwait,2004,0.519
-Kuwait,2005,0.537
-Kuwait,2006,0.538
-Kuwait,2007,0.605
-Kuwait,2008,0.588
-Kuwait,2009,0.586
-Kuwait,2010,0.592
-Kuwait,2011,0.549
-Kuwait,2012,0.368
-Kuwait,2013,0.366
-Kuwait,2014,0.022
-Kuwait,2015,0.001
-Kuwait,2016,0.028
-Kuwait,2017,0.101
-Kuwait,2018,0.211
-Lithuania,1996,0.45
-Lithuania,1998,0.594
-Lithuania,2000,0.292
-Lithuania,2002,0.453
-Lithuania,2003,0.541
-Lithuania,2004,0.607
-Lithuania,2005,0.629
-Lithuania,2006,0.716
-Lithuania,2007,0.727
-Lithuania,2008,0.722
-Lithuania,2009,0.728
-Lithuania,2010,0.782
-Lithuania,2011,0.775
-Lithuania,2012,0.85
-Lithuania,2013,0.836
-Lithuania,2014,0.939
-Lithuania,2015,1.008
-Lithuania,2016,1.029
-Lithuania,2017,0.993
-Lithuania,2018,0.957
-Luxembourg,1996,1.71
-Luxembourg,1998,1.807
-Luxembourg,2000,1.845
-Luxembourg,2002,1.904
-Luxembourg,2003,1.866
-Luxembourg,2004,1.865
-Luxembourg,2005,1.831
-Luxembourg,2006,1.7
-Luxembourg,2007,1.765
-Luxembourg,2008,1.801
-Luxembourg,2009,1.827
-Luxembourg,2010,1.851
-Luxembourg,2011,1.833
-Luxembourg,2012,1.799
-Luxembourg,2013,1.816
-Luxembourg,2014,1.906
-Luxembourg,2015,1.875
-Luxembourg,2016,1.76
-Luxembourg,2017,1.738
-Luxembourg,2018,1.811
-Macedonia,1996,-0.308
-Macedonia,1998,-0.354
-Macedonia,2000,-0.572
-Macedonia,2002,-0.553
-Macedonia,2003,-0.487
-Macedonia,2004,-0.235
-Macedonia,2005,-0.318
-Macedonia,2006,-0.532
-Macedonia,2007,-0.427
-Macedonia,2008,-0.347
-Macedonia,2009,-0.257
-Macedonia,2010,-0.264
-Macedonia,2011,-0.237
-Macedonia,2012,-0.221
-Macedonia,2013,-0.2
-Macedonia,2014,-0.053
-Macedonia,2015,-0.189
-Macedonia,2016,-0.278
-Macedonia,2017,-0.242
-Macedonia,2018,-0.284
-Malaysia,1996,0.521
-Malaysia,1998,0.303
-Malaysia,2000,0.273
-Malaysia,2002,0.451
-Malaysia,2003,0.524
-Malaysia,2004,0.518
-Malaysia,2005,0.497
-Malaysia,2006,0.467
-Malaysia,2007,0.438
-Malaysia,2008,0.345
-Malaysia,2009,0.456
-Malaysia,2010,0.478
-Malaysia,2011,0.479
-Malaysia,2012,0.465
-Malaysia,2013,0.436
-Malaysia,2014,0.588
-Malaysia,2015,0.502
-Malaysia,2016,0.499
-Malaysia,2017,0.414
-Malaysia,2018,0.623
-Malta,1996,1.054
-Malta,1998,1.298
-Malta,2000,1.391
-Malta,2002,1.505
-Malta,2003,1.576
-Malta,2004,1.33
-Malta,2005,1.427
-Malta,2006,1.568
-Malta,2007,1.63
-Malta,2008,1.625
-Malta,2009,1.481
-Malta,2010,1.417
-Malta,2011,1.287
-Malta,2012,1.345
-Malta,2013,1.333
-Malta,2014,1.194
-Malta,2015,1.136
-Malta,2016,0.998
-Malta,2017,1.144
-Malta,2018,1.054
-Mauritius,1996,0.896
-Mauritius,1998,1.054
-Mauritius,2000,0.982
-Mauritius,2002,1.055
-Mauritius,2003,1.077
-Mauritius,2004,1.001
-Mauritius,2005,1.029
-Mauritius,2006,0.882
-Mauritius,2007,0.91
-Mauritius,2008,0.996
-Mauritius,2009,0.943
-Mauritius,2010,0.858
-Mauritius,2011,0.902
-Mauritius,2012,0.975
-Mauritius,2013,0.95
-Mauritius,2014,0.913
-Mauritius,2015,0.855
-Mauritius,2016,0.752
-Mauritius,2017,0.682
-Mauritius,2018,0.78
-Montenegro,1998,-0.783
-Montenegro,2000,0.335
-Montenegro,2002,0.294
-Montenegro,2003,-0.157
-Montenegro,2004,-0.209
-Montenegro,2005,-0.131
-Montenegro,2006,-0.271
-Montenegro,2007,-0.154
-Montenegro,2008,-0.076
-Montenegro,2009,0.07
-Montenegro,2010,0.014
-Montenegro,2011,0.017
-Montenegro,2012,0.019
-Montenegro,2013,0.045
-Montenegro,2014,0.082
-Montenegro,2015,0.052
-Montenegro,2016,-0.006
-Montenegro,2017,0.013
-Montenegro,2018,0.099
-New Zealand,1996,1.858
-New Zealand,1998,1.895
-New Zealand,2000,1.825
-New Zealand,2002,1.824
-New Zealand,2003,1.888
-New Zealand,2004,1.869
-New Zealand,2005,1.858
-New Zealand,2006,1.808
-New Zealand,2007,1.845
-New Zealand,2008,1.863
-New Zealand,2009,1.93
-New Zealand,2010,1.869
-New Zealand,2011,1.904
-New Zealand,2012,1.891
-New Zealand,2013,1.879
-New Zealand,2014,2.009
-New Zealand,2015,2.001
-New Zealand,2016,1.954
-New Zealand,2017,1.923
-New Zealand,2018,1.876
-Norway,1996,1.923
-Norway,1998,1.996
-Norway,2000,1.861
-Norway,2002,1.882
-Norway,2003,1.921
-Norway,2004,1.983
-Norway,2005,1.925
-Norway,2006,1.98
-Norway,2007,1.947
-Norway,2008,1.97
-Norway,2009,1.881
-Norway,2010,1.897
-Norway,2011,1.874
-Norway,2012,1.959
-Norway,2013,1.98
-Norway,2014,2.029
-Norway,2015,2.011
-Norway,2016,2.036
-Norway,2017,2.02
-Norway,2018,1.966
-Oman,1996,0.55
-Oman,1998,0.45
-Oman,2000,0.558
-Oman,2002,0.472
-Oman,2003,0.491
-Oman,2004,0.523
-Oman,2005,0.315
-Oman,2006,0.295
-Oman,2007,0.412
-Oman,2008,0.594
-Oman,2009,0.555
-Oman,2010,0.543
-Oman,2011,0.468
-Oman,2012,0.524
-Oman,2013,0.492
-Oman,2014,0.486
-Oman,2015,0.377
-Oman,2016,0.408
-Oman,2017,0.432
-Oman,2018,0.465
-Paraguay,1996,-0.664
-Paraguay,1998,-0.869
-Paraguay,2000,-1.012
-Paraguay,2002,-1.097
-Paraguay,2003,-1.028
-Paraguay,2004,-1
-Paraguay,2005,-0.975
-Paraguay,2006,-0.978
-Paraguay,2007,-0.973
-Paraguay,2008,-0.928
-Paraguay,2009,-0.884
-Paraguay,2010,-0.863
-Paraguay,2011,-0.837
-Paraguay,2012,-0.846
-Paraguay,2013,-0.808
-Paraguay,2014,-0.673
-Paraguay,2015,-0.692
-Paraguay,2016,-0.73
-Paraguay,2017,-0.651
-Paraguay,2018,-0.541
-Romania,1996,-0.022
-Romania,1998,-0.106
-Romania,2000,-0.205
-Romania,2002,-0.26
-Romania,2003,-0.209
-Romania,2004,-0.175
-Romania,2005,-0.138
-Romania,2006,-0.118
-Romania,2007,-0.091
-Romania,2008,-0.014
-Romania,2009,0.045
-Romania,2010,0.048
-Romania,2011,0.057
-Romania,2012,0.042
-Romania,2013,0.125
-Romania,2014,0.165
-Romania,2015,0.158
-Romania,2016,0.361
-Romania,2017,0.388
-Romania,2018,0.325
-Sao Tome and Principe,1996,0.269
-Sao Tome and Principe,1998,-0.203
-Sao Tome and Principe,2000,-0.022
-Sao Tome and Principe,2002,-0.424
-Sao Tome and Principe,2003,-0.4
-Sao Tome and Principe,2004,-0.319
-Sao Tome and Principe,2005,-0.532
-Sao Tome and Principe,2006,-0.492
-Sao Tome and Principe,2007,-0.434
-Sao Tome and Principe,2008,-0.485
-Sao Tome and Principe,2009,-0.677
-Sao Tome and Principe,2010,-0.663
-Sao Tome and Principe,2011,-0.661
-Sao Tome and Principe,2012,-0.748
-Sao Tome and Principe,2013,-0.768
-Sao Tome and Principe,2014,-0.793
-Sao Tome and Principe,2015,-0.756
-Sao Tome and Principe,2016,-0.663
-Sao Tome and Principe,2017,-0.701
-Sao Tome and Principe,2018,-0.686
-Saudi Arabia,1996,0.115
-Saudi Arabia,1998,0.068
-Saudi Arabia,2000,-0.151
-Saudi Arabia,2002,-0.001
-Saudi Arabia,2003,0.13
-Saudi Arabia,2004,0.02
-Saudi Arabia,2005,-0.015
-Saudi Arabia,2006,0.019
-Saudi Arabia,2007,0.077
-Saudi Arabia,2008,0.075
-Saudi Arabia,2009,0.05
-Saudi Arabia,2010,0.155
-Saudi Arabia,2011,0.052
-Saudi Arabia,2012,0.149
-Saudi Arabia,2013,0.157
-Saudi Arabia,2014,0.132
-Saudi Arabia,2015,0.118
-Saudi Arabia,2016,0.338
-Saudi Arabia,2017,0.099
-Saudi Arabia,2018,0.142
-Serbia,1996,-1.262
-Serbia,1998,-1.26
-Serbia,2000,-1.272
-Serbia,2002,-0.861
-Serbia,2003,-0.852
-Serbia,2004,-0.723
-Serbia,2005,-0.907
-Serbia,2006,-0.532
-Serbia,2007,-0.467
-Serbia,2008,-0.495
-Serbia,2009,-0.413
-Serbia,2010,-0.373
-Serbia,2011,-0.29
-Serbia,2012,-0.356
-Serbia,2013,-0.326
-Serbia,2014,-0.15
-Serbia,2015,-0.117
-Serbia,2016,-0.159
-Serbia,2017,-0.192
-Serbia,2018,-0.146
-Seychelles,1996,0.6
-Seychelles,1998,0.345
-Seychelles,2000,0.47
-Seychelles,2002,0.323
-Seychelles,2003,0.111
-Seychelles,2004,0.162
-Seychelles,2005,0.025
-Seychelles,2006,-0.004
-Seychelles,2007,0.099
-Seychelles,2008,0.222
-Seychelles,2009,0.079
-Seychelles,2010,0.031
-Seychelles,2011,-0.012
-Seychelles,2012,-0.014
-Seychelles,2013,0.072
-Seychelles,2014,0.126
-Seychelles,2015,0.201
-Seychelles,2016,0.151
-Seychelles,2017,0.102
-Seychelles,2018,0.2
-Singapore,1996,1.239
-Singapore,1998,1.274
-Singapore,2000,1.299
-Singapore,2002,1.407
-Singapore,2003,1.573
-Singapore,2004,1.657
-Singapore,2005,1.707
-Singapore,2006,1.587
-Singapore,2007,1.612
-Singapore,2008,1.606
-Singapore,2009,1.566
-Singapore,2010,1.626
-Singapore,2011,1.67
-Singapore,2012,1.731
-Singapore,2013,1.706
-Singapore,2014,1.825
-Singapore,2015,1.813
-Singapore,2016,1.825
-Singapore,2017,1.823
-Singapore,2018,1.845
-Slovakia,1996,0.16
-Slovakia,1998,0.223
-Slovakia,2000,0.342
-Slovakia,2002,0.317
-Slovakia,2003,0.362
-Slovakia,2004,0.516
-Slovakia,2005,0.545
-Slovakia,2006,0.547
-Slovakia,2007,0.493
-Slovakia,2008,0.59
-Slovakia,2009,0.54
-Slovakia,2010,0.571
-Slovakia,2011,0.607
-Slovakia,2012,0.492
-Slovakia,2013,0.479
-Slovakia,2014,0.496
-Slovakia,2015,0.504
-Slovakia,2016,0.647
-Slovakia,2017,0.571
-Slovakia,2018,0.529
-Slovenia,1996,1.069
-Slovenia,1998,1.258
-Slovenia,2000,1.036
-Slovenia,2002,0.989
-Slovenia,2003,0.974
-Slovenia,2004,0.928
-Slovenia,2005,0.893
-Slovenia,2006,0.91
-Slovenia,2007,0.924
-Slovenia,2008,1.009
-Slovenia,2009,1.075
-Slovenia,2010,1.008
-Slovenia,2011,1.053
-Slovenia,2012,1.015
-Slovenia,2013,1.001
-Slovenia,2014,1.002
-Slovenia,2015,0.975
-Slovenia,2016,1.083
-Slovenia,2017,1.023
-Slovenia,2018,1.059
-Solomon Islands,1996,0.74
-Solomon Islands,1998,0.301
-Solomon Islands,2000,-0.583
-Solomon Islands,2002,-0.906
-Solomon Islands,2003,-0.88
-Solomon Islands,2004,-0.886
-Solomon Islands,2005,-0.8
-Solomon Islands,2006,-0.604
-Solomon Islands,2007,-0.786
-Solomon Islands,2008,-0.637
-Solomon Islands,2009,-0.681
-Solomon Islands,2010,-0.652
-Solomon Islands,2011,-0.523
-Solomon Islands,2012,-0.54
-Solomon Islands,2013,-0.526
-Solomon Islands,2014,-0.502
-Solomon Islands,2015,-0.486
-Solomon Islands,2016,-0.319
-Solomon Islands,2017,-0.21
-Solomon Islands,2018,-0.228
-Vanuatu,1996,0.324
-Vanuatu,1998,0.006
-Vanuatu,2000,0.388
-Vanuatu,2002,0.251
-Vanuatu,2003,0.113
-Vanuatu,2004,0.07
-Vanuatu,2005,0.514
-Vanuatu,2006,0.548
-Vanuatu,2007,0.556
-Vanuatu,2008,0.463
-Vanuatu,2009,0.398
-Vanuatu,2010,0.264
-Vanuatu,2011,0.275
-Vanuatu,2012,0.285
-Vanuatu,2013,0.309
-Vanuatu,2014,0.179
-Vanuatu,2015,0.104
-Vanuatu,2016,0.338
-Vanuatu,2017,0.488
-Vanuatu,2018,0.336
-United Arab Emirates,1996,0.688
-United Arab Emirates,1998,0.746
-United Arab Emirates,2000,0.677
-United Arab Emirates,2002,0.726
-United Arab Emirates,2003,0.571
-United Arab Emirates,2004,0.444
-United Arab Emirates,2005,0.398
-United Arab Emirates,2006,0.32
-United Arab Emirates,2007,0.285
-United Arab Emirates,2008,0.424
-United Arab Emirates,2009,0.405
-United Arab Emirates,2010,0.323
-United Arab Emirates,2011,0.505
-United Arab Emirates,2012,0.54
-United Arab Emirates,2013,0.619
-United Arab Emirates,2014,0.652
-United Arab Emirates,2015,0.641
-United Arab Emirates,2016,0.849
-United Arab Emirates,2017,0.798
-United Arab Emirates,2018,0.806
-Hungary,1996,0.911
-Hungary,1998,0.872
-Hungary,2000,0.906
-Hungary,2002,0.975
-Hungary,2003,0.933
-Hungary,2004,0.913
-Hungary,2005,0.865
-Hungary,2006,0.998
-Hungary,2007,0.964
-Hungary,2008,0.926
-Hungary,2009,0.796
-Hungary,2010,0.78
-Hungary,2011,0.765
-Hungary,2012,0.615
-Hungary,2013,0.583
-Hungary,2014,0.502
-Hungary,2015,0.4
-Hungary,2016,0.423
-Hungary,2017,0.53
-Hungary,2018,0.555
+Sweden,1887,136
+Sweden,1890,140
+Sweden,1893,86
+Sweden,1896,98
+Sweden,1899,137
+Sweden,1902,119
+Sweden,1905,119
+Sweden,1908,109
+Sweden,1911,105
+Sweden,1914,102
+Sweden,1917,87
+Sweden,1920,86
+Switzerland,1848,79
+Switzerland,1851,78
+Switzerland,1854,80
+Switzerland,1857,80
+Switzerland,1860,64
+Switzerland,1863,59
+Switzerland,1866,53
+Switzerland,1869,56
+Switzerland,1872,60
+Switzerland,1875,63
+Switzerland,1878,57
+Switzerland,1881,75
+Switzerland,1884,74
+Switzerland,1887,73
+Switzerland,1890,74
+Switzerland,1893,74
+Switzerland,1896,86
+Switzerland,1899,84
+Switzerland,1902,100
+Switzerland,1905,104
+Switzerland,1908,105
+Switzerland,1911,115
+Switzerland,1914,112
+Switzerland,1917,103
+Switzerland,1919,60
+Japan,1890,130
+Japan,1892,94
+Japan,1894,120
+Japan,1898,124
+Japan,1902,191
+Japan,1903,175
+Japan,1904,133
+Japan,1908,187
+Japan,1912,209
+Japan,1915,153
+Japan,1917,165
+Japan,1920,278
+Russia,1906,179
+Russia,1907,154
+Russia,1912,120
+United States,1790,39
+United States,1792,54
+United States,1794,59
+United States,1796,57
+United States,1798,60
+United States,1800,68
+United States,1802,103
+United States,1804,114
+United States,1806,116
+United States,1808,94
+United States,1810,107
+United States,1812,114
+United States,1814,119
+United States,1816,145
+United States,1818,160
+United States,1820,155
+United States,1822,189
+United States,1824,109
+United States,1826,113
+United States,1828,136
+United States,1830,126
+United States,1832,143
+United States,1834,143
+United States,1836,128
+United States,1838,125
+United States,1840,142
+United States,1842,148
+United States,1844,142
+United States,1846,116
+United States,1848,113
+United States,1850,130
+United States,1852,158
+United States,1854,83
+United States,1856,133
+United States,1858,116
+United States,1860,108
+United States,1862,87
+United States,1864,137
+United States,1866,175
+United States,1868,171
+United States,1870,139
+United States,1872,203
+United States,1874,183
+United States,1876,157
+United States,1878,148
+United States,1880,151
+United States,1882,199
+United States,1884,183
+United States,1886,167
+United States,1888,179
+United States,1890,238
+United States,1892,220
+United States,1894,254
+United States,1896,210
+United States,1898,189
+United States,1900,201
+United States,1902,183
+United States,1904,200
+United States,1906,209
+United States,1908,251
+United States,1910,223
+United States,1912,219
+United States,1914,230
+United States,1916,230
+United States,1918,215
+United States,1920,240
+Portugal,1869,79
+Portugal,1870,75
+Portugal,1871,31
+Portugal,1874,78
+Portugal,1878,97
+Portugal,1879,106
+Portugal,1881,122
+Portugal,1884,110
+Portugal,1887,113
+Portugal,1889,104
+Portugal,1890,115
+Portugal,1892,103
+Portugal,1894,101
+Portugal,1895,114
+Portugal,1897,88
+Portugal,1899,91
+Portugal,1900,104
+Portugal,1901,100
+Portugal,1905,109
+Portugal,1906,104
+Portugal,1908,62
+Portugal,1915,106
+Portugal,1919,86
+Bolivia,1884,30
+Canada,1841,50
+Canada,1844,41
+Canada,1848,55
+Canada,1851,62
+Canada,1854,54
+Canada,1858,49
+Canada,1861,58
+Canada,1863,66
+Canada,1867,100
+Canada,1872,100
+Canada,1874,129
+Canada,1878,134
+Canada,1882,133
+Canada,1887,123
+Canada,1891,117
+Canada,1896,117
+Canada,1900,128
+Canada,1904,137
+Canada,1908,133
+Canada,1911,132
+Canada,1917,153
+Australia,1887,79
+Australia,1889,71
+Australia,1891,52
+Australia,1894,50
+Australia,1895,58
+Australia,1898,45
+Australia,1901,42
+France,1791,345
+France,1792,389
+France,1795,213
+France,1798,105
+France,1815,350
+France,1816,136
+France,1817,39
+France,1819,35
+France,1820,194
+France,1824,413
+France,1827,180
+France,1830,274
+France,1831,282
+France,1834,320
+France,1837,168
+France,1839,240
+France,1842,266
+France,1846,290
+France,1848,600
+France,1849,500
+France,1852,253
+France,1857,276
+France,1863,251
+France,1869,189
+France,1876,193
+France,1877,130
+France,1881,204
+France,1885,201
+France,1889,350
+France,1893,317
+France,1898,254
+France,1902,295
+France,1906,132
+France,1910,262
+France,1914,195
+France,1919,183
+Germany,1848,210
+Germany,1867,80
+Germany,1871,125
+Germany,1874,155
+Germany,1877,128
+Germany,1878,99
+Germany,1881,100
+Germany,1884,99
+Germany,1887,99
+Germany,1890,106
+Germany,1893,96
+Germany,1898,102
+Germany,1903,100
+Germany,1907,105
+Germany,1912,110
+Germany,1920,102
+Italy,1861,342
+Italy,1865,182
+Italy,1867,225
+Italy,1870,233
+Italy,1874,276
+Italy,1876,414
+Italy,1880,218
+Italy,1882,289
+Italy,1886,292
+Italy,1890,401
+Italy,1892,323
+Italy,1895,334
+Italy,1897,327
+Italy,1900,296
+Italy,1904,339
+Italy,1909,329
+Italy,1913,270
+Italy,1919,156
+Netherlands,1850,44
+Netherlands,1853,26
+Netherlands,1858,34
+Netherlands,1860,40
+Netherlands,1862,37
+Netherlands,1866,42
+Netherlands,1868,36
+Netherlands,1871,43
+Netherlands,1873,38
+Netherlands,1877,45
+Netherlands,1883,45
+Netherlands,1884,44
+Netherlands,1886,42
+Netherlands,1887,48
+Netherlands,1888,46
+Netherlands,1891,53
+Netherlands,1894,57
+Netherlands,1897,48
+Netherlands,1901,26
+Netherlands,1905,34
+Netherlands,1909,25
+Netherlands,1913,25
+Netherlands,1917,25
+Netherlands,1918,30
+Spain,1834,111
+Spain,1836,80
+Spain,1839,241
+Spain,1846,225
+Spain,1850,309
+Spain,1851,212
+Spain,1853,232
+Spain,1863,248
+Spain,1871,235
+Spain,1872,274
+Spain,1873,346
+Spain,1879,295
+Spain,1881,300
+Spain,1884,298
+Spain,1886,251
+Spain,1891,258
+Spain,1893,238
+Spain,1896,274
+Spain,1898,259
+Spain,1899,227
+Spain,1901,245
+Spain,1903,219
+Spain,1905,223
+Spain,1907,249
+Spain,1910,215
+Spain,1914,193
+Spain,1916,223
+Spain,1918,98
+United Kingdom,1802,383
+United Kingdom,1806,431
+United Kingdom,1807,216
+United Kingdom,1818,280
+United Kingdom,1826,428
+United Kingdom,1830,250
+United Kingdom,1831,370
+United Kingdom,1832,441
+United Kingdom,1835,385
+United Kingdom,1837,344
+United Kingdom,1841,367
+United Kingdom,1847,325
+United Kingdom,1852,330
+United Kingdom,1857,324
+United Kingdom,1859,356
+United Kingdom,1865,369
+United Kingdom,1868,387
+United Kingdom,1874,350
+United Kingdom,1880,352
+United Kingdom,1885,319
+United Kingdom,1886,317
+United Kingdom,1892,272
+United Kingdom,1895,411
+United Kingdom,1900,402
+United Kingdom,1906,398
+United Kingdom,1910,274
+United Kingdom,1918,332
+Austria,1897,60
+Austria,1900,61
+Austria,1907,96
+Austria,1911,100
+Austria,1920,85
+Belgium,1847,33
+Belgium,1848,83
+Belgium,1850,32
+Belgium,1852,31
+Belgium,1854,28
+Belgium,1856,33
+Belgium,1857,70
+Belgium,1859,31
+Belgium,1861,36
+Belgium,1863,34
+Belgium,1864,64
+Belgium,1866,43
+Belgium,1868,30
+Belgium,1870,72
+Belgium,1872,43
+Belgium,1874,35
+Belgium,1876,42
+Belgium,1878,48
+Belgium,1880,26
+Belgium,1882,49
+Belgium,1884,67
+Belgium,1886,32
+Belgium,1888,66
+Belgium,1890,40
+Belgium,1892,62
+Belgium,1894,104
+Belgium,1896,111
+Belgium,1898,112
+Belgium,1900,86
+Belgium,1902,54
+Belgium,1904,38
+Belgium,1906,54
+Belgium,1908,37
+Belgium,1910,49
+Belgium,1912,101
+Belgium,1914,41
+Belgium,1919,73
+Bulgaria,1879,140
+Bulgaria,1880,103
+Bulgaria,1884,100
+Bulgaria,1887,260
+Bulgaria,1894,87
+Bulgaria,1899,89
+Bulgaria,1901,40
+Bulgaria,1902,89
+Bulgaria,1903,134
+Bulgaria,1908,166
+Bulgaria,1911,190
+Bulgaria,1913,88
+Bulgaria,1914,126
+Bulgaria,1919,77
+Bulgaria,1920,110
+Cuba,1904,64
+Cuba,1908,61
+Cuba,1910,56
+Cuba,1914,45
+Cuba,1918,54
+Denmark,1849,45
+Denmark,1864,40
+Denmark,1866,30
+Denmark,1876,74
+Denmark,1879,65
+Denmark,1881,75
+Denmark,1884,79
+Denmark,1887,74
+Denmark,1890,75
+Denmark,1892,39
+Denmark,1895,53
+Denmark,1898,63
+Denmark,1901,76
+Denmark,1903,76
+Denmark,1906,56
+Denmark,1909,37
+Denmark,1910,57
+Denmark,1913,44
+Denmark,1915,43
+Denmark,1918,45
+Denmark,1920,51
+Finland,1907,80
+Greece,1844,55
+Greece,1850,100
+Greece,1859,120
+Greece,1865,95
+Greece,1868,114
+Greece,1869,100
+Greece,1872,65
+Greece,1873,95
+Greece,1874,96
+Greece,1875,80
+Greece,1879,100
+Greece,1881,125
+Greece,1885,170
+Greece,1887,90
+Greece,1890,100
+Greece,1892,160
+Greece,1895,150
+Greece,1899,110
+Greece,1902,110
+Greece,1905,144
+Greece,1906,112
+Greece,1910,307
+Greece,1912,146
+Greece,1915,256
+Greece,1920,260
+New Zealand,1890,40
+New Zealand,1893,51
+New Zealand,1896,39
+New Zealand,1899,49
+New Zealand,1902,47
+New Zealand,1905,58
+New Zealand,1908,50
+New Zealand,1911,37
+New Zealand,1914,41
+New Zealand,1919,47
+Norway,1882,83
+Norway,1885,84
+Norway,1888,51
+Norway,1891,63
+Norway,1894,59
+Norway,1897,79
+Norway,1900,77
+Norway,1903,48
+Norway,1906,73
+Norway,1909,64
+Norway,1912,70
+Norway,1915,74
+Norway,1918,51
+Romania,1920,199
+Serbia,1880,94
+Serbia,1884,58
+Serbia,1886,78
+Serbia,1888,450
+Serbia,1889,102
+Serbia,1893,121
+Serbia,1903,75
+Serbia,1905,81
+Serbia,1906,91
+Serbia,1908,84
+Serbia,1912,84
+Hungary,1865,180
+Hungary,1869,235
+Hungary,1872,245
+Hungary,1875,333
+Hungary,1878,239
+Hungary,1881,235
+Hungary,1884,234
+Hungary,1887,263
+Hungary,1892,243
+Hungary,1896,290
+Hungary,1901,277
+Hungary,1905,165
+Hungary,1906,253
+Hungary,1910,256
+Hungary,1920,78
+Baden,1851,21
+Baden,1854,18
+Baden,1855,25
+Baden,1857,29
+Baden,1859,37
+Baden,1861,49
+Baden,1863,53
+Baden,1865,39
+Baden,1867,57
+Baden,1869,55
+Bavaria,1848,58
+Bavaria,1849,58
+Bavaria,1855,113
+Bavaria,1858,84
+Bavaria,1869,80
+Wurtemberg,1868,30
+Hesse-Darmstadt,1862,29
+Hesse-Darmstadt,1865,29
+Hesse-Darmstadt,1866,21

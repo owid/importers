@@ -1,495 +1,1014 @@
 country,year,value
-Sweden,1887,38.462
-Sweden,1890,38.596
-Sweden,1893,33.333
-Sweden,1896,32.174
-Sweden,1899,40.435
-Sweden,1902,46.522
-Sweden,1905,46.522
-Sweden,1908,46.957
-Sweden,1911,39.565
-Sweden,1914,31.739
-Sweden,1917,37.391
-Sweden,1920,26.957
-Switzerland,1848,9.91
-Switzerland,1851,13.333
-Switzerland,1854,13.333
-Switzerland,1857,16.667
-Switzerland,1860,30.833
-Switzerland,1863,28.906
-Switzerland,1866,30.469
-Switzerland,1869,24.219
-Switzerland,1872,22.222
-Switzerland,1875,24.444
-Switzerland,1878,27.407
-Switzerland,1881,24.138
-Switzerland,1884,25.517
-Switzerland,1887,24.138
-Switzerland,1890,23.81
-Switzerland,1893,19.728
-Switzerland,1896,20.408
-Switzerland,1899,21.769
-Switzerland,1902,20.958
-Switzerland,1905,20.958
-Switzerland,1908,20.359
-Switzerland,1911,20.106
-Switzerland,1914,19.577
-Switzerland,1917,22.222
-Switzerland,1919,21.693
-Japan,1890,26.333
-Japan,1892,27
-Japan,1894,16.333
-Japan,1898,40
-Japan,1902,25.266
-Japan,1903,22.427
-Japan,1904,23.747
-Japan,1908,18.47
-Japan,1912,24.934
-Japan,1915,28.346
-Japan,1917,31.759
-Japan,1920,0.237
-United States,1790,44.776
-United States,1792,48.571
-United States,1794,44.762
-United States,1796,46.226
-United States,1798,43.396
-United States,1800,35.849
-United States,1802,27.465
-United States,1804,19.718
-United States,1806,18.31
-United States,1808,33.803
-United States,1810,25.175
-United States,1812,37.363
-United States,1814,34.973
-United States,1816,21.622
-United States,1818,13.978
-United States,1820,17.112
-United States,1822,11.268
-United States,1824,48.826
-United States,1826,46.948
-United States,1828,33.803
-United States,1830,30.986
-United States,1832,26.25
-United States,1834,30.992
-United States,1836,41.322
-United States,1838,45.041
-United States,1840,40.909
-United States,1842,32.735
-United States,1844,34.802
-United States,1846,48.696
-United States,1848,46.352
-United States,1850,36.91
-United States,1852,30.342
-United States,1854,23.077
-United States,1856,37.975
-United States,1858,41.176
-United States,1860,24.59
-United States,1862,39.13
-United States,1864,19.689
-United States,1866,20.982
-United States,1868,27.572
-United States,1870,42.798
-United States,1872,30.479
-United States,1874,36.177
-United States,1876,46.416
-United States,1878,45.051
-United States,1880,44.71
-United States,1882,36.308
-United States,1884,43.385
-United States,1886,47.385
-United States,1888,45.783
-United States,1890,25.904
-United States,1892,34.831
-United States,1894,26.05
-United States,1896,34.734
-United States,1898,45.098
-United States,1900,42.297
-United States,1902,45.658
-United States,1904,42.297
-United States,1906,45.596
-United States,1908,34.974
-United States,1910,42.711
-United States,1912,43.734
-United States,1914,41.117
-United States,1916,45.057
-United States,1918,48.966
-United States,1920,44.138
-Portugal,1856,25.31
-Portugal,1858,14.81
-Portugal,1860,8.38
-Portugal,1861,22.6
-Portugal,1864,18.08
-Portugal,1865,26.55
-Portugal,1868,7.34
-Portugal,1869,18.69
-Portugal,1870,18.69
-Portugal,1871,25.23
-Portugal,1874,7.48
-Portugal,1878,16.06
-Portugal,1879,15.33
-Portugal,1881,5.84
-Portugal,1884,20.53
-Portugal,1887,23.68
-Portugal,1889,25
-Portugal,1890,21.71
-Portugal,1892,29.61
-Portugal,1894,21.71
-Portugal,1897,20.18
-Portugal,1899,28.26
-Portugal,1900,20.29
-Portugal,1901,29.71
-Portugal,1905,21.62
-Portugal,1906,12.84
-Portugal,1908,39.19
-Portugal,1915,15.95
-Portugal,1919,23.31
-Bolivia,1884,31.579
-Canada,1841,32.927
-Canada,1844,48.193
-Canada,1848,29.63
-Canada,1851,25.532
-Canada,1854,30.469
-Canada,1858,30.709
-Canada,1861,28.906
-Canada,1863,27.132
-Canada,1867,34.444
-Canada,1872,47.5
-Canada,1874,31.553
-Canada,1878,30.583
-Canada,1882,34.597
-Canada,1887,36.744
-Canada,1891,41.86
-Canada,1896,40.376
-Canada,1900,37.089
-Canada,1904,35.211
-Canada,1908,39.72
-Canada,1911,38.462
-Canada,1917,34.894
-Australia,1887,29.839
-Australia,1889,48.175
-Australia,1891,31.206
-Australia,1894,29.6
-Australia,1895,33.6
-Australia,1898,41.6
-Australia,1901,29.6
-France,1791,35.436
-France,1792,26.702
-France,1795,40
-France,1798,29.333
-France,1815,12.5
-France,1816,36.508
-France,1817,23.529
-France,1819,24.528
-France,1820,36.866
-France,1824,3.953
-France,1827,41.86
-France,1830,18.705
-France,1831,22.658
-France,1834,16.304
-France,1837,31.197
-France,1839,43.355
-France,1842,42.048
-France,1846,36.681
-France,1848,22.727
-France,1849,24
-France,1852,2.662
-France,1857,2.473
-France,1863,11.307
-France,1869,25.088
-France,1876,18.386
-France,1877,24.952
-France,1881,30.826
-France,1885,48.459
-France,1889,29.167
-France,1893,23.752
-France,1898,30.427
-France,1902,21.709
-France,1906,19.658
-France,1910,14.286
-France,1914,16.972
-France,1919,14.029
-Germany,1848,47.5
-Germany,1867,19.87
-Germany,1871,32.81
-Germany,1874,22.92
-Germany,1877,23.43
-Germany,1878,23.68
-Germany,1881,12.59
-Germany,1884,16.88
-Germany,1887,24.69
-Germany,1890,18.39
-Germany,1893,18.14
-Germany,1898,14.11
-Germany,1903,20.4
-Germany,1907,10.83
-Germany,1912,22.92
-Germany,1920,18.3
-Italy,1861,13.995
-Italy,1865,35.214
-Italy,1867,30.629
-Italy,1870,38.386
-Italy,1874,45.669
-Italy,1876,18.504
-Italy,1880,35.63
-Italy,1882,28.937
-Italy,1886,28.543
-Italy,1890,9.449
-Italy,1892,18.307
-Italy,1895,20.472
-Italy,1897,19.488
-Italy,1900,22.835
-Italy,1904,14.961
-Italy,1909,9.449
-Italy,1913,12.205
-Italy,1919,19.685
-Netherlands,1850,19.118
-Netherlands,1853,36.765
-Netherlands,1858,42.647
-Netherlands,1860,25
-Netherlands,1862,43.056
-Netherlands,1866,40
-Netherlands,1868,26.667
-Netherlands,1871,18.75
-Netherlands,1873,20
-Netherlands,1877,20
-Netherlands,1883,20.93
-Netherlands,1884,22.093
-Netherlands,1886,26.744
-Netherlands,1887,22.093
-Netherlands,1888,27
-Netherlands,1891,25
-Netherlands,1894,25
-Netherlands,1897,22
-Netherlands,1901,25
-Netherlands,1905,25
-Netherlands,1909,25
-Netherlands,1913,20
-Netherlands,1917,22
-Netherlands,1918,22
-Spain,1834,40.957
-Spain,1836,21.705
-Spain,1839,20.057
-Spain,1846,17.192
-Spain,1850,4.585
-Spain,1851,13.754
-Spain,1853,23.209
-Spain,1863,8.883
-Spain,1871,13.299
-Spain,1872,19.949
-Spain,1873,5.222
-Spain,1879,16.327
-Spain,1881,15.816
-Spain,1884,15.691
-Spain,1886,24.594
-Spain,1891,25.172
-Spain,1893,24.545
-Spain,1896,24.578
-Spain,1898,23.636
-Spain,1899,29.262
-Spain,1901,20.896
-Spain,1903,25.806
-Spain,1905,26.485
-Spain,1907,18.069
-Spain,1910,28.465
-Spain,1914,20.588
-Spain,1916,21.516
-Spain,1918,22.494
-Spain,1919,34
-Spain,1920,29
-United Kingdom,1802,40.881
-United Kingdom,1806,34.65
-United Kingdom,1807,32.371
-United Kingdom,1818,26.596
-United Kingdom,1826,30.091
-United Kingdom,1830,29.787
-United Kingdom,1831,35.714
-United Kingdom,1832,26.596
-United Kingdom,1835,41.489
-United Kingdom,1837,47.72
-United Kingdom,1841,41.185
-United Kingdom,1847,44.512
-United Kingdom,1852,49.541
-United Kingdom,1857,40.367
-United Kingdom,1859,45.566
-United Kingdom,1865,43.921
-United Kingdom,1868,41.185
-United Kingdom,1874,37.117
-United Kingdom,1880,36.35
-United Kingdom,1885,36.866
-United Kingdom,1886,28.507
-United Kingdom,1892,40
-United Kingdom,1895,26.418
-United Kingdom,1900,27.313
-United Kingdom,1906,23.284
-United Kingdom,1910,40.448
-United Kingdom,1918,18.955
-Austria,1897,13.753
-Austria,1900,13.283
-Austria,1907,9.884
-Austria,1911,16.279
-Austria,1920,37.705
-Belgium,1847,38.89
-Belgium,1848,23.15
-Belgium,1850,40.74
-Belgium,1852,42.59
-Belgium,1854,48.15
-Belgium,1856,57.41
-Belgium,1857,35.19
-Belgium,1859,46.55
-Belgium,1861,37.93
-Belgium,1863,41.38
-Belgium,1864,44.83
-Belgium,1866,29.51
-Belgium,1868,52.38
-Belgium,1870,41.94
-Belgium,1872,31.75
-Belgium,1874,42.62
-Belgium,1876,33.33
-Belgium,1878,27.27
-Belgium,1880,60.61
-Belgium,1882,28.99
-Belgium,1884,2.9
-Belgium,1886,53.62
-Belgium,1888,4.35
-Belgium,1890,42.03
-Belgium,1892,39.47
-Belgium,1894,18.42
-Belgium,1896,18.42
-Belgium,1898,17.76
-Belgium,1900,21.05
-Belgium,1902,23.53
-Belgium,1904,27.16
-Belgium,1906,17.65
-Belgium,1908,25.88
-Belgium,1910,17.65
-Belgium,1912,23.66
-Belgium,1914,29.55
-Belgium,1919,37.63
-Bulgaria,1879,17.647
-Bulgaria,1880,30.864
-Bulgaria,1884,41.52
-Bulgaria,1887,10.959
-Bulgaria,1894,16.168
-Bulgaria,1899,11.243
-Bulgaria,1901,17.683
-Bulgaria,1902,14.815
-Bulgaria,1903,0
-Bulgaria,1908,9.36
-Bulgaria,1911,2.817
-Bulgaria,1913,23.529
-Bulgaria,1914,19.184
-Bulgaria,1919,19.915
-Bulgaria,1920,21.834
-Denmark,1849,41.584
-Denmark,1864,38.614
-Denmark,1866,19.231
-Denmark,1876,25.49
-Denmark,1879,36.275
-Denmark,1881,26.471
-Denmark,1884,18.627
-Denmark,1887,26.471
-Denmark,1890,23.529
-Denmark,1892,30.392
-Denmark,1895,21.93
-Denmark,1898,20.175
-Denmark,1901,14.035
-Denmark,1903,64.035
-Denmark,1906,21.053
-Denmark,1909,21.053
-Denmark,1910,21.053
-Denmark,1913,28.07
-Denmark,1918,34.211
-Denmark,1920,34.532
-Greece,1844,22.047
-Greece,1850,22.901
-Greece,1859,13.768
-Greece,1865,23.529
-Greece,1868,38.043
-Greece,1869,26.738
-Greece,1872,34.211
-Greece,1873,44.737
-Greece,1874,49.474
-Greece,1875,15.789
-Greece,1879,41.063
-Greece,1881,40.816
-Greece,1885,16.327
-Greece,1887,40
-Greece,1890,10
-Greece,1892,22.705
-Greece,1895,9.662
-Greece,1899,14.894
-Greece,1902,29.787
-Greece,1905,22.553
-Greece,1906,26.554
-Greece,1910,11.602
-Greece,1912,5.525
-Greece,1915,6.269
-Greece,1920,29.73
-New Zealand,1890,33.78
-New Zealand,1893,17.57
-New Zealand,1896,35.14
-New Zealand,1899,25.68
-New Zealand,1902,23.75
-New Zealand,1905,20
-New Zealand,1908,32.5
-New Zealand,1911,41.25
-New Zealand,1914,41.25
-New Zealand,1919,26.25
-Norway,1882,27.19
-Norway,1885,26.32
-Norway,1888,33.33
-Norway,1891,44.74
-Norway,1894,35.09
-Norway,1897,21.93
-Norway,1900,27.19
-Norway,1903,40.17
-Norway,1906,29.27
-Norway,1909,37.4
-Norway,1912,19.51
-Norway,1915,17.07
-Norway,1918,39.68
-Serbia,1880,16.07
-Serbia,1884,42.31
-Serbia,1886,31.11
-Serbia,1888,23.89
-Serbia,1889,12.82
-Serbia,1893,8.21
-Serbia,1903,41.25
-Serbia,1905,34.38
-Serbia,1906,29.38
-Serbia,1908,48.75
-Serbia,1912,25.63
-Hungary,1865,29.841
-Hungary,1869,27.619
-Hungary,1872,27.166
-Hungary,1875,8.696
-Hungary,1878,18.402
-Hungary,1881,21.308
-Hungary,1884,18.16
-Hungary,1887,18.886
-Hungary,1892,20.823
-Hungary,1896,12.107
-Hungary,1901,19.128
-Hungary,1905,38.499
-Hungary,1906,17.191
-Hungary,1910,12.349
-Hungary,1920,33.333
-Baden,1851,15.873
-Baden,1854,20.635
-Baden,1855,20.635
-Baden,1857,19.048
-Baden,1859,11.111
-Baden,1861,4.762
-Baden,1863,4.762
-Baden,1865,31.746
-Baden,1867,4.762
-Baden,1869,7.937
-Bavaria,1848,23.129
-Bavaria,1849,23.571
-Bavaria,1855,23.649
-Bavaria,1858,41.667
-Bavaria,1869,40.909
-Wurtemberg,1868,22.857
-Hesse-Darmstadt,1862,26
-Hesse-Darmstadt,1865,26
-Hesse-Darmstadt,1866,27.083
+Mexico,1842,-0.526
+Mexico,1912,0.085
+Mexico,1917,0.12
+Mexico,1920,0.092
+Sweden,1789,-1.456
+Sweden,1792,-1.471
+Sweden,1800,-1.493
+Sweden,1809,-1.457
+Sweden,1810,-1.457
+Sweden,1812,-1.442
+Sweden,1815,-1.47
+Sweden,1817,-1.438
+Sweden,1823,-1.469
+Sweden,1828,-1.491
+Sweden,1834,-1.465
+Sweden,1840,-1.506
+Sweden,1844,-1.474
+Sweden,1847,-1.473
+Sweden,1850,-1.447
+Sweden,1853,-1.453
+Sweden,1856,-1.456
+Sweden,1859,-1.504
+Sweden,1862,-1.454
+Sweden,1865,-1.466
+Sweden,1866,-1.466
+Sweden,1869,-1.466
+Sweden,1872,-1.462
+Sweden,1875,-1.433
+Sweden,1878,-1.461
+Sweden,1881,-1.455
+Sweden,1884,-1.483
+Sweden,1887,-1.452
+Sweden,1890,-1.443
+Sweden,1893,-1.474
+Sweden,1896,-1.489
+Sweden,1899,-1.467
+Sweden,1902,-1.488
+Sweden,1905,-1.465
+Sweden,1908,-1.492
+Sweden,1911,-1.484
+Sweden,1914,-1.457
+Sweden,1917,-1.47
+Switzerland,1848,1.101
+Switzerland,1851,1.096
+Switzerland,1854,1.136
+Switzerland,1857,1.095
+Switzerland,1860,1.112
+Switzerland,1863,1.112
+Switzerland,1866,1.08
+Switzerland,1869,1.051
+Switzerland,1872,1.122
+Switzerland,1875,1.102
+Switzerland,1878,1.088
+Switzerland,1881,1.098
+Switzerland,1884,1.072
+Switzerland,1887,1.092
+Switzerland,1890,1.095
+Switzerland,1893,1.088
+Switzerland,1896,1.092
+Switzerland,1899,1.099
+Switzerland,1902,1.108
+Switzerland,1905,1.126
+Switzerland,1908,1.106
+Switzerland,1911,1.084
+Switzerland,1914,1.095
+Switzerland,1917,1.094
+Switzerland,1919,1.107
+Russia,1906,1.09
+Russia,1907,1.09
+Russia,1912,1.121
+Russia,1917,1.146
+Egypt,1883,1.111
+Colombia,1855,-1.478
+Colombia,1857,-1.481
+Colombia,1859,-1.496
+Colombia,1860,-1.496
+Colombia,1863,-1.48
+Colombia,1864,-1.48
+Colombia,1866,-1.492
+Colombia,1867,-1.476
+Colombia,1868,-1.476
+Colombia,1870,-1.487
+Colombia,1872,-1.468
+Colombia,1873,-1.468
+Colombia,1874,-1.468
+Colombia,1876,-1.491
+Colombia,1878,-1.482
+Colombia,1880,-1.474
+Colombia,1882,-1.478
+Colombia,1884,-1.473
+Colombia,1886,-1.465
+Colombia,1892,-1.513
+Colombia,1896,-1.499
+Colombia,1898,-1.468
+Colombia,1903,-1.492
+Colombia,1904,-1.492
+Colombia,1910,-1.476
+Colombia,1914,-1.491
+Colombia,1918,-1.504
+Poland,1919,-1.592
+Poland,1922,-1.595
+Poland,1928,-1.589
+Poland,1930,-1.614
+Poland,1935,1.155
+Poland,1938,1.119
+Brazil,1826,-1.481
+Brazil,1830,-1.485
+Brazil,1834,-1.502
+Brazil,1838,-1.479
+Brazil,1842,-1.476
+Brazil,1845,-1.443
+Brazil,1848,-1.478
+Brazil,1849,-1.478
+Brazil,1853,-1.492
+Brazil,1857,-1.475
+Brazil,1861,-1.499
+Brazil,1864,-1.475
+Brazil,1867,-1.464
+Brazil,1869,-1.485
+Brazil,1872,-1.484
+Brazil,1876,-1.509
+Brazil,1878,-1.481
+Brazil,1881,-1.487
+Brazil,1885,-1.462
+Brazil,1886,-1.462
+Brazil,1890,-1.49
+Brazil,1891,-1.49
+Brazil,1892,-1.49
+Brazil,1894,-1.478
+Brazil,1896,-1.476
+Brazil,1898,-1.483
+Brazil,1899,-1.483
+Brazil,1902,-1.487
+Brazil,1903,-1.487
+Brazil,1906,-1.492
+Brazil,1909,-1.505
+Brazil,1912,-1.476
+Brazil,1914,-1.503
+Brazil,1915,-1.503
+Brazil,1918,-1.432
+Brazil,1919,-1.461
+United States,1790,-1.519
+United States,1792,-1.467
+United States,1794,-1.467
+United States,1796,-1.498
+United States,1798,-1.47
+United States,1800,-1.501
+United States,1802,-1.486
+United States,1804,-1.472
+United States,1806,-1.486
+United States,1808,-1.487
+United States,1810,-1.456
+United States,1812,-1.487
+United States,1814,-1.484
+United States,1816,-1.457
+United States,1818,-1.462
+United States,1820,-1.451
+United States,1822,-1.479
+United States,1824,-1.516
+United States,1826,-1.504
+United States,1828,-1.513
+United States,1830,-1.483
+United States,1832,-1.458
+United States,1834,-1.458
+United States,1836,-1.475
+United States,1838,-1.5
+United States,1840,-1.481
+United States,1842,-1.466
+United States,1844,-1.458
+United States,1846,-1.472
+United States,1848,-1.477
+United States,1850,-1.493
+United States,1852,-1.499
+United States,1854,-1.495
+United States,1856,-1.431
+United States,1858,-1.483
+United States,1860,-1.489
+United States,1862,-1.505
+United States,1864,-1.486
+United States,1866,-1.473
+United States,1868,-1.494
+United States,1870,-1.49
+United States,1872,-1.481
+United States,1874,-1.459
+United States,1876,-1.479
+United States,1878,-1.431
+United States,1880,-1.487
+United States,1882,-1.504
+United States,1884,-1.472
+United States,1886,-1.483
+United States,1888,-1.481
+United States,1890,-0.184
+United States,1892,-0.186
+United States,1894,-0.184
+United States,1896,-0.19
+United States,1898,1.151
+United States,1900,1.178
+United States,1902,1.154
+United States,1904,1.193
+United States,1906,1.202
+United States,1908,1.145
+United States,1910,1.205
+United States,1912,1.172
+United States,1914,1.17
+United States,1916,1.168
+United States,1918,1.189
+United States,1920,1.198
+Portugal,1820,-1.483
+Portugal,1822,-1.441
+Portugal,1826,-1.492
+Portugal,1828,-1.469
+Portugal,1834,-1.5
+Portugal,1836,-1.465
+Portugal,1838,-1.455
+Portugal,1840,-1.488
+Portugal,1842,-1.476
+Portugal,1845,-1.493
+Portugal,1847,-1.485
+Portugal,1851,-1.476
+Portugal,1852,-1.474
+Portugal,1856,-1.463
+Portugal,1858,-1.472
+Portugal,1860,-1.495
+Portugal,1861,-1.493
+Portugal,1864,-1.493
+Portugal,1865,-1.493
+Portugal,1868,-1.479
+Portugal,1869,-1.461
+Portugal,1870,-1.461
+Portugal,1871,-1.461
+Portugal,1874,-1.501
+Portugal,1878,-1.471
+Portugal,1879,-1.471
+Portugal,1881,-1.496
+Portugal,1884,-1.45
+Portugal,1887,-1.465
+Portugal,1889,-1.459
+Portugal,1890,-1.459
+Portugal,1892,-1.472
+Portugal,1894,-1.486
+Portugal,1895,-1.514
+Portugal,1897,-1.472
+Portugal,1899,-1.486
+Portugal,1900,-1.486
+Portugal,1901,-1.486
+Portugal,1904,-1.48
+Portugal,1905,-1.48
+Portugal,1906,-1.479
+Portugal,1908,-1.49
+Portugal,1910,-1.471
+Portugal,1911,-1.471
+Portugal,1913,-1.443
+Portugal,1915,-1.465
+Portugal,1918,-1.49
+Portugal,1919,-1.477
+Haiti,1905,1.127
+Haiti,1908,1.101
+Honduras,1880,1.11
+Honduras,1893,1.164
+Honduras,1902,1.12
+Honduras,1915,1.108
+Peru,1822,1.118
+Peru,1826,1.095
+Peru,1845,1.114
+Peru,1855,1.127
+Peru,1859,1.134
+Peru,1871,1.122
+Peru,1877,1.111
+Peru,1892,1.108
+Peru,1897,1.117
+Peru,1899,1.115
+Peru,1903,1.136
+Peru,1904,1.14
+Peru,1908,1.078
+Peru,1911,1.108
+Peru,1912,1.115
+Peru,1915,1.09
+Peru,1919,1.095
+Argentina,1853,-1.499
+Argentina,1854,-1.499
+Argentina,1856,-1.495
+Argentina,1858,-1.486
+Argentina,1859,-1.486
+Argentina,1860,-1.486
+Argentina,1862,-1.496
+Argentina,1864,-1.495
+Argentina,1866,-1.47
+Argentina,1868,-1.514
+Argentina,1870,-1.476
+Argentina,1872,-1.51
+Argentina,1874,-1.477
+Argentina,1876,-1.458
+Argentina,1878,-1.485
+Argentina,1880,-1.486
+Argentina,1882,-1.483
+Argentina,1884,-1.487
+Argentina,1886,-1.454
+Argentina,1888,-1.495
+Argentina,1890,-1.479
+Argentina,1892,-1.5
+Argentina,1894,-1.477
+Argentina,1896,-1.46
+Argentina,1898,-1.475
+Argentina,1904,-1.501
+Argentina,1910,-1.457
+Argentina,1912,-1.509
+Argentina,1920,-1.489
+India,1920,1.139
+Venezuela,1858,1.136
+Venezuela,1860,1.136
+Venezuela,1893,1.184
+Venezuela,1894,1.184
+Venezuela,1897,1.179
+Canada,1874,-1.522
+Canada,1878,-1.521
+Canada,1882,-1.533
+Canada,1887,-1.518
+Canada,1891,-1.511
+Canada,1896,-1.542
+Canada,1900,-1.542
+Canada,1904,-1.512
+Canada,1908,-1.532
+Canada,1911,-1.511
+Canada,1917,-1.504
+Australia,1858,1.121
+Australia,1859,1.112
+Australia,1860,1.097
+Australia,1864,1.092
+Australia,1869,1.107
+Australia,1872,1.092
+Australia,1874,1.126
+Australia,1877,1.122
+Australia,1880,1.119
+Australia,1882,1.099
+Australia,1885,1.098
+Australia,1887,1.115
+Australia,1889,1.112
+Australia,1891,1.099
+Australia,1894,1.111
+Australia,1895,1.088
+Australia,1898,1.113
+Australia,1901,1.13
+Australia,1903,1.127
+Australia,1906,1.158
+Australia,1910,1.103
+Australia,1913,1.141
+Australia,1914,1.119
+Australia,1917,1.105
+Australia,1919,1.109
+Chile,1811,1.117
+Chile,1822,1.103
+Chile,1823,1.103
+Chile,1824,1.103
+Chile,1825,1.103
+Chile,1827,1.062
+Chile,1828,1.062
+Chile,1829,1.062
+Chile,1831,1.091
+Chile,1834,1.074
+Chile,1836,1.101
+Chile,1837,1.101
+Chile,1840,1.08
+Chile,1841,1.101
+Chile,1843,1.059
+Chile,1846,1.095
+Chile,1849,1.113
+Chile,1851,1.126
+Chile,1852,1.126
+Chile,1855,1.083
+Chile,1856,1.1
+Chile,1858,1.089
+Chile,1861,1.113
+Chile,1864,1.112
+Chile,1866,1.104
+Chile,1867,1.104
+Chile,1870,1.092
+Chile,1871,1.103
+Chile,1873,1.112
+Chile,1876,1.084
+Chile,1879,1.08
+Chile,1881,1.119
+Chile,1882,1.119
+Chile,1885,1.085
+Chile,1886,1.101
+Chile,1888,1.092
+Chile,1891,1.094
+Chile,1894,1.095
+Chile,1896,1.106
+Chile,1897,1.106
+Chile,1900,1.053
+Chile,1901,1.072
+Chile,1903,1.075
+Chile,1906,1.128
+Chile,1909,1.072
+Chile,1910,1.076
+Chile,1912,1.123
+Chile,1915,1.128
+Chile,1918,1.038
+Ecuador,1856,1.124
+Ecuador,1865,1.177
+Ecuador,1868,1.14
+Ecuador,1869,1.14
+Ecuador,1875,1.13
+Ecuador,1888,1.123
+Ecuador,1892,1.141
+Ecuador,1896,1.091
+Ecuador,1901,1.111
+Ecuador,1905,1.093
+Ecuador,1906,1.093
+Ecuador,1911,1.125
+Ecuador,1912,1.126
+Ecuador,1916,1.115
+Ecuador,1920,1.115
+France,1789,1.071
+France,1791,1.057
+France,1795,1.07
+France,1798,1.099
+France,1815,1.084
+France,1816,1.103
+France,1817,1.103
+France,1818,1.102
+France,1819,1.102
+France,1820,1.075
+France,1824,1.067
+France,1827,1.093
+France,1830,1.12
+France,1831,1.12
+France,1834,1.115
+France,1837,1.086
+France,1839,1.102
+France,1842,1.06
+France,1846,1.068
+France,1848,1.068
+France,1849,1.068
+France,1852,1.069
+France,1857,1.075
+France,1863,1.084
+France,1869,1.101
+France,1871,1.077
+France,1876,1.069
+France,1877,1.123
+France,1881,1.081
+France,1885,1.095
+France,1889,1.081
+France,1893,1.093
+France,1898,1.072
+France,1902,1.066
+France,1906,1.098
+France,1910,1.066
+France,1914,1.062
+France,1919,1.111
+Germany,1868,-1.548
+Germany,1878,-1.561
+Germany,1881,-1.547
+Germany,1884,-1.549
+Germany,1887,-1.563
+Germany,1890,-1.58
+Germany,1893,-1.551
+Germany,1898,-1.542
+Germany,1903,-1.626
+Germany,1907,-1.607
+Germany,1912,-1.603
+Germany,1919,-1.003
+Germany,1920,-0.834
+Guatemala,1852,1.14
+Guatemala,1871,1.104
+Guatemala,1872,1.104
+Guatemala,1873,1.115
+Guatemala,1876,1.122
+Guatemala,1878,1.128
+Guatemala,1880,1.148
+Guatemala,1891,1.149
+Guatemala,1897,1.151
+Guatemala,1898,1.133
+Guatemala,1904,1.145
+Guatemala,1910,1.126
+Guatemala,1916,1.095
+Italy,1861,1.062
+Italy,1865,1.098
+Italy,1867,1.108
+Italy,1870,1.101
+Italy,1874,1.1
+Italy,1876,1.135
+Italy,1880,1.097
+Italy,1882,1.135
+Italy,1886,1.114
+Italy,1890,1.089
+Italy,1892,1.104
+Italy,1895,1.102
+Italy,1897,1.102
+Italy,1900,0.255
+Italy,1904,0.273
+Italy,1909,0.249
+Italy,1913,1.478
+Italy,1919,1.54
+Liberia,1847,-0.288
+Liberia,1849,-0.267
+Liberia,1851,-0.245
+Liberia,1853,1.242
+Liberia,1855,1.288
+Liberia,1857,1.244
+Liberia,1859,1.268
+Liberia,1861,1.271
+Liberia,1863,-0.263
+Liberia,1865,-0.259
+Liberia,1867,-0.228
+Liberia,1869,-0.249
+Liberia,1871,-0.224
+Liberia,1873,-0.263
+Liberia,1875,-0.235
+Liberia,1877,-0.293
+Liberia,1879,-0.26
+Liberia,1881,-0.244
+Liberia,1883,-0.252
+Liberia,1885,-0.268
+Liberia,1887,-0.237
+Liberia,1889,-0.217
+Liberia,1891,-0.257
+Liberia,1893,-0.24
+Liberia,1895,-0.228
+Liberia,1897,-0.257
+Liberia,1899,-0.291
+Liberia,1901,-0.308
+Liberia,1903,-0.236
+Liberia,1905,-0.276
+Liberia,1907,-0.279
+Liberia,1911,-0.271
+Liberia,1915,-0.258
+Liberia,1919,-0.26
+Netherlands,1796,1.068
+Netherlands,1797,1.068
+Netherlands,1798,1.068
+Netherlands,1805,1.114
+Netherlands,1848,1.109
+Netherlands,1850,1.099
+Netherlands,1852,1.107
+Netherlands,1853,1.107
+Netherlands,1854,1.096
+Netherlands,1856,1.068
+Netherlands,1858,1.122
+Netherlands,1860,1.092
+Netherlands,1862,1.07
+Netherlands,1864,1.099
+Netherlands,1866,1.113
+Netherlands,1868,1.1
+Netherlands,1869,1.088
+Netherlands,1871,1.099
+Netherlands,1873,1.093
+Netherlands,1875,1.094
+Netherlands,1877,1.114
+Netherlands,1879,1.108
+Netherlands,1881,1.082
+Netherlands,1883,1.097
+Netherlands,1884,1.093
+Netherlands,1886,1.087
+Netherlands,1887,1.082
+Netherlands,1888,1.082
+Netherlands,1891,1.109
+Netherlands,1894,1.11
+Netherlands,1897,1.074
+Netherlands,1901,1.096
+Netherlands,1905,1.061
+Netherlands,1909,1.136
+Netherlands,1913,1.073
+Netherlands,1917,1.112
+Netherlands,1918,1.107
+Spain,1834,-0.272
+Spain,1839,-1.824
+Spain,1840,-1.824
+Spain,1841,-0.267
+Spain,1843,-0.227
+Spain,1844,-0.227
+Spain,1846,-0.258
+Spain,1850,-1.848
+Spain,1851,-0.271
+Spain,1853,-1.839
+Spain,1854,-0.243
+Spain,1857,-1.83
+Spain,1858,-0.245
+Spain,1863,-1.818
+Spain,1864,-1.781
+Spain,1865,-0.24
+Spain,1867,-0.252
+Spain,1869,-0.275
+Spain,1871,-1.811
+Spain,1872,-0.243
+Spain,1873,-0.243
+Spain,1876,-0.26
+Spain,1879,-0.259
+Spain,1881,-0.219
+Spain,1884,-0.27
+Spain,1886,-0.261
+Spain,1891,-0.264
+Spain,1893,-0.225
+Spain,1896,-0.279
+Spain,1898,-1.794
+Spain,1899,-0.232
+Spain,1901,-0.268
+Spain,1903,-0.243
+Spain,1905,-0.231
+Spain,1907,-0.216
+Spain,1910,-0.273
+Spain,1914,-0.255
+Spain,1916,-0.276
+Spain,1918,-1.795
+Spain,1919,-0.884
+Spain,1920,-0.296
+Turkey,1908,1.268
+Turkey,1912,1.263
+Turkey,1914,1.259
+Turkey,1919,1.246
+United Kingdom,1790,-0.311
+United Kingdom,1796,-0.344
+United Kingdom,1801,-0.326
+United Kingdom,1802,-0.341
+United Kingdom,1806,-0.327
+United Kingdom,1807,-0.327
+United Kingdom,1810,-0.326
+United Kingdom,1812,-0.286
+United Kingdom,1818,-0.3
+United Kingdom,1820,-0.325
+United Kingdom,1826,-0.324
+United Kingdom,1830,-0.311
+United Kingdom,1831,-0.311
+United Kingdom,1832,-0.337
+United Kingdom,1835,-0.335
+United Kingdom,1837,-0.332
+United Kingdom,1841,-0.279
+United Kingdom,1847,-0.314
+United Kingdom,1852,-0.302
+United Kingdom,1857,-0.349
+United Kingdom,1859,-0.33
+United Kingdom,1865,-0.311
+United Kingdom,1868,-0.297
+United Kingdom,1874,1.239
+United Kingdom,1880,1.249
+United Kingdom,1885,1.241
+United Kingdom,1886,1.241
+United Kingdom,1892,1.267
+United Kingdom,1895,1.253
+United Kingdom,1900,1.269
+United Kingdom,1906,1.264
+United Kingdom,1910,1.259
+United Kingdom,1918,1.248
+Uruguay,1833,-1.49
+Uruguay,1836,-1.473
+Uruguay,1838,-1.487
+Uruguay,1841,-1.485
+Uruguay,1842,-1.457
+Uruguay,1851,-1.482
+Uruguay,1854,-1.511
+Uruguay,1857,-1.457
+Uruguay,1860,-1.494
+Uruguay,1867,-1.483
+Uruguay,1872,-1.483
+Uruguay,1876,-1.489
+Uruguay,1878,-1.474
+Uruguay,1881,-1.469
+Uruguay,1884,-1.486
+Uruguay,1887,-1.468
+Uruguay,1890,-1.502
+Uruguay,1893,-1.5
+Uruguay,1896,-1.484
+Uruguay,1898,-1.511
+Uruguay,1901,-1.474
+Uruguay,1905,-1.464
+Uruguay,1907,-1.48
+Uruguay,1910,-1.505
+Uruguay,1913,-1.457
+Uruguay,1917,-1.487
+Uruguay,1919,-1.461
+China,1912,1.133
+China,1918,1.136
+Dominican Republic,1865,1.117
+Dominican Republic,1866,1.117
+Dominican Republic,1874,1.119
+Dominican Republic,1876,1.116
+Dominican Republic,1878,1.109
+Dominican Republic,1880,1.091
+Dominican Republic,1882,1.142
+Dominican Republic,1884,1.123
+Dominican Republic,1886,1.101
+Dominican Republic,1888,1.109
+Dominican Republic,1892,1.123
+Dominican Republic,1896,1.104
+Dominican Republic,1899,1.135
+Dominican Republic,1903,1.126
+Dominican Republic,1904,1.126
+Dominican Republic,1908,1.141
+Dominican Republic,1912,1.133
+Dominican Republic,1913,1.132
+Dominican Republic,1914,1.11
+Libya,1952,1.172
+Libya,1960,1.097
+Libya,1964,1.141
+Libya,1965,1.141
+Uzbekistan,1990,1.143
+Uzbekistan,1991,1.143
+Uzbekistan,1994,1.142
+Uzbekistan,1995,1.142
+Uzbekistan,1999,1.162
+Uzbekistan,2000,1.162
+Uzbekistan,2004,1.148
+Uzbekistan,2005,1.148
+Uzbekistan,2007,1.134
+Uzbekistan,2009,1.114
+Uzbekistan,2010,1.114
+Austria,1848,-0.359
+Austria,1873,-1.657
+Austria,1879,-1.63
+Austria,1885,-1.667
+Austria,1891,-1.674
+Austria,1897,-0.332
+Austria,1900,-0.346
+Austria,1907,1.163
+Austria,1911,1.17
+Austria,1919,1.182
+Austria,1920,1.186
+Austria,1923,1.179
+Austria,1927,1.195
+Austria,1930,1.183
+Belgium,1830,-1.489
+Belgium,1831,-1.489
+Belgium,1833,-1.471
+Belgium,1835,-1.472
+Belgium,1837,-1.483
+Belgium,1839,-1.494
+Belgium,1841,-1.488
+Belgium,1843,-1.511
+Belgium,1845,-1.471
+Belgium,1847,-1.487
+Belgium,1848,-1.47
+Belgium,1850,-1.543
+Belgium,1852,-1.494
+Belgium,1854,-1.472
+Belgium,1856,-1.488
+Belgium,1857,-1.521
+Belgium,1859,-1.493
+Belgium,1861,-1.499
+Belgium,1863,-1.502
+Belgium,1864,-1.465
+Belgium,1866,-1.492
+Belgium,1868,-1.489
+Belgium,1870,-1.504
+Belgium,1872,-1.46
+Belgium,1874,-1.505
+Belgium,1876,-1.499
+Belgium,1878,1.124
+Belgium,1880,1.145
+Belgium,1882,1.162
+Belgium,1884,1.167
+Belgium,1886,1.131
+Belgium,1888,1.132
+Belgium,1890,1.152
+Belgium,1892,1.154
+Belgium,1894,1.137
+Belgium,1896,1.131
+Belgium,1898,1.123
+Belgium,1900,1.13
+Belgium,1902,1.137
+Belgium,1904,1.141
+Belgium,1906,1.134
+Belgium,1908,1.155
+Belgium,1910,1.136
+Belgium,1912,1.129
+Belgium,1914,1.156
+Belgium,1919,1.12
+Bulgaria,1879,-1.519
+Bulgaria,1880,-1.519
+Bulgaria,1881,-1.51
+Bulgaria,1882,-1.49
+Bulgaria,1884,-1.513
+Bulgaria,1886,-1.518
+Bulgaria,1887,-1.502
+Bulgaria,1890,-1.49
+Bulgaria,1893,-1.538
+Bulgaria,1894,-1.505
+Bulgaria,1896,-1.507
+Bulgaria,1899,-1.497
+Bulgaria,1901,-1.525
+Bulgaria,1902,-1.528
+Bulgaria,1903,-1.53
+Bulgaria,1908,-1.525
+Bulgaria,1911,-1.515
+Bulgaria,1913,-1.482
+Bulgaria,1914,-1.482
+Bulgaria,1919,-1.494
+Bulgaria,1920,-1.494
+Cuba,1900,1.105
+Cuba,1901,1.11
+Cuba,1904,1.174
+Cuba,1905,1.169
+Cuba,1908,1.121
+Cuba,1910,1.146
+Cuba,1912,1.126
+Cuba,1914,1.155
+Cuba,1916,1.161
+Cuba,1918,1.136
+Cuba,1920,1.128
+Denmark,1901,1.095
+Denmark,1909,1.1
+Denmark,1913,1.106
+Finland,1863,-0.904
+Finland,1867,-0.933
+Finland,1872,-0.923
+Finland,1877,-0.889
+Finland,1882,-0.922
+Finland,1885,-0.911
+Finland,1888,-0.927
+Finland,1891,-0.901
+Finland,1894,-0.908
+Finland,1897,-0.907
+Finland,1899,-0.914
+Finland,1900,-0.914
+Finland,1901,-0.914
+Finland,1905,-0.139
+Finland,1907,1.161
+Finland,1908,1.173
+Finland,1909,1.186
+Finland,1910,1.186
+Finland,1911,1.186
+Finland,1913,1.169
+Finland,1916,1.178
+Finland,1917,1.182
+Finland,1919,1.181
+Greece,1844,1.116
+Greece,1847,1.09
+Greece,1850,1.116
+Greece,1853,1.123
+Greece,1856,1.08
+Greece,1859,1.114
+Greece,1861,1.101
+Greece,1862,1.099
+Greece,1865,1.124
+Greece,1868,1.082
+Greece,1869,1.11
+Greece,1872,1.117
+Greece,1873,1.117
+Greece,1874,1.087
+Greece,1875,1.086
+Greece,1879,1.088
+Greece,1881,1.072
+Greece,1885,1.125
+Greece,1887,1.095
+Greece,1890,1.124
+Greece,1892,1.125
+Greece,1895,1.113
+Greece,1899,1.113
+Greece,1902,1.092
+Greece,1905,1.089
+Greece,1906,1.098
+Greece,1910,1.148
+Greece,1912,1.108
+Greece,1915,1.095
+Greece,1920,1.097
+Montenegro,1906,1.123
+Montenegro,1907,1.124
+Montenegro,1911,1.123
+Montenegro,1914,1.108
+New Zealand,1853,-0.399
+New Zealand,1855,-0.39
+New Zealand,1860,1.125
+New Zealand,1866,1.166
+New Zealand,1868,1.139
+New Zealand,1871,1.159
+New Zealand,1875,1.154
+New Zealand,1879,1.157
+New Zealand,1881,1.166
+New Zealand,1884,1.145
+New Zealand,1887,1.134
+New Zealand,1890,1.163
+New Zealand,1893,1.168
+New Zealand,1896,1.149
+New Zealand,1899,1.158
+New Zealand,1902,1.121
+New Zealand,1905,1.174
+New Zealand,1908,1.147
+New Zealand,1911,1.162
+New Zealand,1914,1.154
+New Zealand,1919,1.132
+Norway,1885,-0.288
+Norway,1888,-0.261
+Norway,1891,-0.291
+Norway,1894,-0.277
+Norway,1897,-0.3
+Norway,1900,-0.26
+Norway,1903,-0.292
+Norway,1906,-0.24
+Norway,1909,-0.278
+Norway,1912,-0.256
+Norway,1915,-0.276
+Norway,1918,-0.266
+Paraguay,1870,-1.569
+Paraguay,1874,-1.545
+Paraguay,1878,-1.53
+Paraguay,1880,-1.534
+Paraguay,1882,-1.534
+Paraguay,1886,-1.572
+Paraguay,1887,-1.572
+Paraguay,1890,-1.536
+Paraguay,1891,-1.552
+Paraguay,1893,-1.549
+Paraguay,1894,-1.549
+Paraguay,1896,-1.558
+Paraguay,1898,-1.567
+Paraguay,1917,-0.261
+Romania,1859,1.098
+Romania,1860,1.132
+Romania,1861,1.093
+Romania,1864,1.128
+Romania,1866,1.125
+Romania,1869,1.118
+Romania,1870,1.118
+Romania,1871,1.118
+Romania,1875,1.121
+Romania,1876,1.121
+Romania,1879,1.14
+Romania,1883,1.095
+Romania,1884,1.095
+Romania,1888,1.091
+Romania,1891,1.112
+Romania,1892,1.112
+Romania,1895,1.09
+Romania,1899,1.109
+Romania,1901,1.089
+Romania,1905,1.125
+Romania,1907,1.133
+Romania,1911,1.104
+Romania,1912,1.109
+Romania,1914,1.156
+Romania,1918,1.113
+Romania,1919,1.111
+Romania,1920,1.101
+Serbia,1861,1.152
+Serbia,1864,1.139
+Serbia,1870,1.115
+Serbia,1875,1.099
+Serbia,1877,1.104
+Serbia,1880,1.146
+Serbia,1884,1.096
+Serbia,1886,1.111
+Serbia,1888,1.109
+Serbia,1889,1.109
+Serbia,1893,1.154
+Serbia,1895,1.109
+Serbia,1903,1.104
+Serbia,1908,1.136
+Hungary,1848,1.086
+Hungary,1861,1.145
+Hungary,1865,1.15
+Hungary,1869,1.154
+Hungary,1872,1.148
+Hungary,1875,1.11
+Hungary,1878,1.129
+Hungary,1881,1.151
+Hungary,1884,1.098
+Hungary,1887,1.125
+Hungary,1892,1.151
+Hungary,1896,1.101
+Hungary,1901,1.144
+Hungary,1905,1.15
+Hungary,1906,1.131
+Hungary,1910,1.102
+Hungary,1919,1.101
+Hungary,1920,1.101
+Hungary,1922,1.136
+Hungary,1926,1.132
+Hungary,1931,1.116
+Hungary,1935,1.118
+Baden,1819,-1.471
+Baden,1825,-1.47
+Baden,1830,-1.488
+Baden,1833,-1.463
+Baden,1835,-1.492
+Baden,1837,-1.457
+Baden,1839,-1.502
+Baden,1841,-1.463
+Baden,1842,-1.463
+Baden,1843,-1.463
+Baden,1845,-1.493
+Baden,1846,-1.493
+Baden,1847,-1.493
+Baden,1851,-1.468
+Baden,1854,-1.462
+Baden,1855,-1.462
+Baden,1857,-1.482
+Baden,1859,-1.464
+Baden,1861,-1.456
+Baden,1863,-1.496
+Baden,1865,-1.47
+Baden,1867,-1.449
+Baden,1869,-1.491
+Modena,1859,1.104
+Parma,1859,1.125
+Saxony,1848,-0.737
+Tuscany,1848,-1.688
+Tuscany,1849,-1.688
+Tuscany,1859,1.217
+Wurtemberg,1868,-1.458
+Two Sicilies,1849,1.105
+Hesse-Darmstadt,1820,-1.533
+Hesse-Darmstadt,1849,-0.263
+Hesse-Darmstadt,1862,-0.292
+Hesse-Darmstadt,1865,-0.283
+Hesse-Darmstadt,1866,-0.283
+Mecklenburg Schwerin,1848,-1.527
+Papal States,1848,1.11
+Papal States,1849,1.11
+Piedmont-Sardinia,1848,1.143
+Piedmont-Sardinia,1849,1.143
+Piedmont-Sardinia,1853,1.118
+Piedmont-Sardinia,1857,1.136
+Piedmont-Sardinia,1860,1.125
