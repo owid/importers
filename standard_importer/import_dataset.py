@@ -66,7 +66,7 @@ def main():
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(DATA_PATH, "sources.csv"))
-        if 'id' in sources.names:
+        if 'id' in sources:
             sources = sources.rename(columns={"id": "id__source"})
         sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id__source", suffixes=['__source', '__dataset'])
         for i, source_row in tqdm(sources.iterrows()):
