@@ -51,7 +51,7 @@ create_variables <- function() {
             str_replace_all("<br>", "\n") %>%
             str_squish()
     }
-    notes <- paste(
+    description <- paste(
         varbook$question,
         varbook$responses,
         varbook$clarification,
@@ -72,7 +72,7 @@ create_variables <- function() {
     name <- varbook$name
     id <- seq_along(name)
     dataset_id <- 0
-    df <- data.table(tag, dataset_id, id, name, unit, notes)
+    df <- data.table(tag, dataset_id, id, name, unit, description)
     fwrite(df, "output/variables.csv")
 }
 
