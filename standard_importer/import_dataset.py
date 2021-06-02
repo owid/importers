@@ -66,6 +66,7 @@ def main():
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(DATA_PATH, "sources.csv"))
+        assert "id" in sources, "sources.csv needs its own set of ids (column: id)"
         sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id", suffixes=['__source', '__dataset'])
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
