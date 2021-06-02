@@ -37,7 +37,8 @@ create_sources <- function() {
     df <- data.table(
         name = "V-Dem Dataset Version 11.1 (2021)",
         description = desc,
-        dataset_id = 0
+        dataset_id = 0,
+        id = 0
     )
     fwrite(df, "output/sources.csv")
 }
