@@ -66,9 +66,7 @@ def main():
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(DATA_PATH, "sources.csv"))
-        if 'id' in sources.names:
-            sources = sources.rename(columns={"id": "id__source"})
-        sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id__source", suffixes=['__source', '__dataset'])
+        sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id", suffixes=['__source', '__dataset'])
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
                 name=source_row.name__source,
@@ -88,7 +86,7 @@ def main():
                 'The "notes" column in `variables.csv` is '
                 'deprecated, and should be named "description" instead.'
             )
-            variables = variables.rename(columns={"notes": "description"})
+            variables.rename(columns={'notes': 'description'}, inplace=True)
         if 'source_id' in variables:
             on = 'source_id'
         else:
