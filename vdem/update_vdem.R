@@ -125,7 +125,7 @@ create_datapoints <- function() {
     # Set zero decimal places for categorical and/or binary vars
     variables[
         unit %in% c("Nominal", "Dichotomous", "Ordinal.", "Dichotomous."),
-        display := "{'numDecimalPlaces': 0}"
+        display := '{"numDecimalPlaces": 0}'
     ]
 
     fwrite(variables, "output/variables.csv")
