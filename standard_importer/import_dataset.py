@@ -25,7 +25,7 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-DATASET_DIR = "who_gho"
+DATASET_DIR = "vdem"
 DATASET_VERSION = import_from(DATASET_DIR, 'DATASET_VERSION')
 
 USER_ID = 46
