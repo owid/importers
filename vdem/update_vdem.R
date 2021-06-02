@@ -21,7 +21,7 @@ create_dataset <- function() {
 }
 
 create_sources <- function() {
-    link <- "https://www.v-dem.net/en/data/data/v-dem-dataset-v111/"
+    link <- "https://www.v-dem.net/en/data/data"
     retrieved <- Sys.Date()
     publisher <- "V-Dem (Varieties of Democracy) Institute"
     additional_info <- "The Varieties of Democracy Project (V-Dem) provides a multidimensional and disaggregated dataset with indicators of democracy for all countries since 1900. The data covers five high-level concepts of democracy (electoral, liberal, participatory, deliberative, and egalitarian) and collects data to measure them. V-Dem draws on theoretical and methodological expertise from a global team of experts. Approximately half of the indicators in the V-Dem dataset are based on factual information obtainable from official documents such as constitutions and government records. The other half consists of subjective assessments on topics where multiple country experts provide ratings."
