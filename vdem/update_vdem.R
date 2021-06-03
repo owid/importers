@@ -14,6 +14,17 @@ setDT(vdem)
 
 standard_countries <- fread("input/vdem_country_standardized.csv")
 
+data_cleaning <- function(vdem) {
+    allowed <- fread("input/allowed_values.csv")
+    for (i in 1:nrow(allowed)) {
+        col <- allowed[i, var_code]
+        min_value <- allowed[i, min_value]
+        max_value <- allowed[i, max_value]
+        vdem[vdem[[col]] < min_value | vdem[[col]] > max_value][[col]] <- NA
+    }
+    return(vdem)
+}
+
 create_dataset <- function() {
     name <- "V-Dem Dataset Version 11.1 - V-Dem Institute"
     df <- data.table(id = 0, name)
@@ -147,6 +158,7 @@ create_entities <- function() {
 }
 
 # file.remove(list.files("output", full.names = TRUE, recursive = TRUE))
+vdem <- data_cleaning(vdem)
 create_dataset()
 create_sources()
 create_variables()
