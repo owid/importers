@@ -37,6 +37,14 @@ def download_data() -> None:
     """
     if not os.path.exists(INPATH):
         os.makedirs(INPATH)
+    try:
+        _download_data_csv()
+    except:
+        _download_data_excel()
+    logger.info(f"Data succcessfully downloaded to {INPATH}")
+
+
+def _download_data_csv() -> None:
     url = "http://databank.worldbank.org/data/download/WDI_csv.zip"
     logger.info(f'Downloading data from "{url}"...')
     res = requests.get(url)
@@ -46,9 +54,21 @@ def download_data() -> None:
     for fname in fnames:
         fname_zip = f'{fname}.zip'
         pd.read_csv(os.path.join(INPATH, fname)) \
-          .to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
+            .to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
         os.remove(os.path.join(INPATH, fname))
-    logger.info(f"Data succcessfully downloaded to {INPATH}")
+
+
+def _download_data_excel() -> None:
+    url = "http://databank.worldbank.org/data/download/WDI_excel.zip"
+    logger.info(f'Downloading data from "{url}"...')
+    res = requests.get(url)
+    zf = zipfile.ZipFile(BytesIO(res.content))
+    fnames = zf.namelist()
+    assert len(fnames) == 1, "Expected only one file in xlsx zip archive."
+    sheet2df = pd.read_excel(BytesIO(zf.read(fnames[0])), sheet_name=None)
+    for sheet, df in sheet2df.items():
+        fname_zip = f'WDI{sheet}.csv.zip'
+        df.to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
 
 
 if __name__ == '__main__':
