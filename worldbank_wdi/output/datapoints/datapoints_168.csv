@@ -1,105 +1,508 @@
 country,year,value
-Benin,2001,16.8
-Benin,2006,12.9
-Benin,2012,7.3
-Benin,2014,9.19999999999999
-Burkina Faso,1999,71.6
-Burkina Faso,2003,76.6
-Burkina Faso,2006,72.5
-Burkina Faso,2010,75.8
-Cameroon,2004,1.4
-Central African Republic,1995,43.4
-Central African Republic,2010,24.2
-Chad,2004,44.9
-Chad,2010,44.3
-Chad,2015,38.4
-Cote d'Ivoire,1999,44.5
-Cote d'Ivoire,2005,41.7
-Cote d'Ivoire,2012,38.2
-Cote d'Ivoire,2016,36.7
-Djibouti,2006,93.1
-Djibouti,2012,94.0
-Egypt,1995,97.0
-Egypt,2000,97.3
-Egypt,2003,97.0
-Egypt,2005,95.8
-Egypt,2008,95.5
-Egypt,2014,92.3
-Egypt,2015,87.2
-Eritrea,1995,94.5
-Eritrea,2002,88.7
-Eritrea,2010,83.0
-Ethiopia,2000,79.9
-Ethiopia,2005,74.3
-Ethiopia,2016,65.2
-Gambia,2006,78.3
-Gambia,2010,76.4
-Gambia,2013,74.9
-Gambia,2018,75.7
-Ghana,2003,5.4
-Ghana,2011,3.8
-Guinea,1999,98.6
-Guinea,2005,95.6
-Guinea,2012,96.9
-Guinea,2016,96.8
-Guinea,2018,94.5
-Guinea-Bissau,2006,44.5
-Guinea-Bissau,2010,49.8
-Guinea-Bissau,2014,44.9
-Iraq,2011,8.1
-Iraq,2018,7.4
-Kenya,1998,37.6
-Kenya,2003,32.2
-Kenya,2009,27.1
-Kenya,2014,21.0
-Liberia,2013,44.4
-Maldives,2017,12.9
-Mali,1996,93.7
-Mali,2001,91.6
-Mali,2006,85.2
-Mali,2010,88.5
-Mali,2013,91.4
-Mali,2015,82.7
-Mali,2018,88.6
-Mauritania,2001,71.3
-Mauritania,2007,72.2
-Mauritania,2011,69.4
-Mauritania,2015,66.5999999999999
-Niger,1998,4.5
-Niger,2006,2.2
-Niger,2012,2.0
-Nigeria,2003,19.0
-Nigeria,2008,29.6
-Nigeria,2011,27.0
-Nigeria,2013,24.8
-Nigeria,2016,18.4
-Nigeria,2018,19.5
-Senegal,2005,28.2
-Senegal,2011,25.7
-Senegal,2014,24.7
-Senegal,2015,24.2
-Senegal,2016,22.7
-Senegal,2017,24.0
-Senegal,2018,23.3
-Sierra Leone,2005,94.0
-Sierra Leone,2008,91.3
-Sierra Leone,2010,88.3
-Sierra Leone,2013,89.6
-Sierra Leone,2017,86.1
-Sierra Leone,2019,83.0
-Somalia,2006,97.9
-Sudan,1990,89.2
-Sudan,2014,86.6
-Tanzania,1996,17.9
-Tanzania,2005,14.6
-Tanzania,2010,14.6
-Tanzania,2016,10.0
-Togo,2006,5.8
-Togo,2010,3.9
-Togo,2014,4.7
-Togo,2017,3.1
-Uganda,2006,0.6
-Uganda,2011,1.4
-Uganda,2016,0.3
-Yemen,1997,22.6
-Yemen,2013,18.5
+Afghanistan,2010,8.6
+Afghanistan,2019,9.2
+Albania,2010,4.5
+Albania,2019,9.0
+Algeria,2010,8.5
+Algeria,2019,6.7
+Andorra,2010,6.6
+Andorra,2019,7.7
+Angola,2010,3.5
+Angola,2019,4.5
+Antigua and Barbuda,2010,7.1
+Antigua and Barbuda,2019,13.1
+Arab World,2010,9.80454810949658
+Arab World,2019,12.53600144871324
+Argentina,2010,5.7
+Argentina,2019,5.9
+Armenia,2010,7.8
+Armenia,2019,6.1
+Aruba,2010,10.2
+Aruba,2019,11.6
+Australia,2010,5.7
+Australia,2019,5.6
+Austria,2010,8.9
+Austria,2019,6.6
+Azerbaijan,2010,7.5
+Azerbaijan,2019,6.1
+Bahamas,2010,10.4
+Bahamas,2019,8.8
+Bahrain,2010,15.4
+Bahrain,2019,15.6
+Bangladesh,2010,6.6
+Bangladesh,2019,9.2
+Barbados,2010,8.0
+Barbados,2019,13.4
+Belarus,2010,7.6
+Belarus,2019,5.0
+Belgium,2010,5.3
+Belgium,2019,4.6
+Belize,2010,9.8
+Belize,2019,17.1
+Benin,2010,4.6
+Benin,2019,1.0
+Bermuda,2010,10.2
+Bermuda,2019,6.7
+Bhutan,2010,3.6
+Bhutan,2019,10.3
+Bolivia,2010,6.0
+Bolivia,2019,6.8
+Bosnia and Herzegovina,2010,7.1
+Bosnia and Herzegovina,2019,9.0
+Botswana,2010,5.4
+Botswana,2019,5.8
+Brazil,2010,6.4
+Brazil,2019,10.4
+British Virgin Islands,2010,10.2
+British Virgin Islands,2019,14.2
+Brunei,2010,12.6
+Brunei,2019,13.3
+Bulgaria,2010,6.5
+Bulgaria,2019,6.0
+Burkina Faso,2010,3.8
+Burkina Faso,2019,7.3
+Burundi,2010,1.8
+Burundi,2019,5.1
+Cambodia,2010,5.2
+Cambodia,2019,6.4
+Cameroon,2010,3.9
+Cameroon,2019,6.0
+Canada,2010,9.2
+Canada,2019,7.6
+Cape Verde,2010,5.3
+Cape Verde,2019,2.4
+Caribbean small states,2010,10.41807450082976
+Caribbean small states,2019,11.62934595634681
+Cayman Islands,2010,10.2
+Cayman Islands,2019,6.8
+Central African Republic,2010,4.5
+Central African Republic,2019,6.0
+Central Europe and the Baltics,2010,7.061136589747726
+Central Europe and the Baltics,2019,6.295911778639908
+Chad,2010,3.7
+Chad,2019,6.0
+Channel Islands,2010,3.0
+Channel Islands,2019,3.9
+Chile,2010,5.7
+Chile,2019,8.6
+China,2010,4.2
+China,2019,9.2
+Colombia,2010,5.2
+Colombia,2019,7.4
+Comoros,2010,3.4
+Comoros,2019,12.3
+Congo,2010,5.1
+Congo,2019,6.0
+Costa Rica,2010,9.3
+Costa Rica,2019,9.1
+Cote d'Ivoire,2010,4.7
+Cote d'Ivoire,2019,2.4
+Croatia,2010,6.9
+Croatia,2019,5.4
+Cuba,2010,9.5
+Cuba,2019,9.6
+Curacao,2019,11.6
+Cyprus,2010,9.1
+Cyprus,2019,9.0
+Czechia,2010,6.4
+Czechia,2019,7.0
+Democratic Republic of Congo,2010,3.2
+Democratic Republic of Congo,2019,6.0
+Denmark,2010,5.6
+Denmark,2019,8.3
+Djibouti,2010,5.3
+Djibouti,2019,5.1
+Dominica,2010,11.5
+Dominica,2019,11.6
+Dominican Republic,2010,11.2
+Dominican Republic,2019,8.6
+Early-demographic dividend,2010,7.378813993839801
+Early-demographic dividend,2019,10.090910544211358
+East Asia & Pacific,2010,4.7567610789765
+East Asia & Pacific,2019,8.202553336033839
+East Asia & Pacific (IDA & IBRD),2010,4.564072571412329
+East Asia & Pacific (IDA & IBRD),2019,8.514102144329524
+East Asia & Pacific (excluding high income),2010,4.573145422649716
+East Asia & Pacific (excluding high income),2019,8.48806177360445
+Ecuador,2010,5.9
+Ecuador,2019,5.5
+Egypt,2010,11.4
+Egypt,2019,17.2
+El Salvador,2010,9.0
+El Salvador,2019,8.8
+Equatorial Guinea,2010,4.8
+Equatorial Guinea,2019,6.0
+Eritrea,2010,2.5
+Eritrea,2019,5.1
+Estonia,2010,7.6
+Estonia,2019,4.2
+Eswatini,2010,4.2
+Eswatini,2019,4.5
+Ethiopia,2010,2.5
+Ethiopia,2019,4.3
+Euro area,2010,7.094378204575007
+Euro area,2019,6.759903934483806
+Europe & Central Asia,2010,6.881917384838281
+Europe & Central Asia,2019,6.686883994398201
+Europe & Central Asia (IDA & IBRD),2010,7.272406261005738
+Europe & Central Asia (IDA & IBRD),2019,7.099253314737033
+Europe & Central Asia (excluding high income),2010,7.262912332313954
+Europe & Central Asia (excluding high income),2019,7.231584794824041
+European Union,2010,7.026646860076927
+European Union,2019,6.67044300732434
+Faeroe Islands,2019,4.7
+Fiji,2010,9.4
+Fiji,2019,14.7
+Finland,2010,5.7
+Finland,2019,5.6
+Fragile and conflict affected situations,2010,4.99092127088462
+Fragile and conflict affected situations,2019,6.478645231294637
+France,2010,6.7
+France,2019,4.8
+French Polynesia,2010,13.8
+French Polynesia,2019,19.5
+Gabon,2010,5.0
+Gabon,2019,6.0
+Gambia,2010,4.3
+Gambia,2019,1.9
+Georgia,2010,7.5
+Georgia,2019,5.8
+Germany,2010,8.9
+Germany,2019,10.4
+Ghana,2010,4.3
+Ghana,2019,2.5
+Greece,2010,6.0
+Greece,2019,4.7
+Greenland,2019,2.1
+Grenada,2010,9.5
+Grenada,2019,10.7
+Guam,2010,6.7
+Guam,2019,18.7
+Guatemala,2010,8.6
+Guatemala,2019,10.0
+Guinea,2010,4.3
+Guinea,2019,2.4
+Guinea-Bissau,2010,3.9
+Guinea-Bissau,2019,2.4
+Guyana,2010,9.5
+Guyana,2019,11.6
+Haiti,2010,7.2
+Haiti,2019,6.7
+Heavily indebted poor countries (HIPC),2010,3.947286602820984
+Heavily indebted poor countries (HIPC),2019,5.729318974033424
+High income,2010,7.896966494750237
+High income,2019,7.931522103130843
+Honduras,2010,9.1
+Honduras,2019,7.3
+Hong Kong,2010,8.5
+Hong Kong,2019,4.5
+Hungary,2010,6.4
+Hungary,2019,6.9
+IBRD only,2010,6.342912129948273
+IBRD only,2019,9.301995950091078
+IDA & IBRD total,2010,6.117635527836772
+IDA & IBRD total,2019,8.986874606331906
+IDA blend,2010,6.377894486931778
+IDA blend,2019,10.604743671406956
+IDA only,2010,4.576042259743352
+IDA only,2019,6.457722397793217
+IDA total,2010,5.18760445627757
+IDA total,2019,7.851218914742986
+Iceland,2010,1.6
+Iceland,2019,5.8
+India,2010,7.8
+India,2019,10.4
+Indonesia,2010,4.8
+Indonesia,2019,6.3
+Iran,2010,8.0
+Iran,2019,9.6
+Iraq,2010,10.2
+Iraq,2019,8.8
+Ireland,2010,5.2
+Ireland,2019,3.2
+Israel,2010,6.5
+Israel,2019,9.7
+Italy,2010,5.9
+Italy,2019,5.0
+Jamaica,2010,10.6
+Jamaica,2019,11.3
+Japan,2010,5.0
+Japan,2019,5.6
+Jordan,2010,10.1
+Jordan,2019,12.7
+Kazakhstan,2010,5.8
+Kazakhstan,2019,6.1
+Kenya,2010,3.5
+Kenya,2019,3.1
+Kiribati,2010,6.6
+Kiribati,2019,22.5
+Kuwait,2010,14.6
+Kuwait,2019,12.2
+Kyrgyzstan,2010,5.2
+Kyrgyzstan,2019,6.1
+Laos,2010,5.6
+Laos,2019,6.4
+Late-demographic dividend,2010,5.261484219603472
+Late-demographic dividend,2019,8.830905704620154
+Latin America & Caribbean,2010,7.43573613423694
+Latin America & Caribbean,2019,9.694271178230428
+Latin America & Caribbean (IDA & IBRD),2010,7.363813513734013
+Latin America & Caribbean (IDA & IBRD),2019,9.671066730115692
+Latin America & Caribbean (excluding high income),2010,7.452803238660215
+Latin America & Caribbean (excluding high income),2019,9.728371344602518
+Latvia,2010,7.6
+Latvia,2019,5.0
+Least developed countries: UN classification,2010,4.270718135359076
+Least developed countries: UN classification,2019,6.442058188181522
+Lebanon,2010,7.8
+Lebanon,2019,11.2
+Lesotho,2010,3.9
+Lesotho,2019,4.5
+Liberia,2010,4.7
+Liberia,2019,2.4
+Libya,2010,9.0
+Libya,2019,10.2
+Liechtenstein,2010,8.9
+Liechtenstein,2019,9.4
+Lithuania,2010,7.6
+Lithuania,2019,3.8
+Low & middle income,2010,6.102509652256535
+Low & middle income,2019,9.00653723925206
+Low income,2010,4.065061421585456
+Low income,2019,6.393278832639644
+Lower middle income,2010,7.132940567790873
+Lower middle income,2019,9.513236979175216
+Luxembourg,2010,5.3
+Luxembourg,2019,5.0
+Macao,2010,8.5
+Macao,2019,4.3
+Madagascar,2010,3.2
+Madagascar,2019,4.5
+Malawi,2010,2.3
+Malawi,2019,4.5
+Malaysia,2010,11.6
+Malaysia,2019,16.7
+Maldives,2010,7.4
+Maldives,2019,9.2
+Mali,2010,4.2
+Mali,2019,2.4
+Malta,2010,6.8
+Malta,2019,8.3
+Marshall Islands,2010,9.1
+Marshall Islands,2019,30.5
+Mauritania,2010,4.8
+Mauritania,2019,7.1
+Mauritius,2010,16.2
+Mauritius,2019,22.0
+Mexico,2010,10.8
+Mexico,2019,13.5
+Micronesia (country),2010,6.2
+Micronesia (country),2019,11.9
+Middle East & North Africa,2010,9.973087522468342
+Middle East & North Africa,2019,11.373883972251242
+Middle East & North Africa (IDA & IBRD),2010,9.065380899823731
+Middle East & North Africa (IDA & IBRD),2019,10.80461552261766
+Middle East & North Africa (excluding high income),2010,9.06093337899003
+Middle East & North Africa (excluding high income),2019,10.790643619589394
+Middle income,2010,6.260235765131011
+Middle income,2019,9.24391473358274
+Moldova,2010,7.6
+Moldova,2019,5.7
+Monaco,2010,6.7
+Monaco,2019,2.9
+Mongolia,2010,1.6
+Mongolia,2019,4.7
+Montenegro,2010,6.9
+Montenegro,2019,9.0
+Morocco,2010,8.3
+Morocco,2019,7.0
+Mozambique,2010,4.0
+Mozambique,2019,3.3
+Myanmar,2010,3.2
+Myanmar,2019,3.9
+Namibia,2010,4.4
+Namibia,2019,4.5
+Nauru,2010,30.9
+Nauru,2019,12.0
+Nepal,2010,3.9
+Nepal,2019,7.2
+Netherlands,2010,5.3
+Netherlands,2019,5.4
+New Caledonia,2010,7.2
+New Caledonia,2019,21.8
+New Zealand,2010,5.2
+New Zealand,2019,6.2
+Nicaragua,2010,10.0
+Nicaragua,2019,11.4
+Niger,2010,3.9
+Niger,2019,2.4
+Nigeria,2010,4.7
+Nigeria,2019,3.1
+North America,2010,10.186499677645456
+North America,2019,10.46140507706508
+North Korea,2010,5.3
+North Korea,2019,6.4
+North Macedonia,2010,6.9
+North Macedonia,2019,9.3
+Norway,2010,3.6
+Norway,2019,5.3
+OECD members,2010,7.746090985546262
+OECD members,2019,8.316568216486083
+Oman,2010,13.4
+Oman,2019,10.1
+Other small states,2010,7.403567501850564
+Other small states,2019,8.24179277332915
+Pacific island small states,2010,7.123809375529541
+Pacific island small states,2019,15.325310861322246
+Pakistan,2010,9.1
+Pakistan,2019,19.9
+Palau,2010,9.1
+Palau,2019,17.9
+Palestine,2010,8.6
+Palestine,2019,9.5
+Panama,2010,9.6
+Panama,2019,7.7
+Papua New Guinea,2010,3.0
+Papua New Guinea,2019,17.9
+Paraguay,2010,4.9
+Paraguay,2019,9.6
+Peru,2010,6.2
+Peru,2019,6.6
+Philippines,2010,7.7
+Philippines,2019,7.1
+Poland,2010,7.6
+Poland,2019,6.1
+Portugal,2010,9.7
+Portugal,2019,9.8
+Post-demographic dividend,2010,7.625905262657458
+Post-demographic dividend,2019,7.578810941997523
+Pre-demographic dividend,2010,4.325468836257974
+Pre-demographic dividend,2019,5.371279639642586
+Puerto Rico,2010,10.6
+Puerto Rico,2019,13.7
+Qatar,2010,15.4
+Qatar,2019,15.6
+Romania,2010,6.9
+Romania,2019,6.9
+Russia,2010,7.6
+Russia,2019,6.1
+Rwanda,2010,1.6
+Rwanda,2019,5.1
+Saint Kitts and Nevis,2010,9.0
+Saint Kitts and Nevis,2019,13.3
+Saint Lucia,2010,9.3
+Saint Lucia,2019,11.6
+Saint Vincent and the Grenadines,2010,8.4
+Saint Vincent and the Grenadines,2019,11.6
+Samoa,2010,7.7
+Samoa,2019,9.2
+San Marino,2010,5.9
+San Marino,2019,5.9
+Sao Tome and Principe,2010,4.7
+Sao Tome and Principe,2019,2.4
+Saudi Arabia,2010,16.8
+Saudi Arabia,2019,15.8
+Senegal,2010,4.7
+Senegal,2019,2.4
+Serbia,2010,6.9
+Serbia,2019,9.0
+Seychelles,2010,14.4
+Seychelles,2019,12.3
+Sierra Leone,2010,4.4
+Sierra Leone,2019,2.4
+Singapore,2010,10.2
+Singapore,2019,5.5
+Sint Maarten (Dutch part),2019,6.8
+Slovakia,2010,6.4
+Slovakia,2019,6.5
+Slovenia,2010,7.7
+Slovenia,2019,5.9
+Small states,2010,8.013183447147624
+Small states,2019,9.268439233488689
+Solomon Islands,2010,3.3
+Solomon Islands,2019,19.0
+Somalia,2010,3.0
+Somalia,2019,5.1
+South Africa,2010,4.5
+South Africa,2019,12.7
+South Asia,2010,7.813139538374003
+South Asia,2019,11.237926446202165
+South Asia (IDA & IBRD),2010,7.813139538374003
+South Asia (IDA & IBRD),2019,11.237926446202165
+South Korea,2010,7.9
+South Korea,2019,6.9
+South Sudan,2019,10.2
+Spain,2010,6.6
+Spain,2019,6.9
+Sri Lanka,2010,10.9
+Sri Lanka,2019,10.7
+Sub-Saharan Africa,2010,3.8052439141513457
+Sub-Saharan Africa,2019,5.359439759383545
+Sub-Saharan Africa (IDA & IBRD),2010,3.8052439141513448
+Sub-Saharan Africa (IDA & IBRD),2019,5.359439759383546
+Sub-Saharan Africa (excluding high income),2010,3.778642713937333
+Sub-Saharan Africa (excluding high income),2019,5.331305536201522
+Sudan,2010,4.2
+Sudan,2019,22.1
+Suriname,2010,10.5
+Suriname,2019,12.5
+Sweden,2010,5.2
+Sweden,2019,4.8
+Switzerland,2010,8.9
+Switzerland,2019,5.7
+Syria,2010,10.8
+Syria,2019,13.5
+Tajikistan,2010,5.0
+Tajikistan,2019,6.1
+Tanzania,2010,3.2
+Tanzania,2019,5.7
+Thailand,2010,7.1
+Thailand,2019,7.0
+Timor,2010,3.5
+Timor,2019,6.7
+Togo,2010,4.3
+Togo,2019,2.4
+Tonga,2010,13.4
+Tonga,2019,15.7
+Trinidad and Tobago,2010,11.7
+Trinidad and Tobago,2019,11.0
+Tunisia,2010,9.3
+Tunisia,2019,8.5
+Turkey,2010,8.0
+Turkey,2019,11.1
+Turkmenistan,2010,5.3
+Turkmenistan,2019,6.1
+Tuvalu,2010,13.9
+Tuvalu,2019,22.1
+Uganda,2010,2.2
+Uganda,2019,2.5
+Ukraine,2010,7.6
+Ukraine,2019,6.1
+United Arab Emirates,2010,18.7
+United Arab Emirates,2019,16.3
+United Kingdom,2010,3.6
+United Kingdom,2019,3.9
+United States,2010,10.3
+United States,2019,10.8
+United States Virgin Islands,2010,9.9
+United States Virgin Islands,2019,12.3
+Upper middle income,2010,5.540044490117913
+Upper middle income,2019,9.001464782934013
+Uruguay,2010,5.7
+Uruguay,2019,7.3
+Uzbekistan,2010,5.2
+Uzbekistan,2019,6.5
+Vanuatu,2010,3.2
+Vanuatu,2019,11.9
+Venezuela,2010,6.5
+Venezuela,2019,7.0
+Vietnam,2010,3.5
+Vietnam,2019,6.0
+World,2010,6.448968616733767
+World,2019,8.811990155502201
+Yemen,2010,3.0
+Yemen,2019,5.4
+Zambia,2010,4.0
+Zambia,2019,4.5
+Zimbabwe,2010,4.1
+Zimbabwe,2019,1.8

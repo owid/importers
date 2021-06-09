@@ -1,1016 +1,4540 @@
 country,year,value
-Afghanistan,1986,26.0
-Afghanistan,1987,11.0
-Afghanistan,1989,11.0
-Afghanistan,1997,33.0
-Afghanistan,2003,29.5
-Afghanistan,2011,53.3
-Afghanistan,2015,46.2
-Afghanistan,2018,39.9
-Albania,2000,23.5
-Albania,2005,51.8
-Albania,2009,54.0
-Albania,2018,34.5
-Algeria,1986,6.0
-Algeria,1987,16.0
-Algeria,1989,26.0
-Algeria,2000,17.7000007629395
-Algeria,2002,29.5
-Algeria,2006,18.5
-Algeria,2012,25.3
-Algeria,2013,25.3
-Angola,1986,5.0
-Angola,1987,12.0
-Angola,1989,12.0
-Angola,1996,34.9000015258789
-Angola,2016,42.6
-Arab World,1986,26.1043325722133
-Arab World,1987,42.5747026878167
-Arab World,1989,47.8047811558565
-Argentina,1986,3.0
-Argentina,1987,3.0
-Argentina,1989,70.0
-Argentina,2012,17.5
-Armenia,1997,33.0
-Armenia,2000,33.0
-Armenia,2005,24.9
-Armenia,2010,33.0
-Armenia,2016,36.9
-Azerbaijan,2000,10.1
-Azerbaijan,2006,21.1
-Azerbaijan,2011,11.1
-Azerbaijan,2013,7.5
-Bahrain,1986,37.0
-Bahrain,1987,53.0
-Bahrain,1989,6.0
-Bahrain,1995,35.5
-Bangladesh,1986,51.0
-Bangladesh,1987,26.0
-Bangladesh,1989,26.0
-Bangladesh,1994,50.3
-Bangladesh,1997,48.1
-Bangladesh,2000,61.4
-Bangladesh,2004,67.2
-Bangladesh,2006,64.4
-Bangladesh,2007,76.6
-Bangladesh,2011,77.6
-Bangladesh,2013,73.0
-Bangladesh,2014,77.0
-Bangladesh,2018,83.3
-Bangladesh,2019,72.4
-Barbados,1986,1.0
-Barbados,1987,1.0
-Barbados,1989,10.0
-Belarus,2005,36.4
-Belarus,2012,45.3
-Belize,1986,65.0
-Belize,1987,65.0
-Belize,1989,65.0
-Belize,1991,33.0
-Belize,2006,27.0
-Belize,2011,22.8
-Belize,2016,55.2
-Benin,1986,12.0
-Benin,1987,26.0
-Benin,1989,45.0
-Benin,1996,25.8
-Benin,2001,23.3
-Benin,2006,23.3
-Benin,2012,50.1
-Benin,2014,25.4
-Benin,2018,22.2
-Bhutan,1986,11.0
-Bhutan,1987,40.0
-Bhutan,1989,40.0
-Bhutan,2010,60.9
-Bolivia,1986,21.0
-Bolivia,1987,53.0
-Bolivia,1989,60.0
-Bolivia,1994,33.4
-Bolivia,1998,30.0
-Bolivia,2000,24.6
-Bolivia,2004,28.8
-Bolivia,2008,34.9
-Bolivia,2012,22.3
-Bosnia and Herzegovina,2000,13.2
-Bosnia and Herzegovina,2006,36.3
-Bosnia and Herzegovina,2012,36.3
-Botswana,1986,46.0
-Botswana,1987,46.0
-Botswana,1989,66.0
-Botswana,2000,48.9
-Botswana,2007,42.9
-Brazil,1986,40.0
-Brazil,1987,40.0
-Brazil,1989,45.0
-Brazil,1991,27.0
-Brazil,1996,43.6
-Brunei,1986,7.0
-Burkina Faso,1986,9.0
-Burkina Faso,1987,15.0
-Burkina Faso,1989,15.0
-Burkina Faso,1993,12.0
-Burkina Faso,1999,14.6
-Burkina Faso,2003,18.9
-Burkina Faso,2006,16.5
-Burkina Faso,2010,21.2
-Burkina Faso,2015,39.5
-Burundi,1986,9.0
-Burundi,1987,30.0
-Burundi,1989,30.0
-Burundi,2000,11.0
-Burundi,2005,34.8
-Burundi,2010,37.8
-Burundi,2012,47.2
-Burundi,2016,35.6
-Burundi,2017,35.6
-Cambodia,1986,16.0
-Cambodia,1987,6.0
-Cambodia,1989,6.0
-Cambodia,2000,17.8
-Cambodia,2006,21.1
-Cambodia,2011,34.1
-Cambodia,2014,35.2
-Cameroon,1986,1.0
-Cameroon,1987,22.0
-Cameroon,1989,84.0
-Cameroon,1991,18.0
-Cameroon,1998,21.9
-Cameroon,2000,14.1
-Cameroon,2004,16.8
-Cameroon,2006,12.8
-Cameroon,2011,17.2
-Cameroon,2014,15.8
-Cameroon,2018,17.9
-Cape Verde,1986,9.0
-Cape Verde,1987,9.0
-Cape Verde,1989,5.0
-Caribbean small states,1986,22.8427737361419
-Caribbean small states,1987,23.449511791821
-Caribbean small states,1989,32.5838278689004
-Central African Republic,1986,6.0
-Central African Republic,1987,15.0
-Central African Republic,1989,20.0
-Central African Republic,1995,27.7
-Central African Republic,1996,24.0
-Central African Republic,2000,17.2
-Central African Republic,2006,13.4
-Central African Republic,2010,15.6
-Chad,1985,7.0
-Chad,1986,2.0
-Chad,1987,2.0
-Chad,1989,10.0
-Chad,1997,23.4
-Chad,2000,15.6
-Chad,2004,15.1
-Chad,2010,13.3
-Chad,2015,20.4
-Chile,1989,1.0
-China,1986,5.0
-China,1987,5.0
-China,1989,40.0
-China,1994,11.3000001907349
-Colombia,1986,6.0
-Colombia,1987,12.0
-Colombia,1989,40.0
-Colombia,1990,31.1
-Colombia,1995,44.5
-Colombia,2000,36.3
-Colombia,2004,46.6
-Colombia,2005,46.6
-Colombia,2010,54.1
-Comoros,1986,1.0
-Comoros,1987,18.0
-Comoros,1989,79.0
-Comoros,1996,29.1
-Comoros,2000,18.5
-Comoros,2012,37.5
-Congo,1986,2.0
-Congo,1987,2.0
-Congo,1989,13.0
-Congo,2005,18.2
-Congo,2012,28.0
-Congo,2015,26.9
-Costa Rica,1986,52.0
-Costa Rica,1987,78.0
-Costa Rica,1989,78.0
-Costa Rica,1994,31.0
-Costa Rica,2011,40.0
-Costa Rica,2018,56.3
-Cote d'Ivoire,1986,4.0
-Cote d'Ivoire,1987,4.0
-Cote d'Ivoire,1989,16.0
-Cote d'Ivoire,1994,11.1
-Cote d'Ivoire,1999,23.6
-Cote d'Ivoire,2000,16.1
-Cote d'Ivoire,2006,10.2
-Cote d'Ivoire,2012,17.2
-Cote d'Ivoire,2016,16.5
-Croatia,1996,4.59999990463257
-Cuba,1986,20.0
-Cuba,1987,70.0
-Cuba,1989,75.0
-Cuba,2011,51.1
-Cuba,2014,60.9
-Cyprus,1986,5.0
-Cyprus,1987,2.0
-Cyprus,1989,4.0
-Democratic Republic of Congo,1986,18.0
-Democratic Republic of Congo,1987,10.0
-Democratic Republic of Congo,1989,40.0
-Democratic Republic of Congo,1995,17.7000007629395
-Democratic Republic of Congo,2001,16.8
-Democratic Republic of Congo,2007,30.8
-Democratic Republic of Congo,2010,26.6
-Democratic Republic of Congo,2014,39.1
-Democratic Republic of Congo,2018,24.1
-Djibouti,1987,22.0
-Djibouti,1989,51.0
-Djibouti,2006,61.6
-Djibouti,2012,93.6
-Dominican Republic,1986,11.0
-Dominican Republic,1987,41.0
-Dominican Republic,1989,22.0
-Dominican Republic,1991,25.2
-Dominican Republic,1996,35.1
-Dominican Republic,1999,41.5
-Dominican Republic,2000,28.0
-Dominican Republic,2002,28.2
-Dominican Republic,2007,40.5
-Dominican Republic,2010,31.9
-Dominican Republic,2013,48.0
-Dominican Republic,2014,47.5
-Early-demographic dividend,1986,25.8182449530359
-Early-demographic dividend,1987,32.6596527125407
-Early-demographic dividend,1989,29.6905121807952
-East Asia & Pacific,1986,11.6851681011661
-East Asia & Pacific,1987,18.5109057176611
-East Asia & Pacific,1989,39.3179532535501
-East Asia & Pacific,1994,17.1374200726239
-East Asia & Pacific (IDA & IBRD),1986,11.8313898021762
-East Asia & Pacific (IDA & IBRD),1987,18.7342861472568
-East Asia & Pacific (IDA & IBRD),1989,39.1826418331543
-East Asia & Pacific (IDA & IBRD),1994,17.1374200726239
-East Asia & Pacific (excluding high income),1986,11.6860547752124
-East Asia & Pacific (excluding high income),1987,18.5109057176611
-East Asia & Pacific (excluding high income),1989,39.31795325355
-East Asia & Pacific (excluding high income),1994,17.1374200726239
-Ecuador,1986,11.0
-Ecuador,1987,24.0
-Ecuador,1989,70.0
-Ecuador,1999,29.3999996185303
-Ecuador,2012,45.8
-Egypt,1986,61.0
-Egypt,1987,83.0
-Egypt,1989,83.0
-Egypt,1992,28.9
-Egypt,1993,29.0
-Egypt,1995,40.2
-Egypt,1996,40.2
-Egypt,2000,33.7
-Egypt,2003,28.2
-Egypt,2005,33.5
-Egypt,2008,28.4
-Egypt,2014,28.4
-El Salvador,1986,15.0
-El Salvador,1987,26.0
-El Salvador,1989,45.0
-El Salvador,1998,46.5999984741211
-El Salvador,2003,51.4
-El Salvador,2008,57.6
-El Salvador,2014,69.8
-Equatorial Guinea,1986,12.0
-Equatorial Guinea,1987,21.0
-Equatorial Guinea,1989,21.0
-Equatorial Guinea,2000,28.9
-Equatorial Guinea,2011,40.4
-Eritrea,1995,32.8
-Eritrea,1996,32.8
-Eritrea,2002,44.7
-Eritrea,2010,43.4
-Eswatini,1989,85.0
-Eswatini,1996,63.0
-Eswatini,2000,66.3
-Eswatini,2007,85.5
-Eswatini,2010,57.0
-Eswatini,2014,84.0
-Ethiopia,1986,11.0
-Ethiopia,1987,23.0
-Ethiopia,1989,32.0
-Ethiopia,2000,13.1
-Ethiopia,2005,19.9
-Ethiopia,2011,26.3
-Ethiopia,2016,29.5
-Fiji,1987,16.0
-Fiji,1989,16.0
-Fragile and conflict affected situations,1986,14.8952647439182
-Fragile and conflict affected situations,1987,19.4782379997072
-Fragile and conflict affected situations,1989,36.7182742796639
-Gabon,1986,7.0
-Gabon,1987,7.0
-Gabon,1989,10.0
-Gabon,1996,24.7999992370605
-Gabon,2000,24.8
-Gabon,2001,24.8
-Gabon,2012,26.1
-Gambia,1986,3.0
-Gambia,1987,3.0
-Gambia,1989,39.0
-Gambia,2000,33.0
-Gambia,2006,38.7
-Gambia,2010,38.9
-Gambia,2013,59.2
-Gambia,2018,43.9
-Gambia,2020,44.3
-Georgia,1999,25.3999996185303
-Georgia,2005,40.0
-Georgia,2018,42.4
-Ghana,1986,3.0
-Ghana,1987,36.0
-Ghana,1988,33.5
-Ghana,1989,21.0
-Ghana,1993,28.5
-Ghana,1994,28.5
-Ghana,1998,29.2
-Ghana,1999,29.2
-Ghana,2003,38.6
-Ghana,2006,28.8
-Ghana,2008,44.5
-Ghana,2011,35.0
-Ghana,2014,48.6
-Ghana,2018,47.8
-Grenada,1989,70.0
-Guatemala,1986,5.0
-Guatemala,1987,17.0
-Guatemala,1989,24.0
-Guatemala,1995,21.5
-Guatemala,1999,30.4
-Guatemala,2002,33.8
-Guatemala,2009,37.1
-Guatemala,2015,48.8
-Guinea,1986,1.0
-Guinea,1987,1.0
-Guinea,1989,63.0
-Guinea,1992,24.5
-Guinea,1999,34.5
-Guinea,2003,40.1
-Guinea,2005,33.1
-Guinea,2012,34.3
-Guinea,2016,34.3
-Guinea,2018,54.9
-Guinea-Bissau,1986,1.0
-Guinea-Bissau,1987,1.0
-Guinea-Bissau,1989,5.0
-Guinea-Bissau,2000,39.0
-Guinea-Bissau,2006,23.4
-Guinea-Bissau,2010,18.7
-Guinea-Bissau,2014,35.1
-Guyana,1986,10.0
-Guyana,1987,10.0
-Guyana,1989,10.0
-Guyana,2000,34.1
-Guyana,2007,39.0
-Guyana,2009,49.8
-Guyana,2014,42.5
-Haiti,1986,9.0
-Haiti,1987,16.0
-Haiti,1989,24.0
-Haiti,1995,25.7
-Haiti,2000,34.8
-Haiti,2006,40.3
-Haiti,2012,52.9
-Haiti,2017,39.3
-Heavily indebted poor countries (HIPC),1986,11.564237188255
-Heavily indebted poor countries (HIPC),1987,18.5387960218207
-Heavily indebted poor countries (HIPC),1989,33.2334123836482
-Honduras,1986,40.0
-Honduras,1987,56.0
-Honduras,1989,66.0
-Honduras,1996,29.8999996185303
-Honduras,2006,55.7
-Honduras,2012,59.7
-IBRD only,1986,19.7210104944064
-IBRD only,1987,25.3774698717821
-IBRD only,1989,34.568259602816
-IDA & IBRD total,1986,20.1010456057498
-IDA & IBRD total,1987,24.7495853791592
-IDA & IBRD total,1989,34.5545474888812
-IDA blend,1986,24.0195307740993
-IDA blend,1987,29.6079298026869
-IDA blend,1989,46.37073484414
-IDA blend,2013,35.666741733534
-IDA blend,2018,37.3924475731346
-IDA only,1986,19.8389407334899
-IDA only,1987,19.7359639769174
-IDA only,1989,28.7806003188471
-IDA total,1986,21.1851988072635
-IDA total,1987,22.9261148286808
-IDA total,1989,34.515478332883
-India,1986,21.0
-India,1987,23.0
-India,1989,13.0
-India,1993,17.5
-India,1999,26.8
-India,2006,26.0
-India,2014,39.3
-India,2016,50.6
-Indonesia,1986,20.0
-Indonesia,1987,72.0
-Indonesia,1989,39.0
-Indonesia,1991,43.2
-Indonesia,1994,45.1
-Indonesia,1997,47.7
-Indonesia,2000,43.2
-Indonesia,2003,35.5
-Indonesia,2007,34.7
-Indonesia,2012,38.8
-Indonesia,2017,36.1
-Iran,1986,27.0
-Iran,1987,31.0
-Iran,1989,71.0
-Iran,1995,36.9000015258789
-Iran,2010,61.4
-Iran,2011,61.38
-Iraq,1986,31.0
-Iraq,1987,51.0
-Iraq,1989,70.0
-Iraq,2000,26.5
-Iraq,2006,30.7
-Iraq,2011,22.8
-Iraq,2018,25.4
-Isle of Man,1986,29.1199308323382
-Isle of Man,1987,42.9684303838975
-Isle of Man,1989,56.8526531478591
-Jamaica,1986,6.0
-Jamaica,1987,6.0
-Jamaica,1989,15.0
-Jamaica,2000,24.4
-Jamaica,2005,40.3
-Jamaica,2011,64.1
-Jordan,1986,32.0
-Jordan,1987,47.0
-Jordan,1989,68.0
-Jordan,1990,41.7
-Jordan,1997,24.0
-Jordan,2002,18.2
-Jordan,2007,19.8
-Jordan,2012,20.4
-Jordan,2018,44.4
-Kazakhstan,1995,28.2
-Kazakhstan,1999,32.0
-Kazakhstan,2006,74.0
-Kazakhstan,2011,61.8
-Kenya,1986,23.0
-Kenya,1987,26.0
-Kenya,1989,80.0
-Kenya,1993,31.6
-Kenya,1998,36.9
-Kenya,2000,39.2
-Kenya,2003,29.2
-Kenya,2009,38.8
-Kenya,2014,53.8
-Kiribati,1986,19.0
-Kiribati,1987,19.0
-Kiribati,1989,84.0
-Kiribati,2009,61.5
-Kiribati,2019,61.3
-Kosovo,2014,38.6
-Kuwait,1986,10.0
-Kuwait,1987,10.0
-Kuwait,1989,3.0
-Kuwait,1996,29.2000007629395
-Kyrgyzstan,1997,40.4
-Kyrgyzstan,2006,20.2
-Kyrgyzstan,2012,35.4
-Kyrgyzstan,2014,33.4
-Kyrgyzstan,2018,36.4
-Laos,1986,4.0
-Laos,1987,20.0
-Laos,1989,30.0
-Laos,2000,31.9
-Laos,2006,46.2
-Laos,2012,42.3
-Laos,2017,56.1
-Late-demographic dividend,1986,12.9185397498167
-Late-demographic dividend,1987,14.2537928485387
-Late-demographic dividend,1989,41.0869625410129
-Latin America & Caribbean,1986,34.9416517196869
-Latin America & Caribbean,1987,39.5883812742319
-Latin America & Caribbean,1989,50.189983742949
-Latin America & Caribbean (IDA & IBRD),1986,35.1955223381722
-Latin America & Caribbean (IDA & IBRD),1987,39.0987644387194
-Latin America & Caribbean (IDA & IBRD),1989,49.7978213231299
-Latin America & Caribbean (excluding high income),1986,34.966664008462
-Latin America & Caribbean (excluding high income),1987,39.5166038970559
-Latin America & Caribbean (excluding high income),1989,51.4048939096474
-Least developed countries: UN classification,1986,20.3979620430497
-Least developed countries: UN classification,1987,18.7900188931512
-Least developed countries: UN classification,1989,27.495327580478
-Lebanon,1986,4.0
-Lebanon,1987,10.0
-Lebanon,1989,10.0
-Lebanon,2000,44.4
-Lesotho,1987,68.0
-Lesotho,1989,68.0
-Lesotho,1996,35.0
-Lesotho,2000,53.9
-Lesotho,2005,41.9
-Lesotho,2009,51.3
-Lesotho,2014,53.4
-Lesotho,2018,39.7
-Liberia,1986,6.5
-Liberia,1987,9.0
-Liberia,1989,9.0
-Liberia,2007,53.1
-Liberia,2013,60.4
-Libya,1986,12.0
-Libya,1987,10.0
-Libya,1989,60.0
-Libya,1995,40.4000015258789
-Low & middle income,1986,19.9988247549246
-Low & middle income,1987,24.7000296016617
-Low & middle income,1989,34.754624045779
-Low income,1986,10.2949182890096
-Low income,1987,15.5732369329542
-Low income,1989,30.1843553721992
-Lower middle income,1986,24.9468951333921
-Lower middle income,1987,27.86308461518
-Lower middle income,1989,27.3685160024332
-Lower middle income,2006,29.0763047008482
-Lower middle income,2014,42.5403436215169
-Madagascar,1986,12.0
-Madagascar,1987,2.0
-Madagascar,1989,11.0
-Madagascar,1992,14.2
-Madagascar,1997,23.1
-Madagascar,2000,10.4
-Madagascar,2004,12.4
-Madagascar,2009,16.9
-Madagascar,2013,14.6
-Madagascar,2018,18.7
-Malawi,1986,10.0
-Malawi,1987,42.0
-Malawi,1989,14.0
-Malawi,1992,32.1
-Malawi,1996,49.7000007629395
-Malawi,2000,47.9
-Malawi,2005,61.1
-Malawi,2006,55.2
-Malawi,2010,69.0
-Malawi,2014,63.5
-Malawi,2016,64.7
-Malaysia,1986,7.0
-Malaysia,1987,11.0
-Malaysia,1989,20.0
-Malaysia,2016,45.0
-Maldives,1986,12.0
-Maldives,1987,12.0
-Maldives,1989,27.0
-Maldives,1996,51.2000007629395
-Maldives,2009,57.0
-Maldives,2017,74.8
-Mali,1986,2.0
-Mali,1987,3.0
-Mali,1989,41.0
-Mali,1996,15.7
-Mali,2001,12.0
-Mali,2006,14.0
-Mali,2010,21.6
-Mali,2013,36.8
-Mali,2015,20.9
-Mali,2018,21.4
-Marshall Islands,2007,38.2
-Mauritania,1986,2.0
-Mauritania,1987,2.0
-Mauritania,1989,54.0
-Mauritania,1996,13.8999996185303
-Mauritania,2001,22.6
-Mauritania,2007,20.1
-Mauritania,2011,18.8
-Mauritania,2015,25.4
-Mauritius,1986,4.0
-Mauritius,1987,4.0
-Mauritius,1989,7.0
-Mexico,1986,75.0
-Mexico,1987,72.0
-Mexico,1989,72.0
-Mexico,1993,41.9000015258789
-Mexico,1997,80.5
-Mexico,2012,52.3
-Mexico,2015,61.4
-Middle East & North Africa,1986,28.7832157216913
-Middle East & North Africa,1987,42.5524666212428
-Middle East & North Africa,1989,55.6959280956196
-Middle East & North Africa (IDA & IBRD),1986,29.1964404289748
-Middle East & North Africa (IDA & IBRD),1987,43.1866491546352
-Middle East & North Africa (IDA & IBRD),1989,57.5645625677457
-Middle East & North Africa (excluding high income),1986,29.1964404289748
-Middle East & North Africa (excluding high income),1987,43.1866491546352
-Middle East & North Africa (excluding high income),1989,57.5645625677457
-Middle income,1986,21.0465914043762
-Middle income,1987,25.6692513172827
-Middle income,1989,35.2514170458257
-Moldova,2000,7.5
-Moldova,2005,33.3
-Moldova,2012,41.5
-Mongolia,1986,5.0
-Mongolia,1987,59.0
-Mongolia,1989,59.0
-Mongolia,2000,55.9
-Mongolia,2005,38.0
-Mongolia,2010,30.6
-Mongolia,2013,41.8
-Mongolia,2014,41.8
-Mongolia,2018,58.2
-Montenegro,2006,16.3
-Morocco,1986,15.0
-Morocco,1987,44.0
-Morocco,1989,14.0
-Morocco,1992,14.0
-Morocco,1995,28.2
-Morocco,2004,22.9
-Morocco,2011,22.1
-Mozambique,1986,14.0
-Mozambique,1987,14.0
-Mozambique,1989,30.0
-Mozambique,1997,41.9
-Mozambique,2003,48.5
-Mozambique,2008,45.7
-Mozambique,2011,55.0
-Mozambique,2015,45.9
-Myanmar,1986,21.0
-Myanmar,1987,21.0
-Myanmar,1989,19.0
-Myanmar,2000,44.9
-Myanmar,2003,53.1
-Myanmar,2010,60.6
-Myanmar,2016,61.9
-Namibia,1992,63.5
-Namibia,2000,61.1
-Namibia,2007,63.1
-Namibia,2013,71.6
-Nauru,2007,23.3
-Nepal,1986,25.0
-Nepal,1987,23.0
-Nepal,1989,14.0
-Nepal,1996,25.9
-Nepal,2001,32.2
-Nepal,2006,29.3
-Nepal,2011,39.0
-Nepal,2014,44.0
-Nepal,2016,37.0
-Nepal,2017,37.0
-Nicaragua,1986,23.0
-Nicaragua,1987,23.0
-Nicaragua,1989,38.0
-Nicaragua,1998,55.7
-Nicaragua,2001,50.0
-Nicaragua,2007,58.6
-Nicaragua,2012,65.4
-Niger,1986,1.0
-Niger,1987,24.0
-Niger,1989,54.0
-Niger,1992,10.4
-Niger,1998,19.6
-Niger,2000,14.3
-Niger,2006,17.6
-Niger,2012,44.3
-Niger,2015,40.8
-Nigeria,1986,18.0
-Nigeria,1987,20.0
-Nigeria,1989,35.0
-Nigeria,1990,11.6
-Nigeria,1999,34.3
-Nigeria,2003,18.2
-Nigeria,2008,25.5
-Nigeria,2011,26.0
-Nigeria,2013,33.7
-Nigeria,2017,36.8
-Nigeria,2018,40.0
-North Korea,1986,0.0
-North Korea,1987,0.0
-North Korea,1989,52.0
-North Korea,1998,81.1999969482422
-North Korea,2009,74.0
-North Korea,2017,74.1
-North Macedonia,1996,30.7999992370605
-North Macedonia,2006,24.0
-North Macedonia,2011,62.0
-Oman,1986,19.0
-Oman,1987,19.0
-Oman,1989,19.0
-Oman,1996,82.0
-Oman,2014,58.7
-Other small states,1989,39.9662314827724
-Pacific island small states,1987,29.6880427275493
-Pacific island small states,1989,39.5876489699526
-Pakistan,1986,34.0
-Pakistan,1987,42.0
-Pakistan,1989,42.0
-Pakistan,1991,38.8
-Pakistan,1995,46.0
-Pakistan,2007,41.1
-Pakistan,2013,38.0
-Pakistan,2018,37.4
-Palestine,2010,31.4
-Palestine,2014,31.5
-Panama,1986,34.0
-Panama,1987,34.0
-Panama,1989,29.0
-Panama,1996,34.7999992370605
-Panama,2013,52.4
-Papua New Guinea,1986,5.0
-Papua New Guinea,1987,20.0
-Papua New Guinea,1989,46.0
-Papua New Guinea,1996,16.7000007629395
-Papua New Guinea,2018,30.0
-Paraguay,1986,17.0
-Paraguay,1987,36.0
-Paraguay,1989,52.0
-Paraguay,1990,24.1
-Paraguay,1996,21.1000003814697
-Paraguay,2016,28.2
-Peru,1986,6.0
-Peru,1987,18.0
-Peru,1989,25.0
-Peru,1992,19.8
-Peru,1996,26.0
-Peru,2000,21.9
-Peru,2006,25.0
-Peru,2008,29.7
-Peru,2009,32.0
-Peru,2010,32.2
-Peru,2011,29.8
-Peru,2012,30.9
-Peru,2013,29.5
-Peru,2014,28.2
-Peru,2015,32.0
-Philippines,1986,25.0
-Philippines,1987,24.0
-Philippines,1989,25.0
-Philippines,1993,27.2
-Philippines,1998,43.4
-Philippines,2003,42.2
-Philippines,2008,46.5
-Philippines,2011,55.3
-Philippines,2013,49.1
-Philippines,2017,44.8
-Pre-demographic dividend,1986,14.2230051324151
-Pre-demographic dividend,1987,18.2822827589185
-Pre-demographic dividend,1989,37.4424274708149
-Qatar,1986,15.0
-Qatar,1987,15.0
-Qatar,1989,15.0
-Qatar,1998,21.1000003814697
-Rwanda,1986,8.0
-Rwanda,1987,24.0
-Rwanda,1989,24.0
-Rwanda,1992,27.5
-Rwanda,2000,13.6
-Rwanda,2005,11.6
-Rwanda,2008,21.3
-Rwanda,2010,29.1
-Rwanda,2011,29.1
-Rwanda,2015,27.5
-Saint Kitts and Nevis,1986,2.0
-Saint Kitts and Nevis,1987,2.0
-Saint Kitts and Nevis,1989,2.0
-Saint Lucia,1987,75.0
-Saint Lucia,1989,75.0
-Saint Vincent and the Grenadines,1989,98.0
-Samoa,1986,6.0
-Samoa,1987,7.0
-Samoa,2009,68.0
-Samoa,2014,63.0
-Sao Tome and Principe,1986,26.0
-Sao Tome and Principe,1987,46.0
-Sao Tome and Principe,1989,46.0
-Sao Tome and Principe,2000,31.1
-Sao Tome and Principe,2006,31.4
-Sao Tome and Principe,2009,49.0
-Sao Tome and Principe,2014,49.1
-Saudi Arabia,1986,28.0
-Saudi Arabia,1987,43.0
-Saudi Arabia,1989,45.0
-Saudi Arabia,1996,52.0999984741211
-Senegal,1986,3.0
-Senegal,1987,9.0
-Senegal,1989,27.0
-Senegal,1993,6.6
-Senegal,1996,11.0
-Senegal,1997,15.1
-Senegal,2000,13.0
-Senegal,2005,15.0
-Senegal,2011,22.4
-Senegal,2013,17.2
-Senegal,2014,22.6
-Senegal,2015,31.6
-Senegal,2016,20.5
-Senegal,2017,27.9
-Senegal,2018,30.3
-Serbia,2006,17.0
-Serbia,2010,36.0
-Seychelles,1989,88.0
-Sierra Leone,1986,31.0
-Sierra Leone,1987,31.0
-Sierra Leone,1989,55.0
-Sierra Leone,2000,41.5
-Sierra Leone,2005,54.0
-Sierra Leone,2008,68.0
-Sierra Leone,2010,72.6
-Sierra Leone,2013,85.1
-Sierra Leone,2017,77.7
-Sierra Leone,2019,85.3
-Small states,1987,26.0097699552215
-Small states,1989,38.1304247060059
-Solomon Islands,1986,15.0
-Solomon Islands,1987,75.0
-Solomon Islands,1989,77.0
-Solomon Islands,2007,37.7
-Solomon Islands,2015,36.6
-Somalia,1986,5.0
-Somalia,1987,12.0
-Somalia,1989,7.0
-Somalia,1999,29.8
-Somalia,2000,29.8
-Somalia,2006,13.2
-South Africa,1998,51.2
-South Africa,2004,40.0
-South Africa,2016,51.4
-South Asia,1986,25.3511182807974
-South Asia,1987,25.3387379790037
-South Asia,1989,17.9849047829753
-South Asia,1993,17.7322363407298
-South Asia,1999,26.8
-South Asia,2006,30.2123855122785
-South Asia,2014,43.4233497228955
-South Asia,2016,50.3381768088849
-South Asia (IDA & IBRD),1986,25.3511182807974
-South Asia (IDA & IBRD),1987,25.3387379790037
-South Asia (IDA & IBRD),1989,17.9849047829753
-South Asia (IDA & IBRD),1993,17.7322363407298
-South Asia (IDA & IBRD),1999,26.8
-South Asia (IDA & IBRD),2006,30.2123855122785
-South Asia (IDA & IBRD),2014,43.4233497228955
-South Asia (IDA & IBRD),2016,50.3381768088849
-South Sudan,2010,38.6
-Sri Lanka,1986,15.0
-Sri Lanka,1987,40.0
-Sri Lanka,1989,58.0
-Sri Lanka,1993,34.4000015258789
-Sri Lanka,2007,51.1
-Sri Lanka,2016,54.0
-Sub-Saharan Africa,1986,12.7943187140097
-Sub-Saharan Africa,1987,18.827371349279
-Sub-Saharan Africa,1989,36.6871301812228
-Sub-Saharan Africa (IDA & IBRD),1986,12.7943187140097
-Sub-Saharan Africa (IDA & IBRD),1987,18.827371349279
-Sub-Saharan Africa (IDA & IBRD),1989,36.6871301812228
-Sub-Saharan Africa (excluding high income),1986,12.8063315954964
-Sub-Saharan Africa (excluding high income),1987,18.8466839846998
-Sub-Saharan Africa (excluding high income),1989,36.7174712818277
-Sudan,1986,8.0
-Sudan,1987,25.0
-Sudan,1989,36.0
-Sudan,1995,17.1700000762939
-Sudan,2000,27.4
-Sudan,2006,31.3
-Sudan,2010,22.0
-Sudan,2014,19.6
-Suriname,1986,34.0
-Suriname,1987,34.0
-Suriname,1989,47.0
-Suriname,2000,35.5
-Suriname,2006,43.6
-Suriname,2010,42.4
-Suriname,2018,45.6
-Syria,1986,9.0
-Syria,1987,31.0
-Syria,1989,67.0
-Syria,1993,29.0
-Syria,2006,49.8
-Tajikistan,2000,35.3
-Tajikistan,2005,48.4
-Tajikistan,2009,72.6
-Tajikistan,2012,60.3
-Tajikistan,2017,61.7
-Tanzania,1986,14.0
-Tanzania,1987,14.0
-Tanzania,1989,37.0
-Tanzania,1992,57.4
-Tanzania,1996,48.3
-Tanzania,1999,54.9
-Tanzania,2005,53.9
-Tanzania,2010,44.0
-Tanzania,2016,44.8
-Thailand,1986,31.0
-Thailand,1987,30.0
-Thailand,1989,40.0
-Thailand,1995,73.3000030517578
-Thailand,2006,56.6
-Thailand,2013,57.8
-Thailand,2016,72.5
-Timor,2003,59.6
-Timor,2010,71.0
-Timor,2016,69.9
-Togo,1986,9.0
-Togo,1987,19.0
-Togo,1989,33.0
-Togo,1998,17.1
-Togo,2000,12.9
-Togo,2006,10.2
-Togo,2010,11.3
-Togo,2014,18.6
-Togo,2017,13.6
-Tonga,1986,13.0
-Tonga,1987,13.0
-Tonga,1989,30.0
-Trinidad and Tobago,1986,56.0
-Trinidad and Tobago,1987,53.1
-Trinidad and Tobago,1989,60.0
-Trinidad and Tobago,2011,45.4
-Tunisia,1986,27.0
-Tunisia,1987,50.0
-Tunisia,1989,63.0
-Tunisia,2000,31.5
-Tunisia,2006,54.6
-Tunisia,2012,65.1
-Tunisia,2018,39.6
-Turkey,1987,26.0
-Turkey,1993,11.4
-Turkey,1998,14.3
-Turkmenistan,1995,57.7000007629395
-Turkmenistan,2000,46.7
-Turkmenistan,2006,40.1
-Turkmenistan,2016,47.1
-Tuvalu,2007,43.5
-Uganda,1986,5.0
-Uganda,1987,5.0
-Uganda,1989,15.0
-Uganda,1995,48.2
-Uganda,2001,33.5
-Uganda,2006,39.6
-Uganda,2011,43.5
-Uganda,2016,46.7
-Ukraine,2012,59.2
-United Arab Emirates,1986,9.0
-United Arab Emirates,1987,13.0
-United Arab Emirates,1989,24.0
-United Arab Emirates,1995,39.9000015258789
-Upper middle income,1986,16.4431905721665
-Upper middle income,1987,23.20773878259
-Upper middle income,1989,44.1278768970921
-Uruguay,1986,21.0
-Uruguay,1987,56.0
-Uruguay,1989,86.0
-Uzbekistan,1996,31.3
-Uzbekistan,2000,32.0
-Uzbekistan,2006,27.8
-Vanuatu,1986,6.0
-Vanuatu,1987,31.0
-Vanuatu,1989,42.0
-Vanuatu,2007,23.2
-Vanuatu,2013,47.6
-Venezuela,1986,18.0
-Venezuela,1987,28.0
-Venezuela,1989,49.0
-Venezuela,2000,37.7
-Vietnam,1986,46.0
-Vietnam,1987,50.0
-Vietnam,1989,65.0
-Vietnam,1997,39.7
-Vietnam,2000,11.1
-Vietnam,2002,40.4
-Vietnam,2006,26.3
-Vietnam,2011,46.5
-Vietnam,2014,50.9
-World,1986,20.042887098012
-World,1987,24.7986975226507
-World,1989,34.7010904612542
-Yemen,1986,11.0
-Yemen,1987,7.0
-Yemen,1989,6.0
-Yemen,1992,26.4
-Yemen,1997,32.4
-Yemen,2006,32.7
-Yemen,2013,25.3
-Zambia,1986,51.0
-Zambia,1987,59.0
-Zambia,1989,87.0
-Zambia,1992,52.9
-Zambia,1996,53.9
-Zambia,1997,53.9
-Zambia,2002,53.2
-Zambia,2007,59.9
-Zambia,2014,64.1
-Zambia,2018,66.8
-Zimbabwe,1986,26.0
-Zimbabwe,1987,26.0
-Zimbabwe,1989,77.0
-Zimbabwe,1994,79.2
-Zimbabwe,2006,5.6
-Zimbabwe,2009,31.7
-Zimbabwe,2011,20.9
-Zimbabwe,2014,43.4
-Zimbabwe,2015,40.5
-Zimbabwe,2019,32.8
+Afghanistan,2000,26.0196582632054
+Afghanistan,2001,25.9976105304682
+Afghanistan,2002,25.1670826387631
+Afghanistan,2003,24.3372755246219
+Afghanistan,2004,23.4955068289163
+Afghanistan,2005,22.6421977588058
+Afghanistan,2006,21.7902520538324
+Afghanistan,2007,20.9394648952248
+Afghanistan,2008,20.0900737237762
+Afghanistan,2009,19.2420912283494
+Afghanistan,2010,18.3955288918664
+Afghanistan,2011,17.5501942048534
+Afghanistan,2012,16.7063103684938
+Afghanistan,2013,15.8638888669363
+Afghanistan,2014,15.0229423495856
+Afghanistan,2015,14.1832947676453
+Afghanistan,2016,13.450675598262
+Afghanistan,2017,12.7401862444459
+Albania,2000,0.864679132537731
+Albania,2001,0.817263290002581
+Albania,2002,0.767779215291014
+Albania,2003,0.718744183952157
+Albania,2004,0.670162301190708
+Albania,2005,0.622060634159666
+Albania,2006,0.574429473371629
+Albania,2007,0.527276864623469
+Albania,2008,0.48060989050195
+Albania,2009,0.332860769045124
+Albania,2010,0.300433729981109
+Albania,2011,0.269161518554646
+Albania,2012,0.239029009158475
+Albania,2013,0.210152372068506
+Albania,2014,0.0
+Albania,2015,0.0
+Albania,2016,0.0
+Albania,2017,0.0
+Algeria,2000,6.38278815888909
+Algeria,2001,5.92045659906095
+Algeria,2002,5.47129314560827
+Algeria,2003,5.03543351362394
+Algeria,2004,4.61273408931141
+Algeria,2005,4.20325319924074
+Algeria,2006,3.80661360706598
+Algeria,2007,3.42284115994943
+Algeria,2008,3.051589841829
+Algeria,2009,2.69367988247041
+Algeria,2010,2.34832696075833
+Algeria,2011,2.01533123428508
+Algeria,2012,1.69421607667201
+Algeria,2013,1.38461110888535
+Algeria,2014,1.08602679153947
+Algeria,2015,0.798122126844009
+Algeria,2016,0.785368473155521
+Algeria,2017,0.772990468135801
+American Samoa,2004,0.728037629146275
+American Samoa,2005,0.728037629146275
+American Samoa,2006,0.728037629146275
+American Samoa,2007,0.728037629146275
+American Samoa,2008,0.728037629146275
+American Samoa,2009,0.725018814573137
+American Samoa,2010,0.722
+American Samoa,2011,0.718981185426863
+American Samoa,2012,0.715962370853725
+American Samoa,2013,0.712943556280587
+American Samoa,2014,0.70992474170745
+American Samoa,2015,0.706905927134312
+American Samoa,2016,0.703887112561175
+American Samoa,2017,0.700868297988037
+Andorra,2000,0.0
+Andorra,2001,0.0
+Andorra,2002,0.0
+Andorra,2003,0.0
+Andorra,2004,0.0
+Andorra,2005,0.0
+Andorra,2006,0.0
+Andorra,2007,0.0
+Andorra,2008,0.0
+Andorra,2009,0.0
+Andorra,2010,0.0
+Andorra,2011,0.0
+Andorra,2012,0.0
+Andorra,2013,0.0
+Andorra,2014,0.0
+Andorra,2015,0.0
+Andorra,2016,0.0
+Andorra,2017,0.0
+Angola,2000,42.866514305609
+Angola,2001,41.414834135928
+Angola,2002,39.9543888923273
+Angola,2003,38.4866458713029
+Angola,2004,37.0111440000245
+Angola,2005,35.5313711543293
+Angola,2006,34.246725659248
+Angola,2007,32.9584522070884
+Angola,2008,31.6655760306466
+Angola,2009,30.3701633576227
+Angola,2010,29.070738409121
+Angola,2011,27.767852383334
+Angola,2012,26.462067762369
+Angola,2013,25.1539695948885
+Angola,2014,23.8430904352264
+Angola,2015,22.534270004493
+Angola,2016,21.2265936719213
+Angola,2017,19.9207369017139
+Antigua and Barbuda,2000,1.34544549687746
+Antigua and Barbuda,2001,1.26226729812649
+Antigua and Barbuda,2002,1.17908909937552
+Antigua and Barbuda,2003,1.09591090062452
+Antigua and Barbuda,2004,1.01273270187355
+Antigua and Barbuda,2005,0.929554503122574
+Antigua and Barbuda,2006,0.846376304371574
+Antigua and Barbuda,2007,0.763198105620603
+Antigua and Barbuda,2008,0.680019906869632
+Antigua and Barbuda,2009,0.596841708118632
+Antigua and Barbuda,2010,0.51366350936766
+Antigua and Barbuda,2011,0.430485310616689
+Antigua and Barbuda,2012,0.347307111865689
+Antigua and Barbuda,2013,0.264128913114717
+Antigua and Barbuda,2014,0.264128913114717
+Antigua and Barbuda,2015,0.264128913114717
+Antigua and Barbuda,2016,0.264128913114717
+Antigua and Barbuda,2017,0.264128913114717
+Arab World,2000,13.739639140067572
+Arab World,2001,13.351045273297585
+Arab World,2002,13.042574428665093
+Arab World,2003,12.690589044176162
+Arab World,2004,12.332201744911536
+Arab World,2005,11.734060557790858
+Arab World,2006,11.124396298798503
+Arab World,2007,10.58450985107084
+Arab World,2008,9.955085283874045
+Arab World,2009,9.345046617563243
+Arab World,2010,8.750706691094429
+Arab World,2011,8.139892933006971
+Arab World,2012,7.596684808571895
+Arab World,2013,7.069539260362986
+Arab World,2014,6.64361664144716
+Arab World,2015,6.230924845391386
+Arab World,2016,5.904120942584283
+Arab World,2017,6.044414349404655
+Argentina,2006,1.56165680183361
+Argentina,2007,1.63608834327445
+Argentina,2008,1.71096665642059
+Argentina,2009,1.78635115462588
+Argentina,2010,1.86223392658834
+Argentina,2011,1.93949042263307
+Argentina,2012,2.0176363801869
+Argentina,2013,2.09500944519217
+Argentina,2014,2.16572506810997
+Armenia,2000,0.0625057302062006
+Armenia,2001,0.0622341185755934
+Armenia,2002,0.0620900922993326
+Armenia,2003,0.0619944005507036
+Armenia,2004,0.056463396270675
+Armenia,2005,0.050948396686605
+Armenia,2006,0.0454510895971225
+Armenia,2007,0.0399699560640778
+Armenia,2008,0.0345063413445349
+Armenia,2009,0.0290590761571659
+Armenia,2010,0.0236287853021788
+Armenia,2011,0.0182154705933633
+Armenia,2012,0.0128191304993412
+Armenia,2013,0.007442593631428
+Armenia,2014,0.0020797485024427
+Armenia,2015,0.0
+Armenia,2016,0.0
+Armenia,2017,0.0
+Aruba,2000,1.0498687664042
+Aruba,2001,1.08514328600222
+Aruba,2002,1.12041780560024
+Aruba,2003,1.15569232519827
+Aruba,2004,1.19096684479629
+Aruba,2005,1.22624136439433
+Aruba,2006,1.26151588399235
+Aruba,2007,1.29679040359036
+Aruba,2008,1.3320649231884
+Aruba,2009,1.36733944278642
+Aruba,2010,1.40261396238445
+Aruba,2011,1.43788848198247
+Aruba,2012,1.47316300158049
+Aruba,2013,1.47316300158049
+Aruba,2014,1.47316300158049
+Aruba,2015,1.47316300158049
+Aruba,2016,1.47316300158049
+Australia,2000,0.0
+Australia,2001,0.0
+Australia,2002,0.0
+Australia,2003,0.0
+Australia,2004,0.0
+Australia,2005,0.0
+Australia,2006,0.0
+Australia,2007,0.0
+Australia,2008,0.0
+Australia,2009,0.0
+Australia,2010,0.0
+Australia,2011,0.0
+Australia,2012,0.0
+Australia,2013,0.0
+Australia,2014,0.0
+Australia,2015,0.0
+Australia,2016,0.0
+Australia,2017,0.0
+Austria,2000,0.0
+Austria,2001,0.0
+Austria,2002,0.0
+Austria,2003,0.0
+Austria,2004,0.0
+Austria,2005,0.0
+Austria,2006,0.0
+Austria,2007,0.0
+Austria,2008,0.0
+Austria,2009,0.0
+Austria,2010,0.0
+Austria,2011,0.0
+Austria,2012,0.0
+Austria,2013,0.0
+Austria,2014,0.0
+Austria,2015,0.0
+Austria,2016,0.0
+Austria,2017,0.0
+Azerbaijan,2000,0.14250564985316
+Azerbaijan,2001,0.15212071927716
+Azerbaijan,2002,0.161728182300728
+Azerbaijan,2003,0.171325521031147
+Azerbaijan,2004,0.180913970787284
+Azerbaijan,2005,0.190494875743388
+Azerbaijan,2006,0.20006694353959
+Azerbaijan,2007,0.209628796431981
+Azerbaijan,2008,0.219183162387899
+Azerbaijan,2009,0.228728702081907
+Azerbaijan,2010,0.238242420724524
+Azerbaijan,2011,0.247724727563763
+Azerbaijan,2012,0.257174624286146
+Azerbaijan,2013,0.266589617916998
+Azerbaijan,2014,0.26617350262563
+Azerbaijan,2015,0.157562476448823
+Azerbaijan,2016,0.156494340368233
+Azerbaijan,2017,0.155374016775216
+Bahamas,2000,1.13646619334007
+Bahamas,2001,1.07558149645476
+Bahamas,2002,1.01469679956946
+Bahamas,2003,0.953812102684168
+Bahamas,2004,0.892927405798872
+Bahamas,2005,0.832042708913562
+Bahamas,2006,0.771158012028266
+Bahamas,2007,0.71027331514297
+Bahamas,2008,0.64938861825766
+Bahamas,2009,0.588503921372364
+Bahamas,2010,0.527619224487069
+Bahamas,2011,0.466734527601758
+Bahamas,2012,0.405849830716463
+Bahamas,2013,0.344965133831167
+Bahamas,2014,0.284080436945857
+Bahamas,2015,0.223195740060561
+Bahamas,2016,0.223195740060561
+Bahamas,2017,0.223195740060561
+Bahrain,2000,0.0
+Bahrain,2001,0.0
+Bahrain,2002,0.0
+Bahrain,2003,0.0
+Bahrain,2004,0.0
+Bahrain,2005,0.0
+Bahrain,2006,0.0
+Bahrain,2007,0.0
+Bahrain,2008,0.0
+Bahrain,2009,0.0
+Bahrain,2010,0.0
+Bahrain,2011,0.0
+Bahrain,2012,0.0
+Bahrain,2013,0.0
+Bahrain,2014,0.0
+Bahrain,2015,0.0
+Bahrain,2016,0.0
+Bahrain,2017,0.0
+Bangladesh,2000,17.6837659604515
+Bangladesh,2001,16.520185945976
+Bangladesh,2002,15.3446651406549
+Bangladesh,2003,14.1806305923118
+Bangladesh,2004,13.0285966732167
+Bangladesh,2005,11.8891513758477
+Bangladesh,2006,10.7622850570276
+Bangladesh,2007,9.6484808959846
+Bangladesh,2008,8.54818341370148
+Bangladesh,2009,7.4617962008563
+Bangladesh,2010,6.38949267532146
+Bangladesh,2011,5.331740607074
+Bangladesh,2012,4.28905605603828
+Bangladesh,2013,3.26172235509227
+Bangladesh,2014,2.24969957750407
+Bangladesh,2015,1.25316089216773
+Bangladesh,2016,0.272099774024335
+Bangladesh,2017,0.0
+Barbados,2000,0.702272727272725
+Barbados,2001,0.711363636363636
+Barbados,2002,0.720454545454544
+Barbados,2003,0.729545454545452
+Barbados,2004,0.738636363636363
+Barbados,2005,0.747727272727271
+Barbados,2006,0.756818181818179
+Barbados,2007,0.765909090909091
+Barbados,2008,0.774999999999999
+Barbados,2009,0.784090909090907
+Barbados,2010,0.793181818181818
+Barbados,2011,0.802272727272726
+Barbados,2012,0.811363636363634
+Barbados,2013,0.820454545454545
+Barbados,2014,0.829545454545453
+Barbados,2015,0.829545454545453
+Barbados,2016,0.829545454545453
+Barbados,2017,0.828895303274809
+Belarus,2000,0.0
+Belarus,2001,0.0
+Belarus,2002,0.0
+Belarus,2003,0.0
+Belarus,2004,0.0
+Belarus,2005,0.0
+Belarus,2006,0.0
+Belarus,2007,0.0
+Belarus,2008,0.0
+Belarus,2009,0.0
+Belarus,2010,0.0
+Belarus,2011,0.0
+Belarus,2012,0.0
+Belarus,2013,0.0
+Belarus,2014,0.0
+Belarus,2015,0.0
+Belarus,2016,0.0
+Belarus,2017,0.0
+Belgium,2000,0.0
+Belgium,2001,0.0
+Belgium,2002,0.0
+Belgium,2003,0.0
+Belgium,2004,0.0
+Belgium,2005,0.0
+Belgium,2006,0.0
+Belgium,2007,0.0
+Belgium,2008,0.0
+Belgium,2009,0.0
+Belgium,2010,0.0
+Belgium,2011,0.0
+Belgium,2012,0.0
+Belgium,2013,0.0
+Belgium,2014,0.0
+Belgium,2015,0.0
+Belgium,2016,0.0
+Belgium,2017,0.0
+Belize,2000,4.46829991811373
+Belize,2001,4.25253549536435
+Belize,2002,4.03665503608653
+Belize,2003,3.82065787040215
+Belize,2004,3.60454447457855
+Belize,2005,3.38831435497355
+Belize,2006,3.17196790578716
+Belize,2007,2.95550490835638
+Belize,2008,2.73892528207192
+Belize,2009,2.52222941960683
+Belize,2010,2.30541702213837
+Belize,2011,2.08812855982387
+Belize,2012,1.87052109299243
+Belize,2013,1.65277946129745
+Belize,2014,1.43509979118253
+Belize,2015,1.21764917541461
+Belize,2016,1.00061264237737
+Belize,2017,0.784175779194402
+Benin,2000,67.6051645526691
+Benin,2001,66.8357547323845
+Benin,2002,66.0341134807715
+Benin,2003,65.1790453666119
+Benin,2004,64.3237129357136
+Benin,2005,63.4690867647456
+Benin,2006,62.6146873654303
+Benin,2007,61.76004710624
+Benin,2008,60.9056572688937
+Benin,2009,60.0524588408966
+Benin,2010,59.1995150110871
+Benin,2011,58.3468295602011
+Benin,2012,57.4944169106393
+Benin,2013,56.6432078212334
+Benin,2014,55.7899589489313
+Benin,2015,54.9356193001486
+Benin,2016,54.0802042183236
+Benin,2017,53.8315006122131
+Bermuda,2000,0.0
+Bermuda,2001,0.0
+Bermuda,2002,0.0
+Bermuda,2003,0.0
+Bermuda,2004,0.0
+Bermuda,2005,0.0
+Bermuda,2006,0.0
+Bermuda,2007,0.0
+Bermuda,2008,0.0
+Bermuda,2009,0.0
+Bermuda,2010,0.0
+Bermuda,2011,0.0
+Bermuda,2012,0.0
+Bermuda,2013,0.0
+Bermuda,2014,0.0
+Bermuda,2015,0.0
+Bermuda,2016,0.0
+Bermuda,2017,0.0
+Bhutan,2000,10.1178548856992
+Bhutan,2001,10.0368453115169
+Bhutan,2002,9.28341775551054
+Bhutan,2003,8.53899909695108
+Bhutan,2004,7.80394561185876
+Bhutan,2005,7.08128413992353
+Bhutan,2006,6.38955715708643
+Bhutan,2007,5.70481244301183
+Bhutan,2008,5.02719991820155
+Bhutan,2009,4.35697809755706
+Bhutan,2010,3.69418867800005
+Bhutan,2011,3.03896641697192
+Bhutan,2012,2.39176758996553
+Bhutan,2013,1.7525354637761
+Bhutan,2014,1.12116195338364
+Bhutan,2015,0.497512438570235
+Bhutan,2016,0.0
+Bhutan,2017,0.0
+Bolivia,2000,33.0430527884081
+Bolivia,2001,31.7959925772784
+Bolivia,2002,30.5748318289426
+Bolivia,2003,29.3651697372386
+Bolivia,2004,28.1623082915491
+Bolivia,2005,26.9670884178029
+Bolivia,2006,25.7781322266741
+Bolivia,2007,24.5967018510375
+Bolivia,2008,23.421460018028
+Bolivia,2009,22.2536340920414
+Bolivia,2010,21.0927367388439
+Bolivia,2011,19.9383071337591
+Bolivia,2012,18.7907047738083
+Bolivia,2013,17.6709269215781
+Bolivia,2014,16.5698301192211
+Bolivia,2015,15.4739070616449
+Bolivia,2016,14.3827484846855
+Bolivia,2017,13.2970634832301
+Bosnia and Herzegovina,2000,0.661041358825187
+Bosnia and Herzegovina,2001,0.596056410018722
+Bosnia and Herzegovina,2002,0.531377495223393
+Bosnia and Herzegovina,2003,0.467014519006696
+Bosnia and Herzegovina,2004,0.402961598280722
+Bosnia and Herzegovina,2005,0.339229116056487
+Bosnia and Herzegovina,2006,0.275813682620739
+Bosnia and Herzegovina,2007,0.212712239718825
+Bosnia and Herzegovina,2008,0.149929787602894
+Bosnia and Herzegovina,2009,0.0874663370221546
+Bosnia and Herzegovina,2010,0.0253218884120088
+Bosnia and Herzegovina,2011,0.0
+Bosnia and Herzegovina,2012,0.0
+Bosnia and Herzegovina,2013,0.0
+Bosnia and Herzegovina,2014,0.0
+Bosnia and Herzegovina,2015,0.0
+Bosnia and Herzegovina,2016,0.0
+Bosnia and Herzegovina,2017,0.0
+Botswana,2000,21.7146349295656
+Botswana,2001,21.0521361989616
+Botswana,2002,20.5224767072334
+Botswana,2003,20.0152109686987
+Botswana,2004,19.5117178107672
+Botswana,2005,19.0130900212291
+Botswana,2006,18.5182109484897
+Botswana,2007,17.6462084295057
+Botswana,2008,16.7909852450886
+Botswana,2009,15.9562107336031
+Botswana,2010,15.1398847583255
+Botswana,2011,14.343140826765
+Botswana,2012,13.7424511394563
+Botswana,2013,13.1819163631638
+Botswana,2014,12.630605926632
+Botswana,2015,12.0887408233863
+Botswana,2016,11.5562120203386
+Botswana,2017,11.0335373386395
+Brazil,2000,8.9365552921944
+Brazil,2001,8.38974251108196
+Brazil,2002,7.86305574226558
+Brazil,2003,7.34686848556643
+Brazil,2004,6.84126953640117
+Brazil,2005,6.34604228222129
+Brazil,2006,5.86074088690637
+Brazil,2007,5.38519221738268
+Brazil,2008,4.91922421388268
+Brazil,2009,4.46303561985983
+Brazil,2010,4.01602448657249
+Brazil,2011,3.57660891263693
+Brazil,2012,3.14628395616762
+Brazil,2013,2.72513302362739
+Brazil,2014,2.312557710614
+Brazil,2015,1.90862522152203
+Brazil,2016,1.51320445763107
+Brazil,2017,1.12596689097695
+British Virgin Islands,2000,0.991792346362956
+British Virgin Islands,2001,0.899999999999977
+British Virgin Islands,2002,0.808207653636998
+British Virgin Islands,2003,0.716415307274019
+British Virgin Islands,2004,0.62462296091104
+British Virgin Islands,2005,0.532830614548061
+British Virgin Islands,2006,0.441038268185082
+British Virgin Islands,2007,0.349245921822074
+British Virgin Islands,2008,0.257453575459095
+British Virgin Islands,2009,0.165661229096116
+British Virgin Islands,2010,0.0738688827331373
+British Virgin Islands,2011,0.0
+British Virgin Islands,2012,0.0
+British Virgin Islands,2013,0.0
+British Virgin Islands,2014,0.0
+British Virgin Islands,2015,0.0
+British Virgin Islands,2016,0.0
+Brunei,2007,2.6
+Brunei,2008,2.6
+Brunei,2009,2.6
+Brunei,2010,2.6
+Brunei,2011,2.6
+Brunei,2012,2.6
+Brunei,2013,2.6
+Brunei,2014,2.6
+Brunei,2015,2.6
+Bulgaria,2000,0.0
+Bulgaria,2001,0.0
+Bulgaria,2002,0.0
+Bulgaria,2003,0.0
+Bulgaria,2004,0.0
+Bulgaria,2005,0.0
+Bulgaria,2006,0.0
+Bulgaria,2007,0.0
+Bulgaria,2008,0.0
+Bulgaria,2009,0.0
+Bulgaria,2010,0.0
+Bulgaria,2011,0.0
+Bulgaria,2012,0.0
+Bulgaria,2013,0.0
+Bulgaria,2014,0.0
+Bulgaria,2015,0.0
+Bulgaria,2016,0.0
+Bulgaria,2017,0.0
+Burkina Faso,2000,71.3943056326761
+Burkina Faso,2001,70.8667595303967
+Burkina Faso,2002,69.171340066632
+Burkina Faso,2003,67.4797423084052
+Burkina Faso,2004,65.7905771476895
+Burkina Faso,2005,64.1075546976737
+Burkina Faso,2006,62.4293277033577
+Burkina Faso,2007,60.8704479299361
+Burkina Faso,2008,59.4079470985963
+Burkina Faso,2009,57.9546976213595
+Burkina Faso,2010,56.5096823262943
+Burkina Faso,2011,55.0732523962266
+Burkina Faso,2012,53.6463633786466
+Burkina Faso,2013,52.2293296481583
+Burkina Faso,2014,50.8218701248512
+Burkina Faso,2015,49.4249041472431
+Burkina Faso,2016,48.0387465906306
+Burkina Faso,2017,46.6653580743604
+Burundi,2000,2.75996470189544
+Burundi,2001,2.75589742006468
+Burundi,2002,2.75139725210544
+Burundi,2003,2.74645907708183
+Burundi,2004,2.74106967405073
+Burundi,2005,2.73521604640951
+Burundi,2006,2.72887209352926
+Burundi,2007,2.72203593178962
+Burundi,2008,2.71466474557125
+Burundi,2009,2.7067878416518
+Burundi,2010,2.69832768552877
+Burundi,2011,2.68928111249013
+Burundi,2012,2.67964823508262
+Burundi,2013,2.66935536831476
+Burundi,2014,2.65843946775552
+Burundi,2015,2.64684300465964
+Burundi,2016,2.63454511927073
+Burundi,2017,2.62152455307487
+Cambodia,2000,84.5934148826357
+Cambodia,2001,81.5110834792818
+Cambodia,2002,78.4301185900683
+Cambodia,2003,75.3505042770361
+Cambodia,2004,72.2717472545857
+Cambodia,2005,69.1938604278774
+Cambodia,2006,66.1173629170193
+Cambodia,2007,63.041753312147
+Cambodia,2008,59.9492203404084
+Cambodia,2009,56.7627894176085
+Cambodia,2010,53.5781805237799
+Cambodia,2011,50.3954762242697
+Cambodia,2012,47.2147639289014
+Cambodia,2013,44.0365888801113
+Cambodia,2014,40.8601207252269
+Cambodia,2015,37.6859117362153
+Cambodia,2016,34.5140424355809
+Cambodia,2017,31.7492167362827
+Cameroon,2000,7.40583758062431
+Cameroon,2001,7.38734168608488
+Cameroon,2002,7.36801186241153
+Cameroon,2003,7.34796592735369
+Cameroon,2004,7.32708169888718
+Cameroon,2005,7.30572029298695
+Cameroon,2006,7.2836403829641
+Cameroon,2007,7.26083914143319
+Cameroon,2008,7.23731554103837
+Cameroon,2009,7.21319163883531
+Cameroon,2010,7.18834291753977
+Cameroon,2011,7.16289338652783
+Cameroon,2012,7.1368427564572
+Cameroon,2013,7.11031735354769
+Cameroon,2014,7.08331803424724
+Cameroon,2015,7.05584686955353
+Cameroon,2016,7.02790458031143
+Cameroon,2017,6.9517111797336
+Canada,2000,0.0
+Canada,2001,0.0
+Canada,2002,0.0
+Canada,2003,0.0
+Canada,2004,0.0
+Canada,2005,0.0
+Canada,2006,0.0
+Canada,2007,0.0
+Canada,2008,0.0
+Canada,2009,0.0
+Canada,2010,0.0
+Canada,2011,0.0
+Canada,2012,0.0
+Canada,2013,0.0
+Canada,2014,0.0
+Canada,2015,0.0
+Canada,2016,0.0
+Canada,2017,0.0
+Cape Verde,2000,51.0043757639283
+Cape Verde,2001,49.0500268066492
+Cape Verde,2002,47.1097296443564
+Cape Verde,2003,45.1844892725359
+Cape Verde,2004,43.2735385860861
+Cape Verde,2005,41.3781387253641
+Cape Verde,2006,39.4971874752715
+Cape Verde,2007,37.6315454722654
+Cape Verde,2008,35.7801589221412
+Cape Verde,2009,33.9447252552323
+Cape Verde,2010,32.1273145537003
+Cape Verde,2011,30.407393083178
+Cape Verde,2012,28.6960293511704
+Cape Verde,2013,26.9934404768286
+Cape Verde,2014,25.2995559564741
+Cape Verde,2015,23.6143013172404
+Cape Verde,2016,21.9079418642093
+Cape Verde,2017,20.1688840884682
+Caribbean small states,2000,1.995927626944926
+Caribbean small states,2001,1.937754383503189
+Caribbean small states,2002,1.8796143280078268
+Caribbean small states,2003,1.8212472400882749
+Caribbean small states,2004,1.7387463453487308
+Caribbean small states,2005,1.6577129461071722
+Caribbean small states,2006,1.5762106052220646
+Caribbean small states,2007,1.4938756272733542
+Caribbean small states,2008,1.4103953517524743
+Caribbean small states,2009,1.3255735969575455
+Caribbean small states,2010,1.2418540665100009
+Caribbean small states,2011,1.1577425181532013
+Caribbean small states,2012,1.085132046720991
+Caribbean small states,2013,1.0174926298846123
+Caribbean small states,2014,0.9744088870797144
+Caribbean small states,2015,0.9290398485314714
+Caribbean small states,2016,0.7677365849999046
+Caribbean small states,2017,0.7317042575656305
+Cayman Islands,2001,0.0
+Cayman Islands,2002,0.0
+Cayman Islands,2003,0.0
+Cayman Islands,2004,0.0
+Cayman Islands,2005,0.0
+Cayman Islands,2006,0.0
+Cayman Islands,2007,0.0
+Cayman Islands,2008,0.0
+Cayman Islands,2009,0.0
+Cayman Islands,2010,0.0
+Cayman Islands,2011,0.0
+Cayman Islands,2012,0.0
+Cayman Islands,2013,0.0
+Cayman Islands,2014,0.0
+Cayman Islands,2015,0.0
+Cayman Islands,2016,0.0
+Central African Republic,2000,22.9496739622096
+Central African Republic,2001,23.0636214766933
+Central African Republic,2002,23.1775456710878
+Central African Republic,2003,23.2917549919778
+Central African Republic,2004,23.4062461699127
+Central African Republic,2005,23.5146631625459
+Central African Republic,2006,23.6171140281974
+Central African Republic,2007,23.7134091831353
+Central African Republic,2008,23.803959923657
+Central African Republic,2009,23.8888749141259
+Central African Republic,2010,23.9679732611467
+Central African Republic,2011,24.0416571760237
+Central African Republic,2012,24.1097485968019
+Central African Republic,2013,24.0298021898569
+Central African Republic,2014,23.9437511508263
+Central African Republic,2015,23.8513030520651
+Central African Republic,2016,23.7521692868192
+Central Europe and the Baltics,2000,0.0231582345446768
+Central Europe and the Baltics,2001,0.0177787134682809
+Central Europe and the Baltics,2002,0.0178874079666889
+Central Europe and the Baltics,2003,0.0179303992943876
+Central Europe and the Baltics,2004,0.0179663684634404
+Central Europe and the Baltics,2005,0.0180202396741331
+Central Europe and the Baltics,2006,0.0180519036629422
+Central Europe and the Baltics,2007,0.0180968400819836
+Central Europe and the Baltics,2008,0.0
+Central Europe and the Baltics,2009,0.0
+Central Europe and the Baltics,2010,0.0
+Central Europe and the Baltics,2011,0.0
+Central Europe and the Baltics,2012,0.0
+Central Europe and the Baltics,2013,0.0
+Central Europe and the Baltics,2014,0.0
+Central Europe and the Baltics,2015,0.0
+Central Europe and the Baltics,2016,0.0
+Central Europe and the Baltics,2017,0.0
+Chad,2000,70.7581107178172
+Chad,2001,70.5614414078855
+Chad,2002,70.36549545863
+Chad,2003,70.1689307629445
+Chad,2004,69.9724260522403
+Chad,2005,69.7759748337541
+Chad,2006,69.5795780622655
+Chad,2007,69.3825701740684
+Chad,2008,69.186281654473
+Chad,2009,68.9900436109908
+Chad,2010,68.7819586800728
+Chad,2011,68.5620577418021
+Chad,2012,68.3297385565571
+Chad,2013,68.0856959202025
+Chad,2014,67.8299795928846
+Chad,2015,67.5619742598679
+Chad,2016,67.2817311231596
+Chad,2017,66.9892929079598
+Channel Islands,2009,0.0
+Channel Islands,2010,0.0
+Channel Islands,2011,0.0
+Channel Islands,2012,0.0
+Channel Islands,2013,0.0
+Channel Islands,2014,0.0
+Channel Islands,2015,0.0
+Channel Islands,2016,0.0
+Channel Islands,2017,0.0
+Chile,2000,2.35335332096056
+Chile,2001,2.21601923019969
+Chile,2002,2.0793711793764
+Chile,2003,1.94503194644573
+Chile,2004,1.81070348095246
+Chile,2005,1.67642129340247
+Chile,2006,1.54214978446205
+Chile,2007,1.4079121464513
+Chile,2008,1.27368565977814
+Chile,2009,1.1394926096723
+Chile,2010,1.00533247717332
+Chile,2011,0.871183600951705
+Chile,2012,0.737067257326083
+Chile,2013,0.602972743947813
+Chile,2014,0.169697118072953
+Chile,2015,0.149950152058919
+Chile,2016,0.0
+Chile,2017,0.0
+China,2000,2.75825859680264
+China,2001,2.7100035158211
+China,2002,2.5135495113602
+China,2003,2.32264241254035
+China,2004,2.13748109356518
+China,2005,1.9583966096136
+China,2006,1.78663604780678
+China,2007,1.61537503853573
+China,2008,1.44974641469353
+China,2009,1.28998073824319
+China,2010,1.13600773166626
+China,2011,0.988985135779406
+China,2012,0.848065893926884
+China,2013,0.712729267382258
+China,2014,0.582893981248227
+China,2015,0.458571665528687
+China,2016,0.339729339811312
+China,2017,0.226361222444524
+Colombia,2000,8.95537959706784
+Colombia,2001,8.54470115632095
+Colombia,2002,8.14246272179031
+Colombia,2003,7.74855795442294
+Colombia,2004,7.36311391331966
+Colombia,2005,6.985999140604
+Colombia,2006,6.61708239159954
+Colombia,2007,6.25643355720742
+Colombia,2008,5.90369992506843
+Colombia,2009,5.55874904581744
+Colombia,2010,5.22162730864832
+Colombia,2011,4.89217510115578
+Colombia,2012,4.57007384778559
+Colombia,2013,4.2553432436722
+Colombia,2014,3.94782377747801
+Colombia,2015,3.64722352380558
+Colombia,2016,3.35340870606794
+Colombia,2017,3.06636576529611
+Comoros,2000,0.662897738025085
+Comoros,2001,0.657883751408271
+Comoros,2002,0.652870393332434
+Comoros,2003,0.647858504844963
+Comoros,2004,0.642846472536551
+Comoros,2005,0.637821479798739
+Comoros,2006,0.632783189748534
+Comoros,2007,0.627731235629407
+Comoros,2008,0.622666180226817
+Comoros,2009,0.617586761971886
+Comoros,2010,0.612491760530392
+Comoros,2011,0.607382584621839
+Comoros,2012,0.602258018488035
+Comoros,2013,0.597116739193763
+Comoros,2014,0.591960286564059
+Comoros,2015,0.591839413724843
+Comoros,2016,0.591702921717621
+Comoros,2017,0.591551800207426
+Congo,2000,8.23705408133229
+Congo,2001,8.17640782673573
+Congo,2002,8.24689456692303
+Congo,2003,8.31287547505451
+Congo,2004,8.37438195642578
+Congo,2005,8.43144436618293
+Congo,2006,8.48409432079017
+Congo,2007,8.53220089448743
+Congo,2008,8.57544300833071
+Congo,2009,8.61380578301195
+Congo,2010,8.6470943465938
+Congo,2011,8.67564466228141
+Congo,2012,8.69926970036206
+Congo,2013,8.71795171807356
+Congo,2014,8.73187516026153
+Congo,2015,8.74103995606496
+Congo,2016,8.74544576657462
+Congo,2017,8.74509356105041
+Costa Rica,2000,0.804789455603848
+Costa Rica,2001,0.763423126450433
+Costa Rica,2002,0.722833223573485
+Costa Rica,2003,0.683014642539464
+Costa Rica,2004,0.643973141711396
+Costa Rica,2005,0.605722566817849
+Costa Rica,2006,0.568228708738121
+Costa Rica,2007,0.53149118077257
+Costa Rica,2008,0.495487186013392
+Costa Rica,2009,0.460236496929829
+Costa Rica,2010,0.425685011760224
+Costa Rica,2011,0.391835507533488
+Costa Rica,2012,0.358763432350309
+Costa Rica,2013,0.326428232929901
+Costa Rica,2014,0.294785899196961
+Costa Rica,2015,0.263787216524296
+Costa Rica,2016,0.23338879489939
+Costa Rica,2017,0.203554542254064
+Cote d'Ivoire,2000,36.1204586398901
+Cote d'Ivoire,2001,35.4391831917445
+Cote d'Ivoire,2002,34.7660684760887
+Cote d'Ivoire,2003,34.1016900008508
+Cote d'Ivoire,2004,33.4455807479316
+Cote d'Ivoire,2005,32.7992788577655
+Cote d'Ivoire,2006,32.1617911886242
+Cote d'Ivoire,2007,31.5331507574666
+Cote d'Ivoire,2008,30.9133931988123
+Cote d'Ivoire,2009,30.3034401853793
+Cote d'Ivoire,2010,29.7023883341192
+Cote d'Ivoire,2011,29.110278129747
+Cote d'Ivoire,2012,28.5275488903138
+Cote d'Ivoire,2013,27.9542019348506
+Cote d'Ivoire,2014,27.3902361246629
+Cote d'Ivoire,2015,26.8322549096281
+Cote d'Ivoire,2016,26.2812904680587
+Cote d'Ivoire,2017,25.7372218998153
+Croatia,2000,0.445744391886326
+Croatia,2001,0.445166602457224
+Croatia,2002,0.444712999091266
+Croatia,2003,0.444256711669421
+Croatia,2004,0.443803091810135
+Croatia,2005,0.443349504882805
+Croatia,2006,0.442895898110553
+Croatia,2007,0.442442306407231
+Cuba,2000,1.83522007327179
+Cuba,2001,1.72920017072662
+Cuba,2002,1.62425223913878
+Cuba,2003,1.52252554484932
+Cuba,2004,1.4235791837088
+Cuba,2005,1.32506717041182
+Cuba,2006,1.22695703043427
+Cuba,2007,1.12924840905034
+Cuba,2008,1.03194148819814
+Cuba,2009,0.935056248128246
+Cuba,2010,0.838568248079398
+Cuba,2011,0.742477531176319
+Cuba,2012,0.646784411393958
+Cuba,2013,0.552001912474928
+Cuba,2014,0.457526248514097
+Cuba,2015,0.363190543006551
+Cuba,2016,0.269010730581054
+Cuba,2017,0.268790636404723
+Curacao,2000,0.961187828651632
+Curacao,2001,0.908227334862488
+Curacao,2002,0.855266841073345
+Curacao,2003,0.802306347284187
+Curacao,2004,0.749345853495043
+Curacao,2005,0.6963853597059
+Curacao,2006,0.643424865916757
+Curacao,2007,0.590464372127599
+Curacao,2008,0.537503878338455
+Curacao,2009,0.484543384549312
+Curacao,2010,0.431582890760168
+Curacao,2011,0.378622396971011
+Curacao,2012,0.325661903181867
+Curacao,2013,0.272701409392724
+Curacao,2014,0.272701409392724
+Curacao,2015,0.272701409392724
+Curacao,2016,0.272701409392724
+Curacao,2017,0.272701409392724
+Cyprus,2000,0.0
+Cyprus,2001,0.0
+Cyprus,2002,0.0
+Cyprus,2003,0.0
+Cyprus,2004,0.0
+Cyprus,2005,0.0
+Cyprus,2006,0.0
+Cyprus,2007,0.0
+Cyprus,2008,0.0
+Cyprus,2009,0.0
+Cyprus,2010,0.0
+Cyprus,2011,0.0
+Cyprus,2012,0.0
+Cyprus,2013,0.0
+Cyprus,2014,0.0
+Cyprus,2015,0.0
+Cyprus,2016,0.0
+Cyprus,2017,0.0
+Czechia,2000,0.0
+Czechia,2001,0.0
+Czechia,2002,0.0
+Czechia,2003,0.0
+Czechia,2004,0.0
+Czechia,2005,0.0
+Czechia,2006,0.0
+Czechia,2007,0.0
+Czechia,2008,0.0
+Czechia,2009,0.0
+Czechia,2010,0.0
+Czechia,2011,0.0
+Czechia,2012,0.0
+Czechia,2013,0.0
+Czechia,2014,0.0
+Czechia,2015,0.0
+Czechia,2016,0.0
+Czechia,2017,0.0
+Democratic Republic of Congo,2000,10.2053098740179
+Democratic Republic of Congo,2001,10.3471802549025
+Democratic Republic of Congo,2002,10.4868097982206
+Democratic Republic of Congo,2003,10.6241812438507
+Democratic Republic of Congo,2004,10.7592759900604
+Democratic Republic of Congo,2005,10.8915656926857
+Democratic Republic of Congo,2006,11.020746506323
+Democratic Republic of Congo,2007,11.1467671496258
+Democratic Republic of Congo,2008,11.2698395264656
+Democratic Republic of Congo,2009,11.3896493273388
+Democratic Republic of Congo,2010,11.5064179678105
+Democratic Republic of Congo,2011,11.6198226731026
+Democratic Republic of Congo,2012,11.7300938827996
+Democratic Republic of Congo,2013,11.8371884264315
+Democratic Republic of Congo,2014,11.9409183007287
+Democratic Republic of Congo,2015,12.0413828156931
+Democratic Republic of Congo,2016,12.1385400134515
+Democratic Republic of Congo,2017,12.0526831371321
+Denmark,2000,0.0
+Denmark,2001,0.0
+Denmark,2002,0.0
+Denmark,2003,0.0
+Denmark,2004,0.0
+Denmark,2005,0.0
+Denmark,2006,0.0
+Denmark,2007,0.0
+Denmark,2008,0.0
+Denmark,2009,0.0
+Denmark,2010,0.0
+Denmark,2011,0.0
+Denmark,2012,0.0
+Denmark,2013,0.0
+Denmark,2014,0.0
+Denmark,2015,0.0
+Denmark,2016,0.0
+Denmark,2017,0.0
+Djibouti,2000,18.9382500128248
+Djibouti,2001,18.9094350569282
+Djibouti,2002,18.8806237207017
+Djibouti,2003,18.8518143814938
+Djibouti,2004,18.8229987164242
+Djibouti,2005,18.7243520315098
+Djibouti,2006,18.6250378266842
+Djibouti,2007,18.5256793784337
+Djibouti,2008,18.4262751809592
+Djibouti,2009,18.3274606519593
+Djibouti,2010,18.2223118146933
+Djibouti,2011,18.1108157443221
+Djibouti,2012,17.9935926817138
+Djibouti,2013,17.8699940891516
+Djibouti,2014,17.741268537378
+Djibouti,2015,17.6055157874514
+Djibouti,2016,17.4646106488025
+Djibouti,2017,17.317909696093
+Dominica,2000,17.2082804413758
+Dominica,2001,15.9851381701119
+Dominica,2002,14.7619958988475
+Dominica,2003,13.5388536275837
+Dominica,2004,12.3157113563197
+Dominica,2005,11.0925690850559
+Dominica,2006,9.86942681379196
+Dominica,2007,8.64628454252806
+Dominica,2008,7.42314227126371
+Dominica,2009,6.19999999999982
+Dominica,2010,4.97685772873592
+Dominica,2011,3.75371545747203
+Dominica,2012,3.75371545747203
+Dominica,2013,3.75371545747203
+Dominica,2014,3.75371545747203
+Dominica,2015,3.75371545747203
+Dominican Republic,2000,5.16969776686355
+Dominican Republic,2001,5.0326763668689
+Dominican Republic,2002,4.89810685899305
+Dominican Republic,2003,4.7361125967157
+Dominican Republic,2004,4.56613080310172
+Dominican Republic,2005,4.401701242119
+Dominican Republic,2006,4.24244820649008
+Dominican Republic,2007,4.08846122364286
+Dominican Republic,2008,3.93962739037048
+Dominican Republic,2009,3.79632530478028
+Dominican Republic,2010,3.6579914451478
+Dominican Republic,2011,3.5307399342451
+Dominican Republic,2012,3.41187136511402
+Dominican Republic,2013,3.29701791913699
+Dominican Republic,2014,3.18596441182793
+Dominican Republic,2015,3.07855963488978
+Dominican Republic,2016,2.97476242850716
+Dominican Republic,2017,2.87462851308746
+Early-demographic dividend,2000,44.19944521991803
+Early-demographic dividend,2001,42.46104263255716
+Early-demographic dividend,2002,40.69626763229568
+Early-demographic dividend,2003,38.93363880006883
+Early-demographic dividend,2004,37.17705487987838
+Early-demographic dividend,2005,35.14685495650994
+Early-demographic dividend,2006,32.95588716667464
+Early-demographic dividend,2007,31.256630454131912
+Early-demographic dividend,2008,29.55867558961532
+Early-demographic dividend,2009,27.865933350007627
+Early-demographic dividend,2010,26.177030220062584
+Early-demographic dividend,2011,24.490516408271027
+Early-demographic dividend,2012,22.817223856193603
+Early-demographic dividend,2013,21.152257900775364
+Early-demographic dividend,2014,19.49701874571845
+Early-demographic dividend,2015,18.072375481558005
+Early-demographic dividend,2016,16.426866144696636
+Early-demographic dividend,2017,15.295397595145266
+East Asia & Pacific,2000,7.343449832252462
+East Asia & Pacific,2001,7.113574871217084
+East Asia & Pacific,2002,6.715849869371916
+East Asia & Pacific,2003,6.386995142393326
+East Asia & Pacific,2004,6.062056865928209
+East Asia & Pacific,2005,5.741658960736794
+East Asia & Pacific,2006,5.423911050898977
+East Asia & Pacific,2007,5.109171893065151
+East Asia & Pacific,2008,4.79717101444898
+East Asia & Pacific,2009,4.489560725900038
+East Asia & Pacific,2010,4.186650120212137
+East Asia & Pacific,2011,3.8894595100949743
+East Asia & Pacific,2012,3.597327192439112
+East Asia & Pacific,2013,3.3024708694087863
+East Asia & Pacific,2014,3.018357026193659
+East Asia & Pacific,2015,2.736269964261941
+East Asia & Pacific,2016,2.456533995932282
+East Asia & Pacific,2017,2.2428206403648963
+East Asia & Pacific (IDA & IBRD),2000,8.196297776671555
+East Asia & Pacific (IDA & IBRD),2001,7.936441841651165
+East Asia & Pacific (IDA & IBRD),2002,7.574850218922245
+East Asia & Pacific (IDA & IBRD),2003,7.200513421874836
+East Asia & Pacific (IDA & IBRD),2004,6.830831155847996
+East Asia & Pacific (IDA & IBRD),2005,6.466251420601011
+East Asia & Pacific (IDA & IBRD),2006,6.106037813471317
+East Asia & Pacific (IDA & IBRD),2007,5.7495019071732685
+East Asia & Pacific (IDA & IBRD),2008,5.397267464966968
+East Asia & Pacific (IDA & IBRD),2009,5.049449612921175
+East Asia & Pacific (IDA & IBRD),2010,4.706994796329759
+East Asia & Pacific (IDA & IBRD),2011,4.370906175482944
+East Asia & Pacific (IDA & IBRD),2012,4.040840097846726
+East Asia & Pacific (IDA & IBRD),2013,3.707832206138035
+East Asia & Pacific (IDA & IBRD),2014,3.3873435179470204
+East Asia & Pacific (IDA & IBRD),2015,3.069450889353015
+East Asia & Pacific (IDA & IBRD),2016,2.754386287432484
+East Asia & Pacific (IDA & IBRD),2017,2.5175247369591
+East Asia & Pacific (excluding high income),2000,8.19642723088844
+East Asia & Pacific (excluding high income),2001,7.936565888143573
+East Asia & Pacific (excluding high income),2002,7.479373127083646
+East Asia & Pacific (excluding high income),2003,7.109725813881499
+East Asia & Pacific (excluding high income),2004,6.744513648730976
+East Asia & Pacific (excluding high income),2005,6.384603948599535
+East Asia & Pacific (excluding high income),2006,6.029051785088357
+East Asia & Pacific (excluding high income),2007,5.677145526562468
+East Asia & Pacific (excluding high income),2008,5.329497733171642
+East Asia & Pacific (excluding high income),2009,4.986195647309389
+East Asia & Pacific (excluding high income),2010,4.648160719097341
+East Asia & Pacific (excluding high income),2011,4.316386661849891
+East Asia & Pacific (excluding high income),2012,3.990542615487612
+East Asia & Pacific (excluding high income),2013,3.661775799624944
+East Asia & Pacific (excluding high income),2014,3.3453591698532343
+East Asia & Pacific (excluding high income),2015,3.031487641225806
+East Asia & Pacific (excluding high income),2016,2.7204014668061665
+East Asia & Pacific (excluding high income),2017,2.4860666790077337
+Ecuador,2000,14.2782695527314
+Ecuador,2001,13.4424747933618
+Ecuador,2002,12.6572916228987
+Ecuador,2003,11.9043359622605
+Ecuador,2004,11.1555819620348
+Ecuador,2005,10.4112180514215
+Ecuador,2006,9.67121236147986
+Ecuador,2007,8.93519651004323
+Ecuador,2008,8.20351871332204
+Ecuador,2009,7.47614513600066
+Ecuador,2010,6.75290934982601
+Ecuador,2011,6.03807832499818
+Ecuador,2012,5.32942278845039
+Ecuador,2013,4.62367323509515
+Ecuador,2014,3.92092406869669
+Ecuador,2015,3.10754098664082
+Ecuador,2016,2.60018538869774
+Ecuador,2017,2.09652816136143
+Egypt,2000,1.6603008922706
+Egypt,2001,1.55105243220973
+Egypt,2002,1.44192061386554
+Egypt,2003,1.33290569923396
+Egypt,2004,1.22400756778216
+Egypt,2005,1.11522626937513
+Egypt,2006,1.00656177419097
+Egypt,2007,0.898323420449967
+Egypt,2008,0.790254547669718
+Egypt,2009,0.682129876327447
+Egypt,2010,0.573960694674293
+Egypt,2011,0.325876709499006
+Egypt,2012,0.233250486385774
+Egypt,2013,0.140445868741894
+Egypt,2014,0.047469422825375
+Egypt,2015,0.0
+Egypt,2016,0.0
+Egypt,2017,0.0
+El Salvador,2000,10.169950766234
+El Salvador,2001,10.0747780802085
+El Salvador,2002,9.97994958138689
+El Salvador,2003,9.30947604169769
+El Salvador,2004,8.6490127326013
+El Salvador,2005,7.9991128872079
+El Salvador,2006,7.35923402979064
+El Salvador,2007,6.72295320996444
+El Salvador,2008,6.05972740817803
+El Salvador,2009,5.4141024480277
+El Salvador,2010,4.78555253237458
+El Salvador,2011,4.1737166146725
+El Salvador,2012,3.57851543360632
+El Salvador,2013,2.99979818797598
+El Salvador,2014,2.43708591097554
+El Salvador,2015,1.89013606111603
+El Salvador,2016,1.36367227548779
+El Salvador,2017,1.00566985322806
+Equatorial Guinea,2000,10.6799034768151
+Equatorial Guinea,2001,10.0138343477973
+Equatorial Guinea,2002,9.35839166645536
+Equatorial Guinea,2003,8.71391719922307
+Equatorial Guinea,2004,8.0803847309889
+Equatorial Guinea,2005,7.45810996150307
+Equatorial Guinea,2006,6.84682148120117
+Equatorial Guinea,2007,6.24654740368672
+Equatorial Guinea,2008,5.6571376310399
+Equatorial Guinea,2009,5.07855686333978
+Equatorial Guinea,2010,4.51049048821043
+Equatorial Guinea,2011,3.95270414310918
+Equatorial Guinea,2012,3.40491294353969
+Equatorial Guinea,2013,2.87691397276805
+Equatorial Guinea,2014,2.87105657792358
+Equatorial Guinea,2015,2.86526439837793
+Equatorial Guinea,2016,2.85959171926164
+Equatorial Guinea,2017,2.8540711612175
+Eritrea,2000,82.7289443004357
+Eritrea,2001,81.4913282608058
+Eritrea,2002,80.2456301655845
+Eritrea,2003,78.9924725702496
+Eritrea,2004,77.7319302470371
+Eritrea,2005,76.465190945124
+Eritrea,2006,75.1911834371035
+Eritrea,2007,73.9116648168993
+Eritrea,2008,72.6249974187971
+Eritrea,2009,71.5641688097644
+Eritrea,2010,70.5020026322111
+Eritrea,2011,69.437953519224
+Eritrea,2012,68.372608432224
+Eritrea,2013,68.0342073756852
+Eritrea,2014,67.6935744837911
+Eritrea,2015,67.3501548338723
+Eritrea,2016,67.0039478544292
+Estonia,2000,0.0
+Estonia,2001,0.0
+Estonia,2002,0.0
+Estonia,2003,0.0
+Estonia,2004,0.0
+Estonia,2005,0.0
+Estonia,2006,0.0
+Estonia,2007,0.0
+Estonia,2008,0.0
+Estonia,2009,0.0
+Estonia,2010,0.0
+Estonia,2011,0.0
+Estonia,2012,0.0
+Estonia,2013,0.0
+Estonia,2014,0.0
+Estonia,2015,0.0
+Estonia,2016,0.0
+Estonia,2017,0.0
+Eswatini,2000,23.4462042236559
+Eswatini,2001,22.4597985474669
+Eswatini,2002,21.4700527551385
+Eswatini,2003,20.4769997164262
+Eswatini,2004,19.4811258975631
+Eswatini,2005,18.4817555237971
+Eswatini,2006,17.4793622011839
+Eswatini,2007,16.4650029655754
+Eswatini,2008,15.3957101330841
+Eswatini,2009,14.3313503936489
+Eswatini,2010,13.2719587120415
+Eswatini,2011,12.217427625512
+Eswatini,2012,11.1774132892588
+Eswatini,2013,10.1407977752847
+Eswatini,2014,9.10772343793083
+Eswatini,2015,8.07809461277716
+Eswatini,2016,7.05135763774319
+Eswatini,2017,7.03740005456579
+Ethiopia,2000,79.0529215639928
+Ethiopia,2001,75.6700002203481
+Ethiopia,2002,72.2943936611955
+Ethiopia,2003,68.9281551506205
+Ethiopia,2004,65.5708048213725
+Ethiopia,2005,62.2225066425968
+Ethiopia,2006,58.8829092589627
+Ethiopia,2007,55.5450898081997
+Ethiopia,2008,52.1387470875351
+Ethiopia,2009,48.7503827649976
+Ethiopia,2010,45.3792666952768
+Ethiopia,2011,42.0268435287604
+Ethiopia,2012,38.692975657403
+Ethiopia,2013,35.3844475393734
+Ethiopia,2014,32.095183523431
+Ethiopia,2015,28.8260765135747
+Ethiopia,2016,25.5774234791203
+Ethiopia,2017,22.3502920736862
+Euro area,2000,0.0459075770317529
+Euro area,2001,0.0457167726049045
+Euro area,2002,0.0451921629580971
+Euro area,2003,0.0445839924687557
+Euro area,2004,0.0439379554937505
+Euro area,2005,0.0319992635562248
+Euro area,2006,0.0
+Euro area,2007,0.0
+Euro area,2008,0.0
+Euro area,2009,0.0
+Euro area,2010,0.0
+Euro area,2011,0.0
+Euro area,2012,0.0
+Euro area,2013,0.0
+Euro area,2014,0.0
+Euro area,2015,0.0
+Euro area,2016,0.0
+Euro area,2017,0.0
+Europe & Central Asia,2000,0.1000770737976633
+Europe & Central Asia,2001,0.0956767950449575
+Europe & Central Asia,2002,0.0923413474918481
+Europe & Central Asia,2003,0.0882731392653881
+Europe & Central Asia,2004,0.0847106586540306
+Europe & Central Asia,2005,0.0774189626356602
+Europe & Central Asia,2006,0.059158612644094
+Europe & Central Asia,2007,0.0559078325660273
+Europe & Central Asia,2008,0.0507162356357148
+Europe & Central Asia,2009,0.0470935164721221
+Europe & Central Asia,2010,0.0441885121403581
+Europe & Central Asia,2011,0.0421054871175808
+Europe & Central Asia,2012,0.0400222327760533
+Europe & Central Asia,2013,0.0373170498089727
+Europe & Central Asia,2014,0.0352752220511626
+Europe & Central Asia,2015,0.0337348662894657
+Europe & Central Asia,2016,0.0335232083983463
+Europe & Central Asia,2017,0.0332727426685967
+Europe & Central Asia (IDA & IBRD),2000,0.1607927309229093
+Europe & Central Asia (IDA & IBRD),2001,0.1498474663501151
+Europe & Central Asia (IDA & IBRD),2002,0.1442387528550925
+Europe & Central Asia (IDA & IBRD),2003,0.1372424079342868
+Europe & Central Asia (IDA & IBRD),2004,0.1311724945276523
+Europe & Central Asia (IDA & IBRD),2005,0.1251843061624961
+Europe & Central Asia (IDA & IBRD),2006,0.1190909048500568
+Europe & Central Asia (IDA & IBRD),2007,0.1127825626673496
+Europe & Central Asia (IDA & IBRD),2008,0.102973962837077
+Europe & Central Asia (IDA & IBRD),2009,0.0956521959945509
+Europe & Central Asia (IDA & IBRD),2010,0.0897068360613598
+Europe & Central Asia (IDA & IBRD),2011,0.0852560739562056
+Europe & Central Asia (IDA & IBRD),2012,0.0809548330090603
+Europe & Central Asia (IDA & IBRD),2013,0.0754216769267315
+Europe & Central Asia (IDA & IBRD),2014,0.071244763248297
+Europe & Central Asia (IDA & IBRD),2015,0.0680754333984732
+Europe & Central Asia (IDA & IBRD),2016,0.0675910489771105
+Europe & Central Asia (IDA & IBRD),2017,0.0670187911949535
+Europe & Central Asia (excluding high income),2000,0.1740913799539809
+Europe & Central Asia (excluding high income),2001,0.1710482438562771
+Europe & Central Asia (excluding high income),2002,0.1642841604059081
+Europe & Central Asia (excluding high income),2003,0.1559827515188508
+Europe & Central Asia (excluding high income),2004,0.148783125716818
+Europe & Central Asia (excluding high income),2005,0.1416791757408488
+Europe & Central Asia (excluding high income),2006,0.1344326490208516
+Europe & Central Asia (excluding high income),2007,0.1269047346186252
+Europe & Central Asia (excluding high income),2008,0.1192080595434789
+Europe & Central Asia (excluding high income),2009,0.1106221924308704
+Europe & Central Asia (excluding high income),2010,0.1036114794286771
+Europe & Central Asia (excluding high income),2011,0.098372254591909
+Europe & Central Asia (excluding high income),2012,0.093314063561776
+Europe & Central Asia (excluding high income),2013,0.0868398715450051
+Europe & Central Asia (excluding high income),2014,0.0819395112812196
+Europe & Central Asia (excluding high income),2015,0.0782036763290737
+Europe & Central Asia (excluding high income),2016,0.0775583345880806
+Europe & Central Asia (excluding high income),2017,0.0768224916491741
+European Union,2000,0.0403729299746336
+European Union,2001,0.0376895185753574
+European Union,2002,0.0374041728823645
+European Union,2003,0.0370188178058994
+European Union,2004,0.0365971545741366
+European Union,2005,0.0280601188015098
+European Union,2006,0.0043693436196608
+European Union,2007,0.0043492811582217
+European Union,2008,0.0
+European Union,2009,0.0
+European Union,2010,0.0
+European Union,2011,0.0
+European Union,2012,0.0
+European Union,2013,0.0
+European Union,2014,0.0
+European Union,2015,0.0
+European Union,2016,0.0
+European Union,2017,0.0
+Faeroe Islands,2007,0.0
+Faeroe Islands,2008,0.0
+Faeroe Islands,2009,0.0
+Faeroe Islands,2010,0.0
+Faeroe Islands,2011,0.0
+Faeroe Islands,2012,0.0
+Faeroe Islands,2013,0.0
+Faeroe Islands,2014,0.0
+Faeroe Islands,2015,0.0
+Fiji,2000,0.628969240335518
+Fiji,2001,0.624859040698706
+Fiji,2002,0.620748792644288
+Fiji,2003,0.580075229912174
+Fiji,2004,0.53997063983667
+Fiji,2005,0.500462217803133
+Fiji,2006,0.461522838948625
+Fiji,2007,0.423161506865345
+Fiji,2008,0.384795348474196
+Fiji,2009,0.34702570041039
+Fiji,2010,0.310004563762897
+Fiji,2011,0.273741895634199
+Fiji,2012,0.238229206090296
+Fiji,2013,0.203478290043366
+Fiji,2014,0.169477562158968
+Fiji,2015,0.0845739082188116
+Fiji,2016,0.0
+Fiji,2017,0.0
+Finland,2000,0.0
+Finland,2001,0.0
+Finland,2002,0.0
+Finland,2003,0.0
+Finland,2004,0.0
+Finland,2005,0.0
+Finland,2006,0.0
+Finland,2007,0.0
+Finland,2008,0.0
+Finland,2009,0.0
+Finland,2010,0.0
+Finland,2011,0.0
+Finland,2012,0.0
+Finland,2013,0.0
+Finland,2014,0.0
+Finland,2015,0.0
+Finland,2016,0.0
+Finland,2017,0.0
+Fragile and conflict affected situations,2000,26.843186550094973
+Fragile and conflict affected situations,2001,26.54860617497052
+Fragile and conflict affected situations,2002,26.21180968079172
+Fragile and conflict affected situations,2003,25.819109224715568
+Fragile and conflict affected situations,2004,25.42702662901349
+Fragile and conflict affected situations,2005,24.0889553578254
+Fragile and conflict affected situations,2006,23.58070123488194
+Fragile and conflict affected situations,2007,23.11529753458475
+Fragile and conflict affected situations,2008,22.59421532259353
+Fragile and conflict affected situations,2009,22.08055505808016
+Fragile and conflict affected situations,2010,21.56896023830693
+Fragile and conflict affected situations,2011,21.80385859008907
+Fragile and conflict affected situations,2012,21.29963414235972
+Fragile and conflict affected situations,2013,20.79902631238998
+Fragile and conflict affected situations,2014,20.297724662248363
+Fragile and conflict affected situations,2015,19.797462566968708
+Fragile and conflict affected situations,2016,19.32223485071001
+Fragile and conflict affected situations,2017,19.13113365519195
+France,2000,0.0
+France,2001,0.0
+France,2002,0.0
+France,2003,0.0
+France,2004,0.0
+France,2005,0.0
+France,2006,0.0
+France,2007,0.0
+France,2008,0.0
+France,2009,0.0
+France,2010,0.0
+France,2011,0.0
+France,2012,0.0
+France,2013,0.0
+France,2014,0.0
+France,2015,0.0
+France,2016,0.0
+France,2017,0.0
+French Polynesia,2000,1.51632777786954
+French Polynesia,2001,1.51632777786954
+French Polynesia,2002,1.51632777786954
+French Polynesia,2003,1.51632777786954
+French Polynesia,2004,1.51632777786954
+French Polynesia,2005,1.51632777786954
+French Polynesia,2006,1.51632777786954
+Gabon,2000,1.71396948586671
+Gabon,2001,1.8121945317849
+Gabon,2002,1.90804677440209
+Gabon,2003,2.00164657502026
+Gabon,2004,2.09310150233482
+Gabon,2005,2.18254122439688
+Gabon,2006,2.27002989268987
+Gabon,2007,2.35569583861052
+Gabon,2008,2.43959009127938
+Gabon,2009,2.5218984318969
+Gabon,2010,2.60263968001324
+Gabon,2011,2.68194277951218
+Gabon,2012,2.75984035536335
+Gabon,2013,2.83653402058026
+Gabon,2014,2.91239966035918
+Gabon,2015,2.98762348579007
+Gabon,2016,2.96985579863755
+Gabon,2017,2.95305509777504
+Gambia,2000,5.72438611286858
+Gambia,2001,5.36426464029797
+Gambia,2002,5.01082190775057
+Gambia,2003,4.66674534035291
+Gambia,2004,4.3387028484385
+Gambia,2005,4.01618357439075
+Gambia,2006,3.69917647674453
+Gambia,2007,3.38767076634661
+Gambia,2008,3.08160115050007
+Gambia,2009,2.78116756966058
+Gambia,2010,2.48618688110033
+Gambia,2011,2.19673278321729
+Gambia,2012,1.91269418624187
+Gambia,2013,1.63423547461513
+Gambia,2014,1.3613209708608
+Gambia,2015,1.11432665320763
+Gambia,2016,1.09546848304194
+Gambia,2017,1.07685627974443
+Georgia,2000,1.37903963130717
+Georgia,2001,1.3892984447056
+Georgia,2002,1.23381634700392
+Georgia,2003,1.07075894384279
+Georgia,2004,0.910244040888513
+Georgia,2005,0.752261794608033
+Georgia,2006,0.596789463067072
+Georgia,2007,0.443827143363321
+Georgia,2008,0.293381294721205
+Georgia,2009,0.14544213737309
+Georgia,2010,0.0
+Georgia,2011,0.0
+Georgia,2012,0.0
+Georgia,2013,0.0
+Georgia,2014,0.0
+Georgia,2015,0.0
+Georgia,2016,0.0
+Georgia,2017,0.0
+Germany,2000,0.0
+Germany,2001,0.0
+Germany,2002,0.0
+Germany,2003,0.0
+Germany,2004,0.0
+Germany,2005,0.0
+Germany,2006,0.0
+Germany,2007,0.0
+Germany,2008,0.0
+Germany,2009,0.0
+Germany,2010,0.0
+Germany,2011,0.0
+Germany,2012,0.0
+Germany,2013,0.0
+Germany,2014,0.0
+Germany,2015,0.0
+Germany,2016,0.0
+Germany,2017,0.0
+Ghana,2000,21.8579224144956
+Ghana,2001,21.6380363267595
+Ghana,2002,21.4173112590043
+Ghana,2003,21.1957440494606
+Ghana,2004,20.9731008017978
+Ghana,2005,20.7503149695884
+Ghana,2006,20.5266829340104
+Ghana,2007,20.3024393450094
+Ghana,2008,20.0775827224368
+Ghana,2009,19.852818530128
+Ghana,2010,19.6272053174496
+Ghana,2011,19.4014495741386
+Ghana,2012,19.1757886878612
+Ghana,2013,18.9506967315706
+Ghana,2014,18.7261775491115
+Ghana,2015,18.5022339930284
+Ghana,2016,18.2788679412056
+Ghana,2017,18.0563227863353
+Gibraltar,2000,0.0
+Gibraltar,2001,0.0
+Gibraltar,2002,0.0
+Gibraltar,2003,0.0
+Gibraltar,2004,0.0
+Gibraltar,2005,0.0
+Gibraltar,2006,0.0
+Gibraltar,2007,0.0
+Gibraltar,2008,0.0
+Gibraltar,2009,0.0
+Gibraltar,2010,0.0
+Gibraltar,2011,0.0
+Gibraltar,2012,0.0
+Gibraltar,2013,0.0
+Gibraltar,2014,0.0
+Gibraltar,2015,0.0
+Gibraltar,2016,0.0
+Gibraltar,2017,0.0
+Greece,2000,1.12314837350484
+Greece,2001,1.11775255868593
+Greece,2002,1.10707032702638
+Greece,2003,1.0957146096005
+Greece,2004,1.08288190817464
+Greece,2005,0.790452514336796
+Greece,2006,0.0
+Greece,2007,0.0
+Greece,2008,0.0
+Greece,2009,0.0
+Greece,2010,0.0
+Greece,2011,0.0
+Greece,2012,0.0
+Greece,2013,0.0
+Greece,2014,0.0
+Greece,2015,0.0
+Greece,2016,0.0
+Greece,2017,0.0
+Greenland,2000,0.0
+Greenland,2001,0.0
+Greenland,2002,0.0
+Greenland,2003,0.0
+Greenland,2004,0.0
+Greenland,2005,0.0
+Greenland,2006,0.0
+Greenland,2007,0.0
+Greenland,2008,0.0
+Greenland,2009,0.0
+Greenland,2010,0.0
+Greenland,2011,0.0
+Greenland,2012,0.0
+Greenland,2013,0.0
+Greenland,2014,0.0
+Greenland,2015,0.0
+Greenland,2016,0.0
+Greenland,2017,0.0
+Grenada,2000,1.87305936073057
+Grenada,2001,2.00136986301368
+Grenada,2002,2.12968036529679
+Grenada,2003,2.25799086757991
+Grenada,2004,2.38630136986302
+Grenada,2005,2.51461187214613
+Grenada,2006,2.64292237442919
+Grenada,2007,2.7712328767123
+Grenada,2008,2.89954337899542
+Grenada,2009,3.02785388127853
+Grenada,2010,3.15616438356165
+Grenada,2011,3.28447488584476
+Grenada,2012,3.41278538812782
+Grenada,2013,3.54109589041093
+Grenada,2014,3.54109589041093
+Grenada,2015,3.54109589041093
+Grenada,2016,3.54109589041093
+Grenada,2017,3.54109589041093
+Guam,2000,0.0
+Guam,2001,0.0610999999999962
+Guam,2002,0.122200000000006
+Guam,2003,0.183300000000003
+Guam,2004,0.244399999999999
+Guam,2005,0.305499999999995
+Guam,2006,0.366600000000005
+Guam,2007,0.427700000000002
+Guam,2008,0.488799999999998
+Guam,2009,0.549899999999994
+Guam,2010,0.611000000000004
+Guam,2011,0.6721
+Guam,2012,0.733199999999997
+Guam,2013,0.733199999999997
+Guam,2014,0.733199999999997
+Guam,2015,0.733199999999997
+Guam,2016,0.733199999999997
+Guatemala,2000,14.0613650298779
+Guatemala,2001,13.4734425534703
+Guatemala,2002,12.8897089596966
+Guatemala,2003,12.3143244518683
+Guatemala,2004,11.7453886678192
+Guatemala,2005,11.1804745946494
+Guatemala,2006,10.6194166966808
+Guatemala,2007,10.0620744837004
+Guatemala,2008,9.50846855782246
+Guatemala,2009,8.95899739137764
+Guatemala,2010,8.41314265073563
+Guatemala,2011,7.87128295184418
+Guatemala,2012,7.33318506856645
+Guatemala,2013,6.79776201280482
+Guatemala,2014,6.26524704904
+Guatemala,2015,5.73569861315478
+Guatemala,2016,5.20963312077881
+Guatemala,2017,4.68711554039075
+Guinea,2000,27.540518072748
+Guinea,2001,26.7241722425992
+Guinea,2002,25.9129084176758
+Guinea,2003,25.1064133532078
+Guinea,2004,24.3050814413884
+Guinea,2005,23.5089405997101
+Guinea,2006,22.7177075567691
+Guinea,2007,21.9317463685176
+Guinea,2008,21.1510835746562
+Guinea,2009,20.3757518570228
+Guinea,2010,19.6055034589994
+Guinea,2011,18.8406667068002
+Guinea,2012,18.0812665118672
+Guinea,2013,17.3273359995868
+Guinea,2014,16.5789034405994
+Guinea,2015,15.8330754739569
+Guinea,2016,15.0902674332811
+Guinea,2017,14.3508941600672
+Guinea-Bissau,2000,36.1626718329163
+Guinea-Bissau,2001,34.8810992924102
+Guinea-Bissau,2002,33.6095845681259
+Guinea-Bissau,2003,32.3491951268708
+Guinea-Bissau,2004,31.0995257747902
+Guinea-Bissau,2005,29.861533274807
+Guinea-Bissau,2006,28.6339639159947
+Guinea-Bissau,2007,27.4177617294986
+Guinea-Bissau,2008,26.2125802307201
+Guinea-Bissau,2009,25.0192598863548
+Guinea-Bissau,2010,23.836368494303
+Guinea-Bissau,2011,22.6647752213864
+Guinea-Bissau,2012,21.5042412223213
+Guinea-Bissau,2013,20.3552168986708
+Guinea-Bissau,2014,19.2174966784161
+Guinea-Bissau,2015,18.0912147177843
+Guinea-Bissau,2016,16.9767760140147
+Guinea-Bissau,2017,16.8671356059782
+Guyana,2000,1.30791041690348
+Guyana,2001,1.26203293881136
+Guyana,2002,1.21616965048352
+Guyana,2003,1.17135439422664
+Guyana,2004,1.12684446439924
+Guyana,2005,1.08236488698363
+Guyana,2006,1.03790691813017
+Guyana,2007,0.993478610848894
+Guyana,2008,0.949079779882125
+Guyana,2009,0.904701288124422
+Guyana,2010,0.860351561865149
+Guyana,2011,0.816030571174288
+Guyana,2012,0.769611108034916
+Guyana,2013,0.723191715504717
+Guyana,2014,0.678442777377178
+Guyana,2015,0.645603726651874
+Guyana,2016,0.612671891527524
+Guyana,2017,0.612205184599993
+Haiti,2000,37.0671622263095
+Haiti,2001,35.6633266859816
+Haiti,2002,34.2781654145988
+Haiti,2003,32.9153436172274
+Haiti,2004,31.8407491707178
+Haiti,2005,30.8136591448411
+Haiti,2006,29.8025169061211
+Haiti,2007,28.8085667185279
+Haiti,2008,27.8309115131859
+Haiti,2009,26.8720574570309
+Haiti,2010,25.9307259576094
+Haiti,2011,25.0076505285929
+Haiti,2012,24.1028925997843
+Haiti,2013,23.2176736931067
+Haiti,2014,22.3510883535028
+Haiti,2015,21.50371393298
+Haiti,2016,20.6789256319292
+Haiti,2017,19.8775860100989
+Heavily indebted poor countries (HIPC),2000,37.08269079137049
+Heavily indebted poor countries (HIPC),2001,36.29622056219684
+Heavily indebted poor countries (HIPC),2002,35.44187610497732
+Heavily indebted poor countries (HIPC),2003,34.57814184043015
+Heavily indebted poor countries (HIPC),2004,33.715043812558136
+Heavily indebted poor countries (HIPC),2005,32.723010206742515
+Heavily indebted poor countries (HIPC),2006,31.72952900509364
+Heavily indebted poor countries (HIPC),2007,30.779032193635864
+Heavily indebted poor countries (HIPC),2008,29.767116410479996
+Heavily indebted poor countries (HIPC),2009,28.761211523409447
+Heavily indebted poor countries (HIPC),2010,27.76048700699496
+Heavily indebted poor countries (HIPC),2011,26.76534777740452
+Heavily indebted poor countries (HIPC),2012,25.787364035876006
+Heavily indebted poor countries (HIPC),2013,24.817546621513777
+Heavily indebted poor countries (HIPC),2014,23.851362502840924
+Heavily indebted poor countries (HIPC),2015,22.888780454833316
+Heavily indebted poor countries (HIPC),2016,21.93599975468361
+Heavily indebted poor countries (HIPC),2017,20.881597563811287
+High income,2000,0.0816455469182259
+High income,2001,0.086329557229284
+High income,2002,0.0838484473717609
+High income,2003,0.0813833365913076
+High income,2004,0.0787646257836095
+High income,2005,0.0729090115858263
+High income,2006,0.0577367473448799
+High income,2007,0.0546570198871815
+High income,2008,0.0495902256104662
+High income,2009,0.0460535652945938
+High income,2010,0.042559246295992
+High income,2011,0.039012667852741
+High income,2012,0.034820735540748
+High income,2013,0.0310980554378731
+High income,2014,0.022870872084444
+High income,2015,0.0212306005044041
+High income,2016,0.017851278906227
+High income,2017,0.0174378114698738
+Honduras,2000,19.8573192942452
+Honduras,2001,18.9601839093191
+Honduras,2002,18.0369127939221
+Honduras,2003,17.126077737243
+Honduras,2004,16.2300572524257
+Honduras,2005,15.3501406755366
+Honduras,2006,14.4853600070242
+Honduras,2007,13.6362106025294
+Honduras,2008,12.8024908604484
+Honduras,2009,11.9848063410212
+Honduras,2010,11.1825520613277
+Honduras,2011,10.396260830509
+Honduras,2012,9.62539972442201
+Honduras,2013,8.87057282302203
+Honduras,2014,8.13128359669097
+Honduras,2015,7.40812247769824
+Honduras,2016,6.7006996046694
+Honduras,2017,6.00900287326046
+Hong Kong,2000,0.0
+Hong Kong,2001,0.0
+Hong Kong,2002,0.0
+Hong Kong,2003,0.0
+Hong Kong,2004,0.0
+Hong Kong,2005,0.0
+Hong Kong,2006,0.0
+Hong Kong,2007,0.0
+Hong Kong,2008,0.0
+Hong Kong,2009,0.0
+Hong Kong,2010,0.0
+Hong Kong,2011,0.0
+Hong Kong,2012,0.0
+Hong Kong,2013,0.0
+Hong Kong,2014,0.0
+Hong Kong,2015,0.0
+Hong Kong,2016,0.0
+Hong Kong,2017,0.0
+Hungary,2000,0.0
+Hungary,2001,0.0
+Hungary,2002,0.0
+Hungary,2003,0.0
+Hungary,2004,0.0
+Hungary,2005,0.0
+Hungary,2006,0.0
+Hungary,2007,0.0
+Hungary,2008,0.0
+Hungary,2009,0.0
+Hungary,2010,0.0
+Hungary,2011,0.0
+Hungary,2012,0.0
+Hungary,2013,0.0
+Hungary,2014,0.0
+Hungary,2015,0.0
+Hungary,2016,0.0
+Hungary,2017,0.0
+IBRD only,2000,24.84661555202031
+IBRD only,2001,23.759232213811146
+IBRD only,2002,22.845086169932667
+IBRD only,2003,21.92457839114331
+IBRD only,2004,20.99973506420997
+IBRD only,2005,19.989418570375708
+IBRD only,2006,18.894633715554843
+IBRD only,2007,17.9705407456855
+IBRD only,2008,17.05690896615342
+IBRD only,2009,16.119187020910964
+IBRD only,2010,15.17704826156958
+IBRD only,2011,14.22652621044124
+IBRD only,2012,13.274625858435302
+IBRD only,2013,12.317313297792907
+IBRD only,2014,11.371175737279664
+IBRD only,2015,10.505835342994027
+IBRD only,2016,9.56127057500133
+IBRD only,2017,8.83987813494288
+IDA & IBRD total,2000,26.25380422743781
+IDA & IBRD total,2001,25.217539817420977
+IDA & IBRD total,2002,24.32600547458434
+IDA & IBRD total,2003,23.424497890758104
+IDA & IBRD total,2004,22.52024147970063
+IDA & IBRD total,2005,21.52978759696806
+IDA & IBRD total,2006,20.47033344206949
+IDA & IBRD total,2007,19.55991447696916
+IDA & IBRD total,2008,18.65274030658396
+IDA & IBRD total,2009,17.727842509337115
+IDA & IBRD total,2010,16.801140205574743
+IDA & IBRD total,2011,15.963371603620663
+IDA & IBRD total,2012,15.03722446737149
+IDA & IBRD total,2013,14.108842856204545
+IDA & IBRD total,2014,13.190311873787383
+IDA & IBRD total,2015,12.34656220027133
+IDA & IBRD total,2016,11.43428564987634
+IDA & IBRD total,2017,10.74789354884298
+IDA blend,2000,28.135280005222427
+IDA blend,2001,27.263512383467774
+IDA blend,2002,26.415429015243134
+IDA blend,2003,25.53226880916684
+IDA blend,2004,24.648697418561085
+IDA blend,2005,23.76695709559665
+IDA blend,2006,22.88523078163942
+IDA blend,2007,22.00208372478072
+IDA blend,2008,21.11910652669429
+IDA blend,2009,20.238898748651437
+IDA blend,2010,19.349110897096534
+IDA blend,2011,18.467610413560397
+IDA blend,2012,17.60626825180882
+IDA blend,2013,16.746524996058053
+IDA blend,2014,15.8935961377545
+IDA blend,2015,15.044554906381412
+IDA blend,2016,14.201498446483606
+IDA blend,2017,13.406293740797306
+IDA only,2000,33.00090242175404
+IDA only,2001,32.141440182527234
+IDA only,2002,31.24289090295144
+IDA only,2003,30.3280204774242
+IDA only,2004,29.41626758161371
+IDA only,2005,28.420367403501817
+IDA only,2006,27.42410213043009
+IDA only,2007,26.46311242887097
+IDA only,2008,25.46326900012091
+IDA only,2009,24.477313422346207
+IDA only,2010,23.50591869573295
+IDA only,2011,23.06385123527915
+IDA only,2012,22.126142966841076
+IDA only,2013,21.19806829887596
+IDA only,2014,20.27156178203634
+IDA only,2015,19.3458780644019
+IDA only,2016,18.436435238932408
+IDA only,2017,17.81639975831073
+IDA total,2000,31.365908358903727
+IDA total,2001,30.503090273873635
+IDA total,2002,29.619983571448227
+IDA total,2003,28.717052167617243
+IDA total,2004,27.815773103719643
+IDA total,2005,26.85864964810471
+IDA total,2006,25.900840623359628
+IDA total,2007,24.965330347554715
+IDA total,2008,24.003661737227457
+IDA total,2009,23.051935127018904
+IDA total,2010,22.105901902797115
+IDA total,2011,21.52439207438763
+IDA total,2012,20.61070319745124
+IDA total,2013,19.703972891328377
+IDA total,2014,18.800740299845824
+IDA total,2015,17.89959258754288
+IDA total,2016,17.011836854479732
+IDA total,2017,16.308720072451028
+Iceland,2000,0.0
+Iceland,2001,0.0
+Iceland,2002,0.0
+Iceland,2003,0.0
+Iceland,2004,0.0
+Iceland,2005,0.0
+Iceland,2006,0.0
+Iceland,2007,0.0
+Iceland,2008,0.0
+Iceland,2009,0.0
+Iceland,2010,0.0
+Iceland,2011,0.0
+Iceland,2012,0.0
+Iceland,2013,0.0
+Iceland,2014,0.0
+Iceland,2015,0.0
+Iceland,2016,0.0
+Iceland,2017,0.0
+India,2000,72.627596494548
+India,2001,69.8247381030822
+India,2002,66.986522372765
+India,2003,64.1593574135218
+India,2004,61.3428025363469
+India,2005,58.5381006014443
+India,2006,55.7447872027879
+India,2007,52.9624700011913
+India,2008,50.1913233707554
+India,2009,47.4324433952564
+India,2010,44.6854382198075
+India,2011,41.9499972153202
+India,2012,39.2225956286161
+India,2013,36.5043030560498
+India,2014,33.7953632997156
+India,2015,31.0964520782071
+India,2016,28.4082421082302
+India,2017,25.731094030772
+Indonesia,2000,32.5086307630714
+Indonesia,2001,31.026330994419
+Indonesia,2002,29.5596908786847
+Indonesia,2003,28.1091167949918
+Indonesia,2004,26.674168960672
+Indonesia,2005,25.2562928612535
+Indonesia,2006,23.8547535942898
+Indonesia,2007,22.4701148064323
+Indonesia,2008,21.1019627943346
+Indonesia,2009,19.7512476313903
+Indonesia,2010,18.4215941836486
+Indonesia,2011,17.1277754851242
+Indonesia,2012,15.8486187470551
+Indonesia,2013,14.5844650807778
+Indonesia,2014,13.3347705261148
+Indonesia,2015,12.1000151220007
+Indonesia,2016,10.8801334501781
+Indonesia,2017,9.67557200488508
+Iran,2000,0.688389927542208
+Iran,2001,0.677254256543404
+Iran,2002,0.666212035585615
+Iran,2003,0.65526316070671
+Iran,2004,0.644422949505223
+Iran,2005,0.633707358329058
+Iran,2006,0.623116104834546
+Iran,2007,0.613395788433096
+Iran,2008,0.604157561605841
+Iran,2009,0.595028291014314
+Iran,2010,0.585992266305163
+Iran,2011,0.577065135709361
+Iran,2012,0.568433497185883
+Iran,2013,0.560035153063846
+Iran,2014,0.551714500568462
+Iran,2015,0.543502773414624
+Iran,2016,0.535384434850823
+Iraq,2000,4.72503163573683
+Iraq,2001,4.42544286568768
+Iraq,2002,4.12683188643317
+Iraq,2003,3.82919619297568
+Iraq,2004,3.53253740329114
+Iraq,2005,3.23685524139486
+Iraq,2006,2.94224035328059
+Iraq,2007,2.64850212052194
+Iraq,2008,2.35574063980091
+Iraq,2009,2.0640196371768
+Iraq,2010,1.76942963030143
+Iraq,2011,1.47514668172191
+Iraq,2012,1.1838845431907
+Iraq,2013,0.89561590810419
+Iraq,2014,0.610295234582466
+Iraq,2015,0.327922599464091
+Iraq,2016,0.0484935207308086
+Iraq,2017,0.0199193434388094
+Ireland,2000,0.0
+Ireland,2001,0.0
+Ireland,2002,0.0
+Ireland,2003,0.0
+Ireland,2004,0.0
+Ireland,2005,0.0
+Ireland,2006,0.0
+Ireland,2007,0.0
+Ireland,2008,0.0
+Ireland,2009,0.0
+Ireland,2010,0.0
+Ireland,2011,0.0
+Ireland,2012,0.0
+Ireland,2013,0.0
+Ireland,2014,0.0
+Ireland,2015,0.0
+Ireland,2016,0.0
+Ireland,2017,0.0
+Israel,2000,0.0
+Israel,2001,0.0
+Israel,2002,0.0
+Israel,2003,0.0
+Israel,2004,0.0
+Israel,2005,0.0
+Israel,2006,0.0
+Israel,2007,0.0
+Israel,2008,0.0
+Israel,2009,0.0
+Israel,2010,0.0
+Israel,2011,0.0
+Israel,2012,0.0
+Israel,2013,0.0
+Israel,2014,0.0
+Israel,2015,0.0
+Israel,2016,0.0
+Israel,2017,0.0
+Italy,2006,0.0
+Italy,2007,0.0
+Italy,2008,0.0
+Italy,2009,0.0
+Italy,2010,0.0
+Italy,2011,0.0
+Italy,2012,0.0
+Italy,2013,0.0
+Italy,2014,0.0
+Italy,2015,0.0
+Italy,2016,0.0
+Italy,2017,0.0
+Jamaica,2000,0.894754401453033
+Jamaica,2001,0.882507652009369
+Jamaica,2002,0.870945336762775
+Jamaica,2003,0.859785294454873
+Jamaica,2004,0.848922365834313
+Jamaica,2005,0.838379721618008
+Jamaica,2006,0.828141247841139
+Jamaica,2007,0.818215200922878
+Jamaica,2008,0.808594952320342
+Jamaica,2009,0.799285472075219
+Jamaica,2010,0.790283874477479
+Jamaica,2011,0.781590555614723
+Jamaica,2012,0.773225268207318
+Jamaica,2013,0.765227317992333
+Jamaica,2014,0.75763642383089
+Jamaica,2015,0.750488608752931
+Jamaica,2016,0.522251366334835
+Jamaica,2017,0.524905338430836
+Japan,2000,0.0
+Japan,2001,0.0
+Japan,2002,0.0
+Japan,2003,0.0
+Japan,2004,0.0
+Japan,2005,0.0
+Japan,2006,0.0
+Japan,2007,0.0
+Japan,2008,0.0
+Japan,2009,0.0
+Japan,2010,0.0
+Japan,2011,0.0
+Japan,2012,0.0
+Japan,2013,0.0
+Japan,2014,0.0
+Japan,2015,0.0
+Japan,2016,0.0
+Japan,2017,0.0
+Jordan,2000,0.124942688497245
+Jordan,2001,0.129389295040333
+Jordan,2002,0.133830474397196
+Jordan,2003,0.138272617521719
+Jordan,2004,0.142703197919367
+Jordan,2005,0.139312186666652
+Jordan,2006,0.133189864413169
+Jordan,2007,0.127054587220122
+Jordan,2008,0.160719347824744
+Jordan,2009,0.161890881959832
+Jordan,2010,0.163287490064715
+Jordan,2011,0.16493881161054
+Jordan,2012,0.166837291649431
+Jordan,2013,0.169025849809345
+Jordan,2014,0.17147130899181
+Jordan,2015,0.178549282063518
+Jordan,2016,0.185608376002833
+Jordan,2017,0.19267528079914
+Kazakhstan,2000,0.0531237971075044
+Kazakhstan,2001,0.0530354602151342
+Kazakhstan,2002,0.0529471283732683
+Kazakhstan,2003,0.0528587924507742
+Kazakhstan,2004,0.0527704582633192
+Kazakhstan,2005,0.0500976335901495
+Kazakhstan,2006,0.0474334745537477
+Kazakhstan,2007,0.0447779801469733
+Kazakhstan,2008,0.0421311597795446
+Kazakhstan,2009,0.0394929998947832
+Kazakhstan,2010,0.0368643631961773
+Kazakhstan,2011,0.0342434791816366
+Kazakhstan,2012,0.0316312650218612
+Kazakhstan,2013,0.0290277129221982
+Kazakhstan,2014,0.0
+Kazakhstan,2015,0.0
+Kazakhstan,2016,0.0
+Kazakhstan,2017,0.0
+Kenya,2000,17.4149722834615
+Kenya,2001,16.982387618248
+Kenya,2002,16.5516713588707
+Kenya,2003,16.1228822138075
+Kenya,2004,15.6960803570097
+Kenya,2005,15.2716484195966
+Kenya,2006,14.8493063844842
+Kenya,2007,14.4291132837247
+Kenya,2008,14.0111283226015
+Kenya,2009,13.5957026435418
+Kenya,2010,13.1825880981841
+Kenya,2011,12.7711506942677
+Kenya,2012,12.3616431692761
+Kenya,2013,11.953910658422
+Kenya,2014,11.5483361358385
+Kenya,2015,11.1449056479371
+Kenya,2016,10.7437360507336
+Kenya,2017,10.3449453634252
+Kiribati,2000,48.7820604313088
+Kiribati,2001,47.5859873678696
+Kiribati,2002,46.3899143044309
+Kiribati,2003,45.1938412409922
+Kiribati,2004,43.9977681775531
+Kiribati,2005,42.8016951141144
+Kiribati,2006,41.6056220506757
+Kiribati,2007,40.4095489872366
+Kiribati,2008,39.2134759237979
+Kiribati,2009,38.0174028603592
+Kiribati,2010,36.82132979692
+Kiribati,2011,35.6252567334814
+Kiribati,2012,34.4291836700427
+Kiribati,2013,33.2331106066035
+Kiribati,2014,32.0370375431648
+Kiribati,2015,30.8409644797262
+Kiribati,2016,29.644891416287
+Kiribati,2017,28.4488183528483
+Kuwait,2000,0.0
+Kuwait,2001,0.0
+Kuwait,2002,0.0
+Kuwait,2003,0.0
+Kuwait,2004,0.0
+Kuwait,2005,0.0
+Kuwait,2006,0.0
+Kuwait,2007,0.0
+Kuwait,2008,0.0
+Kuwait,2009,0.0
+Kuwait,2010,0.0
+Kuwait,2011,0.0
+Kuwait,2012,0.0
+Kuwait,2013,0.0
+Kuwait,2014,0.0
+Kuwait,2015,0.0
+Kuwait,2016,0.0
+Kuwait,2017,0.0
+Kyrgyzstan,2000,0.11761218855519
+Kyrgyzstan,2001,0.117608327327569
+Kyrgyzstan,2002,0.108728539575616
+Kyrgyzstan,2003,0.0998476241164508
+Kyrgyzstan,2004,0.0909688361210291
+Kyrgyzstan,2005,0.0820893084764543
+Kyrgyzstan,2006,0.0732115180965243
+Kyrgyzstan,2007,0.06433337695151
+Kyrgyzstan,2008,0.0554560335395521
+Kyrgyzstan,2009,0.0465798294295376
+Kyrgyzstan,2010,0.0377074114343679
+Kyrgyzstan,2011,0.0288250225546751
+Kyrgyzstan,2012,0.019918112379303
+Kyrgyzstan,2013,0.0
+Kyrgyzstan,2014,0.0
+Kyrgyzstan,2015,0.0
+Kyrgyzstan,2016,0.0
+Kyrgyzstan,2017,0.0
+Laos,2000,61.5687078376346
+Laos,2001,58.8672720370833
+Laos,2002,56.1751607797868
+Laos,2003,53.4956418003735
+Laos,2004,50.8285391836996
+Laos,2005,48.2681192653562
+Laos,2006,45.8996553004961
+Laos,2007,43.5432833656756
+Laos,2008,41.1980076432041
+Laos,2009,38.8657746320813
+Laos,2010,36.5460046287879
+Laos,2011,34.2389758401536
+Laos,2012,31.9446026048639
+Laos,2013,29.6645783806771
+Laos,2014,27.3980644106462
+Laos,2015,25.1456529694592
+Laos,2016,22.9072706473463
+Laos,2017,20.6840751850108
+Late-demographic dividend,2000,3.967190780751443
+Late-demographic dividend,2001,3.773997090886399
+Late-demographic dividend,2002,3.500494923835578
+Late-demographic dividend,2003,3.272623039593965
+Late-demographic dividend,2004,3.0482582245503136
+Late-demographic dividend,2005,2.825285398656214
+Late-demographic dividend,2006,2.6020484221408795
+Late-demographic dividend,2007,2.38321010521518
+Late-demographic dividend,2008,2.1685826322682327
+Late-demographic dividend,2009,1.958682340993659
+Late-demographic dividend,2010,1.754196760109555
+Late-demographic dividend,2011,1.5545978701990224
+Late-demographic dividend,2012,1.3611592812741244
+Late-demographic dividend,2013,1.1668097070463266
+Late-demographic dividend,2014,0.999160323620544
+Late-demographic dividend,2015,0.8395430613799454
+Late-demographic dividend,2016,0.6850670774897724
+Late-demographic dividend,2017,0.5762297340416878
+Latin America & Caribbean,2000,10.39208276449588
+Latin America & Caribbean,2001,9.858122404208114
+Latin America & Caribbean,2002,9.336995700939516
+Latin America & Caribbean,2003,8.816533403854603
+Latin America & Caribbean,2004,8.308447707048801
+Latin America & Caribbean,2005,7.790454001804992
+Latin America & Caribbean,2006,6.904736621050562
+Latin America & Caribbean,2007,6.465882588765312
+Latin America & Caribbean,2008,6.034565248861445
+Latin America & Caribbean,2009,5.609946532462025
+Latin America & Caribbean,2010,5.190424397252856
+Latin America & Caribbean,2011,4.77555296041245
+Latin America & Caribbean,2012,4.366789779087411
+Latin America & Caribbean,2013,3.964245345664811
+Latin America & Caribbean,2014,3.5591482183743555
+Latin America & Caribbean,2015,3.237891288375507
+Latin America & Caribbean,2016,2.82353845310747
+Latin America & Caribbean,2017,2.4309979966873687
+Latin America & Caribbean (IDA & IBRD),2000,10.716706409501372
+Latin America & Caribbean (IDA & IBRD),2001,10.163804129787218
+Latin America & Caribbean (IDA & IBRD),2002,9.623709663131589
+Latin America & Caribbean (IDA & IBRD),2003,9.084643735300808
+Latin America & Caribbean (IDA & IBRD),2004,8.558606761388482
+Latin America & Caribbean (IDA & IBRD),2005,8.010268726494981
+Latin America & Caribbean (IDA & IBRD),2006,7.082049854988664
+Latin America & Caribbean (IDA & IBRD),2007,6.6300537573774445
+Latin America & Caribbean (IDA & IBRD),2008,6.186112905593049
+Latin America & Caribbean (IDA & IBRD),2009,5.7494307559444655
+Latin America & Caribbean (IDA & IBRD),2010,5.318402108662871
+Latin America & Caribbean (IDA & IBRD),2011,4.892267640820949
+Latin America & Caribbean (IDA & IBRD),2012,4.472747977258126
+Latin America & Caribbean (IDA & IBRD),2013,4.059931565851521
+Latin America & Caribbean (IDA & IBRD),2014,3.644619457439034
+Latin America & Caribbean (IDA & IBRD),2015,3.321522041498457
+Latin America & Caribbean (IDA & IBRD),2016,2.8963092533101458
+Latin America & Caribbean (IDA & IBRD),2017,2.491285411623122
+Latin America & Caribbean (excluding high income),2000,10.908679149570322
+Latin America & Caribbean (excluding high income),2001,10.344841218816724
+Latin America & Caribbean (excluding high income),2002,9.79405357669174
+Latin America & Caribbean (excluding high income),2003,9.244322798187776
+Latin America & Caribbean (excluding high income),2004,8.708160534809156
+Latin America & Caribbean (excluding high income),2005,8.142295327510434
+Latin America & Caribbean (excluding high income),2006,7.186281932757153
+Latin America & Caribbean (excluding high income),2007,6.728016219940998
+Latin America & Caribbean (excluding high income),2008,6.277949789836587
+Latin America & Caribbean (excluding high income),2009,5.8351540921436005
+Latin America & Caribbean (excluding high income),2010,5.397918933433936
+Latin America & Caribbean (excluding high income),2011,4.965446298152382
+Latin America & Caribbean (excluding high income),2012,4.539578322961708
+Latin America & Caribbean (excluding high income),2013,4.120526961252186
+Latin America & Caribbean (excluding high income),2014,3.707698574955195
+Latin America & Caribbean (excluding high income),2015,3.3817121858636305
+Latin America & Caribbean (excluding high income),2016,2.94884594743651
+Latin America & Caribbean (excluding high income),2017,2.53363011510763
+Latvia,2000,0.0
+Latvia,2001,0.0
+Latvia,2002,0.0
+Latvia,2003,0.0
+Latvia,2004,0.0
+Latvia,2005,0.0
+Latvia,2006,0.0
+Latvia,2007,0.0
+Latvia,2008,0.0
+Latvia,2009,0.0
+Latvia,2010,0.0
+Latvia,2011,0.0
+Latvia,2012,0.0
+Latvia,2013,0.0
+Latvia,2014,0.0
+Latvia,2015,0.0
+Latvia,2016,0.0
+Latvia,2017,0.0
+Least developed countries: UN classification,2000,35.16261114686745
+Least developed countries: UN classification,2001,34.22138440088379
+Least developed countries: UN classification,2002,33.24636446301825
+Least developed countries: UN classification,2003,32.2417527598682
+Least developed countries: UN classification,2004,31.244512135950767
+Least developed countries: UN classification,2005,30.16045070005597
+Least developed countries: UN classification,2006,29.08939734413212
+Least developed countries: UN classification,2007,28.056748654370665
+Least developed countries: UN classification,2008,26.982026080315084
+Least developed countries: UN classification,2009,25.911277298877742
+Least developed countries: UN classification,2010,24.844388384988022
+Least developed countries: UN classification,2011,24.32496181045149
+Least developed countries: UN classification,2012,23.27649120301133
+Least developed countries: UN classification,2013,22.234329837273343
+Least developed countries: UN classification,2014,21.19679969374617
+Least developed countries: UN classification,2015,20.164798788374068
+Least developed countries: UN classification,2016,19.157375605955785
+Least developed countries: UN classification,2017,18.167845291700583
+Lebanon,2000,0.119871794871795
+Lebanon,2001,0.119871794871795
+Lebanon,2002,0.119871794871795
+Lebanon,2003,0.113461538461538
+Lebanon,2004,0.107051282051282
+Lebanon,2005,0.100641025641025
+Lebanon,2006,0.0942307692307693
+Lebanon,2007,0.0878205128205121
+Lebanon,2008,0.0814102564102566
+Lebanon,2009,0.0749999999999993
+Lebanon,2010,0.0685897435897438
+Lebanon,2011,0.0621794871794865
+Lebanon,2012,0.0557692307692292
+Lebanon,2013,0.0493589743589737
+Lebanon,2014,0.0429487179487165
+Lebanon,2015,0.036538461538461
+Lebanon,2016,0.0301282051282037
+Lebanon,2017,0.0
+Lesotho,2000,46.2785277841559
+Lesotho,2001,45.0672922930099
+Lesotho,2002,43.8615236941938
+Lesotho,2003,42.6619856041363
+Lesotho,2004,41.468126989997
+Lesotho,2005,40.2819597679402
+Lesotho,2006,39.1025129394943
+Lesotho,2007,37.9685545480449
+Lesotho,2008,36.8411707985388
+Lesotho,2009,35.7217181771979
+Lesotho,2010,34.6092557499753
+Lesotho,2011,33.5043801074278
+Lesotho,2012,32.4501033292383
+Lesotho,2013,31.4026690992665
+Lesotho,2014,30.3618488903904
+Lesotho,2015,29.327445850079
+Lesotho,2016,28.3002139017418
+Lesotho,2017,27.2799534750281
+Liberia,2000,54.9855293797889
+Liberia,2001,54.0701560646989
+Liberia,2002,53.156877967881
+Liberia,2003,52.246665416662
+Liberia,2004,51.3390536222972
+Liberia,2005,50.4345214169036
+Liberia,2006,49.5330636821197
+Liberia,2007,48.6342288956151
+Liberia,2008,47.7384792978726
+Liberia,2009,46.8409054415673
+Liberia,2010,45.941651716148
+Liberia,2011,45.0404285389617
+Liberia,2012,44.1382633797162
+Liberia,2013,43.2344328376883
+Liberia,2014,42.3299439318932
+Liberia,2015,41.4245139002686
+Liberia,2016,40.5182853965974
+Liberia,2017,39.6122343552277
+Libya,2000,0.0
+Libya,2001,0.0
+Libya,2002,0.0
+Libya,2003,0.0
+Libya,2004,0.0
+Libya,2005,0.0
+Libya,2006,0.0
+Libya,2007,0.0
+Libya,2008,0.0
+Libya,2009,0.0
+Libya,2010,0.0
+Libya,2011,0.0
+Libya,2012,0.0
+Libya,2013,0.0
+Libya,2014,0.0
+Libya,2015,0.0
+Libya,2016,0.0
+Libya,2017,0.0
+Liechtenstein,2000,0.0
+Liechtenstein,2001,0.0
+Liechtenstein,2002,0.0
+Liechtenstein,2003,0.0
+Liechtenstein,2004,0.0
+Liechtenstein,2005,0.0
+Liechtenstein,2006,0.0
+Liechtenstein,2007,0.0
+Liechtenstein,2008,0.0
+Liechtenstein,2009,0.0
+Liechtenstein,2010,0.0
+Liechtenstein,2011,0.0
+Liechtenstein,2012,0.0
+Liechtenstein,2013,0.0
+Liechtenstein,2014,0.0
+Liechtenstein,2015,0.0
+Liechtenstein,2016,0.0
+Liechtenstein,2017,0.0
+Lithuania,2000,0.0
+Lithuania,2001,0.0
+Lithuania,2002,0.0
+Lithuania,2003,0.0
+Lithuania,2004,0.0
+Lithuania,2005,0.0
+Lithuania,2006,0.0
+Lithuania,2007,0.0
+Lithuania,2008,0.0
+Lithuania,2009,0.0
+Lithuania,2010,0.0
+Lithuania,2011,0.0
+Lithuania,2012,0.0
+Lithuania,2013,0.0
+Lithuania,2014,0.0
+Lithuania,2015,0.0
+Lithuania,2016,0.0
+Lithuania,2017,0.0
+Low & middle income,2000,26.52874087965993
+Low & middle income,2001,25.58832631170194
+Low & middle income,2002,24.56387882674095
+Low & middle income,2003,23.6491285201103
+Low & middle income,2004,22.73205636639932
+Low & middle income,2005,21.727819781017185
+Low & middle income,2006,20.65414612980444
+Low & middle income,2007,19.73218388443818
+Low & middle income,2008,18.799757185957414
+Low & middle income,2009,17.865467099158835
+Low & middle income,2010,16.929346353150358
+Low & middle income,2011,16.083291963751133
+Low & middle income,2012,15.148560515995282
+Low & middle income,2013,14.21180396214654
+Low & middle income,2014,13.286001519331148
+Low & middle income,2015,12.43532194670201
+Low & middle income,2016,11.515457187072917
+Low & middle income,2017,10.824832140480192
+Low income,2000,40.170857413683954
+Low income,2001,39.27862986053401
+Low income,2002,36.17062722462355
+Low income,2003,35.26285270035626
+Low income,2004,34.35090066947721
+Low income,2005,33.27654943778025
+Low income,2006,32.190478663726104
+Low income,2007,31.14940442459296
+Low income,2008,30.03316574702521
+Low income,2009,28.940722633184503
+Low income,2010,27.871588995564224
+Low income,2011,27.624051833982865
+Low income,2012,26.604004612574773
+Low income,2013,25.5922841511708
+Low income,2014,24.570688248278596
+Low income,2015,23.534884316673097
+Low income,2016,22.516036036920877
+Low income,2017,21.926274385413294
+Lower middle income,2000,46.71876151075726
+Lower middle income,2001,44.60787417691552
+Lower middle income,2002,42.840265276291525
+Lower middle income,2003,41.07523461994391
+Lower middle income,2004,39.31474234003292
+Lower middle income,2005,37.55874019812247
+Lower middle income,2006,35.80853279391509
+Lower middle income,2007,34.065602724423066
+Lower middle income,2008,32.327036098317066
+Lower middle income,2009,30.592091203331893
+Lower middle income,2010,28.857777747907583
+Lower middle income,2011,27.12487229738485
+Lower middle income,2012,25.407861499096487
+Lower middle income,2013,23.698736862762363
+Lower middle income,2014,22.01711370050717
+Lower middle income,2015,20.351268455770548
+Lower middle income,2016,18.707088104180837
+Lower middle income,2017,17.162111839297612
+Luxembourg,2000,0.0
+Luxembourg,2001,0.0
+Luxembourg,2002,0.0
+Luxembourg,2003,0.0
+Luxembourg,2004,0.0
+Luxembourg,2005,0.0
+Luxembourg,2006,0.0
+Luxembourg,2007,0.0
+Luxembourg,2008,0.0
+Luxembourg,2009,0.0
+Luxembourg,2010,0.0
+Luxembourg,2011,0.0
+Luxembourg,2012,0.0
+Luxembourg,2013,0.0
+Luxembourg,2014,0.0
+Luxembourg,2015,0.0
+Luxembourg,2016,0.0
+Luxembourg,2017,0.0
+Madagascar,2000,37.7758577704477
+Madagascar,2001,38.2829693097418
+Madagascar,2002,38.7878875556792
+Madagascar,2003,39.2908818369934
+Madagascar,2004,39.7916483208335
+Madagascar,2005,40.1934522345524
+Madagascar,2006,40.5892405086453
+Madagascar,2007,40.9792415628135
+Madagascar,2008,41.3627808220251
+Madagascar,2009,41.7413218730794
+Madagascar,2010,42.1142054350907
+Madagascar,2011,42.4816922547543
+Madagascar,2012,42.8437356025624
+Madagascar,2013,43.2006147860643
+Madagascar,2014,43.5519639878876
+Madagascar,2015,43.8983965432498
+Madagascar,2016,44.2395566924916
+Madagascar,2017,44.5757365168166
+Malawi,2000,15.4482165665742
+Malawi,2001,14.8689636477089
+Malawi,2002,14.290764273464
+Malawi,2003,13.7134867618846
+Malawi,2004,13.1372749054038
+Malawi,2005,12.5620084615091
+Malawi,2006,11.9878201725051
+Malawi,2007,11.414600125554
+Malawi,2008,10.8424717046455
+Malawi,2009,10.2702488426154
+Malawi,2010,9.69814754658125
+Malawi,2011,9.12629777541367
+Malawi,2012,8.55501334976737
+Malawi,2013,7.98436069634524
+Malawi,2014,7.41472902574863
+Malawi,2015,6.84614610521026
+Malawi,2016,6.27905142616548
+Malawi,2017,5.71350908291015
+Malaysia,2000,1.60516872264943
+Malaysia,2001,1.48479688858264
+Malaysia,2002,1.36779017166203
+Malaysia,2003,1.2540698593912
+Malaysia,2004,1.14358711316355
+Malaysia,2005,1.03638041712386
+Malaysia,2006,0.932320959166129
+Malaysia,2007,0.831373567889028
+Malaysia,2008,0.73347992148118
+Malaysia,2009,0.63862714301068
+Malaysia,2010,0.546714668696251
+Malaysia,2011,0.374551391001495
+Malaysia,2012,0.311867649749225
+Malaysia,2013,0.304499825585166
+Malaysia,2014,0.297221933795545
+Malaysia,2015,0.290067889309162
+Malaysia,2016,0.283015029042191
+Maldives,2000,14.8599284553503
+Maldives,2001,13.5726886614228
+Maldives,2002,12.3142203084022
+Maldives,2003,11.0863360277056
+Maldives,2004,9.89008594866295
+Maldives,2005,8.72749945503572
+Maldives,2006,7.62731540452788
+Maldives,2007,6.62296843495855
+Maldives,2008,5.6302610858167
+Maldives,2009,4.64958763607336
+Maldives,2010,3.6809343918172
+Maldives,2011,2.72438966939338
+Maldives,2012,1.78001440739896
+Maldives,2013,0.841209103260841
+Maldives,2014,0.0
+Maldives,2015,0.0
+Maldives,2016,0.0
+Maldives,2017,0.0
+Mali,2000,21.0834404905873
+Mali,2001,20.185132719684
+Mali,2002,19.2951297434493
+Mali,2003,18.4141314796102
+Mali,2004,17.5419540544134
+Mali,2005,16.6798597050683
+Mali,2006,15.8270587180893
+Mali,2007,14.9845536047386
+Mali,2008,14.1520026385956
+Mali,2009,13.3304905275742
+Mali,2010,12.5207886645426
+Mali,2011,11.7230925830453
+Mali,2012,10.9375693382554
+Mali,2013,10.164354436306
+Mali,2014,9.4034248363526
+Mali,2015,8.65499912676026
+Mali,2016,7.91900927340753
+Mali,2017,7.19538700132702
+Malta,2000,0.0
+Malta,2001,0.0
+Malta,2002,0.0
+Malta,2003,0.0
+Malta,2004,0.0
+Malta,2005,0.0
+Malta,2006,0.0
+Malta,2007,0.0
+Malta,2008,0.0
+Malta,2009,0.0
+Malta,2010,0.0
+Malta,2011,0.0
+Malta,2012,0.0
+Malta,2013,0.0
+Malta,2014,0.0
+Malta,2015,0.0
+Malta,2016,0.0
+Malta,2017,0.0
+Marshall Islands,2001,11.8861925265094
+Marshall Islands,2002,11.747003125655
+Marshall Islands,2003,11.6091591951342
+Marshall Islands,2004,11.4726602721763
+Marshall Islands,2005,11.3377781370645
+Marshall Islands,2006,11.2265020445434
+Marshall Islands,2007,11.1156436299556
+Marshall Islands,2008,11.0046765832809
+Marshall Islands,2009,10.894438500403
+Marshall Islands,2010,10.7844062724206
+Marshall Islands,2011,10.6745957744472
+Marshall Islands,2012,10.5664159084437
+Marshall Islands,2013,10.460461064426
+Marshall Islands,2014,10.356212156651
+Marshall Islands,2015,10.2539921451188
+Marshall Islands,2016,10.1535549939009
+Marshall Islands,2017,10.0552200503008
+Mauritania,2000,55.1347764969356
+Mauritania,2001,53.9131328466892
+Mauritania,2002,52.5077369187505
+Mauritania,2003,51.1043088627698
+Mauritania,2004,49.7029212466833
+Mauritania,2005,48.3052710082838
+Mauritania,2006,46.9108573043656
+Mauritania,2007,45.5197327079023
+Mauritania,2008,44.1314165699157
+Mauritania,2009,42.7491394074561
+Mauritania,2010,41.3708026112478
+Mauritania,2011,39.9969668600805
+Mauritania,2012,38.6281816726719
+Mauritania,2013,37.2660144113401
+Mauritania,2014,35.914549422533
+Mauritania,2015,34.5747143085823
+Mauritania,2016,33.2474119644777
+Mauritania,2017,31.9315016670278
+Mauritius,2000,0.0862156425975268
+Mauritius,2001,0.0901319453319861
+Mauritius,2002,0.094075455210482
+Mauritius,2003,0.0980457307254183
+Mauritius,2004,0.0810608036650648
+Mauritius,2005,0.0864007300327523
+Mauritius,2006,0.0917621239142656
+Mauritius,2007,0.0971419006877968
+Mauritius,2008,0.102543321078215
+Mauritius,2009,0.107962952287289
+Mauritius,2010,0.113402465317315
+Mauritius,2011,0.118861866299913
+Mauritius,2012,0.124343262572288
+Mauritius,2013,0.129840292966074
+Mauritius,2014,0.130085499062323
+Mauritius,2015,0.130330699984673
+Mauritius,2016,0.130529502319015
+Mauritius,2017,0.1306819212747
+Mexico,2000,10.3013744957938
+Mexico,2001,9.68296996325136
+Mexico,2002,9.07319801724698
+Mexico,2003,8.47194711784342
+Mexico,2004,7.87891577058311
+Mexico,2005,7.29438651738028
+Mexico,2006,6.71804377790269
+Mexico,2007,6.14992983588517
+Mexico,2008,5.58961493227492
+Mexico,2009,5.03728255822353
+Mexico,2010,4.49266633451489
+Mexico,2011,3.95524371671605
+Mexico,2012,3.42532369533442
+Mexico,2013,2.90267511292645
+Mexico,2014,2.38729762191114
+Mexico,2015,1.87929874256392
+Mexico,2016,1.37852221995316
+Mexico,2017,0.885026005124541
+Micronesia (country),2006,9.5
+Micronesia (country),2007,9.5
+Micronesia (country),2008,9.5
+Micronesia (country),2009,9.5
+Micronesia (country),2010,9.5
+Micronesia (country),2011,9.5
+Micronesia (country),2012,9.5
+Micronesia (country),2013,9.5
+Micronesia (country),2014,9.5
+Middle East & North Africa,2000,5.86940650266388
+Middle East & North Africa,2001,5.609574007200352
+Middle East & North Africa,2002,5.365483139644777
+Middle East & North Africa,2003,5.092449145768971
+Middle East & North Africa,2004,4.820848262149327
+Middle East & North Africa,2005,4.534293817400431
+Middle East & North Africa,2006,4.247158852020219
+Middle East & North Africa,2007,3.965393442214741
+Middle East & North Africa,2008,3.683623124628792
+Middle East & North Africa,2009,3.4156081824490694
+Middle East & North Africa,2010,3.156154828047718
+Middle East & North Africa,2011,2.875403643539848
+Middle East & North Africa,2012,2.632677830936493
+Middle East & North Africa,2013,2.401319622981512
+Middle East & North Africa,2014,2.2612654427034284
+Middle East & North Africa,2015,2.1321886954254263
+Middle East & North Africa,2016,2.082198093290505
+Middle East & North Africa,2017,2.490191167429089
+Middle East & North Africa (IDA & IBRD),2000,6.641657215356518
+Middle East & North Africa (IDA & IBRD),2001,6.367668163817393
+Middle East & North Africa (IDA & IBRD),2002,6.097011530392711
+Middle East & North Africa (IDA & IBRD),2003,5.793995699073903
+Middle East & North Africa (IDA & IBRD),2004,5.494808984835894
+Middle East & North Africa (IDA & IBRD),2005,5.180617540092403
+Middle East & North Africa (IDA & IBRD),2006,4.870609441314991
+Middle East & North Africa (IDA & IBRD),2007,4.566825007286195
+Middle East & North Africa (IDA & IBRD),2008,4.262501920466579
+Middle East & North Africa (IDA & IBRD),2009,3.969404346006952
+Middle East & North Africa (IDA & IBRD),2010,3.6813987999958537
+Middle East & North Africa (IDA & IBRD),2011,3.364504033946654
+Middle East & North Africa (IDA & IBRD),2012,3.0909107877593707
+Middle East & North Africa (IDA & IBRD),2013,2.826324604525777
+Middle East & North Africa (IDA & IBRD),2014,2.6679765791133314
+Middle East & North Africa (IDA & IBRD),2015,2.5203900392045404
+Middle East & North Africa (IDA & IBRD),2016,2.463794607543261
+Middle East & North Africa (IDA & IBRD),2017,3.1132788692471047
+Middle East & North Africa (excluding high income),2000,6.578659263568546
+Middle East & North Africa (excluding high income),2001,6.306739378886943
+Middle East & North Africa (excluding high income),2002,6.038145182845329
+Middle East & North Africa (excluding high income),2003,5.737571999840955
+Middle East & North Africa (excluding high income),2004,5.440829237980914
+Middle East & North Africa (excluding high income),2005,5.129290387502293
+Middle East & North Africa (excluding high income),2006,4.821938072931878
+Middle East & North Africa (excluding high income),2007,4.520790154582079
+Middle East & North Africa (excluding high income),2008,4.217777582845412
+Middle East & North Africa (excluding high income),2009,3.927453728271757
+Middle East & North Africa (excluding high income),2010,3.642251452436117
+Middle East & North Africa (excluding high income),2011,3.328572886669616
+Middle East & North Africa (excluding high income),2012,3.0577694888444085
+Middle East & North Africa (excluding high income),2013,2.7959280462443163
+Middle East & North Africa (excluding high income),2014,2.639130440923224
+Middle East & North Africa (excluding high income),2015,2.492993367356807
+Middle East & North Africa (excluding high income),2016,2.436791856317558
+Middle East & North Africa (excluding high income),2017,3.066148209330588
+Middle income,2000,25.40599647478295
+Middle income,2001,24.44858478112992
+Middle income,2002,23.52380710337152
+Middle income,2003,22.591970584731374
+Middle income,2004,21.657514301491137
+Middle income,2005,20.648590197212144
+Middle income,2006,19.56765692881557
+Middle income,2007,18.639678862846367
+Middle income,2008,17.70789811799496
+Middle income,2009,16.77245789423546
+Middle income,2010,15.833439680615658
+Middle income,2011,14.889459475651622
+Middle income,2012,13.947116719913668
+Middle income,2013,13.002053422054876
+Middle income,2014,12.070106547493015
+Middle income,2015,11.213144022582142
+Middle income,2016,10.286967575804844
+Middle income,2017,9.592232636535757
+Moldova,2000,0.0
+Moldova,2001,0.0093018334839449
+Moldova,2002,0.0187370002801932
+Moldova,2003,0.0283055009690982
+Moldova,2004,0.0380066641211546
+Moldova,2005,0.047687500606776
+Moldova,2006,0.0572560022157287
+Moldova,2007,0.0668348289524079
+Moldova,2008,0.0764240022450734
+Moldova,2009,0.0860234941331754
+Moldova,2010,0.0956333382227463
+Moldova,2011,0.105253498629028
+Moldova,2012,0.114883997476432
+Moldova,2013,0.124524838419792
+Moldova,2014,0.13417599903702
+Moldova,2015,0.13418999333944
+Moldova,2016,0.13414099364247
+Moldova,2017,0.134033668712335
+Monaco,2000,0.0
+Monaco,2001,0.0
+Monaco,2002,0.0
+Monaco,2003,0.0
+Monaco,2004,0.0
+Monaco,2005,0.0
+Monaco,2006,0.0
+Monaco,2007,0.0
+Monaco,2008,0.0
+Monaco,2009,0.0
+Monaco,2010,0.0
+Monaco,2011,0.0
+Monaco,2012,0.0
+Monaco,2013,0.0
+Monaco,2014,0.0
+Monaco,2015,0.0
+Monaco,2016,0.0
+Monaco,2017,0.0
+Mongolia,2000,16.9134493996051
+Mongolia,2001,16.3090082680145
+Mongolia,2002,15.7176927885441
+Mongolia,2003,15.1397559613451
+Mongolia,2004,14.5754279207608
+Mongolia,2005,14.0263025174946
+Mongolia,2006,13.4908148458314
+Mongolia,2007,12.9694880428071
+Mongolia,2008,12.4621482550566
+Mongolia,2009,11.9705678857336
+Mongolia,2010,11.4925653411284
+Mongolia,2011,11.2104793316514
+Mongolia,2012,11.0343569710157
+Mongolia,2013,10.8588868481812
+Mongolia,2014,10.6843707193228
+Mongolia,2015,10.5102017758633
+Mongolia,2016,10.336687933623
+Mongolia,2017,10.317490737931
+Montenegro,2006,0.162180143536931
+Montenegro,2007,0.156783146192189
+Montenegro,2008,0.151444944178269
+Montenegro,2009,0.146168987926894
+Montenegro,2010,0.140952362369966
+Montenegro,2011,0.135793836366703
+Montenegro,2012,0.130693413050239
+Montenegro,2013,0.12565029231806
+Montenegro,2014,0.05772011777439
+Montenegro,2015,0.0535876122156026
+Montenegro,2016,0.0530626140931059
+Montenegro,2017,0.0525360484620789
+Morocco,2000,24.2650023371946
+Morocco,2001,23.0491902338225
+Morocco,2002,21.8338901580923
+Morocco,2003,20.6200339185119
+Morocco,2004,19.406296150942
+Morocco,2005,18.0100284265711
+Morocco,2006,16.6237090982227
+Morocco,2007,15.2643228474018
+Morocco,2008,13.93210596877
+Morocco,2009,12.6271992673308
+Morocco,2010,11.348619827263
+Morocco,2011,10.0970717113329
+Morocco,2012,8.87213482233323
+Morocco,2013,7.67385432123914
+Morocco,2014,7.56969810044918
+Morocco,2015,7.46610450954284
+Morocco,2016,7.36288466515225
+Morocco,2017,7.26022746558306
+Mozambique,2000,59.2025437502192
+Mozambique,2001,57.3599986959475
+Mozambique,2002,55.5207972148568
+Mozambique,2003,53.6854267544735
+Mozambique,2004,51.8534454722135
+Mozambique,2005,50.0253134796849
+Mozambique,2006,48.2001980416592
+Mozambique,2007,46.3793770758895
+Mozambique,2008,44.4495528420513
+Mozambique,2009,42.5189255045123
+Mozambique,2010,40.5966021620724
+Mozambique,2011,38.6835048647159
+Mozambique,2012,36.7797580831026
+Mozambique,2013,34.8854905897438
+Mozambique,2014,33.0008285746224
+Mozambique,2015,31.1258974845958
+Mozambique,2016,29.2608290667699
+Mozambique,2017,27.4060466952341
+Myanmar,2000,9.34860357634127
+Myanmar,2001,9.3552635123799
+Myanmar,2002,9.36178895463766
+Myanmar,2003,9.36806718912249
+Myanmar,2004,9.37409918473625
+Myanmar,2005,9.37988313995837
+Myanmar,2006,9.38552939759954
+Myanmar,2007,9.39092528530453
+Myanmar,2008,9.39607049419164
+Myanmar,2009,9.4010780141877
+Myanmar,2010,9.4057182350588
+Myanmar,2011,9.4102193541934
+Myanmar,2012,9.41446475583997
+Myanmar,2013,9.41857069327735
+Myanmar,2014,9.42230417295502
+Myanmar,2015,9.424155793324
+Myanmar,2016,9.42399301146198
+Myanmar,2017,9.4217986483788
+Namibia,2000,56.0618782720907
+Namibia,2001,55.8010526928807
+Namibia,2002,55.3405835729437
+Namibia,2003,54.8470400131038
+Namibia,2004,54.3578618206503
+Namibia,2005,53.8762458266122
+Namibia,2006,53.4006425282967
+Namibia,2007,52.9324317946228
+Namibia,2008,52.4712484050104
+Namibia,2009,52.0206487072052
+Namibia,2010,51.5774412937921
+Namibia,2011,51.1445593103478
+Namibia,2012,50.706587880842
+Namibia,2013,50.2790410360269
+Namibia,2014,49.8620578657287
+Namibia,2015,49.4573244639056
+Namibia,2016,49.0735751342816
+Namibia,2017,48.7125523079709
+Nauru,2000,0.897693803834386
+Nauru,2001,1.0277854959711
+Nauru,2002,1.15787718810776
+Nauru,2003,1.28796888024448
+Nauru,2004,1.41806057238119
+Nauru,2005,1.54815226451791
+Nauru,2006,1.67824395665457
+Nauru,2007,1.80833564879128
+Nauru,2008,1.938427340928
+Nauru,2009,2.06851903306472
+Nauru,2010,2.19861072520143
+Nauru,2011,2.32870241733809
+Nauru,2012,2.45879410947481
+Nauru,2013,2.58888580161153
+Nauru,2014,2.58888580161153
+Nauru,2015,2.58888580161153
+Nauru,2016,2.58888580161153
+Nauru,2017,2.58888580161153
+Nepal,2000,66.8831668691595
+Nepal,2001,63.9852682526318
+Nepal,2002,61.2408752340726
+Nepal,2003,58.5068852740939
+Nepal,2004,55.7836411570571
+Nepal,2005,53.0714638723109
+Nepal,2006,50.3706884738812
+Nepal,2007,47.6812391692227
+Nepal,2008,45.0038864236946
+Nepal,2009,42.3389612388135
+Nepal,2010,39.6867870964884
+Nepal,2011,37.0473893457292
+Nepal,2012,34.4200206617642
+Nepal,2013,31.8061269132981
+Nepal,2014,29.2054462506395
+Nepal,2015,26.6190674921285
+Nepal,2016,24.0471264837531
+Nepal,2017,21.49045263576
+Netherlands,2000,0.0
+Netherlands,2001,0.0
+Netherlands,2002,0.0
+Netherlands,2003,0.0
+Netherlands,2004,0.0
+Netherlands,2005,0.0
+Netherlands,2006,0.0
+Netherlands,2007,0.0
+Netherlands,2008,0.0
+Netherlands,2009,0.0
+Netherlands,2010,0.0
+Netherlands,2011,0.0
+Netherlands,2012,0.0
+Netherlands,2013,0.0
+Netherlands,2014,0.0
+Netherlands,2015,0.0
+Netherlands,2016,0.0
+Netherlands,2017,0.0
+New Caledonia,2000,0.0
+New Caledonia,2001,0.0
+New Caledonia,2002,0.0
+New Caledonia,2003,0.0
+New Caledonia,2004,0.0
+New Caledonia,2005,0.0
+New Caledonia,2006,0.0
+New Caledonia,2007,0.0
+New Caledonia,2008,0.0
+New Caledonia,2009,0.0
+New Caledonia,2010,0.0
+New Caledonia,2011,0.0
+New Caledonia,2012,0.0
+New Caledonia,2013,0.0
+New Caledonia,2014,0.0
+New Caledonia,2015,0.0
+New Caledonia,2016,0.0
+New Caledonia,2017,0.0
+New Zealand,2000,0.0
+New Zealand,2001,0.0
+New Zealand,2002,0.0
+New Zealand,2003,0.0
+New Zealand,2004,0.0
+New Zealand,2005,0.0
+New Zealand,2006,0.0
+New Zealand,2007,0.0
+New Zealand,2008,0.0
+New Zealand,2009,0.0
+New Zealand,2010,0.0
+New Zealand,2011,0.0
+New Zealand,2012,0.0
+New Zealand,2013,0.0
+New Zealand,2014,0.0
+New Zealand,2015,0.0
+New Zealand,2016,0.0
+New Zealand,2017,0.0
+Nicaragua,2000,15.7848884700621
+Nicaragua,2001,15.1938608729669
+Nicaragua,2002,14.6053138729941
+Nicaragua,2003,14.0189958154711
+Nicaragua,2004,13.4349065303037
+Nicaragua,2005,12.8521863366174
+Nicaragua,2006,12.2626278409916
+Nicaragua,2007,11.6762170571194
+Nicaragua,2008,11.0925441886577
+Nicaragua,2009,10.5120038222218
+Nicaragua,2010,9.93439437902843
+Nicaragua,2011,9.35971800088586
+Nicaragua,2012,8.78797294349988
+Nicaragua,2013,8.21915902704155
+Nicaragua,2014,7.6534245419512
+Nicaragua,2015,7.09060733732117
+Nicaragua,2016,6.53070685381521
+Nicaragua,2017,6.50298591009261
+Niger,2000,83.7213963477308
+Niger,2001,82.7408655817681
+Niger,2002,81.8175439268633
+Niger,2003,80.8934843692905
+Niger,2004,79.9694075839013
+Niger,2005,79.0460151394455
+Niger,2006,78.1218861046041
+Niger,2007,77.1977393102664
+Niger,2008,76.2742726130567
+Niger,2009,75.3500793468043
+Niger,2010,74.4258641703227
+Niger,2011,73.5023290736953
+Niger,2012,72.5780702929762
+Niger,2013,71.6537906954056
+Niger,2014,70.7191758040678
+Niger,2015,69.7729739095476
+Niger,2016,68.8166909353876
+Niger,2017,67.8490734578913
+Nigeria,2000,26.3966411064167
+Nigeria,2001,26.0350113092221
+Nigeria,2002,25.6690869472476
+Nigeria,2003,25.2990205455622
+Nigeria,2004,24.9249734301014
+Nigeria,2005,24.5473145644612
+Nigeria,2006,24.1658167736582
+Nigeria,2007,23.7804505980194
+Nigeria,2008,23.3911853315449
+Nigeria,2009,22.9988166122088
+Nigeria,2010,22.6027099573703
+Nigeria,2011,22.2053483464258
+Nigeria,2012,21.8067588242047
+Nigeria,2013,21.4073896911351
+Nigeria,2014,21.007274661586
+Nigeria,2015,20.6064475976674
+Nigeria,2016,20.2055912777494
+Nigeria,2017,19.8043163482887
+North America,2000,0.0
+North America,2001,0.0
+North America,2002,0.0
+North America,2003,0.0
+North America,2004,0.0
+North America,2005,0.0
+North America,2006,0.0
+North America,2007,0.0
+North America,2008,0.0
+North America,2009,0.0
+North America,2010,0.0
+North America,2011,0.0
+North America,2012,0.0
+North America,2013,0.0
+North America,2014,0.0
+North America,2015,0.0
+North America,2016,0.0
+North America,2017,0.0
+North Korea,2002,0.0
+North Korea,2003,0.0
+North Korea,2004,0.0
+North Korea,2005,0.0
+North Korea,2006,0.0
+North Korea,2007,0.0
+North Korea,2008,0.0
+North Korea,2009,0.0
+North Korea,2010,0.0
+North Korea,2011,0.0
+North Korea,2012,0.0
+North Korea,2013,0.0
+North Korea,2014,0.0
+North Korea,2015,0.0
+North Korea,2016,0.0
+North Korea,2017,0.0
+North Macedonia,2000,0.0746135986907892
+North Macedonia,2001,0.0749897997975527
+North Macedonia,2002,0.0753659968192475
+North Macedonia,2003,0.0757421964031176
+North Macedonia,2004,0.0761202006013557
+North Macedonia,2005,0.144391199584199
+North Macedonia,2006,0.213085008807591
+North Macedonia,2007,0.282057605947706
+North Macedonia,2008,0.351165006294296
+North Macedonia,2009,0.420253383331321
+North Macedonia,2010,0.489185406025427
+North Macedonia,2011,0.557804011106326
+North Macedonia,2012,0.625974980021182
+North Macedonia,2013,0.693538218868987
+North Macedonia,2014,0.691999181495309
+North Macedonia,2015,0.68999039080897
+North Macedonia,2016,0.687479402014379
+North Macedonia,2017,0.684482377224426
+Northern Mariana Islands,2000,0.246431624123886
+Northern Mariana Islands,2001,0.246431624123886
+Northern Mariana Islands,2002,0.246431624123886
+Northern Mariana Islands,2003,0.246431624123886
+Northern Mariana Islands,2004,0.240644736660213
+Northern Mariana Islands,2005,0.234857849196539
+Northern Mariana Islands,2006,0.229070961732866
+Northern Mariana Islands,2007,0.223284074269191
+Northern Mariana Islands,2008,0.217497186805517
+Northern Mariana Islands,2009,0.211710299341844
+Northern Mariana Islands,2010,0.205923411878169
+Northern Mariana Islands,2011,0.200136524414496
+Northern Mariana Islands,2012,0.194349636950822
+Northern Mariana Islands,2013,0.188562749487149
+Northern Mariana Islands,2014,0.182775862023474
+Northern Mariana Islands,2015,0.1769889745598
+Northern Mariana Islands,2016,0.171202087096127
+Northern Mariana Islands,2017,0.165415199632452
+Norway,2000,0.0
+Norway,2001,0.0
+Norway,2002,0.0
+Norway,2003,0.0
+Norway,2004,0.0
+Norway,2005,0.0
+Norway,2006,0.0
+Norway,2007,0.0
+Norway,2008,0.0
+Norway,2009,0.0
+Norway,2010,0.0
+Norway,2011,0.0
+Norway,2012,0.0
+Norway,2013,0.0
+Norway,2014,0.0
+Norway,2015,0.0
+Norway,2016,0.0
+Norway,2017,0.0
+OECD members,2000,1.2772804053691278
+OECD members,2001,1.2151489381262732
+OECD members,2002,1.1521735377384903
+OECD members,2003,1.0894671853237048
+OECD members,2004,1.0270112418123742
+OECD members,2005,0.9622300300720732
+OECD members,2006,0.8512885377294049
+OECD members,2007,0.7923893729913432
+OECD members,2008,0.7333176479170432
+OECD members,2009,0.6746835286102356
+OECD members,2010,0.6162498271208942
+OECD members,2011,0.5584227742875578
+OECD members,2012,0.4997787049005595
+OECD members,2013,0.4417877622748352
+OECD members,2014,0.380157813784838
+OECD members,2015,0.3245215292124749
+OECD members,2016,0.2673541081271066
+OECD members,2017,0.2127293098291319
+Oman,2001,4.12299713328658
+Oman,2002,4.12549924776327
+Oman,2003,4.12799984861804
+Oman,2004,4.08822942783982
+Oman,2005,4.01656833491525
+Oman,2006,3.54133991327286
+Oman,2007,3.08165020075333
+Oman,2008,2.63722356244704
+Oman,2009,2.20793105328401
+Oman,2010,1.79329948660348
+Oman,2011,1.37017050681909
+Oman,2012,0.797383622293934
+Oman,2013,0.462368003949141
+Oman,2014,0.164695372931471
+Oman,2015,0.0
+Oman,2016,0.0
+Oman,2017,0.0
+Other small states,2000,19.36089925133548
+Other small states,2001,18.83974016878658
+Other small states,2002,19.3382766181648
+Other small states,2003,18.722355342134325
+Other small states,2004,18.08206173360551
+Other small states,2005,17.416378090286067
+Other small states,2006,16.29078571448748
+Other small states,2007,15.39837118009008
+Other small states,2008,14.729527298265523
+Other small states,2009,14.093366898708084
+Other small states,2010,13.494532034596244
+Other small states,2011,12.936472930988833
+Other small states,2012,12.420865842496596
+Other small states,2013,11.927774620300836
+Other small states,2014,11.470680911873169
+Other small states,2015,11.039502486875698
+Other small states,2016,10.749134066323773
+Other small states,2017,10.469891659318456
+Pacific island small states,2000,16.00232326868961
+Pacific island small states,2001,15.925166581136583
+Pacific island small states,2002,16.02341202574978
+Pacific island small states,2003,16.102247902971175
+Pacific island small states,2004,16.1655905916774
+Pacific island small states,2005,16.211389430580663
+Pacific island small states,2006,15.895366029289612
+Pacific island small states,2007,15.89999052752014
+Pacific island small states,2008,15.894889003183346
+Pacific island small states,2009,15.897736174546
+Pacific island small states,2010,15.919246415306976
+Pacific island small states,2011,15.964495560788524
+Pacific island small states,2012,16.026468347473113
+Pacific island small states,2013,16.097229746776687
+Pacific island small states,2014,16.160023604253304
+Pacific island small states,2015,16.514757479950045
+Pacific island small states,2016,16.528880504617458
+Pacific island small states,2017,16.563122305564338
+Pakistan,2000,40.188834084019
+Pakistan,2001,38.368263031537
+Pakistan,2002,36.5547391630073
+Pakistan,2003,34.7492828715617
+Pakistan,2004,32.9514657647971
+Pakistan,2005,31.1617517337642
+Pakistan,2006,29.3797600964433
+Pakistan,2007,27.6055428054579
+Pakistan,2008,25.8395172910158
+Pakistan,2009,24.0816803785077
+Pakistan,2010,22.3317198952258
+Pakistan,2011,20.589702392345
+Pakistan,2012,18.8556844451108
+Pakistan,2013,17.1302238145366
+Pakistan,2014,15.4128038191084
+Pakistan,2015,13.7034855594632
+Pakistan,2016,12.0023296794887
+Pakistan,2017,10.4293642979948
+Palau,2000,0.0
+Palau,2001,0.0
+Palau,2002,0.0
+Palau,2003,0.0
+Palau,2004,0.0
+Palau,2005,0.0
+Palau,2006,0.0
+Palau,2007,0.0
+Palau,2008,0.0
+Palau,2009,0.0
+Palau,2010,0.0
+Palau,2011,0.0
+Palau,2012,0.0
+Palau,2013,0.0
+Palau,2014,0.0
+Palau,2015,0.0
+Palau,2016,0.0
+Palau,2017,0.0
+Palestine,2000,0.620738763073436
+Palestine,2001,0.590418273760787
+Palestine,2002,0.560143570102228
+Palestine,2003,0.529932458703923
+Palestine,2004,0.499766640467334
+Palestine,2005,0.469663724596713
+Palestine,2006,0.439614292124627
+Palestine,2007,0.40960961871791
+Palestine,2008,0.263573094173455
+Palestine,2009,0.252047284826654
+Palestine,2010,0.240612965399527
+Palestine,2011,0.229286773323368
+Palestine,2012,0.218074924744061
+Palestine,2013,0.206984098839714
+Palestine,2014,0.196020601853954
+Palestine,2015,0.185143233293024
+Palestine,2016,0.174286550660278
+Palestine,2017,0.163597725817945
+Panama,2000,7.79569330138149
+Panama,2001,7.56711733946571
+Panama,2002,7.34013777041142
+Panama,2003,7.11444420446172
+Panama,2004,6.89018273380556
+Panama,2005,6.66734767747688
+Panama,2006,6.44593116420279
+Panama,2007,6.22606783039195
+Panama,2008,6.00746894770988
+Panama,2009,5.79026988287773
+Panama,2010,5.57459631910752
+Panama,2011,5.35913404692145
+Panama,2012,5.14406161819007
+Panama,2013,4.92942501841464
+Panama,2014,4.71514704038008
+Panama,2015,4.50152261361838
+Panama,2016,4.4612916345152
+Panama,2017,4.42021011939369
+Papua New Guinea,2000,13.251952360333
+Papua New Guinea,2001,13.2539715954188
+Papua New Guinea,2002,13.2556222498796
+Papua New Guinea,2003,13.2572734720271
+Papua New Guinea,2004,13.2590170647945
+Papua New Guinea,2005,13.3535261109826
+Papua New Guinea,2006,13.4482179907029
+Papua New Guinea,2007,13.5430920607884
+Papua New Guinea,2008,13.6381477857846
+Papua New Guinea,2009,13.7333856979245
+Papua New Guinea,2010,13.8288065360466
+Papua New Guinea,2011,13.9245355608665
+Papua New Guinea,2012,14.0203239755655
+Papua New Guinea,2013,14.1143745923412
+Papua New Guinea,2014,14.2064720324156
+Papua New Guinea,2015,14.2964047730982
+Papua New Guinea,2016,14.3839616613711
+Papua New Guinea,2017,14.4689285506531
+Paraguay,2000,0.884428265918958
+Paraguay,2001,0.868325499429636
+Paraguay,2002,0.852412098905733
+Paraguay,2003,0.838600495372481
+Paraguay,2004,0.825256007812488
+Paraguay,2005,0.812005374474015
+Paraguay,2006,0.798855691646008
+Paraguay,2007,0.785806491609253
+Paraguay,2008,0.772850629539407
+Paraguay,2009,0.759994663643316
+Paraguay,2010,0.747238187829584
+Paraguay,2011,0.734580842046802
+Paraguay,2012,0.722015900997664
+Paraguay,2013,0.70974278810651
+Paraguay,2014,0.697629358305225
+Paraguay,2015,0.685600968173492
+Paraguay,2016,0.673651585022479
+Paraguay,2017,0.661792126784367
+Peru,2000,18.3481937566877
+Peru,2001,17.5275560738186
+Peru,2002,16.7216210234315
+Peru,2003,15.9298086121142
+Peru,2004,15.152344964112
+Peru,2005,14.3893845791614
+Peru,2006,13.6400165451725
+Peru,2007,12.9047310805341
+Peru,2008,12.2220232239554
+Peru,2009,11.5645417489955
+Peru,2010,10.9131573740714
+Peru,2011,10.2683840001915
+Peru,2012,9.62964451473048
+Peru,2013,8.99738535973214
+Peru,2014,8.37130321527087
+Peru,2015,7.75115815364566
+Peru,2016,7.13729998991653
+Peru,2017,6.52947368918895
+Philippines,2000,10.9546331629383
+Philippines,2001,10.9637091675795
+Philippines,2002,10.6069018231375
+Philippines,2003,10.2494431908534
+Philippines,2004,9.89133353687202
+Philippines,2005,9.53257211076266
+Philippines,2006,9.17315953007632
+Philippines,2007,8.81309492750861
+Philippines,2008,8.45237929206186
+Philippines,2009,8.0909361655768
+Philippines,2010,7.72559583033804
+Philippines,2011,7.34428099889928
+Philippines,2012,6.96442196935377
+Philippines,2013,6.58595862037309
+Philippines,2014,6.20901587688257
+Philippines,2015,5.83347622952572
+Philippines,2016,5.45940042307972
+Philippines,2017,5.08606105839387
+Poland,2000,0.0
+Poland,2001,0.0
+Poland,2002,0.0
+Poland,2003,0.0
+Poland,2004,0.0
+Poland,2005,0.0
+Poland,2006,0.0
+Poland,2007,0.0
+Poland,2008,0.0
+Poland,2009,0.0
+Poland,2010,0.0
+Poland,2011,0.0
+Poland,2012,0.0
+Poland,2013,0.0
+Poland,2014,0.0
+Poland,2015,0.0
+Poland,2016,0.0
+Poland,2017,0.0
+Portugal,2000,0.0
+Portugal,2001,0.0
+Portugal,2002,0.0
+Portugal,2003,0.0
+Portugal,2004,0.0
+Portugal,2005,0.0
+Portugal,2006,0.0
+Portugal,2007,0.0
+Portugal,2008,0.0
+Portugal,2009,0.0
+Portugal,2010,0.0
+Portugal,2011,0.0
+Portugal,2012,0.0
+Portugal,2013,0.0
+Portugal,2014,0.0
+Portugal,2015,0.0
+Portugal,2016,0.0
+Portugal,2017,0.0
+Post-demographic dividend,2000,0.0417167525597301
+Post-demographic dividend,2001,0.0396794035515294
+Post-demographic dividend,2002,0.0376589135677217
+Post-demographic dividend,2003,0.0356704714288273
+Post-demographic dividend,2004,0.0337041241199135
+Post-demographic dividend,2005,0.0286495795048639
+Post-demographic dividend,2006,0.0170862814055227
+Post-demographic dividend,2007,0.0154301965915607
+Post-demographic dividend,2008,0.0120538921777543
+Post-demographic dividend,2009,0.0104712294584747
+Post-demographic dividend,2010,0.0091883827404461
+Post-demographic dividend,2011,0.0080741865560378
+Post-demographic dividend,2012,0.0070508342713113
+Post-demographic dividend,2013,0.0060430379781049
+Post-demographic dividend,2014,0.0050479137040177
+Post-demographic dividend,2015,0.0040548641281621
+Post-demographic dividend,2016,0.0030673328482358
+Post-demographic dividend,2017,0.0030547101933317
+Pre-demographic dividend,2000,28.683391082760657
+Pre-demographic dividend,2001,28.315856961416173
+Pre-demographic dividend,2002,27.908339907722556
+Pre-demographic dividend,2003,27.464583932982627
+Pre-demographic dividend,2004,27.01645182606261
+Pre-demographic dividend,2005,26.45664966779783
+Pre-demographic dividend,2006,25.90280005916952
+Pre-demographic dividend,2007,25.386392189097126
+Pre-demographic dividend,2008,24.822634873384526
+Pre-demographic dividend,2009,24.25606913148776
+Pre-demographic dividend,2010,23.684043352627224
+Pre-demographic dividend,2011,23.733429646527835
+Pre-demographic dividend,2012,23.15338006689756
+Pre-demographic dividend,2013,22.57162875704984
+Pre-demographic dividend,2014,21.98983979099462
+Pre-demographic dividend,2015,21.409855265519862
+Pre-demographic dividend,2016,20.83705179705428
+Pre-demographic dividend,2017,20.17584999432684
+Puerto Rico,2000,0.0
+Puerto Rico,2001,0.0
+Puerto Rico,2002,0.0
+Puerto Rico,2003,0.0
+Puerto Rico,2004,0.0
+Puerto Rico,2005,0.0
+Puerto Rico,2006,0.0
+Puerto Rico,2007,0.0
+Puerto Rico,2008,0.0
+Puerto Rico,2009,0.0
+Puerto Rico,2010,0.0
+Puerto Rico,2011,0.0
+Puerto Rico,2012,0.0
+Puerto Rico,2013,0.0
+Puerto Rico,2014,0.0
+Puerto Rico,2015,0.0
+Puerto Rico,2016,0.0
+Puerto Rico,2017,0.0
+Qatar,2000,0.0
+Qatar,2001,0.0
+Qatar,2002,0.0
+Qatar,2003,0.0
+Qatar,2004,0.0
+Qatar,2005,0.0
+Qatar,2006,0.0
+Qatar,2007,0.0
+Qatar,2008,0.0
+Qatar,2009,0.0
+Qatar,2010,0.0
+Qatar,2011,0.0
+Qatar,2012,0.0
+Qatar,2013,0.0
+Qatar,2014,0.0
+Qatar,2015,0.0
+Qatar,2016,0.0
+Qatar,2017,0.0
+Romania,2001,0.0
+Romania,2002,0.0
+Romania,2003,0.0
+Romania,2004,0.0
+Romania,2005,0.0
+Romania,2006,0.0
+Romania,2007,0.0
+Romania,2008,0.0
+Romania,2009,0.0
+Romania,2010,0.0
+Romania,2011,0.0
+Romania,2012,0.0
+Romania,2013,0.0
+Romania,2014,0.0
+Romania,2015,0.0
+Romania,2016,0.0
+Romania,2017,0.0
+Russia,2000,0.0
+Russia,2001,0.0
+Russia,2002,0.0
+Russia,2003,0.0
+Russia,2004,0.0
+Russia,2005,0.0
+Russia,2006,0.0
+Russia,2007,0.0
+Russia,2008,0.0
+Russia,2009,0.0
+Russia,2010,0.0
+Russia,2011,0.0
+Russia,2012,0.0
+Russia,2013,0.0
+Russia,2014,0.0
+Russia,2015,0.0
+Russia,2016,0.0
+Russia,2017,0.0
+Rwanda,2000,4.32298515280551
+Rwanda,2001,4.17058374587647
+Rwanda,2002,4.01957733331994
+Rwanda,2003,3.89424011469947
+Rwanda,2004,3.77251877812448
+Rwanda,2005,3.65080940961214
+Rwanda,2006,3.52908869620716
+Rwanda,2007,3.40740485792818
+Rwanda,2008,3.28573299685611
+Rwanda,2009,3.16405433588449
+Rwanda,2010,3.04240802751055
+Rwanda,2011,2.92077381655199
+Rwanda,2012,2.79913726568485
+Rwanda,2013,2.67752854080647
+Rwanda,2014,2.5557513899875
+Rwanda,2015,2.43386837465324
+Rwanda,2016,2.31197253752606
+Rwanda,2017,2.19011810021979
+Saint Kitts and Nevis,2000,3.39553571428576
+Saint Kitts and Nevis,2001,3.06760204081638
+Saint Kitts and Nevis,2002,2.73966836734701
+Saint Kitts and Nevis,2003,2.41173469387752
+Saint Kitts and Nevis,2004,2.08380102040815
+Saint Kitts and Nevis,2005,1.75586734693877
+Saint Kitts and Nevis,2006,1.4279336734694
+Saint Kitts and Nevis,2007,1.10000000000002
+Saint Kitts and Nevis,2008,0.772066326530648
+Saint Kitts and Nevis,2009,0.444132653061274
+Saint Kitts and Nevis,2010,0.444132653061274
+Saint Kitts and Nevis,2011,0.444132653061274
+Saint Kitts and Nevis,2012,0.444132653061274
+Saint Kitts and Nevis,2013,0.444132653061274
+Saint Lucia,2000,10.8253600173813
+Saint Lucia,2001,10.8315975796369
+Saint Lucia,2002,10.855303058626
+Saint Lucia,2003,10.8783667581932
+Saint Lucia,2004,9.90490942612317
+Saint Lucia,2005,8.9158872184174
+Saint Lucia,2006,7.91204073093411
+Saint Lucia,2007,6.89404387527167
+Saint Lucia,2008,5.86256823525438
+Saint Lucia,2009,4.8183590972099
+Saint Lucia,2010,3.76562107196408
+Saint Lucia,2011,2.72948564472368
+Saint Lucia,2012,1.69335003609279
+Saint Lucia,2013,0.87528307074487
+Saint Lucia,2014,0.791493556916119
+Saint Lucia,2015,0.792906701020179
+Saint Lucia,2016,0.794748266357236
+Saint Lucia,2017,0.797060706539553
+Saint Vincent and the Grenadines,2000,2.66450440673651
+Saint Vincent and the Grenadines,2001,2.71409589275866
+Saint Vincent and the Grenadines,2002,2.7636873787808
+Saint Vincent and the Grenadines,2003,2.81327886480295
+Saint Vincent and the Grenadines,2004,2.86287035082511
+Saint Vincent and the Grenadines,2005,2.91246183684726
+Saint Vincent and the Grenadines,2006,2.96205332286939
+Saint Vincent and the Grenadines,2007,3.01164480889155
+Saint Vincent and the Grenadines,2008,3.0612362949137
+Saint Vincent and the Grenadines,2009,3.11082778093584
+Saint Vincent and the Grenadines,2010,3.16041926695799
+Saint Vincent and the Grenadines,2011,3.21001075298014
+Saint Vincent and the Grenadines,2012,3.25960223900228
+Saint Vincent and the Grenadines,2013,3.30919372502443
+Saint Vincent and the Grenadines,2014,3.35878521104658
+Saint Vincent and the Grenadines,2015,3.35878521104658
+Saint Vincent and the Grenadines,2016,3.35878521104658
+Saint Vincent and the Grenadines,2017,3.35878521104658
+Samoa,2000,0.0336735630142479
+Samoa,2001,0.0336342864923045
+Samoa,2002,0.033689101280132
+Samoa,2003,0.0337939746140885
+Samoa,2004,0.0338979875105797
+Samoa,2005,0.0378768597224631
+Samoa,2006,0.041878189223933
+Samoa,2007,0.0471678769438029
+Samoa,2008,0.0529369255054235
+Samoa,2009,0.0586889451101062
+Samoa,2010,0.0644241596298304
+Samoa,2011,0.070143158925518
+Samoa,2012,0.0758504562638144
+Samoa,2013,0.08154294755185
+Samoa,2014,0.0872175746655094
+Samoa,2015,0.0928751234447783
+Samoa,2016,0.0985155174123449
+Samoa,2017,0.104138621522968
+San Marino,2000,0.0
+San Marino,2001,0.0
+San Marino,2002,0.0
+San Marino,2003,0.0
+San Marino,2004,0.0
+San Marino,2005,0.0
+San Marino,2006,0.0
+San Marino,2007,0.0
+San Marino,2008,0.0
+San Marino,2009,0.0
+San Marino,2010,0.0
+San Marino,2011,0.0
+San Marino,2012,0.0
+San Marino,2013,0.0
+San Marino,2014,0.0
+San Marino,2015,0.0
+San Marino,2016,0.0
+San Marino,2017,0.0
+Sao Tome and Principe,2000,70.6216253883813
+Sao Tome and Principe,2001,69.2805465078187
+Sao Tome and Principe,2002,67.8990404470989
+Sao Tome and Principe,2003,66.5018814699457
+Sao Tome and Principe,2004,65.0943070564956
+Sao Tome and Principe,2005,63.6776200791857
+Sao Tome and Principe,2006,62.2515269299691
+Sao Tome and Principe,2007,60.8163301507889
+Sao Tome and Principe,2008,59.3723420010438
+Sao Tome and Principe,2009,57.9206035306167
+Sao Tome and Principe,2010,56.4608084053712
+Sao Tome and Principe,2011,54.9937010677986
+Sao Tome and Principe,2012,53.5193313885715
+Sao Tome and Principe,2013,52.0440405134856
+Sao Tome and Principe,2014,50.5675128439235
+Sao Tome and Principe,2015,49.090543966395
+Sao Tome and Principe,2016,47.6135348299463
+Sao Tome and Principe,2017,47.433817152578
+Saudi Arabia,2000,0.0
+Saudi Arabia,2001,0.0
+Saudi Arabia,2002,0.0
+Saudi Arabia,2003,0.0
+Saudi Arabia,2004,0.0
+Saudi Arabia,2005,0.0
+Saudi Arabia,2006,0.0
+Saudi Arabia,2007,0.0
+Saudi Arabia,2008,0.0
+Saudi Arabia,2009,0.0
+Saudi Arabia,2010,0.0
+Saudi Arabia,2011,0.0
+Saudi Arabia,2012,0.0
+Saudi Arabia,2013,0.0
+Saudi Arabia,2014,0.0
+Saudi Arabia,2015,0.0
+Saudi Arabia,2016,0.0
+Saudi Arabia,2017,0.0
+Senegal,2000,23.9924882638202
+Senegal,2001,23.4262231634665
+Senegal,2002,22.8623001255276
+Senegal,2003,22.2528882550319
+Senegal,2004,21.6108236836443
+Senegal,2005,20.9744668372859
+Senegal,2006,20.3432181361489
+Senegal,2007,19.7174128597413
+Senegal,2008,19.0970720917511
+Senegal,2009,18.4824946780394
+Senegal,2010,17.8731385589106
+Senegal,2011,17.2693075859913
+Senegal,2012,16.671283756715
+Senegal,2013,16.0788144448912
+Senegal,2014,15.4919213374712
+Senegal,2015,14.9087303610101
+Senegal,2016,14.3296592199001
+Senegal,2017,13.7544297976619
+Serbia,2000,0.06897416962231
+Serbia,2001,0.0691599995435387
+Serbia,2002,0.0693458331984655
+Serbia,2003,0.0695308345312669
+Serbia,2004,0.0697174984245819
+Serbia,2005,0.0689317496959756
+Serbia,2006,0.068034999856639
+Serbia,2007,0.0670273333462341
+Serbia,2008,0.0659083338976583
+Serbia,2009,0.0646783325845988
+Serbia,2010,0.0633379987380369
+Serbia,2011,0.061886249317199
+Serbia,2012,0.060417999761666
+Serbia,2013,0.0612301229979321
+Serbia,2014,0.066625500319029
+Serbia,2015,0.0719939996156106
+Serbia,2016,0.0773324960569741
+Serbia,2017,0.0771014996531726
+Seychelles,2000,1.41025949002829
+Seychelles,2001,1.33433613592575
+Seychelles,2002,1.25841278182321
+Seychelles,2003,1.18248942772067
+Seychelles,2004,1.10656607361813
+Seychelles,2005,1.03064271951558
+Seychelles,2006,0.954719365413041
+Seychelles,2007,0.878796011310499
+Seychelles,2008,0.802872657207928
+Seychelles,2009,0.726949303105386
+Seychelles,2010,0.651025949002843
+Seychelles,2011,0.575102594900301
+Seychelles,2012,0.499179240797758
+Seychelles,2013,0.0
+Seychelles,2014,0.0
+Seychelles,2015,0.0
+Seychelles,2016,0.0
+Seychelles,2017,0.0
+Sierra Leone,2000,26.2639837507184
+Sierra Leone,2001,25.7523810636679
+Sierra Leone,2002,25.2437015767
+Sierra Leone,2003,24.7379692704461
+Sierra Leone,2004,24.2352034284131
+Sierra Leone,2005,23.7135357510267
+Sierra Leone,2006,23.1794831128916
+Sierra Leone,2007,22.6500372332949
+Sierra Leone,2008,22.1252366290158
+Sierra Leone,2009,21.6053759734038
+Sierra Leone,2010,21.0904750840132
+Sierra Leone,2011,20.5803144675233
+Sierra Leone,2012,20.0749334687351
+Sierra Leone,2013,19.5748256710629
+Sierra Leone,2014,19.0795537461189
+Sierra Leone,2015,18.5893670456654
+Sierra Leone,2016,18.1040801413956
+Sierra Leone,2017,17.6223319690389
+Singapore,2000,0.0
+Singapore,2001,0.0
+Singapore,2002,0.0
+Singapore,2003,0.0
+Singapore,2004,0.0
+Singapore,2005,0.0
+Singapore,2006,0.0
+Singapore,2007,0.0
+Singapore,2008,0.0
+Singapore,2009,0.0
+Singapore,2010,0.0
+Singapore,2011,0.0
+Singapore,2012,0.0
+Singapore,2013,0.0
+Singapore,2014,0.0
+Singapore,2015,0.0
+Singapore,2016,0.0
+Singapore,2017,0.0
+Sint Maarten (Dutch part),2000,0.497086443956142
+Sint Maarten (Dutch part),2001,0.468955167885952
+Sint Maarten (Dutch part),2002,0.440823891815761
+Sint Maarten (Dutch part),2003,0.41269261574557
+Sint Maarten (Dutch part),2004,0.384561339675372
+Sint Maarten (Dutch part),2005,0.356430063605181
+Sint Maarten (Dutch part),2006,0.32829878753499
+Sint Maarten (Dutch part),2007,0.300167511464792
+Sint Maarten (Dutch part),2008,0.272036235394601
+Sint Maarten (Dutch part),2009,0.243904959324411
+Sint Maarten (Dutch part),2010,0.21577368325422
+Sint Maarten (Dutch part),2011,0.187642407184022
+Sint Maarten (Dutch part),2012,0.159511131113831
+Sint Maarten (Dutch part),2013,0.13137985504364
+Sint Maarten (Dutch part),2014,0.13137985504364
+Sint Maarten (Dutch part),2015,0.13137985504364
+Sint Maarten (Dutch part),2016,0.13137985504364
+Sint Maarten (Dutch part),2017,0.13137985504364
+Slovakia,2000,0.0
+Slovakia,2001,0.0
+Slovakia,2002,0.0
+Slovakia,2003,0.0
+Slovakia,2004,0.0
+Slovakia,2005,0.0
+Slovakia,2006,0.0
+Slovakia,2007,0.0
+Slovakia,2008,0.0
+Slovakia,2009,0.0
+Slovakia,2010,0.0
+Slovakia,2011,0.0
+Slovakia,2012,0.0
+Slovakia,2013,0.0
+Slovakia,2014,0.0
+Slovakia,2015,0.0
+Slovakia,2016,0.0
+Slovakia,2017,0.0
+Slovenia,2000,0.0
+Slovenia,2001,0.0
+Slovenia,2002,0.0
+Slovenia,2003,0.0
+Slovenia,2004,0.0
+Slovenia,2005,0.0
+Slovenia,2006,0.0
+Slovenia,2007,0.0
+Slovenia,2008,0.0
+Slovenia,2009,0.0
+Slovenia,2010,0.0
+Slovenia,2011,0.0
+Slovenia,2012,0.0
+Slovenia,2013,0.0
+Slovenia,2014,0.0
+Slovenia,2015,0.0
+Slovenia,2016,0.0
+Slovenia,2017,0.0
+Small states,2000,15.013387784517075
+Small states,2001,14.664778710317492
+Small states,2002,15.17166735195382
+Small states,2003,14.758053440099706
+Small states,2004,14.323339540945309
+Small states,2005,13.873507111797055
+Small states,2006,13.143929493054465
+Small states,2007,12.557237131282724
+Small states,2008,12.093113706008545
+Small states,2009,11.646832554930116
+Small states,2010,11.222290248233898
+Small states,2011,10.82224343085186
+Small states,2012,10.452139398826978
+Small states,2013,10.09663503430542
+Small states,2014,9.781859311926642
+Small states,2015,9.47041907847064
+Small states,2016,9.240227578039818
+Small states,2017,9.043483731723814
+Solomon Islands,2000,57.2290712763215
+Solomon Islands,2001,57.0046773878772
+Solomon Islands,2002,56.7756573988842
+Solomon Islands,2003,56.542014963833
+Solomon Islands,2004,56.3037446320387
+Solomon Islands,2005,56.1499258412948
+Solomon Islands,2006,55.9872871347312
+Solomon Islands,2007,55.8157087263404
+Solomon Islands,2008,55.634478291271
+Solomon Islands,2009,55.4446673113522
+Solomon Islands,2010,55.2455675812681
+Solomon Islands,2011,55.0413483292378
+Solomon Islands,2012,54.8313755473242
+Solomon Islands,2013,54.6162410407019
+Solomon Islands,2014,54.3965617419019
+Solomon Islands,2015,54.1717010324944
+Solomon Islands,2016,53.9366207848413
+Solomon Islands,2017,53.6898429124604
+Somalia,2000,58.7516335676532
+Somalia,2001,56.9732823682795
+Somalia,2002,55.2025472341754
+Somalia,2003,53.1835711474518
+Somalia,2004,51.1787390687627
+Somalia,2005,49.1909172842357
+Somalia,2006,47.2178378012244
+Somalia,2007,47.3713222161637
+Somalia,2008,44.9102726267569
+Somalia,2009,42.4754279618991
+Somalia,2010,40.065576358363
+Somalia,2011,37.6852437203786
+Somalia,2012,35.959329293836
+Somalia,2013,34.2474082910016
+Somalia,2014,32.5484925826634
+Somalia,2015,30.8621998999035
+Somalia,2016,29.1881983255776
+Somalia,2017,27.5271584729489
+South Africa,2000,12.3502694147748
+South Africa,2001,11.6196533008864
+South Africa,2002,10.8897202125908
+South Africa,2003,10.1689400527611
+South Africa,2004,9.46130076857495
+South Africa,2005,8.76726245649651
+South Africa,2006,8.08637692388969
+South Africa,2007,7.41857289700337
+South Africa,2008,6.76365097098711
+South Africa,2009,6.12204411532145
+South Africa,2010,5.49325887720203
+South Africa,2011,4.87731742365146
+South Africa,2012,4.27403236315666
+South Africa,2013,3.68354143445938
+South Africa,2014,3.10549406589576
+South Africa,2015,2.53986433256941
+South Africa,2016,1.98654656106649
+South Africa,2017,1.4454570251466
+South Asia,2000,63.30615756255431
+South Asia,2001,59.99409210190408
+South Asia,2002,57.45685123459974
+South Asia,2003,54.9328324558934
+South Asia,2004,52.42464165143058
+South Asia,2005,49.93456648363112
+South Asia,2006,47.45952426764751
+South Asia,2007,44.99993930456139
+South Asia,2008,42.55273035537015
+South Asia,2009,40.11525544914144
+South Asia,2010,37.6854956329421
+South Asia,2011,35.26344201179427
+South Asia,2012,32.850095080811265
+South Asia,2013,30.443347253546506
+South Asia,2014,28.047250766064845
+South Asia,2015,25.664119311853906
+South Asia,2016,23.296073787518992
+South Asia,2017,21.01783681256648
+South Asia (IDA & IBRD),2000,63.30615756255431
+South Asia (IDA & IBRD),2001,59.99409210190408
+South Asia (IDA & IBRD),2002,57.45685123459974
+South Asia (IDA & IBRD),2003,54.9328324558934
+South Asia (IDA & IBRD),2004,52.42464165143058
+South Asia (IDA & IBRD),2005,49.93456648363112
+South Asia (IDA & IBRD),2006,47.45952426764751
+South Asia (IDA & IBRD),2007,44.99993930456139
+South Asia (IDA & IBRD),2008,42.55273035537015
+South Asia (IDA & IBRD),2009,40.11525544914144
+South Asia (IDA & IBRD),2010,37.6854956329421
+South Asia (IDA & IBRD),2011,35.26344201179427
+South Asia (IDA & IBRD),2012,32.850095080811265
+South Asia (IDA & IBRD),2013,30.443347253546506
+South Asia (IDA & IBRD),2014,28.047250766064845
+South Asia (IDA & IBRD),2015,25.664119311853906
+South Asia (IDA & IBRD),2016,23.296073787518992
+South Asia (IDA & IBRD),2017,21.01783681256648
+South Korea,2000,0.0
+South Korea,2001,0.0
+South Korea,2002,0.0
+South Korea,2003,0.0
+South Korea,2004,0.0
+South Korea,2005,0.0
+South Korea,2006,0.0
+South Korea,2007,0.0
+South Korea,2008,0.0
+South Korea,2009,0.0
+South Korea,2010,0.0
+South Korea,2011,0.0
+South Korea,2012,0.0
+South Korea,2013,0.0
+South Korea,2014,0.0
+South Korea,2015,0.0
+South Korea,2016,0.0
+South Korea,2017,0.0
+South Sudan,2011,71.1046214730305
+South Sudan,2012,69.7827181980483
+South Sudan,2013,68.4395195552689
+South Sudan,2014,67.07341388457
+South Sudan,2015,65.6817010250375
+South Sudan,2016,64.2631023578247
+South Sudan,2017,62.8158703108457
+Spain,2000,0.0
+Spain,2001,0.0
+Spain,2002,0.0
+Spain,2003,0.0
+Spain,2004,0.0
+Spain,2005,0.0
+Spain,2006,0.0
+Spain,2007,0.0
+Spain,2008,0.0
+Spain,2009,0.0
+Spain,2010,0.0
+Spain,2011,0.0
+Spain,2012,0.0
+Spain,2013,0.0
+Spain,2014,0.0
+Spain,2015,0.0
+Spain,2016,0.0
+Spain,2017,0.0
+Sri Lanka,2001,3.16468542024267
+Sri Lanka,2002,3.16488859225653
+Sri Lanka,2003,3.16507906886721
+Sri Lanka,2004,3.16526953230992
+Sri Lanka,2005,3.16547272149053
+Sri Lanka,2006,2.9440703540912
+Sri Lanka,2007,2.7226729737855
+Sri Lanka,2008,2.50125575723838
+Sri Lanka,2009,2.27983128705593
+Sri Lanka,2010,2.05841110917714
+Sri Lanka,2011,1.83697175968712
+Sri Lanka,2012,1.61552532908443
+Sri Lanka,2013,1.39388863924719
+Sri Lanka,2014,1.17206361902499
+Sri Lanka,2015,0.950063543504621
+Sri Lanka,2016,0.744616170930071
+Sri Lanka,2017,0.559471729467604
+Sub-Saharan Africa,2000,33.1235948938758
+Sub-Saharan Africa,2001,32.44932004153255
+Sub-Saharan Africa,2002,31.74596513123904
+Sub-Saharan Africa,2003,31.03858232646932
+Sub-Saharan Africa,2004,30.32606709755646
+Sub-Saharan Africa,2005,29.51589188521045
+Sub-Saharan Africa,2006,28.704917767863897
+Sub-Saharan Africa,2007,27.92026324180963
+Sub-Saharan Africa,2008,27.087929331454696
+Sub-Saharan Africa,2009,26.258357000730054
+Sub-Saharan Africa,2010,25.43140920379688
+Sub-Saharan Africa,2011,25.12002416129652
+Sub-Saharan Africa,2012,24.30383663409279
+Sub-Saharan Africa,2013,23.49004018116684
+Sub-Saharan Africa,2014,22.676109677887617
+Sub-Saharan Africa,2015,21.861880849503745
+Sub-Saharan Africa,2016,21.048071401436665
+Sub-Saharan Africa,2017,20.14987397923738
+Sub-Saharan Africa (IDA & IBRD),2000,33.12359489387579
+Sub-Saharan Africa (IDA & IBRD),2001,32.449320041532545
+Sub-Saharan Africa (IDA & IBRD),2002,31.74596513123904
+Sub-Saharan Africa (IDA & IBRD),2003,31.03858232646931
+Sub-Saharan Africa (IDA & IBRD),2004,30.32606709755645
+Sub-Saharan Africa (IDA & IBRD),2005,29.51589188521045
+Sub-Saharan Africa (IDA & IBRD),2006,28.70491776786389
+Sub-Saharan Africa (IDA & IBRD),2007,27.920263241809625
+Sub-Saharan Africa (IDA & IBRD),2008,27.08792933145469
+Sub-Saharan Africa (IDA & IBRD),2009,26.258357000730065
+Sub-Saharan Africa (IDA & IBRD),2010,25.43140920379689
+Sub-Saharan Africa (IDA & IBRD),2011,25.12002416129652
+Sub-Saharan Africa (IDA & IBRD),2012,24.303836634092782
+Sub-Saharan Africa (IDA & IBRD),2013,23.49004018116683
+Sub-Saharan Africa (IDA & IBRD),2014,22.67610967788762
+Sub-Saharan Africa (IDA & IBRD),2015,21.861880849503745
+Sub-Saharan Africa (IDA & IBRD),2016,21.04807140143666
+Sub-Saharan Africa (IDA & IBRD),2017,20.149873979237377
+Sub-Saharan Africa (excluding high income),2000,33.187110073546094
+Sub-Saharan Africa (excluding high income),2001,32.51039171632603
+Sub-Saharan Africa (excluding high income),2002,31.804660342528997
+Sub-Saharan Africa (excluding high income),2003,31.094822261925483
+Sub-Saharan Africa (excluding high income),2004,30.379921895486376
+Sub-Saharan Africa (excluding high income),2005,29.56722939937328
+Sub-Saharan Africa (excluding high income),2006,28.753800269313334
+Sub-Saharan Africa (excluding high income),2007,27.966757929616453
+Sub-Saharan Africa (excluding high income),2008,27.13204265895528
+Sub-Saharan Africa (excluding high income),2009,26.300084142883453
+Sub-Saharan Africa (excluding high income),2010,25.47089078791094
+Sub-Saharan Africa (excluding high income),2011,25.157545262843897
+Sub-Saharan Africa (excluding high income),2012,24.339267963960577
+Sub-Saharan Africa (excluding high income),2013,23.52350690519121
+Sub-Saharan Africa (excluding high income),2014,22.707631521512287
+Sub-Saharan Africa (excluding high income),2015,21.891536423479728
+Sub-Saharan Africa (excluding high income),2016,21.075903644123237
+Sub-Saharan Africa (excluding high income),2017,20.176053766446223
+Sudan,2000,50.9336163167316
+Sudan,2001,50.9123996883068
+Sudan,2002,50.8911839065895
+Sudan,2003,50.8699710514732
+Sudan,2004,50.8487589581865
+Sudan,2005,48.6642762325841
+Sudan,2006,46.4802768439037
+Sudan,2007,44.2967686952626
+Sudan,2008,42.1137453299843
+Sudan,2009,39.9232855172711
+Sudan,2010,37.7253045293484
+Sudan,2011,35.5201095903683
+Sudan,2012,33.3083644245343
+Sudan,2013,31.0899983061886
+Sudan,2014,28.8656726519965
+Sudan,2015,26.6349729926554
+Sudan,2016,24.3985646157475
+Sudan,2017,24.312623689106
+Suriname,2000,8.42893375595411
+Suriname,2001,8.07922858363682
+Suriname,2002,7.730820339995
+Suriname,2003,7.38418021450551
+Suriname,2004,7.03906776052519
+Suriname,2005,6.72082579276235
+Suriname,2006,6.40368423510172
+Suriname,2007,6.08531821105945
+Suriname,2008,5.7655292137066
+Suriname,2009,5.44416054626337
+Suriname,2010,5.1215369005269
+Suriname,2011,4.79749065498703
+Suriname,2012,4.47202183668396
+Suriname,2013,4.14513024838434
+Suriname,2014,3.81505081362568
+Suriname,2015,3.48222263307542
+Suriname,2016,3.14729434886886
+Suriname,2017,2.81079917219294
+Sweden,2000,0.0
+Sweden,2001,0.0
+Sweden,2002,0.0
+Sweden,2003,0.0
+Sweden,2004,0.0
+Sweden,2005,0.0
+Sweden,2006,0.0
+Sweden,2007,0.0
+Sweden,2008,0.0
+Sweden,2009,0.0
+Sweden,2010,0.0
+Sweden,2011,0.0
+Sweden,2012,0.0
+Sweden,2013,0.0
+Sweden,2014,0.0
+Sweden,2015,0.0
+Sweden,2016,0.0
+Sweden,2017,0.0
+Switzerland,2000,0.0
+Switzerland,2001,0.0
+Switzerland,2002,0.0
+Switzerland,2003,0.0
+Switzerland,2004,0.0
+Switzerland,2005,0.0
+Switzerland,2006,0.0
+Switzerland,2007,0.0
+Switzerland,2008,0.0
+Switzerland,2009,0.0
+Switzerland,2010,0.0
+Switzerland,2011,0.0
+Switzerland,2012,0.0
+Switzerland,2013,0.0
+Switzerland,2014,0.0
+Switzerland,2015,0.0
+Switzerland,2016,0.0
+Switzerland,2017,0.0
+Syria,2000,1.8420317042502
+Syria,2001,1.73259137450572
+Syria,2002,1.62458469182115
+Syria,2003,1.52913425223016
+Syria,2004,1.44417753628873
+Syria,2005,1.36105106188773
+Syria,2006,1.27968334450586
+Syria,2007,1.20002197739084
+Syria,2008,1.00779168088438
+Syria,2009,0.910181001458884
+Syria,2010,0.814000001362882
+Syria,2011,0.741859965016479
+Syria,2012,0.665711657680402
+Syria,2013,0.68041770358013
+Syria,2014,0.6951667001967
+Syria,2015,0.685591976964612
+Syria,2016,0.676031699050515
+Tajikistan,2000,1.41643569675221
+Tajikistan,2001,1.31698826659009
+Tajikistan,2002,1.21754227723154
+Tajikistan,2003,1.1180975652016
+Tajikistan,2004,1.0186603450537
+Tajikistan,2005,0.91921818340258
+Tajikistan,2006,0.819777385251115
+Tajikistan,2007,0.72033801356378
+Tajikistan,2008,0.620900021607908
+Tajikistan,2009,0.521463437412597
+Tajikistan,2010,0.422028258936101
+Tajikistan,2011,0.322597998907156
+Tajikistan,2012,0.22600156546836
+Tajikistan,2013,0.14607195430855
+Tajikistan,2014,0.0662181511361045
+Tajikistan,2015,0.0661396039570004
+Tajikistan,2016,0.0660411962549798
+Tajikistan,2017,0.0659229264597462
+Tanzania,2000,9.66400552099845
+Tanzania,2001,9.84658976670193
+Tanzania,2002,10.0261928365973
+Tanzania,2003,10.1831147742632
+Tanzania,2004,10.3314156846485
+Tanzania,2005,10.4744541898339
+Tanzania,2006,10.6120169781654
+Tanzania,2007,10.7441067323833
+Tanzania,2008,10.8703834616636
+Tanzania,2009,10.9912146108849
+Tanzania,2010,11.106014407578
+Tanzania,2011,11.2150478206814
+Tanzania,2012,11.3179585999517
+Tanzania,2013,11.4150415972494
+Tanzania,2014,11.5066360785395
+Tanzania,2015,11.5926904262112
+Tanzania,2016,11.673446518072
+Tanzania,2017,11.7487245650953
+Thailand,2000,1.3426560821883
+Thailand,2001,1.24582432678893
+Thailand,2002,1.15112913219812
+Thailand,2003,1.058687097752
+Thailand,2004,0.968565702725596
+Thailand,2005,0.880910300525894
+Thailand,2006,0.72770010020869
+Thailand,2007,0.645053253794142
+Thailand,2008,0.565132721194804
+Thailand,2009,0.488040085133035
+Thailand,2010,0.413783521465221
+Thailand,2011,0.345420403362152
+Thailand,2012,0.279436680994923
+Thailand,2013,0.0
+Thailand,2014,0.0
+Thailand,2015,0.0
+Thailand,2016,0.0
+Thailand,2017,0.0
+Timor,2002,42.1317112353068
+Timor,2003,40.6086578963957
+Timor,2004,39.0854507839363
+Timor,2005,37.5735880655746
+Timor,2006,36.0618052868978
+Timor,2007,34.5501068239436
+Timor,2008,33.0379187362567
+Timor,2009,31.5258306625863
+Timor,2010,30.0138491738485
+Timor,2011,28.5014060885409
+Timor,2012,26.9890854218975
+Timor,2013,25.4768948396102
+Timor,2014,23.9645544084673
+Timor,2015,22.4520739054243
+Timor,2016,20.9394601920179
+Timor,2017,19.5150396678315
+Togo,2000,58.5633872782969
+Togo,2001,57.9776214814084
+Togo,2002,57.3857351193803
+Togo,2003,56.7882052550081
+Togo,2004,56.1849931946224
+Togo,2005,55.5765918040573
+Togo,2006,54.9624404234108
+Togo,2007,54.3424874503748
+Togo,2008,53.716151009665
+Togo,2009,53.0855991614193
+Togo,2010,52.4485849225909
+Togo,2011,51.7937462971872
+Togo,2012,51.1258864108598
+Togo,2013,50.4528587588613
+Togo,2014,49.7734788527091
+Togo,2015,49.0877187391867
+Togo,2016,48.3931758948371
+Togo,2017,47.690352594511
+Tonga,2000,0.319736564293853
+Tonga,2001,0.319616129219998
+Tonga,2002,0.319499836311585
+Tonga,2003,0.319379414958934
+Tonga,2004,0.319258979185555
+Tonga,2005,0.279249858022714
+Tonga,2006,0.268406963347182
+Tonga,2007,0.223605892192852
+Tonga,2008,0.178817833089475
+Tonga,2009,0.134063203881539
+Tonga,2010,0.0893420280129797
+Tonga,2011,0.044654292050663
+Tonga,2012,0.0
+Tonga,2013,0.0
+Tonga,2014,0.0
+Tonga,2015,0.0
+Tonga,2016,0.0
+Tonga,2017,0.0
+Trinidad and Tobago,2000,0.329483849855428
+Trinidad and Tobago,2001,0.309843660817741
+Trinidad and Tobago,2002,0.290203471780046
+Trinidad and Tobago,2003,0.270563282742351
+Trinidad and Tobago,2004,0.250923093704664
+Trinidad and Tobago,2005,0.231282904666969
+Trinidad and Tobago,2006,0.211642715629274
+Trinidad and Tobago,2007,0.192002526591587
+Trinidad and Tobago,2008,0.172362337553892
+Trinidad and Tobago,2009,0.152722148516197
+Trinidad and Tobago,2010,0.13308195947851
+Trinidad and Tobago,2011,0.113441770440815
+Trinidad and Tobago,2012,0.0938015814031203
+Trinidad and Tobago,2013,0.0741613923654327
+Trinidad and Tobago,2014,0.0741613923654327
+Trinidad and Tobago,2015,0.0741613923654327
+Trinidad and Tobago,2016,0.0741613923654327
+Trinidad and Tobago,2017,0.0741613923654327
+Tunisia,2000,10.7608588210117
+Tunisia,2001,9.96450434139103
+Tunisia,2002,9.18248616093254
+Tunisia,2003,8.4144738557403
+Tunisia,2004,7.66392514300444
+Tunisia,2005,6.94119652048748
+Tunisia,2006,6.22876648677186
+Tunisia,2007,5.52694240215884
+Tunisia,2008,4.83547923583056
+Tunisia,2009,4.15432521476919
+Tunisia,2010,3.48352440076641
+Tunisia,2011,2.82280656621468
+Tunisia,2012,2.17223610661292
+Tunisia,2013,1.53184903587896
+Tunisia,2014,0.901401994056415
+Tunisia,2015,0.29246356730148
+Tunisia,2016,0.0
+Tunisia,2017,0.0
+Turkey,2000,0.538652761899475
+Turkey,2001,0.533618022258334
+Turkey,2002,0.518095082234026
+Turkey,2003,0.502202120202494
+Turkey,2004,0.485935695024439
+Turkey,2005,0.469330084682783
+Turkey,2006,0.452363039720371
+Turkey,2007,0.435060371247582
+Turkey,2008,0.417407732946646
+Turkey,2009,0.399443383464675
+Turkey,2010,0.38115245019617
+Turkey,2011,0.362552693910797
+Turkey,2012,0.343627069095683
+Turkey,2013,0.336646544680305
+Turkey,2014,0.333157266728009
+Turkey,2015,0.329688134605945
+Turkey,2016,0.323154056210052
+Turkey,2017,0.316782492580419
+Turkmenistan,2000,0.588611260826953
+Turkmenistan,2001,0.551541347189282
+Turkmenistan,2002,0.514614787113921
+Turkmenistan,2003,0.379672022009996
+Turkmenistan,2004,0.350929215053838
+Turkmenistan,2005,0.322324754043406
+Turkmenistan,2006,0.293875974373388
+Turkmenistan,2007,0.265602363356776
+Turkmenistan,2008,0.237543608989146
+Turkmenistan,2009,0.209708978899636
+Turkmenistan,2010,0.182131610205583
+Turkmenistan,2011,0.154834450376445
+Turkmenistan,2012,0.127837946488906
+Turkmenistan,2013,0.1011665838011
+Turkmenistan,2014,0.0748478697838766
+Turkmenistan,2015,0.0
+Turkmenistan,2016,0.0
+Turkmenistan,2017,0.0
+Turks and Caicos Islands,2000,2.62272727272727
+Turks and Caicos Islands,2001,2.54999999999998
+Turks and Caicos Islands,2002,2.47727272727272
+Turks and Caicos Islands,2003,2.40454545454546
+Turks and Caicos Islands,2004,2.33181818181816
+Turks and Caicos Islands,2005,2.2590909090909
+Turks and Caicos Islands,2006,2.18636363636364
+Turks and Caicos Islands,2007,2.11363636363635
+Turks and Caicos Islands,2008,2.04090909090908
+Turks and Caicos Islands,2009,1.96818181818182
+Turks and Caicos Islands,2010,1.89545454545453
+Turks and Caicos Islands,2011,1.82272727272726
+Turks and Caicos Islands,2012,1.75
+Turks and Caicos Islands,2013,1.67727272727271
+Turks and Caicos Islands,2014,1.60454545454544
+Turks and Caicos Islands,2015,1.60454545454544
+Turks and Caicos Islands,2016,1.60454545454544
+Turks and Caicos Islands,2017,1.60454545454544
+Tuvalu,2001,3.75282919735247
+Tuvalu,2002,3.72596698218251
+Tuvalu,2003,3.67282886335726
+Tuvalu,2004,3.60619417537672
+Tuvalu,2005,3.53962497879026
+Tuvalu,2006,3.91558644760787
+Tuvalu,2007,4.29890601648099
+Tuvalu,2008,4.68958396558063
+Tuvalu,2009,5.08787428086224
+Tuvalu,2010,5.49362875291347
+Tuvalu,2011,5.90681481041451
+Tuvalu,2012,6.32740014252202
+Tuvalu,2013,6.75109061408579
+Tuvalu,2014,7.1239083686839
+Tuvalu,2015,7.09450064604907
+Tuvalu,2016,7.06599630723467
+Tuvalu,2017,7.03842661197391
+Uganda,2000,14.639035209773
+Uganda,2001,14.0726746906532
+Uganda,2002,13.5099177875482
+Uganda,2003,12.9509472372066
+Uganda,2004,12.3958174019342
+Uganda,2005,11.8451985567911
+Uganda,2006,11.2986556023125
+Uganda,2007,10.7567234723973
+Uganda,2008,10.2193613527056
+Uganda,2009,9.68695854249089
+Uganda,2010,9.15949754979025
+Uganda,2011,8.63725933022913
+Uganda,2012,8.12034653974183
+Uganda,2013,7.60917006674069
+Uganda,2014,7.10361386925624
+Uganda,2015,6.60401093665982
+Uganda,2016,6.11064714847608
+Uganda,2017,5.62366622367147
+Ukraine,2000,0.0581280835107871
+Ukraine,2001,0.0517498867071928
+Ukraine,2002,0.0453004663415862
+Ukraine,2003,0.0388370352333686
+Ukraine,2004,0.0324029991179994
+Ukraine,2005,0.0260157688445658
+Ukraine,2006,0.0197113836007612
+Ukraine,2007,0.0134762678886348
+Ukraine,2008,0.0073096159496456
+Ukraine,2009,0.0012114616003297
+Ukraine,2010,0.0012078461587021
+Ukraine,2011,0.001204269104235
+Ukraine,2012,0.0012006923755353
+Ukraine,2013,0.0011971153808693
+Ukraine,2014,0.00119353837108
+Ukraine,2015,0.001189961682089
+Ukraine,2016,0.0011863845996707
+Ukraine,2017,0.0011828460356326
+United Arab Emirates,2000,0.0587
+United Arab Emirates,2001,0.0587
+United Arab Emirates,2002,0.0587
+United Arab Emirates,2003,0.0587
+United Arab Emirates,2004,0.0587
+United Arab Emirates,2005,0.0587
+United Arab Emirates,2006,0.0587
+United Arab Emirates,2007,0.0587
+United Arab Emirates,2008,0.0587
+United Arab Emirates,2009,0.0587
+United Arab Emirates,2010,0.0587
+United Arab Emirates,2011,0.0587
+United Arab Emirates,2012,0.0587
+United Arab Emirates,2013,0.0587
+United Arab Emirates,2014,0.0587
+United Arab Emirates,2015,0.0587
+United Arab Emirates,2016,0.0587
+United Arab Emirates,2017,0.0587
+United Kingdom,2000,0.0
+United Kingdom,2001,0.0
+United Kingdom,2002,0.0
+United Kingdom,2003,0.0
+United Kingdom,2004,0.0
+United Kingdom,2005,0.0
+United Kingdom,2006,0.0
+United Kingdom,2007,0.0
+United Kingdom,2008,0.0
+United Kingdom,2009,0.0
+United Kingdom,2010,0.0
+United Kingdom,2011,0.0
+United Kingdom,2012,0.0
+United Kingdom,2013,0.0
+United Kingdom,2014,0.0
+United Kingdom,2015,0.0
+United Kingdom,2016,0.0
+United Kingdom,2017,0.0
+United States,2000,0.0
+United States,2001,0.0
+United States,2002,0.0
+United States,2003,0.0
+United States,2004,0.0
+United States,2005,0.0
+United States,2006,0.0
+United States,2007,0.0
+United States,2008,0.0
+United States,2009,0.0
+United States,2010,0.0
+United States,2011,0.0
+United States,2012,0.0
+United States,2013,0.0
+United States,2014,0.0
+United States,2015,0.0
+United States,2016,0.0
+United States,2017,0.0
+United States Virgin Islands,2000,0.0
+United States Virgin Islands,2001,0.0
+United States Virgin Islands,2002,0.0
+United States Virgin Islands,2003,0.0
+United States Virgin Islands,2004,0.0
+United States Virgin Islands,2005,0.0
+United States Virgin Islands,2006,0.0
+United States Virgin Islands,2007,0.0
+United States Virgin Islands,2008,0.0
+United States Virgin Islands,2009,0.0
+United States Virgin Islands,2010,0.0
+United States Virgin Islands,2011,0.0
+United States Virgin Islands,2012,0.0
+United States Virgin Islands,2013,0.0
+United States Virgin Islands,2014,0.0
+United States Virgin Islands,2015,0.0
+United States Virgin Islands,2016,0.0
+United States Virgin Islands,2017,0.0
+Upper middle income,2000,6.372634963846076
+Upper middle income,2001,6.125869223358067
+Upper middle income,2002,5.802337450837072
+Upper middle income,2003,5.482705058219822
+Upper middle income,2004,5.167366988636989
+Upper middle income,2005,4.884065868329727
+Upper middle income,2006,4.530033241758607
+Upper middle income,2007,4.2319154800919065
+Upper middle income,2008,3.93794735100324
+Upper middle income,2009,3.648200609122942
+Upper middle income,2010,3.363073486985259
+Upper middle income,2011,3.0835515664286914
+Upper middle income,2012,2.809192362988473
+Upper middle income,2013,2.534145063515728
+Upper middle income,2014,2.269559092722723
+Upper middle income,2015,2.0047544891398417
+Upper middle income,2016,1.7440611402186676
+Upper middle income,2017,1.5350196565089334
+Uruguay,2000,1.56816758657365
+Uruguay,2001,1.55819446636105
+Uruguay,2002,1.54854784208912
+Uruguay,2003,1.53915491191227
+Uruguay,2004,1.53008852698274
+Uruguay,2005,1.43452613537287
+Uruguay,2006,1.3406344687994
+Uruguay,2007,1.24837724723743
+Uruguay,2008,1.1576575994383
+Uruguay,2009,1.0684331884821
+Uruguay,2010,0.980594910621107
+Uruguay,2011,0.894103614053132
+Uruguay,2012,0.809666386638279
+Uruguay,2013,0.726205547709686
+Uruguay,2014,0.643386474455544
+Uruguay,2015,0.561190985989256
+Uruguay,2016,0.479600948994344
+Uruguay,2017,0.398601110109866
+Uzbekistan,2000,0.0538740012200291
+Uzbekistan,2001,0.0533939992832178
+Uzbekistan,2002,0.052911997713075
+Uzbekistan,2003,0.0524290002712227
+Uzbekistan,2004,0.0519460005000714
+Uzbekistan,2005,0.0514630029324666
+Uzbekistan,2006,0.0509790006620513
+Uzbekistan,2007,0.0504949978874594
+Uzbekistan,2008,0.0500110003155632
+Uzbekistan,2009,0.0495279981980528
+Uzbekistan,2010,0.04904399866097
+Uzbekistan,2011,0.0488499980279422
+Uzbekistan,2012,0.0489499995999973
+Uzbekistan,2013,0.0
+Uzbekistan,2014,0.0
+Uzbekistan,2015,0.0
+Uzbekistan,2016,0.0
+Uzbekistan,2017,0.0
+Vanuatu,2000,2.34025360670691
+Vanuatu,2001,2.3328157071213
+Vanuatu,2002,2.32532450023396
+Vanuatu,2003,2.31772706999863
+Vanuatu,2004,2.31007666420804
+Vanuatu,2005,2.16786121690787
+Vanuatu,2006,2.02670050210394
+Vanuatu,2007,1.88663235191465
+Vanuatu,2008,1.74764955542783
+Vanuatu,2009,1.60976979957766
+Vanuatu,2010,1.47492413198928
+Vanuatu,2011,1.34176179931993
+Vanuatu,2012,1.20897179672436
+Vanuatu,2013,1.07656875449206
+Vanuatu,2014,0.944552862664464
+Vanuatu,2015,0.812924064733194
+Vanuatu,2016,0.681679023362025
+Vanuatu,2017,0.550824958241237
+Venezuela,2005,7.45799657193662
+Venezuela,2006,7.11129004693429
+Venezuela,2007,6.76197589619579
+Venezuela,2008,6.41002459022512
+Venezuela,2009,6.05478898509728
+Venezuela,2010,5.67592116939522
+Venezuela,2011,5.29705335369317
+Venezuela,2012,4.91818553799112
+Venezuela,2013,4.53931772228907
+Venezuela,2014,4.16044990658702
+Venezuela,2015,3.78158209088497
+Venezuela,2016,3.40271427518292
+Venezuela,2017,3.02384645948087
+Vietnam,2000,17.7326003908248
+Vietnam,2001,16.7392492197264
+Vietnam,2002,15.7542273628941
+Vietnam,2003,14.7783903509551
+Vietnam,2004,13.8115277327334
+Vietnam,2005,12.8542745857754
+Vietnam,2006,11.9065892002208
+Vietnam,2007,10.9687104124694
+Vietnam,2008,10.0409731764407
+Vietnam,2009,9.1234160771493
+Vietnam,2010,8.21544021212724
+Vietnam,2011,7.3185096882886
+Vietnam,2012,6.43277622008347
+Vietnam,2013,5.55868705625365
+Vietnam,2014,4.69620228951287
+Vietnam,2015,3.84559589605432
+Vietnam,2016,3.00710514164015
+Vietnam,2017,2.98924372398467
+World,2000,22.059389298723158
+World,2001,21.233052379183228
+World,2002,20.42598928067027
+World,2003,19.689986442080837
+World,2004,18.948656521851397
+World,2005,18.14601739223145
+World,2006,17.131984288030615
+World,2007,16.382533381368894
+World,2008,15.631721267922304
+World,2009,14.869045478485594
+World,2010,14.105237980078094
+World,2011,13.422570340636058
+World,2012,12.657218785476248
+World,2013,11.888235166092684
+World,2014,11.125439261386704
+World,2015,10.4129844843194
+World,2016,9.654039344755263
+World,2017,9.054168354501114
+Yemen,2000,29.7996701866255
+Yemen,2001,29.6214507837059
+Yemen,2002,29.4404860834907
+Yemen,2003,28.6945893489546
+Yemen,2004,27.9506995502942
+Yemen,2005,27.2095656847745
+Yemen,2006,26.4702691662535
+Yemen,2007,25.7332295990268
+Yemen,2008,24.9985345301088
+Yemen,2009,24.2662657171327
+Yemen,2010,23.5365126106812
+Yemen,2011,22.8096661076492
+Yemen,2012,22.0857947180666
+Yemen,2013,21.3646807445585
+Yemen,2014,20.6469950623196
+Yemen,2015,19.9325052369662
+Yemen,2016,19.7537175927301
+Yemen,2017,19.5734790859479
+Zambia,2000,24.5044300585408
+Zambia,2001,24.2616672531506
+Zambia,2002,23.9307347834405
+Zambia,2003,23.6013055920899
+Zambia,2004,23.2734085350464
+Zambia,2005,22.9473823107238
+Zambia,2006,22.6229263154062
+Zambia,2007,22.3003806740223
+Zambia,2008,21.9791372181327
+Zambia,2009,21.6604603957861
+Zambia,2010,21.3431263801043
+Zambia,2011,21.0277742908267
+Zambia,2012,20.7129184901981
+Zambia,2013,20.3983141705765
+Zambia,2014,20.0846144972731
+Zambia,2015,19.7712812420181
+Zambia,2016,19.4589587416785
+Zambia,2017,19.3028680043306
+Zimbabwe,2000,30.1587344326527
+Zimbabwe,2001,29.9940389707398
+Zimbabwe,2002,29.4683052932337
+Zimbabwe,2003,29.1503934006545
+Zimbabwe,2004,28.8631275180273
+Zimbabwe,2005,28.5746916383831
+Zimbabwe,2006,28.2854879049063
+Zimbabwe,2007,27.995124641547
+Zimbabwe,2008,27.7039952719434
+Zimbabwe,2009,27.4117220498
+Zimbabwe,2010,27.1186837493819
+Zimbabwe,2011,26.8245064319001
+Zimbabwe,2012,26.5295711976931
+Zimbabwe,2013,26.2335030428152
+Zimbabwe,2014,25.9255057687804
+Zimbabwe,2015,25.6053987089701
+Zimbabwe,2016,25.2737411734062
+Zimbabwe,2017,24.9307233295805
