@@ -1,6 +1,6 @@
 # Importers
 
-_Bulk import scripts for getting large datasets into grapher._
+_Bulk import scripts for ingesting large external datasets into OWID's master dataset._
 
 ## Overview
 
