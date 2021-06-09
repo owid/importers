@@ -4,13 +4,11 @@ _Bulk import scripts for ingesting large external datasets into OWID's master da
 
 ## Overview
 
-Each large dataset has its own folder, which includes scripts to pull the data, transform it and upload it as a new version.
-
-Historical data transformations might have used Jupyter notebooks, but all recent ones use Python scripts.
+OWID keeps a master Postgres database of all known data sets. Whilst some are manually added by researchers using the [grapher](https://github.com/owid/owid-grapher) admin interface, the bulk of the data comes from importing large external datasets, which is the focus of this repository. Datasets are often updated versions of older datasets; new versions do not overwrite old data, but are enabled with their own versioned `namespace`. This codebase also proposes which `grapher` charts should be updated to use data from a fresher dataset version.
 
 ## Rough convention
 
-Each major dataset has its own folder `dataset/`, and inside that you can find:
+Each large dataset has its own folder `<dataset>/`, and inside that you can find:
 
 - Scripts that transform it
 - `input/`: an original(ish) copy
@@ -24,6 +22,8 @@ You should install Python 3.8+ and install required packages:
 ```
 pip install -r requirements.txt
 ```
+
+Historical data transformations might have used Jupyter notebooks, but all recent ones use Python scripts.
 
 ## Updating data
 
