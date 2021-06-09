@@ -74,7 +74,7 @@ load_dotenv()
 
 # KEEP_PATHS: Names of files in `{DATASET_DIR}/output` that you do NOT
 # want deleted in the beginning of this script.
-KEEP_PATHS = ['standardized_entity_names.csv']
+KEEP_PATHS = ['variables_to_clean.json']
 
 # Max length of source name.
 MAX_SOURCE_NAME_LEN = 256
@@ -92,10 +92,10 @@ def main() -> None:
 
     # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
     # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
-    entity2owid_name = pd.read_csv(os.path.join(OUTPATH, 'standardized_entity_names.csv')) \
-                              .set_index('country_code') \
-                              .squeeze() \
-                              .to_dict()
+    entity2owid_name = pd.read_csv(os.path.join(CONFIGPATH, 'standardized_entity_names.csv')) \
+                            .set_index('country_code') \
+                            .squeeze() \
+                            .to_dict()
     
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
@@ -132,8 +132,12 @@ def main() -> None:
 def load_variables_to_clean() -> List[dict]:
     """loads the array of variables to clean.
     """
-    with open(os.path.join(CONFIGPATH, 'variables_to_clean.json'), 'r') as f:
-        variables = json.load(f)['variables']
+    try:
+        with open(os.path.join(CONFIGPATH, 'variables_to_clean.json'), 'r') as f:
+            variables = json.load(f)['variables']
+    except:
+        with open(os.path.join(OUTPATH, 'variables_to_clean.json'), 'r') as f:
+            variables = json.load(f)['variables']
     return variables
 
 

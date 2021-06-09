@@ -1,44 +1,63 @@
-
 import os
 import re
+from utils import import_from
 import simplejson as json
 import logging
 import traceback
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 from copy import deepcopy
+from dotenv import load_dotenv
 
 import pandas as pd
 from tqdm import tqdm
 from pandas.api.types import is_numeric_dtype
 
 from db_utils import DBUtils
-from worldbank_wdi import DATASET_NAME, DATASET_VERSION
+from db import get_connection
+from utils import import_from
 
-DEBUG = True
+load_dotenv()
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG if DEBUG else logging.INFO)
+logger.setLevel(logging.INFO)
 
+DEBUG = os.getenv('DEBUG') == "True"
+USER_ID = int(os.getenv('USER_ID'))
 
-class ChartUpdater(object):
-    """Implements methods for updating many charts at once.
+class ChartRevisionSuggester(object):
+    """Implements methods for suggesting revisions to one or more charts, to be
+    approved using the chart approval tool.
     """
-    var_id2year_range = None
-    created_reason = f"{DATASET_NAME} (v{DATASET_VERSION}) bulk dataset update"
     
-    def __init__(self, db: DBUtils, old_var_id2new_var_id: dict):
-        self.db = db
-        self.old_var_id2new_var_id = old_var_id2new_var_id
+    var_id2year_range = None
+    status = "pending"
+    
+    def __init__(self, dataset_dir: str):
+        self.dataset_dir = dataset_dir
+        self.old_var_id2new_var_id = self.load_variable_replacements()
+        dataset_name = import_from(dataset_dir, 'DATASET_NAME')
+        dataset_version = import_from(dataset_dir, 'DATASET_VERSION')
+        self.created_reason = f"{dataset_name} (v{dataset_version}) bulk dataset update"
 
-    def prepare_updates(self):
+    def suggest(self) -> None:
+        suggested_chart_revisions = self.prepare()
+        self.upsert(suggested_chart_revisions)
+    
+    def load_variable_replacements(self) -> Dict[int, int]:
+        try:
+            with open(os.path.join(self.dataset_dir, 'config', 'variable_replacements.json'), 'r') as f:
+                data = {int(k): int(v) for k, v in json.load(f).items()}
+        except FileNotFoundError:
+            with open(os.path.join(self.dataset_dir, 'output', 'variable_replacements.json'), 'r') as f:
+                data = {int(k): int(v) for k, v in json.load(f).items()}
+        return data
+
+    def prepare(self) -> List[dict]:
         self.var_id2year_range = self._get_variable_year_ranges()
         df_charts, df_chart_dims, _ = self._get_charts_from_old_variables()
-        charts_to_update = []
-        chart_dims_to_update = []
+        suggested_chart_revisions = []
         for row in tqdm(df_charts.itertuples(), total=df_charts.shape[0]):
-            # if row.id == 4477:
-            #     break
             try:
                 chart_id = row.id
                 # retrieves chart dimensions to be updated.
@@ -52,7 +71,6 @@ class ChartUpdater(object):
             
                 self._modify_chart_dimensions(chart_id, chart_dims, chart_config)
                 
-                
                 config_has_changed = json.dumps(chart_config, ignore_nan=True) != row.config
                 dims_have_changed = any([dim != chart_dims_orig[i] for i, dim in enumerate(chart_dims)])
                 assert config_has_changed == dims_have_changed, (
@@ -65,33 +83,127 @@ class ChartUpdater(object):
                     # if 'version' in chart_config and isinstance(chart_config['version'], int):
                     chart_config['version'] += 1
                     chart_config_str = json.dumps(chart_config, ignore_nan=True)
-                    charts_to_update.append({
-                        'id': chart_id, 
-                        'old': {'config': row.config}, 
-                        'new': {'config': chart_config_str},
-                        'createdReason': self.created_reason
+                    suggested_chart_revisions.append({
+                        'chartId': chart_id, 
+                        'originalConfig': row.config, 
+                        'suggestedConfig': chart_config_str,
+                        'createdReason': self.created_reason,
+                        'status': self.status
                     })
-                    for i, dim in enumerate(chart_dims):
-                        dim_has_changed = dim != chart_dims_orig[i]
-                        if dim_has_changed:
-                            chart_dims_to_update.append({
-                                'id': chart_dims_orig[i]['id'],
-                                'old': chart_dims_orig[i],
-                                'new': dim
-                            })
 
             except Exception as e:
                 logger.error(f'Error encountered for chart {row.id}: {e}')
                 if DEBUG:
                     traceback.print_exc()
-        return charts_to_update, chart_dims_to_update
+        return suggested_chart_revisions
+    
+    def upsert(self, suggested_chart_revisions: List[dict]) -> None:
+        try:
+            connection = get_connection()
+            connection.autocommit(False)
+            cursor = connection.cursor()
+            db = DBUtils(cursor)
+            self._check_any_duplicate_pending()
+            # upsert suggested chart revisions 
+            #
+            # checks if any of the affected chartIds now have multiple
+            # pending suggested revisions. If so, then rejects the whole
+            # upsert and tell the user which suggested chart revisions need
+            # to be approved/rejected.
+            tuples = []
+            for rev in suggested_chart_revisions:
+                t = (
+                    int(rev['chartId']), 
+                    rev['suggestedConfig'], 
+                    rev['originalConfig'], 
+                    rev['createdReason'], 
+                    rev['status'], 
+                    USER_ID, 
+                )
+                tuples.append(t)
 
-    # def preview_one_update(self, path_to_index_html, chart_to_update: dict):
-    #     with open(os.path.join(os.path.dirname(path_to_index_html), 'grapher.js'), 'w') as f:
-    #         f.write(f'const sandboxGrapherLeft = {chart_to_update["old"]["config"]}\n'
-    #                 f'const sandboxGrapherRight = {chart_to_update["new"]["config"]}')
-        
-    #     webbrowser.open(f'file://{os.path.abspath(path_to_index_html)}')
+            chart_ids = [t[0] for t in tuples]
+            assert len(chart_ids) == len(set(chart_ids)), "`suggested_chart_revisions` contains duplicate chart ids."
+            # for t in tuples:
+            #     if t[0] not in chart_ids:
+            query = f"""
+                INSERT INTO suggested_chart_revisions
+                    (chartId, suggestedConfig, originalConfig, createdReason, status, createdBy, createdAt, updatedAt)
+                VALUES 
+                    (%s, %s, %s, %s, %s, %s, NOW(), NOW())
+                ON DUPLICATE KEY UPDATE
+                    chartId = VALUES(chartId),
+                    suggestedConfig = VALUES(suggestedConfig),
+                    originalConfig = VALUES(originalConfig),
+                    createdReason = VALUES(createdReason),
+                    status = VALUES(status),
+                    createdBy = VALUES(createdBy),
+                    createdAt = VALUES(createdAt),
+                    updatedAt = VALUES(updatedAt)
+            """
+            db.upsert_many(query, tuples)
+
+            res = db.fetch_many(f"""
+                SELECT id, suggested_chart_revisions.chartId, c, createdAt
+                FROM (
+                    SELECT chartId, COUNT(chartId) as c
+                    FROM suggested_chart_revisions
+                    WHERE status IN ("pending", "flagged") AND chartId IN ({", ".join([str(_id) for _id in chart_ids])})
+                    GROUP BY chartId
+                    ORDER BY c DESC
+                ) as grouped
+                LEFT JOIN suggested_chart_revisions 
+                ON grouped.chartId = suggested_chart_revisions.chartId
+                WHERE grouped.c > 1
+                ORDER BY createdAt ASC
+            """)
+            if len(res):
+                df = pd.DataFrame(res, columns=['id', 'chart_id', 'count', 'created_at'])
+                df['drop'] = df.groupby('chart_id')['created_at'].transform(lambda gp: gp == gp.max())
+                df = df[~df['drop']]
+                # problem_chart_ids = [r[0] for r in res]
+                s = ''
+                for nm, gp in df.groupby('chart_id'):
+                    s += f"Chart ID: {nm}. Suggested chart revision IDs: {gp['id'].tolist()}\n"
+                raise RuntimeError(
+                    "For one or more of the suggested chart revisions that you are "
+                    "trying to upsert, a suggested chart revision already exists for "
+                    "the same chartId with status IN ('pending', 'flagged'). You "
+                    "must approve/reject these suggested chart revisions before new "
+                    "suggested revisions for the same charts can be created. "
+                    f"Affected charts:\n{s}"
+                )
+            connection.commit()
+        except Exception as e:
+            connection.rollback()
+            logger.error(f'Failed to upsert suggested chart revisions. Error: {e}')
+            if DEBUG:
+                traceback.print_exc()
+        finally:
+            cursor.close()
+            connection.close()
+
+    def _check_any_duplicate_pending(self) -> None:
+        with get_connection().cursor() as cursor:
+            db = DBUtils(cursor)
+            res = db.fetch_many("""
+                SELECT *
+                FROM (
+                    SELECT chartId, COUNT(chartId) as c
+                    FROM suggested_chart_revisions
+                    WHERE status IN ("pending", "flagged")
+                    GROUP BY chartId
+                    ORDER BY c DESC
+                ) as grouped
+                WHERE grouped.c > 1
+            """)
+            if len(res):
+                logger.warning(
+                    "Two or more suggested chart revisions with status IN "
+                    "('pending', 'flagged') share an identical chart id. These "
+                    "should be resolved before upserting more suggested "
+                    f"chart revisions. Affected chart IDs: {[r[0] for r in res]}"
+                )
 
     def _get_charts_from_old_variables(self) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """retrieves all charts, chart_dimensions, and chart_revisions rows 
@@ -106,50 +218,54 @@ class ChartUpdater(object):
                 df_chart_dimensions: dataframe of chart_dimensions rows.
                 df_chart_revisions: dataframe of chart_revisions rows.
         """
-        # retrieves chart_dimensions
-        variable_ids = list(self.old_var_id2new_var_id.keys())
-        variable_ids_str = ','.join([str(_id) for _id in variable_ids])
-        columns = ['id', 'chartId', 'variableId', 'property', 'order']
-        rows = self.db.fetch_many(f"""
-            SELECT {','.join([f'`{col}`' for col in columns])}
-            FROM chart_dimensions
-            WHERE variableId IN ({variable_ids_str})
-        """)
-        df_chart_dimensions = pd.DataFrame(rows, columns=columns)
+        with get_connection().cursor() as cursor:
+            # retrieves chart_dimensions
+            db = DBUtils(cursor)
+            variable_ids = list(self.old_var_id2new_var_id.keys())
+            variable_ids_str = ','.join([str(_id) for _id in variable_ids])
+            columns = ['id', 'chartId', 'variableId', 'property', 'order']
+            rows = db.fetch_many(f"""
+                SELECT {','.join([f'`{col}`' for col in columns])}
+                FROM chart_dimensions
+                WHERE variableId IN ({variable_ids_str})
+            """)
+            df_chart_dimensions = pd.DataFrame(rows, columns=columns)
 
-        # retrieves charts
-        chart_ids_str = ','.join([str(_id) for _id in df_chart_dimensions['chartId'].unique().tolist()])
-        columns = ['id', 'config', 'createdAt', 'updatedAt', 'lastEditedAt', 'publishedAt']
-        rows = self.db.fetch_many(f"""
-            SELECT {','.join(columns)}
-            FROM charts
-            WHERE id IN ({chart_ids_str})
-        """)
-        df_charts = pd.DataFrame(rows, columns=columns)
+            # retrieves charts
+            chart_ids_str = ','.join([str(_id) for _id in df_chart_dimensions['chartId'].unique().tolist()])
+            columns = ['id', 'config', 'createdAt', 'updatedAt', 'lastEditedAt', 'publishedAt']
+            rows = db.fetch_many(f"""
+                SELECT {','.join(columns)}
+                FROM charts
+                WHERE id IN ({chart_ids_str})
+            """)
+            df_charts = pd.DataFrame(rows, columns=columns)
         
-        # retrieves chart_revisions
-        columns = ['id', 'chartId', 'userId', 'config', 'createdAt', 'updatedAt']
-        rows = self.db.fetch_many(f"""
-            SELECT {','.join(columns)}
-            FROM chart_revisions
-            WHERE chartId IN ({chart_ids_str})
-        """)
-        df_chart_revisions = pd.DataFrame(rows, columns=columns)
+            # retrieves chart_revisions
+            columns = ['id', 'chartId', 'userId', 'config', 'createdAt', 'updatedAt']
+            rows = db.fetch_many(f"""
+                SELECT {','.join(columns)}
+                FROM chart_revisions
+                WHERE chartId IN ({chart_ids_str})
+            """)
+            df_chart_revisions = pd.DataFrame(rows, columns=columns)
         return df_charts, df_chart_dimensions, df_chart_revisions
 
-    def _get_variable_year_ranges(self):
-        all_var_ids = list(self.old_var_id2new_var_id.keys()) + list(self.old_var_id2new_var_id.values())
-        variable_ids_str = ','.join([str(_id) for _id in all_var_ids])
-        columns = []
-        rows = self.db.fetch_many(f"""
-            SELECT variableId, MIN(year) AS minYear, MAX(year) AS maxYear
-            FROM data_values
-            WHERE variableId IN ({variable_ids_str})
-            GROUP BY variableId
-        """)
-        var_id2year_range = {}
-        for row in rows:
-            var_id2year_range[row[0]] = [row[1], row[2]]
+    def _get_variable_year_ranges(self) -> Dict[int, List[int]]:
+        with get_connection().cursor() as cursor:
+            db = DBUtils(cursor)
+            all_var_ids = list(self.old_var_id2new_var_id.keys()) + list(self.old_var_id2new_var_id.values())
+            variable_ids_str = ','.join([str(_id) for _id in all_var_ids])
+            columns = []
+            rows = db.fetch_many(f"""
+                SELECT variableId, MIN(year) AS minYear, MAX(year) AS maxYear
+                FROM data_values
+                WHERE variableId IN ({variable_ids_str})
+                GROUP BY variableId
+            """)
+            var_id2year_range = {}
+            for row in rows:
+                var_id2year_range[row[0]] = [row[1], row[2]]
         return var_id2year_range
 
     def _modify_chart_config_map(self, chart_config: dict) -> None:

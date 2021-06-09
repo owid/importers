@@ -15,21 +15,18 @@ import logging
 from typing import List
 import pandas as pd
 
-from db import connection
+from db import get_connection
 from db_utils import DBUtils
-from worldbank_wdi import CONFIGPATH, OUTPATH
+from worldbank_wdi import OUTPATH
 
-DEBUG = True
-DEBUG_HOST = 'http://localhost:3030'
 UPDATE_DB = False
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG if DEBUG else logging.INFO)
+logger.setLevel(logging.INFO)
 
 def main():
-    # cursor = connection.cursor()
-    with connection.cursor() as cursor:
+    with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
         # retrieves old and new datasets
         df_old_datasets = get_datasets(db=db, new=False)
@@ -45,9 +42,9 @@ def main():
                                     .set_index('id_old')['id_new'] \
                                     .squeeze() \
                                     .to_dict()
-        if not os.path.exists(CONFIGPATH):
-            os.makedirs(CONFIGPATH)
-        with open(os.path.join(CONFIGPATH, 'variable_replacements.json'), 'w') as f:
+        if not os.path.exists(OUTPATH):
+            os.makedirs(OUTPATH)
+        with open(os.path.join(OUTPATH, 'variable_replacements.json'), 'w') as f:
             json.dump(old_var_id2new_var_id, f)
 
 

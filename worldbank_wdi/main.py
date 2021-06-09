@@ -10,22 +10,24 @@ from worldbank_wdi import DATASET_NAMESPACE, DATASET_DIR
 
 from worldbank_wdi import (
     download, 
-    init_variables_to_upsert, 
+    init_variables_to_clean, 
     clean, 
-    match_variables, 
-    prepare_chart_updates
+    match_variables
 )
-from standard_importer import import_dataset, upsert_suggested_chart_revisions
+from standard_importer import import_dataset
+from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 def main():
+    # insert data into sql
     download.main()
-    init_variables_to_upsert.main()
+    init_variables_to_clean.main()
     clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
 
+    # constructs and upserts suggested chart revisions
     match_variables.main()
-    prepare_chart_updates.main()
-    upsert_suggested_chart_revisions.main(DATASET_DIR)
+    suggester = ChartRevisionSuggester(DATASET_DIR)
+    suggester.suggest()
 
 if __name__ == '__main__':
     main()

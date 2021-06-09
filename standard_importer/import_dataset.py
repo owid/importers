@@ -15,7 +15,7 @@ from tqdm import tqdm
 import pandas as pd
 from dotenv import load_dotenv
 
-from db import connection
+from db import get_connection
 from db_utils import DBUtils
 from utils import import_from
 
@@ -25,10 +25,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 load_dotenv()
-
-USER_ID = os.getenv('USER_ID')
-assert USER_ID is not None, "USER_ID not found in .env file"
-USER_ID = int(USER_ID)
+USER_ID = int(os.getenv('USER_ID'))
 
 CURRENT_DIR = os.path.dirname(__file__)
 # CURRENT_DIR = os.path.join(os.getcwd(), 'standard_importer')
@@ -37,7 +34,7 @@ CURRENT_DIR = os.path.dirname(__file__)
 def main(dataset_dir: str, dataset_namespace: str):
     data_path = os.path.join(dataset_dir, "output")
 
-    with connection.cursor() as cursor:
+    with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
 
 

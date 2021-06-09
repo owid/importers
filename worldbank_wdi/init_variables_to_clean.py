@@ -3,10 +3,10 @@ import os
 import simplejson as json
 import pandas as pd
 
-from db import connection
+from db import get_connection
 from db_utils import DBUtils
 
-from worldbank_wdi import INPATH, CONFIGPATH
+from worldbank_wdi import INPATH, OUTPATH
 from worldbank_wdi.match_variables import get_datasets
 
 
@@ -34,7 +34,7 @@ def main():
         else:
             print(f'Failed to find new variable for: {row["name"]}')
     # pd.DataFrame(variables_to_clean).to_csv(os.path.join(CURRENT_DIR, 'config', 'variables_to_clean.csv'), index=False)
-    with open(os.path.join(CONFIGPATH, 'variables_to_clean.json'), 'w') as f:
+    with open(os.path.join(OUTPATH, 'variables_to_clean.json'), 'w') as f:
         json.dump({
             'meta': {'notes': 'This file contains an array of WB WDI '
                               'variables to upsert to SQL. Any variables NOT '
@@ -44,7 +44,7 @@ def main():
 
 
 def get_old_variables():
-    with connection.cursor() as cursor:
+    with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
         df_old_datasets = get_datasets(db=db, new=False)
         columns = ['id', 'name', 'originalMetadata', 'unit', 'shortUnit', 
