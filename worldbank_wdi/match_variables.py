@@ -36,7 +36,7 @@ def main():
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets['id'].tolist())
         df_new_vars = get_variables(db=db, dataset_ids=df_new_datasets['id'].tolist())
         df_vars = pd.merge(df_old_vars, df_new_vars, on='name', how='inner',
-                            suffixes=['_old', '_new'], validate='1:1')
+                            suffixes=['_old', '_new'], validate='m:1')
         assert df_vars.id_old.notnull().all() and df_vars.id_new.notnull().all()
         old_var_id2new_var_id = df_vars.dropna(subset=['id_old', 'id_new']) \
                                     .set_index('id_old')['id_new'] \

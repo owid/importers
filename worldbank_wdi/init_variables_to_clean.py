@@ -56,8 +56,10 @@ def get_old_variables():
                 SELECT DISTINCT(variableId)
                 FROM chart_dimensions
             ) AND datasetId IN ({','.join([str(_id) for _id in df_old_datasets['id'].tolist()])})
+            ORDER BY updatedAt DESC
         """)
-        df_old_used_vars = pd.DataFrame(rows, columns=columns)
+        df_old_used_vars = pd.DataFrame(rows, columns=columns) \
+                                .drop_duplicates(subset=['name'], keep='first')
     return df_old_used_vars
 
 
