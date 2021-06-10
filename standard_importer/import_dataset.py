@@ -3,7 +3,10 @@ into the SQL database.
 
 Usage:
 
-    python -m standard_importer.import_dataset
+    >>> from standard_importer import import_dataset
+    >>> dataset_dir = "worldbank_wdi"
+    >>> dataset_namespace = "worldbank_wdi@2021.05.25"
+    >>> import_dataset.main(dataset_dir, dataset_namespace)
 """
 
 import re
@@ -17,7 +20,6 @@ from dotenv import load_dotenv
 
 from db import get_connection
 from db_utils import DBUtils
-from utils import import_from
 
 import logging
 logging.basicConfig()

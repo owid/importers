@@ -26,8 +26,27 @@ DEBUG = os.getenv('DEBUG') == "True"
 USER_ID = int(os.getenv('USER_ID'))
 
 class ChartRevisionSuggester(object):
-    """Implements methods for suggesting revisions to one or more charts, to be
-    approved using the chart approval tool.
+    """Implements methods for suggesting revisions to one or more
+    charts, to be approved using the chart approval tool.
+
+    This class is intended for use after a new dataset has been imported
+    into the MySQL database and you wish to update the corresponding
+    OWID charts to display the newly available data in place of the old data.
+
+    Attributes:
+        dataset_dir: str. Name of dataset directory. Example: "worldbank_wdi". 
+            There *must* be a `variable_replacements.json` file located in 
+            either `{dataset_dir}/config/` or `{dataset_dir}/output/`. The 
+            `variable_replacements.json` file contains a dictionary of 
+            old_variable_id->new_variable_id key-value pairs. Example:
+
+                {"2032": 147395, "2033": 147396, ...}
+    
+    Usage:
+        >>> from standard_importer.chart_revision_suggester import ChartRevisionSuggester
+        >>> dataset_dir = "worldbank_wdi"
+        >>> suggester = ChartRevisionSuggester(dataset_dir)
+        >>> suggester.suggest()
     """
     
     var_id2year_range = None
