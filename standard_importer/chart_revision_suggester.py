@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 import pandas as pd
 from tqdm import tqdm
 from pandas.api.types import is_numeric_dtype
+from pymysql.err import IntegrityError
 
 from db_utils import DBUtils
 from db import get_connection
@@ -150,15 +151,6 @@ class ChartRevisionSuggester(object):
                     (chartId, suggestedConfig, originalConfig, createdReason, status, createdBy, createdAt, updatedAt)
                 VALUES 
                     (%s, %s, %s, %s, %s, %s, NOW(), NOW())
-                ON DUPLICATE KEY UPDATE
-                    chartId = VALUES(chartId),
-                    suggestedConfig = VALUES(suggestedConfig),
-                    originalConfig = VALUES(originalConfig),
-                    createdReason = VALUES(createdReason),
-                    status = VALUES(status),
-                    createdBy = VALUES(createdBy),
-                    createdAt = VALUES(createdAt),
-                    updatedAt = VALUES(updatedAt)
             """
             db.upsert_many(query, tuples)
 
@@ -193,9 +185,18 @@ class ChartRevisionSuggester(object):
                     f"Affected charts:\n{s}"
                 )
             connection.commit()
+        except IntegrityError as e:
+            connection.rollback()
+            logger.error(
+                'INSERT operation into `suggested_chart_revisions` cancelled. '
+                'Failed to insert suggested chart revisions because one or '
+                'more of the suggested revisions that you are trying to insert '
+                'already exists with an equivalent chartId, originalVersion, '
+               f'suggestedVersion, and suggestedReason. Error: {e}'
+            )
         except Exception as e:
             connection.rollback()
-            logger.error(f'Failed to upsert suggested chart revisions. Error: {e}')
+            logger.error(f'INSERT operation into `suggested_chart_revisions` cancelled. Error: {e}')
             if DEBUG:
                 traceback.print_exc()
         finally:
