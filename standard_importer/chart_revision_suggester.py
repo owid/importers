@@ -7,7 +7,6 @@ import traceback
 from typing import List, Tuple, Dict
 from copy import deepcopy
 from dotenv import load_dotenv
-
 import pandas as pd
 from tqdm import tqdm
 from pandas.api.types import is_numeric_dtype
@@ -50,19 +49,18 @@ class ChartRevisionSuggester(object):
         >>> suggester.suggest()
     """
     
-    var_id2year_range = None
-    status = "pending"
-    
     def __init__(self, dataset_dir: str):
+        self.var_id2year_range = None
         self.dataset_dir = dataset_dir
         self.old_var_id2new_var_id = self.load_variable_replacements()
-        dataset_name = import_from(dataset_dir, 'DATASET_NAME')
-        dataset_version = import_from(dataset_dir, 'DATASET_VERSION')
-        self.created_reason = f"{dataset_name} (v{dataset_version}) bulk dataset update"
 
-    def suggest(self) -> None:
-        suggested_chart_revisions = self.prepare()
-        self.upsert(suggested_chart_revisions)
+    @property
+    def status(self) -> str:
+        return "pending"
+
+    def suggest(self, *args, **kwargs) -> None:
+        kwargs['suggested_chart_revisions'] = self.prepare()
+        self.insert(*args, **kwargs)
     
     def load_variable_replacements(self) -> Dict[int, int]:
         try:
@@ -106,9 +104,7 @@ class ChartRevisionSuggester(object):
                     suggested_chart_revisions.append({
                         'chartId': chart_id, 
                         'originalConfig': row.config, 
-                        'suggestedConfig': chart_config_str,
-                        'createdReason': self.created_reason,
-                        'status': self.status
+                        'suggestedConfig': chart_config_str
                     })
 
             except Exception as e:
@@ -117,45 +113,67 @@ class ChartRevisionSuggester(object):
                     traceback.print_exc()
         return suggested_chart_revisions
     
-    def upsert(self, suggested_chart_revisions: List[dict]) -> None:
+    def insert(self, suggested_chart_revisions: List[dict], suggested_reason: str = None) -> None:
+        if suggested_reason is None:
+            dataset_name = import_from(self.dataset_dir, 'DATASET_NAME')
+            dataset_version = import_from(self.dataset_dir, 'DATASET_VERSION')
+            suggested_reason = f"{dataset_name} (v{dataset_version}) bulk dataset update"
         try:
             connection = get_connection()
             connection.autocommit(False)
             cursor = connection.cursor()
             db = DBUtils(cursor)
-            self._check_any_duplicate_pending()
-            # upsert suggested chart revisions 
-            #
-            # checks if any of the affected chartIds now have multiple
-            # pending suggested revisions. If so, then rejects the whole
-            # upsert and tell the user which suggested chart revisions need
-            # to be approved/rejected.
+
+            n_before = db.fetch_one("SELECT COUNT(id) FROM suggested_chart_revisions")[0]
+            
+            res = db.fetch_many("""
+                SELECT *
+                FROM (
+                    SELECT chartId, COUNT(chartId) as c
+                    FROM suggested_chart_revisions
+                    WHERE status IN ("pending", "flagged")
+                    GROUP BY chartId
+                    ORDER BY c DESC
+                ) as grouped
+                WHERE grouped.c > 1
+            """)
+            if len(res):
+                raise RuntimeError(
+                    "Two or more suggested chart revisions with status IN "
+                    "('pending', 'flagged') share an identical chart id. These "
+                    "must be resolved before inserting more suggested "
+                   f"chart revisions. Affected chart IDs: {[r[0] for r in res]}"
+                )
+
             tuples = []
             for rev in suggested_chart_revisions:
                 t = (
                     int(rev['chartId']), 
                     rev['suggestedConfig'], 
                     rev['originalConfig'], 
-                    rev['createdReason'], 
-                    rev['status'], 
+                    suggested_reason, 
+                    self.status, 
                     USER_ID, 
                 )
                 tuples.append(t)
 
             chart_ids = [t[0] for t in tuples]
             assert len(chart_ids) == len(set(chart_ids)), "`suggested_chart_revisions` contains duplicate chart ids."
-            # for t in tuples:
-            #     if t[0] not in chart_ids:
+
             query = f"""
                 INSERT INTO suggested_chart_revisions
-                    (chartId, suggestedConfig, originalConfig, createdReason, status, createdBy, createdAt, updatedAt)
+                    (chartId, suggestedConfig, originalConfig, suggestedReason, status, createdBy, createdAt, updatedAt)
                 VALUES 
                     (%s, %s, %s, %s, %s, %s, NOW(), NOW())
             """
             db.upsert_many(query, tuples)
 
+            # checks if any of the affected chartIds now has multiple
+            # pending suggested revisions. If so, then rejects the whole
+            # insert and tell the user which suggested chart revisions need
+            # to be approved/rejected.
             res = db.fetch_many(f"""
-                SELECT id, suggested_chart_revisions.chartId, c, createdAt
+                SELECT id, scr.chartId, c, createdAt
                 FROM (
                     SELECT chartId, COUNT(chartId) as c
                     FROM suggested_chart_revisions
@@ -163,8 +181,11 @@ class ChartRevisionSuggester(object):
                     GROUP BY chartId
                     ORDER BY c DESC
                 ) as grouped
-                LEFT JOIN suggested_chart_revisions 
-                ON grouped.chartId = suggested_chart_revisions.chartId
+                LEFT JOIN (
+                    SELECT * 
+                    FROM suggested_chart_revisions 
+                    WHERE status IN ("pending", "flagged")
+                ) as scr ON grouped.chartId = scr.chartId
                 WHERE grouped.c > 1
                 ORDER BY createdAt ASC
             """)
@@ -178,7 +199,7 @@ class ChartRevisionSuggester(object):
                     s += f"Chart ID: {nm}. Suggested chart revision IDs: {gp['id'].tolist()}\n"
                 raise RuntimeError(
                     "For one or more of the suggested chart revisions that you are "
-                    "trying to upsert, a suggested chart revision already exists for "
+                    "trying to insert, a suggested chart revision already exists for "
                     "the same chartId with status IN ('pending', 'flagged'). You "
                     "must approve/reject these suggested chart revisions before new "
                     "suggested revisions for the same charts can be created. "
@@ -200,30 +221,10 @@ class ChartRevisionSuggester(object):
             if DEBUG:
                 traceback.print_exc()
         finally:
+            n_after = db.fetch_one("SELECT COUNT(id) FROM suggested_chart_revisions")[0]
             cursor.close()
             connection.close()
-
-    def _check_any_duplicate_pending(self) -> None:
-        with get_connection().cursor() as cursor:
-            db = DBUtils(cursor)
-            res = db.fetch_many("""
-                SELECT *
-                FROM (
-                    SELECT chartId, COUNT(chartId) as c
-                    FROM suggested_chart_revisions
-                    WHERE status IN ("pending", "flagged")
-                    GROUP BY chartId
-                    ORDER BY c DESC
-                ) as grouped
-                WHERE grouped.c > 1
-            """)
-            if len(res):
-                logger.warning(
-                    "Two or more suggested chart revisions with status IN "
-                    "('pending', 'flagged') share an identical chart id. These "
-                    "should be resolved before upserting more suggested "
-                    f"chart revisions. Affected chart IDs: {[r[0] for r in res]}"
-                )
+            logger.info(f'{n_after - n_before} of {len(suggested_chart_revisions)} suggested chart revisions inserted.')
 
     def _get_charts_from_old_variables(self) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """retrieves all charts, chart_dimensions, and chart_revisions rows 
