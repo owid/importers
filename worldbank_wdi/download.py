@@ -65,7 +65,7 @@ def _download_data_excel() -> None:
     zf = zipfile.ZipFile(BytesIO(res.content))
     fnames = zf.namelist()
     assert len(fnames) == 1, "Expected only one file in xlsx zip archive."
-    sheet2df = pd.read_excel(BytesIO(zf.read(fnames[0])), sheet_name=None)
+    sheet2df = pd.read_excel(BytesIO(zf.read(fnames[0])), sheet_name=None, engine="openpyxl")
     for sheet, df in sheet2df.items():
         fname_zip = f'WDI{sheet}.csv.zip'
         df.to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
