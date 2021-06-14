@@ -3,47 +3,46 @@ into the SQL database.
 
 Usage:
 
-    python -m standard_importer.import_dataset
+    >>> from standard_importer import import_dataset
+    >>> dataset_dir = "worldbank_wdi"
+    >>> dataset_namespace = "worldbank_wdi@2021.05.25"
+    >>> import_dataset.main(dataset_dir, dataset_namespace)
 """
 
 import re
-import json
 from glob import glob
 import sys
 import os
 
 from tqdm import tqdm
 import pandas as pd
+from dotenv import load_dotenv
 
-sys.path.append("/mnt/importers/scripts/importers")
-from db import connection
+from db import get_connection
 from db_utils import DBUtils
-from utils import import_from
 
 import logging
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-DATASET_DIR = "who_gho"
-DATASET_VERSION = import_from(DATASET_DIR, 'DATASET_VERSION')
-
-USER_ID = 46
+load_dotenv()
+USER_ID = int(os.getenv('USER_ID'))
 
 CURRENT_DIR = os.path.dirname(__file__)
 # CURRENT_DIR = os.path.join(os.getcwd(), 'standard_importer')
-DATA_PATH = os.path.join(CURRENT_DIR, f"../{DATASET_DIR}/output/")
 
 
-def main():
+def main(dataset_dir: str, dataset_namespace: str):
+    data_path = os.path.join(dataset_dir, "output")
 
-    with connection.cursor() as cursor:
+    with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
 
 
         # Upsert entities
         print("---\nUpserting entities...")
-        entities = pd.read_csv(os.path.join(DATA_PATH, "distinct_countries_standardized.csv"))
+        entities = pd.read_csv(os.path.join(data_path, "distinct_countries_standardized.csv"))
         for entity_name in tqdm(entities.name):
             db_entity_id = db.get_or_create_entity(entity_name)
             entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
@@ -52,11 +51,11 @@ def main():
 
         # Upsert datasets
         print("---\nUpserting datasets...")
-        datasets = pd.read_csv(os.path.join(DATA_PATH, "datasets.csv"))
+        datasets = pd.read_csv(os.path.join(data_path, "datasets.csv"))
         for i, dataset_row in tqdm(datasets.iterrows()):
             db_dataset_id = db.upsert_dataset(
                 name=dataset_row["name"],
-                namespace=f"{DATASET_DIR.split('/')[-1]}@{DATASET_VERSION}",
+                namespace=dataset_namespace,
                 user_id=USER_ID
             )
             datasets.at[i, "db_dataset_id"] = db_dataset_id
@@ -65,7 +64,10 @@ def main():
 
         # Upsert sources
         print("---\nUpserting sources...")
-        sources = pd.read_csv(os.path.join(DATA_PATH, "sources.csv"))
+        sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
+        assert sources.groupby('dataset_id')['name'].apply(lambda gp: gp.duplicated().sum() == 0).all(), (
+             "All sources in a dataset must have a unique name."
+        )
         sources = pd.merge(sources, datasets, left_on="dataset_id", right_on="id", suffixes=['__source', '__dataset'])
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
@@ -79,7 +81,7 @@ def main():
 
         # Upsert variables
         print("---\nUpserting variables...")
-        variables = pd.read_csv(os.path.join(DATA_PATH, "variables.csv"))
+        variables = pd.read_csv(os.path.join(data_path, "variables.csv"))
         variables = variables.fillna("")
         if 'notes' in variables:
             logger.warning(
@@ -115,7 +117,7 @@ def main():
 
         # Upserting datapoints
         print("---\nUpserting datapoints...")
-        datapoint_files = glob(os.path.join(DATA_PATH, "datapoints/datapoints_*.csv"))
+        datapoint_files = glob(os.path.join(data_path, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
             variable_id = int(re.search("\\d+", datapoint_file)[0])
             db_variable_id = variables[variables['id'] == variable_id]["db_variable_id"]
