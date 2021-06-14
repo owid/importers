@@ -11,6 +11,7 @@ from un_sdg import (
 )
 
 from standard_importer import import_dataset
+from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 def main():
     download.main()
@@ -18,5 +19,7 @@ def main():
     import_dataset.main(DATASET_DIR, DATA_PATH, DATASET_VERSION, USER_ID)
     match_variables.main()
 
+    suggester = ChartRevisionSuggester('un_sdg')
+    suggester.suggest()
 if __name__ == '__main__':
     main()
