@@ -11,9 +11,7 @@ import io
 
 from typing import List
 from datetime import datetime
-
 from un_sdg import DATASET_NAME, DATASET_AUTHORS, OUTPATH, DATASET_VERSION
-
 
 
 def str_to_float(s):

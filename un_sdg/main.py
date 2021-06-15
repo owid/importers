@@ -2,7 +2,7 @@
 Usage:
     python -m un_sdg.main
 """
-from un_sdg import DATASET_NAMESPACE, DATASET_DIR,  DATA_PATH, DATASET_VERSION, USER_ID
+from un_sdg import DATASET_NAMESPACE, DATASET_DIR,  OUTPATH, DATASET_VERSION
 
 from un_sdg import (
     download, 
@@ -21,5 +21,6 @@ def main():
 
     suggester = ChartRevisionSuggester('un_sdg')
     suggester.suggest()
+    
 if __name__ == '__main__':
     main()

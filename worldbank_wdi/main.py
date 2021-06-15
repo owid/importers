@@ -27,7 +27,6 @@ def main():
     # constructs and upserts suggested chart revisions
     match_variables.main()
     suggester = ChartRevisionSuggester(DATASET_DIR)
-    suggester.suggest()
-
+    
 if __name__ == '__main__':
     main()

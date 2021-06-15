@@ -117,6 +117,7 @@ def create_sources(original_df, df_datasets):
             'series_code': row['SeriesCode']
         }, ignore_index=True)
     df_sources.to_csv(os.path.join(OUTPATH, 'sources.csv'), index=False)
+
     
 ### Variables
 
