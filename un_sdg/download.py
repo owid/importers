@@ -1,28 +1,30 @@
 """snippet for downloading UN SDG data in CSV format from the SDG API.
 """
+import glob
 import json
-import requests
-import pandas as pd
 import os
+import pandas as pd
+import requests
 import zipfile
 from io import BytesIO
-from un_sdg import INFILE, METAPATH, METADATA_LOC
+from un_sdg import INFILE, METAPATH, METADATA_LOC, OUTPATH
 from typing import List
 
 base_url = "https://unstats.un.org/sdgapi"
+keep_paths = ["standardized_entity_names.csv"] # must be a list []
 
 def main():
-    delete_output()
+    delete_output(keep_paths)
     download_data()
     download_metadata()
 
 
-## Not sure how well this works when the list is longer than one
 def delete_output(keep_paths: List[str]) -> None:
     for path in keep_paths:
-        if os.path.exists(os.path.join(DATA_PATH, path)):
-            for CleanUp in glob.glob(os.path.join(DATA_PATH, '*.*')):
-                if not CleanUp.endswith(path):    
+        if os.path.exists(os.path.join(OUTPATH, path)):
+            for CleanUp in glob.glob(os.path.join(OUTPATH, '*.*')):
+                if not CleanUp.endswith(path):
+                    print("Deleting ", CleanUp)    
                     os.remove(CleanUp)              
 
 def download_data() -> None:
