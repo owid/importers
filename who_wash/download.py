@@ -7,7 +7,7 @@ import pandas as pd
 import requests
 import zipfile
 from io import BytesIO
-from who_wash import INFILE, METAPATH, METADATA_LOC, OUTPATH
+from who_wash import INFILE, INPATH, OUTPATH
 from typing import List
 from pathlib import Path
 
@@ -27,9 +27,9 @@ def delete_output(keep_paths: List[str]) -> None:
                     os.remove(CleanUp)              
 
 def download_data() -> None:
-    Path(OUTPATH).mkdir(parents=True, exist_ok=True)
+    Path(INPATH).mkdir(parents=True, exist_ok=True)
     resp = requests.get(base_url)
-    output = open(os.path.join(OUTPATH, "who_unicef_wash.xlsx"), 'wb')
+    output = open(INFILE, 'wb')
     output.write(resp.content)
     output.close()
 
