@@ -1,5 +1,6 @@
 import re
-from typing import Iterable, Any, Generator
+from typing import Iterable, Any, Generator, List
+from dataclasses import dataclass, astuple, field
 
 def write_file(file_path, content):
     with open(file_path, 'w') as f:
@@ -53,3 +54,33 @@ def snake_case2camel_case(s) -> str:
 def import_from(module: str, name: str) -> Any:
     module = __import__(re.sub('/', '.', module), fromlist=[name])
     return getattr(module, name)
+
+@dataclass
+class IntRange:
+    min: int
+    _min: int = field(init=False, repr=False)
+    max: int
+    _max: int = field(init=False, repr=False)
+
+    @property
+    def min(self) -> int:
+        return self._min
+
+    @min.setter
+    def min(self, x: int) -> None:
+        self._min = int(x)
+    
+    @property
+    def max(self) -> int:
+        return self._max
+
+    @max.setter
+    def max(self, x: int) -> None:
+        self._max = int(x)
+
+    @staticmethod
+    def from_values(xs: List[int]):
+        return IntRange(min(xs), max(xs))
+
+    def to_values(self):
+        return [self.min, self.max]
