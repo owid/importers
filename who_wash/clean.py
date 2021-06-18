@@ -77,10 +77,12 @@ def load_and_clean():
  
     df = pd.concat([wat_melt, san_melt, hyg_melt])
 
+    df = df.rename(columns={'name':'country'})
+
     df = df[df['value'].notnull()]
-    df[['name']].drop_duplicates() \
+    df[['country']].drop_duplicates() \
                                 .dropna() \
-                                .rename(columns={'name': 'Country'}) \
+                                .rename(columns={'country': 'Country'}) \
                                 .to_csv(ENTFILE, index=False)
     # Make the datapoints folder
     Path(OUTPATH, 'datapoints').mkdir(parents=True, exist_ok=True)
@@ -223,41 +225,34 @@ def create_sources(df, df_datasets):
         }, ignore_index=True)
     df_sources.to_csv(os.path.join(OUTPATH, 'sources.csv'), index=False)
 
-    
+
+
 ### Variables
 
-def create_variables_datapoints(original_df):
+def create_variables_datapoints(df):
+    
+    df_pop = df.copy()
+    
+    df['type'] = 'Percent'
+    df_pop['type'] = 'Population'
+
+    df_pop['value'] = round(df['pop_n']*(df['value']/100))
+
+    df = df.append(df_pop)
+
+    df['name'] = df['dataset'] + ' - ' + df['variable_desc'] + ' - ' + df['location'] + ' - ' +df['type']
+    
+    
+    
+
+
     variable_idx = 0
     variables = pd.DataFrame(columns=['id', 'name', 'unit', 'dataset_id', 'source_id'])
     
-    new_columns = [] 
-    for k in original_df.columns:
-        new_columns.append(re.sub(r"[\[\]]", '',k))
+    ### Start again from here 
 
-    original_df.columns = new_columns
 
-    entity2owid_name = pd.read_csv(os.path.join(OUTPATH, 'standardized_entity_names.csv')) \
-                              .set_index('country_code') \
-                              .squeeze() \
-                              .to_dict()
-
-    series2source_id = pd.read_csv(os.path.join(OUTPATH, 'sources.csv'))\
-                            .drop(['name','description', 'dataset_id'], 1)\
-                            .set_index('series_code')\
-                            .squeeze() \
-                            .to_dict()
- 
-    unit_description = attributes_description()
-
-    dim_description = dimensions_description()
-
-    original_df['country'] = original_df['GeoAreaName'].apply(lambda x: entity2owid_name[x])
-    original_df['Units_long'] = original_df['Units'].apply(lambda x: unit_description[x])
-
-    DIMENSIONS = tuple(dim_description.id.unique())
-    NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])# not sure if units should be in here
-    
-    all_series = original_df[['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long']]   .groupby(by=['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long'])   .count()   .reset_index()
+    all_series = df[['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long']]   .groupby(by=['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long'])   .count()   .reset_index()
     all_series = create_short_unit(all_series)
 
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)): 
