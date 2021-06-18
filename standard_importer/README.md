@@ -1,26 +1,39 @@
 # OWID standard importer
 
-This is a standard importer to load data into the OWID database. Can be run with `python3 -m standard_importer.import_dataset` after setting the right values at the top of the script:
+Imports a cleaned dataset and associated data sources, variables, and data points into the MySQL database.
+
+Example usage:
 
 ```
-DATASET_DIR = "vdem"  # Directory in this Git repo where data is located
-USER_ID = 46          # ID of OWID user loading the data
+from standard_importer import import_dataset
+dataset_dir = "worldbank_wdi"
+dataset_namespace = "worldbank_wdi@2021.05.25"
+import_dataset.main(dataset_dir, dataset_namespace)
 ```
 
+`import_dataset.main(...)` expects a set of CSV files to exist in `{DATASET_DIR}/output/` (e.g. `worldbank_wdi/output`): 
 
-## Expected format
+- `distinct_countries_standardized.csv`
+- `datasets.csv`
+- `sources.csv`
+- `variables.csv`
+- `datapoints/data_points_{VARIABLE_ID}.csv` (one `data_points_{VARIABLE_ID}.csv` file for each variable in `variables.csv`)
+
+## Expected format of CSV files
 
 Inside the dataset directory (e.g. `vdem`), data must be located in an `output` directory, with the following structure:
 
+(see [worldbank_wdi/output](../worldbank_wdi/output) for an example)
 
-### Entities file
+
+### Entities file (`distinct_countries_standardized.csv`)
 
 This file lists all entities present in the data, so that new entities can be created if necessary. Located in `output/distinct_countries_standardized.csv`:
 
 * `name`: name of the entity.
 
 
-### Datasets file
+### Datasets file (`datasets.csv`)
 
 Located in `output/datasets.csv`:
 
@@ -28,16 +41,17 @@ Located in `output/datasets.csv`:
 * `name`: name of the Grapher dataset
 
 
-### Sources file
+### Sources file (`sources.csv`)
 
 Located in `output/sources.csv`:
 
+* `id`: temporary source ID for loading process
 * `name`: name of the source
 * `description`: JSON string with `dataPublishedBy` (string), `dataPublisherSource` (string), `link` (string), `retrievedDate` (string), `additionalInfo` (string)
 * `dataset_id`: foreign key matching each source with a dataset ID
 
 
-### Variables file
+### Variables file (`variables.csv`)
 
 Located in `output/variables.csv`:
 
@@ -55,11 +69,11 @@ Located in `output/variables.csv`:
 * `original_metadata`: JSON object representing original uncleaned metadata from the data source
 
 
-### Datapoint files
+### Datapoint files (`datapoints/data_points_{VARIABLE_ID}.csv`)
 
-Located in `output/datapoints/datapoints_NNN.csv`:
+Located in `output/datapoints/datapoints_{VARIABLE_ID}.csv`:
 
-* `NNN` in the file name is a foreign key matching values with a variable ID
+* `{VARIABLE_ID}` in the file name is a foreign key matching values with a temporary variable ID in `variables.csv`
 * `country`: location of the observation
 * `year`: year of the observation
 * `value`: value of the observation

@@ -44,23 +44,21 @@ def main():
 
 
 def get_old_variables():
-    with get_connection().cursor() as cursor:
-        db = DBUtils(cursor)
-        df_old_datasets = get_datasets(db=db, new=False)
+    with get_connection() as conn:
+        df_old_datasets = get_datasets(conn, new=False)
         columns = ['id', 'name', 'originalMetadata', 'unit', 'shortUnit', 
                    'description', 'code', 'coverage', 'timespan', 'display']
-        rows = db.fetch_many(f"""
+        query = f"""
             SELECT {','.join(columns)}
             FROM variables
             WHERE id IN (
                 SELECT DISTINCT(variableId)
                 FROM chart_dimensions
-            ) AND datasetId IN ({','.join([str(_id) for _id in df_old_datasets['id'].tolist()])})
+            ) AND datasetId IN ({','.join([str(_id) for _id in df_old_datasets['id']])})
             ORDER BY updatedAt DESC
-        """)
-        df_old_used_vars = pd.DataFrame(rows, columns=columns) \
-                                .drop_duplicates(subset=['name'], keep='first')
-    return df_old_used_vars
+        """
+        df = pd.read_sql(query, conn).drop_duplicates(subset=['name'], keep='first')
+    return df
 
 
 def get_new_variables():

@@ -14,6 +14,7 @@ import simplejson as json
 import logging
 from typing import List
 import pandas as pd
+from pymysql import Connection
 
 from db import get_connection
 from db_utils import DBUtils
@@ -26,15 +27,14 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 def main():
-    with get_connection().cursor() as cursor:
-        db = DBUtils(cursor)
+    with get_connection() as conn:
         # retrieves old and new datasets
-        df_old_datasets = get_datasets(db=db, new=False)
-        df_new_datasets = get_datasets(db=db, new=True)
+        df_old_datasets = get_datasets(conn, new=False)
+        df_new_datasets = get_datasets(conn, new=True)
 
         # retrieves old and new variables
-        df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets['id'].tolist())
-        df_new_vars = get_variables(db=db, dataset_ids=df_new_datasets['id'].tolist())
+        df_old_vars = get_variables(conn, dataset_ids=df_old_datasets['id'])
+        df_new_vars = get_variables(conn, dataset_ids=df_new_datasets['id'])
         df_vars = pd.merge(df_old_vars, df_new_vars, on='name', how='inner',
                             suffixes=['_old', '_new'], validate='m:1')
         assert df_vars.id_old.notnull().all() and df_vars.id_new.notnull().all()
@@ -48,7 +48,7 @@ def main():
             json.dump(old_var_id2new_var_id, f)
 
 
-def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
+def get_datasets(conn: Connection, new: bool = True) -> pd.DataFrame:
     """retrieves new datasets if `new=True`, else retrieves old datasets.
     
     Arguments:
@@ -67,11 +67,11 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
     except FileNotFoundError:
         new_dataset_names = []
     if new:
-        rows = db.fetch_many(f"""
+        query = f"""
             SELECT {','.join(columns)}
             FROM datasets
             WHERE name IN ({','.join([f'"{n}"' for n in new_dataset_names])})
-        """)
+        """
     else:
         query = f"""
             SELECT {','.join(columns)}
@@ -81,12 +81,11 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
         if len(new_dataset_names):
             new_dataset_names_str = ','.join([f'"{n}"' for n in new_dataset_names])
             query += f" AND name NOT IN ({new_dataset_names_str})"
-        rows = db.fetch_many(query)
-    df_datasets = pd.DataFrame(rows, columns=columns)
+    df_datasets = pd.read_sql(query, conn)
     return df_datasets
 
 
-def get_variables(db: DBUtils, dataset_ids: List[int]) -> pd.DataFrame:
+def get_variables(conn: Connection, dataset_ids: List[int]) -> pd.DataFrame:
     """retrieves all variables in dataset(s).
 
     Also retrieves the min year and max year of available data for each variable.
@@ -106,12 +105,11 @@ def get_variables(db: DBUtils, dataset_ids: List[int]) -> pd.DataFrame:
         'id', 'name', 'description', 'unit', 'display', 'createdAt', 
         'updatedAt', 'datasetId', 'sourceId'
     ]
-    rows = db.fetch_many(f"""
+    df_vars = pd.read_sql(f"""
         SELECT {','.join(columns)}
         FROM variables
         WHERE datasetId IN ({dataset_ids_str})
-    """)
-    df_vars = pd.DataFrame(rows, columns=columns)
+    """, conn)
     return df_vars
 
 

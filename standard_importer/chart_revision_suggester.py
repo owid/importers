@@ -4,7 +4,7 @@ from utils import import_from
 import simplejson as json
 import logging
 import traceback
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Union
 from copy import deepcopy
 from dotenv import load_dotenv
 import pandas as pd
@@ -14,7 +14,7 @@ from pymysql.err import IntegrityError
 
 from db_utils import DBUtils
 from db import get_connection
-from utils import import_from
+from utils import import_from, IntRange
 
 load_dotenv()
 
@@ -25,7 +25,7 @@ logger.setLevel(logging.INFO)
 DEBUG = os.getenv('DEBUG') == "True"
 USER_ID = int(os.getenv('USER_ID'))
 
-class ChartRevisionSuggester(object):
+class ChartRevisionSuggester:
     """Implements methods for suggesting revisions to one or more
     charts, to be approved using the chart approval tool.
 
@@ -85,7 +85,7 @@ class ChartRevisionSuggester(object):
 
                 self._modify_chart_config_map(chart_config)
                 self._modify_chart_config_time(chart_id, chart_config)
-                self._modify_chart_config_fastt(chart_id, chart_config)
+                self._check_chart_config_fastt(chart_id, chart_config)
             
                 self._modify_chart_dimensions(chart_id, chart_dims, chart_config)
                 
@@ -285,78 +285,57 @@ class ChartRevisionSuggester(object):
                 GROUP BY variableId
             """)
             var_id2year_range = {}
-            for row in rows:
-                var_id2year_range[row[0]] = [row[1], row[2]]
+            for variable_id, min_year, max_year in rows:
+                var_id2year_range[variable_id] = [min_year, max_year]
         return var_id2year_range
 
     def _modify_chart_config_map(self, chart_config: dict) -> None:
         """modifies chart config map."""
-        if 'map' in chart_config and 'variableId' in chart_config['map'] and \
-            chart_config['map']['variableId'] in self.old_var_id2new_var_id:
-
+        can_modify = (
+            'map' in chart_config and \
+            'variableId' in chart_config['map'] and \
+            chart_config['map']['variableId'] in self.old_var_id2new_var_id
+        )
+        if can_modify:
             old_var_id = chart_config['map']['variableId']
             new_var_id = self.old_var_id2new_var_id[old_var_id]
             chart_config['map']['variableId'] = new_var_id
-            min_year_old, max_year_old = self.var_id2year_range[old_var_id]
-            min_year_new, max_year_new = self.var_id2year_range[new_var_id]
+            old_range = self._vars_to_range([old_var_id])
+            new_range = self._vars_to_range([new_var_id])
             
             # update targetYear
             if 'targetYear' in chart_config['map']:
-                if pd.notnull(min_year_new) and chart_config['map']['targetYear'] == min_year_old:
-                    chart_config['map']['targetYear'] = int(min_year_new)
-                elif pd.notnull(max_year_new):
-                    chart_config['map']['targetYear'] = int(max_year_new)
+                if pd.notnull(new_range.min) and chart_config['map']['targetYear'] == old_range.min:
+                    chart_config['map']['targetYear'] = new_range.min
+                elif pd.notnull(new_range.max):
+                    chart_config['map']['targetYear'] = new_range.max
             
             # update time
             if 'time' in chart_config['map']:
-                if pd.notnull(min_year_new) and chart_config['map']['time'] == min_year_old:
-                    chart_config['map']['time'] = int(min_year_new)
-                elif pd.notnull(max_year_new):
-                    chart_config['map']['time'] = int(max_year_new)
+                if pd.notnull(new_range.min) and chart_config['map']['time'] == old_range.min:
+                    chart_config['map']['time'] = new_range.min
+                elif pd.notnull(new_range.max):
+                    chart_config['map']['time'] = new_range.max
     
     def _modify_chart_config_time(self, chart_id: int, chart_config: dict) -> None:
         """modifies chart config maxTime and minTime"""
         old_variable_ids = set([dim['variableId'] for dim in chart_config['dimensions']])
         if 'map' in chart_config and 'variableId' in chart_config['map']:
             old_variable_ids.add(chart_config['map']['variableId'])
-        old_variable_ids = [_id for _id in old_variable_ids if _id in self.old_var_id2new_var_id]
-        new_variable_ids = [self.old_var_id2new_var_id[_id] for _id in old_variable_ids]
-        min_year_old = min([self.var_id2year_range[_id][0] for _id in old_variable_ids])
-        max_year_old = max([self.var_id2year_range[_id][1] for _id in old_variable_ids])
-        min_year_new = min([self.var_id2year_range[_id][0] for _id in new_variable_ids])
-        max_year_new = max([self.var_id2year_range[_id][1] for _id in new_variable_ids])
+        
+        new_variable_ids = [self.old_var_id2new_var_id[_id] for _id in old_variable_ids if _id in self.old_var_id2new_var_id]
+
+        old_range = self._vars_to_range(old_variable_ids)
+        new_range = self._vars_to_range(new_variable_ids)
         
         # Is the min year hard-coded in the chart's title or subtitle?
-        min_year_hardcoded = (
-            (
-                'minTime' in chart_config and 
-                'title' in chart_config and 
-                bool(re.search(rf"{chart_config['minTime']}", chart_config['title']))
-            ) or
-            (
-                'minTime' in chart_config and 
-                'subtitle' in chart_config and 
-                bool(re.search(rf"{chart_config['minTime']}", chart_config['subtitle']))
-            )
-        )
-        # Is the min year hard-coded in the chart's title or subtitle?
-        max_year_hardcoded = (
-            (
-                'maxTime' in chart_config and 
-                'title' in chart_config and 
-                bool(re.search(rf"{chart_config['maxTime']}", chart_config['title']))
-            ) or
-            (
-                'maxTime' in chart_config and 
-                'subtitle' in chart_config and 
-                bool(re.search(rf"{chart_config['maxTime']}", chart_config['subtitle']))
-            )
-        )
+        min_year_hardcoded = self._is_min_year_hardcoded(chart_config)
+        max_year_hardcoded = self._is_max_year_hardcoded(chart_config)
         if min_year_hardcoded or max_year_hardcoded:
-            title = chart_config['title'] if 'title' in chart_config else None
-            subtitle = chart_config['subtitle'] if 'subtitle' in chart_config else None
-            min_time = chart_config['minTime'] if 'minTime' in chart_config else None
-            max_time = chart_config['maxTime'] if 'maxTime' in chart_config else None
+            title = chart_config.get('title')
+            subtitle = chart_config.get('subtitle')
+            min_time = chart_config.get('minTime')
+            max_time = chart_config.get('maxTime')
             logger.warning(
                 f'Chart {chart_id} title or subtitle may contain a hard-coded '
                  'year, so the minTime and maxTime fields will not be changed.'
@@ -365,16 +344,11 @@ class ChartRevisionSuggester(object):
                 f'\nminTime: {min_time}; maxTime: {max_time}'
             )
         else:
-            times_are_eq = (
-                'minTime' in chart_config and 
-                'maxTime' in chart_config and 
-                (
-                    (chart_config['minTime'] == chart_config['maxTime']) or
-                    (chart_config['minTime'] == 'earliest' and chart_config['maxTime'] == min_year_old) or
-                    (chart_config['minTime'] == min_year_old and chart_config['maxTime'] == 'earliest') or
-                    (chart_config['minTime'] == max_year_old and chart_config['maxTime'] == 'latest') or 
-                    (chart_config['minTime'] == 'latest' and chart_config['maxTime'] == max_year_old)
-                )
+            times_are_eq = self._is_single_time(
+                min_time=chart_config.get('minTime'),
+                max_time=chart_config.get('maxTime'),
+                min_time_old=old_range.min,
+                max_time_old=old_range.max
             )
             if times_are_eq:
                 use_min_year = (
@@ -383,47 +357,45 @@ class ChartRevisionSuggester(object):
                     (
                         is_numeric_dtype(chart_config['minTime']) and
                         is_numeric_dtype(chart_config['maxTime']) and
-                        abs(chart_config['minTime'] - min_year_old) < abs(chart_config['maxTime'] - max_year_old)
+                        abs(chart_config['minTime'] - old_range.min) < abs(chart_config['maxTime'] - old_range.max)
                     )
                 )
                 if use_min_year:
-                    chart_config['minTime'] = min_year_new
-                    chart_config['maxTime'] = min_year_new
+                    chart_config['minTime'] = new_range.min
+                    chart_config['maxTime'] = new_range.min
                 else:
-                    chart_config['minTime'] = max_year_new
-                    chart_config['maxTime'] = max_year_new
+                    chart_config['minTime'] = new_range.max
+                    chart_config['maxTime'] = new_range.max
             else:
                 replace_min_time = (
                     'minTime' in chart_config and 
                     chart_config['minTime'] != 'earliest' and
-                    pd.notnull(min_year_new)
+                    pd.notnull(new_range.min)
                 )
                 if replace_min_time: 
-                    min_year_new = int(min_year_new)
-                    if pd.notnull(min_year_old) and (min_year_new > min_year_old):
+                    if pd.notnull(old_range.min) and (new_range.min > old_range.min):
                         logger.warning(
                             f'For chart {chart_id}, min year of new variable(s) > '
                             'min year of old variable(s). New variable(s): '
                             f'{new_variable_ids}'
                         )
-                    chart_config['minTime'] = min_year_new
+                    chart_config['minTime'] = new_range.min
                 replace_max_time = (
                     'maxTime' in chart_config and 
                     chart_config['maxTime'] != 'latest' and
-                    pd.notnull(max_year_new)
+                    pd.notnull(new_range.max)
                 )
                 if replace_max_time:
-                    max_year_new = int(max_year_new)
-                    if pd.notnull(max_year_old) and (max_year_new < max_year_old):
+                    if pd.notnull(old_range.max) and (new_range.max < old_range.max):
                         logger.warning(
                             f'For chart {chart_id}, max year of new variable(s) < '
                             'max year of old variable(s). New variable(s): '
                             f'{new_variable_ids}'
                         )
-                    chart_config['maxTime'] = max_year_new
+                    chart_config['maxTime'] = new_range.max
 
     
-    def _modify_chart_config_fastt(self, chart_id: int, chart_config: dict) -> None:
+    def _check_chart_config_fastt(self, chart_id: int, chart_config: dict) -> None:
         """modifies chart config FASTT.
         
         update/check text fields: slug, note, title, subtitle, sourceDesc.
@@ -456,3 +428,55 @@ class ChartRevisionSuggester(object):
                 dim['variableId'] = self.old_var_id2new_var_id[dim['variableId']]
                 config_dim = chart_config['dimensions'][dim['order']]
                 config_dim['variableId'] = self.old_var_id2new_var_id[config_dim['variableId']]
+
+    def _vars_to_range(self, _ids: List[int]) -> IntRange:
+        years = []
+        for _id in _ids:
+            if _id in self.var_id2year_range:
+                years += self.var_id2year_range[_id]
+        return IntRange.from_values(years)
+
+    def _is_min_year_hardcoded(self, chart_config: dict) -> bool:
+        min_year_hardcoded = (
+            (
+                'minTime' in chart_config and 
+                'title' in chart_config and 
+                bool(re.search(rf"{chart_config['minTime']}", chart_config['title']))
+            ) or
+            (
+                'minTime' in chart_config and 
+                'subtitle' in chart_config and 
+                bool(re.search(rf"{chart_config['minTime']}", chart_config['subtitle']))
+            )
+        )
+        return min_year_hardcoded
+    
+    def _is_max_year_hardcoded(self, chart_config: dict) -> bool:
+        # Is the min year hard-coded in the chart's title or subtitle?
+        max_year_hardcoded = (
+            (
+                'maxTime' in chart_config and 
+                'title' in chart_config and 
+                bool(re.search(rf"{chart_config['maxTime']}", chart_config['title']))
+            ) or
+            (
+                'maxTime' in chart_config and 
+                'subtitle' in chart_config and 
+                bool(re.search(rf"{chart_config['maxTime']}", chart_config['subtitle']))
+            )
+        )
+        return max_year_hardcoded
+
+    def _is_single_time(self, min_time: int, max_time: int, min_time_old: int, max_time_old: int) -> bool:
+        times_are_eq = (
+            min_time is not None and 
+            max_time is not None and 
+            (
+                (min_time == max_time) or
+                (min_time == 'earliest' and max_time == min_time_old) or
+                (min_time == min_time_old and max_time == 'earliest') or
+                (min_time == max_time_old and max_time == 'latest') or 
+                (min_time == 'latest' and max_time == max_time_old)
+            )
+        )
+        return times_are_eq
