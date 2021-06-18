@@ -18,9 +18,7 @@ from pathlib import Path
 from tqdm import tqdm
 from typing import List, Tuple, Dict
 
-#from db import connection
-#from db_utils import DBUtils
-from un_sdg import (
+from who_wash import (
     INFILE,
     ENTFILE,
     OUTPATH,
@@ -29,7 +27,7 @@ from un_sdg import (
     DATASET_VERSION
 )
 
-from un_sdg.core import (
+from who_wash.core import (
     create_short_unit,
     extract_datapoints,
     get_distinct_entities,
@@ -62,19 +60,31 @@ Now use the country standardiser tool to standardise $ENTFILE
 
 def load_and_clean():
     # Load and clean the data 
-    original_df = pd.read_csv(
-        INFILE, 
-        converters={'Value': str_to_float},
-        low_memory=False
-    )
-    original_df = original_df[original_df['Value'].notnull()]
-    original_df[['GeoAreaName']].drop_duplicates() \
+    
+    xls = pd.ExcelFile(INFILE)
+
+    df_wat = pd.read_excel(xls, 'Water Data')
+    filter_wat = df_wat.columns[df_wat.columns.str.startswith(('wat_', 'arc_wat_'))]
+    wat_melt = pd.melt(df_wat, id_vars = ["name", "year", "pop_n"], value_vars = filter_wat)
+
+    df_san = pd.read_excel(xls, 'Sanitation Data')
+    filter_san = df_san.columns[df_san.columns.str.startswith(('san_', 'arc_san'))]
+    san_melt = pd.melt(df_san, id_vars = ["name", "year", "pop_n"], value_vars = filter_san)
+
+    df_hyg = pd.read_excel(xls, 'Hygiene Data')
+    filter_hyg = df_hyg.columns[df_hyg.columns.str.startswith(('hyg_', 'arc_hyg'))]
+    hyg_melt = pd.melt(df_hyg, id_vars = ["name", "year", "pop_n"], value_vars = filter_hyg)
+ 
+    df = pd.concat([wat_melt, san_melt, hyg_melt])
+
+    df = df[df['value'].notnull()]
+    df[['name']].drop_duplicates() \
                                 .dropna() \
-                                .rename(columns={'GeoAreaName': 'Country'}) \
+                                .rename(columns={'name': 'Country'}) \
                                 .to_csv(ENTFILE, index=False)
     # Make the datapoints folder
     Path(OUTPATH, 'datapoints').mkdir(parents=True, exist_ok=True)
-    return original_df
+    return df
 
 ### Datasets
 def create_datasets():
@@ -83,38 +93,133 @@ def create_datasets():
     df_datasets.to_csv(os.path.join(OUTPATH, 'datasets.csv'), index=False)
     return df_datasets
 
+
+### Getting dimensions from variable name 
+
+def create_dimensions(df):
+
+        ds =  df['variable'].astype(str).str[0:7]
+
+        conditions_data = [
+            ds == "wat_bas",
+            ds == "wat_lim", 
+            ds == "wat_uni",
+            ds == "wat_sur",
+            ds == "arc_wat",
+            ds == "wat_sm_",
+            ds == "wat_pre",
+            ds == "wat_ava",
+            ds == "wat_qua",
+            ds == "wat_pip",
+            ds == "wat_npi",
+            ds == "wat_imp",
+            ds == "san_bas",
+            ds == "san_lim",
+            ds == "san_uni",
+            ds == "san_od_",
+            ds == "arc_san",
+            ds == "arc_san",
+            ds == "san_sm_",
+            ds == "san_sdo",
+            ds == "san_fst",
+            ds == "san_sew",
+            ds == "san_lat",
+            ds == "san_sep",
+            ds == "san_sew",
+            ds == "san_imp",
+            ds == "hyg_bas",
+            ds == "hyg_lim",
+            ds == "hyg_nfa"
+        ]
+
+        choices_data = np.repeat(["Drinking water", "Sanitation", "Hygiene"], [12,14,3])
+        
+        df['dataset'] = np.select(conditions_data, choices_data)
+
+        location = df['variable'].astype(str).str[-1]
+
+        conditions_loc = [
+            location == "n",
+            location == "r",
+            location == "u"
+        ]
+
+        choices_loc = ["National", "Rural", "Urban"]
+
+        df['location'] = np.select(conditions_loc, choices_loc)
+
+        var =  df['variable'].str[:-2]
+        
+        conditions_var = [
+            var == "wat_bas",
+            var == "wat_lim", 
+            var == "wat_unimp",
+            var == "wat_sur",
+            var == "arc_wat_bas",
+            var == "wat_sm",
+            var == "wat_premises",
+            var == "wat_available",
+            var == "wat_quality",
+            var == "wat_pip",
+            var == "wat_npip",
+            var == "wat_imp",
+            var == "san_bas",
+            var == "san_lim",
+            var == "san_unimp",
+            var == "san_od",
+            var == "arc_san_bas",
+            var == "arc_san_od",
+            var == "san_sm",
+            var == "san_sdo_sm",
+            var == "san_fst_sm",
+            var == "san_sew_sm",
+            var == "san_lat",
+            var == "san_sep",
+            var == "san_sew",
+            var == "san_imp",
+            var == "hyg_bas",
+            var == "hyg_lim",
+            var == "hyg_nfac"
+        ]        
+
+        choices_var = ["At least basic", "Limited (more than 30 mins)", "Unimproved", 
+        "Surface water", "Annual rate of change in basic", "Safely managed", 
+        "Accessible on premises", "Available when needed", 
+        "Free from contamination", "Piped", "Non-piped", "Improved",
+        "At least basic", "Limited (shared)", "Unimproved", "Open defecation",
+        "Annual rate of change in basic", "Annual rate of change in open defecation",
+        "Safely managed","Disposed in situ", "Emptied and treated", "Wastewater treated", 
+        "Latrines and other", "Septic tanks", "Sewer connections", "Improved",
+        "Basic", "Limited (without water or soap)", "No facility"]
+
+        df['variable_desc'] = np.select(conditions_var, choices_var)
+
+        return(df)
+
+
+
+
 ### Sources
 
-def create_sources(original_df, df_datasets):
+def create_sources(df, df_datasets):
     df_sources = pd.DataFrame(columns=['id', 'name', 'description', 'dataset_id'])
     source_description_template = {
-        'dataPublishedBy': "United Nations Statistics Division",
+        'dataPublishedBy': DATASET_AUTHORS,
         'dataPublisherSource': None,
-        'link': "https://unstats.un.org/sdgs/indicators/database/",
+        'link': "https://washdata.org/data/",
         'retrievedDate': datetime.now().strftime("%d-%B-%y"),
         'additionalInfo': None
     }
-    #all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
-    all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
+    all_series = df[['dataset']].groupby(by=['dataset']).count().reset_index()
     source_description = source_description_template.copy()
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
-        dp_source = original_df[original_df.SeriesCode == row['SeriesCode']].Source.drop_duplicates()
-        if len(dp_source) <= 2:
-            source_description['dataPublisherSource'] = dp_source.str.cat(sep='; ')
-        else: 
-            source_description['dataPublisherSource'] = 'Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/'    
-        print(source_description['dataPublisherSource'])   
-        try:
-            source_description['additionalInfo'] = None
-        except:
-            pass
         df_sources = df_sources.append({
             'id': i,
             #'name': "%s (UN SDG, 2021)" % row['Source'],
-            'name': "%s (UN SDG, 2021)" % row['SeriesDescription'],
+            'name': "%s (WHO UNICEF, 2021)" % row['dataset'],
             'description': json.dumps(source_description),
             'dataset_id': df_datasets.iloc[0]['id'], # this may need to be more flexible! 
-            'series_code': row['SeriesCode']
+            'series_code': None
         }, ignore_index=True)
     df_sources.to_csv(os.path.join(OUTPATH, 'sources.csv'), index=False)
 
@@ -219,10 +324,11 @@ MAX_SOURCE_NAME_LEN = 256
 
 
 def main():
-    original_df = load_and_clean() 
+    df = load_and_clean() 
+    df = create_dimensions(df)
     df_datasets = create_datasets()
-    create_sources(original_df, df_datasets)
-    create_variables_datapoints(original_df) #numexpr can't be installed for this function to work - need to formalise this somehow
+    create_sources(df, df_datasets)
+    create_variables_datapoints(df) #numexpr can't be installed for this function to work - need to formalise this somehow
     create_distinct_entities()
 
 if __name__ == '__main__':
