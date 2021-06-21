@@ -11,9 +11,11 @@ import pandas as pd
 from worldbank_wdi import INPATH
 
 import logging
+
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
+
 
 def main():
     delete_input()
@@ -52,9 +54,10 @@ def _download_data_csv() -> None:
     fnames = zf.namelist()
     zf.extractall(path=INPATH)
     for fname in fnames:
-        fname_zip = f'{fname}.zip'
-        pd.read_csv(os.path.join(INPATH, fname)) \
-            .to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
+        fname_zip = f"{fname}.zip"
+        pd.read_csv(os.path.join(INPATH, fname)).to_csv(
+            os.path.join(INPATH, fname_zip), index=False, compression="gzip"
+        )
         os.remove(os.path.join(INPATH, fname))
 
 
@@ -65,11 +68,13 @@ def _download_data_excel() -> None:
     zf = zipfile.ZipFile(BytesIO(res.content))
     fnames = zf.namelist()
     assert len(fnames) == 1, "Expected only one file in xlsx zip archive."
-    sheet2df = pd.read_excel(BytesIO(zf.read(fnames[0])), sheet_name=None, engine="openpyxl")
+    sheet2df = pd.read_excel(
+        BytesIO(zf.read(fnames[0])), sheet_name=None, engine="openpyxl"
+    )
     for sheet, df in sheet2df.items():
-        fname_zip = f'WDI{sheet}.csv.zip'
-        df.to_csv(os.path.join(INPATH, fname_zip), index=False, compression='gzip')
+        fname_zip = f"WDI{sheet}.csv.zip"
+        df.to_csv(os.path.join(INPATH, fname_zip), index=False, compression="gzip")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
