@@ -5,7 +5,6 @@
 !.vscode/extensions.json
 *.code-workspace
 
-un_sdg/.Rproj*
 
 .DS_Store
 .env
@@ -20,3 +19,5 @@ un_sdg/input/
 un_sdg/output/
 un_sdg/metadata/
 .Rproj.user
+.Rhistory
+.Rproj
