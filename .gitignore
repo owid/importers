@@ -15,9 +15,8 @@ __pycache__/
 .ipynb_checkpoints/
 povcal/data_by_poverty_line/
 povcal/output/
-un_sdg/input/
-un_sdg/output/
-un_sdg/metadata/
+un_sdg/input/**/*.csv
+un_sdg/output/**/*.csv
 *.Rproj.user
 *.Rhistory
 *.Rproj
