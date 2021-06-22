@@ -1,22 +1,13 @@
 import pandas as pd
 import os
 import shutil
-import glob
-from datetime import datetime
 import json
-import io
-import itertools
-import functools
-import math
-import pdfminer.high_level
-import pdfminer.layout
-import lxml.html
 import numpy as np
 import re
 
+from datetime import datetime
 from pathlib import Path
 from tqdm import tqdm
-from typing import List, Tuple, Dict
 
 #from db import connection
 #from db_utils import DBUtils
@@ -39,8 +30,7 @@ from un_sdg.core import (
     create_short_unit,
     get_series_with_relevant_dimensions,
     generate_tables_for_indicator_and_series,
-    str_to_float, 
-    extract_description
+    str_to_float
 )
 
 """
@@ -205,18 +195,14 @@ def create_variables_datapoints(original_df):
                 extract_datapoints(table).to_csv(os.path.join(OUTPATH,'datapoints','datapoints_%d.csv' % variable_idx), index=False)
                 variable_idx += 1
                 print(table)
-    variables.to_csv(os.path.join(OUTPATH,'variables.csv'), index=False)
+    variables.to_csv(os.path.join(OUTPATH,'variables.csv'), index=False)   
 
 def create_distinct_entities(): 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=['name']) # Goes through each datapoints to get the distinct entities
     df_distinct_entities.to_csv(os.path.join(OUTPATH, 'distinct_countries_standardized.csv'), index=False)
 
-
-
-
-# Max length of source name.
-MAX_SOURCE_NAME_LEN = 256
-
+def compress_output(outpath):
+    shutil.make_archive(os.path.join(outpath,'datapoints'), 'zip', outpath)
 
 def main():
     original_df = load_and_clean() 
@@ -224,6 +210,7 @@ def main():
     create_sources(original_df, df_datasets)
     create_variables_datapoints(original_df) #numexpr can't be installed for this function to work - need to formalise this somehow
     create_distinct_entities()
+    compress_output(OUTPATH)
 
 if __name__ == '__main__':
     main()
