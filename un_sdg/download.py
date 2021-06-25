@@ -25,12 +25,12 @@ def delete_output(keep_paths: List[str]) -> None:
         if os.path.exists(os.path.join(OUTPATH, path)):
             for CleanUp in glob.glob(os.path.join(OUTPATH, '*.*')):
                 if not CleanUp.endswith(path):
-                    print("Deleting ", CleanUp)    
+                    print("Deleting ", CleanUp, "...")    
                     os.remove(CleanUp)              
 
 def download_data() -> None:
     # retrieves all goal codes
-    print("Retrieving SDG goal codes")
+    print("Retrieving SDG goal codes...")
     url = f"{base_url}/v1/sdg/Goal/List"
     res = requests.get(url)
     assert res.ok
@@ -38,7 +38,7 @@ def download_data() -> None:
     goals = json.loads(res.content)
     goal_codes = [int(goal['code']) for goal in goals]
     # retrieves all area codes
-    print("Retrieving area codes")
+    print("Retrieving area codes...")
     url = f"{base_url}/v1/sdg/GeoArea/List"
     res = requests.get(url)
     assert res.ok
@@ -46,7 +46,7 @@ def download_data() -> None:
     areas = json.loads(res.content)
     area_codes = [int(area['geoAreaCode']) for area in areas]
     # retrieves csv with data for all codes and areas
-    print("Retrieving data")
+    print("Retrieving data...")
     url = f"{base_url}/v1/sdg/Goal/DataCSV"
     res = requests.post(url, data={'goal': goal_codes, 'areaCodes': area_codes})
     assert res.ok
@@ -57,7 +57,7 @@ def download_data() -> None:
 def download_metadata() -> None:
     # Download metadata
     zip_url = METADATA_LOC
-    print("Retrieving metadata")
+    print("Retrieving metadata...")
     r = requests.get(zip_url)  
     with open(os.path.join(METAPATH, 'sdg-metadata.zip'), 'wb') as f:
         f.write(r.content)
@@ -69,7 +69,7 @@ def download_metadata() -> None:
     #docx metadata is downloaded as well as pdf, this deletes the docx
     files_in_directory = os.listdir(METAPATH)
     filtered_files = [file for file in files_in_directory if not file.endswith((".pdf"))]
-    print("Removing .docx files")
+    print("Removing .docx files...")
     for file in filtered_files:
 	    path_to_file = os.path.join(METAPATH, file)
 	    os.remove(path_to_file)
