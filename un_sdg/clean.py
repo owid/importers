@@ -34,6 +34,26 @@ from un_sdg.core import (
     str_to_float
 )
 
+
+
+def load_and_clean():
+    # Load and clean the data
+    print("Reading in original data...") 
+    original_df = pd.read_csv(
+        INFILE, 
+        converters={'Value': str_to_float},
+        low_memory=False
+    )
+    original_df = original_df[original_df['Value'].notnull()]
+    print("Extracting unique entities to " + ENTFILE + "...")
+    original_df[['GeoAreaName']].drop_duplicates() \
+                                .dropna() \
+                                .rename(columns={'GeoAreaName': 'Country'}) \
+                                .to_csv(ENTFILE, index=False)
+    # Make the datapoints folder
+    Path(OUTPATH, 'datapoints').mkdir(parents=True, exist_ok=True)
+    return original_df
+
 """
 Now use the country standardiser tool to standardise $ENTFILE
 1. Open the OWID Country Standardizer Tool
@@ -51,26 +71,11 @@ Now use the country standardiser tool to standardise $ENTFILE
 8. Rename the "Country" column to "country_code".
 """
 
-def load_and_clean():
-    # Load and clean the data 
-    original_df = pd.read_csv(
-        INFILE, 
-        converters={'Value': str_to_float},
-        low_memory=False
-    )
-    original_df = original_df[original_df['Value'].notnull()]
-    original_df[['GeoAreaName']].drop_duplicates() \
-                                .dropna() \
-                                .rename(columns={'GeoAreaName': 'Country'}) \
-                                .to_csv(ENTFILE, index=False)
-    # Make the datapoints folder
-    Path(OUTPATH, 'datapoints').mkdir(parents=True, exist_ok=True)
-    return original_df
-
 ### Datasets
 def create_datasets():
     df_datasets = clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION)
     assert df_datasets.shape[0] == 1, f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
+    print("Creating datasets csv...")
     df_datasets.to_csv(os.path.join(OUTPATH, 'datasets.csv'), index=False)
     return df_datasets
 
@@ -88,6 +93,7 @@ def create_sources(original_df, df_datasets):
     #all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
     all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
     source_description = source_description_template.copy()
+    print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
         dp_source = original_df[original_df.SeriesCode == row['SeriesCode']].Source.drop_duplicates()
         if len(dp_source) <= 2:
@@ -107,6 +113,7 @@ def create_sources(original_df, df_datasets):
             'dataset_id': df_datasets.iloc[0]['id'], # this may need to be more flexible! 
             'series_code': row['SeriesCode']
         }, ignore_index=True)
+    print("Saving sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, 'sources.csv'), index=False)
 
     
@@ -145,7 +152,7 @@ def create_variables_datapoints(original_df):
     
     all_series = original_df[['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long']]   .groupby(by=['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long'])   .count()   .reset_index()
     all_series = create_short_unit(all_series)
-
+    print("Extracting variables from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)): 
         data_filtered =  pd.DataFrame(original_df[(original_df.Indicator == row['Indicator']) & (original_df.SeriesCode == row['SeriesCode'])])
         _, dimensions, dimension_members = get_series_with_relevant_dimensions(data_filtered, DIMENSIONS, NON_DIMENSIONS)
@@ -196,6 +203,7 @@ def create_variables_datapoints(original_df):
                 extract_datapoints(table).to_csv(os.path.join(OUTPATH,'datapoints','datapoints_%d.csv' % variable_idx), index=False)
                 variable_idx += 1
                 print(table)
+    print("Saving variables csv...")
     variables.to_csv(os.path.join(OUTPATH,'variables.csv'), index=False)
 
 def create_distinct_entities(): 
@@ -211,7 +219,7 @@ def main():
     original_df = load_and_clean() 
     df_datasets = create_datasets()
     create_sources(original_df, df_datasets)
-    create_variables_datapoints(original_df) #numexpr can't be installed for this function to work - need to formalise this somehow
+    create_variables_datapoints(original_df)
     create_distinct_entities()
     compress_output(OUTPATH)
 
