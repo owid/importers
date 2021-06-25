@@ -2,7 +2,7 @@
 Usage:
     python -m un_sdg.main
 """
-from un_sdg import DATASET_NAMESPACE, DATASET_DIR, DATASET_VERSION
+from un_sdg import DATASET_DIR, DATASET_VERSION
 
 from un_sdg import (
     download, 
