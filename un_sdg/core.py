@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import glob
 import json
 import itertools
 import math
@@ -10,8 +9,7 @@ import pdfminer
 import io
 
 from typing import List
-from datetime import datetime
-from un_sdg import DATASET_NAME, DATASET_AUTHORS, OUTPATH, DATASET_VERSION
+from un_sdg import  OUTPATH
 
 
 def str_to_float(s):
@@ -36,8 +34,6 @@ def extract_description(pdf_path):
     converted_text = ff.getvalue()
 
     return converted_text
-
-
 
 def extract_datapoints(df):
     return pd.DataFrame({
