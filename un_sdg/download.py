@@ -5,8 +5,6 @@ import json
 import os
 import pandas as pd
 import requests
-import shutil
-import zipfile
 from io import BytesIO
 from un_sdg import INFILE, OUTPATH
 from typing import List
