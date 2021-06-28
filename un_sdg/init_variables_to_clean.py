@@ -5,7 +5,7 @@ import pandas as pd
 from db import connection
 from db_utils import DBUtils
 
-from un_sdg import INPATH, OUTPATH, INFILE
+from un_sdg import OUTPATH, INFILE
 from un_sdg.match_variables import get_datasets
 
 
