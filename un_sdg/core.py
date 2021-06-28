@@ -5,8 +5,6 @@ import itertools
 import math
 import numpy as np
 import requests
-import pdfminer
-import io
 
 from typing import List
 from un_sdg import  OUTPATH

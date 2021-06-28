@@ -14,5 +14,3 @@ INPATH = os.path.join(DATASET_DIR, 'input')
 OUTPATH = os.path.join(DATASET_DIR, 'output')
 INFILE = os.path.join(INPATH, 'un-sdg-' + DATASET_VERSION + '.csv')
 ENTFILE =  os.path.join(INPATH, 'entities-' + DATASET_VERSION + '.csv')
-METAPATH = os.path.join(DATASET_DIR, 'metadata')
-METADATA_LOC = 'https://unstats.un.org/sdgs/metadata/files/SDG-indicator-metadata.zip'
