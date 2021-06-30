@@ -12,5 +12,5 @@ DATASET_NAMESPACE = f"{DATASET_DIR.split('/')[-1]}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, 'config')
 INPATH = os.path.join(DATASET_DIR, 'input')
 OUTPATH = os.path.join(DATASET_DIR, 'output')
-INFILE = os.path.join(INPATH, 'un-sdg-' + DATASET_VERSION + '.csv')
+INFILE = os.path.join(INPATH, 'un-sdg-' + DATASET_VERSION + '.csv.zip')
 ENTFILE =  os.path.join(INPATH, 'entities-' + DATASET_VERSION + '.csv')

@@ -34,7 +34,8 @@ def load_and_clean() -> pd.DataFrame:
     print("Reading in original data...") 
     original_df = pd.read_csv(
         INFILE, 
-        low_memory=False
+        low_memory=False,
+        compression="gzip"
     )
     original_df = original_df[original_df['Value'].notnull()]
     print("Extracting unique entities to " + ENTFILE + "...")
@@ -150,6 +151,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         if len(dimensions) == 0|(data_filtered[dimensions].isna().sum().sum() > 0):
             # no additional dimensions
             table = generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIMENSIONS)
+            print(type(table))
             variable = {
                 'dataset_id': 0,
                 'source_id': series2source_id[row['SeriesCode']],

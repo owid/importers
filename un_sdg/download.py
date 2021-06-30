@@ -48,7 +48,6 @@ def download_data() -> None:
     res = requests.post(url, data={'goal': goal_codes, 'areaCodes': area_codes})
     assert res.ok
     df = pd.read_csv(BytesIO(res.content), low_memory = False)
-    df.to_csv(INFILE, index=False)
     df.to_csv(INFILE + ".zip", index=False, compression='gzip')
 
 if __name__ == '__main__':
