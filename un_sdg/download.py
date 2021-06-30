@@ -20,10 +20,10 @@ def main():
 def delete_output(keep_paths: List[str]) -> None:
     for path in keep_paths:
         if os.path.exists(os.path.join(OUTPATH, path)):
-            for CleanUp in glob.glob(os.path.join(OUTPATH, '*.*')):
-                if not CleanUp.endswith(path):
-                    print("Deleting ", CleanUp, "...")    
-                    os.remove(CleanUp)              
+            for clean_up in glob.glob(os.path.join(OUTPATH, '*.*')):
+                if not clean_up.endswith(path):
+                    print("Deleting ", clean_up, "...")    
+                    os.remove(clean_up)              
 
 def download_data() -> None:
     # retrieves all goal codes
