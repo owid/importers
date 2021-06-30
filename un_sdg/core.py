@@ -6,18 +6,11 @@ import math
 import numpy as np
 import requests
 
-from typing import List
-from un_sdg import  OUTPATH
+from typing import List, Tuple
+from un_sdg import OUTPATH
 
 
-def str_to_float(s):
-    try:
-        # Parse strings with thousands (,) separators
-        return float(s.replace(',','')) if type(s) == str else s
-    except ValueError:
-        return None
-
-def extract_datapoints(df):
+def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame({
         'country': df['country'],
         'year': df['TimePeriod'],
@@ -27,7 +20,7 @@ def extract_datapoints(df):
 
 def get_distinct_entities() -> List[str]:
     """retrieves a list of all distinct entities that contain at least
-    on non-null data point that was saved to disk from the
+    one non-null data point that was saved to disk from the
     `clean_and_create_datapoints()` method.
     Returns:
         entities: List[str]. List of distinct entity names.
@@ -46,7 +39,7 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION) -> pd.DataFrame:
+def clean_datasets(DATASET_NAME: str, DATASET_AUTHORS: str, DATASET_VERSION: str) -> pd.DataFrame:
     """Constructs a dataframe where each row represents a dataset to be
     upserted.
     Note: often, this dataframe will only consist of a single row.
@@ -58,7 +51,7 @@ def clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION) -> pd.DataFra
     return df
 
 
-def dimensions_description() -> None:
+def dimensions_description() -> pd.DataFrame:
     base_url = "https://unstats.un.org/sdgapi"
     # retrieves all goal codes
     url = f"{base_url}/v1/sdg/Goal/List"
@@ -74,11 +67,6 @@ def dimensions_description() -> None:
         assert res.ok
         dims = json.loads(res.content)
         for dim in dims:
-           # d.append(
-            #    {
-             #       'id': dim['id'],
-              #  }
-           # )
             for code in dim['codes']:
                 d.append(
 
@@ -88,12 +76,11 @@ def dimensions_description() -> None:
                         'description': code['description'],
                     }
                 )
-    #dim_dict = pd.DataFrame(d).drop_duplicates().set_index('code').squeeze().to_dict()
     dim_dict = pd.DataFrame(d).drop_duplicates()
     return(dim_dict)
 
 
-def attributes_description() -> None:
+def attributes_description() -> dict:
     base_url = "https://unstats.un.org/sdgapi"
     # retrieves all goal codes
     url = f"{base_url}/v1/sdg/Goal/List"
@@ -120,26 +107,25 @@ def attributes_description() -> None:
     return(att_dict)
 
 
-def create_short_unit(all_series):
-    
+def create_short_unit(long_unit: pd.Series) -> np.ndarray:
+
     conditions = [
-        (all_series['Units_long'].str.contains("PERCENT")) | (all_series['Units_long'].str.contains("Percentage")),
-        (all_series['Units_long'].str.contains("KG")) | (all_series['Units_long'].str.contains("Kilograms")),
-        (all_series['Units_long'].str.contains("USD")) | (all_series['Units_long'].str.contains("usd"))]   
+        (long_unit.str.contains("PERCENT")) | (long_unit.str.contains("Percentage")),
+        (long_unit.str.contains("KG")) | (long_unit.str.contains("Kilograms")),
+        (long_unit.str.contains("USD")) | (long_unit.str.contains("usd"))]   
     
     choices = ["%", "kg", "$"]
     
-    all_series['short_unit'] = np.select(conditions, choices, default = None)
-    return(all_series)
+    short_unit = np.select(conditions, choices, default = None)
+    return(short_unit)
 
-def get_series_with_relevant_dimensions(data_filtered,DIMENSIONS, NON_DIMENSIONS):
+def get_series_with_relevant_dimensions(data_filtered: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple) -> Tuple[pd.DataFrame, list, list]:
     """ For a given indicator and series, return a tuple:
     
       - data filtered to that indicator and series
       - names of relevant dimensions
       - unique values for each relevant dimension
     """
-   # data_filtered = original_df[(original_df.Indicator == indicator) & (original_df.SeriesCode == series)]
     non_null_dimensions_columns = [col for col in DIMENSIONS if data_filtered.loc[:, col].notna().any()]
     dimension_names = []
     dimension_unique_values = []
@@ -152,7 +138,7 @@ def get_series_with_relevant_dimensions(data_filtered,DIMENSIONS, NON_DIMENSIONS
             dimension_unique_values.append(list(uniques))
     return (data_filtered[data_filtered.columns.intersection(list(NON_DIMENSIONS)+ list(dimension_names))], dimension_names, dimension_unique_values)
 
-def generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIMENSIONS): 
+def generate_tables_for_indicator_and_series(data_filtered: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple) -> pd.DataFrame: 
     tables_by_combination = {}
     dim_dict = dimensions_description()    
     data_filtered, dimensions, dimension_values = get_series_with_relevant_dimensions(data_filtered, DIMENSIONS, NON_DIMENSIONS)
@@ -165,7 +151,6 @@ def generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIME
         return export
     else:
         dim_desc = dim_dict.set_index('id').loc[dimensions].set_index('code').squeeze().to_dict()
-       #dimension_values[0] = [x for x in dimension_values[0] if x == x] # some cases where there are NaNs in the dimensions_values
         i = 0
         for i in range(len(dimension_values)): 
             dimension_values[i] = [dim_desc[k] for k in dimension_values[i]]
@@ -181,4 +166,5 @@ def generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIME
                 filt = filt & (data_filtered[dimension_name].isnull() if value_is_nan else data_filtered[dimension_name] == dim_value)
                 tables_by_combination[dimension_value_combination] = data_filtered[filt].drop(dimensions, axis=1)
                 tables_by_combination = {k:v for (k,v) in tables_by_combination.items() if not v.empty} #removing empty combinations
+    print(type(tables_by_combination))
     return tables_by_combination

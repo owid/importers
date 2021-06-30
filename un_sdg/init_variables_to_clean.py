@@ -9,7 +9,7 @@ from un_sdg import OUTPATH, INFILE
 from un_sdg.match_variables import get_datasets
 
 
-def main():
+def main() -> None:
     df_old_vars = get_old_variables()
     df_variables = get_new_variables()
     var_name2code = df_variables.set_index('SeriesDescription')['SeriesCode'].to_dict()
@@ -42,7 +42,7 @@ def main():
         }, f, ignore_nan=True, indent=4)
 
 
-def get_old_variables():
+def get_old_variables() -> pd.DataFrame:
     with connection.cursor() as cursor:
         db = DBUtils(cursor)
         df_old_datasets = get_datasets(db=db, new=False)
@@ -62,7 +62,7 @@ def get_old_variables():
     return df_old_used_vars
 
 
-def get_new_variables():
+def get_new_variables() -> pd.DataFrame:
     df_data = pd.read_csv(INFILE, low_memory=False)
     df_variables = df_data[['SeriesDescription', 'SeriesCode']].drop_duplicates()
     return df_variables

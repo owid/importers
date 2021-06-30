@@ -1,17 +1,13 @@
 import pandas as pd
 import os
 import shutil
-from datetime import datetime
 import json
 import numpy as np
 import re
-
+from datetime import datetime
 from pathlib import Path
 from tqdm import tqdm
-from typing import List, Tuple, Dict
 
-#from db import connection
-#from db_utils import DBUtils
 from un_sdg import (
     INFILE,
     ENTFILE,
@@ -30,18 +26,14 @@ from un_sdg.core import (
     attributes_description,
     create_short_unit,
     get_series_with_relevant_dimensions,
-    generate_tables_for_indicator_and_series,
-    str_to_float
+    generate_tables_for_indicator_and_series
 )
 
-
-
-def load_and_clean():
+def load_and_clean() -> pd.DataFrame:
     # Load and clean the data
     print("Reading in original data...") 
     original_df = pd.read_csv(
         INFILE, 
-        converters={'Value': str_to_float},
         low_memory=False
     )
     original_df = original_df[original_df['Value'].notnull()]
@@ -72,7 +64,7 @@ Now use the country standardiser tool to standardise $ENTFILE
 """
 
 ### Datasets
-def create_datasets():
+def create_datasets() -> pd.DataFrame:
     df_datasets = clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION)
     assert df_datasets.shape[0] == 1, f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
     print("Creating datasets csv...")
@@ -81,7 +73,7 @@ def create_datasets():
 
 ### Sources
 
-def create_sources(original_df, df_datasets):
+def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None:
     df_sources = pd.DataFrame(columns=['id', 'name', 'description', 'dataset_id'])
     source_description_template = {
         'dataPublishedBy': "United Nations Statistics Division",
@@ -90,7 +82,6 @@ def create_sources(original_df, df_datasets):
         'retrievedDate': datetime.now().strftime("%d-%B-%y"),
         'additionalInfo': None
     }
-    #all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
     all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
@@ -107,7 +98,6 @@ def create_sources(original_df, df_datasets):
             pass
         df_sources = df_sources.append({
             'id': i,
-            #'name': "%s (UN SDG, 2021)" % row['Source'],
             'name': "%s (UN SDG, 2021)" % row['SeriesDescription'],
             'description': json.dumps(source_description),
             'dataset_id': df_datasets.iloc[0]['id'], # this may need to be more flexible! 
@@ -119,7 +109,7 @@ def create_sources(original_df, df_datasets):
     
 ### Variables
 
-def create_variables_datapoints(original_df):
+def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     variable_idx = 0
     variables = pd.DataFrame(columns=['id', 'name', 'unit', 'dataset_id', 'source_id'])
     
@@ -151,7 +141,7 @@ def create_variables_datapoints(original_df):
     NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])# not sure if units should be in here
     
     all_series = original_df[['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long']]   .groupby(by=['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long'])   .count()   .reset_index()
-    all_series = create_short_unit(all_series)
+    all_series['short_unit'] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)): 
         data_filtered =  pd.DataFrame(original_df[(original_df.Indicator == row['Indicator']) & (original_df.SeriesCode == row['SeriesCode'])])
@@ -206,16 +196,16 @@ def create_variables_datapoints(original_df):
     print("Saving variables csv...")
     variables.to_csv(os.path.join(OUTPATH,'variables.csv'), index=False)
 
-def create_distinct_entities(): 
+def create_distinct_entities() -> None: 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=['name']) # Goes through each datapoints to get the distinct entities
     df_distinct_entities.to_csv(os.path.join(OUTPATH, 'distinct_countries_standardized.csv'), index=False)
 
-def compress_output(outpath):
+def compress_output(outpath) -> None:
     zip_loc = os.path.join(outpath, 'datapoints')
     zip_dest = os.path.join(outpath, 'datapoints')
     shutil.make_archive(base_dir=zip_loc, root_dir=zip_loc, format='zip', base_name=zip_dest)
  
-def main():
+def main() -> None:
     original_df = load_and_clean() 
     df_datasets = create_datasets()
     create_sources(original_df, df_datasets)
