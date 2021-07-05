@@ -81,12 +81,9 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "retrievedDate": DATASET_RETRIEVED_DATE,
         "additionalInfo": None,
     }
-    all_series = (
-        original_df[["SeriesCode", "SeriesDescription", "[Units]"]]
-        .groupby(by=["SeriesCode", "SeriesDescription", "[Units]"])
-        .count()
-        .reset_index()
-    )
+    all_series = original_df[
+        ["SeriesCode", "SeriesDescription", "[Units]"]
+    ].drop_duplicates()
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
@@ -158,12 +155,9 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
 
     DIMENSIONS = tuple(dim_description.id.unique())
     NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])
-    all_series = (
-        original_df[["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]]
-        .groupby(by=["Indicator", "SeriesCode", "SeriesDescription", "Units_long"])
-        .count()
-        .reset_index()
-    )
+    all_series = original_df[
+        ["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]
+    ].drop_duplicates()
     all_series["short_unit"] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
