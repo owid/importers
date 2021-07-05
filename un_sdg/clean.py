@@ -208,7 +208,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         if len(dimensions) == 0 | (data_filtered[dimensions].isna().sum().sum() > 0):
             # no additional dimensions
             table = generate_tables_for_indicator_and_series(
-                data_filtered, init_dimensions, init_non_dimensions
+                data_filtered, init_dimensions, init_non_dimensions, dim_description
             )
             variable = {
                 "dataset_id": 0,
@@ -238,7 +238,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         else:
             # has additional dimensions
             for member_combination, table in generate_tables_for_indicator_and_series(
-                data_filtered, init_dimensions, init_non_dimensions
+                data_filtered, init_dimensions, init_non_dimensions, dim_description
             ).items():
                 variable = {
                     "dataset_id": 0,
