@@ -32,6 +32,7 @@ from un_sdg import (
     DATASET_NAME,
     DATASET_AUTHORS,
     DATASET_VERSION,
+    DATASET_RETRIEVED_DATE,
 )
 
 from un_sdg.core import (
@@ -77,7 +78,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "dataPublishedBy": "United Nations Statistics Division",
         "dataPublisherSource": None,
         "link": "https://unstats.un.org/sdgs/indicators/database/",
-        "retrievedDate": datetime.now().strftime("%d-%B-%y"),
+        "retrievedDate": DATASET_RETRIEVED_DATE,
         "additionalInfo": None,
     }
     all_series = (
