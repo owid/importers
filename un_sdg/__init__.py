@@ -2,12 +2,12 @@ import os
 import pathlib
 import datetime
 
-DATASET_NAME = "United Nations Sustainable Development Goals Indicators"
+DATASET_NAME = "United Nations Sustainable Development Goals"
 DATASET_AUTHORS = "United Nations"
 DATASET_VERSION = "2021-03"
 DATASET_LINK = "https://unstats.un.org/sdgs/indicators/database/"
-DATASET_DIR = os.path.dirname(__file__)
-DATASET_NAMESPACE = f"{DATASET_DIR.split('/')[-1]}@{DATASET_VERSION}"
+DATASET_DIR = os.path.dirname(__file__).split("/")[-1]
+DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
 INPATH = os.path.join(DATASET_DIR, "input")
 OUTPATH = os.path.join(DATASET_DIR, "output")
