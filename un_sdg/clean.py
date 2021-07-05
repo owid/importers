@@ -21,7 +21,6 @@ import shutil
 import json
 import numpy as np
 import re
-from datetime import datetime
 from pathlib import Path
 from tqdm import tqdm
 
@@ -47,6 +46,15 @@ from un_sdg.core import (
     generate_tables_for_indicator_and_series,
 )
 
+"""
+load_and_clean():
+- Loads in the raw data 
+- Keeps rows where values in the "Value" column are not Null
+- Creates $ENTFILE, a list of unique geographical entities from the "GeoAreaName" column
+- Creates the output/datapoints folder
+- Outputs cleaned data
+"""
+
 
 def load_and_clean() -> pd.DataFrame:
     # Load and clean the data
@@ -62,6 +70,12 @@ def load_and_clean() -> pd.DataFrame:
     return original_df
 
 
+"""
+create_datasets():
+- Creates very simple one line csv with name of dataset and dataset id
+"""
+
+
 def create_datasets() -> pd.DataFrame:
     df_datasets = clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION)
     assert (
@@ -70,6 +84,12 @@ def create_datasets() -> pd.DataFrame:
     print("Creating datasets csv...")
     df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     return df_datasets
+
+
+"""
+create_sources():
+
+"""
 
 
 def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None:
@@ -81,9 +101,11 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "retrievedDate": DATASET_RETRIEVED_DATE,
         "additionalInfo": None,
     }
-    all_series = original_df[
-        ["SeriesCode", "SeriesDescription", "[Units]"]
-    ].drop_duplicates()
+    all_series = (
+        original_df[["SeriesCode", "SeriesDescription", "[Units]"]]
+        .drop_duplicates()
+        .reset_index()
+    )
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
@@ -96,7 +118,6 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
             source_description[
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"
-        print(source_description["dataPublisherSource"])
         try:
             source_description["additionalInfo"] = None
         except:
@@ -134,13 +155,10 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         .to_dict()
     )
 
-    series2source_id = (
-        pd.read_csv(os.path.join(OUTPATH, "sources.csv"))
-        .drop(["name", "description", "dataset_id"], 1)
-        .set_index("series_code")
-        .squeeze()
-        .to_dict()
-    )
+    sources = pd.read_csv(os.path.join(OUTPATH, "sources.csv"))
+    sources = sources[["id", "series_code"]]
+
+    series2source_id = sources.set_index("series_code").squeeze().to_dict()
 
     unit_description = attributes_description()
 
@@ -153,11 +171,15 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         lambda x: unit_description[x]
     )
 
-    DIMENSIONS = tuple(dim_description.id.unique())
-    NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])
-    all_series = original_df[
-        ["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]
-    ].drop_duplicates()
+    init_dimensions = tuple(dim_description.id.unique())
+    init_non_dimensions = tuple(
+        [c for c in original_df.columns if c not in set(init_dimensions)]
+    )
+    all_series = (
+        original_df[["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]]
+        .drop_duplicates()
+        .reset_index()
+    )
     all_series["short_unit"] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
@@ -168,15 +190,13 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
             ]
         )
         _, dimensions, dimension_members = get_series_with_relevant_dimensions(
-            data_filtered, DIMENSIONS, NON_DIMENSIONS
+            data_filtered, init_dimensions, init_non_dimensions
         )
-        print(i)
         if len(dimensions) == 0 | (data_filtered[dimensions].isna().sum().sum() > 0):
             # no additional dimensions
             table = generate_tables_for_indicator_and_series(
-                data_filtered, DIMENSIONS, NON_DIMENSIONS
+                data_filtered, init_dimensions, init_non_dimensions
             )
-            print(type(table))
             variable = {
                 "dataset_id": 0,
                 "source_id": series2source_id[row["SeriesCode"]],
@@ -205,7 +225,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         else:
             # has additional dimensions
             for member_combination, table in generate_tables_for_indicator_and_series(
-                data_filtered, DIMENSIONS, NON_DIMENSIONS
+                data_filtered, init_dimensions, init_non_dimensions
             ).items():
                 variable = {
                     "dataset_id": 0,
@@ -231,7 +251,6 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                     "display": None,
                     "original_metadata": None,
                 }
-                print(member_combination)
                 variables = variables.append(variable, ignore_index=True)
                 extract_datapoints(table).to_csv(
                     os.path.join(
@@ -240,7 +259,6 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                     index=False,
                 )
                 variable_idx += 1
-                print(table)
     print("Saving variables csv...")
     variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
