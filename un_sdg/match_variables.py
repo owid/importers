@@ -16,14 +16,6 @@ from db import get_connection
 from db_utils import DBUtils
 from un_sdg import OUTPATH
 
-DEBUG = True
-DEBUG_HOST = "http://localhost:3030"
-UPDATE_DB = False
-
-logging.basicConfig()
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG if DEBUG else logging.INFO)
-
 
 def main():
     connection = get_connection()
