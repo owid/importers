@@ -1,3 +1,20 @@
+"""
+After running load_and_clean() to create $ENTFILE use the country standardiser tool to standardise $ENTFILE
+1. Open the OWID Country Standardizer Tool
+   (https://owid.cloud/admin/standardize);
+2. Change the "Input Format" field to "Non-Standard Country Name";
+3. Change the "Output Format" field to "Our World In Data Name"; 
+4. In the "Choose CSV file" field, upload $ENTFILE;
+5. For any country codes that do NOT get matched, enter a custom name on
+   the webpage (in the "Or enter a Custom Name" table column);
+    * NOTE: For this dataset, you will most likely need to enter custom
+      names for regions/continents (e.g. "Arab World", "Lower middle
+      income");
+6. Click the "Download csv" button;
+7. Name the downloaded csv 'standardized_entity_names.csv' and save in the output folder;
+8. Rename the "Country" column to "country_code".
+"""
+
 import pandas as pd
 import os
 import shutil
@@ -44,24 +61,6 @@ def load_and_clean() -> pd.DataFrame:
     return original_df
 
 
-"""
-Now use the country standardiser tool to standardise $ENTFILE
-1. Open the OWID Country Standardizer Tool
-   (https://owid.cloud/admin/standardize);
-2. Change the "Input Format" field to "Non-Standard Country Name";
-3. Change the "Output Format" field to "Our World In Data Name"; 
-4. In the "Choose CSV file" field, upload {outfpath};
-5. For any country codes that do NOT get matched, enter a custom name on
-   the webpage (in the "Or enter a Custom Name" table column);
-    * NOTE: For this dataset, you will most likely need to enter custom
-      names for regions/continents (e.g. "Arab World", "Lower middle
-      income");
-6. Click the "Download csv" button;
-7. Replace {outfpath} with the downloaded CSV;
-8. Rename the "Country" column to "country_code".
-"""
-
-### Datasets
 def create_datasets() -> pd.DataFrame:
     df_datasets = clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION)
     assert (
@@ -70,9 +69,6 @@ def create_datasets() -> pd.DataFrame:
     print("Creating datasets csv...")
     df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     return df_datasets
-
-
-### Sources
 
 
 def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None:
@@ -123,9 +119,6 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
 
-### Variables
-
-
 def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     variable_idx = 0
     variables = pd.DataFrame(columns=["id", "name", "unit", "dataset_id", "source_id"])
@@ -163,10 +156,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     )
 
     DIMENSIONS = tuple(dim_description.id.unique())
-    NON_DIMENSIONS = tuple(
-        [c for c in original_df.columns if c not in set(DIMENSIONS)]
-    )  # not sure if units should be in here
-
+    NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])
     all_series = (
         original_df[["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]]
         .groupby(by=["Indicator", "SeriesCode", "SeriesDescription", "Units_long"])
