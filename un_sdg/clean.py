@@ -14,7 +14,7 @@ from un_sdg import (
     OUTPATH,
     DATASET_NAME,
     DATASET_AUTHORS,
-    DATASET_VERSION
+    DATASET_VERSION,
 )
 
 from un_sdg.core import (
@@ -26,26 +26,23 @@ from un_sdg.core import (
     attributes_description,
     create_short_unit,
     get_series_with_relevant_dimensions,
-    generate_tables_for_indicator_and_series
+    generate_tables_for_indicator_and_series,
 )
+
 
 def load_and_clean() -> pd.DataFrame:
     # Load and clean the data
-    print("Reading in original data...") 
-    original_df = pd.read_csv(
-        INFILE, 
-        low_memory=False,
-        compression="gzip"
-    )
-    original_df = original_df[original_df['Value'].notnull()]
+    print("Reading in original data...")
+    original_df = pd.read_csv(INFILE, low_memory=False, compression="gzip")
+    original_df = original_df[original_df["Value"].notnull()]
     print("Extracting unique entities to " + ENTFILE + "...")
-    original_df[['GeoAreaName']].drop_duplicates() \
-                                .dropna() \
-                                .rename(columns={'GeoAreaName': 'Country'}) \
-                                .to_csv(ENTFILE, index=False)
+    original_df[["GeoAreaName"]].drop_duplicates().dropna().rename(
+        columns={"GeoAreaName": "Country"}
+    ).to_csv(ENTFILE, index=False)
     # Make the datapoints folder
-    Path(OUTPATH, 'datapoints').mkdir(parents=True, exist_ok=True)
+    Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
     return original_df
+
 
 """
 Now use the country standardiser tool to standardise $ENTFILE
@@ -67,153 +64,227 @@ Now use the country standardiser tool to standardise $ENTFILE
 ### Datasets
 def create_datasets() -> pd.DataFrame:
     df_datasets = clean_datasets(DATASET_NAME, DATASET_AUTHORS, DATASET_VERSION)
-    assert df_datasets.shape[0] == 1, f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
+    assert (
+        df_datasets.shape[0] == 1
+    ), f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
     print("Creating datasets csv...")
-    df_datasets.to_csv(os.path.join(OUTPATH, 'datasets.csv'), index=False)
+    df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     return df_datasets
+
 
 ### Sources
 
+
 def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None:
-    df_sources = pd.DataFrame(columns=['id', 'name', 'description', 'dataset_id'])
+    df_sources = pd.DataFrame(columns=["id", "name", "description", "dataset_id"])
     source_description_template = {
-        'dataPublishedBy': "United Nations Statistics Division",
-        'dataPublisherSource': None,
-        'link': "https://unstats.un.org/sdgs/indicators/database/",
-        'retrievedDate': datetime.now().strftime("%d-%B-%y"),
-        'additionalInfo': None
+        "dataPublishedBy": "United Nations Statistics Division",
+        "dataPublisherSource": None,
+        "link": "https://unstats.un.org/sdgs/indicators/database/",
+        "retrievedDate": datetime.now().strftime("%d-%B-%y"),
+        "additionalInfo": None,
     }
-    all_series = original_df[['SeriesCode', 'SeriesDescription', '[Units]']]   .groupby(by=['SeriesCode', 'SeriesDescription', '[Units]'])   .count()   .reset_index()
+    all_series = (
+        original_df[["SeriesCode", "SeriesDescription", "[Units]"]]
+        .groupby(by=["SeriesCode", "SeriesDescription", "[Units]"])
+        .count()
+        .reset_index()
+    )
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
-        dp_source = original_df[original_df.SeriesCode == row['SeriesCode']].Source.drop_duplicates()
+        dp_source = original_df[
+            original_df.SeriesCode == row["SeriesCode"]
+        ].Source.drop_duplicates()
         if len(dp_source) <= 2:
-            source_description['dataPublisherSource'] = dp_source.str.cat(sep='; ')
-        else: 
-            source_description['dataPublisherSource'] = 'Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/'    
-        print(source_description['dataPublisherSource'])   
+            source_description["dataPublisherSource"] = dp_source.str.cat(sep="; ")
+        else:
+            source_description[
+                "dataPublisherSource"
+            ] = "Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"
+        print(source_description["dataPublisherSource"])
         try:
-            source_description['additionalInfo'] = None
+            source_description["additionalInfo"] = None
         except:
             pass
-        df_sources = df_sources.append({
-            'id': i,
-            'name': "%s (UN SDG, 2021)" % row['SeriesDescription'],
-            'description': json.dumps(source_description),
-            'dataset_id': df_datasets.iloc[0]['id'], # this may need to be more flexible! 
-            'series_code': row['SeriesCode']
-        }, ignore_index=True)
+        df_sources = df_sources.append(
+            {
+                "id": i,
+                "name": "%s (UN SDG, 2021)" % row["SeriesDescription"],
+                "description": json.dumps(source_description),
+                "dataset_id": df_datasets.iloc[0][
+                    "id"
+                ],  # this may need to be more flexible!
+                "series_code": row["SeriesCode"],
+            },
+            ignore_index=True,
+        )
     print("Saving sources csv...")
-    df_sources.to_csv(os.path.join(OUTPATH, 'sources.csv'), index=False)
+    df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
-    
+
 ### Variables
+
 
 def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     variable_idx = 0
-    variables = pd.DataFrame(columns=['id', 'name', 'unit', 'dataset_id', 'source_id'])
-    
-    new_columns = [] 
+    variables = pd.DataFrame(columns=["id", "name", "unit", "dataset_id", "source_id"])
+
+    new_columns = []
     for k in original_df.columns:
-        new_columns.append(re.sub(r"[\[\]]", '',k))
+        new_columns.append(re.sub(r"[\[\]]", "", k))
 
     original_df.columns = new_columns
 
-    entity2owid_name = pd.read_csv(os.path.join(OUTPATH, 'standardized_entity_names.csv')) \
-                              .set_index('country_code') \
-                              .squeeze() \
-                              .to_dict()
+    entity2owid_name = (
+        pd.read_csv(os.path.join(OUTPATH, "standardized_entity_names.csv"))
+        .set_index("country_code")
+        .squeeze()
+        .to_dict()
+    )
 
-    series2source_id = pd.read_csv(os.path.join(OUTPATH, 'sources.csv'))\
-                            .drop(['name','description', 'dataset_id'], 1)\
-                            .set_index('series_code')\
-                            .squeeze() \
-                            .to_dict()
- 
+    series2source_id = (
+        pd.read_csv(os.path.join(OUTPATH, "sources.csv"))
+        .drop(["name", "description", "dataset_id"], 1)
+        .set_index("series_code")
+        .squeeze()
+        .to_dict()
+    )
+
     unit_description = attributes_description()
 
     dim_description = dimensions_description()
 
-    original_df['country'] = original_df['GeoAreaName'].apply(lambda x: entity2owid_name[x])
-    original_df['Units_long'] = original_df['Units'].apply(lambda x: unit_description[x])
+    original_df["country"] = original_df["GeoAreaName"].apply(
+        lambda x: entity2owid_name[x]
+    )
+    original_df["Units_long"] = original_df["Units"].apply(
+        lambda x: unit_description[x]
+    )
 
     DIMENSIONS = tuple(dim_description.id.unique())
-    NON_DIMENSIONS = tuple([c for c in original_df.columns if c not in set(DIMENSIONS)])# not sure if units should be in here
-    
-    all_series = original_df[['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long']]   .groupby(by=['Indicator', 'SeriesCode', 'SeriesDescription', 'Units_long'])   .count()   .reset_index()
-    all_series['short_unit'] = create_short_unit(all_series.Units_long)
+    NON_DIMENSIONS = tuple(
+        [c for c in original_df.columns if c not in set(DIMENSIONS)]
+    )  # not sure if units should be in here
+
+    all_series = (
+        original_df[["Indicator", "SeriesCode", "SeriesDescription", "Units_long"]]
+        .groupby(by=["Indicator", "SeriesCode", "SeriesDescription", "Units_long"])
+        .count()
+        .reset_index()
+    )
+    all_series["short_unit"] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
-    for i, row in tqdm(all_series.iterrows(), total=len(all_series)): 
-        data_filtered =  pd.DataFrame(original_df[(original_df.Indicator == row['Indicator']) & (original_df.SeriesCode == row['SeriesCode'])])
-        _, dimensions, dimension_members = get_series_with_relevant_dimensions(data_filtered, DIMENSIONS, NON_DIMENSIONS)
+    for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
+        data_filtered = pd.DataFrame(
+            original_df[
+                (original_df.Indicator == row["Indicator"])
+                & (original_df.SeriesCode == row["SeriesCode"])
+            ]
+        )
+        _, dimensions, dimension_members = get_series_with_relevant_dimensions(
+            data_filtered, DIMENSIONS, NON_DIMENSIONS
+        )
         print(i)
-        if len(dimensions) == 0|(data_filtered[dimensions].isna().sum().sum() > 0):
+        if len(dimensions) == 0 | (data_filtered[dimensions].isna().sum().sum() > 0):
             # no additional dimensions
-            table = generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIMENSIONS)
+            table = generate_tables_for_indicator_and_series(
+                data_filtered, DIMENSIONS, NON_DIMENSIONS
+            )
             print(type(table))
             variable = {
-                'dataset_id': 0,
-                'source_id': series2source_id[row['SeriesCode']],
-                'id': variable_idx,
-                'name': "%s - %s - %s" % (row['Indicator'], row['SeriesDescription'], row['SeriesCode']),
-                'description': None,
-                'code': row['SeriesCode'],
-                'unit': row['Units_long'],
-                'short_unit': row['short_unit'],
-                'timespan': "%s - %s" % (int(np.min(data_filtered['TimePeriod'])), int(np.max(data_filtered['TimePeriod']))),
-                'coverage': None,
-                'display': None,
-                'original_metadata': None
+                "dataset_id": 0,
+                "source_id": series2source_id[row["SeriesCode"]],
+                "id": variable_idx,
+                "name": "%s - %s - %s"
+                % (row["Indicator"], row["SeriesDescription"], row["SeriesCode"]),
+                "description": None,
+                "code": row["SeriesCode"],
+                "unit": row["Units_long"],
+                "short_unit": row["short_unit"],
+                "timespan": "%s - %s"
+                % (
+                    int(np.min(data_filtered["TimePeriod"])),
+                    int(np.max(data_filtered["TimePeriod"])),
+                ),
+                "coverage": None,
+                "display": None,
+                "original_metadata": None,
             }
             variables = variables.append(variable, ignore_index=True)
-            extract_datapoints(table).to_csv(os.path.join(OUTPATH,'datapoints','datapoints_%d.csv' % variable_idx), index=False)
+            extract_datapoints(table).to_csv(
+                os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
+                index=False,
+            )
             variable_idx += 1
         else:
-        # has additional dimensions
-            for member_combination, table in generate_tables_for_indicator_and_series(data_filtered, DIMENSIONS, NON_DIMENSIONS).items():
+            # has additional dimensions
+            for member_combination, table in generate_tables_for_indicator_and_series(
+                data_filtered, DIMENSIONS, NON_DIMENSIONS
+            ).items():
                 variable = {
-                    'dataset_id': 0,
-                    'source_id': series2source_id[row['SeriesCode']],
-                    'id': variable_idx,
-                    'name': "%s - %s - %s - %s" % (
-                        row['Indicator'], 
-                        row['SeriesDescription'], 
-                        row['SeriesCode'],
-                        ' - '.join(map(str, member_combination))),
-                    'description': None,
-                    'code': row['SeriesCode'],
-                    'unit': row['Units_long'],
-                    'short_unit': row['short_unit'],
-                    'timespan': "%s - %s" % (int(np.min(data_filtered['TimePeriod'])), int(np.max(data_filtered['TimePeriod']))),
-                    'coverage': None,
-                    'display': None,
-                    'original_metadata': None  
+                    "dataset_id": 0,
+                    "source_id": series2source_id[row["SeriesCode"]],
+                    "id": variable_idx,
+                    "name": "%s - %s - %s - %s"
+                    % (
+                        row["Indicator"],
+                        row["SeriesDescription"],
+                        row["SeriesCode"],
+                        " - ".join(map(str, member_combination)),
+                    ),
+                    "description": None,
+                    "code": row["SeriesCode"],
+                    "unit": row["Units_long"],
+                    "short_unit": row["short_unit"],
+                    "timespan": "%s - %s"
+                    % (
+                        int(np.min(data_filtered["TimePeriod"])),
+                        int(np.max(data_filtered["TimePeriod"])),
+                    ),
+                    "coverage": None,
+                    "display": None,
+                    "original_metadata": None,
                 }
                 print(member_combination)
                 variables = variables.append(variable, ignore_index=True)
-                extract_datapoints(table).to_csv(os.path.join(OUTPATH,'datapoints','datapoints_%d.csv' % variable_idx), index=False)
+                extract_datapoints(table).to_csv(
+                    os.path.join(
+                        OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx
+                    ),
+                    index=False,
+                )
                 variable_idx += 1
                 print(table)
     print("Saving variables csv...")
-    variables.to_csv(os.path.join(OUTPATH,'variables.csv'), index=False)
+    variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
-def create_distinct_entities() -> None: 
-    df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=['name']) # Goes through each datapoints to get the distinct entities
-    df_distinct_entities.to_csv(os.path.join(OUTPATH, 'distinct_countries_standardized.csv'), index=False)
+
+def create_distinct_entities() -> None:
+    df_distinct_entities = pd.DataFrame(
+        get_distinct_entities(), columns=["name"]
+    )  # Goes through each datapoints to get the distinct entities
+    df_distinct_entities.to_csv(
+        os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
+    )
+
 
 def compress_output(outpath) -> None:
-    zip_loc = os.path.join(outpath, 'datapoints')
-    zip_dest = os.path.join(outpath, 'datapoints')
-    shutil.make_archive(base_dir=zip_loc, root_dir=zip_loc, format='zip', base_name=zip_dest)
- 
+    zip_loc = os.path.join(outpath, "datapoints")
+    zip_dest = os.path.join(outpath, "datapoints")
+    shutil.make_archive(
+        base_dir=zip_loc, root_dir=zip_loc, format="zip", base_name=zip_dest
+    )
+
+
 def main() -> None:
-    original_df = load_and_clean() 
+    original_df = load_and_clean()
     df_datasets = create_datasets()
     create_sources(original_df, df_datasets)
     create_variables_datapoints(original_df)
     create_distinct_entities()
     compress_output(OUTPATH)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
