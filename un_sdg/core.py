@@ -23,7 +23,7 @@ def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
 def get_distinct_entities() -> List[str]:
     """retrieves a list of all distinct entities that contain at least
     one non-null data point that was saved to disk from the
-    `clean_and_create_datapoints()` method.
+    `create_variables_datapoints()` method.
     Returns:
         entities: List[str]. List of distinct entity names.
     """
@@ -40,7 +40,7 @@ def get_distinct_entities() -> List[str]:
     entities = list(entities)
     assert pd.notnull(entities).all(), (
         "All entities should be non-null. Something went wrong in "
-        "`clean_and_create_datapoints()`."
+        "`create_variables_datapoints()`."
     )
     return entities
 
@@ -144,7 +144,6 @@ def get_series_with_relevant_dimensions(
     dimension_unique_values = []
 
     for c in non_null_dimensions_columns:
-        print(non_null_dimensions_columns)
         uniques = data_filtered[c].unique()
         if (
             len(uniques) > 1
@@ -163,16 +162,16 @@ def get_series_with_relevant_dimensions(
 
 
 def generate_tables_for_indicator_and_series(
-    data_filtered: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple
+    data_filtered: pd.DataFrame,
+    DIMENSIONS: tuple,
+    NON_DIMENSIONS: tuple,
+    dim_dict: dict,
 ) -> pd.DataFrame:
     tables_by_combination = {}
-    dim_dict = dimensions_description()
+    # dim_dict = dimensions_description()
     data_filtered, dimensions, dimension_values = get_series_with_relevant_dimensions(
         data_filtered, DIMENSIONS, NON_DIMENSIONS
     )
-    print("PRINTING DIMENSIONS ", dimensions)
-    print("INDICATOR", data_filtered.Indicator[0:1])
-    print("SERIES_CODE", data_filtered.SeriesCode[0:1])
     if (len(dimensions) == 0) | (
         data_filtered[dimensions].isna().sum().sum() > 0
     ):  # not the best solution.
@@ -191,7 +190,6 @@ def generate_tables_for_indicator_and_series(
         for i in range(len(dimension_values)):
             dimension_values[i] = [dim_desc[k] for k in dimension_values[i]]
         for dim in dimensions:
-            print(dim)
             data_filtered[dim] = data_filtered[dim].apply(lambda x: dim_desc[x])
         for dimension_value_combination in itertools.product(*dimension_values):
             # build filter by reducing, start with a constant True boolean array
@@ -210,5 +208,4 @@ def generate_tables_for_indicator_and_series(
                 tables_by_combination = {
                     k: v for (k, v) in tables_by_combination.items() if not v.empty
                 }  # removing empty combinations
-    print(type(tables_by_combination))
     return tables_by_combination
