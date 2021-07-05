@@ -11,13 +11,9 @@ from un_sdg import OUTPATH
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
-    return (
-        pd.DataFrame(
-            {"country": df["country"], "year": df["TimePeriod"], "value": df["Value"]}
-        )
-        .drop_duplicates(subset=["country", "year"])
-        .dropna()
-    )
+    return pd.DataFrame(
+        {"country": df["country"], "year": df["TimePeriod"], "value": df["Value"]}
+    ).dropna()
 
 
 def get_distinct_entities() -> List[str]:
@@ -168,7 +164,6 @@ def generate_tables_for_indicator_and_series(
     dim_dict: dict,
 ) -> pd.DataFrame:
     tables_by_combination = {}
-    # dim_dict = dimensions_description()
     data_filtered, dimensions, dimension_values = get_series_with_relevant_dimensions(
         data_filtered, DIMENSIONS, NON_DIMENSIONS
     )
