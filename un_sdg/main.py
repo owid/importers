@@ -16,7 +16,7 @@ def main():
     import_dataset.main(DATASET_DIR, DATASET_VERSION)
     match_variables.main()
 
-    suggester = ChartRevisionSuggester("un_sdg")
+    suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
 
 
