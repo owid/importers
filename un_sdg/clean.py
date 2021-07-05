@@ -32,6 +32,7 @@ from un_sdg import (
     DATASET_AUTHORS,
     DATASET_VERSION,
     DATASET_RETRIEVED_DATE,
+    DATASET_NAMESPACE,
 )
 
 from un_sdg.core import (
@@ -88,6 +89,12 @@ def create_datasets() -> pd.DataFrame:
 
 """
 create_sources():
+- Creates a source for each unique series code in the database
+- Each indicator can have multiple series codes associated with it
+- Each series code may be associated with multiple indicators
+- Each series code may be made up of multiple sources ('dataPublisherSource')
+- For each series we extract the 'dataPublisherSource', if there are two or fewer we record all of them,
+ if there are more we state that '"Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"'
 
 """
 
@@ -125,7 +132,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         df_sources = df_sources.append(
             {
                 "id": i,
-                "name": "%s (UN SDG, 2021)" % row["SeriesDescription"],
+                "name": "%s %s" % (row["SeriesDescription"], DATASET_NAMESPACE),
                 "description": json.dumps(source_description),
                 "dataset_id": df_datasets.iloc[0][
                     "id"
