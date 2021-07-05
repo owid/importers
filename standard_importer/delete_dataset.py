@@ -10,29 +10,29 @@ This script does not alter any of the chart SQL tables (e.g. `charts`,
 
 Usage::
 
-    python -m standard_importer.delete_dataset
+    >>> from standard_importer import delete_dataset
+    >>> dataset_id = {DATASET ID}
+    >>> delete_dataset.main(dataset_id)
 """
 
 import os
 import logging
 
-from db import connection
+from db import get_connection
 from db_utils import DBUtils
-
-DATASET_ID = 5303  # ID of dataset to delete.
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-def main() -> None:
+def main(dataset_id: int) -> None:
 
     assert os.getenv("DB_HOST") == "localhost", (
         "This script is only intended for use in local/dev environments and "
         "should NOT be used in production or staging."
     )
-    with connection.cursor() as cursor:
+    with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
         # deletes data points
         logger.info('Deleting data values...')
@@ -41,7 +41,7 @@ def main() -> None:
             WHERE variableId IN (
                 SELECT id 
                 FROM variables
-                WHERE datasetId={DATASET_ID}
+                WHERE datasetId={dataset_id}
             )
         """)
 
@@ -49,21 +49,21 @@ def main() -> None:
         logger.info('Deleting variables...')
         n_variables_deleted = db.cursor.execute(f"""
             DELETE FROM variables
-            WHERE datasetId={DATASET_ID}
+            WHERE datasetId={dataset_id}
         """)
 
         # deletes sources
         logger.info('Deleting sources...')
         n_sources_deleted = db.cursor.execute(f"""
             DELETE FROM sources
-            WHERE datasetId={DATASET_ID}
+            WHERE datasetId={dataset_id}
         """)
 
         # deletes dataset
         logger.info('Deleting dataset...')
         n_datasets_deleted = db.cursor.execute(f"""
             DELETE FROM datasets
-            WHERE id={DATASET_ID}
+            WHERE id={dataset_id}
         """)
 
         logger.info(f"Deleted {n_datasets_deleted} datasets, "
