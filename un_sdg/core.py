@@ -11,6 +11,9 @@ from un_sdg import OUTPATH
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
+    if df.duplicated(subset=["country", "TimePeriod"]).sum() > 0:
+        df.to_csv("un_sdg/output/duplicate_country_year.csv")
+    assert df.duplicated(subset=["country", "TimePeriod"]).sum() == 0
     return pd.DataFrame(
         {"country": df["country"], "year": df["TimePeriod"], "value": df["Value"]}
     ).dropna()
@@ -80,6 +83,14 @@ def dimensions_description() -> pd.DataFrame:
                     }
                 )
     dim_dict = pd.DataFrame(d).drop_duplicates()
+    # adding an nan code for each id - a problem for the Coverage dimension
+    nan_data = {
+        "id": dim_dict.id.unique(),
+        "code": np.repeat(np.nan, len(dim_dict.id.unique()), axis=0),
+        "description": np.repeat("", len(dim_dict.id.unique()), axis=0),
+    }
+    nan_df = pd.DataFrame(nan_data)
+    dim_dict = pd.concat([dim_dict, nan_df])
     return dim_dict
 
 
@@ -124,54 +135,19 @@ def create_short_unit(long_unit: pd.Series) -> np.ndarray:
     return short_unit
 
 
-def get_series_with_relevant_dimensions(
-    data_filtered: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple
-) -> Tuple[pd.DataFrame, list, list]:
-    """For a given indicator and series, return a tuple:
-
-    - data filtered to that indicator and series
-    - names of relevant dimensions
-    - unique values for each relevant dimension
-    """
-    non_null_dimensions_columns = [
-        col for col in DIMENSIONS if data_filtered.loc[:, col].notna().any()
-    ]
-    dimension_names = []
-    dimension_unique_values = []
-
-    for c in non_null_dimensions_columns:
-        uniques = data_filtered[c].unique()
-        if (
-            len(uniques) > 1
-        ):  # Means that columns where the value doesn't change aren't included e.g. Nature is typically consistent across a dimension whereas Age and Sex are less likely to be.
-            dimension_names.append(c)
-            dimension_unique_values.append(list(uniques))
-    return (
-        data_filtered[
-            data_filtered.columns.intersection(
-                list(NON_DIMENSIONS) + list(dimension_names)
-            )
-        ],
-        dimension_names,
-        dimension_unique_values,
-    )
-
-
 def generate_tables_for_indicator_and_series(
-    data_filtered: pd.DataFrame,
+    data_series: pd.DataFrame,
     DIMENSIONS: tuple,
     NON_DIMENSIONS: tuple,
     dim_dict: dict,
 ) -> pd.DataFrame:
     tables_by_combination = {}
-    data_filtered, dimensions, dimension_values = get_series_with_relevant_dimensions(
-        data_filtered, DIMENSIONS, NON_DIMENSIONS
+    data_dimensions, dimensions, dimension_values = get_series_with_relevant_dimensions(
+        data_series, DIMENSIONS, NON_DIMENSIONS
     )
-    if (len(dimensions) == 0) | (
-        data_filtered[dimensions].isna().sum().sum() > 0
-    ):  # not the best solution.
+    if len(dimensions) == 0:  # not the best solution.
         # no additional dimensions
-        export = data_filtered
+        export = data_dimensions
         return export
     else:
         dim_desc = (
@@ -183,24 +159,59 @@ def generate_tables_for_indicator_and_series(
         )
         i = 0
         for i in range(len(dimension_values)):
-            dimension_values[i] = [dim_desc[k] for k in dimension_values[i]]
+            df = pd.DataFrame({"value": dimension_values[i]})
+            dimension_values[i] = df["value"].map(dim_desc)
+        # dimension_values[i] = [dim_desc[k] for k in dimension_values[i]]
         for dim in dimensions:
-            data_filtered[dim] = data_filtered[dim].apply(lambda x: dim_desc[x])
+            data_dimensions[dim] = data_dimensions[dim].map(dim_desc)
         for dimension_value_combination in itertools.product(*dimension_values):
             # build filter by reducing, start with a constant True boolean array
-            filt = [True] * len(data_filtered)
+            filt = [True] * len(data_dimensions)
             for dim_idx, dim_value in enumerate(dimension_value_combination):
                 dimension_name = dimensions[dim_idx]
                 value_is_nan = type(dim_value) == float and math.isnan(dim_value)
                 filt = filt & (
-                    data_filtered[dimension_name].isnull()
+                    data_dimensions[dimension_name].isnull()
                     if value_is_nan
-                    else data_filtered[dimension_name] == dim_value
+                    else data_dimensions[dimension_name] == dim_value
                 )
-                tables_by_combination[dimension_value_combination] = data_filtered[
+                tables_by_combination[dimension_value_combination] = data_dimensions[
                     filt
                 ].drop(dimensions, axis=1)
                 tables_by_combination = {
                     k: v for (k, v) in tables_by_combination.items() if not v.empty
                 }  # removing empty combinations
     return tables_by_combination
+
+
+def get_series_with_relevant_dimensions(
+    data_series: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple
+) -> Tuple[pd.DataFrame, list, list]:
+    """For a given indicator and series, return a tuple:
+
+    - data filtered to that indicator and series
+    - names of relevant dimensions
+    - unique values for each relevant dimension
+    """
+    non_null_dimensions_columns = [
+        col for col in DIMENSIONS if data_series.loc[:, col].notna().any()
+    ]
+    dimension_names = []
+    dimension_unique_values = []
+
+    for c in non_null_dimensions_columns:
+        uniques = data_series[c].unique()
+        if (
+            len(uniques) > 1
+        ):  # Means that columns where the value doesn't change aren't included e.g. Nature is typically consistent across a dimension whereas Age and Sex are less likely to be.
+            dimension_names.append(c)
+            dimension_unique_values.append(list(uniques))
+    return (
+        data_series[
+            data_series.columns.intersection(
+                list(NON_DIMENSIONS) + list(dimension_names)
+            )
+        ],
+        dimension_names,
+        dimension_unique_values,
+    )
