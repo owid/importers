@@ -205,7 +205,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         _, dimensions, dimension_members = get_series_with_relevant_dimensions(
             data_filtered, init_dimensions, init_non_dimensions
         )
-        if len(dimensions) == 0 | (data_filtered[dimensions].isna().sum().sum() > 0):
+        if len(dimensions) == 0:
             # no additional dimensions
             table = generate_tables_for_indicator_and_series(
                 data_filtered, init_dimensions, init_non_dimensions, dim_description
@@ -286,6 +286,7 @@ def create_distinct_entities() -> None:
 
 
 def compress_output(outpath) -> None:
+    outpath = os.path.realpath(outpath)
     zip_loc = os.path.join(outpath, "datapoints")
     zip_dest = os.path.join(outpath, "datapoints")
     shutil.make_archive(
