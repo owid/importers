@@ -1,13 +1,3 @@
-"""
-This script downloads selected datasets from FAO and uploads them into Walden.
-
-Additionally, it creates metadata files and adds them to the local project Walden directory (clone it from
-https://github.com/owid/walden).
-
-Run it as `python -m faostat_2021.download`
-"""
-
-
 from datetime import datetime
 import hashlib
 import os
