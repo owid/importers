@@ -13,5 +13,5 @@ def get_connection() -> pymysql.Connection:
         user=os.getenv("DB_USER"),
         password=os.getenv("DB_PASS"),
         charset="utf8mb4",
-        autocommit=True
+        autocommit=True,
     )

@@ -38,7 +38,7 @@ unittest:
 
 format:
 	@echo '==> Reformatting files'
-	@env/bin/black -q $(SRC)
+	@env/bin/black $(SRC)
 
 watch:
 	env/bin/watchmedo shell-command -c 'clear; make test' --recursive --drop .

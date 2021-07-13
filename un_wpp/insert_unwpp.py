@@ -2,6 +2,7 @@ import re
 import json
 from glob import glob
 import sys
+
 sys.path.append("/mnt/importers/scripts/importers")
 
 from tqdm import tqdm
@@ -11,6 +12,7 @@ from db_utils import DBUtils
 
 NAMESPACE = "unwpp2019"
 USER_ID = 46
+
 
 def main():
 
@@ -30,9 +32,7 @@ def main():
         datasets = pd.read_csv("output/datasets.csv")
         for i, dataset_row in datasets.iterrows():
             db_dataset_id = db.upsert_dataset(
-                name=dataset_row["name"],
-                namespace=NAMESPACE,
-                user_id=USER_ID
+                name=dataset_row["name"], namespace=NAMESPACE, user_id=USER_ID
             )
             datasets.at[i, "db_dataset_id"] = db_dataset_id
         print(f"Upserted {len(datasets)} datasets.")
@@ -45,7 +45,7 @@ def main():
             db_source_id = db.upsert_source(
                 name=source_row.name_x,
                 description=json.dumps(eval(source_row.description)),
-                dataset_id=source_row.db_dataset_id
+                dataset_id=source_row.db_dataset_id,
             )
             sources.at[i, "db_source_id"] = db_source_id
         print(f"Upserted {len(sources)} sources.")
@@ -53,7 +53,9 @@ def main():
         # Upsert variables
         print("---\nUpserting variables...")
         variables = pd.read_csv("output/variables.csv")
-        variables = pd.merge(variables, sources, left_on="dataset_id", right_on="dataset_id")
+        variables = pd.merge(
+            variables, sources, left_on="dataset_id", right_on="dataset_id"
+        )
         for i, variable_row in variables.iterrows():
             db_variable_id = db.upsert_variable(
                 name=variable_row["name"],
@@ -65,7 +67,7 @@ def main():
                 description=None,
                 timespan="",
                 coverage="",
-                display={}
+                display={},
             )
             variables.at[i, "db_variable_id"] = db_variable_id
         print(f"Upserted {len(variables)} variables.")
@@ -85,7 +87,7 @@ def main():
                 data["value"],
                 data["year"].astype(int),
                 data["db_entity_id"].astype(int),
-                [int(db_variable_id)] * len(data)
+                [int(db_variable_id)] * len(data),
             )
 
             query = f"""
