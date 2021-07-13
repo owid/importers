@@ -3,7 +3,7 @@
 #
 
 
-SRC = *.py */
+SRC = *.py */*.py
 
 default:
 	@echo 'Available commands:'
@@ -22,7 +22,7 @@ test: check-formatting lint check-typing unittest
 
 lint: env
 	@echo '==> Linting'
-	@env/bin/flake8 $(SRC)
+	@env/bin/flake8 --exclude=env .
 
 check-formatting: env
 	@echo '==> Checking formatting'
@@ -30,7 +30,8 @@ check-formatting: env
 
 check-typing:
 	@echo '==> Checking types'
-	@env/bin/mypy .
+	env/bin/mypy *.py
+	env/bin/mypy */*.py
 
 unittest:
 	@echo '==> Running unit tests'

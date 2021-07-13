@@ -1,5 +1,5 @@
 import re
-from typing import Iterable, Any, Generator, List
+from typing import Iterable, Any, Generator, List, Collection
 from dataclasses import dataclass, astuple, field
 
 
@@ -9,8 +9,8 @@ def write_file(file_path, content):
 
 
 def batchify(
-    iterable: Iterable[Any], batch_size: int = 1000
-) -> Generator[Iterable[Any], None, None]:
+    iterable: Collection[Any], batch_size: int = 1000
+) -> Generator[Collection[Any], None, None]:
     """yields batches of an iterable in batches of size n.
 
     Divides an iterable into batches of size n, yielding one batch at a time.
@@ -45,7 +45,7 @@ def batchify(
     ), f"batch_size must be greater than 0, but received {batch_size}"
     l = len(iterable)
     for i in range(0, l, batch_size):
-        yield iterable[i : min(i + batch_size, l)]
+        yield iterable[i : min(i + batch_size, l)]  # type: ignore
 
 
 def camel_case2snake_case(s) -> str:
@@ -67,12 +67,12 @@ def import_from(module: str, name: str) -> Any:
 
 @dataclass
 class IntRange:
-    min: int
+    min: int  # type: ignore
     _min: int = field(init=False, repr=False)
-    max: int
+    max: int  # type: ignore
     _max: int = field(init=False, repr=False)
 
-    @property
+    @property  # type: ignore
     def min(self) -> int:
         return self._min
 
@@ -80,7 +80,7 @@ class IntRange:
     def min(self, x: int) -> None:
         self._min = int(x)
 
-    @property
+    @property  # type: ignore
     def max(self) -> int:
         return self._max
 
