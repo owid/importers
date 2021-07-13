@@ -4,8 +4,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Connect to the database
+
 def get_connection() -> pymysql.Connection:
+    "Connect to the Grapher database."
     return pymysql.connect(
         db=os.getenv("DB_NAME"),
         host=os.getenv("DB_HOST"),

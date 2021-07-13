@@ -1,6 +1,6 @@
 import re
-from typing import Iterable, Any, Generator, List, Collection
-from dataclasses import dataclass, astuple, field
+from typing import Any, Generator, List, Collection
+from dataclasses import dataclass, field
 
 
 def write_file(file_path, content):

@@ -1,5 +1,4 @@
 import json
-import time
 from unidecode import unidecode
 
 UNMODIFIED = 0
