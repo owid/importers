@@ -19,12 +19,20 @@ def main():
 
 
 def delete_output(keep_paths: List[str]) -> None:
-    for path in keep_paths:
-        if os.path.exists(os.path.join(OUTPATH, path)):
-            for clean_up in glob.glob(os.path.join(OUTPATH, "*.*")):
-                if not clean_up.endswith(path):
-                    print("Deleting ", clean_up, "...")
-                    os.remove(clean_up)
+    output_files = glob.glob(os.path.join(OUTPATH, "*.*"))
+    base_files = []
+    for file in output_files:
+        bf = os.path.basename(file)
+        base_files.append(bf)
+    ind_file = []
+    for file in keep_paths:
+        ind = base_files.index(file)
+        print(file)
+        ind_file.append(ind)
+    file_sel = [output_files[i] for i in ind_file]
+    clean_up = [x for x in output_files if x not in file_sel]
+    for del_file in clean_up:
+        os.remove(del_file)
 
 
 def download_data() -> None:
