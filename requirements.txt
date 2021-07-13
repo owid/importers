@@ -26,3 +26,7 @@ Unidecode==1.2.0
 urllib3==1.26.5
 xlrd==2.0.1
 yarl==1.6.3
+pytest
+black
+mypy
+flake8
