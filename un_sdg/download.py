@@ -10,7 +10,7 @@ from un_sdg import INFILE, OUTPATH
 from typing import List
 
 base_url = "https://unstats.un.org/sdgapi"
-keep_paths = ["standardized_entity_names.csv"]  # files not to be deleted
+keep_paths = []  # files not to be deleted
 
 
 def main():
