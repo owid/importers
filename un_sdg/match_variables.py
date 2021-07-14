@@ -77,7 +77,7 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%un_sdg_2019%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%un_sdg%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])
