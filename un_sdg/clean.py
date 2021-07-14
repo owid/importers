@@ -28,6 +28,7 @@ from un_sdg import (
     INFILE,
     ENTFILE,
     OUTPATH,
+    CONFIGPATH,
     DATASET_NAME,
     DATASET_AUTHORS,
     DATASET_VERSION,
@@ -162,7 +163,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     original_df.columns = new_columns
 
     entity2owid_name = (
-        pd.read_csv(os.path.join(OUTPATH, "standardized_entity_names.csv"))
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
         .set_index("country_code")
         .squeeze()
         .to_dict()
