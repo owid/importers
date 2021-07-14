@@ -137,13 +137,13 @@ def create_short_unit(long_unit: pd.Series) -> np.ndarray:
 
 def generate_tables_for_indicator_and_series(
     data_series: pd.DataFrame,
-    DIMENSIONS: tuple,
-    NON_DIMENSIONS: tuple,
+    init_dimensions: tuple,
+    init_non_dimensions: tuple,
     dim_dict: dict,
 ) -> pd.DataFrame:
     tables_by_combination = {}
     data_dimensions, dimensions, dimension_values = get_series_with_relevant_dimensions(
-        data_series, DIMENSIONS, NON_DIMENSIONS
+        data_series, init_dimensions, init_non_dimensions
     )
     if len(dimensions) == 0:  # not the best solution.
         # no additional dimensions
@@ -185,7 +185,7 @@ def generate_tables_for_indicator_and_series(
 
 
 def get_series_with_relevant_dimensions(
-    data_series: pd.DataFrame, DIMENSIONS: tuple, NON_DIMENSIONS: tuple
+    data_series: pd.DataFrame, init_dimensions: tuple, init_non_dimensions: tuple
 ) -> Tuple[pd.DataFrame, list, list]:
     """For a given indicator and series, return a tuple:
 
@@ -194,7 +194,7 @@ def get_series_with_relevant_dimensions(
     - unique values for each relevant dimension
     """
     non_null_dimensions_columns = [
-        col for col in DIMENSIONS if data_series.loc[:, col].notna().any()
+        col for col in init_dimensions if data_series.loc[:, col].notna().any()
     ]
     dimension_names = []
     dimension_unique_values = []
@@ -209,7 +209,7 @@ def get_series_with_relevant_dimensions(
     return (
         data_series[
             data_series.columns.intersection(
-                list(NON_DIMENSIONS) + list(dimension_names)
+                list(init_non_dimensions) + list(dimension_names)
             )
         ],
         dimension_names,
