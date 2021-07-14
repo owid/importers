@@ -158,26 +158,31 @@ def generate_tables_for_indicator_and_series(
             .to_dict()
         )
         i = 0
+        # Mapping the dimension value codes to more meaningful descriptions
         for i in range(len(dimension_values)):
             df = pd.DataFrame({"value": dimension_values[i]})
             dimension_values[i] = df["value"].map(dim_desc)
-        # dimension_values[i] = [dim_desc[k] for k in dimension_values[i]]
+        # Mapping the descriptions into the dataframe
         for dim in dimensions:
             data_dimensions[dim] = data_dimensions[dim].map(dim_desc)
+        # Create each combination of dimension values, e.g. each age group & sex combination. Not all combinations will have associated data.
         for dimension_value_combination in itertools.product(*dimension_values):
             # build filter by reducing, start with a constant True boolean array
             filt = [True] * len(data_dimensions)
             for dim_idx, dim_value in enumerate(dimension_value_combination):
                 dimension_name = dimensions[dim_idx]
                 value_is_nan = type(dim_value) == float and math.isnan(dim_value)
+                # Boolean identifying which rows contain the dimension combination
                 filt = filt & (
                     data_dimensions[dimension_name].isnull()
                     if value_is_nan
                     else data_dimensions[dimension_name] == dim_value
                 )
+                # Pulling out the data for a given combination
                 tables_by_combination[dimension_value_combination] = data_dimensions[
                     filt
                 ].drop(dimensions, axis=1)
+                # Removing tables for the combinations that don't exist
                 tables_by_combination = {
                     k: v for (k, v) in tables_by_combination.items() if not v.empty
                 }  # removing empty combinations
