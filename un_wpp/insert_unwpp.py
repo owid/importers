@@ -1,20 +1,19 @@
 import re
 import json
 from glob import glob
-import sys
-
-sys.path.append("/mnt/importers/scripts/importers")
 
 from tqdm import tqdm
 import pandas as pd
-from db import connection
-from db_utils import DBUtils
+
+from ..db import get_connection
+from ..db_utils import DBUtils
 
 NAMESPACE = "unwpp2019"
 USER_ID = 46
 
 
 def main():
+    connection = get_connection()
 
     with connection.cursor() as cursor:
         db = DBUtils(cursor)
@@ -90,7 +89,7 @@ def main():
                 [int(db_variable_id)] * len(data),
             )
 
-            query = f"""
+            query = """
                 INSERT INTO data_values
                     (value, year, entityId, variableId)
                 VALUES (%s, %s, %s, %s)
