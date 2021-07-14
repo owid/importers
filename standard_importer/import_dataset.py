@@ -11,7 +11,6 @@ Usage:
 
 import re
 from glob import glob
-import sys
 import os
 
 from tqdm import tqdm
@@ -28,7 +27,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 load_dotenv()
-USER_ID = int(os.getenv("USER_ID"))
+USER_ID = int(os.getenv("USER_ID"))  # type: ignore
 
 CURRENT_DIR = os.path.dirname(__file__)
 # CURRENT_DIR = os.path.join(os.getcwd(), 'standard_importer')
@@ -132,7 +131,7 @@ def main(dataset_dir: str, dataset_namespace: str):
         print("---\nUpserting datapoints...")
         datapoint_files = glob(os.path.join(data_path, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
-            variable_id = int(re.search("\\d+", datapoint_file)[0])
+            variable_id = int(re.search("\\d+", datapoint_file)[0])  # type: ignore
             db_variable_id = variables[variables["id"] == variable_id]["db_variable_id"]
             data = pd.read_csv(datapoint_file)
             data = pd.merge(
@@ -149,7 +148,7 @@ def main(dataset_dir: str, dataset_namespace: str):
                 data["db_entity_id"].astype(int),
                 [int(db_variable_id)] * len(data),
             )
-            query = f"""
+            query = """
                 INSERT INTO data_values
                     (value, year, entityId, variableId)
                 VALUES (%s, %s, %s, %s)
@@ -161,7 +160,3 @@ def main(dataset_dir: str, dataset_namespace: str):
             """
             db.upsert_many(query, data_tuples)
         print(f"Upserted {len(datapoint_files)} datapoint files.")
-
-
-if __name__ == "__main__":
-    main()

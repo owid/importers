@@ -26,14 +26,14 @@ df_entities[['Code', 'Title']].drop_duplicates() \
                      .dropna() \
                      .rename(columns={'Title': 'Country'}) \
                      .to_csv("countries.csv", index=False)
-``` 
+```
 
 1. Open the OWID Country Standardizer Tool
    (https://owid.cloud/admin/standardize);
 
 2. Change the "Input Format" field to "Non-Standard Country Name";
 
-3. Change the "Output Format" field to "Our World In Data Name"; 
+3. Change the "Output Format" field to "Our World In Data Name";
 
 4. In the "Choose CSV file" field, upload {outfpath};
 
@@ -49,13 +49,14 @@ df_entities[['Code', 'Title']].drop_duplicates() \
 
 """
 
+from asyncio.futures import Future
 import os
 import re
 import time
 import simplejson as json
 import logging
 import shutil
-from typing import List, Dict
+from typing import Any, List, Dict
 import asyncio
 from aiohttp import ClientSession
 
@@ -222,7 +223,7 @@ def download_data(variable_codes: List[str]) -> None:
 
         None.
     """
-    logger.info(f"Downloading data...")
+    logger.info("Downloading data...")
     batch_size = 200
     wait = 2
     n_batches = int(np.ceil(len(variable_codes) / batch_size))
@@ -613,12 +614,12 @@ def get_distinct_entities() -> List[str]:
         for fname in os.listdir(os.path.join(OUTPATH, "datapoints"))
         if fname.endswith(".csv")
     ]
-    entities = set({})
+    entity_set = set({})
     for fname in fnames:
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
-        entities.update(df_temp["country"].unique().tolist())
+        entity_set.update(df_temp["country"].unique().tolist())
 
-    entities = sorted(entities)
+    entities = sorted(entity_set)
     assert pd.notnull(entities).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
@@ -644,7 +645,7 @@ def _fetch_data_many_variables(variable_codes: List[str]) -> List[pd.DataFrame]:
     asyncio.set_event_loop(asyncio.new_event_loop())
     loop = asyncio.get_event_loop()
     try:
-        future = asyncio.ensure_future(_gather_fetch_tasks(variable_codes, loop))
+        future = asyncio.ensure_future(_gather_fetch_tasks(variable_codes, loop))  # type: ignore
         res_jsons = loop.run_until_complete(future)
         dataframes = [pd.DataFrame(res_json["value"]) for res_json in res_jsons]
     finally:
@@ -663,7 +664,7 @@ def _fetch_data_many_variables(variable_codes: List[str]) -> List[pd.DataFrame]:
 
 async def _gather_fetch_tasks(
     variable_codes: List[str], loop: asyncio.unix_events._UnixSelectorEventLoop
-) -> asyncio.Future:
+) -> "Future[Any]":
     """Utility method for
 
     Arguments:
@@ -719,7 +720,8 @@ async def _fetch_data_one_variable(code: str, session: ClientSession = None) -> 
             res_json = await resp.json()
     except Exception as e:
         logger.error(f'Encountered an error for code "{code}": {e}')
-    return res_json
+
+    return res_json  # type: ignore
 
 
 def _fetch_meta_all_variables() -> List[dict]:

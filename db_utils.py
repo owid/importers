@@ -269,8 +269,8 @@ class DBUtils:
         operation = self.upsert_one(
             """
             INSERT INTO variables (
-                name, code, description, unit, shortUnit, timespan, coverage, 
-                display, originalMetadata, sourceId, datasetId, createdAt, 
+                name, code, description, unit, shortUnit, timespan, coverage,
+                display, originalMetadata, sourceId, datasetId, createdAt,
                 updatedAt
             )
             VALUES

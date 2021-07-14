@@ -6,11 +6,11 @@ Usage:
     python -m worldbank_wdi.main
 """
 
-from worldbank_wdi import DATASET_NAMESPACE, DATASET_DIR
+from ..worldbank_wdi import DATASET_NAMESPACE, DATASET_DIR
 
-from worldbank_wdi import download, init_variables_to_clean, clean, match_variables
-from standard_importer import import_dataset
-from standard_importer.chart_revision_suggester import ChartRevisionSuggester
+from ..worldbank_wdi import download, init_variables_to_clean, clean, match_variables
+from ..standard_importer import import_dataset
+from ..standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
 def main():

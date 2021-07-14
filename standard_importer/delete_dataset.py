@@ -17,6 +17,7 @@ Usage::
 
 import os
 import logging
+from typing import Optional
 
 from db import get_connection
 from db_utils import DBUtils
@@ -26,7 +27,9 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-def main(dataset_id: int) -> None:
+def main(dataset_id: Optional[int] = None) -> None:
+    if not dataset_id:
+        raise ValueError("must provide a dataset_id to delete")
 
     assert os.getenv("DB_HOST") == "localhost", (
         "This script is only intended for use in local/dev environments and "
@@ -40,7 +43,7 @@ def main(dataset_id: int) -> None:
             f"""
             DELETE FROM data_values
             WHERE variableId IN (
-                SELECT id 
+                SELECT id
                 FROM variables
                 WHERE datasetId={dataset_id}
             )
