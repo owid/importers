@@ -10,12 +10,22 @@ from un_sdg import INFILE, OUTPATH
 from typing import List
 
 base_url = "https://unstats.un.org/sdgapi"
-keep_paths = ["standardized_entity_names.csv"]  # must be a list []
+keep_paths = ["standardized_entity_names.csv"]  # files not to be deleted
 
 
 def main():
     delete_output(keep_paths)
     download_data()
+
+
+"""
+delete_output():
+* Function used to delete all files in OUTPATH except for those in 'keep_paths'
+* Function gets base file name from file path
+* Then gets the index of the files which are in both 'base_files' and 'keep_paths'
+* Creates selection of filepaths from index
+* Deletes files not in selection
+"""
 
 
 def delete_output(keep_paths: List[str]) -> None:
@@ -27,7 +37,6 @@ def delete_output(keep_paths: List[str]) -> None:
     ind_file = []
     for file in keep_paths:
         ind = base_files.index(file)
-        print(file)
         ind_file.append(ind)
     file_sel = [output_files[i] for i in ind_file]
     clean_up = [x for x in output_files if x not in file_sel]
