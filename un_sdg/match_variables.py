@@ -46,7 +46,7 @@ def main():
         if not os.path.exists(OUTPATH):
             os.makedirs(OUTPATH)
         with open(os.path.join(OUTPATH, "variable_replacements.json"), "w") as f:
-            json.dump(old_var_id2new_var_id, f)
+            json.dump(old_var_id2new_var_id, f, indent=2)
 
 
 def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
