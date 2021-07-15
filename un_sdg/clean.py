@@ -253,7 +253,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                         " - ".join(map(str, member_combination)),
                     ),
                     "description": None,
-                    "code": row["SeriesCode"],
+                    "code": None,
                     "unit": row["Units_long"],
                     "short_unit": row["short_unit"],
                     "timespan": "%s - %s"
@@ -262,7 +262,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                         int(np.max(data_filtered["TimePeriod"])),
                     ),
                     "coverage": None,
-                    "display": None,
+                    # "display": None,
                     "original_metadata": None,
                 }
                 variables = variables.append(variable, ignore_index=True)
