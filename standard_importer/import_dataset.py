@@ -113,7 +113,9 @@ def main(dataset_dir: str, dataset_namespace: str):
                 source_id=variable_row["db_source_id"],
                 dataset_id=variable_row["db_dataset_id"],
                 description=variable_row["description__variable"],
-                code=variable_row["code"] if "code" in variable_row else "",
+                code=variable_row["code"]
+                if "code" in variable_row and variable_row["code"] != ""
+                else None,
                 unit=variable_row["unit"] if "unit" in variable_row else "",
                 short_unit=variable_row["short_unit"]
                 if "short_unit" in variable_row
