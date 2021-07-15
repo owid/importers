@@ -1,16 +1,25 @@
 .vscode/*
+.vscode/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
 
+
 .DS_Store
 .env
 env/
 .venv
+venv/
 __pycache__/
 .ipynb_checkpoints/
 povcal/data_by_poverty_line/
 povcal/output/
-
+un_sdg/input/**/*.csv
+un_sdg/output/datapoints
+un_sdg/metadata/
+*.Rproj.user
+*.Rhistory
+*.Rproj
+.Rproj.user
 venv

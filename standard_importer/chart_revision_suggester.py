@@ -156,7 +156,7 @@ class ChartRevisionSuggester:
                     WHERE status IN ("pending", "flagged")
                     GROUP BY chartId
                     ORDER BY c DESC
-                ) as grouped
+                    ) as grouped
                 WHERE grouped.c > 1
             """
             )
