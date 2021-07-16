@@ -1,0 +1,1404 @@
+country,year,value
+Canada,1997,26.0
+Canada,1998,83.0
+Canada,1999,126.0
+Canada,2000,139.0
+Canada,2001,214.0
+Canada,2002,270.0
+Canada,2003,351.0
+Canada,2004,444.0
+Canada,2005,677.0
+Canada,2006,1423.0
+Canada,2007,1840.0
+Canada,2008,2336.0
+Canada,2009,3282.0
+Canada,2010,3967.0
+Canada,2011,5265.0
+Canada,2012,6201.0
+Canada,2013,7801.0
+Canada,2014,9694.0
+Canada,2015,11214.0
+Canada,2016,11973.0
+Canada,2017,12403.0
+Canada,2018,12816.0
+Canada,2019,13413.0
+Canada,2020,13577.0
+Mexico,1997,2.0
+Mexico,1998,2.0
+Mexico,1999,2.0
+Mexico,2000,17.0
+Mexico,2001,17.0
+Mexico,2002,18.0
+Mexico,2003,18.0
+Mexico,2004,18.0
+Mexico,2005,18.0
+Mexico,2006,101.0
+Mexico,2007,101.0
+Mexico,2008,101.0
+Mexico,2009,425.0
+Mexico,2010,519.0
+Mexico,2011,601.0
+Mexico,2012,1815.0
+Mexico,2013,2122.0
+Mexico,2014,2569.0
+Mexico,2015,3271.0
+Mexico,2016,4051.0
+Mexico,2017,4198.98
+Mexico,2018,4875.375
+Mexico,2019,6590.875
+Mexico,2020,8128.0
+United States,1997,1611.0
+United States,1998,2141.0
+United States,1999,2445.0
+United States,2000,2377.0
+United States,2001,3864.0
+United States,2002,4417.0
+United States,2003,5995.0
+United States,2004,6456.0
+United States,2005,8706.0
+United States,2006,11329.0
+United States,2007,16515.0
+United States,2008,24651.0
+United States,2009,34296.0
+United States,2010,39135.0
+United States,2011,45676.0
+United States,2012,59075.0
+United States,2013,59973.0
+United States,2014,64232.0
+United States,2015,72573.02
+United States,2016,81286.0
+United States,2017,87597.0
+United States,2018,94417.4
+United States,2019,103571.0
+United States,2020,117744.0
+North America,1997,1639.0
+North America,1998,2226.0
+North America,1999,2573.0
+North America,2000,2533.0
+North America,2001,4095.0
+North America,2002,4705.0
+North America,2003,6364.0
+North America,2004,6918.0
+North America,2005,9401.0
+North America,2006,12853.0
+North America,2007,18456.0
+North America,2008,27088.0
+North America,2009,38003.0
+North America,2010,43621.0
+North America,2011,51542.0
+North America,2012,67091.0
+North America,2013,69896.0
+North America,2014,76495.0
+North America,2015,87058.02
+North America,2016,97310.0
+North America,2017,104198.98
+North America,2018,112108.775
+North America,2019,123574.875
+North America,2020,139449.0
+Argentina,1997,9.0
+Argentina,1998,14.0
+Argentina,1999,14.0
+Argentina,2000,14.1
+Argentina,2001,24.8
+Argentina,2002,25.8
+Argentina,2003,25.7
+Argentina,2004,27.8
+Argentina,2005,27.8
+Argentina,2006,27.8
+Argentina,2007,27.8
+Argentina,2008,27.8
+Argentina,2009,27.8
+Argentina,2010,27.8
+Argentina,2011,59.6
+Argentina,2012,137.0
+Argentina,2013,190.0
+Argentina,2014,215.2
+Argentina,2015,187.0
+Argentina,2016,187.0
+Argentina,2017,257.202
+Argentina,2018,750.092
+Argentina,2019,1609.4089999999999
+Argentina,2020,2624.0
+Brazil,1997,4.0
+Brazil,1998,19.0
+Brazil,1999,22.0
+Brazil,2000,22.0
+Brazil,2001,24.0
+Brazil,2002,22.0
+Brazil,2003,24.0
+Brazil,2004,24.0
+Brazil,2005,29.0
+Brazil,2006,237.0
+Brazil,2007,247.0
+Brazil,2008,398.0
+Brazil,2009,602.0
+Brazil,2010,927.0
+Brazil,2011,1426.0
+Brazil,2012,1894.0
+Brazil,2013,2202.0
+Brazil,2014,4888.0
+Brazil,2015,7633.0
+Brazil,2016,10129.0
+Brazil,2017,12304.0
+Brazil,2018,14843.0
+Brazil,2019,15438.0
+Brazil,2020,17198.0
+Chile,1997,0.0
+Chile,1998,0.0
+Chile,1999,0.0
+Chile,2000,0.0
+Chile,2001,2.0
+Chile,2002,2.0
+Chile,2003,2.0
+Chile,2004,2.0
+Chile,2005,2.0
+Chile,2006,2.0
+Chile,2007,20.0
+Chile,2008,20.0
+Chile,2009,163.0
+Chile,2010,163.0
+Chile,2011,184.0
+Chile,2012,202.0
+Chile,2013,301.0
+Chile,2014,736.0
+Chile,2015,910.0
+Chile,2016,1039.0
+Chile,2017,1305.0
+Chile,2018,1524.0
+Chile,2019,1620.074
+Chile,2020,2149.0
+Costa Rica,1997,23.0
+Costa Rica,1998,27.0
+Costa Rica,1999,35.0
+Costa Rica,2000,42.5
+Costa Rica,2001,62.3
+Costa Rica,2002,62.3
+Costa Rica,2003,68.6
+Costa Rica,2004,68.6
+Costa Rica,2005,68.6
+Costa Rica,2006,68.6
+Costa Rica,2007,69.9
+Costa Rica,2008,69.9
+Costa Rica,2009,119.6
+Costa Rica,2010,119.6
+Costa Rica,2011,132.8
+Costa Rica,2012,148.1
+Costa Rica,2013,148.1
+Costa Rica,2014,196.5
+Costa Rica,2015,278.14
+Costa Rica,2016,319.14
+Costa Rica,2017,378.0
+Costa Rica,2018,407.77
+Costa Rica,2019,410.92
+Costa Rica,2020,394.0
+Uruguay,1997,0.0
+Uruguay,1998,0.0
+Uruguay,1999,0.0
+Uruguay,2000,0.0
+Uruguay,2001,0.0
+Uruguay,2002,0.0
+Uruguay,2003,0.0
+Uruguay,2004,0.0
+Uruguay,2005,0.0
+Uruguay,2006,0.0
+Uruguay,2007,0.0
+Uruguay,2008,14.6
+Uruguay,2009,30.6
+Uruguay,2010,40.6
+Uruguay,2011,43.6
+Uruguay,2012,52.6
+Uruguay,2013,59.4
+Uruguay,2014,481.3
+Uruguay,2015,856.766
+Uruguay,2016,1211.0
+Uruguay,2017,1511.0
+Uruguay,2018,1511.0
+Uruguay,2019,1514.0
+Uruguay,2020,1514.0
+Other South & Central America,1997,6.0
+Other South & Central America,1998,6.0
+Other South & Central America,1999,7.0
+Other South & Central America,2000,11.800000000000011
+Other South & Central America,2001,20.799999999999983
+Other South & Central America,2002,24.099999999999994
+Other South & Central America,2003,32.2
+Other South & Central America,2004,73.99999999999999
+Other South & Central America,2005,65.7
+Other South & Central America,2006,75.60000000000002
+Other South & Central America,2007,80.49999999999994
+Other South & Central America,2008,82.89999999999998
+Other South & Central America,2009,163.9000000000001
+Other South & Central America,2010,210.90000000000032
+Other South & Central America,2011,351.20000000000005
+Other South & Central America,2012,637.6000000000004
+Other South & Central America,2013,718.6000000000004
+Other South & Central America,2014,964.3999999999996
+Other South & Central America,2015,1380.094000000001
+Other South & Central America,2016,1605.8600000000006
+Other South & Central America,2017,1571.7980000000007
+Other South & Central America,2018,1813.137999999999
+Other South & Central America,2019,2053.5970000000016
+Other South & Central America,2020,2545.0
+South & Central America,1997,42.0
+South & Central America,1998,66.0
+South & Central America,1999,78.0
+South & Central America,2000,90.4
+South & Central America,2001,133.89999999999998
+South & Central America,2002,136.2
+South & Central America,2003,152.5
+South & Central America,2004,196.39999999999998
+South & Central America,2005,193.1
+South & Central America,2006,411.0
+South & Central America,2007,445.2
+South & Central America,2008,613.2
+South & Central America,2009,1106.9
+South & Central America,2010,1488.9
+South & Central America,2011,2197.2
+South & Central America,2012,3071.3
+South & Central America,2013,3619.1000000000004
+South & Central America,2014,7481.4
+South & Central America,2015,11245.0
+South & Central America,2016,14491.0
+South & Central America,2017,17327.0
+South & Central America,2018,20849.0
+South & Central America,2019,22646.0
+South & Central America,2020,26424.0
+Austria,1997,20.0
+Austria,1998,30.0
+Austria,1999,42.0
+Austria,2000,50.0
+Austria,2001,67.0
+Austria,2002,109.0
+Austria,2003,322.0
+Austria,2004,581.0
+Austria,2005,825.219
+Austria,2006,968.269
+Austria,2007,991.159
+Austria,2008,991.974
+Austria,2009,1000.985
+Austria,2010,1015.828
+Austria,2011,1105.966
+Austria,2012,1337.15
+Austria,2013,1674.538
+Austria,2014,2110.275
+Austria,2015,2488.726
+Austria,2016,2729.996
+Austria,2017,2886.698
+Austria,2018,3132.713
+Austria,2019,3224.0
+Austria,2020,3224.0
+Belgium,1997,9.0
+Belgium,1998,10.0
+Belgium,1999,11.0
+Belgium,2000,14.0
+Belgium,2001,26.0
+Belgium,2002,31.0
+Belgium,2003,67.0
+Belgium,2004,96.0
+Belgium,2005,167.0
+Belgium,2006,212.0
+Belgium,2007,276.0
+Belgium,2008,324.0
+Belgium,2009,608.0
+Belgium,2010,912.0
+Belgium,2011,1069.0
+Belgium,2012,1370.0
+Belgium,2013,1780.0
+Belgium,2014,1944.0
+Belgium,2015,2176.0
+Belgium,2016,2370.0
+Belgium,2017,2788.0
+Belgium,2018,3268.0
+Belgium,2019,3863.0
+Belgium,2020,4692.0
+Bulgaria,1997,0.0
+Bulgaria,1998,0.0
+Bulgaria,1999,0.0
+Bulgaria,2000,0.0
+Bulgaria,2001,0.0
+Bulgaria,2002,0.0
+Bulgaria,2003,0.0
+Bulgaria,2004,1.0
+Bulgaria,2005,8.0
+Bulgaria,2006,27.0
+Bulgaria,2007,30.0
+Bulgaria,2008,114.0
+Bulgaria,2009,333.0
+Bulgaria,2010,488.0
+Bulgaria,2011,541.0
+Bulgaria,2012,677.0
+Bulgaria,2013,683.0
+Bulgaria,2014,699.0
+Bulgaria,2015,699.0
+Bulgaria,2016,699.0
+Bulgaria,2017,698.39
+Bulgaria,2018,698.92
+Bulgaria,2019,703.0
+Bulgaria,2020,703.0
+Denmark,1997,1116.0
+Denmark,1998,1420.0
+Denmark,1999,1738.0
+Denmark,2000,2390.0
+Denmark,2001,2497.2
+Denmark,2002,2894.5
+Denmark,2003,3119.9
+Denmark,2004,3123.7
+Denmark,2005,3127.8
+Denmark,2006,3135.7
+Denmark,2007,3124.2
+Denmark,2008,3162.9
+Denmark,2009,3482.1
+Denmark,2010,3801.8
+Denmark,2011,3952.0
+Denmark,2012,4161.9
+Denmark,2013,4819.1
+Denmark,2014,4886.6
+Denmark,2015,5076.976
+Denmark,2016,5245.0
+Denmark,2017,5489.0
+Denmark,2018,6115.0
+Denmark,2019,6103.0
+Denmark,2020,6235.0
+Finland,1997,12.0
+Finland,1998,18.0
+Finland,1999,39.0
+Finland,2000,38.0
+Finland,2001,39.0
+Finland,2002,43.0
+Finland,2003,52.0
+Finland,2004,82.0
+Finland,2005,82.0
+Finland,2006,86.0
+Finland,2007,110.0
+Finland,2008,143.0
+Finland,2009,147.0
+Finland,2010,197.0
+Finland,2011,199.0
+Finland,2012,257.0
+Finland,2013,447.0
+Finland,2014,627.0
+Finland,2015,1005.0
+Finland,2016,1565.0
+Finland,2017,2044.0
+Finland,2018,2041.0
+Finland,2019,2281.5499999999997
+Finland,2020,2474.0
+France,1997,13.0
+France,1998,21.0
+France,1999,25.0
+France,2000,38.0
+France,2001,66.0
+France,2002,138.0
+France,2003,218.0
+France,2004,358.0
+France,2005,690.0
+France,2006,1412.0
+France,2007,2223.0
+France,2008,3403.0
+France,2009,4582.0
+France,2010,5912.0
+France,2011,6758.016
+France,2012,7607.496
+France,2013,8155.961
+France,2014,9201.425
+France,2015,10298.18
+France,2016,11566.564
+France,2017,13499.357
+France,2018,14900.146
+France,2019,16427.0
+France,2020,17382.0
+Germany,1997,2089.0
+Germany,1998,2877.0
+Germany,1999,4435.0
+Germany,2000,6095.0
+Germany,2001,8754.0
+Germany,2002,12001.0
+Germany,2003,14381.0
+Germany,2004,16419.0
+Germany,2005,18248.0
+Germany,2006,20474.0
+Germany,2007,22116.0
+Germany,2008,22794.0
+Germany,2009,25732.0
+Germany,2010,26903.0
+Germany,2011,28712.0
+Germany,2012,30979.0
+Germany,2013,33477.0
+Germany,2014,38614.0
+Germany,2015,44580.0
+Germany,2016,49435.0
+Germany,2017,55580.0
+Germany,2018,58721.0
+Germany,2019,60721.0
+Germany,2020,62184.0
+Greece,1997,29.0
+Greece,1998,38.1
+Greece,1999,105.8
+Greece,2000,226.0
+Greece,2001,270.0
+Greece,2002,287.0
+Greece,2003,371.0
+Greece,2004,470.0
+Greece,2005,491.0
+Greece,2006,749.0
+Greece,2007,846.0
+Greece,2008,1022.0
+Greece,2009,1171.0
+Greece,2010,1298.0
+Greece,2011,1640.0
+Greece,2012,1753.0
+Greece,2013,1809.0
+Greece,2014,1978.0
+Greece,2015,2091.0
+Greece,2016,2370.0
+Greece,2017,2624.0
+Greece,2018,2877.495
+Greece,2019,3589.0
+Greece,2020,4113.0
+Ireland,1997,53.0
+Ireland,1998,64.0
+Ireland,1999,74.0
+Ireland,2000,116.5
+Ireland,2001,122.9
+Ireland,2002,134.8
+Ireland,2003,210.3
+Ireland,2004,336.4
+Ireland,2005,493.3
+Ireland,2006,676.5
+Ireland,2007,740.5
+Ireland,2008,942.3
+Ireland,2009,1251.3
+Ireland,2010,1390.4
+Ireland,2011,1584.6
+Ireland,2012,1704.4
+Ireland,2013,2008.2
+Ireland,2014,2283.3
+Ireland,2015,2451.151
+Ireland,2016,2785.951
+Ireland,2017,3317.951
+Ireland,2018,3676.134
+Ireland,2019,4160.0
+Ireland,2020,4300.0
+Italy,1997,103.0
+Italy,1998,197.0
+Italy,1999,277.0
+Italy,2000,363.0
+Italy,2001,664.0
+Italy,2002,780.0
+Italy,2003,874.0
+Italy,2004,1127.0
+Italy,2005,1635.0
+Italy,2006,1902.0
+Italy,2007,2702.0
+Italy,2008,3525.0
+Italy,2009,4879.0
+Italy,2010,5794.0
+Italy,2011,6918.0
+Italy,2012,8102.0
+Italy,2013,8542.0
+Italy,2014,8683.0
+Italy,2015,9137.0
+Italy,2016,9384.0
+Italy,2017,9736.578
+Italy,2018,10230.246
+Italy,2019,10679.0
+Italy,2020,10839.0
+Netherlands,1997,329.0
+Netherlands,1998,379.0
+Netherlands,1999,433.0
+Netherlands,2000,447.0
+Netherlands,2001,486.0
+Netherlands,2002,672.0
+Netherlands,2003,905.0
+Netherlands,2004,1075.0
+Netherlands,2005,1224.0
+Netherlands,2006,1561.0
+Netherlands,2007,1749.0
+Netherlands,2008,2149.0
+Netherlands,2009,2222.0
+Netherlands,2010,2237.0
+Netherlands,2011,2316.0
+Netherlands,2012,2433.0
+Netherlands,2013,2713.0
+Netherlands,2014,2865.0
+Netherlands,2015,3391.0
+Netherlands,2016,4257.0
+Netherlands,2017,4202.0
+Netherlands,2018,4393.0
+Netherlands,2019,4484.0
+Netherlands,2020,6600.0
+Norway,1997,5.0
+Norway,1998,8.0
+Norway,1999,13.0
+Norway,2000,13.0
+Norway,2001,13.0
+Norway,2002,97.0
+Norway,2003,97.0
+Norway,2004,152.0
+Norway,2005,265.0
+Norway,2006,284.0
+Norway,2007,348.0
+Norway,2008,395.0
+Norway,2009,423.0
+Norway,2010,425.0
+Norway,2011,512.0
+Norway,2012,705.0
+Norway,2013,818.0
+Norway,2014,863.0
+Norway,2015,867.0
+Norway,2016,883.0
+Norway,2017,1207.0
+Norway,2018,1710.3
+Norway,2019,2914.0
+Norway,2020,3977.0
+Poland,1997,2.0
+Poland,1998,2.0
+Poland,1999,2.0
+Poland,2000,4.0
+Poland,2001,19.0
+Poland,2002,32.0
+Poland,2003,35.0
+Poland,2004,40.0
+Poland,2005,121.0
+Poland,2006,172.0
+Poland,2007,306.0
+Poland,2008,526.0
+Poland,2009,709.0
+Poland,2010,1108.0
+Poland,2011,1800.0
+Poland,2012,2564.0
+Poland,2013,3429.0
+Poland,2014,3836.0
+Poland,2015,4886.0
+Poland,2016,5747.0
+Poland,2017,5759.357
+Poland,2018,5766.078
+Poland,2019,5837.0
+Poland,2020,6267.0
+Portugal,1997,39.0
+Portugal,1998,51.0
+Portugal,1999,61.0
+Portugal,2000,83.0
+Portugal,2001,125.0
+Portugal,2002,190.0
+Portugal,2003,268.0
+Portugal,2004,553.0
+Portugal,2005,1064.0
+Portugal,2006,1681.0
+Portugal,2007,2201.0
+Portugal,2008,2857.0
+Portugal,2009,3326.0
+Portugal,2010,3796.0
+Portugal,2011,4256.214999999999
+Portugal,2012,4411.552
+Portugal,2013,4609.949
+Portugal,2014,4856.556
+Portugal,2015,4936.838
+Portugal,2016,5124.103
+Portugal,2017,5124.105
+Portugal,2018,5172.359
+Portugal,2019,5223.0
+Portugal,2020,5239.0
+Romania,1997,0.0
+Romania,1998,0.0
+Romania,1999,0.0
+Romania,2000,0.0
+Romania,2001,0.0
+Romania,2002,0.0
+Romania,2003,0.0
+Romania,2004,0.0
+Romania,2005,1.0
+Romania,2006,1.0
+Romania,2007,3.0
+Romania,2008,5.0
+Romania,2009,15.0
+Romania,2010,389.0
+Romania,2011,988.0
+Romania,2012,1822.0
+Romania,2013,2773.0
+Romania,2014,3244.0
+Romania,2015,3130.0
+Romania,2016,3025.0
+Romania,2017,3029.798
+Romania,2018,3032.258
+Romania,2019,3038.0
+Romania,2020,3023.0
+Spain,1997,512.0
+Spain,1998,723.0
+Spain,1999,1408.0
+Spain,2000,2206.0
+Spain,2001,3397.0
+Spain,2002,4891.0
+Spain,2003,5945.0
+Spain,2004,8317.0
+Spain,2005,9918.0
+Spain,2006,11722.0
+Spain,2007,14820.0
+Spain,2008,16555.0
+Spain,2009,19176.0
+Spain,2010,20693.0
+Spain,2011,21529.0
+Spain,2012,22789.0
+Spain,2013,22958.0
+Spain,2014,22925.0
+Spain,2015,22943.0
+Spain,2016,22990.0
+Spain,2017,23124.479
+Spain,2018,23405.055
+Spain,2019,25583.0
+Spain,2020,27089.0
+Sweden,1997,122.0
+Sweden,1998,176.0
+Sweden,1999,220.0
+Sweden,2000,209.0
+Sweden,2001,295.0
+Sweden,2002,357.0
+Sweden,2003,417.0
+Sweden,2004,475.0
+Sweden,2005,522.0
+Sweden,2006,585.0
+Sweden,2007,823.0
+Sweden,2008,1089.0
+Sweden,2009,1475.0
+Sweden,2010,2017.0
+Sweden,2011,2764.0
+Sweden,2012,3606.0
+Sweden,2013,4194.0
+Sweden,2014,5088.0
+Sweden,2015,5819.0
+Sweden,2016,6435.0
+Sweden,2017,6611.0
+Sweden,2018,7300.0
+Sweden,2019,8681.0
+Sweden,2020,9688.0
+Turkey,1997,9.0
+Turkey,1998,9.0
+Turkey,1999,9.0
+Turkey,2000,19.0
+Turkey,2001,19.0
+Turkey,2002,19.0
+Turkey,2003,19.0
+Turkey,2004,19.0
+Turkey,2005,21.0
+Turkey,2006,59.0
+Turkey,2007,146.0
+Turkey,2008,364.0
+Turkey,2009,792.0
+Turkey,2010,1320.0
+Turkey,2011,1729.0
+Turkey,2012,2261.0
+Turkey,2013,2760.0
+Turkey,2014,3630.0
+Turkey,2015,4503.0
+Turkey,2016,5751.0
+Turkey,2017,6516.15
+Turkey,2018,7005.35
+Turkey,2019,7591.15
+Turkey,2020,8832.0
+Ukraine,2000,5.0
+Ukraine,2001,36.2
+Ukraine,2002,46.2
+Ukraine,2003,54.4
+Ukraine,2004,71.4
+Ukraine,2005,76.6
+Ukraine,2006,76.6
+Ukraine,2007,82.0
+Ukraine,2008,83.0
+Ukraine,2009,86.0
+Ukraine,2010,88.0
+Ukraine,2011,146.0
+Ukraine,2012,248.0
+Ukraine,2013,362.0
+Ukraine,2014,513.9
+Ukraine,2015,513.9
+Ukraine,2016,526.0
+Ukraine,2017,553.0
+Ukraine,2018,620.77
+Ukraine,2019,1257.77
+Ukraine,2020,1402.0
+United Kingdom,1997,328.0
+United Kingdom,1998,338.0
+United Kingdom,1999,362.0
+United Kingdom,2000,412.0
+United Kingdom,2001,493.0
+United Kingdom,2002,534.0
+United Kingdom,2003,742.0
+United Kingdom,2004,933.0
+United Kingdom,2005,1565.0
+United Kingdom,2006,1955.0
+United Kingdom,2007,2477.0
+United Kingdom,2008,3446.0
+United Kingdom,2009,4422.0
+United Kingdom,2010,5421.2
+United Kingdom,2011,6596.3
+United Kingdom,2012,9030.4
+United Kingdom,2013,11282.3
+United Kingdom,2014,13074.0
+United Kingdom,2015,14305.634
+United Kingdom,2016,16125.696
+United Kingdom,2017,19584.758
+United Kingdom,2018,21767.0
+United Kingdom,2019,24095.0
+United Kingdom,2020,24665.0
+Other Europe,1997,20.0
+Other Europe,1998,22.0
+Other Europe,1999,25.0
+Other Europe,2000,21.38500000000022
+Other Europe,2001,22.602999999999156
+Other Europe,2002,50.58100000000195
+Other Europe,2003,72.33599999999933
+Other Europe,2004,107.87199999999575
+Other Europe,2005,156.39599999999336
+Other Europe,2006,234.85599999999977
+Other Europe,2007,368.997000000003
+Other Europe,2008,524.3780000000042
+Other Europe,2009,763.4100000000035
+Other Europe,2010,1030.1610000000219
+Other Europe,2011,1323.2660000000033
+Other Europe,2012,1624.7119999999995
+Other Europe,2013,1719.3379999999888
+Other Europe,2014,1892.3360000000102
+Other Europe,2015,2237.595000000001
+Other Europe,2016,2492.6900000000023
+Other Europe,2017,2764.5290000000095
+Other Europe,2018,3135.5260000000126
+Other Europe,2019,3447.680000000022
+Other Europe,2020,3651.0
+Europe,1997,4810.0
+Europe,1998,6383.1
+Europe,1999,9279.8
+Europe,2000,12749.885
+Europe,2001,17411.903
+Europe,2002,23307.081000000002
+Europe,2003,28169.936
+Europe,2004,34337.372
+Europe,2005,40701.314999999995
+Europe,2006,47973.924999999996
+Europe,2007,56482.856
+Europe,2008,64415.552
+Europe,2009,76595.79500000001
+Europe,2010,86236.38900000001
+Europe,2011,96439.363
+Europe,2012,109443.61
+Europe,2013,121014.38599999998
+Europe,2014,133814.392
+Europe,2015,147536.0
+Europe,2016,161507.0
+Europe,2017,177140.15
+Europe,2018,188968.35
+Europe,2019,203902.15
+Europe,2020,216579.0
+Russia,2000,3.0
+Russia,2001,3.0
+Russia,2002,7.0
+Russia,2003,9.0
+Russia,2004,9.0
+Russia,2005,10.0
+Russia,2006,10.0
+Russia,2007,10.0
+Russia,2008,10.0
+Russia,2009,10.0
+Russia,2010,10.0
+Russia,2011,10.0
+Russia,2012,10.0
+Russia,2013,10.0
+Russia,2014,10.0
+Russia,2015,10.9
+Russia,2016,10.9
+Russia,2017,10.9
+Russia,2018,51.9
+Russia,2019,101.9
+Russia,2020,945.0
+Other CIS,2000,0.0
+Other CIS,2001,0.0
+Other CIS,2002,0.0
+Other CIS,2003,0.0
+Other CIS,2004,0.0
+Other CIS,2005,2.6000000000000014
+Other CIS,2006,2.5999999999999943
+Other CIS,2007,2.5999999999999943
+Other CIS,2008,2.6000000000000227
+Other CIS,2009,4.600000000000023
+Other CIS,2010,4.640000000000001
+Other CIS,2011,2.6400000000000006
+Other CIS,2012,4.140000000000001
+Other CIS,2013,9.34
+Other CIS,2014,58.150000000000006
+Other CIS,2015,83.0
+Other CIS,2016,138.0
+Other CIS,2017,153.0
+Other CIS,2018,212.0
+Other CIS,2019,375.0
+Other CIS,2020,577.0
+CIS,2000,3.0
+CIS,2001,3.0
+CIS,2002,7.0
+CIS,2003,9.0
+CIS,2004,9.0
+CIS,2005,12.600000000000001
+CIS,2006,12.599999999999994
+CIS,2007,12.599999999999994
+CIS,2008,12.600000000000023
+CIS,2009,14.600000000000023
+CIS,2010,14.64
+CIS,2011,12.64
+CIS,2012,14.14
+CIS,2013,19.34
+CIS,2014,68.15
+CIS,2015,93.9
+CIS,2016,148.9
+CIS,2017,163.9
+CIS,2018,263.9
+CIS,2019,476.9
+CIS,2020,1522.0
+Iran,1997,9.0
+Iran,1998,9.0
+Iran,1999,9.0
+Iran,2000,11.0
+Iran,2001,11.0
+Iran,2002,12.0
+Iran,2003,16.0
+Iran,2004,24.9
+Iran,2005,37.0
+Iran,2006,47.0
+Iran,2007,63.0
+Iran,2008,63.0
+Iran,2009,92.0
+Iran,2010,95.0
+Iran,2011,98.2
+Iran,2012,106.1
+Iran,2013,107.6
+Iran,2014,148.8
+Iran,2015,153.44
+Iran,2016,190.94
+Iran,2017,259.0
+Iran,2018,282.0
+Iran,2019,302.2
+Iran,2020,303.0
+Jordan,2000,1.4
+Jordan,2001,1.4
+Jordan,2002,1.4
+Jordan,2003,1.4
+Jordan,2004,1.4
+Jordan,2005,1.4
+Jordan,2006,1.4
+Jordan,2007,1.4
+Jordan,2008,1.4
+Jordan,2009,1.4
+Jordan,2010,1.4
+Jordan,2011,1.4
+Jordan,2012,1.4
+Jordan,2013,1.4
+Jordan,2014,1.4
+Jordan,2015,118.4
+Jordan,2016,198.0
+Jordan,2017,198.4
+Jordan,2018,280.0
+Jordan,2019,370.0
+Jordan,2020,515.0
+Other Middle East,1997,0.0
+Other Middle East,1998,0.0
+Other Middle East,1999,0.0
+Other Middle East,2000,0.0
+Other Middle East,2001,0.0
+Other Middle East,2002,5.999999999999998
+Other Middle East,2003,6.0
+Other Middle East,2004,6.600000000000001
+Other Middle East,2005,6.600000000000001
+Other Middle East,2006,6.600000000000001
+Other Middle East,2007,6.599999999999994
+Other Middle East,2008,7.299999999999997
+Other Middle East,2009,7.299999999999997
+Other Middle East,2010,7.299999999999997
+Other Middle East,2011,7.299999999999997
+Other Middle East,2012,7.799999999999997
+Other Middle East,2013,10.200000000000003
+Other Middle East,2014,11.999999999999972
+Other Middle East,2015,14.379999999999967
+Other Middle East,2016,34.06
+Other Middle East,2017,46.60000000000002
+Other Middle East,2018,47.0
+Other Middle East,2019,96.80000000000001
+Other Middle East,2020,97.0
+Middle East,1997,9.0
+Middle East,1998,9.0
+Middle East,1999,9.0
+Middle East,2000,12.4
+Middle East,2001,12.4
+Middle East,2002,19.4
+Middle East,2003,23.4
+Middle East,2004,32.9
+Middle East,2005,45.0
+Middle East,2006,55.0
+Middle East,2007,71.0
+Middle East,2008,71.7
+Middle East,2009,100.7
+Middle East,2010,103.7
+Middle East,2011,106.9
+Middle East,2012,115.3
+Middle East,2013,119.2
+Middle East,2014,162.2
+Middle East,2015,286.21999999999997
+Middle East,2016,423.0
+Middle East,2017,504.0
+Middle East,2018,609.0
+Middle East,2019,769.0
+Middle East,2020,915.0
+Egypt,1997,6.0
+Egypt,1998,6.0
+Egypt,1999,36.0
+Egypt,2000,69.0
+Egypt,2001,69.0
+Egypt,2002,69.0
+Egypt,2003,69.0
+Egypt,2004,145.0
+Egypt,2005,145.0
+Egypt,2006,230.0
+Egypt,2007,310.0
+Egypt,2008,390.0
+Egypt,2009,435.0
+Egypt,2010,550.0
+Egypt,2011,550.0
+Egypt,2012,550.0
+Egypt,2013,550.0
+Egypt,2014,550.0
+Egypt,2015,750.0
+Egypt,2016,750.0
+Egypt,2017,750.0
+Egypt,2018,1125.0
+Egypt,2019,1375.0
+Egypt,2020,1375.0
+Morocco,1997,0.0
+Morocco,1998,2.0
+Morocco,1999,20.0
+Morocco,2000,54.0
+Morocco,2001,54.0
+Morocco,2002,54.0
+Morocco,2003,54.0
+Morocco,2004,54.0
+Morocco,2005,54.0
+Morocco,2006,54.0
+Morocco,2007,114.0
+Morocco,2008,114.0
+Morocco,2009,221.0
+Morocco,2010,221.0
+Morocco,2011,255.0
+Morocco,2012,255.0
+Morocco,2013,495.0
+Morocco,2014,797.0
+Morocco,2015,797.0
+Morocco,2016,897.0
+Morocco,2017,1023.0
+Morocco,2018,1225.0
+Morocco,2019,1225.0
+Morocco,2020,1405.0
+South Africa,1997,0.0
+South Africa,1998,0.0
+South Africa,1999,0.0
+South Africa,2000,0.0
+South Africa,2001,0.0
+South Africa,2002,3.2
+South Africa,2003,3.2
+South Africa,2004,3.2
+South Africa,2005,3.2
+South Africa,2006,3.2
+South Africa,2007,3.2
+South Africa,2008,8.4
+South Africa,2009,8.4
+South Africa,2010,10.16
+South Africa,2011,10.16
+South Africa,2012,10.16
+South Africa,2013,257.0
+South Africa,2014,569.0
+South Africa,2015,1079.0
+South Africa,2016,1473.0
+South Africa,2017,2094.0
+South Africa,2018,2094.0
+South Africa,2019,2094.0
+South Africa,2020,2636.0
+Tunisia,1997,0.0
+Tunisia,1998,2.0
+Tunisia,1999,8.0
+Tunisia,2000,10.0
+Tunisia,2001,10.0
+Tunisia,2002,10.0
+Tunisia,2003,19.0
+Tunisia,2004,19.0
+Tunisia,2005,19.0
+Tunisia,2006,19.0
+Tunisia,2007,19.0
+Tunisia,2008,19.0
+Tunisia,2009,53.0
+Tunisia,2010,53.0
+Tunisia,2011,53.0
+Tunisia,2012,173.0
+Tunisia,2013,200.0
+Tunisia,2014,233.0
+Tunisia,2015,244.0
+Tunisia,2016,244.0
+Tunisia,2017,244.0
+Tunisia,2018,244.0
+Tunisia,2019,244.0
+Tunisia,2020,244.0
+Other Africa,1997,0.0
+Other Africa,1998,0.0
+Other Africa,1999,0.0
+Other Africa,2000,0.4000000000000057
+Other Africa,2001,0.4000000000000057
+Other Africa,2002,3.4599999999999937
+Other Africa,2003,5.0400000000000205
+Other Africa,2004,4.960000000000008
+Other Africa,2005,5.180000000000007
+Other Africa,2006,4.880000000000052
+Other Africa,2007,5.720000000000027
+Other Africa,2008,5.720000000000027
+Other Africa,2009,6.650000000000091
+Other Africa,2010,12.317000000000007
+Other Africa,2011,108.52200000000005
+Other Africa,2012,121.81400000000019
+Other Africa,2013,222.20399999999995
+Other Africa,2014,233.76800000000003
+Other Africa,2015,452.0
+Other Africa,2016,465.0
+Other Africa,2017,470.0
+Other Africa,2018,781.0
+Other Africa,2019,831.0
+Other Africa,2020,831.0
+Africa,1997,6.0
+Africa,1998,10.0
+Africa,1999,64.0
+Africa,2000,133.4
+Africa,2001,133.4
+Africa,2002,139.66
+Africa,2003,150.24
+Africa,2004,226.16
+Africa,2005,226.38
+Africa,2006,311.08000000000004
+Africa,2007,451.92
+Africa,2008,537.12
+Africa,2009,724.0500000000001
+Africa,2010,846.477
+Africa,2011,976.682
+Africa,2012,1109.9740000000002
+Africa,2013,1724.204
+Africa,2014,2382.768
+Africa,2015,3322.0
+Africa,2016,3829.0
+Africa,2017,4581.0
+Africa,2018,5469.0
+Africa,2019,5769.0
+Africa,2020,6491.0
+Australia,1997,4.0
+Australia,1998,10.0
+Australia,1999,10.0
+Australia,2000,33.0
+Australia,2001,76.0
+Australia,2002,106.0
+Australia,2003,190.0
+Australia,2004,379.0
+Australia,2005,740.0
+Australia,2006,819.0
+Australia,2007,1249.0
+Australia,2008,1441.0
+Australia,2009,1703.0
+Australia,2010,1864.0
+Australia,2011,2127.0
+Australia,2012,2561.0
+Australia,2013,3221.0
+Australia,2014,3797.0
+Australia,2015,4234.0
+Australia,2016,4327.0
+Australia,2017,4816.0
+Australia,2018,5679.0
+Australia,2019,7133.0
+Australia,2020,9457.0
+China,1997,146.0
+China,1998,200.0
+China,1999,262.0
+China,2000,341.0
+China,2001,383.0
+China,2002,449.0
+China,2003,547.0
+China,2004,763.0
+China,2005,1060.0
+China,2006,2070.0
+China,2007,4200.0
+China,2008,8387.728
+China,2009,17599.408
+China,2010,29633.478
+China,2011,46354.6
+China,2012,61596.873
+China,2013,76730.53
+China,2014,96819.13
+China,2015,131047.73
+China,2016,148516.89
+China,2017,164374.477
+China,2018,184664.877
+China,2019,209528.0
+China,2020,281993.0
+India,1997,940.0
+India,1998,992.0
+India,1999,1035.0
+India,2000,1267.0
+India,2001,1456.0
+India,2002,1702.0
+India,2003,2125.0
+India,2004,3000.0
+India,2005,4433.9
+India,2006,6315.0
+India,2007,7844.5
+India,2008,10242.5
+India,2009,10925.0
+India,2010,13184.0
+India,2011,16179.0
+India,2012,17299.7
+India,2013,18420.4
+India,2014,22465.3
+India,2015,25088.19
+India,2016,28700.44
+India,2017,32848.46
+India,2018,35288.1
+India,2019,37505.18
+India,2020,38559.0
+Japan,1997,17.0
+Japan,1998,30.0
+Japan,1999,68.0
+Japan,2000,84.0
+Japan,2001,175.0
+Japan,2002,277.0
+Japan,2003,508.0
+Japan,2004,769.0
+Japan,2005,1227.0
+Japan,2006,1805.0
+Japan,2007,1527.0
+Japan,2008,1756.0
+Japan,2009,1997.0
+Japan,2010,2294.0
+Japan,2011,2419.0
+Japan,2012,2562.0
+Japan,2013,2646.0
+Japan,2014,2753.0
+Japan,2015,2808.0
+Japan,2016,3247.0
+Japan,2017,3483.0
+Japan,2018,3667.0
+Japan,2019,3786.0
+Japan,2020,4206.0
+New Zealand,1997,4.075
+New Zealand,1998,4.075
+New Zealand,1999,35.755
+New Zealand,2000,36.0
+New Zealand,2001,36.0
+New Zealand,2002,54.0
+New Zealand,2003,72.0
+New Zealand,2004,166.0
+New Zealand,2005,168.0
+New Zealand,2006,169.0
+New Zealand,2007,320.0
+New Zealand,2008,322.0
+New Zealand,2009,497.0
+New Zealand,2010,524.0
+New Zealand,2011,524.0
+New Zealand,2012,623.0
+New Zealand,2013,623.0
+New Zealand,2014,682.0
+New Zealand,2015,689.0
+New Zealand,2016,689.0
+New Zealand,2017,689.0
+New Zealand,2018,689.0
+New Zealand,2019,689.0
+New Zealand,2020,784.0
+Pakistan,1997,0.0
+Pakistan,1998,0.0
+Pakistan,1999,0.0
+Pakistan,2000,0.0
+Pakistan,2001,0.0
+Pakistan,2002,0.0
+Pakistan,2003,0.0
+Pakistan,2004,0.0
+Pakistan,2005,0.0
+Pakistan,2006,0.0
+Pakistan,2007,0.0
+Pakistan,2008,6.0
+Pakistan,2009,6.0
+Pakistan,2010,6.0
+Pakistan,2011,6.0
+Pakistan,2012,56.155
+Pakistan,2013,106.055
+Pakistan,2014,205.555
+Pakistan,2015,308.35499999999996
+Pakistan,2016,590.655
+Pakistan,2017,789.155
+Pakistan,2018,1185.855
+Pakistan,2019,1235.855
+Pakistan,2020,1236.0
+Philippines,1997,0.0
+Philippines,1998,0.0
+Philippines,1999,0.0
+Philippines,2000,0.0
+Philippines,2001,0.0
+Philippines,2002,0.0
+Philippines,2003,0.0
+Philippines,2004,0.0
+Philippines,2005,33.0
+Philippines,2006,33.0
+Philippines,2007,33.0
+Philippines,2008,33.0
+Philippines,2009,33.0
+Philippines,2010,33.0
+Philippines,2011,33.0
+Philippines,2012,33.0
+Philippines,2013,33.0
+Philippines,2014,336.9
+Philippines,2015,426.9
+Philippines,2016,426.9
+Philippines,2017,426.9
+Philippines,2018,426.9
+Philippines,2019,443.0
+Philippines,2020,443.0
+South Korea,1997,1.0
+South Korea,1998,1.0
+South Korea,1999,5.0
+South Korea,2000,7.0
+South Korea,2001,11.0
+South Korea,2002,13.0
+South Korea,2003,19.0
+South Korea,2004,29.0
+South Korea,2005,99.0
+South Korea,2006,178.0
+South Korea,2007,196.0
+South Korea,2008,304.0
+South Korea,2009,351.0
+South Korea,2010,382.0
+South Korea,2011,425.0
+South Korea,2012,464.0
+South Korea,2013,576.0
+South Korea,2014,612.0
+South Korea,2015,847.0
+South Korea,2016,1067.0
+South Korea,2017,1215.0
+South Korea,2018,1420.33
+South Korea,2019,1512.221
+South Korea,2020,1636.0
+Taiwan,1997,1.0
+Taiwan,1998,1.0
+Taiwan,1999,1.0
+Taiwan,2000,2.6
+Taiwan,2001,5.0
+Taiwan,2002,8.5
+Taiwan,2003,8.5
+Taiwan,2004,8.5
+Taiwan,2005,23.9
+Taiwan,2006,102.0
+Taiwan,2007,186.0
+Taiwan,2008,250.4
+Taiwan,2009,374.3
+Taiwan,2010,475.9
+Taiwan,2011,522.7
+Taiwan,2012,571.0
+Taiwan,2013,614.2
+Taiwan,2014,637.2
+Taiwan,2015,646.7
+Taiwan,2016,682.0
+Taiwan,2017,692.0
+Taiwan,2018,713.191
+Taiwan,2019,845.2
+Taiwan,2020,845.0
+Thailand,1997,0.0
+Thailand,1998,0.0
+Thailand,1999,0.0
+Thailand,2000,0.0
+Thailand,2001,0.0
+Thailand,2002,0.0
+Thailand,2003,0.0
+Thailand,2004,0.0
+Thailand,2005,0.0
+Thailand,2006,0.3
+Thailand,2007,0.9
+Thailand,2008,1.1
+Thailand,2009,5.1
+Thailand,2010,5.6
+Thailand,2011,7.3
+Thailand,2012,111.7
+Thailand,2013,222.7
+Thailand,2014,224.5
+Thailand,2015,233.9
+Thailand,2016,507.04
+Thailand,2017,627.82
+Thailand,2018,1102.82
+Thailand,2019,1506.82
+Thailand,2020,1507.0
+Other Asia Pacific,1997,4.0
+Other Asia Pacific,1998,4.0
+Other Asia Pacific,1999,6.0
+Other Asia Pacific,2000,7.0
+Other Asia Pacific,2001,7.599999999999909
+Other Asia Pacific,2002,9.800000000000182
+Other Asia Pacific,2003,14.400000000000091
+Other Asia Pacific,2004,25.800000000000182
+Other Asia Pacific,2005,25.800000000000182
+Other Asia Pacific,2006,32.20000000000073
+Other Asia Pacific,2007,47.29999999999927
+Other Asia Pacific,2008,54.12600000000748
+Other Asia Pacific,2009,66.64600000000792
+Other Asia Pacific,2010,117.1759999999922
+Other Asia Pacific,2011,128.04099999999744
+Other Asia Pacific,2012,161.27399999997579
+Other Asia Pacific,2013,237.41400000001886
+Other Asia Pacific,2014,279.0040000000008
+Other Asia Pacific,2015,373.8159999999916
+Other Asia Pacific,2016,398.29099999999744
+Other Asia Pacific,2017,497.18799999999464
+Other Asia Pacific,2018,723.926999999996
+Other Asia Pacific,2019,926.7239999999874
+Other Asia Pacific,2020,1230.0
+Asia Pacific,1997,1117.075
+Asia Pacific,1998,1242.075
+Asia Pacific,1999,1422.755
+Asia Pacific,2000,1777.6
+Asia Pacific,2001,2149.6
+Asia Pacific,2002,2619.3
+Asia Pacific,2003,3483.9
+Asia Pacific,2004,5140.3
+Asia Pacific,2005,7810.599999999999
+Asia Pacific,2006,11523.5
+Asia Pacific,2007,15603.699999999999
+Asia Pacific,2008,22797.854000000007
+Asia Pacific,2009,33557.454000000005
+Asia Pacific,2010,48519.153999999995
+Asia Pacific,2011,68725.641
+Asia Pacific,2012,86039.70199999998
+Asia Pacific,2013,103430.299
+Asia Pacific,2014,128811.58899999999
+Asia Pacific,2015,166703.591
+Asia Pacific,2016,189152.21600000001
+Asia Pacific,2017,210459.0
+Asia Pacific,2018,235561.0
+Asia Pacific,2019,265111.0
+Asia Pacific,2020,341896.0
+World,1995,4778.0
+World,1996,6070.0
+World,1997,7623.075
+World,1998,9936.175
+World,1999,13426.555
+World,2000,17303.699999999997
+World,2001,23976.400000000005
+World,2002,30979.460000000003
+World,2003,38391.740000000005
+World,2004,46910.76
+World,2005,58441.38
+World,2006,73151.98
+World,2007,91496.22
+World,2008,115347.57400000001
+World,2009,150165.00400000002
+World,2010,180923.87099999998
+World,2011,220120.263
+World,2012,267096.71599999996
+World,2013,300286.743
+World,2014,349671.007
+World,2015,416244.731
+World,2016,466861.11600000004
+World,2017,514374.02999999997
+World,2018,563829.025
+World,2019,622248.925
+World,2020,733276.0
