@@ -252,6 +252,10 @@ def clean_variables_and_datapoints(
     df_variables["source_id"] = source_id
 
     df_variables["description"] = ""
+    if "display" in df_variables.columns:
+        df_variables["display"] = df_variables["display"].apply(
+            lambda x: json.dumps(x) if pd.notnull(x) else None
+        )
 
     required_fields = ["id", "name", "description", "dataset_id", "source_id"]
     for field in required_fields:
