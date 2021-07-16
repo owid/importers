@@ -244,6 +244,20 @@ def create_datapoints(df: pd.DataFrame, var_name2id: Dict[str, int]) -> None:
         gp_tmp.to_csv(fpath, index=False)
 
 
+def standardize_entities(entities: List[str]) -> List[str]:
+    """standardizes entity names."""
+    # loads mapping of "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}"
+    # i.e. {"Afghanistan": "Afghanistan", "Total Africa": "Africa", ...}
+    entity2owid_name = (
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
+        .set_index("Country")
+        .squeeze()
+        .to_dict()
+    )
+    entities_std = [entity2owid_name[ent] for ent in entities]
+    return entities_std
+
+
 def get_distinct_entities() -> List[str]:
     """retrieves a list of all distinct entities that contain at least
     on non-null data point that was saved to disk during the
