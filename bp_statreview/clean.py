@@ -201,9 +201,7 @@ def clean_variables(dataset_id: int, source_id: int) -> pd.DataFrame:
     return df_variables
 
 
-def clean_and_create_datapoints(
-    var_code2id: Dict[str, int], entity2owid_name: Dict[str, str]
-) -> None:
+def create_datapoints(df: pd.DataFrame, var_name2id: Dict[str, int]) -> None:
     """Cleans all entity-variable-year data observations and saves all
     data points to csv in the `{OUTPATH}/datapoints` directory.
 
@@ -211,43 +209,23 @@ def clean_and_create_datapoints(
 
     Arguments:
 
-        var_code2id: Dict[str, int]. Mapping of variable code to temporary
+        var_name2id: Dict[str, int]. Mapping of variable name to temporary
             variable id.
 
-                {"oilreserves_bbl": 0, ...}
-
-        entity2owid_name: dict. Mapping of "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}".
-            Example::
-
-                {"Afghanistan": "Afghanistan", "Total Africa": "Africa", ...}
+                {"Wind Consumption - TWh": 0, ...}
 
     Returns:
 
         None.
 
     """
-    df = pd.read_csv(os.path.join(INPATH, "data.csv"))
-    assert (
-        df["Country"].isnull().sum() == 0
-    ), "One or more values in the 'Country' column is null."
-    assert (
-        df["Value"].isnull().sum() == 0
-    ), "One or more values in the 'Value' column is null."
-    assert (
-        df["Var"].isnull().sum() == 0
-    ), "One or more values in the 'Var' column is null."
-
-    df = df[df["Var"].isin(var_code2id.keys())]
-
-    df["Country"] = df["Country"].apply(lambda x: entity2owid_name[x])
-
     out_path = os.path.join(OUTPATH, "datapoints")
     if not os.path.exists(out_path):
         os.makedirs(out_path)
 
-    for var_code, gp in df.groupby("Var"):
+    for var_name, gp in df.groupby("name"):
         gp_tmp = gp[["Country", "Year", "Value"]].dropna()
-        fpath = os.path.join(out_path, f"datapoints_{var_code2id[var_code]}.csv")
+        fpath = os.path.join(out_path, f"datapoints_{var_name2id[var_name]}.csv")
 
         # sanity checks
         assert not gp_tmp.duplicated(subset=["Country", "Year"]).any()
