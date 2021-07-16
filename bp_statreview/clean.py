@@ -21,6 +21,7 @@ from bp_statreview import (
     OUTPATH,
 )
 from bp_statreview.unit_conversion import UnitConverter
+from bp_statreview.clean_excel import clean_excel_datapoints
 
 import logging
 
@@ -177,8 +178,8 @@ def clean_variables_and_datapoints(
 
         df_variables, df_data: Tuple[pd.DataFrame, pd.Dataframe].
 
-        df_variables: pd.DataFrame. Cleaned dataframe of variables to be
-            uploaded.
+            df_variables: pd.DataFrame. Cleaned dataframe of variables to be
+                uploaded.
 
             df_data: pd.DataFrame. Cleaned dataframe of data points to be
                 uploaded.
@@ -231,7 +232,20 @@ def clean_variables_and_datapoints(
             logger.error(
                 f"Failed to convert data for variable {var['name']}. Error: {e}"
             )
-    
+
+    excel_vars = [
+        var for var in variables if var["cleaningMetadata"]["dataSource"] == "excel"
+    ]
+    for var in excel_vars:
+        try:
+            rows = clean_excel_datapoints(var)
+            rows.loc[:, "code"] = var["code"]
+            rows.loc[:, "name"] = var["name"]
+            df_data = pd.concat([df_data, rows], axis=0)
+        except Exception as e:
+            logger.error(
+                f"Failed to convert data for variable {var['name']}. Error: {e}"
+            )
 
     df_variables = pd.DataFrame(variables)
     df_timespans = (
