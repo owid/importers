@@ -51,11 +51,14 @@ def main() -> None:
         df_sources.shape[0] == 1
     ), f"Only expected one source in {os.path.join(OUTPATH, 'sources.csv')}."
 
+    df_variables, df_data = clean_variables_and_datapoints(
+        dataset_id=df_datasets["id"].iloc[0],
+        source_id=df_sources["id"].iloc[0],
+        std_entities=True,
     )
-
-    clean_and_create_datapoints(
-        var_code2id=df_variables.set_index("code")["id"].to_dict(),
-        entity2owid_name=entity2owid_name,
+    create_datapoints(
+        df=df_data,
+        var_name2id=df_variables.set_index("name")["id"].to_dict(),
     )
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])
@@ -153,38 +156,70 @@ def clean_sources(dataset_name: str, dataset_id: int) -> pd.DataFrame:
     return pd.DataFrame(sources)
 
 
-def clean_variables(dataset_id: int, source_id: int) -> pd.DataFrame:
-    """Cleans a dataframe of variables in preparation for uploading the
-    sources to the `variables` database table.
+def clean_variables_and_datapoints(
+    dataset_id: int, source_id: int, std_entities: bool = True
+) -> pd.DataFrame:
+    """Cleans a dataframe of variables and of datapoints in preparation for
+    uploading the sources to the `variables` and `data_values` database tables,
+    respectively.
 
     Arguments:
 
         dataset_id: int.
+
         source_id: int.
+
+        std_entities: bool = True. If True, standardizes entity names.
 
     Returns:
 
+        df_variables, df_data: Tuple[pd.DataFrame, pd.Dataframe].
+
         df_variables: pd.DataFrame. Cleaned dataframe of variables to be
             uploaded.
+
+            df_data: pd.DataFrame. Cleaned dataframe of data points to be
+                uploaded.
     """
     with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
-        df_variables = pd.DataFrame(json.load(f)["variables"])
+        variables = json.load(f)["variables"]
 
-    df = pd.read_csv(os.path.join(INPATH, "data.csv"))
+    df_data = pd.read_csv(os.path.join(INPATH, "data.csv"))
+    assert (
+        df_data["Country"].isnull().sum() == 0
+    ), "One or more values in the 'Country' column is null."
+    assert (
+        df_data["Value"].isnull().sum() == 0
+    ), "One or more values in the 'Value' column is null."
+    assert (
+        df_data["Var"].isnull().sum() == 0
+    ), "One or more values in the 'Var' column is null."
 
+    var_codes = [var["code"] for var in variables if pd.notnull(var["code"])]
+    var_code2name = {
+        var["code"]: var["name"] for var in variables if pd.notnull(var["code"])
+    }
+    df_data = df_data[df_data["Var"].isin(var_codes)]
+    df_data["name"] = df_data["Var"].apply(lambda x: var_code2name.get(x))
+    assert df_data["name"].notnull().all()
+
+
+    
+
+    df_variables = pd.DataFrame(variables)
     df_timespans = (
-        df.dropna(subset=["Value"])
-        .groupby("Var")["Year"]
+        df_data.dropna(subset=["Value"])
+        .groupby("name")["Year"]
         .apply(
             lambda gp: f"{gp.dropna().min().astype(int)}-{gp.dropna().max().astype(int)}"
         )
         .reset_index()
-        .rename(columns={"Year": "timespan", "Var": "code"})
+        .rename(columns={"Year": "timespan"})
     )
-
     df_variables = df_variables.merge(
-        df_timespans, how="left", on="code", validate="1:1"
-    )
+        df_timespans, how="left", on="name", validate="1:1"
+    ).sort_values("name")
+    assert df_variables["name"].duplicated().sum() == 0
     df_variables["id"] = range(df_variables.shape[0])
     df_variables["dataset_id"] = dataset_id
     df_variables["source_id"] = source_id
@@ -198,7 +233,15 @@ def clean_variables(dataset_id: int, source_id: int) -> pd.DataFrame:
             df_variables[field].notnull().all()
         ), f"Every variable must have a non-null `{field}` field."
 
-    return df_variables
+    if std_entities:
+        df_data["Country"] = standardize_entities(df_data["Country"])
+    else:
+        logger.warning("Entity names have NOT been standardized.")
+
+    assert df_variables["name"].drop_duplicates().isin(df_data["name"].unique()).all()
+    assert df_data["name"].drop_duplicates().isin(df_variables["name"].unique()).all()
+
+    return df_variables, df_data
 
 
 def create_datapoints(df: pd.DataFrame, var_name2id: Dict[str, int]) -> None:
