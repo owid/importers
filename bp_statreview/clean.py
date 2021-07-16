@@ -38,26 +38,19 @@ def main() -> None:
     delete_output(KEEP_PATHS)
     mk_output_dir()
 
-    # loads mapping of "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}"
-    # i.e. {"Afghanistan": "Afghanistan", "Total Africa": "Africa", ...}
-    entity2owid_name = (
-        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
-        .set_index("Country")
-        .squeeze()
-        .to_dict()
-    )
-
     df_datasets = clean_datasets()
-    df_sources = clean_sources(df_datasets.iloc[0].to_dict())
-
     assert (
         df_datasets.shape[0] == 1
     ), f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
+
+    df_sources = clean_sources(
+        dataset_name=df_datasets.squeeze().to_dict()["name"],
+        dataset_id=df_datasets.squeeze().to_dict()["id"],
+    )
     assert (
         df_sources.shape[0] == 1
-    ), f"Only expected one source in {os.path.join(OUTPATH, 'datasets.csv')}."
-    df_variables = clean_variables(
-        dataset_id=df_datasets["id"].iloc[0], source_id=df_sources["id"].iloc[0]
+    ), f"Only expected one source in {os.path.join(OUTPATH, 'sources.csv')}."
+
     )
 
     clean_and_create_datapoints(
@@ -125,9 +118,15 @@ def clean_datasets() -> pd.DataFrame:
     return pd.DataFrame(data)
 
 
-def clean_sources(dataset: dict) -> pd.DataFrame:
+def clean_sources(dataset_name: str, dataset_id: int) -> pd.DataFrame:
     """Cleans a dataframe of data sources in preparation for uploading the
     sources to the `sources` database table.
+
+    Arguments:
+
+        dataset_name: str. Dataset name.
+
+        dataset_id: int. Temporary dataset id.
 
     Returns:
 
@@ -137,8 +136,8 @@ def clean_sources(dataset: dict) -> pd.DataFrame:
     sources = [
         {
             "id": 0,
-            "dataset_id": dataset["id"],
-            "name": dataset["name"],
+            "dataset_id": dataset_id,
+            "name": dataset_name,
             "description": json.dumps(
                 {
                     "link": DATASET_LINK,
