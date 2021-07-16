@@ -251,7 +251,6 @@ def clean_variables_and_datapoints(
     df_variables["dataset_id"] = dataset_id
     df_variables["source_id"] = source_id
 
-    df_variables["description"] = ""
     if "display" in df_variables.columns:
         df_variables["display"] = df_variables["display"].apply(
             lambda x: json.dumps(x) if pd.notnull(x) else None
