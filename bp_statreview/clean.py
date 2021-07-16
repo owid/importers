@@ -261,11 +261,11 @@ def standardize_entities(entities: List[str]) -> List[str]:
 def get_distinct_entities() -> List[str]:
     """retrieves a list of all distinct entities that contain at least
     on non-null data point that was saved to disk during the
-    `clean_and_create_datapoints()` method.
+    `create_datapoints()` method.
 
     Returns:
 
-        entities: List[str]. List of distinct entity names.
+        entities: List[str]. List of distinct entity names, sorted alphabetically.
     """
     fnames = [
         fname
@@ -277,6 +277,6 @@ def get_distinct_entities() -> List[str]:
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entities.update(df_temp["country"].unique().tolist())
 
-    entities = list(entities)
+    entities = sorted(entities)
     assert pd.notnull(entities).all(), "All entities should be non-null."
     return entities
