@@ -2,6 +2,7 @@
 """
 
 import os
+import re
 import simplejson as json
 import shutil
 from typing import Dict, List
@@ -19,6 +20,7 @@ from bp_statreview import (
     INPATH,
     OUTPATH,
 )
+from bp_statreview.unit_conversion import UnitConverter
 
 import logging
 
@@ -203,7 +205,32 @@ def clean_variables_and_datapoints(
     df_data["name"] = df_data["Var"].apply(lambda x: var_code2name.get(x))
     assert df_data["name"].notnull().all()
 
-
+    vars_to_convert = [
+        var for var in variables if pd.isnull(var["cleaningMetadata"]["dataSource"])
+    ]
+    for var in vars_to_convert:
+        try:
+            rows = None
+            root_var_code = var["cleaningMetadata"]["convertFromCode"]
+            to_unit = var["shortUnit"]
+            root_var = [var for var in variables if var["code"] == root_var_code][0]
+            from_unit = root_var["shortUnit"]
+            if from_unit.lower() == "mt" and re.search(
+                r"\boil\b", root_var["name"], re.IGNORECASE
+            ):
+                from_unit = "mtoe"
+            uc = UnitConverter(frm=from_unit, to=to_unit)
+            if uc.can_convert():
+                rows = df_data[df_data["Var"] == root_var_code].copy()
+                rows.loc[:, "Value"] = uc.convert(rows["Value"].values)
+                rows.loc[:, "code"] = var["code"]
+                rows.loc[:, "name"] = var["name"]
+            assert rows is not None and rows.shape[0] > 0
+            df_data = pd.concat([df_data, rows], axis=0)
+        except Exception as e:
+            logger.error(
+                f"Failed to convert data for variable {var['name']}. Error: {e}"
+            )
     
 
     df_variables = pd.DataFrame(variables)
@@ -232,6 +259,8 @@ def clean_variables_and_datapoints(
         assert (
             df_variables[field].notnull().all()
         ), f"Every variable must have a non-null `{field}` field."
+
+    df_variables.drop("cleaningMetadata", axis=1, inplace=True)
 
     if std_entities:
         df_data["Country"] = standardize_entities(df_data["Country"])
