@@ -37,6 +37,7 @@ from un_sdg import (
 )
 
 from un_sdg.core import (
+    ihr_capacity_clean,
     create_short_unit,
     extract_datapoints,
     get_distinct_entities,
@@ -63,6 +64,32 @@ def load_and_clean() -> pd.DataFrame:
     print("Reading in original data...")
     original_df = pd.read_csv(INFILE, low_memory=False, compression="gzip")
     original_df = original_df[original_df["Value"].notnull()]
+    # Clean the IHR Capacity column, duplicate labelling of some attributes which doesn't work well with the grapher
+    original_df["[IHR Capacity]"] = original_df["[IHR Capacity]"].replace(
+        [
+            "IHR02",
+            "IHR03",
+            "IHR06",
+            "IHR07",
+            "IHR08",
+            "IHR09",
+            "IHR10",
+            "IHR11",
+            "IHR12",
+        ],
+        [
+            "SPAR02",
+            "SPAR06",
+            "SPAR10",
+            "SPAR07",
+            "SPAR05",
+            "SPAR11",
+            "SPAR03",
+            "SPAR04",
+            "SPAR12",
+        ],
+    )
+    # original_df["[IHR Capacity]"] = ihr_capacity_clean(original_df["[IHR Capacity]"])
     print("Extracting unique entities to " + ENTFILE + "...")
     original_df[["GeoAreaName"]].drop_duplicates().dropna().rename(
         columns={"GeoAreaName": "Country"}
@@ -203,6 +230,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                 & (original_df.SeriesCode == row["SeriesCode"])
             ]
         )
+
         _, dimensions, dimension_members = get_series_with_relevant_dimensions(
             data_filtered, init_dimensions, init_non_dimensions
         )
