@@ -37,7 +37,6 @@ from un_sdg import (
 )
 
 from un_sdg.core import (
-    ihr_capacity_clean,
     create_short_unit,
     extract_datapoints,
     get_distinct_entities,
