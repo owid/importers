@@ -17,6 +17,7 @@ Usage::
 
 import os
 import logging
+from typing import Optional
 
 from db import get_connection
 from db_utils import DBUtils
@@ -26,7 +27,9 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-def main(dataset_id: int) -> None:
+def main(dataset_id: Optional[int] = None) -> None:
+    if not dataset_id:
+        raise ValueError("must provide a dataset_id to delete")
 
     assert os.getenv("DB_HOST") == "localhost", (
         "This script is only intended for use in local/dev environments and "
@@ -35,41 +38,51 @@ def main(dataset_id: int) -> None:
     with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
         # deletes data points
-        logger.info('Deleting data values...')
-        n_datavalues_deleted = db.cursor.execute(f"""
+        logger.info("Deleting data values...")
+        n_datavalues_deleted = db.cursor.execute(
+            f"""
             DELETE FROM data_values
             WHERE variableId IN (
-                SELECT id 
+                SELECT id
                 FROM variables
                 WHERE datasetId={dataset_id}
             )
-        """)
+        """
+        )
 
         # deletes variables
-        logger.info('Deleting variables...')
-        n_variables_deleted = db.cursor.execute(f"""
+        logger.info("Deleting variables...")
+        n_variables_deleted = db.cursor.execute(
+            f"""
             DELETE FROM variables
             WHERE datasetId={dataset_id}
-        """)
+        """
+        )
 
         # deletes sources
-        logger.info('Deleting sources...')
-        n_sources_deleted = db.cursor.execute(f"""
+        logger.info("Deleting sources...")
+        n_sources_deleted = db.cursor.execute(
+            f"""
             DELETE FROM sources
             WHERE datasetId={dataset_id}
-        """)
+        """
+        )
 
         # deletes dataset
-        logger.info('Deleting dataset...')
-        n_datasets_deleted = db.cursor.execute(f"""
+        logger.info("Deleting dataset...")
+        n_datasets_deleted = db.cursor.execute(
+            f"""
             DELETE FROM datasets
             WHERE id={dataset_id}
-        """)
+        """
+        )
 
-        logger.info(f"Deleted {n_datasets_deleted} datasets, "
-                    f"{n_sources_deleted} sources, "
-                    f"{n_variables_deleted} variables, "
-                    f"{n_datavalues_deleted} data values.")
+        logger.info(
+            f"Deleted {n_datasets_deleted} datasets, "
+            f"{n_sources_deleted} sources, "
+            f"{n_variables_deleted} variables, "
+            f"{n_datavalues_deleted} data values."
+        )
 
 
 if __name__ == "__main__":

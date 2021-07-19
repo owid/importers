@@ -17,7 +17,6 @@ import pandas as pd
 from pymysql import Connection
 
 from db import get_connection
-from db_utils import DBUtils
 from worldbank_wdi import OUTPATH
 
 UPDATE_DB = False
