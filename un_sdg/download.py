@@ -29,7 +29,7 @@ delete_output():
 
 
 def delete_output(keep_paths: List[str]) -> None:
-    output_files = glob.glob(os.path.join(OUTPATH, "*.*"))
+    output_files = glob.glob(os.path.join(OUTPATH, "**/*.*"), recursive=True)
     base_files = []
     for file in output_files:
         bf = os.path.basename(file)
