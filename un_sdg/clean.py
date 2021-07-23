@@ -33,7 +33,6 @@ from un_sdg import (
     DATASET_AUTHORS,
     DATASET_VERSION,
     DATASET_RETRIEVED_DATE,
-    DATASET_NAMESPACE,
 )
 
 from un_sdg.core import (
@@ -158,7 +157,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         df_sources = df_sources.append(
             {
                 "id": i,
-                "name": "%s %s" % (row["SeriesDescription"], DATASET_NAMESPACE),
+                "name": "%s" % (row["SeriesDescription"]),
                 "description": json.dumps(source_description),
                 "dataset_id": df_datasets.iloc[0][
                     "id"
