@@ -79,14 +79,13 @@ def main():
 
             values = [
                 (
-                    float(row[variable.slug])
-                    if not np.isnan(row[variable.slug])
-                    else "",
+                    float(row[variable.slug]),
                     int(row["RequestYear"]),
                     entity_name_map[row["CountryName"]],
                     db_variable_id,
                 )
                 for _, row in data_df.iterrows()
+                if not np.isnan(row[variable.slug])
             ]
 
             print("Inserting values...")
