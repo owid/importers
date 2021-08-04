@@ -9,6 +9,7 @@
 
 
 import sys
+
 sys.path.append("..")
 
 import pandas as pd
@@ -19,11 +20,11 @@ import json
 from glob import glob
 import zipfile
 
-DATA_PATH = 'input/FAOSTAT'
-DATA_UNZIP_PATH = 'input/tmp'
-METADATA_PATH = 'input/metadata'
-OUTPUT_PATH = 'output/'
-STANDARDIZATION_PATH = 'standardization/'
+DATA_PATH = "input/FAOSTAT"
+DATA_UNZIP_PATH = "input/tmp"
+METADATA_PATH = "input/metadata"
+OUTPUT_PATH = "output/"
+STANDARDIZATION_PATH = "standardization/"
 
 
 # ## Load the metadata
@@ -32,9 +33,8 @@ STANDARDIZATION_PATH = 'standardization/'
 
 
 def read_json_file(file_path):
-    with open(file_path, 'r') as json_file:
+    with open(file_path, "r") as json_file:
         return json.load(json_file)
-    
 
 
 # In[3]:
@@ -47,12 +47,12 @@ def get_name_from_path(file_path):
 # In[4]:
 
 
-metadata_by_code = read_json_file(os.path.join(METADATA_PATH, 'metadata_by_code.json'))
-datasets = read_json_file(os.path.join(METADATA_PATH, 'datasets.json'))
+metadata_by_code = read_json_file(os.path.join(METADATA_PATH, "metadata_by_code.json"))
+datasets = read_json_file(os.path.join(METADATA_PATH, "datasets.json"))
 
-# In order to match the metadata against our bulk downloaded files, we need to 
+# In order to match the metadata against our bulk downloaded files, we need to
 for dataset in datasets:
-    dataset['FileName'] = get_name_from_path(dataset['FileLocation'])
+    dataset["FileName"] = get_name_from_path(dataset["FileLocation"])
 
 
 # ### Exclude the datasets we can't support
@@ -62,8 +62,8 @@ for dataset in datasets:
 # In[5]:
 
 
-codes_to_exclude = ['PM', 'OA', 'CP', 'ET', 'PA', 'HS', 'TM', 'EA', 'FA', 'FT']
-datasets = [d for d in datasets if d['DatasetCode'] not in codes_to_exclude]
+codes_to_exclude = ["PM", "OA", "CP", "ET", "PA", "HS", "TM", "EA", "FA", "FT"]
+datasets = [d for d in datasets if d["DatasetCode"] not in codes_to_exclude]
 
 
 # ### Ensure the metadata is correctly loaded
@@ -77,7 +77,7 @@ pd.DataFrame(datasets)
 # In[7]:
 
 
-pd.DataFrame(metadata_by_code['QC'])
+pd.DataFrame(metadata_by_code["QC"])
 
 
 # ## Check whether we have all datasets
@@ -86,7 +86,7 @@ pd.DataFrame(metadata_by_code['QC'])
 
 
 files_we_have = set(map(get_name_from_path, glob(os.path.join(DATA_PATH, "*.zip"))))
-files_in_metadata = set(map(lambda d: d['FileName'], datasets))
+files_in_metadata = set(map(lambda d: d["FileName"], datasets))
 
 
 # In[9]:
@@ -105,12 +105,12 @@ def find(fn, lst):
         if fn(item):
             return item
 
+
 def get_metadata_field(code, label):
     try:
-        return find(
-            lambda row: row['metadata_label'] == label, 
-            metadata_by_code[code]
-        )['metadata_text']
+        return find(lambda row: row["metadata_label"] == label, metadata_by_code[code])[
+            "metadata_text"
+        ]
     except:
         return ""
 
@@ -121,64 +121,67 @@ def get_metadata_field(code, label):
 
 
 pd.DataFrame(datasets).head()
-    
 
 
 # In[12]:
 
 
-owid_datasets = [] # pd.DataFrame(columns=['id', 'name', 'code', 'zip_file'])
-owid_sources = [] # pd.DataFrame(columns=['id', 'name', 'description', 'dataset_id'])
+owid_datasets = []  # pd.DataFrame(columns=['id', 'name', 'code', 'zip_file'])
+owid_sources = []  # pd.DataFrame(columns=['id', 'name', 'description', 'dataset_id'])
 
 for dataset in datasets:
-    
+
     # DATASET
-    
-    name = dataset['DatasetName']
-    code = dataset['DatasetCode']
-    
-    owid_datasets.append({
-        'id': code, 
-        'code': code,
-        'name': name,
-        'description': dataset['DatasetDescription'],
-        'zip_filename': dataset['FileName']
-    })
-    
+
+    name = dataset["DatasetName"]
+    code = dataset["DatasetCode"]
+
+    owid_datasets.append(
+        {
+            "id": code,
+            "code": code,
+            "name": name,
+            "description": dataset["DatasetDescription"],
+            "zip_filename": dataset["FileName"],
+        }
+    )
+
     # SOURCE
-    
+
     source_desc = {}
-    source_desc['dataPublishedBy'] = "Food and Agriculture Organization of the United Nations (FAO) (2020)"
-    source_desc['dataPublisherSource'] = get_metadata_field(code, 'Source data')
-    source_desc['link'] = "http://www.fao.org/faostat/en/?#data/"
-    source_desc['retrievedDate'] = datetime.datetime.now().strftime("%d-%b-%Y")
-    source_desc['additionalInfo'] = get_metadata_field(code, 'Statistical concepts and definitions')
-    
-    owid_sources.append({
-        'id': code,
-        'dataset_id': code,
-        'name': name,
-        'description': json.dumps(source_desc)
-    })
-    
-    
+    source_desc[
+        "dataPublishedBy"
+    ] = "Food and Agriculture Organization of the United Nations (FAO) (2020)"
+    source_desc["dataPublisherSource"] = get_metadata_field(code, "Source data")
+    source_desc["link"] = "http://www.fao.org/faostat/en/?#data/"
+    source_desc["retrievedDate"] = datetime.datetime.now().strftime("%d-%b-%Y")
+    source_desc["additionalInfo"] = get_metadata_field(
+        code, "Statistical concepts and definitions"
+    )
+
+    owid_sources.append(
+        {
+            "id": code,
+            "dataset_id": code,
+            "name": name,
+            "description": json.dumps(source_desc),
+        }
+    )
 
 
 # In[13]:
 
 
-pd.DataFrame(owid_datasets)[['id', 'name', 'description']].to_csv(
-    os.path.join(OUTPUT_PATH, 'datasets.csv'),
-    index=False
+pd.DataFrame(owid_datasets)[["id", "name", "description"]].to_csv(
+    os.path.join(OUTPUT_PATH, "datasets.csv"), index=False
 )
 
 
 # In[14]:
 
 
-pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
-    os.path.join(OUTPUT_PATH, 'sources.csv'),
-    index=False
+pd.DataFrame(owid_sources)[["id", "name", "description", "dataset_id"]].to_csv(
+    os.path.join(OUTPUT_PATH, "sources.csv"), index=False
 )
 
 
@@ -192,27 +195,28 @@ pd.DataFrame(owid_sources)[['id', 'name', 'description', 'dataset_id']].to_csv(
 
 
 def load_dataset(code):
-    dataset = find(lambda d: d['code'] == code, owid_datasets)
-    zip_filepath = os.path.join(DATA_PATH, dataset['zip_filename'])
+    dataset = find(lambda d: d["code"] == code, owid_datasets)
+    zip_filepath = os.path.join(DATA_PATH, dataset["zip_filename"])
     csv_filepath = unzip_csv(zip_filepath)
-    df = pd.read_csv(csv_filepath, encoding='latin-1', low_memory=True)
+    df = pd.read_csv(csv_filepath, encoding="latin-1", low_memory=True)
     os.remove(csv_filepath)
     return df
 
+
 def unzip_csv(zip_filepath):
     """Returns the path of the unzipped CSV"""
-    zip_ref = zipfile.ZipFile(zip_filepath, 'r')
-    
+    zip_ref = zipfile.ZipFile(zip_filepath, "r")
+
     # Some ZIP files contain multiple files, usually one is a codebook for Flags
     # used in the dataset. We only want the CSVs that have 'All_Data' in their
     # filename.
-    csv_filename = find(lambda name: 'All_Data' in name, zip_ref.namelist())
-    
+    csv_filename = find(lambda name: "All_Data" in name, zip_ref.namelist())
+
     zip_ref.extract(csv_filename, DATA_UNZIP_PATH)
     zip_ref.close()
-    
+
     csv_filepath = os.path.join(DATA_UNZIP_PATH, csv_filename)
-    
+
     return csv_filepath
 
 
@@ -242,7 +246,7 @@ def unzip_csv(zip_filepath):
 #     df = load_dataset(dataset['code'])
 #     dim_cols = [col for col in df.columns if col not in ['Value', 'Note']]
 #     pd.concat(
-#         [pd.DataFrame({ col: df[col].unique() }) for col in dim_cols], 
+#         [pd.DataFrame({ col: df[col].unique() }) for col in dim_cols],
 #         axis=1
 #     ).to_csv(os.path.join('dimensions', dataset['name'] + '.csv'))
 
@@ -253,8 +257,8 @@ def unzip_csv(zip_filepath):
 
 
 def year_to_int(year):
-    if isinstance(year, str) and '-' in year:
-        start, end = year.split('-')
+    if isinstance(year, str) and "-" in year:
+        start, end = year.split("-")
         return (int(end) + int(start)) // 2
     else:
         return year
@@ -271,36 +275,115 @@ def year_to_int(year):
 # In[21]:
 
 
-# We have to include the Item Code in the variable name because there are Items that have 
+# We have to include the Item Code in the variable name because there are Items that have
 # an identical name to their Item Group, e.g. "Miscellaneous" is both an item group and an item.
 # The only way to differentiate is to use the code.
 
 params_by_cols = {
-    tuple(['Area Code', 'Area', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag']): {
-        'entity': 'Area',
-        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
-        'code': ['Item Code', 'Element Code', 'Unit']
+    tuple(
+        [
+            "Area Code",
+            "Area",
+            "Item Code",
+            "Item",
+            "Element Code",
+            "Element",
+            "Year Code",
+            "Year",
+            "Unit",
+            "Value",
+            "Flag",
+        ]
+    ): {
+        "entity": "Area",
+        "breakdown": ["Item", "Item Code", "Element", "Element Code", "Unit"],
+        "code": ["Item Code", "Element Code", "Unit"],
     },
-    tuple(['Area Code', 'Area', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
-        'entity': 'Area',
-        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
-        'code': ['Item Code', 'Element Code', 'Unit']
+    tuple(
+        [
+            "Area Code",
+            "Area",
+            "Item Code",
+            "Item",
+            "Element Code",
+            "Element",
+            "Year Code",
+            "Year",
+            "Unit",
+            "Value",
+            "Flag",
+            "Note",
+        ]
+    ): {
+        "entity": "Area",
+        "breakdown": ["Item", "Item Code", "Element", "Element Code", "Unit"],
+        "code": ["Item Code", "Element Code", "Unit"],
     },
-    tuple(['Country Code', 'Country', 'Item Code', 'Item', 'Element Code', 'Element', 'Year Code', 'Year', 'Unit', 'Value', 'Flag']): {
-        'entity': 'Country',
-        'breakdown': ['Item', 'Item Code', 'Element', 'Element Code', 'Unit'],
-        'code': ['Item Code', 'Element Code', 'Unit']
+    tuple(
+        [
+            "Country Code",
+            "Country",
+            "Item Code",
+            "Item",
+            "Element Code",
+            "Element",
+            "Year Code",
+            "Year",
+            "Unit",
+            "Value",
+            "Flag",
+        ]
+    ): {
+        "entity": "Country",
+        "breakdown": ["Item", "Item Code", "Element", "Element Code", "Unit"],
+        "code": ["Item Code", "Element Code", "Unit"],
     },
-    tuple(['Area Code', 'Area', 'Item Code', 'Item', 'ISO Currency Code', 'Currency', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
-        'entity': 'Area',
-        'breakdown': ['Item', 'Item Code', 'Currency'],
-        'code': ['Item Code', 'ISO Currency Code']
+    tuple(
+        [
+            "Area Code",
+            "Area",
+            "Item Code",
+            "Item",
+            "ISO Currency Code",
+            "Currency",
+            "Year Code",
+            "Year",
+            "Unit",
+            "Value",
+            "Flag",
+            "Note",
+        ]
+    ): {
+        "entity": "Area",
+        "breakdown": ["Item", "Item Code", "Currency"],
+        "code": ["Item Code", "ISO Currency Code"],
     },
-    tuple(['Area Code', 'Area', 'Source Code', 'FAO Source', 'Indicator Code', 'Indicator', 'Year Code', 'Year', 'Unit', 'Value', 'Flag', 'Note']): {
-        'entity': 'Area',
-        'breakdown': ['Indicator', 'Indicator Code', 'FAO Source', 'Source Code', 'Unit'],
-        'code': ['Indicator Code', 'Source Code', 'Unit']
-    }
+    tuple(
+        [
+            "Area Code",
+            "Area",
+            "Source Code",
+            "FAO Source",
+            "Indicator Code",
+            "Indicator",
+            "Year Code",
+            "Year",
+            "Unit",
+            "Value",
+            "Flag",
+            "Note",
+        ]
+    ): {
+        "entity": "Area",
+        "breakdown": [
+            "Indicator",
+            "Indicator Code",
+            "FAO Source",
+            "Source Code",
+            "Unit",
+        ],
+        "code": ["Indicator Code", "Source Code", "Unit"],
+    },
 }
 
 
@@ -336,15 +419,15 @@ params_by_cols = {
 # ### Data extraction procedure
 
 # Need to specify:
-# 
+#
 # - Variable name prefix
 # - Columns to break down by
 # - Columns to use for constructing the `code` value
 # - What to use as the entity field
 # - That we should break down by `Unit` (all tables have it, it's just good if it's explicit)
-# 
+#
 # What we know:
-# 
+#
 # - Every dataset has a `Year` field (which we might need to transform to a single year from a range)
 
 # In[23]:
@@ -352,59 +435,70 @@ params_by_cols = {
 
 def process_dataset(code):
     """Returns the variables inserted"""
-    
+
     idx = 0
-    
-    dataset = find(lambda d: d['code'] == code, owid_datasets)
+
+    dataset = find(lambda d: d["code"] == code, owid_datasets)
     df_dataset = load_dataset(code)
     cols = tuple(df_dataset.columns)
-    
+
     if cols not in params_by_cols:
-        print('ERROR: processing dataset %s: could not find %s in the list of column sets' % (code, str(cols)))
+        print(
+            "ERROR: processing dataset %s: could not find %s in the list of column sets"
+            % (code, str(cols))
+        )
         return
-    
+
     params = params_by_cols[cols]
-    
+
     variables = []
-    
-    for key, df in df_dataset.groupby(params['breakdown']):
+
+    for key, df in df_dataset.groupby(params["breakdown"]):
         idx += 1
-        var_id = dataset['code'] + '-' + str(idx)
-        name_prefix = dataset['name'].split(":", 1)[1]
-        name_suffix = " - ".join(map(str, df[params['breakdown']].iloc[0].to_list()))
+        var_id = dataset["code"] + "-" + str(idx)
+        name_prefix = dataset["name"].split(":", 1)[1]
+        name_suffix = " - ".join(map(str, df[params["breakdown"]].iloc[0].to_list()))
         name = " - ".join([name_prefix, name_suffix]).strip()
-        code = " - ".join([dataset['code'], *map(str, df[params['code']].iloc[0].to_list())])
-        unit = df.iloc[0].to_dict()['Unit'] if 'Unit' in df.columns else ""
-        
-        variables.append({
-            'id': var_id,
-            'name': name,
-            'code': code,
-            'unit': unit,
-            'description': dataset['description'],
-            'dataset_id': dataset['id'],
-            'source_id': dataset['id'] # not a nice way to do it, but we know that source id == dataset id
-        })
-        
-        datapoints = df.rename(columns={"Value": "value", params['entity']: "entity", "Year": "year"})[['entity', 'year', 'value']]
-        
+        code = " - ".join(
+            [dataset["code"], *map(str, df[params["code"]].iloc[0].to_list())]
+        )
+        unit = df.iloc[0].to_dict()["Unit"] if "Unit" in df.columns else ""
+
+        variables.append(
+            {
+                "id": var_id,
+                "name": name,
+                "code": code,
+                "unit": unit,
+                "description": dataset["description"],
+                "dataset_id": dataset["id"],
+                "source_id": dataset[
+                    "id"
+                ],  # not a nice way to do it, but we know that source id == dataset id
+            }
+        )
+
+        datapoints = df.rename(
+            columns={"Value": "value", params["entity"]: "entity", "Year": "year"}
+        )[["entity", "year", "value"]]
+
         # Some years are defined as 3-year ranges, e.g. "2013-2015"
         # We want to convert these to a single year
-        datapoints['year'] = datapoints['year'].map(year_to_int)
-        
+        datapoints["year"] = datapoints["year"].map(year_to_int)
+
         # Convert all values to numeric
         # In some cases, FAO defines values as '<0.1' or '<0.5'. These will be converted
         # to nan, and they will be dropped in the next step.
-        datapoints['value'] = pd.to_numeric(datapoints['value'], errors='coerce')
-        
+        datapoints["value"] = pd.to_numeric(datapoints["value"], errors="coerce")
+
         # Drop rows where any column is nan.
         # And drop duplicate rows. Note that the value also has to be identical, so we are not discarding
         # any distinct datapoints accidentally.
-        datapoints = datapoints.dropna(how='any').drop_duplicates()
-        
-        output_path = os.path.join(OUTPUT_PATH, 'datapoints/%s.csv' % str(var_id))
+        datapoints = datapoints.dropna(how="any").drop_duplicates()
+
+        output_path = os.path.join(OUTPUT_PATH, "datapoints/%s.csv" % str(var_id))
         datapoints.to_csv(output_path, index=False)
-    
+
     return variables
 
 
@@ -413,7 +507,7 @@ def process_dataset(code):
 # In[24]:
 
 
-get_ipython().system('mkdir -p $OUTPUT_PATH/datapoints')
+get_ipython().system("mkdir -p $OUTPUT_PATH/datapoints")
 
 
 # In[25]:
@@ -428,9 +522,11 @@ print("Extracting datapoints & variables...")
 variables = []
 
 for dataset in tqdm(owid_datasets):
-    variables += process_dataset(dataset['code'])
+    variables += process_dataset(dataset["code"])
 
-pd.DataFrame(variables)[['id', 'name', 'code', 'unit', 'description', 'dataset_id', 'source_id']]     .to_csv(os.path.join(OUTPUT_PATH, 'variables.csv'), index=False)
+pd.DataFrame(variables)[
+    ["id", "name", "code", "unit", "description", "dataset_id", "source_id"]
+].to_csv(os.path.join(OUTPUT_PATH, "variables.csv"), index=False)
 
 
 # ## Extract **entities** (for standardization)
@@ -446,17 +542,15 @@ print("Extracting unique entities...")
 
 entities = set()
 
-for filepath in tqdm(glob(os.path.join(OUTPUT_PATH, 'datapoints/*.csv'))):
+for filepath in tqdm(glob(os.path.join(OUTPUT_PATH, "datapoints/*.csv"))):
     df = pd.read_csv(filepath)
-    entities |= set(df['entity'].tolist())
+    entities |= set(df["entity"].tolist())
 
 res = pd.DataFrame()
-res['name'] = list(entities)
-res.sort_values(by='name')     .to_csv(os.path.join(STANDARDIZATION_PATH, "entities.csv"), index=False)
+res["name"] = list(entities)
+res.sort_values(by="name").to_csv(
+    os.path.join(STANDARDIZATION_PATH, "entities.csv"), index=False
+)
 
 
 # In[ ]:
-
-
-
-

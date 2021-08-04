@@ -8,30 +8,18 @@ DATASET_YEAR = 2019
 
 
 NAME_TO_PREFIX = {
-    "input/WPP2019_INT_F03_3_POPULATION_BY_AGE_ANNUAL_FEMALE.xlsx": \
-        "Female population by age (thousands)",
-    "input/WPP2019_INT_F03_2_POPULATION_BY_AGE_ANNUAL_MALE.xlsx": \
-        "Male population by age (thousands)",
-    "input/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx": \
-        "Total population by age, both sexes combined (thousands)",
-    "input/WPP2019_INT_F02C_3_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_FEMALE.xlsx": \
-        "Female dependency ratios for different age groups",
-    "input/WPP2019_INT_F02C_2_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_MALE.xlsx": \
-        "Male dependency ratios for different age groups",
-    "input/WPP2019_INT_F02C_1_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_BOTH_SEXES.xlsx": \
-        "Dependency ratios (both sexes combined) for different age groups",
-    "input/WPP2019_INT_F02B_3_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_FEMALE.xlsx": \
-        "Percentage of female population by broad age group (per 100 female total population)",
-    "input/WPP2019_INT_F02B_2_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_MALE.xlsx": \
-        "Percentage of male population by broad age group (per 100 male total population)",
-    "input/WPP2019_INT_F02B_1_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_BOTH_SEXES.xlsx": \
-        "Percentage of total population by broad age group, both sexes combined (per 100 total population)",
-    "input/WPP2019_INT_F02A_3_ANNUAL_POPULATION_INDICATORS_FEMALE.xlsx": \
-        "Female population by broad age group (thousands)",
-    "input/WPP2019_INT_F02A_2_ANNUAL_POPULATION_INDICATORS_MALE.xlsx": \
-        "Male population by broad age group (thousands)",
-    "input/WPP2019_INT_F02A_1_ANNUAL_POPULATION_INDICATORS_BOTH_SEXES.xlsx": \
-        "Total population by broad age group, both sexes combined (thousands)"
+    "input/WPP2019_INT_F03_3_POPULATION_BY_AGE_ANNUAL_FEMALE.xlsx": "Female population by age (thousands)",
+    "input/WPP2019_INT_F03_2_POPULATION_BY_AGE_ANNUAL_MALE.xlsx": "Male population by age (thousands)",
+    "input/WPP2019_INT_F03_1_POPULATION_BY_AGE_ANNUAL_BOTH_SEXES.xlsx": "Total population by age, both sexes combined (thousands)",
+    "input/WPP2019_INT_F02C_3_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_FEMALE.xlsx": "Female dependency ratios for different age groups",
+    "input/WPP2019_INT_F02C_2_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_MALE.xlsx": "Male dependency ratios for different age groups",
+    "input/WPP2019_INT_F02C_1_ANNUAL_POPULATION_INDICATORS_DEPENDENCY_RATIOS_BOTH_SEXES.xlsx": "Dependency ratios (both sexes combined) for different age groups",
+    "input/WPP2019_INT_F02B_3_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_FEMALE.xlsx": "Percentage of female population by broad age group (per 100 female total population)",
+    "input/WPP2019_INT_F02B_2_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_MALE.xlsx": "Percentage of male population by broad age group (per 100 male total population)",
+    "input/WPP2019_INT_F02B_1_ANNUAL_POPULATION_INDICATORS_PERCENTAGE_BOTH_SEXES.xlsx": "Percentage of total population by broad age group, both sexes combined (per 100 total population)",
+    "input/WPP2019_INT_F02A_3_ANNUAL_POPULATION_INDICATORS_FEMALE.xlsx": "Female population by broad age group (thousands)",
+    "input/WPP2019_INT_F02A_2_ANNUAL_POPULATION_INDICATORS_MALE.xlsx": "Male population by broad age group (thousands)",
+    "input/WPP2019_INT_F02A_1_ANNUAL_POPULATION_INDICATORS_BOTH_SEXES.xlsx": "Total population by broad age group, both sexes combined (thousands)",
 }
 
 
@@ -43,7 +31,9 @@ def create_datasets():
         data = pd.read_excel(filename, usecols=[0], nrows=9)
         names.append(data.iloc[8, 0])
     datasets = pd.DataFrame({"name": names})
-    datasets.loc[:, "name"] = f"UN WPP {DATASET_YEAR} - " + datasets["name"].str.replace("^[^:]+: ", "")
+    datasets.loc[:, "name"] = f"UN WPP {DATASET_YEAR} - " + datasets[
+        "name"
+    ].str.replace("^[^:]+: ", "")
     datasets.to_csv("output/datasets.csv", index_label="id")
 
 
@@ -73,7 +63,7 @@ def create_sources():
         f"UN WPP {DATASET_YEAR} - Percentage of female total population by broad age group, region, subregion and country, annually interpolated for 1950-2100",
         f"UN WPP {DATASET_YEAR} - Dependency ratios (total, child, old-age) for different age groups and for both sexes combined by region, subregion and country, annually interpolated for 1950-2100",
         f"UN WPP {DATASET_YEAR} - Male dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100",
-        f"UN WPP {DATASET_YEAR} - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100"
+        f"UN WPP {DATASET_YEAR} - Female dependency ratios (total, child, old-age) for different age groups by region, subregion and country, annually interpolated for 1950-2100",
     ]
 
     vals = [
@@ -89,22 +79,23 @@ def create_sources():
         "Percentage of annual female total population by broad age groups.",
         "Annual dependency ratios (total, child, old-age) for different age groups and for both sexes combined.",
         "Annual male dependency ratios (total, child, old-age) for different age groups.",
-        "Annual female dependency ratios (total, child, old-age) for different age groups."
+        "Annual female dependency ratios (total, child, old-age) for different age groups.",
     ]
 
     additional_info = dict(zip(keys, vals))
 
-    sources = pd.read_csv("output/datasets.csv").rename(columns={
-        "id": "dataset_id", "name": "dataset_name"
-    })
+    sources = pd.read_csv("output/datasets.csv").rename(
+        columns={"id": "dataset_id", "name": "dataset_name"}
+    )
     sources["name"] = "United Nations – Population Division (2019 Revision)"
-    sources["description"] = sources.apply(create_description, 1, additional_info=additional_info)
+    sources["description"] = sources.apply(
+        create_description, 1, additional_info=additional_info
+    )
     sources = sources[["name", "description", "dataset_id"]]
     sources.to_csv("output/sources.csv", index=False)
 
 
-class DataVariables():
-
+class DataVariables:
     def __init__(self):
 
         self.i = 0
@@ -124,7 +115,7 @@ class DataVariables():
             f"UN WPP {DATASET_YEAR} - Percentage of total population by broad age group, region, subregion and country, annually interpolated for 1950-2100": "Percentage",
             f"UN WPP {DATASET_YEAR} - Interpolated female population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
             f"UN WPP {DATASET_YEAR} - Interpolated male population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
-            f"UN WPP {DATASET_YEAR} - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands"
+            f"UN WPP {DATASET_YEAR} - Interpolated total population by broad age group, region, subregion and country, annually for 1950-2100 (thousands)": "Thousands",
         }
         self.datasets = pd.read_csv("output/datasets.csv")
         self.datavars = pd.DataFrame()
@@ -136,20 +127,22 @@ class DataVariables():
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
-            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove+2:]
+            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove + 2 :]
 
             title = data[data.columns[0]][1]
             print(title)
 
-            for item in data.loc[7, data.columns[8]: data.columns[-1]].values:
+            for item in data.loc[7, data.columns[8] : data.columns[-1]].values:
                 if prefix:
                     self.names.append(title + ": " + prefix + " - " + item)
                 else:
                     self.names.append(title + ": " + item)
                 self.ids.append(self.i)
-                self.i+=1
+                self.i += 1
                 self.units.append(self.doc_to_unit[res])
-                self.dataset_ids.append(self.datasets[self.datasets["name"] == res]["id"].values[0])
+                self.dataset_ids.append(
+                    self.datasets[self.datasets["name"] == res]["id"].values[0]
+                )
 
     def get_custom_variable(self, path, skiprows=8, prefix=None):
 
@@ -170,7 +163,7 @@ class DataVariables():
             21: "Thousands",
             22: "Per 1,000 population",
             23: "Thousands",
-            24: "Percentage"
+            24: "Percentage",
         }
 
         for sheet_name in ["ESTIMATES", "MEDIUM VARIANT"]:
@@ -178,21 +171,23 @@ class DataVariables():
 
             val = data[data.columns[0]][0]
             index_to_remove = val.find(":")
-            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove+2:]
+            res = f"UN WPP {DATASET_YEAR} - " + val[index_to_remove + 2 :]
 
             title = data[data.columns[0]][1]
             print(title)
 
             col_index = 8
-            for item in data.loc[7, data.columns[8]: data.columns[-1]].values:
+            for item in data.loc[7, data.columns[8] : data.columns[-1]].values:
                 if prefix:
                     self.names.append(title + ": " + prefix + " - " + item)
                 else:
                     self.names.append(title + ": " + item)
                 self.ids.append(self.i)
-                self.i+=1
+                self.i += 1
                 self.units.append(column_unit[col_index])
-                self.dataset_ids.append(self.datasets[self.datasets["name"] == res]["id"].values[0])
+                self.dataset_ids.append(
+                    self.datasets[self.datasets["name"] == res]["id"].values[0]
+                )
                 col_index += 1
 
     def get_df(self):
@@ -237,7 +232,7 @@ def get_datapoints(path, variables, country_mapping, skiprows=8, prefix=None):
         title = data[data.columns[0]][1]
         index_col = 8
 
-        for item in data.loc[7, data.columns[8]: data.columns[-1]].values:
+        for item in data.loc[7, data.columns[8] : data.columns[-1]].values:
 
             if prefix:
                 var_name = title + ": " + prefix + " - " + item
@@ -254,14 +249,18 @@ def get_datapoints(path, variables, country_mapping, skiprows=8, prefix=None):
             data_res["value"] = data2["Unnamed: %s" % str(index_col)]
 
             data_res["country"] = normalize_country(data_res["country"])
-            data_res["country"] = standardize_country(data_res["country"], country_mapping)
+            data_res["country"] = standardize_country(
+                data_res["country"], country_mapping
+            )
             data_res = data_res[data_res["value"] != "..."]
 
             # Remove death estimates for the *current* year to only show projections instead
             if "estimates" in var_name.lower() and "deaths" in var_name.lower():
                 data_res = data_res[data_res["year"] < datetime.date.today().year]
 
-            data_res.to_csv("output/datapoints/datapoints_%s.csv" % str(var_id), index=False)
+            data_res.to_csv(
+                "output/datapoints/datapoints_%s.csv" % str(var_id), index=False
+            )
 
             index_col += 1
 
@@ -275,13 +274,17 @@ def create_datapoints():
     for filename in tqdm(glob("input/*.xlsx")):
         if filename == "input/WPP2019_INT_F01_ANNUAL_DEMOGRAPHIC_INDICATORS.xlsx":
             get_datapoints(
-                filename, variables, prefix="Annually interpolated demographic indicators",
-                country_mapping=country_mapping
+                filename,
+                variables,
+                prefix="Annually interpolated demographic indicators",
+                country_mapping=country_mapping,
             )
         else:
             get_datapoints(
-                filename, variables, prefix=NAME_TO_PREFIX[filename],
-                country_mapping=country_mapping
+                filename,
+                variables,
+                prefix=NAME_TO_PREFIX[filename],
+                country_mapping=country_mapping,
             )
 
 
@@ -302,6 +305,7 @@ def main():
     create_variables()
     create_datapoints()
     create_country_list()
+
 
 if __name__ == "__main__":
     main()

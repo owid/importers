@@ -1,24 +1,13 @@
-from os import path
 import os.path
-from io import StringIO
 import numpy as np
-from math import floor, ceil
-import requests
-import json
 import os
 import pandas as pd
-import sys
-import pdb
 import time
 
-sys.path.append("../..")
-from importers.utils import write_file
 import glob
 from functools import reduce
 from bisect import bisect_left
 
-
-from HeadCount_Files_Downloader import HeadCount_Files_Downloader
 
 pd.options.mode.chained_assignment = None  # default='warn'
 
@@ -147,7 +136,9 @@ def get_headcount_for_country_year_and_poverty_line(countryName, poverty_line, y
     df = pd.read_csv(filename)
     return df[(df.CountryName == countryName) & (df.RequestYear == year)][
         "headcount_ratio"
-    ].iloc[0]
+    ].iloc[  # type: ignore
+        0
+    ]
 
 
 def generate_relative_poverty_line_df(decile_df):

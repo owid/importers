@@ -1,12 +1,5 @@
-import sys
-
-sys.path.append("..")
-
-from db import connection
-from db_utils import DBUtils
-import requests
-import pdb
-import csv
+from ..db import connection
+from ..db_utils import DBUtils
 import numpy as np
 import pandas as pd
 
