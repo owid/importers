@@ -120,7 +120,7 @@ create_sources():
 - Each series code may be associated with multiple indicators
 - Each series code may be made up of multiple sources ('dataPublisherSource')
 - For each series we extract the 'dataPublisherSource', if there are two or fewer we record all of them,
- if there are more we state that '"Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"'
+ if there are more we state that '"Data from multiple sources compiled by the UN'
 """
 
 
@@ -144,7 +144,6 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         dp_source = original_df[
             original_df.SeriesCode == row["SeriesCode"]
         ].Source.drop_duplicates()
-        print(dp_source)
         if len(dp_source) <= 2:
             source_description["dataPublisherSource"] = dp_source.str.cat(sep="; ")
             if os.path.isfile(os.path.join(CONFIGPATH, "sources_edited.json")):
@@ -164,15 +163,20 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         else:
             source_description[
                 "dataPublisherSource"
-            ] = "Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"
+            ] = "Data from multiple sources compiled by the UN"
         try:
-            source_description["additionalInfo"] = dp_source.str.cat(sep="; ")
+            source_description["additionalInfo"] = "%s: %s; %s: %s" % (
+                "Variable description",
+                row["SeriesDescription"],
+                "Detailed sources:",
+                dp_source.str.cat(sep="; "),
+            )
         except:
             pass
         df_sources = df_sources.append(
             {
                 "id": i,
-                "name": "%s" % (row["SeriesDescription"]),
+                "name": source_description["dataPublisherSource"],
                 "description": json.dumps(source_description),
                 "dataset_id": df_datasets.iloc[0][
                     "id"
