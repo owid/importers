@@ -1,6 +1,9 @@
 """executes bulk dataset import + chart updates for the UN_SDGs dataset.
 Usage:
     python -m un_sdg.main
+
+To run the code without downloading the data again: 
+    python -m un_sdg.main --skip_download
 """
 import click
 
