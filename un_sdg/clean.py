@@ -144,14 +144,29 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         dp_source = original_df[
             original_df.SeriesCode == row["SeriesCode"]
         ].Source.drop_duplicates()
+        print(dp_source)
         if len(dp_source) <= 2:
             source_description["dataPublisherSource"] = dp_source.str.cat(sep="; ")
+            if os.path.isfile(os.path.join(CONFIGPATH, "sources_edited.json")):
+                json_file_path = os.path.join(
+                    CONFIGPATH, "sources_edited.json"
+                )  # replacing the sources with manually created source names in sources_edited.json.
+                with open(json_file_path, "r") as j:
+                    edited_sources = json.loads(j.read())
+                    source_description["dataPublisherSource"] = source_description[
+                        "dataPublisherSource"
+                    ].replace(
+                        "\xa0", " "
+                    )  # there is some rogue unicode in one of the sources.
+                    source_description["dataPublisherSource"] = edited_sources[
+                        source_description["dataPublisherSource"]
+                    ]
         else:
             source_description[
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"
         try:
-            source_description["additionalInfo"] = None
+            source_description["additionalInfo"] = dp_source.str.cat(sep="; ")
         except:
             pass
         df_sources = df_sources.append(
