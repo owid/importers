@@ -202,13 +202,16 @@ class DBUtils:
     def upsert_source(self, name, description, dataset_id):
         # There is no UNIQUE key constraint we can rely on to prevent duplicates
         # so we have to do a SELECT before INSERT...
+        print(name, dataset_id)
         row = self.fetch_one_or_none(
             """
-            SELECT id FROM sources
-            WHERE name = %s
-            AND datasetId = %s
-            AND description = CAST(%s AS JSON)
-            LIMIT 1
+           SELECT id FROM sources
+           WHERE name = %s
+           AND datasetId = %s
+           AND description->"$.dataPublishedBy" = dataPublishedBy
+           AND description->"$.dataPublisherSource" = dataPublisherSource
+           AND description->"$.additionalInfo" = additionalInfo
+           LIMIT 1
         """,
             [name, dataset_id, description],
         )
