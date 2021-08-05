@@ -6,8 +6,11 @@ import os
 import pandas as pd
 import requests
 import zipfile
+import shutil
 
+from PyPDF2 import PdfFileMerger
 from io import BytesIO
+from pathlib import Path
 from un_sdg import INFILE, OUTPATH, METAPATH, METADATA_LOC
 from typing import List
 
@@ -18,6 +21,7 @@ keep_paths = []  # files not to be deleted
 def main():
     delete_output(keep_paths)
     download_data()
+    delete_metadata()
     download_metadata()
 
 
@@ -73,10 +77,15 @@ def download_data() -> None:
     df.to_csv(INFILE, index=False, compression="gzip")
 
 
+def delete_metadata() -> None:
+    shutil.rmtree(METAPATH)
+
+
 def download_metadata() -> None:
     # Download metadata
     zip_url = METADATA_LOC
     r = requests.get(zip_url)
+    Path(METAPATH).mkdir(parents=True, exist_ok=True)
     with open(os.path.join(METAPATH, "sdg-metadata.zip"), "wb") as f:
         f.write(r.content)
 
@@ -90,6 +99,18 @@ def download_metadata() -> None:
     for file in filtered_files:
         path_to_file = os.path.join(METAPATH, file)
         os.remove(path_to_file)
+
+    # Some indicators have multiple associated pdfs, this combines these PDFs into one, e.g. Metadata-01-01-01a.pdf and Metadata-01-01-01b.pdf. If not done then un_sdg.core.extract_description() will not work.
+    pdf_in_directory = os.listdir(METAPATH)
+    for pdf in pdf_in_directory:
+        pref = pdf[0:17]
+        dup_pdf = [x for x in pdf_in_directory if x.startswith(pref)]
+        if len(dup_pdf) > 1:
+            merger = PdfFileMerger()
+            for pdf in dup_pdf:
+                merger.append(os.path.join(METAPATH, pdf))
+            merger.write(os.path.join(METAPATH, pref + ".pdf"))
+            merger.close()
 
 
 if __name__ == "__main__":

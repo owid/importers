@@ -27,6 +27,7 @@ from tqdm import tqdm
 from un_sdg import (
     INFILE,
     ENTFILE,
+    METAPATH,
     OUTPATH,
     CONFIGPATH,
     DATASET_NAME,
@@ -38,6 +39,7 @@ from un_sdg import (
 from un_sdg.core import (
     create_short_unit,
     extract_datapoints,
+    extract_description,
     get_distinct_entities,
     clean_datasets,
     dimensions_description,
@@ -134,7 +136,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "additionalInfo": None,
     }
     all_series = (
-        original_df[["SeriesCode", "SeriesDescription", "[Units]"]]
+        original_df[["SeriesCode", "SeriesDescription", "[Units]", "Indicator"]]
         .drop_duplicates()
         .reset_index()
     )
@@ -165,11 +167,18 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by the UN"
         try:
-            source_description["additionalInfo"] = "%s: %s;\n %s: %s" % (
+            source_description["additionalInfo"] = "%s: %s;\n %s: %s;\n %s: %s " % (
                 "Variable description",
                 row["SeriesDescription"],
                 "Detailed sources",
                 dp_source.str.cat(sep="; "),
+                "Metadata",
+                extract_description(
+                    os.path.join(METAPATH, "Metadata-%s.pdf")
+                    % "-".join(
+                        [part.rjust(2, "0") for part in row["Indicator"].split(".")]
+                    )
+                ),
             )
         except:
             pass
