@@ -63,10 +63,8 @@ def main(dataset_dir: str, dataset_namespace: str):
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
         assert (
-            sources.groupby("dataset_id")["description"]
-            .apply(lambda gp: gp.duplicated().sum() == 0)
-            .all()
-        ), "All sources in a dataset must have a unique name."
+            sources.duplicated(subset=["dataset_id", "name", "description"]).sum() == 0
+        ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,

@@ -207,9 +207,10 @@ class DBUtils:
             SELECT id FROM sources
             WHERE name = %s
             AND datasetId = %s
+            AND description = CAST(%s AS JSON)
             LIMIT 1
         """,
-            [name, dataset_id],
+            [name, dataset_id, description],
         )
 
         if row is None:
