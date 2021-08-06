@@ -13,6 +13,7 @@ multidict==5.1.0
 numpy==1.20.1
 openpyxl==3.0.7
 pandas==1.2.3
+pdfminer
 PyMySQL==1.0.2
 PyPDF2
 python-dateutil==2.8.1
