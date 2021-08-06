@@ -11,13 +11,15 @@ where `walden-local-folder` is the local fodler containing walden project (clone
 https://github.com/owid/walden).
 """
 
+import tempfile
 
-from faostat_2021 import download
-from faostat_2021._parsers import get_parser_args
+from faostat_fs import download
+from faostat_fs._parsers import get_parser_args
 
 
-def main(catalog_folder: str):
-    download.main(catalog_folder)
+def main():
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        filepath = download.main(tmp_dir)
 
 
 if __name__ == "__main__":
