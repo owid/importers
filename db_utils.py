@@ -202,18 +202,24 @@ class DBUtils:
     def upsert_source(self, name, description, dataset_id):
         # There is no UNIQUE key constraint we can rely on to prevent duplicates
         # so we have to do a SELECT before INSERT...
-        print(name, dataset_id)
+        desc_json = json.loads(description)
         row = self.fetch_one_or_none(
             """
            SELECT id FROM sources
-           WHERE name = %s
-           AND datasetId = %s
-           AND description->"$.dataPublishedBy" = dataPublishedBy
-           AND description->"$.dataPublisherSource" = dataPublisherSource
-           AND description->"$.additionalInfo" = additionalInfo
+           WHERE name = %(name)s
+           AND datasetId = %(datasetId)s
+           AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
+           AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
+           AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
            LIMIT 1
         """,
-            [name, dataset_id, description],
+            {
+                "name": name,
+                "datasetId": dataset_id,
+                "dataPublishedBy": desc_json.get("dataPublishedBy"),
+                "dataPublisherSource": desc_json.get("dataPublisherSource"),
+                "additionalInfo": desc_json.get("additionalInfo"),
+            },
         )
 
         if row is None:
@@ -230,10 +236,20 @@ class DBUtils:
             row = self.fetch_one(
                 """
                 SELECT id FROM sources
-                WHERE name = %s
-                AND datasetId = %s
+                WHERE name = %(name)s
+                AND datasetId = %(datasetId)s
+                AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
+                AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
+                AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
+                LIMIT 1
             """,
-                [name, dataset_id],
+                {
+                    "name": name,
+                    "datasetId": dataset_id,
+                    "dataPublishedBy": desc_json.get("dataPublishedBy"),
+                    "dataPublisherSource": desc_json.get("dataPublisherSource"),
+                    "additionalInfo": desc_json.get("additionalInfo"),
+                },
             )
         else:
             self.cursor.execute(

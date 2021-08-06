@@ -12,6 +12,7 @@ Usage:
 import re
 from glob import glob
 import os
+import json
 
 from tqdm import tqdm
 import pandas as pd
@@ -62,9 +63,27 @@ def main(dataset_dir: str, dataset_namespace: str):
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        assert (
-            sources.duplicated(subset=["dataset_id", "name", "description"]).sum() == 0
-        ), "All sources in a dataset must have a unique dataset_id-name-description combination."
+        for _, gp in sources.groupby(["dataset_id", "name"]):
+            descriptions = pd.DataFrame(
+                gp["description"]
+                .apply(lambda x: json.loads(x))
+                .apply(
+                    lambda x: [
+                        x.get("dataPublishedBy"),
+                        x.get("dataPublisherSource"),
+                        x.get("additionalInfo"),
+                    ]
+                )
+                .values.tolist(),
+                columns=[
+                    "dataPublishedBy",
+                    "dataPublisherSource",
+                    "additionalInfo",
+                ],
+            )
+            assert (
+                descriptions.duplicated().sum() == 0
+            ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,
