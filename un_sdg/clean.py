@@ -307,7 +307,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                         " - ".join(map(str, member_combination)),
                     ),
                     "description": None,
-                    "code": None,
+                    "code": row["SeriesCode"],
                     "unit": row["Units_long"],
                     "short_unit": row["short_unit"],
                     "timespan": "%s - %s"
