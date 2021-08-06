@@ -1,12 +1,5 @@
-import sys
-
-sys.path.append("..")
-
-from db import connection
-from db_utils import DBUtils
-import requests
-import pdb
-import csv
+from ..db import connection
+from ..db_utils import DBUtils
 import numpy as np
 import pandas as pd
 
@@ -86,14 +79,13 @@ def main():
 
             values = [
                 (
-                    float(row[variable.slug])
-                    if not np.isnan(row[variable.slug])
-                    else "",
+                    float(row[variable.slug]),
                     int(row["RequestYear"]),
                     entity_name_map[row["CountryName"]],
                     db_variable_id,
                 )
                 for _, row in data_df.iterrows()
+                if not np.isnan(row[variable.slug])
             ]
 
             print("Inserting values...")

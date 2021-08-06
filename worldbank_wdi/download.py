@@ -41,7 +41,7 @@ def download_data() -> None:
         os.makedirs(INPATH)
     try:
         _download_data_csv()
-    except:
+    except:  # noqa
         _download_data_excel()
     logger.info(f"Data succcessfully downloaded to {INPATH}")
 

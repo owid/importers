@@ -1,11 +1,11 @@
 import os
 import re
-from utils import import_from
-import simplejson as json
 import logging
 import traceback
-from typing import List, Tuple, Dict, Union
+from typing import Iterable, List, Optional, Tuple, Dict
 from copy import deepcopy
+
+import simplejson as json
 from dotenv import load_dotenv
 import pandas as pd
 from tqdm import tqdm
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 DEBUG = os.getenv("DEBUG") == "True"
-USER_ID = int(os.getenv("USER_ID"))
+USER_ID = int(os.getenv("USER_ID"))  # type: ignore
 
 
 class ChartRevisionSuggester:
@@ -51,7 +51,7 @@ class ChartRevisionSuggester:
     """
 
     def __init__(self, dataset_dir: str):
-        self.var_id2year_range = None
+        self.var_id2year_range: Dict[int, List[int]] = {}
         self.dataset_dir = dataset_dir
         self.old_var_id2new_var_id = self.load_variable_replacements()
 
@@ -156,7 +156,7 @@ class ChartRevisionSuggester:
                     WHERE status IN ("pending", "flagged")
                     GROUP BY chartId
                     ORDER BY c DESC
-                ) as grouped
+                    ) as grouped
                 WHERE grouped.c > 1
             """
             )
@@ -185,10 +185,10 @@ class ChartRevisionSuggester:
                 set(chart_ids)
             ), "`suggested_chart_revisions` contains duplicate chart ids."
 
-            query = f"""
+            query = """
                 INSERT INTO suggested_chart_revisions
                     (chartId, suggestedConfig, originalConfig, suggestedReason, status, createdBy, createdAt, updatedAt)
-                VALUES 
+                VALUES
                     (%s, %s, %s, %s, %s, %s, NOW(), NOW())
             """
             db.upsert_many(query, tuples)
@@ -208,8 +208,8 @@ class ChartRevisionSuggester:
                     ORDER BY c DESC
                 ) as grouped
                 LEFT JOIN (
-                    SELECT * 
-                    FROM suggested_chart_revisions 
+                    SELECT *
+                    FROM suggested_chart_revisions
                     WHERE status IN ("pending", "flagged")
                 ) as scr ON grouped.chartId = scr.chartId
                 WHERE grouped.c > 1
@@ -331,7 +331,6 @@ class ChartRevisionSuggester:
                 self.old_var_id2new_var_id.values()
             )
             variable_ids_str = ",".join([str(_id) for _id in all_var_ids])
-            columns = []
             rows = db.fetch_many(
                 f"""
                 SELECT variableId, MIN(year) AS minYear, MAX(year) AS maxYear
@@ -503,7 +502,7 @@ class ChartRevisionSuggester:
                     config_dim["variableId"]
                 ]
 
-    def _vars_to_range(self, _ids: List[int]) -> IntRange:
+    def _vars_to_range(self, _ids: Iterable[int]) -> IntRange:
         years = []
         for _id in _ids:
             if _id in self.var_id2year_range:
@@ -536,7 +535,11 @@ class ChartRevisionSuggester:
         return max_year_hardcoded
 
     def _is_single_time(
-        self, min_time: int, max_time: int, min_time_old: int, max_time_old: int
+        self,
+        min_time: Optional[int],
+        max_time: Optional[int],
+        min_time_old: int,
+        max_time_old: int,
     ) -> bool:
         times_are_eq = (
             min_time is not None

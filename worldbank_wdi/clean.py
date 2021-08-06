@@ -24,7 +24,7 @@ Instructions for manually standardizing entity names:
 
 2. Change the "Input Format" field to "ISO 3166-1 ALPHA-3 CODE";
 
-3. Change the "Output Format" field to "Our World In Data Name"; 
+3. Change the "Output Format" field to "Our World In Data Name";
 
 4. In the "Choose CSV file" field, upload {outfpath};
 
@@ -140,7 +140,7 @@ def load_variables_to_clean() -> List[dict]:
     try:
         with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
             variables = json.load(f)["variables"]
-    except:
+    except:  # noqa
         with open(os.path.join(OUTPATH, "variables_to_clean.json"), "r") as f:
             variables = json.load(f)["variables"]
     return variables
@@ -449,7 +449,7 @@ def clean_sources(
         for source_id, var_codes in source_temp_id2var_codes.items()
         for var_code in var_codes
     }
-    return df_sources, var_code2source_id
+    return df_sources, var_code2source_id  # type: ignore
 
 
 def clean_variables(
@@ -584,12 +584,12 @@ def get_distinct_entities() -> List[str]:
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entities.update(df_temp["country"].unique().tolist())
 
-    entities = list(entities)
-    assert pd.notnull(entities).all(), (
+    entity_list = list(entities)
+    assert pd.notnull(entity_list).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
     )
-    return entities
+    return entity_list
 
 
 def _load_variables(codes: List[str]) -> pd.DataFrame:

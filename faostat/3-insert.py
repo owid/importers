@@ -9,6 +9,7 @@
 
 
 import sys
+
 sys.path.append("..")
 
 import os
@@ -24,10 +25,10 @@ from db_utils import DBUtils
 USER_ID = 29
 
 # Dataset namespace
-NAMESPACE = 'faostat_2020'
+NAMESPACE = "faostat_2020"
 
-OUTPUT_PATH = 'output/'
-STANDARDIZATION_PATH = 'standardization/'
+OUTPUT_PATH = "output/"
+STANDARDIZATION_PATH = "standardization/"
 
 
 # ## Load datasets, entities, variables & sources
@@ -36,27 +37,26 @@ STANDARDIZATION_PATH = 'standardization/'
 
 
 entities = pd.read_csv(
-    os.path.join(STANDARDIZATION_PATH, './entities_standardized.csv'), 
-    index_col='name'
+    os.path.join(STANDARDIZATION_PATH, "./entities_standardized.csv"), index_col="name"
 )
 
 
 # In[10]:
 
 
-db_entity_id_by_name = { 
-    row.name: int(row['db_entity_id']) for _, row in entities.iterrows() 
+db_entity_id_by_name = {
+    row.name: int(row["db_entity_id"]) for _, row in entities.iterrows()
 }
 
 
 # In[41]:
 
 
-# We replace nan's with "" (empty string) because every column is a string type, 
+# We replace nan's with "" (empty string) because every column is a string type,
 # there should be no numeric values
-variables = pd.read_csv(os.path.join(OUTPUT_PATH, 'variables.csv')).fillna("")
-datasets = pd.read_csv(os.path.join(OUTPUT_PATH, 'datasets.csv')).fillna("")
-sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv')).fillna("")
+variables = pd.read_csv(os.path.join(OUTPUT_PATH, "variables.csv")).fillna("")
+datasets = pd.read_csv(os.path.join(OUTPUT_PATH, "datasets.csv")).fillna("")
+sources = pd.read_csv(os.path.join(OUTPUT_PATH, "sources.csv")).fillna("")
 
 
 # ## Integrity checks
@@ -66,6 +66,7 @@ sources = pd.read_csv(os.path.join(OUTPUT_PATH, 'sources.csv')).fillna("")
 
 def print_err(*args, **kwargs):
     print(*args, file=sys.stderr, **kwargs)
+
 
 def assert_unique(df, subset, message="Duplicate row found"):
     duplicate_mask = df.duplicated(subset=subset)
@@ -88,36 +89,36 @@ print("Running integrity checks...")
 errors = 0
 
 # Dataset IDs should be unique
-errors += assert_unique(datasets, ['id'])
+errors += assert_unique(datasets, ["id"])
 
 # Dataset names should be unique
-errors += assert_unique(datasets, ['name'])
+errors += assert_unique(datasets, ["name"])
 
 # Variable names should be unique
-errors += assert_unique(variables, ['name'])
+errors += assert_unique(variables, ["name"])
 
 # Variable codes should be unique
-errors += assert_unique(variables, ['code'])
+errors += assert_unique(variables, ["code"])
 
 # all entities should have a db_entity_id
-if entities['db_entity_id'].isnull().any() == True:
+if entities["db_entity_id"].isnull().any() == True:
     print_err("Entities are missing database ID")
-    print_err(entities[entities['db_entity_id'].isnull()])
+    print_err(entities[entities["db_entity_id"].isnull()])
     errors += 1
 
 # all entities in the data should exist in standardization file
-for filepath in tqdm(sorted(glob(os.path.join(OUTPUT_PATH, 'datapoints/*.csv')))):
+for filepath in tqdm(sorted(glob(os.path.join(OUTPUT_PATH, "datapoints/*.csv")))):
     df = pd.read_csv(filepath)
     # UNIQUE (entity, year) constraint
-    errors += assert_unique(df, ['entity', 'year'], "Duplicate row in %s" % filepath)
+    errors += assert_unique(df, ["entity", "year"], "Duplicate row in %s" % filepath)
     # No empty values
-    if df['value'].isnull().any():
+    if df["value"].isnull().any():
         print("%s contains empty values in 'value' column" % filepath)
         errors += 1
     # No non-numeric values
-    if not df['value'].map(np.isreal).all():
+    if not df["value"].map(np.isreal).all():
         print("Non-numeric values in %s" % filepath)
-        print(df[pd.to_numeric(df['value'], errors='coerce').isnull()])
+        print(df[pd.to_numeric(df["value"], errors="coerce").isnull()])
         errors += 1
 
 if errors != 0:
@@ -134,64 +135,79 @@ else:
 
 with connection as c:
     db = DBUtils(c)
-    
+
     for _, dataset in tqdm(datasets.iterrows(), total=len(datasets)):
-        
+
         # Insert the dataset
-        print("Inserting dataset: %s" % dataset['name'])
+        print("Inserting dataset: %s" % dataset["name"])
         db_dataset_id = db.upsert_dataset(
-            name=dataset['name'],
-            description=dataset['description'],
-            namespace=NAMESPACE, 
-            user_id=USER_ID)
-        
+            name=dataset["name"],
+            description=dataset["description"],
+            namespace=NAMESPACE,
+            user_id=USER_ID,
+        )
+
         # Insert the source
-        source = sources[sources['dataset_id'] == dataset.id].iloc[0]
-        print("Inserting source: %s" % source['name'])
+        source = sources[sources["dataset_id"] == dataset.id].iloc[0]
+        print("Inserting source: %s" % source["name"])
         db_source_id = db.upsert_source(
-            name=source['name'], 
-            description=source['description'], 
-            dataset_id=db_dataset_id)
-        
+            name=source["name"],
+            description=source["description"],
+            dataset_id=db_dataset_id,
+        )
+
         # Insert variables associated with this dataset
-        for j, variable in variables[variables.dataset_id == dataset['id']].iterrows():
+        for j, variable in variables[variables.dataset_id == dataset["id"]].iterrows():
             # insert row in variables table
-            print("Inserting variable: %s" % variable['name'])
+            print("Inserting variable: %s" % variable["name"])
             db_variable_id = db.upsert_variable(
-                name=variable['name'], 
-                code=variable['code'], 
-                unit=variable['unit'], 
-                description=variable['description'],
-                short_unit=None, 
-                source_id=db_source_id, 
-                dataset_id=db_dataset_id)
+                name=variable["name"],
+                code=variable["code"],
+                unit=variable["unit"],
+                description=variable["description"],
+                short_unit=None,
+                source_id=db_source_id,
+                dataset_id=db_dataset_id,
+            )
 
             # read datapoints
-            data_values = pd.read_csv(os.path.join(OUTPUT_PATH, 'datapoints', '%s.csv' % variable.id))
+            data_values = pd.read_csv(
+                os.path.join(OUTPUT_PATH, "datapoints", "%s.csv" % variable.id)
+            )
 
-            values = [(float(row['value']), int(row['year']), db_entity_id_by_name[row['entity']], db_variable_id)
-                      for _, row in data_values.iterrows()]
+            values = [
+                (
+                    float(row["value"]),
+                    int(row["year"]),
+                    db_entity_id_by_name[row["entity"]],
+                    db_variable_id,
+                )
+                for _, row in data_values.iterrows()
+            ]
 
             print("Inserting values...")
-            db.upsert_many("""
+            db.upsert_many(
+                """
                 INSERT INTO 
                     data_values (value, year, entityId, variableId)
                 VALUES 
                     (%s, %s, %s, %s)
                 ON DUPLICATE KEY UPDATE
                     year = VALUES(year)
-            """, values)
-            
-            # We have a dummy ON DUPLICATE handler that updates the year which is essentially 
-            # a no update operation. We do this only to avoid a duplicate key error. It occurs 
-            # when FAO uses an Item Group and Item with the same name. For example, 'Eggs' is 
-            # both an Item Group and a standalone Item in: 
+            """,
+                values,
+            )
+
+            # We have a dummy ON DUPLICATE handler that updates the year which is essentially
+            # a no update operation. We do this only to avoid a duplicate key error. It occurs
+            # when FAO uses an Item Group and Item with the same name. For example, 'Eggs' is
+            # both an Item Group and a standalone Item in:
             # Commodity Balances - Livestock and Fish Primary Equivalent
-            
-            # This is not ideal because we could be masking other duplication issues, we should 
-            # ideally have the differentiation between groups and itemsin the database, but this 
+
+            # This is not ideal because we could be masking other duplication issues, we should
+            # ideally have the differentiation between groups and itemsin the database, but this
             # requires effort and time, both of which are currently in short supply.
-            
+
             print("Inserted %d values for variable" % len(values))
 
 print("All done. Phew!")
@@ -209,7 +225,7 @@ print("All done. Phew!")
 #        INNER JOIN datasets
 #                ON datasets.id = sources.datasetid
 # WHERE  datasets.namespace = 'faostat_2020';
-# 
+#
 # DELETE variables
 # FROM   variables
 #        INNER JOIN sources
@@ -217,19 +233,15 @@ print("All done. Phew!")
 #        INNER JOIN datasets
 #                ON datasets.id = sources.datasetid
 # WHERE  datasets.namespace = 'faostat_2020';
-# 
+#
 # DELETE sources
 # FROM   sources
 #        INNER JOIN datasets
 #                ON datasets.id = sources.datasetid
 # WHERE  datasets.namespace = 'faostat_2020';
-# 
+#
 # DELETE FROM datasets
 # WHERE  namespace = 'faostat_2020';
 # ```
 
 # In[ ]:
-
-
-
-

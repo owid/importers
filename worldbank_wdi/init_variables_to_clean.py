@@ -3,7 +3,6 @@ import simplejson as json
 import pandas as pd
 
 from db import get_connection
-from db_utils import DBUtils
 
 from worldbank_wdi import INPATH, OUTPATH
 from worldbank_wdi.match_variables import get_datasets

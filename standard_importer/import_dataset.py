@@ -11,8 +11,8 @@ Usage:
 
 import re
 from glob import glob
-import sys
 import os
+import json
 
 from tqdm import tqdm
 import pandas as pd
@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 load_dotenv()
-USER_ID = int(os.getenv("USER_ID"))
+USER_ID = int(os.getenv("USER_ID"))  # type: ignore
 
 CURRENT_DIR = os.path.dirname(__file__)
 # CURRENT_DIR = os.path.join(os.getcwd(), 'standard_importer')
@@ -63,11 +63,27 @@ def main(dataset_dir: str, dataset_namespace: str):
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        assert (
-            sources.groupby("dataset_id")["name"]
-            .apply(lambda gp: gp.duplicated().sum() == 0)
-            .all()
-        ), "All sources in a dataset must have a unique name."
+        for _, gp in sources.groupby(["dataset_id", "name"]):
+            descriptions = pd.DataFrame(
+                gp["description"]
+                .apply(lambda x: json.loads(x))
+                .apply(
+                    lambda x: [
+                        x.get("dataPublishedBy"),
+                        x.get("dataPublisherSource"),
+                        x.get("additionalInfo"),
+                    ]
+                )
+                .values.tolist(),
+                columns=[
+                    "dataPublishedBy",
+                    "dataPublisherSource",
+                    "additionalInfo",
+                ],
+            )
+            assert (
+                descriptions.duplicated().sum() == 0
+            ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,
@@ -113,7 +129,9 @@ def main(dataset_dir: str, dataset_namespace: str):
                 source_id=variable_row["db_source_id"],
                 dataset_id=variable_row["db_dataset_id"],
                 description=variable_row["description__variable"],
-                code=variable_row["code"] if "code" in variable_row else "",
+                code=variable_row["code"]
+                if "code" in variable_row and variable_row["code"] != ""
+                else None,
                 unit=variable_row["unit"] if "unit" in variable_row else "",
                 short_unit=variable_row["short_unit"]
                 if "short_unit" in variable_row
@@ -132,7 +150,7 @@ def main(dataset_dir: str, dataset_namespace: str):
         print("---\nUpserting datapoints...")
         datapoint_files = glob(os.path.join(data_path, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
-            variable_id = int(re.search("\\d+", datapoint_file)[0])
+            variable_id = int(re.search("\\d+", datapoint_file)[0])  # type: ignore
             db_variable_id = variables[variables["id"] == variable_id]["db_variable_id"]
             data = pd.read_csv(datapoint_file)
             data = pd.merge(
@@ -149,7 +167,7 @@ def main(dataset_dir: str, dataset_namespace: str):
                 data["db_entity_id"].astype(int),
                 [int(db_variable_id)] * len(data),
             )
-            query = f"""
+            query = """
                 INSERT INTO data_values
                     (value, year, entityId, variableId)
                 VALUES (%s, %s, %s, %s)
@@ -161,7 +179,3 @@ def main(dataset_dir: str, dataset_namespace: str):
             """
             db.upsert_many(query, data_tuples)
         print(f"Upserted {len(datapoint_files)} datapoint files.")
-
-
-if __name__ == "__main__":
-    main()
