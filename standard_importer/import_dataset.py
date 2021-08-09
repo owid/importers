@@ -81,6 +81,7 @@ def main(dataset_dir: str, dataset_namespace: str):
                     "additionalInfo",
                 ],
             )
+            print(descriptions)
             assert (
                 descriptions.duplicated().sum() == 0
             ), "All sources in a dataset must have a unique dataset_id-name-description combination."
