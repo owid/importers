@@ -319,12 +319,13 @@ def clean_sources(
     sources to the `sources` database table.
 
     Arguments:
-
-        variable_codes: List[str].
+        dataset_name: str. Dataset name.
+        dataset_id: int. Temporary dataset id.
+        variables_codes: List[str]. List of variable codes for which to clean
+            source metadata.
 
     Returns:
-
-        df_sources: pd.DataFrame. (Partially) Cleaned Dataframe of data sources
+        df_sources: pd.DataFrame. Cleaned dataframe of data sources
             to be uploaded.
 
         var_code2source_id: Dict[str, int]. Dict of "{var_code}" ->
@@ -339,117 +340,58 @@ def clean_sources(
 
 
     """
-    df_variables = _load_variables(codes=variable_codes)
-    i = 0
-    sources = []
-    source_temp_id2var_codes = {}
-    for nm, gp in df_variables.groupby("source"):
-        # if source name begins and ends with parentheses, remove the parentheses.
-        regex = re.search(r"^[\.\,]?\((.+)\)[\.\,]?$", nm)
-        if regex:
-            nm = regex.groups()[0]
-        # remove a few selected prefixes from source names.
-        regex_prefixes = re.compile(
-            r"Data are from|Derived using data from", re.IGNORECASE
-        )
-        nm = regex_prefixes.sub("", nm).strip()
+    with open(os.path.join(CONFIGPATH, "standardized_source_names.json"), "r") as f:
+        df_source_names = pd.DataFrame(json.load(f))
+        assert df_source_names["rawName"].duplicated().sum() == 0
+    df_variables = _load_variables(variable_codes)
 
-        # retrieves additional info, if it exists.
-        additional_info = None
-        if gp["notes_from_original_source"].notnull().any():
-            notes = gp["notes_from_original_source"].dropna().unique().tolist()
-            if len(notes) == 1:
-                additional_info = notes[0]
-
-        # constructs the source dict.
-        if len(nm) <= MAX_SOURCE_NAME_LEN:
-            source_nm = f"Data compiled by {DATASET_AUTHORS} from: {nm}"
-            source = {
-                "dataset_id": dataset_id,
-                "name": source_nm,
-                "description": json.dumps(
-                    {
-                        "link": DATASET_LINK,
-                        "retrievedDate": DATASET_RETRIEVED_DATE,
-                        "additionalInfo": additional_info,
-                        "dataPublishedBy": dataset_name,
-                        "dataPublisherSource": source_nm,
-                    },
-                    ignore_nan=True,
-                ),
-                "id": i,
-            }
-            assert source["id"] not in source_temp_id2var_codes
-            sources.append(source)
-            source_temp_id2var_codes[source["id"]] = (
-                gp["indicator_code"].unique().tolist()
+    df_source_names = (
+        df_source_names.merge(
+            df_variables.groupby("source")
+            .apply(lambda gp: gp["indicator_code"].unique().tolist())
+            .reset_index()
+            .rename(columns={0: "variable_codes"}),
+            left_on="rawName",
+            right_on="source",
+            how="left",
+            validate="1:1",
             )
-            i += 1
-        else:
-            for _, row in gp.iterrows():
-                var_name = row["indicator_name"]
-                source_nm = f"Data compiled by {DATASET_AUTHORS} from multiple sources for variable: {var_name}"
-                data_publisher_source = (
-                    f"Data compiled by {DATASET_AUTHORS} from multiple sources"
+        .drop("source", axis=1)
+        .dropna(subset=["variable_codes"])
                 )
-                additional_info2 = f"Data compiled by {DATASET_AUTHORS} from the following sources: {nm}"
-                if additional_info is not None:
-                    additional_info2 += f"\n{additional_info}"
+    sources = []
+    var_code2source_id = {}
+    for i, ((name, data_publisher_source), gp) in enumerate(
+        df_source_names.groupby(["name", "dataPublisherSource"])
+    ):
+        var_codes = [c for codes in gp["variable_codes"] for c in codes]
                 source = {
-                    "dataset_id": dataset_id,
-                    "name": source_nm,
-                    "description": json.dumps(
-                        {
-                            "link": DATASET_LINK,
-                            "retrievedDate": DATASET_RETRIEVED_DATE,
-                            "additionalInfo": additional_info2,
-                            "dataPublishedBy": dataset_name,
-                            "dataPublisherSource": data_publisher_source,
-                        },
-                        ignore_nan=True,
-                    ),
                     "id": i,
-                }
-                assert source["id"] not in source_temp_id2var_codes
-                sources.append(source)
-                source_temp_id2var_codes[source["id"]] = [row["indicator_code"]]
-                i += 1
-
-    # creates a generic source for any variables that contain a null
-    # `source` column.
-    var_codes_null_source = (
-        df_variables.loc[df_variables["source"].isnull(), "indicator_code"]
-        .unique()
-        .tolist()
-    )
-    if len(var_codes_null_source):
-        source = {
             "dataset_id": dataset_id,
-            "name": dataset_name,
+            "name": name,
             "description": json.dumps(
                 {
                     "link": DATASET_LINK,
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                     "additionalInfo": None,
                     "dataPublishedBy": dataset_name,
-                    "dataPublisherSource": DATASET_AUTHORS,
+                    "dataPublisherSource": data_publisher_source,
                 },
                 ignore_nan=True,
             ),
-            "id": i,
         }
-        # assert generic_source['name'] not in source_nm2var_codes
         sources.append(source)
-        source_temp_id2var_codes[source["id"]] = var_codes_null_source
-        i += 1
-
+        for c in var_codes:
+            assert c not in var_code2source_id
+            var_code2source_id[c] = i
     df_sources = pd.DataFrame(sources)
-    var_code2source_id = {
-        var_code: source_id
-        for source_id, var_codes in source_temp_id2var_codes.items()
-        for var_code in var_codes
-    }
-    return df_sources, var_code2source_id  # type: ignore
+    missing_var_codes = [c for c in variable_codes if c not in var_code2source_id]
+    assert len(missing_var_codes) == 0, (
+        "All variable codes must have a source ID, but the following variables "
+        f"do not: {missing_var_codes}. Are the source names for these variables "
+        "missing from `standardized_source_names.json`?"
+    )
+    return df_sources, var_code2source_id
 
 
 def clean_variables(
