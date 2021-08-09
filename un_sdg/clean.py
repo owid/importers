@@ -199,6 +199,10 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
             },
             ignore_index=True,
         )
+        assert (
+            df_sources.duplicated(subset=["name", "dataset_id", "description"]).sum()
+            == 0
+        ), (print(df_sources["id"]) + "is duplicated!")
     print("Saving sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
