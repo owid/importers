@@ -67,7 +67,7 @@ def main(dataset_dir: str, dataset_namespace: str):
         else:
             namespace_description = f"{dataset_dir} datasets"
         db.upsert_namespace(name=dataset_namespace, description=namespace_description)
-        print(f"Upserted 1 namespace.")
+        print("Upserted 1 namespace.")
 
         # Upsert sources
         print("---\nUpserting sources...")
