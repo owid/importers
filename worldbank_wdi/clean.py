@@ -1,45 +1,8 @@
-"""
-
-https://datacatalog.worldbank.org/dataset/world-development-indicators
+"""Cleans WDI metadata and data points in preparation for MySQL insert.
 
 Usage:
 
     python -m worldbank_wdi.clean
-
-Instructions for manually standardizing entity names:
-
-0. Retrieve all unique entity names in the dataset:
-
-    ```
-    >>> df_entities = pd.read_csv(os.path.join(INPATH, 'WDICountry.csv.zip'))
-    >>> assert not df_entities['Country code'].duplicated().any()
-    >>> df_entities[['Country code']].drop_duplicates() \
-    >>>                                     .dropna() \
-    >>>                                     .rename(columns={'Country code': 'Country'}) \
-    >>>                                     .to_csv(outfpath, index=False)
-    ```
-
-1. Open the OWID Country Standardizer Tool
-   (https://owid.cloud/admin/standardize);
-
-2. Change the "Input Format" field to "ISO 3166-1 ALPHA-3 CODE";
-
-3. Change the "Output Format" field to "Our World In Data Name";
-
-4. In the "Choose CSV file" field, upload {outfpath};
-
-5. For any country codes that do NOT get matched, enter a custom name on
-   the webpage (in the "Or enter a Custom Name" table column);
-
-    * NOTE: For this dataset, you will most likely need to enter custom
-      names for regions/continents (e.g. "Arab World", "Lower middle
-      income");
-
-6. Click the "Download csv" button;
-
-7. Replace {outfpath} with the downloaded CSV;
-
-8. Rename the "Country" column to "country_code".
 
 """
 
