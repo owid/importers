@@ -63,7 +63,7 @@ def main(dataset_dir: str, dataset_namespace: str):
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        for _, gp in sources.groupby(["dataset_id", "name"]):
+        for _, gp in sources.groupby(["dataset_id", "name", "description"]):
             descriptions = pd.DataFrame(
                 gp["description"]
                 .apply(lambda x: json.loads(x))
