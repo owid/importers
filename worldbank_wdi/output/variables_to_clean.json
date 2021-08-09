@@ -1,3049 +1,2687 @@
 {
     "meta": {
-        "notes": "This file contains an array of WB WDI variables to upsert to SQL. Any variables NOT in this array will be ignored."
+        "notes": "This file contains an array of WB WDI variables to upsert to SQL. Also contains old metadata for these variables, as copied from previous versions of these variables. Any variables NOT in this file will be ignored."
     },
     "variables": [
         {
-            "originalMetadata": null,
-            "name": "Access to electricity (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EG.ELC.ACCS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Not applicable"
+            "name": "Access to clean fuels and technologies for cooking (% of population)",
+            "code": "EG.CFT.ACCS.ZS",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {
+                    "name": "Access to clean fuels and technologies for cooking",
+                    "unit": "% of population"
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Access to electricity, rural (% of rural population)",
-            "unit": "% of rural population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EG.ELC.ACCS.RU.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Not applicable"
+            "name": "CO2 emissions (kg per 2017 PPP $ of GDP)",
+            "code": "EN.ATM.CO2E.PP.GD.KD",
+            "old": {
+                "unit": "kg per 2011 PPP $ of GDP",
+                "shortUnit": "kg",
+                "display": {
+                    "unit": "Constant USD"
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Access to electricity, urban (% of urban population)",
-            "unit": "% of urban population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EG.ELC.ACCS.UR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
+            "name": "Urban population (% of total population)",
+            "code": "SP.URB.TOTL.IN.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Agricultural land (% of land area)",
-            "unit": "% of land area",
-            "shortUnit": "%",
-            "description": null,
-            "code": "AG.LND.AGRI.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Number"
+            "name": "GDP per capita, PPP (constant 2017 international $)",
+            "code": "NY.GDP.PCAP.PP.KD",
+            "old": {
+                "unit": "constant 2011 international $",
+                "shortUnit": "$",
+                "display": {
+                    "name": "GDP per capita (int.-$)",
+                    "unit": "international-$",
+                    "tolerance": 5,
+                    "isProjection": false,
+                    "numDecimalPlaces": 0
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Agricultural machinery, tractors per 100 sq. km of arable land",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "AG.LND.TRAC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Number"
+            "name": "GNI per capita, PPP (constant 2017 international $)",
+            "code": "NY.GNP.PCAP.PP.KD",
+            "old": {
+                "unit": "constant 2011 international $",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)",
-            "unit": "% of total freshwater withdrawal",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.H2O.FWAG.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
+            "name": "Net official development assistance and official aid received (constant 2018 US$)",
+            "code": "DT.ODA.ALLD.KD",
+            "old": {
+                "unit": "constant 2013 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Annual freshwater withdrawals, domestic (% of total freshwater withdrawal)",
-            "unit": "% of total freshwater withdrawal",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.H2O.FWDM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Local currency"
+            "name": "GDP per person employed (constant 2017 PPP $)",
+            "code": "SL.GDP.PCAP.EM.KD",
+            "old": {
+                "unit": "constant 2011 PPP $",
+                "shortUnit": "$",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Annual freshwater withdrawals, industry (% of total freshwater withdrawal)",
-            "unit": "% of total freshwater withdrawal",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.H2O.FWIN.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
+            "name": "Incidence of HIV, ages 15-49 (per 1,000 uninfected population ages 15-49)",
+            "code": "SH.HIV.INCD.ZS",
+            "old": {
+                "unit": "% of uninfected population ages 15-49",
+                "shortUnit": "%",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Annual freshwater withdrawals, total (% of internal resources)",
-            "unit": "% of internal resources",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.H2O.FWTL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Number"
+            "name": "Mortality caused by road traffic injury (per 100,000 population)",
+            "code": "SH.STA.TRAF.P5",
+            "old": {
+                "unit": "per 100,000 people",
+                "shortUnit": null,
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Annual freshwater withdrawals, total (billion cubic meters)",
-            "unit": "billion cubic meters",
-            "shortUnit": null,
-            "description": null,
-            "code": "ER.H2O.FWTL.K3",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
+            "name": "Population, female (% of total population)",
+            "code": "SP.POP.TOTL.FE.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Aquaculture production (metric tons)",
-            "unit": "metric tons",
-            "shortUnit": null,
-            "description": null,
-            "code": "ER.FSH.AQUA.MT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Arable land (% of land area)",
-            "unit": "% of land area",
-            "shortUnit": "%",
-            "description": null,
-            "code": "AG.LND.ARBL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Arable land (hectares per person)",
-            "unit": "hectares per person",
-            "shortUnit": "hectares",
-            "description": null,
-            "code": "AG.LND.ARBL.HA.PC",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Capture fisheries production (metric tons)",
-            "unit": "metric tons",
-            "shortUnit": null,
-            "description": null,
-            "code": "ER.FSH.CAPT.MT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Cereal yield (kg per hectare)",
-            "unit": "kg per hectare",
-            "shortUnit": "kg",
-            "description": null,
-            "code": "AG.YLD.CREL.KG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "CO2 emissions (kt)",
-            "unit": "kt",
-            "shortUnit": "kt",
-            "description": null,
-            "code": "EN.ATM.CO2E.KT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "CO2 emissions (metric tons per capita)",
-            "unit": "metric tons per capita",
-            "shortUnit": "metric tons",
-            "description": null,
-            "code": "EN.ATM.CO2E.PC",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Kilometres"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Energy intensity level of primary energy (MJ/$2011 PPP GDP)",
-            "unit": "MJ/$2011 PPP GDP",
-            "shortUnit": "$",
-            "description": null,
-            "code": "EG.EGY.PRIM.PP.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Energy use (kg of oil equivalent per capita)",
-            "unit": "kg of oil equivalent per capita",
-            "shortUnit": "kg of oil equivalent",
-            "description": null,
-            "code": "EG.USE.PCAP.KG.OE",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fertilizer consumption (kilograms per hectare of arable land)",
-            "unit": "kilograms per hectare of arable land",
-            "shortUnit": "kilograms",
-            "description": null,
-            "code": "AG.CON.FERT.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Land area (sq. km)",
-            "unit": "sq. km",
-            "shortUnit": "sq. km",
-            "description": null,
-            "code": "AG.LND.TOTL.K2",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Marine protected areas (% of territorial waters)",
-            "unit": "% of territorial waters",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.MRN.PTMR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",
-            "unit": "micrograms per cubic meter",
-            "shortUnit": "micrograms",
-            "description": null,
-            "code": "EN.ATM.PM25.MC.M3",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",
-            "unit": "% of total",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.ATM.PM25.MC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Population density (people per sq. km of land area)",
-            "unit": "people per sq. km of land area",
-            "shortUnit": "people",
-            "description": null,
-            "code": "EN.POP.DNST",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Population in the largest city (% of urban population)",
-            "unit": "% of urban population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.URB.LCTY.UR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Population in urban agglomerations of more than 1 million (% of total population)",
-            "unit": "% of total population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.URB.MCTY.TL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Population living in slums (% of urban population)",
-            "unit": "% of urban population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.POP.SLUM.UR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Renewable energy consumption (% of total final energy consumption)",
-            "unit": "% of total final energy consumption",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EG.FEC.RNEW.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Renewable internal freshwater resources per capita (cubic meters)",
-            "unit": "cubic meters",
-            "shortUnit": null,
-            "description": null,
-            "code": "ER.H2O.INTR.PC",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Rural land area where elevation is below 5 meters (% of total land area)",
-            "unit": "% of total land area",
-            "shortUnit": "%",
-            "description": null,
-            "code": "AG.LND.EL5M.RU.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Rural population",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.RUR.TOTL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Terrestrial protected areas (% of total land area)",
-            "unit": "% of total land area",
-            "shortUnit": "%",
-            "description": null,
-            "code": "ER.LND.PTLD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Total fisheries production (metric tons)",
-            "unit": "metric tons",
-            "shortUnit": null,
-            "description": null,
-            "code": "ER.FSH.PROD.MT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Total natural resources rents (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NY.GDP.TOTL.RT.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Urban land area (sq. km)",
-            "unit": "sq. km",
-            "shortUnit": "sq. km",
-            "description": null,
-            "code": "AG.LND.TOTL.UR.K2",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Urban population",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.URB.TOTL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Number"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Water productivity, total (constant 2010 US$ GDP per cubic meter of total freshwater withdrawal)",
-            "unit": "constant 2010 US$ GDP per cubic meter of total freshwater withdrawal",
-            "shortUnit": "$",
-            "description": null,
-            "code": "ER.GDP.FWTL.M3.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Agricultural irrigated land (% of total agricultural land)",
-            "unit": "% of total agricultural land",
-            "shortUnit": "%",
-            "description": null,
-            "code": "AG.LND.IRIG.AG.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Arable land (hectares)",
-            "unit": "hectares",
-            "shortUnit": "hectares",
-            "description": null,
-            "code": "AG.LND.ARBL.HA",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Average precipitation in depth (mm per year)",
-            "unit": "mm per year",
-            "shortUnit": "mm",
-            "description": null,
-            "code": "AG.LND.PRCP.MM",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Population in urban agglomerations of more than 1 million",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "EN.URB.MCTY",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Disaster risk reduction progress score (1-5 scale; 5=best)",
-            "unit": "1-5 scale; 5=best",
-            "shortUnit": null,
-            "description": null,
-            "code": "EN.CLC.DRSK.XQ",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Bird species, threatened",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "EN.BIR.THRD.NO",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fish species, threatened",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "EN.FSH.THRD.NO",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mammal species, threatened",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "EN.MAM.THRD.NO",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-1 value (% of total)",
-            "unit": "% of total",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.ATM.PM25.MC.T1.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-2 value (% of total)",
-            "unit": "% of total",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.ATM.PM25.MC.T2.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-3 value (% of total)",
-            "unit": "% of total",
-            "shortUnit": "%",
-            "description": null,
-            "code": "EN.ATM.PM25.MC.T3.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Exports of goods and services (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NE.EXP.GNFS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Exports of goods and services (constant 2010 US$)",
-            "unit": "constant 2010 US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NE.EXP.GNFS.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Exports of goods and services (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NE.EXP.GNFS.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Foreign direct investment, net inflows (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "BX.KLT.DINV.WD.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Foreign direct investment, net outflows (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "BM.KLT.DINV.WD.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP (constant 2010 US$)",
-            "unit": "constant 2010 US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NY.GDP.MKTP.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP growth (annual %)",
-            "unit": "annual %",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NY.GDP.MKTP.KD.ZG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP per capita (constant 2010 US$)",
-            "unit": "constant 2010 US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NY.GDP.PCAP.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP per capita (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NY.GDP.PCAP.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP per capita growth (annual %)",
-            "unit": "annual %",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NY.GDP.PCAP.KD.ZG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "GDP per capita, PPP (current international $)",
-            "unit": "current international $",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NY.GDP.PCAP.PP.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "name": "GDP per capita",
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "General government final consumption expenditure (constant 2010 US$)",
-            "unit": "constant 2010 US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NE.CON.GOVT.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Goods exports (BoP, current US$)",
-            "unit": "BoP, current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "BX.GSR.MRCH.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Gross domestic savings (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NY.GDS.TOTL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Imports of goods and services (constant 2010 US$)",
-            "unit": "constant 2010 US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NE.IMP.GNFS.KD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Imports of goods and services (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NE.IMP.GNFS.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Net ODA received per capita (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "DT.ODA.ODAT.PC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Net official development assistance and official aid received (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "DT.ODA.ALLD.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Personal remittances, paid (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "BM.TRF.PWKR.CD.DT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Personal remittances, received (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "BX.TRF.PWKR.DT.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Personal remittances, received (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "BX.TRF.PWKR.CD.DT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Service exports (BoP, current US$)",
-            "unit": "BoP, current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "BX.GSR.NFSV.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Trade (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NE.TRD.GNFS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Trade in services (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "BG.GSR.NFSV.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Manufacturing, value added (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "NV.IND.MANF.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Rate"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Total debt service (% of exports of goods, services and primary income)",
-            "unit": "% of exports of goods, services and primary income",
-            "shortUnit": "%",
-            "description": null,
-            "code": "DT.TDS.DECT.EX.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adjusted net savings, excluding particulate emission damage (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "NY.ADJ.SVNX.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percentage"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Net ODA received (% of central government expense)",
-            "unit": "% of central government expense",
-            "shortUnit": "%",
-            "description": null,
-            "code": "DT.ODA.ODAT.XP.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "PPP conversion factor, private consumption (LCU per international $)",
-            "unit": "LCU per international $",
-            "shortUnit": "LCU",
-            "description": null,
-            "code": "PA.NUS.PRVT.PP",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percentage"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Price level ratio of PPP conversion factor (GDP) to market exchange rate",
-            "unit": "GDP",
-            "shortUnit": "GDP",
-            "description": null,
-            "code": "PA.NUS.PPPC.RF",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Air transport, freight (million ton-km)",
-            "unit": "million ton-km",
-            "shortUnit": null,
-            "description": null,
-            "code": "IS.AIR.GOOD.MT.K1",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Air transport, passengers carried",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "IS.AIR.PSGR",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fixed broadband subscriptions (per 100 people)",
-            "unit": "per 100 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "IT.NET.BBND.P2",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fixed telephone subscriptions (per 100 people)",
-            "unit": "per 100 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "IT.MLT.MAIN.P2",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "DALYs per 100,000"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Individuals using the Internet (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "IT.NET.USER.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mobile cellular subscriptions",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "IT.CEL.SETS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mobile cellular subscriptions (per 100 people)",
-            "unit": "per 100 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "IT.CEL.SETS.P2",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Pump price for diesel fuel (US$ per liter)",
-            "unit": "US$ per liter",
-            "shortUnit": "$",
-            "description": null,
-            "code": "EP.PMP.DESL.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Pump price for gasoline (US$ per liter)",
-            "unit": "US$ per liter",
-            "shortUnit": "$",
-            "description": null,
-            "code": "EP.PMP.SGAS.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Scientific and technical journal articles",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "IP.JRN.ARTC.SC",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Secure Internet servers (per 1 million people)",
-            "unit": "per 1 million people",
-            "shortUnit": null,
-            "description": null,
-            "code": "IT.NET.SECR.P6",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Railways, passengers carried (million passenger-km)",
-            "unit": "million passenger-km",
-            "shortUnit": null,
-            "description": null,
-            "code": "IS.RRS.PASG.KM",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%",
-                "shortUnit": "%"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Research and development expenditure (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GB.XPD.RSDV.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Researchers in R&D (per million people)",
-            "unit": "per million people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.POP.SCIE.RD.P6",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "Percent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Automated teller machines (ATMs) (per 100,000 adults)",
-            "unit": "per 100,000 adults",
-            "shortUnit": null,
-            "description": null,
-            "code": "FB.ATM.TOTL.P5",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Commercial bank branches (per 100,000 adults)",
-            "unit": "per 100,000 adults",
-            "shortUnit": null,
-            "description": null,
-            "code": "FB.CBK.BRCH.P5",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Armed forces personnel (% of total labor force)",
-            "unit": "% of total labor force",
-            "shortUnit": "%",
-            "description": null,
-            "code": "MS.MIL.TOTL.TF.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "US$"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Armed forces personnel, total",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "MS.MIL.TOTL.P1",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "billion tonnes CO\u2082 equivalent"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Compensation of employees (% of expense)",
-            "unit": "% of expense",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GC.XPN.COMP.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "ODS tonnes"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Intentional homicides (per 100,000 people)",
-            "unit": "per 100,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "VC.IHR.PSRC.P5",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Interest payments (% of expense)",
-            "unit": "% of expense",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GC.XPN.INTP.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Internally displaced persons, new displacement associated with disasters (number of cases)",
-            "unit": "number of cases",
-            "shortUnit": null,
-            "description": null,
-            "code": "VC.IDP.NWDS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "hours"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Military expenditure (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "MS.MIL.XPND.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "US$"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Expense (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GC.XPN.TOTL.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Revenue, excluding grants (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GC.REV.XGRT.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Tax revenue (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "GC.TAX.TOTL.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Food exports (% of merchandise exports)",
-            "unit": "% of merchandise exports",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TX.VAL.FOOD.ZS.UN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fuel exports (% of merchandise exports)",
-            "unit": "% of merchandise exports",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TX.VAL.FUEL.ZS.UN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "International tourism, number of arrivals",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "ST.INT.ARVL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "%"
+            "name": "Prevalence of anemia among children (% of children ages 6-59 months)",
+            "code": "SH.ANM.CHLD.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Manufactures exports (% of merchandise exports)",
-            "unit": "% of merchandise exports",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TX.VAL.MANF.ZS.UN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "millions"
+            "name": "Prevalence of current tobacco use, females (% of female adults)",
+            "code": "SH.PRV.SMOK.FE",
+            "old": {
+                "unit": "% of adults",
+                "shortUnit": "%",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "New business density (new registrations per 1,000 people ages 15-64)",
-            "unit": "new registrations per 1,000 people ages 15-64",
-            "shortUnit": "new registrations",
-            "description": null,
-            "code": "IC.BUS.NDNS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Ores and metals exports (% of merchandise exports)",
-            "unit": "% of merchandise exports",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TX.VAL.MMTL.ZS.UN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Time required to start a business (days)",
-            "unit": "days",
-            "shortUnit": "days",
-            "description": null,
-            "code": "IC.REG.DURS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "International tourism, number of departures",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "ST.INT.DPRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "acres per fire"
+            "name": "Prevalence of current tobacco use, males (% of male adults)",
+            "code": "SH.PRV.SMOK.MA",
+            "old": {
+                "unit": "% of adults",
+                "shortUnit": "%",
+                "display": {}
             }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Investment in energy with private participation (current US$)",
-            "unit": "current US$",
-            "shortUnit": "$",
-            "description": null,
-            "code": "IE.PPI.ENGY.CD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Tariff rate, applied, weighted mean, all products (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TM.TAX.MRCH.WM.AR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Tariff rate, applied, weighted mean, manufactured products (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TM.TAX.MANF.WM.AR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Tariff rate, applied, weighted mean, primary products (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "TM.TAX.TCOM.WM.AR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Bribery incidence (% of firms experiencing at least one bribe payment request)",
-            "unit": "% of firms experiencing at least one bribe payment request",
-            "shortUnit": "%",
-            "description": null,
-            "code": "IC.FRM.BRIB.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Firms with female top manager (% of firms)",
-            "unit": "% of firms",
-            "shortUnit": "%",
-            "description": null,
-            "code": "IC.FRM.FEMM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Power outages in firms in a typical month (number)",
-            "unit": "number",
-            "shortUnit": "number",
-            "description": null,
-            "code": "IC.ELC.OUTG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment to population ratio, 15+, female (%) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.EMP.TOTL.SP.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment to population ratio, 15+, female (%) (national estimate)",
-            "unit": "national estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.EMP.TOTL.SP.FE.NE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "International migrant stock (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SM.POP.TOTL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "International migrant stock, total",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SM.POP.TOTL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.TLF.CACT.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Labor force participation rate, female (% of female population ages 15+) (national estimate)",
-            "unit": "national estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.TLF.CACT.FE.NE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Labor force, female (% of total labor force)",
-            "unit": "% of total labor force",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.TLF.TOTL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Net migration",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SM.POP.NETM",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Ratio of female to male labor force participation rate (%) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.TLF.CACT.FM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Ratio of female to male labor force participation rate (%) (national estimate)",
-            "unit": "national estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.TLF.CACT.FM.NE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Refugee population by country or territory of asylum",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SM.POP.REFG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Refugee population by country or territory of origin",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SM.POP.REFG.OR",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Unemployment, female (% of female labor force) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.UEM.TOTL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Unemployment, male (% of male labor force) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.UEM.TOTL.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.UEM.TOTL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in agriculture (% of total employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.AGR.EMPL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in agriculture, female (% of female employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.AGR.EMPL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in agriculture, male (% of male employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.AGR.EMPL.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in industry (% of total employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.IND.EMPL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in industry, female (% of female employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.IND.EMPL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in industry, male (% of male employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.IND.EMPL.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in services (% of total employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.SRV.EMPL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in services, female (% of female employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.SRV.EMPL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Employment in services, male (% of male employment) (modeled ILO estimate)",
-            "unit": "modeled ILO estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.SRV.EMPL.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Labor force participation rate for ages 15-24, female (%) (national estimate)",
-            "unit": "national estimate",
-            "shortUnit": null,
-            "description": null,
-            "code": "SL.TLF.ACTI.1524.FE.NE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Share of youth not in education, employment or training, total (% of youth population)",
-            "unit": "% of youth population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.UEM.NEET.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Average working hours of children, study and work, ages 7-14 (hours per week)",
-            "unit": "hours per week",
-            "shortUnit": "hours",
-            "description": null,
-            "code": "SL.TLF.0714.SW.TM",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children in employment, female (% of female children ages 7-14)",
-            "unit": "% of female children ages 7-14",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.TLF.0714.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children in employment, male (% of male children ages 7-14)",
-            "unit": "% of male children ages 7-14",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.TLF.0714.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children in employment, total (% of children ages 7-14)",
-            "unit": "% of children ages 7-14",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.TLF.0714.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children in employment, work only (% of children in employment, ages 7-14)",
-            "unit": "% of children in employment, ages 7-14",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SL.TLF.0714.WK.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adequacy of social insurance programs (% of total welfare of beneficiary households)",
-            "unit": "% of total welfare of beneficiary households",
-            "shortUnit": "%",
-            "description": null,
-            "code": "PER_SI_ALLSI.ADQ_POP_TOT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adequacy of social safety net programs (% of total welfare of beneficiary households)",
-            "unit": "% of total welfare of beneficiary households",
-            "shortUnit": "%",
-            "description": null,
-            "code": "PER_SA_ALLSA.ADQ_POP_TOT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Coverage of social insurance programs (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "PER_SI_ALLSI.COV_POP_TOT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adequacy of unemployment benefits and ALMP (% of total welfare of beneficiary households)",
-            "unit": "% of total welfare of beneficiary households",
-            "shortUnit": "%",
-            "description": null,
-            "code": "PER_LM_ALLLM.ADQ_POP_TOT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adjusted net enrollment rate, primary (% of primary school age children)",
-            "unit": "% of primary school age children",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.TENR",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adjusted net enrollment rate, primary, female (% of primary school age children)",
-            "unit": "% of primary school age children",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.TENR.FE",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adjusted net enrollment rate, primary, male (% of primary school age children)",
-            "unit": "% of primary school age children",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.TENR.MA",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children out of school (% of primary school age)",
-            "unit": "% of primary school age",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.UNER.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Government expenditure on education, total (% of GDP)",
-            "unit": "% of GDP",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.XPD.TOTL.GD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Government expenditure on education, total (% of government expenditure)",
-            "unit": "% of government expenditure",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.XPD.TOTL.GB.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Literacy rate, adult female (% of females ages 15 and above)",
-            "unit": "% of females ages 15 and above",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.ADT.LITR.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Literacy rate, adult male (% of males ages 15 and above)",
-            "unit": "% of males ages 15 and above",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.ADT.LITR.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Literacy rate, adult total (% of people ages 15 and above)",
-            "unit": "% of people ages 15 and above",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.ADT.LITR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Literacy rate, youth (ages 15-24), gender parity index (GPI)",
-            "unit": "GPI",
-            "shortUnit": "GPI",
-            "description": null,
-            "code": "SE.ADT.1524.LT.FM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Primary completion rate, female (% of relevant age group)",
-            "unit": "% of relevant age group",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.CMPT.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Primary completion rate, male (% of relevant age group)",
-            "unit": "% of relevant age group",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.CMPT.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Primary completion rate, total (% of relevant age group)",
-            "unit": "% of relevant age group",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.CMPT.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Primary education, pupils (% female)",
-            "unit": "% female",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.ENRL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "School enrollment, primary (% net)",
-            "unit": "% net",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.PRM.NENR",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Secondary education, pupils (% female)",
-            "unit": "% female",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.SEC.ENRL.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Government expenditure per student, tertiary (% of GDP per capita)",
-            "unit": "% of GDP per capita",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SE.XPD.TERT.PC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Proportion of seats held by women in national parliaments (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SG.GEN.PARL.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Women participating in the three decisions (own health care, major household purchases, and visiting family) (% of women age 15-49)",
-            "unit": "% of women age 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SG.DMK.ALLD.FN.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Women who believe a husband is justified in beating his wife (any of five reasons) (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SG.VAW.REAS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adolescent fertility rate (births per 1,000 women ages 15-19)",
-            "unit": "births per 1,000 women ages 15-19",
-            "shortUnit": "births",
-            "description": null,
-            "code": "SP.ADO.TFRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Age dependency ratio (% of working-age population)",
-            "unit": "% of working-age population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.POP.DPND",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Age dependency ratio, old (% of working-age population)",
-            "unit": "% of working-age population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.POP.DPND.OL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Age dependency ratio, young (% of working-age population)",
-            "unit": "% of working-age population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.POP.DPND.YG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Antiretroviral therapy coverage (% of people living with HIV)",
-            "unit": "% of people living with HIV",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.HIV.ARTC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "ARI treatment (% of children under 5 taken to a health provider)",
-            "unit": "% of children under 5 taken to a health provider",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.ARIC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Birth rate, crude (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.DYN.CBRT.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Births attended by skilled health staff (% of total)",
-            "unit": "% of total",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.BRTC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Completeness of birth registration (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.REG.BRTH.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Contraceptive prevalence, any methods (% of women ages 15-49)",
-            "unit": "% of women ages 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.DYN.CONU.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Contraceptive prevalence, modern methods (% of women ages 15-49)",
-            "unit": "% of women ages 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.DYN.CONM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Death rate, crude (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.DYN.CDRT.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Demand for family planning satisfied by modern methods (% of married women with demand for family planning)",
-            "unit": "% of married women with demand for family planning",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.FPL.SATM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Diabetes prevalence (% of population ages 20 to 79)",
-            "unit": "% of population ages 20 to 79",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.DIAB.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Diarrhea treatment (% of children under 5 who received ORS packet)",
-            "unit": "% of children under 5 who received ORS packet",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.ORTH",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Exclusive breastfeeding (% of children under 6 months)",
-            "unit": "% of children under 6 months",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.BFED.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Fertility rate, total (births per woman)",
-            "unit": "births per woman",
-            "shortUnit": "births",
-            "description": null,
-            "code": "SP.DYN.TFRT.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Hospital beds (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.MED.BEDS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Life expectancy at birth, total (years)",
-            "unit": "years",
-            "shortUnit": "years",
-            "description": null,
-            "code": "SP.DYN.LE00.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Lifetime risk of maternal death (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.MMR.RISK.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Maternal mortality ratio (modeled estimate, per 100,000 live births)",
-            "unit": "modeled estimate, per 100,000 live births",
-            "shortUnit": "modeled estimate,",
-            "description": null,
-            "code": "SH.STA.MMRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.DYN.NCOM.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mortality rate, infant (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.DYN.IMRT.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mortality rate, infant, female (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.DYN.IMRT.FE.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mortality rate, infant, male (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
-            "code": "SP.DYN.IMRT.MA.IN",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Mortality rate, neonatal (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.DYN.NMRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
         },
         {
-            "originalMetadata": null,
-            "name": "Mortality rate, under-5 (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.DYN.MORT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "name": "Child mortality",
+            "name": "Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)",
+            "code": "SI.POV.LMIC",
+            "old": {
                 "unit": "%",
                 "shortUnit": "%",
-                "tolerance": 5,
-                "isProjection": false,
-                "conversionFactor": 0.1
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
+            "name": "Gini index (World Bank estimate)",
+            "code": "SI.POV.GINI",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Account ownership at a financial institution or with a mobile-money-service provider (% of population ages 15+)",
+            "code": "FX.OWN.TOTL.ZS",
+            "old": {
+                "unit": "% age 15+",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of current tobacco use (% of adults)",
+            "code": "SH.PRV.SMOK",
+            "old": {
+                "unit": "ages 15+",
+                "shortUnit": "ages 15+",
+                "display": {
+                    "name": "Adults who smoke",
+                    "unit": "%",
+                    "shortUnit": "%"
+                }
+            }
+        },
+        {
+            "name": "Domestic private health expenditure per capita, PPP (current international $)",
+            "code": "SH.XPD.PVTD.PP.CD",
+            "old": {
+                "unit": "current international $",
+                "shortUnit": "$",
+                "display": {}
+            }
+        },
+        {
+            "name": "Mortality rate, under-5 (per 1,000 live births)",
+            "code": "SH.DYN.MORT",
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {
+                    "name": "Child mortality",
+                    "unit": "%",
+                    "shortUnit": "%",
+                    "tolerance": 5,
+                    "isProjection": false,
+                    "conversionFactor": 0.1
+                }
+            }
+        },
+        {
+            "name": "Annual freshwater withdrawals, total (% of internal resources)",
+            "code": "ER.H2O.FWTL.ZS",
+            "old": {
+                "unit": "% of internal resources",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Number"
+                }
+            }
+        },
+        {
+            "name": "Employment in services, male (% of male employment) (modeled ILO estimate)",
+            "code": "SL.SRV.EMPL.MA.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Annual freshwater withdrawals, total (billion cubic meters)",
+            "code": "ER.H2O.FWTL.K3",
+            "old": {
+                "unit": "billion cubic meters",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Aquaculture production (metric tons)",
+            "code": "ER.FSH.AQUA.MT",
+            "old": {
+                "unit": "metric tons",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Revenue, excluding grants (% of GDP)",
+            "code": "GC.REV.XGRT.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Women participating in the three decisions (own health care, major household purchases, and visiting family) (% of women age 15-49)",
+            "code": "SG.DMK.ALLD.FN.ZS",
+            "old": {
+                "unit": "% of women age 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Arable land (% of land area)",
+            "code": "AG.LND.ARBL.ZS",
+            "old": {
+                "unit": "% of land area",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Net official development assistance and official aid received (current US$)",
+            "code": "DT.ODA.ALLD.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Women who believe a husband is justified in beating his wife (any of five reasons) (%)",
+            "code": "SG.VAW.REAS.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Arable land (hectares per person)",
+            "code": "AG.LND.ARBL.HA.PC",
+            "old": {
+                "unit": "hectares per person",
+                "shortUnit": "hectares",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Labor force participation rate for ages 15-24, female (%) (national estimate)",
+            "code": "SL.TLF.ACTI.1524.FE.NE.ZS",
+            "old": {
+                "unit": "national estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Capture fisheries production (metric tons)",
+            "code": "ER.FSH.CAPT.MT",
+            "old": {
+                "unit": "metric tons",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Tax revenue (% of GDP)",
+            "code": "GC.TAX.TOTL.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Cereal yield (kg per hectare)",
+            "code": "AG.YLD.CREL.KG",
+            "old": {
+                "unit": "kg per hectare",
+                "shortUnit": "kg",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "CO2 emissions (kt)",
+            "code": "EN.ATM.CO2E.KT",
+            "old": {
+                "unit": "kt",
+                "shortUnit": "kt",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "CO2 emissions (metric tons per capita)",
+            "code": "EN.ATM.CO2E.PC",
+            "old": {
+                "unit": "metric tons per capita",
+                "shortUnit": "metric tons",
+                "display": {
+                    "unit": "Kilometres"
+                }
+            }
+        },
+        {
+            "name": "Adolescent fertility rate (births per 1,000 women ages 15-19)",
+            "code": "SP.ADO.TFRT",
+            "old": {
+                "unit": "births per 1,000 women ages 15-19",
+                "shortUnit": "births",
+                "display": {}
+            }
+        },
+        {
+            "name": "Age dependency ratio (% of working-age population)",
+            "code": "SP.POP.DPND",
+            "old": {
+                "unit": "% of working-age population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Age dependency ratio, old (% of working-age population)",
+            "code": "SP.POP.DPND.OL",
+            "old": {
+                "unit": "% of working-age population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Adjusted net savings, excluding particulate emission damage (current US$)",
+            "code": "NY.ADJ.SVNX.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Percentage"
+                }
+            }
+        },
+        {
+            "name": "Age dependency ratio, young (% of working-age population)",
+            "code": "SP.POP.DPND.YG",
+            "old": {
+                "unit": "% of working-age population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Personal remittances, paid (current US$)",
+            "code": "BM.TRF.PWKR.CD.DT",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Antiretroviral therapy coverage (% of people living with HIV)",
+            "code": "SH.HIV.ARTC.ZS",
+            "old": {
+                "unit": "% of people living with HIV",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Personal remittances, received (% of GDP)",
+            "code": "BX.TRF.PWKR.DT.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "ARI treatment (% of children under 5 taken to a health provider)",
+            "code": "SH.STA.ARIC.ZS",
+            "old": {
+                "unit": "% of children under 5 taken to a health provider",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Personal remittances, received (current US$)",
+            "code": "BX.TRF.PWKR.CD.DT",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Birth rate, crude (per 1,000 people)",
+            "code": "SP.DYN.CBRT.IN",
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Births attended by skilled health staff (% of total)",
+            "code": "SH.STA.BRTC.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Completeness of birth registration (%)",
+            "code": "SP.REG.BRTH.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Contraceptive prevalence, any methods (% of women ages 15-49)",
+            "code": "SP.DYN.CONU.ZS",
+            "old": {
+                "unit": "% of women ages 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Contraceptive prevalence, modern methods (% of women ages 15-49)",
+            "code": "SP.DYN.CONM.ZS",
+            "old": {
+                "unit": "% of women ages 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Service exports (BoP, current US$)",
+            "code": "BX.GSR.NFSV.CD",
+            "old": {
+                "unit": "BoP, current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Share of youth not in education, employment or training, total (% of youth population)",
+            "code": "SL.UEM.NEET.ZS",
+            "old": {
+                "unit": "% of youth population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Death rate, crude (per 1,000 people)",
+            "code": "SP.DYN.CDRT.IN",
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Demand for family planning satisfied by modern methods (% of married women with demand for family planning)",
+            "code": "SH.FPL.SATM.ZS",
+            "old": {
+                "unit": "% of married women with demand for family planning",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Diabetes prevalence (% of population ages 20 to 79)",
+            "code": "SH.STA.DIAB.ZS",
+            "old": {
+                "unit": "% of population ages 20 to 79",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Diarrhea treatment (% of children under 5 who received ORS packet)",
+            "code": "SH.STA.ORTH",
+            "old": {
+                "unit": "% of children under 5 who received ORS packet",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Exclusive breastfeeding (% of children under 6 months)",
+            "code": "SH.STA.BFED.ZS",
+            "old": {
+                "unit": "% of children under 6 months",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Energy intensity level of primary energy (MJ/$2011 PPP GDP)",
+            "code": "EG.EGY.PRIM.PP.KD",
+            "old": {
+                "unit": "MJ/$2011 PPP GDP",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Fertility rate, total (births per woman)",
+            "code": "SP.DYN.TFRT.IN",
+            "old": {
+                "unit": "births per woman",
+                "shortUnit": "births",
+                "display": {}
+            }
+        },
+        {
+            "name": "Energy use (kg of oil equivalent per capita)",
+            "code": "EG.USE.PCAP.KG.OE",
+            "old": {
+                "unit": "kg of oil equivalent per capita",
+                "shortUnit": "kg of oil equivalent",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Trade (% of GDP)",
+            "code": "NE.TRD.GNFS.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Trade in services (% of GDP)",
+            "code": "BG.GSR.NFSV.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Fertilizer consumption (kilograms per hectare of arable land)",
+            "code": "AG.CON.FERT.ZS",
+            "old": {
+                "unit": "kilograms per hectare of arable land",
+                "shortUnit": "kilograms",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Average working hours of children, study and work, ages 7-14 (hours per week)",
+            "code": "SL.TLF.0714.SW.TM",
+            "old": {
+                "unit": "hours per week",
+                "shortUnit": "hours",
+                "display": {}
+            }
+        },
+        {
+            "name": "Hospital beds (per 1,000 people)",
+            "code": "SH.MED.BEDS.ZS",
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Manufacturing, value added (% of GDP)",
+            "code": "NV.IND.MANF.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Land area (sq. km)",
+            "code": "AG.LND.TOTL.K2",
+            "old": {
+                "unit": "sq. km",
+                "shortUnit": "sq. km",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Children in employment, female (% of female children ages 7-14)",
+            "code": "SL.TLF.0714.FE.ZS",
+            "old": {
+                "unit": "% of female children ages 7-14",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Children in employment, male (% of male children ages 7-14)",
+            "code": "SL.TLF.0714.MA.ZS",
+            "old": {
+                "unit": "% of male children ages 7-14",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Marine protected areas (% of territorial waters)",
+            "code": "ER.MRN.PTMR.ZS",
+            "old": {
+                "unit": "% of territorial waters",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Food exports (% of merchandise exports)",
+            "code": "TX.VAL.FOOD.ZS.UN",
+            "old": {
+                "unit": "% of merchandise exports",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "%"
+                }
+            }
+        },
+        {
+            "name": "Children in employment, total (% of children ages 7-14)",
+            "code": "SL.TLF.0714.ZS",
+            "old": {
+                "unit": "% of children ages 7-14",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Life expectancy at birth, total (years)",
+            "code": "SP.DYN.LE00.IN",
+            "old": {
+                "unit": "years",
+                "shortUnit": "years",
+                "display": {}
+            }
+        },
+        {
+            "name": "Lifetime risk of maternal death (%)",
+            "code": "SH.MMR.RISK.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Fuel exports (% of merchandise exports)",
+            "code": "TX.VAL.FUEL.ZS.UN",
+            "old": {
+                "unit": "% of merchandise exports",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "%"
+                }
+            }
+        },
+        {
+            "name": "Maternal mortality ratio (modeled estimate, per 100,000 live births)",
+            "code": "SH.STA.MMRT",
+            "old": {
+                "unit": "modeled estimate, per 100,000 live births",
+                "shortUnit": "modeled estimate,",
+                "display": {}
+            }
+        },
+        {
+            "name": "Mortality from CVD, cancer, diabetes or CRD between exact ages 30 and 70 (%)",
+            "code": "SH.DYN.NCOM.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Children in employment, work only (% of children in employment, ages 7-14)",
+            "code": "SL.TLF.0714.WK.ZS",
+            "old": {
+                "unit": "% of children in employment, ages 7-14",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Mortality rate, infant (per 1,000 live births)",
+            "code": "SP.DYN.IMRT.IN",
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Net ODA received (% of central government expense)",
+            "code": "DT.ODA.ODAT.XP.ZS",
+            "old": {
+                "unit": "% of central government expense",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "International tourism, number of arrivals",
+            "code": "ST.INT.ARVL",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "%"
+                }
+            }
+        },
+        {
+            "name": "Mortality rate, infant, female (per 1,000 live births)",
+            "code": "SP.DYN.IMRT.FE.IN",
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)",
+            "code": "EN.ATM.PM25.MC.M3",
+            "old": {
+                "unit": "micrograms per cubic meter",
+                "shortUnit": "micrograms",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Mortality rate, infant, male (per 1,000 live births)",
+            "code": "SP.DYN.IMRT.MA.IN",
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "PM2.5 air pollution, population exposed to levels exceeding WHO guideline value (% of total)",
+            "code": "EN.ATM.PM25.MC.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Mortality rate, neonatal (per 1,000 live births)",
+            "code": "SH.DYN.NMRT",
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Population density (people per sq. km of land area)",
+            "code": "EN.POP.DNST",
+            "old": {
+                "unit": "people per sq. km of land area",
+                "shortUnit": "people",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Population in the largest city (% of urban population)",
+            "code": "EN.URB.LCTY.UR.ZS",
+            "old": {
+                "unit": "% of urban population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
             "name": "Mortality rate, under-5, female (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
             "code": "SH.DYN.MORT.FE",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
+            "name": "Population in urban agglomerations of more than 1 million (% of total population)",
+            "code": "EN.URB.MCTY.TL.ZS",
+            "old": {
+                "unit": "% of total population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "PPP conversion factor, private consumption (LCU per international $)",
+            "code": "PA.NUS.PRVT.PP",
+            "old": {
+                "unit": "LCU per international $",
+                "shortUnit": "LCU",
+                "display": {
+                    "unit": "Percentage"
+                }
+            }
+        },
+        {
             "name": "Mortality rate, under-5, male (per 1,000 live births)",
-            "unit": "per 1,000 live births",
-            "shortUnit": null,
-            "description": null,
             "code": "SH.DYN.MORT.MA",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "name": "Child mortality rate of boys",
-                "unit": "%",
-                "tolerance": 5,
-                "conversionFactor": 0.1
+            "old": {
+                "unit": "per 1,000 live births",
+                "shortUnit": null,
+                "display": {
+                    "name": "Child mortality rate of boys",
+                    "unit": "%",
+                    "tolerance": 5,
+                    "conversionFactor": 0.1
+                }
             }
         },
         {
-            "originalMetadata": null,
+            "name": "Population living in slums (% of urban population)",
+            "code": "EN.POP.SLUM.UR.ZS",
+            "old": {
+                "unit": "% of urban population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
             "name": "Number of maternal deaths",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
             "code": "SH.MMR.DTHS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "unit": "maternal deaths",
-                "numDecimalPlaces": 0
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "maternal deaths",
+                    "numDecimalPlaces": 0
+                }
             }
         },
         {
-            "originalMetadata": null,
+            "name": "Price level ratio of PPP conversion factor (GDP) to market exchange rate",
+            "code": "PA.NUS.PPPC.RF",
+            "old": {
+                "unit": "GDP",
+                "shortUnit": "GDP",
+                "display": {}
+            }
+        },
+        {
             "name": "Nurses and midwives (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
             "code": "SH.MED.NUMW.P3",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
+            "name": "Renewable energy consumption (% of total final energy consumption)",
+            "code": "EG.FEC.RNEW.ZS",
+            "old": {
+                "unit": "% of total final energy consumption",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Renewable internal freshwater resources per capita (cubic meters)",
+            "code": "ER.H2O.INTR.PC",
+            "old": {
+                "unit": "cubic meters",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
             "name": "People practicing open defecation (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
             "code": "SH.STA.ODFC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
-            "name": "People practicing open defecation, rural (% of rural population)",
-            "unit": "% of rural population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.ODFC.RU.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "name": "Rural land area where elevation is below 5 meters (% of total land area)",
+            "code": "AG.LND.EL5M.RU.ZS",
+            "old": {
+                "unit": "% of total land area",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
         },
         {
-            "originalMetadata": null,
-            "name": "People practicing open defecation, urban (% of urban population)",
-            "unit": "% of urban population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.ODFC.UR.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
             "name": "Physicians (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
             "code": "SH.MED.PHYS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
+            "name": "Rural population",
+            "code": "SP.RUR.TOTL",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Manufactures exports (% of merchandise exports)",
+            "code": "TX.VAL.MANF.ZS.UN",
+            "old": {
+                "unit": "% of merchandise exports",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "millions"
+                }
+            }
+        },
+        {
+            "name": "Terrestrial protected areas (% of total land area)",
+            "code": "ER.LND.PTLD.ZS",
+            "old": {
+                "unit": "% of total land area",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Total fisheries production (metric tons)",
+            "code": "ER.FSH.PROD.MT",
+            "old": {
+                "unit": "metric tons",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Total natural resources rents (% of GDP)",
+            "code": "NY.GDP.TOTL.RT.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Urban land area (sq. km)",
+            "code": "AG.LND.TOTL.UR.K2",
+            "old": {
+                "unit": "sq. km",
+                "shortUnit": "sq. km",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Urban population",
+            "code": "SP.URB.TOTL",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Number"
+                }
+            }
+        },
+        {
+            "name": "Water productivity, total (constant 2010 US$ GDP per cubic meter of total freshwater withdrawal)",
+            "code": "ER.GDP.FWTL.M3.KD",
+            "old": {
+                "unit": "constant 2010 US$ GDP per cubic meter of total freshwater withdrawal",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Adjusted net enrollment rate, primary (% of primary school age children)",
+            "code": "SE.PRM.TENR",
+            "old": {
+                "unit": "% of primary school age children",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Adjusted net enrollment rate, primary, female (% of primary school age children)",
+            "code": "SE.PRM.TENR.FE",
+            "old": {
+                "unit": "% of primary school age children",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Agricultural irrigated land (% of total agricultural land)",
+            "code": "AG.LND.IRIG.AG.ZS",
+            "old": {
+                "unit": "% of total agricultural land",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Adjusted net enrollment rate, primary, male (% of primary school age children)",
+            "code": "SE.PRM.TENR.MA",
+            "old": {
+                "unit": "% of primary school age children",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Arable land (hectares)",
+            "code": "AG.LND.ARBL.HA",
+            "old": {
+                "unit": "hectares",
+                "shortUnit": "hectares",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Average precipitation in depth (mm per year)",
+            "code": "AG.LND.PRCP.MM",
+            "old": {
+                "unit": "mm per year",
+                "shortUnit": "mm",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Air transport, freight (million ton-km)",
+            "code": "IS.AIR.GOOD.MT.K1",
+            "old": {
+                "unit": "million ton-km",
+                "shortUnit": null,
+                "display": {
+                    "unit": "%"
+                }
+            }
+        },
+        {
+            "name": "Air transport, passengers carried",
+            "code": "IS.AIR.PSGR",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Children out of school (% of primary school age)",
+            "code": "SE.PRM.UNER.ZS",
+            "old": {
+                "unit": "% of primary school age",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Population in urban agglomerations of more than 1 million",
+            "code": "EN.URB.MCTY",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "New business density (new registrations per 1,000 people ages 15-64)",
+            "code": "IC.BUS.NDNS.ZS",
+            "old": {
+                "unit": "new registrations per 1,000 people ages 15-64",
+                "shortUnit": "new registrations",
+                "display": {}
+            }
+        },
+        {
+            "name": "Ores and metals exports (% of merchandise exports)",
+            "code": "TX.VAL.MMTL.ZS.UN",
+            "old": {
+                "unit": "% of merchandise exports",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Disaster risk reduction progress score (1-5 scale; 5=best)",
+            "code": "EN.CLC.DRSK.XQ",
+            "old": {
+                "unit": "1-5 scale; 5=best",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Fixed broadband subscriptions (per 100 people)",
+            "code": "IT.NET.BBND.P2",
+            "old": {
+                "unit": "per 100 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Fixed telephone subscriptions (per 100 people)",
+            "code": "IT.MLT.MAIN.P2",
+            "old": {
+                "unit": "per 100 people",
+                "shortUnit": null,
+                "display": {
+                    "unit": "DALYs per 100,000"
+                }
+            }
+        },
+        {
+            "name": "Government expenditure on education, total (% of GDP)",
+            "code": "SE.XPD.TOTL.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Government expenditure on education, total (% of government expenditure)",
+            "code": "SE.XPD.TOTL.GB.ZS",
+            "old": {
+                "unit": "% of government expenditure",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
             "name": "Population growth (annual %)",
-            "unit": "annual %",
-            "shortUnit": "%",
-            "description": null,
             "code": "SP.POP.GROW",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "annual %",
+                "shortUnit": "%",
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
             "name": "Population, total",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
             "code": "SP.POP.TOTL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
+            "name": "Literacy rate, adult female (% of females ages 15 and above)",
+            "code": "SE.ADT.LITR.FE.ZS",
+            "old": {
+                "unit": "% of females ages 15 and above",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
             "name": "Pregnant women receiving prenatal care (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
             "code": "SH.STA.ANVC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of anemia among children (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.ANM.CHLD.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of anemia among pregnant women (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.PRG.ANEM",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of anemia among women of reproductive age (% of women ages 15-49)",
-            "unit": "% of women ages 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.ANM.ALLW.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of HIV, female (% ages 15-24)",
-            "unit": "% ages 15-24",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.HIV.1524.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of HIV, male (% ages 15-24)",
-            "unit": "% ages 15-24",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.HIV.1524.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of HIV, total (% of population ages 15-49)",
-            "unit": "% of population ages 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.DYN.AIDS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Risk of catastrophic expenditure for surgical care (% of people at risk)",
-            "unit": "% of people at risk",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.SGR.CRSK.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Risk of impoverishing expenditure for surgical care (% of people at risk)",
-            "unit": "% of people at risk",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.SGR.IRSK.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Specialist surgical workforce (per 100,000 population)",
-            "unit": "per 100,000 population",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.MED.SAOP.P5",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Suicide mortality rate (per 100,000 population)",
-            "unit": "per 100,000 population",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.STA.SUIC.P5",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Survival to age 65, female (% of cohort)",
-            "unit": "% of cohort",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.DYN.TO65.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Survival to age 65, male (% of cohort)",
-            "unit": "% of cohort",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.DYN.TO65.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)",
-            "unit": "liters of pure alcohol, projected estimates, 15+ years of age",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.ALC.PCAP.LI",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "name": "Alcohol consumption (litres per capita)",
-                "shortUnit": "litres"
-            }
-        },
-        {
-            "originalMetadata": null,
-            "name": "Unmet need for contraception (% of married women ages 15-49)",
-            "unit": "% of married women ages 15-49",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.UWT.TFRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Women's share of population ages 15+ living with HIV (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.DYN.AIDS.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Antiretroviral therapy coverage for PMTCT (% of pregnant women living with HIV)",
-            "unit": "% of pregnant women living with HIV",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.HIV.PMTC.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Consumption of iodized salt (% of households)",
-            "unit": "% of households",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SN.ITK.SALT.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Incidence of malaria (per 1,000 population at risk)",
-            "unit": "per 1,000 population at risk",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.MLR.INCD.P3",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Vitamin A supplementation coverage rate (% of children ages 6-59 months)",
-            "unit": "% of children ages 6-59 months",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SN.ITK.VITA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Wanted fertility rate (births per woman)",
-            "unit": "births per woman",
-            "shortUnit": "births",
-            "description": null,
-            "code": "SP.DYN.WFRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Incidence of tuberculosis (per 100,000 people)",
-            "unit": "per 100,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.TBS.INCD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of stunting, height for age (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.STNT.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of underweight, weight for age (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.MALN.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Community health workers (per 1,000 people)",
-            "unit": "per 1,000 people",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.MED.CMHW.P3",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Number of infant deaths",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.DTH.IMRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Number of neonatal deaths",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.DTH.NMRT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Number of under-five deaths",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.DTH.MORT",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children with fever receiving antimalarial drugs (% of children under age 5 with fever)",
-            "unit": "% of children under age 5 with fever",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.MLR.TRET.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Use of insecticide-treated bed nets (% of under-5 population)",
-            "unit": "% of under-5 population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.MLR.NETS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Teenage mothers (% of women ages 15-19 who have had children or are currently pregnant)",
-            "unit": "% of women ages 15-19 who have had children or are currently pregnant",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.MTR.1519.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Adults (ages 15+) and children (ages 0-14) newly infected with HIV",
-            "unit": "ages 0-14",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.HIV.INCD.TL",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children (0-14) living with HIV",
-            "unit": "0-14",
-            "shortUnit": "0-14",
-            "description": null,
-            "code": "SH.HIV.0014",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Children (ages 0-14) newly infected with HIV",
-            "unit": "ages 0-14",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.HIV.INCD.14",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of stunting, height for age, female (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.STNT.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of stunting, height for age, male (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.STNT.MA.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Prevalence of wasting, weight for height (% of children under 5)",
-            "unit": "% of children under 5",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.WAST.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Women who were first married by age 18 (% of women ages 20-24)",
-            "unit": "% of women ages 20-24",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SP.M18.2024.FE.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Female genital mutilation prevalence (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.FGMS.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "People with basic handwashing facilities including soap and water, rural (% of rural population)",
-            "unit": "% of rural population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.HYGN.RU.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "People with basic handwashing facilities including soap and water (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SH.STA.HYGN.ZS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "UHC service coverage index",
-            "unit": "",
-            "shortUnit": null,
-            "description": null,
-            "code": "SH.UHC.SRVS.CV.XD",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Sex ratio at birth (male births per female births)",
-            "unit": "male births per female births",
-            "shortUnit": "male births",
-            "description": null,
-            "code": "SP.POP.BRTH.MF",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Poverty gap at $1.90 a day (2011 PPP) (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SI.POV.GAPS",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
-        },
-        {
-            "originalMetadata": null,
-            "name": "Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SI.POV.DDAY",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {
-                "name": "Share of the population living in extreme poverty",
+            "old": {
                 "unit": "%",
-                "tolerance": 5,
-                "isProjection": false
+                "shortUnit": "%",
+                "display": {}
             }
         },
         {
-            "originalMetadata": null,
-            "name": "Poverty headcount ratio at national poverty lines (% of population)",
-            "unit": "% of population",
-            "shortUnit": "%",
-            "description": null,
-            "code": "SI.POV.NAHC",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "name": "Individuals using the Internet (% of population)",
+            "code": "IT.NET.USER.ZS",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
         },
         {
-            "originalMetadata": null,
+            "name": "Literacy rate, adult male (% of males ages 15 and above)",
+            "code": "SE.ADT.LITR.MA.ZS",
+            "old": {
+                "unit": "% of males ages 15 and above",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Literacy rate, adult total (% of people ages 15 and above)",
+            "code": "SE.ADT.LITR.ZS",
+            "old": {
+                "unit": "% of people ages 15 and above",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Literacy rate, youth (ages 15-24), gender parity index (GPI)",
+            "code": "SE.ADT.1524.LT.FM.ZS",
+            "old": {
+                "unit": "GPI",
+                "shortUnit": "GPI",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of anemia among pregnant women (%)",
+            "code": "SH.PRG.ANEM",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Mobile cellular subscriptions",
+            "code": "IT.CEL.SETS",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of anemia among women of reproductive age (% of women ages 15-49)",
+            "code": "SH.ANM.ALLW.ZS",
+            "old": {
+                "unit": "% of women ages 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Mobile cellular subscriptions (per 100 people)",
+            "code": "IT.CEL.SETS.P2",
+            "old": {
+                "unit": "per 100 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of HIV, female (% ages 15-24)",
+            "code": "SH.HIV.1524.FE.ZS",
+            "old": {
+                "unit": "% ages 15-24",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of HIV, male (% ages 15-24)",
+            "code": "SH.HIV.1524.MA.ZS",
+            "old": {
+                "unit": "% ages 15-24",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Time required to start a business (days)",
+            "code": "IC.REG.DURS",
+            "old": {
+                "unit": "days",
+                "shortUnit": "days",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of HIV, total (% of population ages 15-49)",
+            "code": "SH.DYN.AIDS.ZS",
+            "old": {
+                "unit": "% of population ages 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Pump price for diesel fuel (US$ per liter)",
+            "code": "EP.PMP.DESL.CD",
+            "old": {
+                "unit": "US$ per liter",
+                "shortUnit": "$",
+                "display": {}
+            }
+        },
+        {
+            "name": "Pump price for gasoline (US$ per liter)",
+            "code": "EP.PMP.SGAS.CD",
+            "old": {
+                "unit": "US$ per liter",
+                "shortUnit": "$",
+                "display": {}
+            }
+        },
+        {
+            "name": "Risk of catastrophic expenditure for surgical care (% of people at risk)",
+            "code": "SH.SGR.CRSK.ZS",
+            "old": {
+                "unit": "% of people at risk",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Risk of impoverishing expenditure for surgical care (% of people at risk)",
+            "code": "SH.SGR.IRSK.ZS",
+            "old": {
+                "unit": "% of people at risk",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-1 value (% of total)",
+            "code": "EN.ATM.PM25.MC.T1.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Specialist surgical workforce (per 100,000 population)",
+            "code": "SH.MED.SAOP.P5",
+            "old": {
+                "unit": "per 100,000 population",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-2 value (% of total)",
+            "code": "EN.ATM.PM25.MC.T2.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Suicide mortality rate (per 100,000 population)",
+            "code": "SH.STA.SUIC.P5",
+            "old": {
+                "unit": "per 100,000 population",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "PM2.5 pollution, population exposed to levels exceeding WHO Interim Target-3 value (% of total)",
+            "code": "EN.ATM.PM25.MC.T3.ZS",
+            "old": {
+                "unit": "% of total",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Scientific and technical journal articles",
+            "code": "IP.JRN.ARTC.SC",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Survival to age 65, female (% of cohort)",
+            "code": "SP.DYN.TO65.FE.ZS",
+            "old": {
+                "unit": "% of cohort",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Survival to age 65, male (% of cohort)",
+            "code": "SP.DYN.TO65.MA.ZS",
+            "old": {
+                "unit": "% of cohort",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Secure Internet servers (per 1 million people)",
+            "code": "IT.NET.SECR.P6",
+            "old": {
+                "unit": "per 1 million people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)",
+            "code": "SH.ALC.PCAP.LI",
+            "old": {
+                "unit": "liters of pure alcohol, projected estimates, 15+ years of age",
+                "shortUnit": null,
+                "display": {
+                    "name": "Alcohol consumption (litres per capita)",
+                    "shortUnit": "litres"
+                }
+            }
+        },
+        {
+            "name": "Unmet need for contraception (% of married women ages 15-49)",
+            "code": "SP.UWT.TFRT",
+            "old": {
+                "unit": "% of married women ages 15-49",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Women's share of population ages 15+ living with HIV (%)",
+            "code": "SH.DYN.AIDS.FE.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Exports of goods and services (% of GDP)",
+            "code": "NE.EXP.GNFS.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Antiretroviral therapy coverage for PMTCT (% of pregnant women living with HIV)",
+            "code": "SH.HIV.PMTC.ZS",
+            "old": {
+                "unit": "% of pregnant women living with HIV",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Primary completion rate, female (% of relevant age group)",
+            "code": "SE.PRM.CMPT.FE.ZS",
+            "old": {
+                "unit": "% of relevant age group",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Exports of goods and services (constant 2010 US$)",
+            "code": "NE.EXP.GNFS.KD",
+            "old": {
+                "unit": "constant 2010 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Railways, passengers carried (million passenger-km)",
+            "code": "IS.RRS.PASG.KM",
+            "old": {
+                "unit": "million passenger-km",
+                "shortUnit": null,
+                "display": {
+                    "unit": "%",
+                    "shortUnit": "%"
+                }
+            }
+        },
+        {
+            "name": "Primary completion rate, male (% of relevant age group)",
+            "code": "SE.PRM.CMPT.MA.ZS",
+            "old": {
+                "unit": "% of relevant age group",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Exports of goods and services (current US$)",
+            "code": "NE.EXP.GNFS.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Research and development expenditure (% of GDP)",
+            "code": "GB.XPD.RSDV.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Primary completion rate, total (% of relevant age group)",
+            "code": "SE.PRM.CMPT.ZS",
+            "old": {
+                "unit": "% of relevant age group",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Researchers in R&D (per million people)",
+            "code": "SP.POP.SCIE.RD.P6",
+            "old": {
+                "unit": "per million people",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "International tourism, number of departures",
+            "code": "ST.INT.DPRT",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "acres per fire"
+                }
+            }
+        },
+        {
+            "name": "Investment in energy with private participation (current US$)",
+            "code": "IE.PPI.ENGY.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {}
+            }
+        },
+        {
+            "name": "Consumption of iodized salt (% of households)",
+            "code": "SN.ITK.SALT.ZS",
+            "old": {
+                "unit": "% of households",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Primary education, pupils (% female)",
+            "code": "SE.PRM.ENRL.FE.ZS",
+            "old": {
+                "unit": "% female",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Incidence of malaria (per 1,000 population at risk)",
+            "code": "SH.MLR.INCD.P3",
+            "old": {
+                "unit": "per 1,000 population at risk",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Automated teller machines (ATMs) (per 100,000 adults)",
+            "code": "FB.ATM.TOTL.P5",
+            "old": {
+                "unit": "per 100,000 adults",
+                "shortUnit": null,
+                "display": {
+                    "unit": "%"
+                }
+            }
+        },
+        {
+            "name": "Vitamin A supplementation coverage rate (% of children ages 6-59 months)",
+            "code": "SN.ITK.VITA.ZS",
+            "old": {
+                "unit": "% of children ages 6-59 months",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Wanted fertility rate (births per woman)",
+            "code": "SP.DYN.WFRT",
+            "old": {
+                "unit": "births per woman",
+                "shortUnit": "births",
+                "display": {}
+            }
+        },
+        {
+            "name": "Incidence of tuberculosis (per 100,000 people)",
+            "code": "SH.TBS.INCD",
+            "old": {
+                "unit": "per 100,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Foreign direct investment, net inflows (% of GDP)",
+            "code": "BX.KLT.DINV.WD.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Prevalence of stunting, height for age (% of children under 5)",
+            "code": "SH.STA.STNT.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Foreign direct investment, net outflows (% of GDP)",
+            "code": "BM.KLT.DINV.WD.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Commercial bank branches (per 100,000 adults)",
+            "code": "FB.CBK.BRCH.P5",
+            "old": {
+                "unit": "per 100,000 adults",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of underweight, weight for age (% of children under 5)",
+            "code": "SH.STA.MALN.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "GDP (constant 2010 US$)",
+            "code": "NY.GDP.MKTP.KD",
+            "old": {
+                "unit": "constant 2010 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Community health workers (per 1,000 people)",
+            "code": "SH.MED.CMHW.P3",
+            "old": {
+                "unit": "per 1,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "GDP growth (annual %)",
+            "code": "NY.GDP.MKTP.KD.ZG",
+            "old": {
+                "unit": "annual %",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Number of infant deaths",
+            "code": "SH.DTH.IMRT",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "GDP per capita (constant 2010 US$)",
+            "code": "NY.GDP.PCAP.KD",
+            "old": {
+                "unit": "constant 2010 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Number of neonatal deaths",
+            "code": "SH.DTH.NMRT",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "GDP per capita (current US$)",
+            "code": "NY.GDP.PCAP.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "GDP per capita growth (annual %)",
+            "code": "NY.GDP.PCAP.KD.ZG",
+            "old": {
+                "unit": "annual %",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Number of under-five deaths",
+            "code": "SH.DTH.MORT",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Children with fever receiving antimalarial drugs (% of children under age 5 with fever)",
+            "code": "SH.MLR.TRET.ZS",
+            "old": {
+                "unit": "% of children under age 5 with fever",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Bird species, threatened",
+            "code": "EN.BIR.THRD.NO",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "GDP per capita, PPP (current international $)",
+            "code": "NY.GDP.PCAP.PP.CD",
+            "old": {
+                "unit": "current international $",
+                "shortUnit": "$",
+                "display": {
+                    "name": "GDP per capita",
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Use of insecticide-treated bed nets (% of under-5 population)",
+            "code": "SH.MLR.NETS.ZS",
+            "old": {
+                "unit": "% of under-5 population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Fish species, threatened",
+            "code": "EN.FSH.THRD.NO",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Mammal species, threatened",
+            "code": "EN.MAM.THRD.NO",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "School enrollment, primary (% net)",
+            "code": "SE.PRM.NENR",
+            "old": {
+                "unit": "% net",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Teenage mothers (% of women ages 15-19 who have had children or are currently pregnant)",
+            "code": "SP.MTR.1519.ZS",
+            "old": {
+                "unit": "% of women ages 15-19 who have had children or are currently pregnant",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "General government final consumption expenditure (constant 2010 US$)",
+            "code": "NE.CON.GOVT.KD",
+            "old": {
+                "unit": "constant 2010 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Adults (ages 15+) and children (ages 0-14) newly infected with HIV",
+            "code": "SH.HIV.INCD.TL",
+            "old": {
+                "unit": "ages 0-14",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Tariff rate, applied, weighted mean, all products (%)",
+            "code": "TM.TAX.MRCH.WM.AR.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Tariff rate, applied, weighted mean, manufactured products (%)",
+            "code": "TM.TAX.MANF.WM.AR.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Children (0-14) living with HIV",
+            "code": "SH.HIV.0014",
+            "old": {
+                "unit": "0-14",
+                "shortUnit": "0-14",
+                "display": {}
+            }
+        },
+        {
+            "name": "Tariff rate, applied, weighted mean, primary products (%)",
+            "code": "TM.TAX.TCOM.WM.AR.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Children (ages 0-14) newly infected with HIV",
+            "code": "SH.HIV.INCD.14",
+            "old": {
+                "unit": "ages 0-14",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Bribery incidence (% of firms experiencing at least one bribe payment request)",
+            "code": "IC.FRM.BRIB.ZS",
+            "old": {
+                "unit": "% of firms experiencing at least one bribe payment request",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Goods exports (BoP, current US$)",
+            "code": "BX.GSR.MRCH.CD",
+            "old": {
+                "unit": "BoP, current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Prevalence of stunting, height for age, female (% of children under 5)",
+            "code": "SH.STA.STNT.FE.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of stunting, height for age, male (% of children under 5)",
+            "code": "SH.STA.STNT.MA.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "People with basic handwashing facilities including soap and water, rural (% of rural population)",
+            "code": "SH.STA.HYGN.RU.ZS",
+            "old": {
+                "unit": "% of rural population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Prevalence of wasting, weight for height (% of children under 5)",
+            "code": "SH.STA.WAST.ZS",
+            "old": {
+                "unit": "% of children under 5",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "People with basic handwashing facilities including soap and water (% of population)",
+            "code": "SH.STA.HYGN.ZS",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Adequacy of social insurance programs (% of total welfare of beneficiary households)",
+            "code": "PER_SI_ALLSI.ADQ_POP_TOT",
+            "old": {
+                "unit": "% of total welfare of beneficiary households",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Gross domestic savings (% of GDP)",
+            "code": "NY.GDS.TOTL.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Adequacy of social safety net programs (% of total welfare of beneficiary households)",
+            "code": "PER_SA_ALLSA.ADQ_POP_TOT",
+            "old": {
+                "unit": "% of total welfare of beneficiary households",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Women who were first married by age 18 (% of women ages 20-24)",
+            "code": "SP.M18.2024.FE.ZS",
+            "old": {
+                "unit": "% of women ages 20-24",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Firms with female top manager (% of firms)",
+            "code": "IC.FRM.FEMM.ZS",
+            "old": {
+                "unit": "% of firms",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Secondary education, pupils (% female)",
+            "code": "SE.SEC.ENRL.FE.ZS",
+            "old": {
+                "unit": "% female",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Female genital mutilation prevalence (%)",
+            "code": "SH.STA.FGMS.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Poverty gap at $1.90 a day (2011 PPP) (%)",
+            "code": "SI.POV.GAPS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Coverage of social insurance programs (% of population)",
+            "code": "PER_SI_ALLSI.COV_POP_TOT",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population)",
+            "code": "SI.POV.DDAY",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {
+                    "name": "Share of the population living in extreme poverty",
+                    "unit": "%",
+                    "tolerance": 5,
+                    "isProjection": false
+                }
+            }
+        },
+        {
+            "name": "Poverty headcount ratio at national poverty lines (% of population)",
+            "code": "SI.POV.NAHC",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Power outages in firms in a typical month (number)",
+            "code": "IC.ELC.OUTG",
+            "old": {
+                "unit": "number",
+                "shortUnit": "number",
+                "display": {}
+            }
+        },
+        {
             "name": "Annualized average growth rate in per capita real survey mean consumption or income, bottom 40% of population (%)",
-            "unit": "%",
-            "shortUnit": "%",
-            "description": null,
             "code": "SI.SPR.PC40.ZG",
-            "coverage": "",
-            "timespan": "1960-2017",
-            "display": {}
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Adequacy of unemployment benefits and ALMP (% of total welfare of beneficiary households)",
+            "code": "PER_LM_ALLLM.ADQ_POP_TOT",
+            "old": {
+                "unit": "% of total welfare of beneficiary households",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment to population ratio, 15+, female (%) (modeled ILO estimate)",
+            "code": "SL.EMP.TOTL.SP.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "UHC service coverage index",
+            "code": "SH.UHC.SRVS.CV.XD",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment to population ratio, 15+, female (%) (national estimate)",
+            "code": "SL.EMP.TOTL.SP.FE.NE.ZS",
+            "old": {
+                "unit": "national estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Armed forces personnel (% of total labor force)",
+            "code": "MS.MIL.TOTL.TF.ZS",
+            "old": {
+                "unit": "% of total labor force",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "US$"
+                }
+            }
+        },
+        {
+            "name": "Imports of goods and services (constant 2010 US$)",
+            "code": "NE.IMP.GNFS.KD",
+            "old": {
+                "unit": "constant 2010 US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Armed forces personnel, total",
+            "code": "MS.MIL.TOTL.P1",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "billion tonnes CO\u2082 equivalent"
+                }
+            }
+        },
+        {
+            "name": "Imports of goods and services (current US$)",
+            "code": "NE.IMP.GNFS.CD",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Compensation of employees (% of expense)",
+            "code": "GC.XPN.COMP.ZS",
+            "old": {
+                "unit": "% of expense",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "ODS tonnes"
+                }
+            }
+        },
+        {
+            "name": "International migrant stock (% of population)",
+            "code": "SM.POP.TOTL.ZS",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "International migrant stock, total",
+            "code": "SM.POP.TOTL",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate)",
+            "code": "SL.TLF.CACT.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Labor force participation rate, female (% of female population ages 15+) (national estimate)",
+            "code": "SL.TLF.CACT.FE.NE.ZS",
+            "old": {
+                "unit": "national estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Government expenditure per student, tertiary (% of GDP per capita)",
+            "code": "SE.XPD.TERT.PC.ZS",
+            "old": {
+                "unit": "% of GDP per capita",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Labor force, female (% of total labor force)",
+            "code": "SL.TLF.TOTL.FE.ZS",
+            "old": {
+                "unit": "% of total labor force",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Net migration",
+            "code": "SM.POP.NETM",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Ratio of female to male labor force participation rate (%) (modeled ILO estimate)",
+            "code": "SL.TLF.CACT.FM.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Ratio of female to male labor force participation rate (%) (national estimate)",
+            "code": "SL.TLF.CACT.FM.NE.ZS",
+            "old": {
+                "unit": "national estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Refugee population by country or territory of asylum",
+            "code": "SM.POP.REFG",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Refugee population by country or territory of origin",
+            "code": "SM.POP.REFG.OR",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Unemployment, female (% of female labor force) (modeled ILO estimate)",
+            "code": "SL.UEM.TOTL.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Unemployment, male (% of male labor force) (modeled ILO estimate)",
+            "code": "SL.UEM.TOTL.MA.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+            "code": "SL.UEM.TOTL.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Intentional homicides (per 100,000 people)",
+            "code": "VC.IHR.PSRC.P5",
+            "old": {
+                "unit": "per 100,000 people",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Interest payments (% of expense)",
+            "code": "GC.XPN.INTP.ZS",
+            "old": {
+                "unit": "% of expense",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Access to electricity (% of population)",
+            "code": "EG.ELC.ACCS.ZS",
+            "old": {
+                "unit": "% of population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Not applicable"
+                }
+            }
+        },
+        {
+            "name": "Access to electricity, rural (% of rural population)",
+            "code": "EG.ELC.ACCS.RU.ZS",
+            "old": {
+                "unit": "% of rural population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Not applicable"
+                }
+            }
+        },
+        {
+            "name": "Internally displaced persons, new displacement associated with disasters (number of cases)",
+            "code": "VC.IDP.NWDS",
+            "old": {
+                "unit": "number of cases",
+                "shortUnit": null,
+                "display": {
+                    "unit": "hours"
+                }
+            }
+        },
+        {
+            "name": "Access to electricity, urban (% of urban population)",
+            "code": "EG.ELC.ACCS.UR.ZS",
+            "old": {
+                "unit": "% of urban population",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Military expenditure (% of GDP)",
+            "code": "MS.MIL.XPND.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "US$"
+                }
+            }
+        },
+        {
+            "name": "Agricultural land (% of land area)",
+            "code": "AG.LND.AGRI.ZS",
+            "old": {
+                "unit": "% of land area",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Number"
+                }
+            }
+        },
+        {
+            "name": "Agricultural machinery, tractors per 100 sq. km of arable land",
+            "code": "AG.LND.TRAC.ZS",
+            "old": {
+                "unit": "",
+                "shortUnit": null,
+                "display": {
+                    "unit": "Number"
+                }
+            }
+        },
+        {
+            "name": "Employment in agriculture (% of total employment) (modeled ILO estimate)",
+            "code": "SL.AGR.EMPL.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment in agriculture, female (% of female employment) (modeled ILO estimate)",
+            "code": "SL.AGR.EMPL.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Expense (% of GDP)",
+            "code": "GC.XPN.TOTL.GD.ZS",
+            "old": {
+                "unit": "% of GDP",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment in agriculture, male (% of male employment) (modeled ILO estimate)",
+            "code": "SL.AGR.EMPL.MA.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Sex ratio at birth (male births per female births)",
+            "code": "SP.POP.BRTH.MF",
+            "old": {
+                "unit": "male births per female births",
+                "shortUnit": "male births",
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment in industry (% of total employment) (modeled ILO estimate)",
+            "code": "SL.IND.EMPL.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment in industry, female (% of female employment) (modeled ILO estimate)",
+            "code": "SL.IND.EMPL.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Annual freshwater withdrawals, agriculture (% of total freshwater withdrawal)",
+            "code": "ER.H2O.FWAG.ZS",
+            "old": {
+                "unit": "% of total freshwater withdrawal",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Employment in industry, male (% of male employment) (modeled ILO estimate)",
+            "code": "SL.IND.EMPL.MA.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Annual freshwater withdrawals, domestic (% of total freshwater withdrawal)",
+            "code": "ER.H2O.FWDM.ZS",
+            "old": {
+                "unit": "% of total freshwater withdrawal",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Local currency"
+                }
+            }
+        },
+        {
+            "name": "Total debt service (% of exports of goods, services and primary income)",
+            "code": "DT.TDS.DECT.EX.ZS",
+            "old": {
+                "unit": "% of exports of goods, services and primary income",
+                "shortUnit": "%",
+                "display": {}
+            }
+        },
+        {
+            "name": "Employment in services (% of total employment) (modeled ILO estimate)",
+            "code": "SL.SRV.EMPL.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Annual freshwater withdrawals, industry (% of total freshwater withdrawal)",
+            "code": "ER.H2O.FWIN.ZS",
+            "old": {
+                "unit": "% of total freshwater withdrawal",
+                "shortUnit": "%",
+                "display": {
+                    "unit": "Percent"
+                }
+            }
+        },
+        {
+            "name": "Net ODA received per capita (current US$)",
+            "code": "DT.ODA.ODAT.PC.ZS",
+            "old": {
+                "unit": "current US$",
+                "shortUnit": "$",
+                "display": {
+                    "unit": "Rate"
+                }
+            }
+        },
+        {
+            "name": "Employment in services, female (% of female employment) (modeled ILO estimate)",
+            "code": "SL.SRV.EMPL.FE.ZS",
+            "old": {
+                "unit": "modeled ILO estimate",
+                "shortUnit": null,
+                "display": {}
+            }
+        },
+        {
+            "name": "Proportion of seats held by women in national parliaments (%)",
+            "code": "SG.GEN.PARL.ZS",
+            "old": {
+                "unit": "%",
+                "shortUnit": "%",
+                "display": {}
+            }
         }
     ]
 }

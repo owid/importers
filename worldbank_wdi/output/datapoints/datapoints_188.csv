@@ -1,88 +1,941 @@
 country,year,value
-Albania,2017,2.47
-Argentina,2019,-1.46
-Armenia,2018,1.26
-Austria,2018,0.14
-Belarus,2019,1.11
-Belgium,2018,1.41
-Bhutan,2017,1.63
-Bolivia,2019,3.09
-Brazil,2019,-1.29
-Bulgaria,2018,10.37
-Canada,2017,1.43
-Chile,2017,4.92
-China,2016,8.38
-Colombia,2019,0.37
-Costa Rica,2019,1.0
-Croatia,2018,7.63
-Cyprus,2018,3.38
-Czechia,2018,4.4
-Denmark,2018,1.49
-Dominican Republic,2016,5.19
-Ecuador,2019,-0.9
-Egypt,2017,-2.5
-El Salvador,2019,5.54
-Estonia,2018,8.63
-Finland,2018,1.08
-France,2018,0.97
-Georgia,2019,1.56
-Germany,2016,-0.2
-Ghana,2016,-0.2
-Greece,2018,3.45
-Honduras,2019,1.63
-Hungary,2018,6.27
-Iceland,2017,5.65
-Indonesia,2019,4.61
-Iran,2018,-1.58
-Ireland,2017,5.54
-Israel,2016,4.45
-Italy,2017,0.48
-Kazakhstan,2018,-0.3
-Kosovo,2017,2.36
-Kyrgyzstan,2019,1.8
-Laos,2018,1.91
-Latvia,2018,8.1
-Lithuania,2018,7.74
-Luxembourg,2018,0.2
-Malawi,2016,3.05
-Malaysia,2015,7.01
-Malta,2018,3.02
-Mauritius,2017,2.71
-Moldova,2018,1.9
-Mongolia,2018,1.11
-Montenegro,2016,6.31
-Netherlands,2018,2.67
-North Macedonia,2018,7.03
-Norway,2018,-0.51
-Pakistan,2018,1.14
-Palestine,2016,-0.89
-Panama,2019,4.97
-Paraguay,2019,1.97
-Peru,2019,2.66
-Philippines,2018,6.07
-Poland,2018,6.87
-Portugal,2018,5.07
-Romania,2018,13.78
-Russia,2018,-0.44
-Rwanda,2016,0.32
-Serbia,2017,3.89
-Seychelles,2018,3.55
-Sierra Leone,2018,2.67
-Slovakia,2018,3.31
-Slovenia,2018,3.83
-South Korea,2016,2.52
-Spain,2018,3.21
-Sri Lanka,2016,3.65
-Sweden,2018,0.97
-Switzerland,2018,-0.34
-Tanzania,2018,-0.15
-Thailand,2019,0.66
-Turkey,2019,0.85
-Uganda,2016,-2.15
-Ukraine,2019,1.71
-United Arab Emirates,2018,7.08
-United Kingdom,2017,1.19
-United States,2018,2.72
-Uruguay,2019,0.33
-Vietnam,2018,5.75
-Zimbabwe,2017,-3.75
+Afghanistan,1997,53.2
+Afghanistan,2004,59.3
+Afghanistan,2013,40.4
+Afghanistan,2018,38.2
+Albania,1997,20.4
+Albania,2000,39.2
+Albania,2005,26.7
+Albania,2009,23.2
+Albania,2017,11.3
+Algeria,1987,16.9
+Algeria,1992,22.9
+Algeria,1995,22.5
+Algeria,2000,23.6
+Algeria,2002,24.0
+Algeria,2006,15.4
+Algeria,2012,11.7
+Algeria,2019,9.8
+Angola,1996,61.1
+Angola,2007,29.2
+Angola,2015,37.6
+Argentina,1994,7.1
+Argentina,1996,16.9
+Argentina,2005,8.2
+Argentina,2019,7.9
+Armenia,1998,15.1
+Armenia,2000,17.3
+Armenia,2005,17.9
+Armenia,2010,20.9
+Armenia,2016,9.4
+Australia,1995,0.0
+Australia,2007,2.0
+Azerbaijan,1996,28.0
+Azerbaijan,2000,24.2
+Azerbaijan,2001,18.0
+Azerbaijan,2006,26.5
+Azerbaijan,2011,16.4
+Azerbaijan,2013,17.8
+Bahrain,1989,13.9
+Bahrain,1995,13.6
+Bangladesh,1986,70.9
+Bangladesh,1990,63.4
+Bangladesh,1991,73.6
+Bangladesh,1992,71.5
+Bangladesh,1993,69.2
+Bangladesh,1994,67.3
+Bangladesh,1995,65.8
+Bangladesh,1996,63.8
+Bangladesh,1997,59.6
+Bangladesh,1998,59.3
+Bangladesh,1999,59.9
+Bangladesh,2000,51.1
+Bangladesh,2001,53.2
+Bangladesh,2002,51.4
+Bangladesh,2003,47.8
+Bangladesh,2004,50.5
+Bangladesh,2005,45.9
+Bangladesh,2006,45.1
+Bangladesh,2007,43.2
+Bangladesh,2011,41.3
+Bangladesh,2013,38.7
+Bangladesh,2014,36.2
+Bangladesh,2018,30.9
+Bangladesh,2019,28.0
+Barbados,2012,7.7
+Belarus,2005,4.5
+Belgium,2014,1.6
+Belize,2006,22.0
+Belize,2011,19.3
+Belize,2015,15.0
+Benin,1996,39.1
+Benin,2001,36.2
+Benin,2008,37.4
+Benin,2014,34.0
+Benin,2018,32.2
+Bhutan,1987,60.9
+Bhutan,1999,47.7
+Bhutan,2008,34.9
+Bhutan,2010,33.5
+Bolivia,1989,44.0
+Bolivia,1994,37.1
+Bolivia,1998,33.2
+Bolivia,2003,32.4
+Bolivia,2008,27.1
+Bolivia,2012,18.2
+Bolivia,2016,16.1
+Bosnia and Herzegovina,2000,12.1
+Bosnia and Herzegovina,2006,11.8
+Bosnia and Herzegovina,2012,8.9
+Botswana,1996,35.1
+Botswana,2000,29.1
+Botswana,2007,28.9
+Brazil,1989,19.8
+Brazil,1996,13.0
+Brazil,2007,7.0
+Brunei,2009,19.7
+Bulgaria,2004,8.8
+Bulgaria,2007,9.2
+Bulgaria,2014,7.0
+Burkina Faso,1993,38.7
+Burkina Faso,1999,41.4
+Burkina Faso,2009,35.1
+Burkina Faso,2010,34.7
+Burkina Faso,2011,34.6
+Burkina Faso,2012,32.8
+Burkina Faso,2013,31.3
+Burkina Faso,2014,29.0
+Burkina Faso,2015,30.1
+Burkina Faso,2016,26.8
+Burkina Faso,2017,21.1
+Burkina Faso,2018,24.9
+Burkina Faso,2019,23.8
+Burundi,1987,56.2
+Burundi,2000,64.0
+Burundi,2005,57.7
+Burundi,2010,57.6
+Burundi,2016,55.9
+Burundi,2018,56.6
+Burundi,2019,54.0
+Cambodia,1996,58.6
+Cambodia,2000,49.0
+Cambodia,2005,42.8
+Cambodia,2008,39.5
+Cambodia,2010,39.8
+Cambodia,2014,32.4
+Cameroon,1991,31.6
+Cameroon,1998,38.2
+Cameroon,2004,35.6
+Cameroon,2006,37.6
+Cameroon,2011,32.6
+Cameroon,2014,31.7
+Cameroon,2018,28.9
+Cape Verde,1985,26.8
+Cape Verde,1994,21.4
+Central African Republic,1994,41.5
+Central African Republic,2000,44.4
+Central African Republic,2006,43.6
+Central African Republic,2010,40.7
+Central African Republic,2012,39.7
+Central African Republic,2014,38.0
+Central African Republic,2018,37.5
+Central African Republic,2019,40.2
+Chad,1997,44.5
+Chad,2000,38.9
+Chad,2004,44.4
+Chad,2010,38.7
+Chad,2015,39.8
+Chad,2017,32.1
+Chad,2018,31.9
+Chad,2019,37.8
+Chile,1986,13.5
+Chile,1994,4.2
+Chile,1995,3.9
+Chile,1996,3.7
+Chile,1998,3.3
+Chile,1999,3.1
+Chile,2001,2.8
+Chile,2002,2.5
+Chile,2003,2.5
+Chile,2004,2.4
+Chile,2006,2.2
+Chile,2007,2.1
+Chile,2008,2.0
+Chile,2013,1.8
+Chile,2014,1.8
+China,1987,38.3
+China,1990,32.3
+China,1992,38.0
+China,1995,31.2
+China,1998,19.8
+China,2000,17.8
+China,2002,21.8
+China,2005,11.7
+China,2008,9.8
+China,2009,9.0
+China,2010,9.4
+China,2013,8.1
+China,2017,4.8
+Colombia,1986,26.6
+Colombia,1989,21.8
+Colombia,1995,19.6
+Colombia,2000,18.2
+Colombia,2005,16.0
+Colombia,2010,12.6
+Colombia,2016,12.7
+Comoros,1992,38.5
+Comoros,1996,40.0
+Comoros,2000,46.9
+Comoros,2012,31.1
+Congo,1987,30.1
+Congo,2005,31.2
+Congo,2011,24.4
+Congo,2014,21.2
+Costa Rica,1996,8.2
+Costa Rica,2008,5.6
+Costa Rica,2018,9.0
+Cote d'Ivoire,1986,19.6
+Cote d'Ivoire,1994,34.2
+Cote d'Ivoire,1998,31.2
+Cote d'Ivoire,2007,39.0
+Cote d'Ivoire,2012,29.9
+Cote d'Ivoire,2016,21.6
+Cuba,2000,7.0
+Cuba,2019,7.1
+Czechia,1991,3.1
+Czechia,2001,2.7
+Democratic Republic of Congo,1995,51.0
+Democratic Republic of Congo,2001,44.4
+Democratic Republic of Congo,2007,45.8
+Democratic Republic of Congo,2010,43.4
+Democratic Republic of Congo,2013,42.7
+Democratic Republic of Congo,2017,41.8
+Djibouti,1989,28.0
+Djibouti,1996,31.7
+Djibouti,2002,27.1
+Djibouti,2012,33.5
+Dominican Republic,1986,20.4
+Dominican Republic,1991,21.1
+Dominican Republic,1996,13.5
+Dominican Republic,2000,7.7
+Dominican Republic,2002,11.6
+Dominican Republic,2006,8.4
+Dominican Republic,2007,10.1
+Dominican Republic,2013,7.1
+Ecuador,1986,40.2
+Ecuador,1999,27.9
+Ecuador,2004,29.2
+Ecuador,2006,25.9
+Ecuador,2012,25.4
+Ecuador,2014,23.9
+Ecuador,2019,23.0
+Egypt,1988,34.0
+Egypt,1991,34.9
+Egypt,1992,31.1
+Egypt,1995,34.8
+Egypt,1998,26.3
+Egypt,2000,24.4
+Egypt,2003,20.2
+Egypt,2005,23.9
+Egypt,2008,30.7
+Egypt,2014,22.3
+El Salvador,1988,36.7
+El Salvador,1993,31.6
+El Salvador,1998,32.3
+El Salvador,2003,24.6
+El Salvador,2008,20.8
+El Salvador,2014,13.6
+Equatorial Guinea,1997,38.7
+Equatorial Guinea,2000,42.7
+Equatorial Guinea,2004,35.0
+Equatorial Guinea,2011,26.2
+Eritrea,1993,69.6
+Eritrea,1995,47.8
+Eritrea,2002,43.0
+Eritrea,2010,52.5
+Estonia,2014,1.2
+Eswatini,2000,36.5
+Eswatini,2006,29.2
+Eswatini,2008,40.4
+Eswatini,2010,30.9
+Eswatini,2014,25.5
+Ethiopia,1992,66.9
+Ethiopia,2000,57.4
+Ethiopia,2005,50.0
+Ethiopia,2011,44.4
+Ethiopia,2014,40.4
+Ethiopia,2016,38.3
+Ethiopia,2019,36.8
+Fiji,1993,4.3
+Fiji,2004,7.5
+Gabon,2000,25.9
+Gabon,2012,17.0
+Gambia,1996,36.1
+Gambia,2000,24.1
+Gambia,2006,27.7
+Gambia,2010,23.4
+Gambia,2012,21.1
+Gambia,2013,24.6
+Gambia,2018,13.6
+Gambia,2020,17.5
+Georgia,1999,16.1
+Georgia,2005,14.6
+Georgia,2009,11.8
+Georgia,2018,5.8
+Germany,2004,1.3
+Germany,2016,1.7
+Ghana,1988,42.6
+Ghana,1993,41.2
+Ghana,1997,34.7
+Ghana,1998,30.6
+Ghana,2003,35.5
+Ghana,2006,27.9
+Ghana,2008,28.4
+Ghana,2011,22.8
+Ghana,2014,18.8
+Ghana,2017,17.5
+Greece,2003,1.5
+Guatemala,1987,66.2
+Guatemala,1995,55.4
+Guatemala,1999,53.1
+Guatemala,2000,51.0
+Guatemala,2002,54.8
+Guatemala,2009,51.5
+Guatemala,2015,46.7
+Guinea,1994,35.3
+Guinea,1999,31.1
+Guinea,2005,39.3
+Guinea,2007,34.0
+Guinea,2012,31.1
+Guinea,2016,32.4
+Guinea,2018,30.3
+Guinea-Bissau,2000,33.8
+Guinea-Bissau,2010,32.0
+Guinea-Bissau,2012,26.4
+Guinea-Bissau,2014,27.6
+Guinea-Bissau,2019,28.1
+Guyana,1993,14.7
+Guyana,1997,14.0
+Guyana,2000,13.9
+Guyana,2006,17.9
+Guyana,2009,19.3
+Guyana,2014,11.3
+Haiti,1990,40.1
+Haiti,1994,37.1
+Haiti,2000,28.8
+Haiti,2006,29.6
+Haiti,2012,22.0
+Haiti,2017,21.9
+Honduras,1987,43.3
+Honduras,1991,42.7
+Honduras,1994,45.7
+Honduras,1996,38.6
+Honduras,2001,35.5
+Honduras,2006,29.8
+Honduras,2012,22.6
+India,1989,62.7
+India,1991,61.9
+India,1992,57.7
+India,1997,45.9
+India,1999,54.2
+India,2006,47.8
+India,2014,38.7
+India,2015,37.9
+India,2017,34.7
+Indonesia,1996,48.1
+Indonesia,2000,42.4
+Indonesia,2001,41.6
+Indonesia,2004,28.6
+Indonesia,2007,40.1
+Indonesia,2010,39.2
+Indonesia,2013,36.4
+Indonesia,2018,30.8
+Iran,1995,24.4
+Iran,1998,20.4
+Iran,2004,7.1
+Iran,2010,6.8
+Iraq,1991,27.6
+Iraq,2000,28.1
+Iraq,2003,33.7
+Iraq,2004,20.0
+Iraq,2006,27.5
+Iraq,2011,22.1
+Iraq,2018,12.6
+Jamaica,1989,12.0
+Jamaica,1991,11.8
+Jamaica,1992,14.4
+Jamaica,1994,12.1
+Jamaica,1995,9.7
+Jamaica,1996,11.2
+Jamaica,1997,8.7
+Jamaica,1998,9.5
+Jamaica,1999,5.7
+Jamaica,2000,7.2
+Jamaica,2001,6.6
+Jamaica,2002,8.2
+Jamaica,2004,4.9
+Jamaica,2006,7.5
+Jamaica,2007,5.4
+Jamaica,2008,6.9
+Jamaica,2010,6.0
+Jamaica,2012,6.8
+Jamaica,2014,6.0
+Jamaica,2016,9.3
+Japan,2010,7.1
+Jordan,1990,20.0
+Jordan,1997,11.1
+Jordan,2002,11.7
+Jordan,2009,8.2
+Jordan,2012,7.8
+Kazakhstan,1995,23.3
+Kazakhstan,1999,13.2
+Kazakhstan,2006,17.5
+Kazakhstan,2010,13.1
+Kazakhstan,2015,8.0
+Kenya,1987,37.0
+Kenya,1993,40.2
+Kenya,1994,41.1
+Kenya,1998,37.4
+Kenya,2000,40.8
+Kenya,2003,35.8
+Kenya,2005,40.3
+Kenya,2008,35.5
+Kenya,2011,26.3
+Kenya,2014,26.2
+Kiribati,1985,34.4
+Kiribati,2018,15.2
+Kuwait,1996,5.0
+Kuwait,2001,4.0
+Kuwait,2002,3.6
+Kuwait,2003,3.9
+Kuwait,2004,4.1
+Kuwait,2005,4.5
+Kuwait,2006,4.6
+Kuwait,2007,5.1
+Kuwait,2008,5.1
+Kuwait,2009,3.8
+Kuwait,2010,4.1
+Kuwait,2011,4.0
+Kuwait,2012,4.3
+Kuwait,2013,4.8
+Kuwait,2014,5.8
+Kuwait,2015,4.9
+Kuwait,2016,5.9
+Kuwait,2017,6.4
+Kyrgyzstan,1997,36.2
+Kyrgyzstan,2006,18.1
+Kyrgyzstan,2009,22.6
+Kyrgyzstan,2012,17.9
+Kyrgyzstan,2014,12.9
+Kyrgyzstan,2018,11.8
+Laos,1993,53.6
+Laos,1994,52.9
+Laos,2000,47.5
+Laos,2006,47.7
+Laos,2011,44.2
+Laos,2015,35.5
+Laos,2017,33.1
+Lebanon,1996,17.2
+Lebanon,2004,16.5
+Lesotho,1992,39.2
+Lesotho,1993,37.5
+Lesotho,2004,44.7
+Lesotho,2009,39.3
+Lesotho,2014,33.4
+Lesotho,2018,34.6
+Liberia,2000,45.3
+Liberia,2007,39.6
+Liberia,2010,39.0
+Liberia,2013,32.1
+Liberia,2016,30.1
+Liberia,2019,29.8
+Libya,1995,21.1
+Libya,2007,21.0
+Libya,2014,38.1
+Madagascar,1992,60.5
+Madagascar,1993,54.1
+Madagascar,1995,55.2
+Madagascar,1997,58.2
+Madagascar,2004,52.7
+Madagascar,2009,49.4
+Madagascar,2012,48.9
+Madagascar,2018,41.6
+Malawi,1992,55.4
+Malawi,1995,53.8
+Malawi,1998,62.3
+Malawi,2000,54.7
+Malawi,2002,58.3
+Malawi,2004,52.5
+Malawi,2006,53.1
+Malawi,2009,48.8
+Malawi,2010,47.3
+Malawi,2014,42.4
+Malawi,2015,37.4
+Malawi,2016,38.3
+Malawi,2017,39.3
+Malawi,2018,39.0
+Malawi,2019,40.9
+Malaysia,1999,20.7
+Malaysia,2006,17.5
+Malaysia,2015,17.7
+Malaysia,2016,20.7
+Malaysia,2019,21.8
+Maldives,1994,36.1
+Maldives,1995,33.0
+Maldives,1997,43.0
+Maldives,2001,31.9
+Maldives,2009,19.0
+Maldives,2017,15.3
+Mali,1987,35.8
+Mali,1996,39.9
+Mali,2001,42.5
+Mali,2006,37.6
+Mali,2010,27.8
+Mali,2011,27.9
+Mali,2014,28.1
+Mali,2015,30.4
+Mali,2016,26.4
+Mali,2017,24.6
+Mali,2018,26.9
+Mali,2019,26.4
+Marshall Islands,2017,34.8
+Mauritania,1988,40.2
+Mauritania,1996,49.8
+Mauritania,2000,38.6
+Mauritania,2007,31.5
+Mauritania,2008,23.6
+Mauritania,2011,29.7
+Mauritania,2012,23.2
+Mauritania,2015,27.9
+Mauritania,2018,22.8
+Mauritius,1985,27.3
+Mauritius,1995,13.6
+Mexico,1988,26.9
+Mexico,1989,26.0
+Mexico,1996,25.8
+Mexico,1998,21.4
+Mexico,2006,15.5
+Mexico,2012,13.6
+Mexico,2015,12.4
+Mexico,2016,10.0
+Mexico,2019,14.1
+Moldova,2005,10.7
+Moldova,2012,6.4
+Mongolia,1992,33.1
+Mongolia,1999,30.1
+Mongolia,2000,29.8
+Mongolia,2004,23.5
+Mongolia,2005,27.5
+Mongolia,2010,15.3
+Mongolia,2013,10.8
+Mongolia,2016,7.3
+Mongolia,2018,9.4
+Montenegro,2005,7.9
+Montenegro,2013,9.4
+Montenegro,2018,7.2
+Morocco,1987,31.0
+Morocco,1992,30.1
+Morocco,1997,28.9
+Morocco,2003,23.1
+Morocco,2011,14.9
+Morocco,2017,15.1
+Mozambique,1995,59.9
+Mozambique,1997,48.7
+Mozambique,2001,50.7
+Mozambique,2003,46.9
+Mozambique,2008,43.5
+Mozambique,2011,42.9
+Mozambique,2015,42.3
+Myanmar,1991,53.6
+Myanmar,1994,58.7
+Myanmar,1997,55.4
+Myanmar,2000,40.8
+Myanmar,2003,42.7
+Myanmar,2009,35.1
+Myanmar,2016,29.4
+Myanmar,2018,26.7
+Namibia,1992,35.6
+Namibia,2000,29.3
+Namibia,2007,29.2
+Namibia,2013,22.7
+Nauru,2007,24.0
+Nepal,1995,68.2
+Nepal,1996,65.7
+Nepal,1998,61.1
+Nepal,2001,56.1
+Nepal,2006,49.1
+Nepal,2011,40.1
+Nepal,2014,37.1
+Nepal,2016,36.1
+Nepal,2019,31.5
+Netherlands,1996,1.3
+Netherlands,2009,1.5
+Nicaragua,1993,29.6
+Nicaragua,1998,30.5
+Nicaragua,2001,25.1
+Nicaragua,2004,18.8
+Nicaragua,2007,23.1
+Nicaragua,2012,17.3
+Niger,1985,43.8
+Niger,1992,45.3
+Niger,1998,50.7
+Niger,2000,53.5
+Niger,2006,51.0
+Niger,2007,49.2
+Niger,2008,43.8
+Niger,2009,45.5
+Niger,2010,47.4
+Niger,2011,50.9
+Niger,2012,39.9
+Niger,2013,42.5
+Niger,2014,42.2
+Niger,2015,46.4
+Niger,2016,41.3
+Niger,2018,48.5
+Niger,2019,47.1
+Nigeria,1990,48.7
+Nigeria,1993,43.8
+Nigeria,2003,42.5
+Nigeria,2011,35.8
+Nigeria,2014,33.6
+Nigeria,2015,33.0
+Nigeria,2016,43.6
+Nigeria,2018,36.8
+Nigeria,2020,31.5
+North Korea,1998,63.9
+North Korea,2000,51.0
+North Korea,2002,44.7
+North Korea,2004,43.1
+North Korea,2009,32.4
+North Korea,2012,27.9
+North Korea,2017,19.1
+North Macedonia,1999,8.0
+North Macedonia,2005,11.3
+North Macedonia,2011,4.9
+North Macedonia,2019,4.3
+Oman,1991,24.2
+Oman,1994,21.1
+Oman,1999,15.8
+Oman,2009,9.8
+Oman,2014,14.1
+Oman,2017,11.4
+Pakistan,1986,62.5
+Pakistan,1991,53.9
+Pakistan,1992,42.7
+Pakistan,2001,41.4
+Pakistan,2011,43.6
+Pakistan,2013,45.0
+Pakistan,2018,37.6
+Palestine,1996,7.8
+Palestine,2000,10.7
+Palestine,2004,10.5
+Palestine,2006,13.6
+Palestine,2010,10.9
+Palestine,2014,7.4
+Palestine,2020,8.7
+Panama,1997,16.8
+Panama,2003,23.7
+Panama,2008,19.0
+Panama,2019,15.8
+Papua New Guinea,1983,46.0
+Papua New Guinea,2005,43.9
+Papua New Guinea,2010,49.5
+Paraguay,1990,18.3
+Paraguay,2005,17.5
+Paraguay,2012,10.7
+Paraguay,2016,5.6
+Peru,1991,37.3
+Peru,1996,31.6
+Peru,2000,31.3
+Peru,2005,29.2
+Peru,2007,28.0
+Peru,2009,23.9
+Peru,2010,23.3
+Peru,2011,19.5
+Peru,2012,18.4
+Peru,2013,17.6
+Peru,2014,14.8
+Peru,2015,14.7
+Peru,2016,13.1
+Peru,2017,12.8
+Peru,2018,12.2
+Peru,2019,12.2
+Philippines,1987,44.7
+Philippines,1990,43.3
+Philippines,1992,40.9
+Philippines,1993,38.9
+Philippines,1998,38.3
+Philippines,2003,33.8
+Philippines,2008,32.0
+Philippines,2011,33.4
+Philippines,2013,30.0
+Philippines,2015,33.1
+Philippines,2018,30.3
+Poland,2009,2.9
+Poland,2011,0.8
+Poland,2014,2.6
+Portugal,2016,3.2
+Qatar,1995,11.6
+Romania,1991,11.2
+Romania,1999,15.3
+Romania,2000,12.8
+Romania,2001,14.0
+Romania,2002,12.8
+Rwanda,1992,56.8
+Rwanda,1996,45.4
+Rwanda,2000,47.9
+Rwanda,2005,51.4
+Rwanda,2009,46.6
+Rwanda,2010,44.3
+Rwanda,2012,43.8
+Rwanda,2015,36.9
+Rwanda,2018,34.8
+Rwanda,2020,33.1
+Saint Lucia,2012,2.5
+Samoa,1999,6.4
+Samoa,2014,4.9
+Samoa,2019,7.3
+Sao Tome and Principe,1986,32.0
+Sao Tome and Principe,2014,17.2
+Sao Tome and Principe,2019,11.7
+Saudi Arabia,1994,21.4
+Saudi Arabia,2004,9.3
+Senegal,1986,26.5
+Senegal,1991,34.4
+Senegal,1993,29.8
+Senegal,1996,28.8
+Senegal,2000,26.0
+Senegal,2005,19.9
+Senegal,2011,26.7
+Senegal,2012,15.5
+Senegal,2013,18.8
+Senegal,2014,18.8
+Senegal,2015,20.7
+Senegal,2016,17.1
+Senegal,2017,16.5
+Senegal,2018,18.8
+Senegal,2019,17.9
+Serbia,2005,8.1
+Serbia,2010,6.6
+Serbia,2014,6.0
+Serbia,2019,5.4
+Seychelles,1988,7.7
+Seychelles,2012,7.9
+Sierra Leone,1989,41.4
+Sierra Leone,1990,40.9
+Sierra Leone,2000,35.5
+Sierra Leone,2005,45.0
+Sierra Leone,2010,32.7
+Sierra Leone,2014,29.1
+Sierra Leone,2017,29.3
+Sierra Leone,2019,29.5
+Singapore,2000,4.4
+Solomon Islands,1989,33.7
+Solomon Islands,2007,32.8
+Solomon Islands,2015,31.7
+Somalia,1999,29.2
+Somalia,2006,42.0
+Somalia,2009,25.3
+South Africa,1994,28.7
+South Africa,1999,30.1
+South Africa,2008,24.9
+South Africa,2015,21.4
+South Africa,2016,27.4
+South Africa,2017,21.4
+South Korea,2003,2.5
+South Korea,2009,2.5
+South Sudan,2006,36.2
+South Sudan,2010,31.3
+Sri Lanka,1987,32.3
+Sri Lanka,1993,28.7
+Sri Lanka,1995,26.1
+Sri Lanka,2000,18.3
+Sri Lanka,2007,18.1
+Sri Lanka,2009,19.2
+Sri Lanka,2012,14.6
+Sri Lanka,2016,17.3
+Sudan,2006,38.3
+Sudan,2010,34.1
+Sudan,2014,38.2
+Suriname,2000,14.1
+Suriname,2006,10.6
+Suriname,2010,8.8
+Suriname,2018,8.3
+Syria,1993,32.8
+Syria,1995,26.5
+Syria,2000,24.3
+Syria,2001,31.7
+Syria,2006,28.7
+Syria,2010,27.9
+Tajikistan,1999,41.5
+Tajikistan,2000,42.1
+Tajikistan,2001,43.2
+Tajikistan,2002,37.1
+Tajikistan,2003,42.4
+Tajikistan,2005,33.1
+Tajikistan,2007,39.3
+Tajikistan,2009,28.8
+Tajikistan,2012,26.9
+Tajikistan,2016,19.6
+Tajikistan,2017,17.5
+Tanzania,1991,49.9
+Tanzania,1996,49.6
+Tanzania,1999,48.3
+Tanzania,2004,44.4
+Tanzania,2009,43.2
+Tanzania,2010,42.1
+Tanzania,2011,35.0
+Tanzania,2013,37.4
+Tanzania,2014,34.7
+Tanzania,2015,34.5
+Tanzania,2018,31.8
+Thailand,1987,24.6
+Thailand,1993,21.1
+Thailand,1995,18.1
+Thailand,2006,15.7
+Thailand,2012,16.4
+Thailand,2016,10.5
+Thailand,2019,13.4
+Timor,2002,55.7
+Timor,2003,54.8
+Timor,2007,57.2
+Timor,2009,57.5
+Timor,2013,51.7
+Togo,1988,40.7
+Togo,1996,40.2
+Togo,1998,33.2
+Togo,2006,29.9
+Togo,2008,26.9
+Togo,2009,27.0
+Togo,2010,27.0
+Togo,2012,26.2
+Togo,2014,27.6
+Togo,2017,23.8
+Tonga,1986,2.2
+Tonga,2012,8.1
+Tonga,2019,2.2
+Trinidad and Tobago,1987,6.3
+Trinidad and Tobago,2000,5.3
+Trinidad and Tobago,2011,9.2
+Tunisia,1988,18.5
+Tunisia,1997,11.9
+Tunisia,2000,16.8
+Tunisia,2006,9.0
+Tunisia,2012,10.1
+Tunisia,2018,8.4
+Turkey,1993,23.6
+Turkey,1998,18.8
+Turkey,2004,15.2
+Turkey,2008,12.5
+Turkey,2013,10.0
+Turkey,2018,6.0
+Turkmenistan,2000,28.1
+Turkmenistan,2006,18.9
+Turkmenistan,2015,11.5
+Turkmenistan,2019,7.2
+Tuvalu,2007,10.0
+Uganda,1988,47.7
+Uganda,1995,45.7
+Uganda,2000,44.9
+Uganda,2006,38.4
+Uganda,2009,38.2
+Uganda,2011,33.5
+Uganda,2012,33.7
+Uganda,2014,34.0
+Uganda,2016,28.9
+Ukraine,2000,22.9
+United States,1991,3.1
+United States,2000,3.2
+United States,2002,3.1
+United States,2004,2.9
+United States,2006,3.1
+United States,2008,2.3
+United States,2010,2.8
+United States,2012,2.2
+United States,2014,2.4
+United States,2016,3.5
+United States,2018,3.4
+Uruguay,1987,21.0
+Uruguay,1999,12.8
+Uruguay,2002,14.7
+Uruguay,2003,15.8
+Uruguay,2004,13.9
+Uruguay,2007,10.8
+Uruguay,2011,10.7
+Uruguay,2013,5.0
+Uruguay,2016,10.8
+Uruguay,2018,6.9
+Uzbekistan,1996,39.5
+Uzbekistan,2002,24.9
+Uzbekistan,2006,19.6
+Uzbekistan,2017,10.8
+Vanuatu,1996,25.7
+Vanuatu,2008,25.7
+Vanuatu,2013,28.9
+Venezuela,1987,7.0
+Venezuela,1990,18.6
+Venezuela,1991,18.2
+Venezuela,1992,18.3
+Venezuela,1993,17.4
+Venezuela,1994,17.9
+Venezuela,1995,18.9
+Venezuela,1996,19.3
+Venezuela,1997,19.9
+Venezuela,1998,19.2
+Venezuela,1999,18.3
+Venezuela,2000,17.4
+Venezuela,2001,17.3
+Venezuela,2002,17.6
+Venezuela,2003,17.7
+Venezuela,2004,17.1
+Venezuela,2005,16.2
+Venezuela,2006,16.2
+Venezuela,2007,15.6
+Venezuela,2008,14.6
+Venezuela,2009,13.4
+Vietnam,1988,61.3
+Vietnam,1993,61.5
+Vietnam,1994,52.5
+Vietnam,1998,42.1
+Vietnam,1999,43.7
+Vietnam,2000,43.2
+Vietnam,2002,37.5
+Vietnam,2003,35.4
+Vietnam,2004,33.7
+Vietnam,2005,33.2
+Vietnam,2006,31.8
+Vietnam,2007,32.2
+Vietnam,2008,30.5
+Vietnam,2009,29.3
+Vietnam,2010,22.7
+Vietnam,2011,27.5
+Vietnam,2012,26.7
+Vietnam,2013,25.9
+Vietnam,2014,24.9
+Vietnam,2015,24.6
+Vietnam,2016,24.3
+Vietnam,2017,23.8
+Yemen,1991,50.4
+Yemen,1996,50.4
+Yemen,1997,55.2
+Yemen,2003,57.3
+Yemen,2005,57.0
+Yemen,2011,46.6
+Yemen,2013,46.4
+Zambia,1992,46.3
+Zambia,1995,58.1
+Zambia,1996,48.6
+Zambia,1999,59.2
+Zambia,2002,52.5
+Zambia,2007,45.8
+Zambia,2013,40.0
+Zambia,2018,34.6
+Zimbabwe,1988,31.0
+Zimbabwe,1994,28.5
+Zimbabwe,1999,33.8
+Zimbabwe,2005,35.3
+Zimbabwe,2009,35.1
+Zimbabwe,2010,32.2
+Zimbabwe,2014,27.6
+Zimbabwe,2015,27.1
+Zimbabwe,2019,23.5
