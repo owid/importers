@@ -4,6 +4,9 @@ Usage:
 
 To run the code without downloading the data again: 
     python -m un_sdg.main --skip_download
+
+To run the code without downloading or cleaning the data again: 
+    python -m un_sdg.main --skip_download --skip_clean
 """
 import click
 
@@ -26,10 +29,11 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to clean the data, useful for just upserting previously cleaned data",
 )
-def main(download_data):
+def main(download_data, clean_data):
     if download_data:
         download.main()
-    clean.main()
+    if clean_data:
+        clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     match_variables.main()
 
