@@ -60,6 +60,15 @@ def main(dataset_dir: str, dataset_namespace: str):
             datasets.at[i, "db_dataset_id"] = db_dataset_id
         print(f"Upserted {len(datasets)} datasets.")
 
+        # Upsert datasets
+        print("---\nUpserting namespace...")
+        if datasets.shape[0] == 1:
+            namespace_description = datasets["name"].iloc[0]
+        else:
+            namespace_description = f"{dataset_dir} datasets"
+        db.upsert_namespace(name=dataset_namespace, description=namespace_description)
+        print("Upserted 1 namespace.")
+
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
