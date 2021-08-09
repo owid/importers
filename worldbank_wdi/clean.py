@@ -51,6 +51,7 @@ def main() -> None:
 
     # loads variables to be cleaned and uploaded.
     variables_to_clean = load_variables_to_clean()
+    var_code2meta = {ind["code"]: ind for ind in variables_to_clean}
     variable_codes = [ind["code"] for ind in variables_to_clean]
     assert all([pd.notnull(c) for c in variable_codes])
 
@@ -65,9 +66,12 @@ def main() -> None:
 
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
-    var_code2meta = clean_and_create_datapoints(
+    var_code2meta_temp = clean_and_create_datapoints(
         variable_codes=variable_codes, entity2owid_name=entity2owid_name
     )
+    for var_code, d in var_code2meta_temp.items():
+        var_code2meta[var_code].update(d)
+
     assert (
         df_datasets.shape[0] == 1
     ), f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
@@ -82,8 +86,7 @@ def main() -> None:
 
     df_variables = clean_variables(
         dataset_id=df_datasets["id"].iloc[0],
-        variables=[var for var in variables_to_clean if var["code"] in var_code2meta],
-        var_code2meta=var_code2meta,
+        variables=[var for var in var_code2meta.values()],
     )
     assert df_sources["id"].isin(df_variables["source_id"].unique()).all()
 
@@ -318,18 +321,18 @@ def clean_sources(
             right_on="source",
             how="left",
             validate="1:1",
-            )
+        )
         .drop("source", axis=1)
         .dropna(subset=["variable_codes"])
-                )
+    )
     sources = []
     var_code2source_id = {}
     for i, ((name, data_publisher_source), gp) in enumerate(
         df_source_names.groupby(["name", "dataPublisherSource"])
     ):
         var_codes = [c for codes in gp["variable_codes"] for c in codes]
-                source = {
-                    "id": i,
+        source = {
+            "id": i,
             "dataset_id": dataset_id,
             "name": name,
             "description": json.dumps(
@@ -357,9 +360,7 @@ def clean_sources(
     return df_sources, var_code2source_id
 
 
-def clean_variables(
-    dataset_id: int, variables: List[dict], var_code2meta: Dict[str, dict]
-) -> pd.DataFrame:
+def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     """Cleans a dataframe of variables in preparation for uploading the
     variables to the `variables` database table.
 
@@ -367,34 +368,27 @@ def clean_variables(
 
         dataset_id: int. Integer representing the dataset id for all variables.
 
-        variables: List[dict]. List of variables to clean. Example:
+        variables: List[dict]. List of variables with metadata. Contains some
+            metadata for each variable that was constructed during the
+            `clean_and_create_datapoints` step and the `clean_sources` step.
+            Also contains variable metadata that is present in
+            `variable_to_clean.json`. Example:
 
                 [
                     {
-                        "originalMetadata": {
-                            "IndicatorCode": "MDG_0000000007",
-                            "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
-                        },
                         "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
-                        "unit": "%",
-                        "shortUnit": "%",
-                        "description": "The share of newborns who die before reaching the age of five",
                         "code": "MDG_0000000007",
-                        "coverage": null,
-                        "timespan": null,
-                        "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 2},
-                        "replaces": null
+                        "old": {
+                            "unit": "%",
+                            "shortUnit": "%",
+                            "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 2},
+                        }
+                        "id": 0,
+                        "timespan": "2000-2019",
+                        "source_id": 0
                     },
                     ...
                 ]
-
-        var_code2meta: Dict[dict]. Dict of `variable code` -> `{variable meta}`
-            mappings. Contains some metadata for each variable that was
-            constructed during the `clean_and_create_datapoints` step. All
-            variable codes in `variables` MUST have a corresponding key in
-            `var_code2meta`. Example:
-
-                {"MDG_0000000001": {"id": 0, "timespan": "2000-2019"}, ...}
 
     Returns:
 
@@ -402,62 +396,96 @@ def clean_variables(
             to be uploaded.
     """
     assert all(
-        [pd.notnull(variable["code"]) for variable in variables]
+        [pd.notnull(var["code"]) for var in variables]
     ), "One or more variables has a null `code` field."
-    missing_var_codes = set([var["code"] for var in variables]).difference(
-        var_code2meta.keys()
-    )
-    assert len(missing_var_codes) == 0, (
-        "The following variable codes are not in `var_code2meta`: "
-        f"{missing_var_codes}"
-    )
-
-    # adds the variable metadata from `var_code2meta` to the variable metadata
-    # in `variables.`
-    for variable in variables:
-        meta = var_code2meta[variable["code"]]
-        for field in meta:
-            if field in variable and variable[field]:
-                logger.warning(
-                    f"The `{field}` field for variable {variable['code']} is "
-                    f"being overwritten. Existing value: {variable[field]}; "
-                    f"New value: {meta[field]}."
-                )
-            variable[field] = meta[field]
-
-    # Removes the "replaces" field if it exists, since it is not part of the SQL
-    # schema.
-    for variable in variables:
-        if "replaces" in variable:
-            variable.pop("replaces")
-
-    # converts the "originalMetadata" and "display" json fields to strings
-    # for variable in variables:
-    #     for field in ['originalMetadata', 'display']:
-    #         if field in variable:
-    #             variable[field] = json.dumps(variable[field], ignore_nan=True)
 
     df_variables = pd.DataFrame(variables)
 
-    json_fields = ["display", "originalMetadata"]
-    for field in json_fields:
-        df_variables[field] = df_variables[field].apply(
-            lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
-        )
-
-    # fetches description for each variable.
+    # fetches description for each variable
     df_variables["description"] = _load_description_many_variables(
         df_variables.code.tolist()
     )
 
-    # cleans variable names.
+    # cleans name column
     df_variables["name"] = df_variables["name"].str.replace(r"\s+", " ", regex=True)
+
+    # cleans display column
+    if "old" in df_variables.columns:
+        displays = []
+        for _, row in df_variables.iterrows():
+            display = row["old"].get("display")
+            if display:
+                year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
+                if year_in_name_regex:
+                    for k in ["name", "unit"]:
+                        if k in display:
+                            year = year_in_name_regex.groups()[0]
+                            year_in_val_regex = re.search(
+                                r"\b([1-2]\d{3})\b", display[k]
+                            )
+                            if year_in_val_regex:
+                                val_year = year_in_val_regex.groups()[0]
+                                if year != val_year:
+                                    new_val = re.sub(
+                                        r"\b([1-2]\d{3})\b", year, display[k]
+                                    )
+                                    logger.warning(
+                                        f'The "display.{k}" field for variable "{row["name"]}" '
+                                        f'contains a different year ("{display[k]}"). The {k} '
+                                        f'year is being replaced to become: "{new_val}"'
+                                    )
+                                    val = new_val
+                                    display[k] = val
+                display = json.dumps(display, ignore_nan=True)
+            displays.append(display)
+        df_variables["display"] = displays
+
+    # cleans shortUnit column
+    if "old" in df_variables.columns:
+        df_variables["shortUnit"] = df_variables["old"].apply(
+            lambda x: x.get("shortUnit")
+        )
+
+    # cleans unit column
+    if "old" in df_variables.columns:
+        units = []
+        for _, row in df_variables.iterrows():
+            unit = row["old"].get("unit")
+            if unit:
+                year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
+                if year_in_name_regex:
+                    year = year_in_name_regex.groups()[0]
+                    year_in_unit_regex = re.search(r"\b([1-2]\d{3})\b", unit)
+                    if year_in_unit_regex:
+                        unit_year = year_in_unit_regex.groups()[0]
+                        if year != unit_year:
+                            new_unit = re.sub(r"\b([1-2]\d{3})\b", year, unit)
+                            logger.warning(
+                                f'The unit field for variable "{row["name"]}" '
+                                f'contains a different year ("{unit}"). The unit '
+                                f'year is being replaced to become: "{new_unit}"'
+                            )
+                            unit = new_unit
+            units.append(unit)
+        df_variables["unit"] = units
+
+    # cleans originalMetadata column
+    if "old" in df_variables.columns:
+        df_variables["originalMetadata"] = df_variables["old"].apply(
+            lambda x: x.get("originalMetadata")
+        )
+        df_variables["originalMetadata"] = df_variables["originalMetadata"].apply(
+            lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
+        )
 
     df_variables["dataset_id"] = dataset_id
 
     # converts column names to snake case b/c this is what is expected in the
     # `standard_importer.import_dataset` module.
     df_variables.columns = df_variables.columns.map(camel_case2snake_case)
+
+    if "old" in df_variables.columns:
+        df_variables.drop("old", axis=1, inplace=True)
 
     required_fields = ["id", "name", "dataset_id", "source_id"]
     for field in required_fields:
@@ -548,7 +576,7 @@ def _load_description_many_variables(codes: List[str]) -> List[str]:
         ):
             desc += (
                 f'\n\nNotes from original source: {var["notes_from_original_source"]}'
-    )
+            )
 
         desc = re.sub(r" *(\n+) *", r"\1", re.sub(r"[ \t]+", " ", desc)).strip()
         if len(desc) == 0:
