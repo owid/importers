@@ -167,9 +167,11 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by the UN"
         try:
-            source_description["additionalInfo"] = "%s: %s;\n %s: %s;\n %s: %s " % (
+            source_description["additionalInfo"] = "%s: %s; %s: %s; %s: %s; %s: %s " % (
                 "Variable description",
                 row["SeriesDescription"],
+                "Variable code",
+                row["SeriesCode"],
                 "Detailed sources",
                 dp_source.str.cat(sep="; "),
                 "Metadata",
