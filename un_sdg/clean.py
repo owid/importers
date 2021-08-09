@@ -40,7 +40,7 @@ from un_sdg.core import (
     create_short_unit,
     extract_datapoints,
     extract_description,
-    get_distinct_entities,
+    # get_distinct_entities,
     clean_datasets,
     dimensions_description,
     attributes_description,
@@ -173,7 +173,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "Variable code",
                 row["SeriesCode"],
                 "Detailed sources",
-                dp_source.str.cat(sep="; "),
+                dp_source.str.cat(sep=" "),
                 "Metadata",
                 extract_description(
                     os.path.join(METAPATH, "Metadata-%s.pdf")
@@ -274,7 +274,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                 "name": "%s - %s - %s"
                 % (row["Indicator"], row["SeriesDescription"], row["SeriesCode"]),
                 "description": None,
-                "code": row["SeriesCode"],
+                "code": None,
                 "unit": row["Units_long"],
                 "short_unit": row["short_unit"],
                 "timespan": "%s - %s"
@@ -334,9 +334,16 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
 
 
 def create_distinct_entities() -> None:
-    df_distinct_entities = pd.DataFrame(
-        get_distinct_entities(), columns=["name"]
-    )  # Goes through each datapoints to get the distinct entities
+    # df_distinct_entities = pd.DataFrame(
+    #    get_distinct_entities(), columns=["name"]
+    # )  # Goes through each datapoints to get the distinct entities
+    df_distinct_entities = pd.read_csv(
+        os.path.join(CONFIGPATH, "standardized_entity_names.csv")
+    )
+    df_distinct_entities = df_distinct_entities[["Our World In Data Name"]].rename(
+        columns={"Our World In Data Name": "name"}
+    )
+
     df_distinct_entities.to_csv(
         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
     )

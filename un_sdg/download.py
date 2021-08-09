@@ -78,7 +78,8 @@ def download_data() -> None:
 
 
 def delete_metadata() -> None:
-    shutil.rmtree(METAPATH)
+    if Path(METAPATH).is_dir():
+        shutil.rmtree(METAPATH)
 
 
 def download_metadata() -> None:
