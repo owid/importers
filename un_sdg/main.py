@@ -21,6 +21,11 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to download the data from the source as it often takes quite some time.",
 )
+@click.option(
+    "--clean_data/--skip_clean",
+    default=True,
+    help="Whether or not to clean the data, useful for just upserting previously cleaned data",
+)
 def main(download_data):
     if download_data:
         download.main()
