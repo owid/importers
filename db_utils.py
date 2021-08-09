@@ -26,6 +26,8 @@ class DBUtils:
             "entities_inserted": 0,
             "datasets_inserted": 0,
             "datasets_updated": 0,
+            "namespaces_inserted": 0,
+            "namespaces_updated": 0,
             "variables_inserted": 0,
             "variables_updated": 0,
             "sources_inserted": 0,
@@ -198,6 +200,34 @@ class DBUtils:
             self.associate_dataset_tag(dataset_id, tag_id)
 
         return dataset_id
+
+    def upsert_namespace(self, name, description):
+        operation = self.upsert_one(
+            """
+            INSERT INTO namespaces
+                (name, description)
+            VALUES
+                (%s, %s)
+            ON DUPLICATE KEY UPDATE
+                name = VALUES(name),
+                description = VALUES(description)
+        """,
+            [name, description],
+        )
+        (namespace_id,) = self.fetch_one(
+            """
+            SELECT id FROM namespaces
+            WHERE name = %s
+        """,
+            [name],
+        )
+
+        if operation == INSERT:
+            self.counts["namespaces_inserted"] += 1
+        if operation == UPDATE:
+            self.counts["namespaces_updated"] += 1
+
+        return namespace_id
 
     def upsert_source(self, name, description, dataset_id):
         # There is no UNIQUE key constraint we can rely on to prevent duplicates
