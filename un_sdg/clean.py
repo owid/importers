@@ -143,6 +143,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
+        print(row["SeriesCode"])
         dp_source = original_df[
             original_df.SeriesCode == row["SeriesCode"]
         ].Source.drop_duplicates()
@@ -167,6 +168,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by the UN"
         try:
+            print(row["SeriesCode"])
             source_description["additionalInfo"] = "%s: %s; %s: %s; %s: %s; %s: %s " % (
                 "Variable description",
                 row["SeriesDescription"],
@@ -184,6 +186,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
             )
         except:
             pass
+        print(row["SeriesCode"])
         df_sources = df_sources.append(
             {
                 "id": i,
