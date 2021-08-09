@@ -244,7 +244,7 @@ class ChartRevisionSuggester:
                 "Failed to insert suggested chart revisions because one or "
                 "more of the suggested revisions that you are trying to insert "
                 "already exists with an equivalent chartId, originalVersion, "
-                f"suggestedVersion, and suggestedReason. Error: {e}"
+                f"suggestedVersion, and isPendingOrFlagged. Error: {e}"
             )
         except Exception as e:
             connection.rollback()
