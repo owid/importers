@@ -550,12 +550,49 @@ def _load_variables(codes: List[str]) -> pd.DataFrame:
 def _load_description_many_variables(codes: List[str]) -> List[str]:
     df_variables = _load_variables(codes)
     # creates `description` column
-    df_variables["description"] = df_variables.apply(
-        lambda s: s["long_definition"]
-        if pd.notnull(s["long_definition"])
-        else s["short_definition"],
-        axis=1,
+    descriptions = []
+    for _, var in df_variables.iterrows():
+        desc = ""
+        if (
+            pd.notnull(var["long_definition"])
+            and len(var["long_definition"].strip()) > 0
+        ):
+            desc += var["long_definition"]
+        elif (
+            pd.notnull(var["short_definition"])
+            and len(var["short_definition"].strip()) > 0
+        ):
+            desc += var["short_definition"]
+
+        if (
+            pd.notnull(var["limitations_and_exceptions"])
+            and len(var["limitations_and_exceptions"].strip()) > 0
+        ):
+            desc += (
+                f'\n\nLimitations and exceptions: {var["limitations_and_exceptions"]}'
+            )
+
+        if (
+            pd.notnull(var["statistical_concept_and_methodology"])
+            and len(var["statistical_concept_and_methodology"].strip()) > 0
+        ):
+            desc += f'\n\nStatistical concept and methodology: {var["statistical_concept_and_methodology"]}'
+
+        # retrieves additional source info, if it exists.
+        if (
+            pd.notnull(var["notes_from_original_source"])
+            and len(var["notes_from_original_source"].strip()) > 0
+        ):
+            desc += (
+                f'\n\nNotes from original source: {var["notes_from_original_source"]}'
     )
+
+        desc = re.sub(r" *(\n+) *", r"\1", re.sub(r"[ \t]+", " ", desc)).strip()
+        if len(desc) == 0:
+            desc = None
+        descriptions.append(desc)
+
+    df_variables.loc[:, "description"] = descriptions
     if df_variables["description"].isnull().any():
         logger.warning(
             "The `description` column (i.e. variable definition) is null for the "
