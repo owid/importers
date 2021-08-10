@@ -52,8 +52,7 @@ def main() -> None:
     # loads variables to be cleaned and uploaded.
     variables_to_clean = load_variables_to_clean()
     var_code2meta = {ind["code"]: ind for ind in variables_to_clean}
-    variable_codes = [ind["code"] for ind in variables_to_clean]
-    assert all([pd.notnull(c) for c in variable_codes])
+    assert all([pd.notnull(c) for c in var_code2meta.keys()])
 
     # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
     # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
@@ -67,10 +66,21 @@ def main() -> None:
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
     var_code2meta_temp = clean_and_create_datapoints(
-        variable_codes=variable_codes, entity2owid_name=entity2owid_name
+        variable_codes=list(var_code2meta.keys()), entity2owid_name=entity2owid_name
     )
-    for var_code, d in var_code2meta_temp.items():
-        var_code2meta[var_code].update(d)
+
+    # updates variable metadata with metadata constructed during data point
+    # creation and removes variables from cleaning that do not have any data
+    # values associated with them.
+    remove = []
+    for var_code, meta in var_code2meta.items():
+        if var_code in var_code2meta_temp:
+            meta.update(var_code2meta_temp[var_code])
+        else:  # no data values were constructed for this variable
+            remove.append(var_code)
+
+    for var_code in remove:
+        del var_code2meta[var_code]
 
     assert (
         df_datasets.shape[0] == 1
@@ -79,7 +89,7 @@ def main() -> None:
     df_sources, var_code2source_id = clean_sources(
         dataset_id=df_datasets["id"].iloc[0],
         dataset_name=df_datasets["name"].iloc[0],
-        variable_codes=variable_codes,
+        variable_codes=list(var_code2meta.keys()),
     )
     for var_code, source_id in var_code2source_id.items():
         var_code2meta[var_code]["source_id"] = source_id
@@ -413,7 +423,7 @@ def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     if "old" in df_variables.columns:
         displays = []
         for _, row in df_variables.iterrows():
-            display = row["old"].get("display")
+            display = row["old"].get("display") if pd.notnull(row["old"]) else None
             if display:
                 year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
                 if year_in_name_regex:
@@ -443,14 +453,14 @@ def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     # cleans shortUnit column
     if "old" in df_variables.columns:
         df_variables["shortUnit"] = df_variables["old"].apply(
-            lambda x: x.get("shortUnit")
+            lambda x: x.get("shortUnit") if pd.notnull(x) else None
         )
 
     # cleans unit column
     if "old" in df_variables.columns:
         units = []
         for _, row in df_variables.iterrows():
-            unit = row["old"].get("unit")
+            unit = row["old"].get("unit") if pd.notnull(row["old"]) else None
             if unit:
                 year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
                 if year_in_name_regex:
@@ -472,7 +482,7 @@ def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     # cleans originalMetadata column
     if "old" in df_variables.columns:
         df_variables["originalMetadata"] = df_variables["old"].apply(
-            lambda x: x.get("originalMetadata")
+            lambda x: x.get("originalMetadata") if pd.notnull(x) else None
         )
         df_variables["originalMetadata"] = df_variables["originalMetadata"].apply(
             lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
@@ -490,9 +500,10 @@ def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     required_fields = ["id", "name", "dataset_id", "source_id"]
     for field in required_fields:
         assert field in df_variables.columns, f"`{field}` does not exist."
-        assert (
-            df_variables[field].notnull().all()
-        ), f"Every variable must have a non-null `{field}` field."
+        assert df_variables[field].notnull().all(), (
+            f"The following variables have a null `{field}` field:\n"
+            f"{df_variables.loc[df_variables[field].isnull(), required_fields]}"
+        )
 
     df_variables = df_variables.set_index(["id", "name"]).reset_index()
     return df_variables

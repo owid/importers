@@ -11,3 +11,11 @@ DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
 INPATH = os.path.join(DATASET_DIR, "input")
 OUTPATH = os.path.join(DATASET_DIR, "output")
+
+
+# Cleaning config
+
+# CLEAN_ALL_VARIABLES: if True, cleans and upserts all variables in the WB WDI
+# dataset. Otherwise, only cleans and upserts variables that have been previously
+# used in an OWID chart.
+CLEAN_ALL_VARIABLES = True

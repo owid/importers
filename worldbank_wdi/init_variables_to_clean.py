@@ -6,7 +6,7 @@ from typing import List
 
 from db import get_connection
 
-from worldbank_wdi import CONFIGPATH, INPATH, OUTPATH
+from worldbank_wdi import CLEAN_ALL_VARIABLES, CONFIGPATH, INPATH, OUTPATH
 from worldbank_wdi.match_variables import get_datasets
 
 logging.basicConfig()
@@ -18,7 +18,15 @@ CUSTOM_FNAME = "custom_variable_replacements.json"
 
 def main():
     variables_to_clean = get_variables_to_clean_from_custom_matches()
-    variables_to_clean += get_variables_to_clean_from_string_matches()
+    variables_to_clean2 = get_variables_to_clean_from_string_matches()
+    if CLEAN_ALL_VARIABLES:
+        variables_to_clean2 += get_unmatched_variables_to_clean()
+
+    uniq_var_names = {var["name"] for var in variables_to_clean}
+    for var in variables_to_clean2:
+        if var["name"] not in uniq_var_names:
+            variables_to_clean.append(var)
+            uniq_var_names.add(var["name"])
 
     uniq_var_names = [var["name"] for var in variables_to_clean]
     assert len(uniq_var_names) == len(set(uniq_var_names)), (
@@ -131,6 +139,25 @@ def get_variables_to_clean_from_string_matches() -> List[dict]:
             logger.warning(
                 f'Failed to find new variable to clean and replace old variable: {row["name"]}'
             )
+    return variables_to_clean
+
+
+def get_unmatched_variables_to_clean() -> List[dict]:
+    """retrieves an array of variables to clean by retrieving all "old" variables
+    that are used in at least one existing OWID chart, and then matching each of
+    these old variables to a variable in the new dataset using exact string
+    matching.
+    """
+    df_variables = get_new_variables()
+    df_variables = df_variables[["indicator_name", "indicator_code"]].rename(
+        columns={"indicator_name": "name", "indicator_code": "code"}
+    )
+    df_variables["code"] = df_variables["code"].str.upper()
+    assert (
+        df_variables["name"].duplicated().sum() == 0
+        and df_variables["code"].duplicated().sum() == 0
+    ), "There are one or more duplicate variable codes and/or variable names."
+    variables_to_clean = df_variables.to_dict(orient="records")
     return variables_to_clean
 
 
