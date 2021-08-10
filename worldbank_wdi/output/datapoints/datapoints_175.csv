@@ -1,531 +1,811 @@
 country,year,value
-Afghanistan,2011,60.5
-Afghanistan,2015,61.5
-Afghanistan,2018,67.7
-Africa Eastern and Southern,2000,41.1287065955172
-Africa Eastern and Southern,2017,51.520320817828
-Africa Western and Central,2010,42.5253151691064
-Africa Western and Central,2017,62.9963168289672
-Albania,2000,83.0
-Albania,2005,45.0
-Albania,2009,69.6
-Albania,2018,82.4
-Algeria,2002,52.0
-Algeria,2006,53.0
-Algeria,2012,66.4
-Algeria,2013,66.4
-Angola,2016,49.0
-Arab World,2000,63.6015778642897
-Argentina,2012,94.3
-Armenia,2000,26.0
-Armenia,2005,36.0
-Armenia,2010,57.0
-Armenia,2016,93.9
-Azerbaijan,2000,36.0
-Azerbaijan,2006,32.9
-Bangladesh,1994,28.0
-Bangladesh,1997,33.0
-Bangladesh,2000,27.0
-Bangladesh,2004,20.0
-Bangladesh,2006,30.0
-Bangladesh,2007,37.0
-Bangladesh,2011,35.2
-Bangladesh,2013,35.8
-Bangladesh,2014,42.0
-Bangladesh,2019,46.4
-Belarus,2005,90.0
-Belarus,2012,93.4
-Belize,1999,66.0
-Belize,2006,71.0
-Belize,2011,82.2
-Belize,2016,67.4
-Benin,1996,32.0
-Benin,2001,35.1
-Benin,2006,36.0
-Benin,2012,31.0
-Benin,2014,23.3
-Benin,2018,46.1
-Bhutan,2010,74.2
-Bolivia,1994,40.0
-Bolivia,1998,43.0
-Bolivia,2000,54.0
-Bolivia,2003,51.5
-Bolivia,2004,52.0
-Bolivia,2008,50.9
-Bolivia,2009,66.3
-Bolivia,2011,61.6
-Bosnia and Herzegovina,2000,80.0
-Bosnia and Herzegovina,2006,91.3
-Bosnia and Herzegovina,2012,87.0
-Botswana,2000,14.0
-Brazil,1996,46.0
-Brazil,2006,49.7
-Brazil,2007,49.7
-Burkina Faso,1993,19.0
-Burkina Faso,1999,22.0
-Burkina Faso,2003,36.0
-Burkina Faso,2006,39.0
-Burkina Faso,2010,56.0
-Burkina Faso,2015,51.8
-Burundi,2000,40.0
-Burundi,2005,38.0
-Burundi,2010,54.7
-Burundi,2012,54.1
-Burundi,2016,62.5
-Burundi,2017,62.4
-Cambodia,2000,37.0
-Cambodia,2005,54.3
-Cambodia,2006,48.0
-Cambodia,2011,64.2
-Cambodia,2014,68.8
-Cameroon,1991,44.0
-Cameroon,1998,34.0
-Cameroon,2000,25.0
-Cameroon,2004,40.0
-Cameroon,2006,35.0
-Cameroon,2011,29.9
-Cameroon,2014,28.1
-Cameroon,2018,59.2
-Cape Verde,2005,51.4
-Caribbean small states,2000,56.600652583434
-Central African Republic,1995,41.0
-Central African Republic,2000,32.0
-Central African Republic,2006,31.8
-Central African Republic,2010,29.8
-Chad,1997,19.0
-Chad,2000,22.0
-Chad,2004,12.0
-Chad,2010,26.1
-Chad,2015,25.8
-Colombia,1990,45.0
-Colombia,1995,49.0
-Colombia,2000,51.0
-Colombia,2004,62.0
-Colombia,2005,62.0
-Colombia,2010,64.2
-Comoros,1996,53.0
-Comoros,2000,56.0
-Comoros,2012,38.1
-Congo,2005,48.0
-Congo,2012,52.1
-Congo,2015,28.3
-Costa Rica,2011,77.2
-Costa Rica,2018,80.3
-Cote d'Ivoire,1994,39.0
-Cote d'Ivoire,1999,35.0
-Cote d'Ivoire,2000,38.0
-Cote d'Ivoire,2006,35.0
-Cote d'Ivoire,2012,38.2
-Cote d'Ivoire,2016,44.0
-Cuba,2011,96.5
-Cuba,2014,92.6
-Democratic Republic of Congo,2001,36.0
-Democratic Republic of Congo,2007,42.0
-Democratic Republic of Congo,2010,40.3
-Democratic Republic of Congo,2014,41.6
-Democratic Republic of Congo,2018,34.2
-Djibouti,2002,62.0
-Djibouti,2006,62.0
-Djibouti,2012,94.4
-Dominican Republic,1991,41.0
-Dominican Republic,1996,48.0
-Dominican Republic,1999,61.0
-Dominican Republic,2000,68.0
-Dominican Republic,2002,64.0
-Dominican Republic,2007,70.0
-Dominican Republic,2010,68.4
-Dominican Republic,2013,66.0
-Dominican Republic,2014,73.4
-Early-demographic dividend,2017,72.6626094254832
-Egypt,1992,58.6
-Egypt,1993,59.0
-Egypt,1995,61.7
-Egypt,1996,62.0
-Egypt,2000,66.0
-Egypt,2003,70.0
-Egypt,2005,63.0
-Egypt,2008,73.0
-Egypt,2014,68.1
-El Salvador,2003,62.0
-El Salvador,2008,67.0
-El Salvador,2014,79.7
-Equatorial Guinea,2011,54.3
-Eritrea,2002,44.0
-Eritrea,2010,44.8
-Eswatini,2000,60.0
-Eswatini,2004,71.6
-Eswatini,2007,73.4
-Eswatini,2010,57.6
-Eswatini,2014,59.6
-Ethiopia,2000,16.0
-Ethiopia,2005,19.0
-Ethiopia,2011,27.0
-Ethiopia,2016,31.3
-Gabon,2000,47.7
-Gabon,2001,48.0
-Gabon,2012,67.7
-Gambia,2000,75.0
-Gambia,2006,69.0
-Gambia,2010,68.8
-Gambia,2013,68.0
-Gambia,2018,53.2
-Gambia,2020,70.3
-Georgia,1999,99.0
-Georgia,2000,99.0
-Georgia,2005,74.0
-Ghana,1993,43.0
-Ghana,1994,43.0
-Ghana,1998,26.2
-Ghana,1999,26.0
-Ghana,2003,44.0
-Ghana,2006,34.0
-Ghana,2008,51.0
-Ghana,2011,41.3
-Ghana,2014,55.9
-Ghana,2018,55.5
-Guatemala,1995,40.5
-Guatemala,1999,37.0
-Guatemala,2002,64.0
-Guatemala,2015,52.0
-Guinea,1999,39.0
-Guinea,2003,33.0
-Guinea,2005,42.0
-Guinea,2012,37.3
-Guinea,2016,29.6
-Guinea,2018,83.2
-Guinea-Bissau,2000,64.0
-Guinea-Bissau,2006,57.0
-Guinea-Bissau,2010,52.1
-Guinea-Bissau,2014,34.3
-Guyana,2000,78.0
-Guyana,2007,64.0
-Guyana,2009,65.0
-Guyana,2014,83.6
-Haiti,1995,17.0
-Haiti,2000,26.0
-Haiti,2006,31.0
-Haiti,2012,37.9
-Haiti,2017,37.2
-Heavily indebted poor countries (HIPC),2000,36.3565748220856
-Heavily indebted poor countries (HIPC),2017,51.8272222719262
-Honduras,2006,56.0
-Honduras,2012,63.9
-IDA blend,1990,57.2913184512047
-IDA blend,2017,81.6387690203925
-IDA only,2000,34.8053751404588
-IDA only,2017,51.6774312889267
-IDA total,2017,64.4502732527588
-India,1993,69.0
-India,1999,67.0
-India,2006,69.0
-India,2014,76.9
-India,2016,78.1
-Indonesia,1991,64.4
-Indonesia,1994,63.0
-Indonesia,1997,69.0
-Indonesia,2003,61.0
-Indonesia,2007,66.0
-Indonesia,2012,75.3
-Indonesia,2017,92.1
-Iran,2000,93.0
-Iran,2010,75.9
-Iran,2011,75.9
-Iraq,2000,76.0
-Iraq,2006,82.0
-Iraq,2011,74.4
-Iraq,2018,44.4
-Isle of Man,2000,75.3430743408
-Jamaica,2000,39.0
-Jamaica,2005,75.0
-Jamaica,2011,82.3
-Jordan,1997,76.0
-Jordan,2002,78.0
-Jordan,2007,75.0
-Jordan,2012,77.2
-Jordan,2018,71.8
-Kazakhstan,1995,48.0
-Kazakhstan,1999,48.0
-Kazakhstan,2006,71.0
-Kazakhstan,2011,81.2
-Kenya,1993,52.0
-Kenya,1998,57.0
-Kenya,2003,49.0
-Kenya,2009,55.9
-Kenya,2014,65.7
-Kiribati,2009,81.1
-Kiribati,2019,86.5
-Kosovo,2014,73.1
-Kyrgyzstan,1997,48.0
-Kyrgyzstan,2006,62.0
-Kyrgyzstan,2012,33.2
-Kyrgyzstan,2014,59.7
-Laos,2000,36.0
-Laos,2006,32.0
-Laos,2012,54.4
-Laos,2017,39.8
-Least developed countries: UN classification,2000,33.7064428704074
-Least developed countries: UN classification,2017,51.494626929652
-Lebanon,2000,73.6
-Lesotho,2000,49.0
-Lesotho,2005,59.0
-Lesotho,2009,65.5
-Lesotho,2014,63.1
-Lesotho,2018,57.5
-Liberia,2000,69.9
-Liberia,2007,62.0
-Liberia,2013,50.7
-Liberia,2020,78.4
-Low income,2000,34.1769760027606
-Lower middle income,2017,75.9439239296486
-Madagascar,1992,42.0
-Madagascar,1997,37.0
-Madagascar,2000,47.0
-Madagascar,2004,48.0
-Madagascar,2009,42.0
-Madagascar,2013,40.5
-Madagascar,2018,40.4
-Malawi,1992,54.0
-Malawi,2000,27.0
-Malawi,2004,36.5
-Malawi,2005,37.0
-Malawi,2006,52.0
-Malawi,2010,70.3
-Malawi,2014,68.2
-Malawi,2016,77.6
-Malaysia,2016,91.6
-Maldives,2001,22.0
-Maldives,2009,75.5
-Mali,1996,22.0
-Mali,2001,36.0
-Mali,2006,38.0
-Mali,2010,55.9
-Mali,2013,51.0
-Mali,2015,23.0
-Mali,2018,70.9
-Mauritania,2001,41.0
-Mauritania,2007,45.0
-Mauritania,2011,43.1
-Mauritania,2015,33.7
-Mexico,2015,73.1
-Middle East & North Africa,2000,76.3627812733121
-Middle East & North Africa (IDA & IBRD),2000,76.669168927579
-Middle East & North Africa (excluding high income),2000,76.3627812733121
-Moldova,2000,78.0
-Moldova,2005,60.0
-Moldova,2012,79.2
-Mongolia,2000,78.0
-Mongolia,2005,63.0
-Mongolia,2010,86.8
-Mongolia,2014,70.3
-Mongolia,2018,76.0
-Montenegro,2006,89.4
-Morocco,1992,17.0
-Morocco,1997,28.0
-Morocco,2004,38.0
-Morocco,2011,70.1
-Mozambique,1997,39.0
-Mozambique,2003,55.0
-Mozambique,2008,65.0
-Mozambique,2011,50.2
-Mozambique,2015,56.5
-Myanmar,2000,48.0
-Myanmar,2003,66.0
-Myanmar,2010,69.3
-Myanmar,2016,58.2
-Namibia,1992,67.0
-Namibia,2000,53.0
-Namibia,2007,72.2
-Namibia,2013,68.0
-Nauru,2007,69.0
-Nepal,1996,18.0
-Nepal,2001,26.0
-Nepal,2006,43.0
-Nepal,2011,50.0
-Nepal,2014,50.1
-Nepal,2016,84.9
-Nepal,2017,84.9
-Nicaragua,1998,58.0
-Nicaragua,2001,58.0
-Niger,1992,14.0
-Niger,1998,26.0
-Niger,2000,27.1
-Niger,2006,47.0
-Niger,2012,53.1
-Niger,2015,59.3
-Nigeria,1990,37.0
-Nigeria,2003,33.0
-Nigeria,2008,45.4
-Nigeria,2011,39.7
-Nigeria,2013,34.5
-Nigeria,2017,23.7
-Nigeria,2018,74.5
-North Korea,2004,93.0
-North Korea,2009,79.8
-North Korea,2017,85.6
-North Macedonia,2005,92.7
-North Macedonia,2006,93.0
-Oman,2014,56.3
-Pakistan,1991,66.0
-Pakistan,2007,69.0
-Pakistan,2013,64.4
-Pakistan,2018,84.2
-Palestine,2000,65.0
-Palestine,2010,64.8
-Palestine,2014,76.5
-Panama,2013,81.6
-Papua New Guinea,1996,75.0
-Papua New Guinea,2006,63.0
-Papua New Guinea,2018,63.0
-Paraguay,1990,51.0
-Paraguay,2016,89.4
-Peru,1992,33.0
-Peru,1996,46.0
-Peru,2000,58.0
-Peru,2004,68.0
-Peru,2006,67.0
-Peru,2008,66.8
-Peru,2009,72.0
-Peru,2010,68.4
-Peru,2011,61.6
-Peru,2012,59.3
-Peru,2013,59.6
-Peru,2014,60.4
-Peru,2015,62.4
-Philippines,1993,51.0
-Philippines,1998,58.0
-Philippines,2003,55.0
-Philippines,2008,50.0
-Philippines,2013,64.0
-Philippines,2017,67.3
-Rwanda,1992,30.0
-Rwanda,2000,16.0
-Rwanda,2005,28.0
-Rwanda,2008,28.0
-Rwanda,2010,50.2
-Rwanda,2011,50.2
-Rwanda,2015,53.9
-Samoa,2009,63.8
-Samoa,2014,77.8
-Sao Tome and Principe,2000,47.0
-Sao Tome and Principe,2009,74.7
-Sao Tome and Principe,2014,68.9
-Senegal,1993,31.0
-Senegal,2000,27.0
-Senegal,2005,47.0
-Senegal,2011,49.9
-Senegal,2013,53.0
-Senegal,2014,42.2
-Senegal,2015,48.2
-Senegal,2016,48.1
-Senegal,2017,59.6
-Senegal,2018,58.7
-Serbia,2006,93.0
-Serbia,2010,89.7
-Sierra Leone,2000,50.0
-Sierra Leone,2005,48.0
-Sierra Leone,2008,46.0
-Sierra Leone,2010,73.7
-Sierra Leone,2013,71.7
-Sierra Leone,2017,73.8
-Sierra Leone,2019,85.7
-Solomon Islands,2007,73.0
-Solomon Islands,2015,79.0
-Somalia,2006,13.0
-Somalia,2020,22.5
-South Africa,1998,75.0
-South Africa,2004,65.0
-South Africa,2016,87.6
-South Asia,2017,76.9991700455906
-South Asia (IDA & IBRD),2017,76.9991700455906
-South Sudan,2010,47.6
-Sri Lanka,2007,58.2
-Sri Lanka,2016,52.3
-Sub-Saharan Africa,2000,39.3032032705969
-Sub-Saharan Africa,2010,50.7615135163953
-Sub-Saharan Africa,2017,54.5339217360336
-Sub-Saharan Africa (IDA & IBRD),2000,39.3032032705969
-Sub-Saharan Africa (IDA & IBRD),2010,50.7615135163953
-Sub-Saharan Africa (IDA & IBRD),2017,54.5339217360336
-Sub-Saharan Africa (excluding high income),2000,39.3032032705969
-Sub-Saharan Africa (excluding high income),2010,50.7615135163953
-Sub-Saharan Africa (excluding high income),2017,54.5339217360336
-Sudan,2000,57.3
-Sudan,2006,90.1
-Sudan,2010,55.8
-Sudan,2014,48.3
-Suriname,2000,58.0
-Suriname,2006,74.0
-Suriname,2010,75.8
-Suriname,2018,89.1
-Syria,2002,66.0
-Syria,2006,77.0
-Tajikistan,2000,51.0
-Tajikistan,2005,64.0
-Tajikistan,2012,63.0
-Tajikistan,2017,68.5
-Tanzania,1992,65.0
-Tanzania,1996,70.0
-Tanzania,1999,68.0
-Tanzania,2005,59.0
-Tanzania,2010,70.6
-Tanzania,2016,55.4
-Thailand,2006,84.0
-Thailand,2013,83.3
-Thailand,2016,79.5
-Timor,2002,57.0
-Timor,2003,23.8
-Timor,2010,70.9
-Timor,2016,70.9
-Togo,1998,26.0
-Togo,2000,30.0
-Togo,2006,23.0
-Togo,2010,32.1
-Togo,2014,48.5
-Togo,2017,39.0
-Trinidad and Tobago,2000,74.0
-Trinidad and Tobago,2006,74.0
-Tunisia,2000,43.0
-Tunisia,2006,59.0
-Tunisia,2012,59.5
-Tunisia,2018,97.5
-Turkey,1993,37.3
-Turkey,2003,46.6
-Turkmenistan,2000,51.0
-Turkmenistan,2006,82.7
-Turkmenistan,2016,59.3
-Uganda,1995,61.0
-Uganda,2001,67.0
-Uganda,2006,73.0
-Uganda,2011,78.7
-Uganda,2016,85.8
-Ukraine,2012,92.3
-Uruguay,2013,91.1
-Uzbekistan,1996,87.0
-Uzbekistan,2006,67.7
-Vanuatu,2013,72.1
-Venezuela,2000,72.0
-Vietnam,1997,69.0
-Vietnam,2000,60.0
-Vietnam,2002,71.0
-Vietnam,2006,83.0
-Vietnam,2011,73.0
-Vietnam,2014,81.1
-Yemen,1992,28.0
-Yemen,1997,32.0
-Yemen,2003,47.0
-Yemen,2006,43.7
-Yemen,2013,34.0
-Zambia,1992,62.0
-Zambia,1996,70.7
-Zambia,1997,71.0
-Zambia,2002,69.0
-Zambia,2007,68.0
-Zambia,2014,69.7
-Zambia,2018,76.0
-Zimbabwe,1999,49.8
-Zimbabwe,2006,25.0
-Zimbabwe,2009,42.6
-Zimbabwe,2011,48.0
-Zimbabwe,2014,58.6
-Zimbabwe,2015,50.9
-Zimbabwe,2019,48.0
+Arab World,1996,34590000.3910064
+Arab World,1997,5079999.92370605
+Arab World,1998,13109999.8950958
+Arab World,1999,18000000.0
+Arab World,2000,22780000.2098083
+Arab World,2001,17919999.8378754
+Arab World,2002,21529999.7329712
+Arab World,2003,23210000.038147
+Arab World,2004,25180000.3051758
+Arab World,2008,709999.978542328
+Arab World,2009,289999.99165535
+Aruba,2000,11500000.0
+Aruba,2001,-1700000.04768372
+Aruba,2002,10489999.7711182
+Aruba,2003,76220001.2207031
+Aruba,2004,-11319999.6948242
+Bahamas,1996,1450000.04768372
+Bahamas,1997,3460000.03814697
+Bahamas,1998,22600000.3814697
+Bahamas,1999,11470000.2670288
+Bahamas,2000,5469999.79019165
+Bahamas,2001,7440000.05722046
+Bahamas,2002,4710000.03814697
+Bahamas,2003,3880000.11444092
+Bahamas,2004,4480000.01907349
+Belarus,1991,187029998.779297
+Belarus,1992,272739990.234375
+Belarus,1993,186009994.506836
+Belarus,1994,119019996.643066
+Belarus,1995,222720001.220703
+Belarus,1996,76569999.6948242
+Belarus,1997,56529998.7792969
+Belarus,1998,40450000.7629395
+Belarus,1999,39720001.2207031
+Belarus,2000,35959999.0844727
+Belarus,2001,40549999.2370605
+Belarus,2002,39450000.7629395
+Belarus,2003,45979999.5422363
+Belarus,2004,49939998.626709
+Bermuda,1997,-8220000.26702881
+Bermuda,1998,550000.011920929
+Bermuda,1999,79999.9982118607
+Bermuda,2000,59999.9986588955
+Bermuda,2001,19999.9995529652
+Bermuda,2002,19999.9995529652
+Bermuda,2003,29999.9993294477
+Bermuda,2004,90000.0035762787
+British Virgin Islands,2000,4840000.15258789
+British Virgin Islands,2001,2059999.94277954
+British Virgin Islands,2002,-79999.9982118607
+British Virgin Islands,2003,-529999.971389771
+British Virgin Islands,2004,-1220000.02861023
+Brunei,1996,3170000.07629395
+Brunei,1997,379999.995231628
+Brunei,1998,330000.013113022
+Brunei,1999,1429999.94754791
+Brunei,2000,629999.995231628
+Brunei,2001,349999.994039536
+Brunei,2002,-1820000.05245209
+Brunei,2003,469999.998807907
+Brunei,2004,769999.980926514
+Bulgaria,1990,13619999.8855591
+Bulgaria,1991,315679992.675781
+Bulgaria,1992,147509994.506836
+Bulgaria,1993,114650001.525879
+Bulgaria,1994,157339996.337891
+Bulgaria,1995,113069999.694824
+Bulgaria,1996,180020004.272461
+Bulgaria,1997,219470001.220703
+Bulgaria,1998,238800003.051758
+Bulgaria,1999,266559997.558594
+Bulgaria,2000,307140014.648438
+Bulgaria,2001,345950012.207031
+Bulgaria,2002,326809997.558594
+Bulgaria,2003,419410003.662109
+Bulgaria,2004,618369995.117188
+Caribbean small states,1996,1450000.04768372
+Caribbean small states,1997,3460000.03814697
+Caribbean small states,1998,22600000.3814697
+Caribbean small states,1999,11470000.2670288
+Caribbean small states,2000,5469999.79019165
+Caribbean small states,2001,7440000.05722046
+Caribbean small states,2002,4710000.03814697
+Caribbean small states,2003,3880000.11444092
+Caribbean small states,2004,4480000.01907349
+Cayman Islands,1997,-3799999.95231628
+Cayman Islands,1998,159999.996423721
+Cayman Islands,1999,3009999.99046326
+Cayman Islands,2000,-3599999.90463257
+Cayman Islands,2001,-779999.971389771
+Cayman Islands,2002,-1850000.02384186
+Cayman Islands,2003,-1429999.94754791
+Cayman Islands,2004,389999.985694885
+Central Europe and the Baltics,1990,1664830025.67292
+Central Europe and the Baltics,1991,4138359970.09278
+Central Europe and the Baltics,1992,2534090026.85547
+Central Europe and the Baltics,1993,1804770057.67822
+Central Europe and the Baltics,1994,2714990020.75195
+Central Europe and the Baltics,1995,4500429889.67896
+Central Europe and the Baltics,1996,2226469989.77661
+Central Europe and the Baltics,1997,1910779983.52051
+Central Europe and the Baltics,1998,2640660011.29151
+Central Europe and the Baltics,1999,3032530014.03808
+Central Europe and the Baltics,2000,3186090026.85547
+Central Europe and the Baltics,2001,3150239997.86377
+Central Europe and the Baltics,2002,2355969997.406
+Central Europe and the Baltics,2003,3500669998.16895
+Central Europe and the Baltics,2004,4473780044.55567
+Central Europe and the Baltics,2011,280000.001192093
+Croatia,2011,280000.001192093
+Cyprus,1997,42220001.2207031
+Cyprus,1998,34529998.7792969
+Cyprus,1999,53310001.373291
+Cyprus,2000,54400001.5258789
+Cyprus,2001,49700000.7629395
+Cyprus,2002,34250000.0
+Cyprus,2003,14390000.3433228
+Cyprus,2004,59860000.6103516
+Czechia,1990,13680000.3051758
+Czechia,1991,231000000.0
+Czechia,1992,129820007.324219
+Czechia,1993,99150001.5258789
+Czechia,1994,148270004.272461
+Czechia,1995,147380004.882813
+Czechia,1996,128529998.779297
+Czechia,1997,115139999.389648
+Czechia,1998,447829986.572266
+Czechia,1999,317989990.234375
+Czechia,2000,437369995.117188
+Czechia,2001,313779998.779297
+Czechia,2002,159770004.272461
+Czechia,2003,263269989.013672
+Czechia,2004,278660003.662109
+Early-demographic dividend,1997,1196349975.58594
+Early-demographic dividend,1998,1066069946.28906
+Early-demographic dividend,1999,905710021.972656
+Early-demographic dividend,2000,813750000.0
+Early-demographic dividend,2001,179300005.912781
+Early-demographic dividend,2002,763839994.90738
+Early-demographic dividend,2003,447899990.081787
+Early-demographic dividend,2004,491350006.103516
+Early-demographic dividend,2008,709999.978542328
+Early-demographic dividend,2009,289999.99165535
+East Asia & Pacific,1990,0.0
+East Asia & Pacific,1991,0.0
+East Asia & Pacific,1992,0.0
+East Asia & Pacific,1993,0.0
+East Asia & Pacific,1994,0.0
+East Asia & Pacific,1995,0.0
+East Asia & Pacific,1996,18050000.1907349
+East Asia & Pacific,1997,17289999.3658066
+East Asia & Pacific,1998,85250003.5464764
+East Asia & Pacific,1999,17349999.666214
+East Asia & Pacific,2000,570790010.57148
+East Asia & Pacific,2001,585819978.445768
+East Asia & Pacific,2002,677579997.65873
+East Asia & Pacific,2003,534869966.119528
+East Asia & Pacific,2004,1064110025.99448
+East Asia & Pacific (excluding high income),1990,0.0
+East Asia & Pacific (excluding high income),1991,0.0
+East Asia & Pacific (excluding high income),1992,0.0
+East Asia & Pacific (excluding high income),1993,0.0
+East Asia & Pacific (excluding high income),1994,0.0
+East Asia & Pacific (excluding high income),1995,0.0
+East Asia & Pacific (excluding high income),1996,0.0
+East Asia & Pacific (excluding high income),1997,0.0
+East Asia & Pacific (excluding high income),1998,0.0
+East Asia & Pacific (excluding high income),1999,0.0
+East Asia & Pacific (excluding high income),2000,0.0
+East Asia & Pacific (excluding high income),2001,0.0
+East Asia & Pacific (excluding high income),2002,0.0
+East Asia & Pacific (excluding high income),2003,0.0
+East Asia & Pacific (excluding high income),2004,0.0
+Estonia,1991,15369999.8855591
+Estonia,1992,104370002.746582
+Estonia,1993,42310001.373291
+Estonia,1994,43810001.373291
+Estonia,1995,58049999.2370605
+Estonia,1996,59369998.9318848
+Estonia,1997,65910003.6621094
+Estonia,1998,90989997.8637695
+Estonia,1999,83620002.746582
+Estonia,2000,63830001.8310547
+Estonia,2001,68500000.0
+Estonia,2002,54409999.8474121
+Estonia,2003,84300003.0517578
+Estonia,2004,135429992.675781
+Euro area,1990,6840000.15258789
+Euro area,1991,137449996.948242
+Euro area,1992,341889999.389648
+Euro area,1993,188340003.967285
+Euro area,1994,246389999.389648
+Euro area,1995,398490001.678467
+Euro area,1996,319869998.931885
+Euro area,1997,363330001.831055
+Euro area,1998,508360008.239747
+Euro area,1999,686969989.776611
+Euro area,2000,419629997.253418
+Euro area,2001,517649990.081788
+Euro area,2002,448719997.406005
+Euro area,2003,810130004.882814
+Euro area,2004,909679990.291596
+Europe & Central Asia,1990,2287570031.16608
+Europe & Central Asia,1991,6644069961.54785
+Europe & Central Asia,1992,6048170001.02997
+Europe & Central Asia,1993,5990109964.37073
+Europe & Central Asia,1994,6873610111.23657
+Europe & Central Asia,1995,8741209880.82886
+Europe & Central Asia,1996,5616080043.79272
+Europe & Central Asia,1997,4656280014.03809
+Europe & Central Asia,1998,6085589992.52319
+Europe & Central Asia,1999,7036439914.70337
+Europe & Central Asia,2000,6517580005.64575
+Europe & Central Asia,2001,5425110056.4003
+Europe & Central Asia,2002,5001260011.59847
+Europe & Central Asia,2003,6026799976.11046
+Europe & Central Asia,2004,7170560109.37691
+Europe & Central Asia (IDA & IBRD),1990,2120320027.35138
+Europe & Central Asia (IDA & IBRD),1991,4262730010.98633
+Europe & Central Asia (IDA & IBRD),1992,4616470004.08173
+Europe & Central Asia (IDA & IBRD),1993,4315549951.55334
+Europe & Central Asia (IDA & IBRD),1994,4431780033.11157
+Europe & Central Asia (IDA & IBRD),1995,6724739913.94044
+Europe & Central Asia (IDA & IBRD),1996,3489450019.83643
+Europe & Central Asia (IDA & IBRD),1997,2530489974.97559
+Europe & Central Asia (IDA & IBRD),1998,3172220005.0354
+Europe & Central Asia (IDA & IBRD),1999,4382299957.27539
+Europe & Central Asia (IDA & IBRD),2000,4264320014.95362
+Europe & Central Asia (IDA & IBRD),2001,3596210094.4519
+Europe & Central Asia (IDA & IBRD),2002,3421580005.64575
+Europe & Central Asia (IDA & IBRD),2003,3821599964.14185
+Europe & Central Asia (IDA & IBRD),2004,4795360103.60719
+Europe & Central Asia (IDA & IBRD),2011,280000.001192093
+Europe & Central Asia (excluding high income),1990,625739995.002747
+Europe & Central Asia (excluding high income),1991,2578429962.1582
+Europe & Central Asia (excluding high income),1992,1984679995.5368
+Europe & Central Asia (excluding high income),1993,2047269998.55042
+Europe & Central Asia (excluding high income),1994,2623460071.56372
+Europe & Central Asia (excluding high income),1995,2734919967.65137
+Europe & Central Asia (excluding high income),1996,2397400032.04346
+Europe & Central Asia (excluding high income),1997,2238160018.9209
+Europe & Central Asia (excluding high income),1998,2832199985.50415
+Europe & Central Asia (excluding high income),1999,2666229965.20996
+Europe & Central Asia (excluding high income),2000,2279490013.12256
+Europe & Central Asia (excluding high income),2001,2066940029.14429
+Europe & Central Asia (excluding high income),2002,1978949985.50415
+Europe & Central Asia (excluding high income),2003,2250509983.06274
+Europe & Central Asia (excluding high income),2004,2826590023.04077
+European Union,1990,1664830025.67292
+European Union,1991,4138359970.09278
+European Union,1992,2534090026.85547
+European Union,1993,1804770057.67822
+European Union,1994,2714990020.75195
+European Union,1995,4500429889.67896
+European Union,1996,2226469989.77661
+European Union,1997,1952999984.74121
+European Union,1998,2675190010.0708
+European Union,1999,3085840015.41137
+European Union,2000,3240490028.38135
+European Union,2001,3199939998.62671
+European Union,2002,2390219997.40601
+European Union,2003,3524169998.16895
+European Union,2004,4539830045.22324
+European Union,2011,280000.001192093
+Fragile and conflict affected situations,2000,13750000.0
+Fragile and conflict affected situations,2001,6949999.80926514
+Fragile and conflict affected situations,2002,6969999.79019165
+Fragile and conflict affected situations,2003,7909999.84741211
+Fragile and conflict affected situations,2004,12500000.0
+French Polynesia,2000,402589996.337891
+French Polynesia,2001,388329986.572266
+French Polynesia,2002,418390014.648438
+French Polynesia,2003,518539978.027344
+French Polynesia,2004,579750000.0
+Gibraltar,2000,39999.9991059303
+Gibraltar,2001,730000.019073486
+Gibraltar,2002,9999.99977648258
+Gibraltar,2003,29999.9993294477
+Gibraltar,2004,189999.997615814
+High income,1990,1651210025.78735
+High income,1991,3822679977.41699
+High income,1992,2386580032.34863
+High income,1993,1690120056.15234
+High income,1994,2557650024.41406
+High income,1995,4387359889.98413
+High income,1996,2100539986.13358
+High income,1997,2943689958.21476
+High income,1998,3624129957.13949
+High income,1999,3774900039.74736
+High income,2000,4331480024.55011
+High income,2001,3630899970.99712
+High income,2002,3525719992.35265
+High income,2003,4173119952.46634
+High income,2004,5469710082.79175
+Hong Kong,1997,8439999.5803833
+Hong Kong,1998,6820000.17166138
+Hong Kong,1999,3750000.0
+Hong Kong,2000,4329999.92370605
+Hong Kong,2001,3569999.9332428
+Hong Kong,2002,3960000.03814697
+Hong Kong,2003,5019999.98092651
+Hong Kong,2004,6949999.80926514
+Hungary,1990,67010002.1362305
+Hungary,1991,626219970.703125
+Hungary,1992,221149993.896484
+Hungary,1993,164389999.389648
+Hungary,1994,199080001.831055
+Hungary,1995,-245240005.493164
+Hungary,1996,202759994.506836
+Hungary,1997,176160003.662109
+Hungary,1998,238750000.0
+Hungary,1999,248779998.779297
+Hungary,2000,252169998.168945
+Hungary,2001,417489990.234375
+Hungary,2002,160330001.831055
+Hungary,2003,247990005.493164
+Hungary,2004,302010009.765625
+IBRD only,1990,2120320027.35138
+IBRD only,1991,4262730010.98633
+IBRD only,1992,4616470004.08173
+IBRD only,1993,4315549951.55334
+IBRD only,1994,4431780033.11157
+IBRD only,1995,6724739913.94044
+IBRD only,1996,3489450019.83643
+IBRD only,1997,2530489974.97559
+IBRD only,1998,3172220005.0354
+IBRD only,1999,4382299957.27539
+IBRD only,2000,4278070014.95362
+IBRD only,2001,3603160094.26117
+IBRD only,2002,3428550005.43594
+IBRD only,2003,3829509963.98926
+IBRD only,2004,4807860103.60719
+IBRD only,2011,280000.001192093
+IDA & IBRD total,1990,2120320027.35138
+IDA & IBRD total,1991,4262730010.98633
+IDA & IBRD total,1992,4616470004.08173
+IDA & IBRD total,1993,4315549951.55334
+IDA & IBRD total,1994,4431780033.11158
+IDA & IBRD total,1995,6724739913.94044
+IDA & IBRD total,1996,3489450019.83643
+IDA & IBRD total,1997,2530489974.97559
+IDA & IBRD total,1998,3172220005.0354
+IDA & IBRD total,1999,4382299957.27539
+IDA & IBRD total,2000,4278070014.95362
+IDA & IBRD total,2001,3603160094.26117
+IDA & IBRD total,2002,3428550005.43594
+IDA & IBRD total,2003,3829509963.98926
+IDA & IBRD total,2004,4807860103.60719
+IDA & IBRD total,2011,280000.001192093
+Israel,1997,1196349975.58594
+Israel,1998,1066069946.28906
+Israel,1999,905710021.972656
+Israel,2000,800000000.0
+Israel,2001,172350006.103516
+Israel,2002,756869995.117188
+Israel,2003,439989990.234375
+Israel,2004,478850006.103516
+Kuwait,1996,24600000.3814697
+Kuwait,1997,1279999.97138977
+Kuwait,1998,6989999.77111816
+Kuwait,1999,8329999.92370605
+Kuwait,2000,3890000.10490417
+Kuwait,2001,4690000.05722046
+Kuwait,2002,5710000.03814697
+Kuwait,2003,5519999.98092651
+Kuwait,2004,3690000.05722046
+Late-demographic dividend,1990,1824540027.61841
+Late-demographic dividend,1991,3525210028.64838
+Late-demographic dividend,1992,3886560008.04902
+Late-demographic dividend,1993,3812589956.28357
+Late-demographic dividend,1994,4040030033.11157
+Late-demographic dividend,1995,6288689914.70337
+Late-demographic dividend,1996,3103160016.53671
+Late-demographic dividend,1997,2250579988.3604
+Late-demographic dividend,1998,2838840010.97083
+Late-demographic dividend,1999,4088329981.44626
+Late-demographic dividend,2000,4479100001.21594
+Late-demographic dividend,2001,3781840040.77315
+Late-demographic dividend,2002,3665780007.48158
+Late-demographic dividend,2003,4470089950.29331
+Late-demographic dividend,2004,5453250106.81153
+Latin America & Caribbean,1990,0.0
+Latin America & Caribbean,1991,0.0
+Latin America & Caribbean,1992,0.0
+Latin America & Caribbean,1993,0.0
+Latin America & Caribbean,1994,0.0
+Latin America & Caribbean,1995,0.0
+Latin America & Caribbean,1996,1450000.04768372
+Latin America & Caribbean,1997,-579999.908804893
+Latin America & Caribbean,1998,22520000.3832579
+Latin America & Caribbean,1999,14240000.2628565
+Latin America & Caribbean,2000,13129999.8909235
+Latin America & Caribbean,2001,4730000.03397465
+Latin America & Caribbean,2002,13099999.7854233
+Latin America & Caribbean,2003,78380001.3959408
+Latin America & Caribbean,2004,-6779999.70316887
+Latin America & Caribbean (excluding high income),1990,0.0
+Latin America & Caribbean (excluding high income),1991,0.0
+Latin America & Caribbean (excluding high income),1992,0.0
+Latin America & Caribbean (excluding high income),1993,0.0
+Latin America & Caribbean (excluding high income),1994,0.0
+Latin America & Caribbean (excluding high income),1995,0.0
+Latin America & Caribbean (excluding high income),1996,0.0
+Latin America & Caribbean (excluding high income),1997,-239999.994635582
+Latin America & Caribbean (excluding high income),1998,-239999.994635582
+Latin America & Caribbean (excluding high income),1999,-239999.994635582
+Latin America & Caribbean (excluding high income),2000,-239999.994635582
+Latin America & Caribbean (excluding high income),2001,-230000.004172325
+Latin America & Caribbean (excluding high income),2002,-250000.0
+Latin America & Caribbean (excluding high income),2003,-289999.99165535
+Latin America & Caribbean (excluding high income),2004,-330000.013113022
+Latvia,1991,3420000.07629395
+Latvia,1992,80309997.5585938
+Latvia,1993,33310001.373291
+Latvia,1994,52759998.3215332
+Latvia,1995,63349998.4741211
+Latvia,1996,72190002.4414063
+Latvia,1997,81199996.9482422
+Latvia,1998,97889999.3896484
+Latvia,1999,98930000.3051758
+Latvia,2000,90589996.3378906
+Latvia,2001,105180000.305176
+Latvia,2002,75199996.9482422
+Latvia,2003,113370002.746582
+Latvia,2004,161809997.558594
+Libya,2000,13750000.0
+Libya,2001,6949999.80926514
+Libya,2002,6969999.79019165
+Libya,2003,7909999.84741211
+Libya,2004,12500000.0
+Lithuania,1991,3960000.03814697
+Lithuania,1992,93849998.4741211
+Lithuania,1993,62200000.7629395
+Lithuania,1994,71430000.3051758
+Lithuania,1995,179130004.882813
+Lithuania,1996,90720001.2207031
+Lithuania,1997,103580001.831055
+Lithuania,1998,130130004.882813
+Lithuania,1999,132399993.896484
+Lithuania,2000,97819999.6948242
+Lithuania,2001,130229995.727539
+Lithuania,2002,132210006.713867
+Lithuania,2003,370880004.882813
+Lithuania,2004,249380004.882813
+Low & middle income,1990,636359985.351563
+Low & middle income,1991,2821389892.57813
+Low & middle income,1992,3661590087.89063
+Low & middle income,1993,4299989746.09375
+Low & middle income,1994,4315959960.9375
+Low & middle income,1995,4353850097.65625
+Low & middle income,1996,3569629882.8125
+Low & middle income,1997,2922510009.76563
+Low & middle income,1998,3648959960.9375
+Low & middle income,1999,4216919921.875
+Low & middle income,2000,3438859863.28125
+Low & middle income,2001,2541600097.65625
+Low & middle income,2002,2869810058.59375
+Low & middle income,2003,2932150146.48438
+Low & middle income,2004,3259860107.42188
+Low income,1990,0.0
+Low income,1991,0.0
+Low income,1992,0.0
+Low income,1993,0.0
+Low income,1994,0.0
+Low income,1995,0.0
+Low income,1996,0.0
+Low income,1997,0.0
+Low income,1998,0.0
+Low income,1999,0.0
+Low income,2000,0.0
+Low income,2001,0.0
+Low income,2002,0.0
+Low income,2003,0.0
+Low income,2004,0.0
+Lower middle income,1990,289000000.0
+Lower middle income,1991,368299987.792969
+Lower middle income,1992,567400012.016296
+Lower middle income,1993,357250001.907349
+Lower middle income,1994,344620006.561279
+Lower middle income,1995,385439994.812012
+Lower middle income,1996,434419998.168945
+Lower middle income,1997,272579986.572266
+Lower middle income,1998,468399993.896484
+Lower middle income,1999,573159973.144531
+Lower middle income,2000,543320007.324219
+Lower middle income,2001,514830017.089844
+Lower middle income,2002,476209991.455078
+Lower middle income,2003,328359985.351563
+Lower middle income,2004,376390014.648438
+Macao,2000,680000.007152557
+Macao,2001,529999.971389771
+Macao,2002,980000.019073486
+Macao,2003,129999.995231628
+Macao,2004,119999.997317791
+Malta,2003,9109999.65667725
+Malta,2004,6190000.05722046
+Middle East & North Africa,1990,0.0
+Middle East & North Africa,1991,0.0
+Middle East & North Africa,1992,0.0
+Middle East & North Africa,1993,0.0
+Middle East & North Africa,1994,0.0
+Middle East & North Africa,1995,0.0
+Middle East & North Africa,1996,34590000.3910065
+Middle East & North Africa,1997,1201429975.50964
+Middle East & North Africa,1998,1079179946.18416
+Middle East & North Africa,1999,923710021.972656
+Middle East & North Africa,2000,822780000.209808
+Middle East & North Africa,2001,190270005.941391
+Middle East & North Africa,2002,778399994.850159
+Middle East & North Africa,2003,472309989.929199
+Middle East & North Africa,2004,510220006.465912
+Middle East & North Africa (IDA & IBRD),2000,13750000.0
+Middle East & North Africa (IDA & IBRD),2001,6949999.80926514
+Middle East & North Africa (IDA & IBRD),2002,6969999.79019165
+Middle East & North Africa (IDA & IBRD),2003,7909999.84741211
+Middle East & North Africa (IDA & IBRD),2004,12500000.0
+Middle East & North Africa (excluding high income),1990,0.0
+Middle East & North Africa (excluding high income),1991,0.0
+Middle East & North Africa (excluding high income),1992,0.0
+Middle East & North Africa (excluding high income),1993,0.0
+Middle East & North Africa (excluding high income),1994,0.0
+Middle East & North Africa (excluding high income),1995,0.0
+Middle East & North Africa (excluding high income),1996,0.0
+Middle East & North Africa (excluding high income),1997,0.0
+Middle East & North Africa (excluding high income),1998,0.0
+Middle East & North Africa (excluding high income),1999,0.0
+Middle East & North Africa (excluding high income),2000,13750000.0
+Middle East & North Africa (excluding high income),2001,6949999.80926514
+Middle East & North Africa (excluding high income),2002,6969999.79019165
+Middle East & North Africa (excluding high income),2003,7909999.84741211
+Middle East & North Africa (excluding high income),2004,12500000.0
+Middle income,1990,556640014.648438
+Middle income,1991,1434719970.70313
+Middle income,1992,2922750000.0
+Middle income,1993,3077309814.45313
+Middle income,1994,2467870117.1875
+Middle income,1995,2638010009.76563
+Middle income,1996,2094159912.10938
+Middle income,1997,1451589965.82031
+Middle income,1998,1930770019.53125
+Middle income,1999,2816760009.76563
+Middle income,2000,2453889892.57813
+Middle income,2001,1998090087.89063
+Middle income,2002,2133959960.9375
+Middle income,2003,2046140014.64844
+Middle income,2004,2376750000.0
+Moldova,1992,9699999.80926514
+Moldova,1993,28809999.4659424
+Moldova,1994,54270000.4577637
+Moldova,1995,65819999.6948242
+Moldova,1996,36360000.6103516
+New Caledonia,2000,350170013.427734
+New Caledonia,2001,294149993.896484
+New Caledonia,2002,323829986.572266
+New Caledonia,2003,453899993.896484
+New Caledonia,2004,524340026.855469
+North America,1997,-8220000.26702881
+North America,1998,550000.011920929
+North America,1999,79999.9982118607
+North America,2000,59999.9986588955
+North America,2001,19999.9995529652
+North America,2002,19999.9995529652
+North America,2003,29999.9993294477
+North America,2004,90000.0035762787
+Northern Mariana Islands,2000,180000.007152557
+OECD members,1990,1407810031.89087
+OECD members,1991,3501929977.417
+OECD members,1992,2128390029.90723
+OECD members,1993,1523440063.47656
+OECD members,1994,2403260025.02441
+OECD members,1995,4089509883.88062
+OECD members,1996,1815529987.33521
+OECD members,1997,2669239959.7168
+OECD members,1998,3101809959.41162
+OECD members,1999,3285290023.80371
+OECD members,2000,3050040023.80371
+OECD members,2001,2218729972.83936
+OECD members,2002,2285969997.40601
+OECD members,2003,2461919998.16895
+OECD members,2004,3351770042.41944
+Other small states,1991,15369999.8855591
+Other small states,1992,104370002.746582
+Other small states,1993,42310001.373291
+Other small states,1994,43810001.373291
+Other small states,1995,58049999.2370605
+Other small states,1996,65819998.9795685
+Other small states,1997,110570004.820824
+Other small states,1998,128509996.74201
+Other small states,1999,144700004.220009
+Other small states,2000,120800003.409386
+Other small states,2001,122460000.84281
+Other small states,2002,91859999.7758865
+Other small states,2003,113090003.222227
+Other small states,2004,205879993.43872
+Poland,1990,1320280029.29688
+Poland,1991,2507260009.76563
+Poland,1992,1435530029.29688
+Poland,1993,1071560058.59375
+Poland,1994,1809520019.53125
+Poland,1995,3788879882.8125
+Poland,1996,1164369995.11719
+Poland,1997,860479980.46875
+Poland,1998,875330017.089844
+Poland,1999,1179150024.41406
+Poland,2000,1393410034.17969
+Poland,2001,958489990.234375
+Poland,2002,876440002.441406
+Poland,2003,1185640014.64844
+Poland,2004,1520160034.17969
+Post-demographic dividend,1990,383310002.326965
+Post-demographic dividend,1991,1732189949.98932
+Post-demographic dividend,1992,1422769996.64307
+Post-demographic dividend,1993,954840000.152587
+Post-demographic dividend,1994,985490005.493165
+Post-demographic dividend,1995,736680000.305177
+Post-demographic dividend,1996,1091539996.14716
+Post-demographic dividend,1997,954709990.978241
+Post-demographic dividend,1998,1572799989.34269
+Post-demographic dividend,1999,1581249954.81968
+Post-demographic dividend,2000,1481740014.61268
+Post-demographic dividend,2001,1656450011.37257
+Post-demographic dividend,2002,1224999999.04633
+Post-demographic dividend,2003,1291829980.73101
+Post-demographic dividend,2004,1887830027.21518
+Post-demographic dividend,2011,280000.001192093
+Qatar,1996,3279999.97138977
+Qatar,1997,2059999.94277954
+Qatar,1998,2660000.08583069
+Qatar,1999,6340000.15258789
+Qatar,2000,1940000.05722046
+Qatar,2001,3910000.08583069
+Qatar,2002,5019999.98092651
+Qatar,2003,4820000.17166138
+Qatar,2004,3630000.11444092
+Romania,1990,243399993.896484
+Romania,1991,320750000.0
+Romania,1992,258190002.441406
+Romania,1993,166679992.675781
+Romania,1994,154389999.389648
+Romania,1995,297850006.103516
+Romania,1996,230919998.168945
+Romania,1997,218419998.168945
+Romania,1998,366119995.117188
+Romania,1999,386390014.648438
+Romania,2000,430769989.013672
+Romania,2001,646580017.089844
+Romania,2002,418149993.896484
+Romania,2003,597729980.46875
+Romania,2004,910950012.207031
+Russia,1990,254020004.272461
+Russia,1991,563710021.972656
+Russia,1992,1935099975.58594
+Russia,1993,2419399902.34375
+Russia,1994,1846890014.64844
+Russia,1995,1916780029.29688
+Russia,1996,1403150024.41406
+Russia,1997,903010009.765625
+Russia,1998,1183119995.11719
+Russia,1999,1937319946.28906
+Russia,2000,1553719970.70313
+Russia,2001,1089810058.59375
+Russia,2002,1284520019.53125
+Russia,2003,1244479980.46875
+Russia,2004,1319550048.82813
+Saudi Arabia,2008,709999.978542328
+Saudi Arabia,2009,289999.99165535
+Singapore,1996,14880000.1144409
+Singapore,1997,2809999.94277954
+Singapore,1998,1620000.00476837
+Singapore,1999,-1110000.01430511
+Singapore,2000,1090000.0333786
+Singapore,2001,850000.023841858
+Singapore,2002,7190000.05722046
+Singapore,2003,7070000.17166138
+Singapore,2004,9140000.34332275
+Slovakia,1990,6840000.15258789
+Slovakia,1991,114699996.948242
+Slovakia,1992,63360000.6103516
+Slovakia,1993,50520000.4577637
+Slovakia,1994,78389999.3896484
+Slovakia,1995,97959999.0844727
+Slovakia,1996,97589996.3378906
+Slovakia,1997,70419998.1689453
+Slovakia,1998,154820007.324219
+Slovakia,1999,318709991.455078
+Slovakia,2000,112989997.86377
+Slovakia,2001,164039993.286133
+Slovakia,2002,152649993.896484
+Slovakia,2003,161869995.117188
+Slovakia,2004,234789993.286133
+Slovenia,2003,56209999.0844727
+Slovenia,2004,62220001.2207031
+Small states,1991,15369999.8855591
+Small states,1992,104370002.746582
+Small states,1993,42310001.373291
+Small states,1994,43810001.373291
+Small states,1995,58049999.2370605
+Small states,1996,67269999.0272522
+Small states,1997,114030004.858971
+Small states,1998,151109997.12348
+Small states,1999,156170004.487038
+Small states,2000,126270003.199577
+Small states,2001,129900000.90003
+Small states,2002,96569999.8140335
+Small states,2003,116970003.336668
+Small states,2004,210359993.457794
+South Asia,1990,0.0
+South Asia,1991,0.0
+South Asia,1992,0.0
+South Asia,1993,0.0
+South Asia,1994,0.0
+South Asia,1995,0.0
+South Asia,1996,0.0
+South Asia,1997,0.0
+South Asia,1998,0.0
+South Asia,1999,0.0
+South Asia,2000,0.0
+South Asia,2001,0.0
+South Asia,2002,0.0
+South Asia,2003,0.0
+South Asia,2004,0.0
+South Korea,2000,-198139999.389648
+South Korea,2001,-111330001.831055
+South Korea,2002,-81910003.6621094
+South Korea,2003,-461600006.103516
+South Korea,2004,-71540000.9155273
+Sub-Saharan Africa,1990,0.0
+Sub-Saharan Africa,1991,0.0
+Sub-Saharan Africa,1992,0.0
+Sub-Saharan Africa,1993,0.0
+Sub-Saharan Africa,1994,0.0
+Sub-Saharan Africa,1995,0.0
+Sub-Saharan Africa,1996,0.0
+Sub-Saharan Africa,1997,0.0
+Sub-Saharan Africa,1998,0.0
+Sub-Saharan Africa,1999,0.0
+Sub-Saharan Africa,2000,0.0
+Sub-Saharan Africa,2001,0.0
+Sub-Saharan Africa,2002,0.0
+Sub-Saharan Africa,2003,0.0
+Sub-Saharan Africa,2004,0.0
+Sub-Saharan Africa (excluding high income),1990,0.0
+Sub-Saharan Africa (excluding high income),1991,0.0
+Sub-Saharan Africa (excluding high income),1992,0.0
+Sub-Saharan Africa (excluding high income),1993,0.0
+Sub-Saharan Africa (excluding high income),1994,0.0
+Sub-Saharan Africa (excluding high income),1995,0.0
+Sub-Saharan Africa (excluding high income),1996,0.0
+Sub-Saharan Africa (excluding high income),1997,0.0
+Sub-Saharan Africa (excluding high income),1998,0.0
+Sub-Saharan Africa (excluding high income),1999,0.0
+Sub-Saharan Africa (excluding high income),2000,0.0
+Sub-Saharan Africa (excluding high income),2001,0.0
+Sub-Saharan Africa (excluding high income),2002,0.0
+Sub-Saharan Africa (excluding high income),2003,0.0
+Sub-Saharan Africa (excluding high income),2004,0.0
+Ukraine,1990,289000000.0
+Ukraine,1991,368299987.792969
+Ukraine,1992,557700012.207031
+Ukraine,1993,328440002.441406
+Ukraine,1994,290350006.103516
+Ukraine,1995,319619995.117188
+Ukraine,1996,398059997.558594
+Ukraine,1997,272579986.572266
+Ukraine,1998,468399993.896484
+Ukraine,1999,573159973.144531
+Ukraine,2000,543320007.324219
+Ukraine,2001,514830017.089844
+Ukraine,2002,476209991.455078
+Ukraine,2003,328359985.351563
+Ukraine,2004,376390014.648438
+United Arab Emirates,1996,6710000.03814697
+United Arab Emirates,1997,1740000.00953674
+United Arab Emirates,1998,3460000.03814697
+United Arab Emirates,1999,3329999.92370605
+United Arab Emirates,2000,3200000.04768372
+United Arab Emirates,2001,2369999.88555908
+United Arab Emirates,2002,3829999.92370605
+United Arab Emirates,2003,4960000.03814697
+United Arab Emirates,2004,5360000.1335144
+Upper middle income,1990,267640004.15802
+Upper middle income,1991,1066420013.42773
+Upper middle income,1992,2355349960.32715
+Upper middle income,1993,2720059898.37646
+Upper middle income,1994,2123250007.62939
+Upper middle income,1995,2252570030.2124
+Upper middle income,1996,1659740028.38135
+Upper middle income,1997,1179010009.76563
+Upper middle income,1998,1462369998.93188
+Upper middle income,1999,2243599945.06836
+Upper middle income,2000,1910569984.43604
+Upper middle income,2001,1483260069.84711
+Upper middle income,2002,1657750017.64297
+Upper middle income,2003,1717779983.52051
+Upper middle income,2004,2000360042.57202
+World,1990,2276949951.17188
+World,1991,6401109863.28125
+World,1992,4371260253.90625
+World,1993,3737390136.71875
+World,1994,5181109863.28125
+World,1995,7122279785.15625
+World,1996,4497939941.40625
+World,1997,5181609863.28125
+World,1998,6456089843.75
+World,1999,6440890136.71875
+World,2000,6647390136.71875
+World,2001,5729270019.53125
+World,2002,5529160156.25
+World,2003,6458520019.53125
+World,2004,8320969726.5625

@@ -1,168 +1,525 @@
 country,year,value
-Afghanistan,2015,32.6
-Albania,2009,58.8
-Albania,2018,83.7
-Angola,2016,65.4
-Armenia,2000,50.1
-Armenia,2005,71.6
-Armenia,2010,81.7
-Armenia,2016,77.1
-Azerbaijan,2006,45.1
-Bangladesh,2004,27.6
-Bangladesh,2007,38.0
-Bangladesh,2011,46.0
-Bangladesh,2014,47.2
-Benin,2001,17.2
-Benin,2006,35.6
-Benin,2012,48.3
-Benin,2018,36.3
-Bolivia,2003,67.0
-Bolivia,2008,74.1
-Burkina Faso,2003,10.2
-Burkina Faso,2010,12.0
-Burundi,2010,49.6
-Burundi,2017,60.3
-Cambodia,2005,74.2
-Cambodia,2010,85.6
-Cambodia,2014,86.3
-Cameroon,2004,23.1
-Cameroon,2011,23.7
-Cameroon,2018,46.7
-Chad,2015,17.4
-Colombia,2000,60.3
-Colombia,2005,62.6
-Colombia,2010,63.0
-Colombia,2015,72.1
-Comoros,2012,34.6
-Congo,2012,28.4
-Cote d'Ivoire,2012,23.6
-Democratic Republic of Congo,2007,24.4
-Democratic Republic of Congo,2014,33.5
-Dominican Republic,2007,70.0
-Dominican Republic,2013,78.8
-Egypt,2000,29.7
-Egypt,2005,45.2
-Egypt,2008,52.2
-Egypt,2014,58.8
-Eritrea,2002,50.1
-Eswatini,2007,36.7
-Ethiopia,2005,45.4
-Ethiopia,2011,54.4
-Ethiopia,2016,70.6
-Gabon,2012,43.7
-Gambia,2013,39.2
-Ghana,2003,39.7
-Ghana,2008,49.2
-Ghana,2014,61.6
-Guatemala,2015,63.1
-Guinea,2005,34.9
-Guinea,2012,23.2
-Guinea,2018,30.4
-Guyana,2009,81.4
-Haiti,2000,27.8
-Haiti,2006,52.6
-Haiti,2012,60.8
-Haiti,2017,69.1
-Honduras,2006,57.8
-Honduras,2012,63.2
-India,2006,39.3
-India,2016,63.0
-Indonesia,2003,68.7
-Indonesia,2007,68.4
-Indonesia,2012,70.3
-Indonesia,2017,68.2
-Jordan,2002,53.1
-Jordan,2007,62.4
-Jordan,2012,65.1
-Jordan,2018,77.8
-Kenya,2003,25.7
-Kenya,2009,52.3
-Kenya,2014,55.8
-Kyrgyzstan,2012,79.3
-Lesotho,2004,27.6
-Lesotho,2009,53.5
-Lesotho,2014,65.4
-Liberia,2013,65.9
-Madagascar,2004,72.3
-Madagascar,2009,73.9
-Malawi,2000,11.0
-Malawi,2004,13.1
-Malawi,2010,22.3
-Malawi,2016,46.9
-Maldives,2009,48.6
-Maldives,2017,79.6
-Mali,2001,8.2
-Mali,2006,11.3
-Mali,2013,8.9
-Mali,2018,10.4
-Moldova,2005,92.8
-Morocco,2004,44.0
-Mozambique,2003,29.0
-Mozambique,2011,49.4
-Mozambique,2015,64.7
-Myanmar,2016,65.3
-Namibia,2007,65.5
-Namibia,2013,74.6
-Nepal,2001,17.4
-Nepal,2006,38.1
-Nepal,2011,45.5
-Nepal,2016,37.7
-Nicaragua,2001,58.9
-Niger,2006,8.6
-Niger,2012,12.3
-Nigeria,2003,13.9
-Nigeria,2008,32.1
-Nigeria,2013,31.3
-Nigeria,2018,33.5
-Pakistan,2013,38.2
-Pakistan,2018,35.8
-Papua New Guinea,2018,61.6
-Peru,2000,63.3
-Peru,2006,54.0
-Peru,2008,59.6
-Peru,2009,66.3
-Peru,2010,62.8
-Peru,2011,63.0
-Peru,2012,64.7
-Philippines,2003,70.5
-Philippines,2008,79.2
-Philippines,2013,80.2
-Philippines,2017,85.0
-Rwanda,2000,39.3
-Rwanda,2005,47.1
-Rwanda,2010,58.7
-Rwanda,2015,65.4
-Sao Tome and Principe,2009,46.9
-Senegal,2005,9.5
-Senegal,2011,17.7
-Senegal,2013,9.5
-Senegal,2014,9.7
-Senegal,2015,9.9
-Senegal,2016,6.3
-Senegal,2017,14.1
-Senegal,2018,9.7
-Sierra Leone,2008,40.9
-Sierra Leone,2013,45.4
-South Africa,2016,87.2
-Tajikistan,2012,43.1
-Tajikistan,2017,33.1
-Tanzania,2005,25.4
-Tanzania,2010,30.3
-Tanzania,2016,35.2
-Timor,2010,74.9
-Timor,2016,87.2
-Togo,2014,29.4
-Turkmenistan,2000,61.5
-Uganda,2001,28.5
-Uganda,2006,38.8
-Uganda,2011,37.5
-Uganda,2016,51.1
-Ukraine,2007,90.1
-Zambia,2002,18.0
-Zambia,2007,38.7
-Zambia,2014,53.8
-Zambia,2018,57.8
-Zimbabwe,1999,40.5
-Zimbabwe,2006,74.9
-Zimbabwe,2011,74.5
-Zimbabwe,2015,72.1
+Afghanistan,2016,0.0
+Afghanistan,2017,0.0
+Afghanistan,2018,0.0
+Afghanistan,2019,1943399417.26643
+Albania,2016,0.0
+Albania,2017,0.0
+Albania,2018,0.0
+Albania,2019,4980869709.56899
+Algeria,2016,0.0
+Algeria,2017,0.0
+Algeria,2018,0.0
+Algeria,2019,1889693611.1068
+Angola,2016,0.0
+Angola,2017,0.0
+Angola,2018,0.0
+Angola,2019,40528137346.9531
+Argentina,2016,0.0
+Argentina,2017,0.0
+Argentina,2018,0.0
+Argentina,2019,214666179494.385
+Armenia,2016,0.0
+Armenia,2017,0.0
+Armenia,2018,0.0
+Armenia,2019,5793995162.52323
+Azerbaijan,2016,0.0
+Azerbaijan,2017,0.0
+Azerbaijan,2018,0.0
+Azerbaijan,2019,14345643196.8684
+Bangladesh,2016,0.0
+Bangladesh,2017,0.0
+Bangladesh,2018,0.0
+Bangladesh,2019,30826242960.4034
+Belarus,2016,0.0
+Belarus,2017,0.0
+Belarus,2018,0.0
+Belarus,2019,22029387679.0492
+Belize,2016,0.0
+Belize,2017,0.0
+Belize,2018,0.0
+Belize,2019,1341277224.42509
+Benin,2016,0.0
+Benin,2017,0.0
+Benin,2018,0.0
+Benin,2019,2962934593.80339
+Bhutan,2016,0.0
+Bhutan,2017,0.0
+Bhutan,2018,0.0
+Bhutan,2019,2023205716.20532
+Bolivia,2016,0.0
+Bolivia,2017,0.0
+Bolivia,2018,0.0
+Bolivia,2019,10227853347.7898
+Bosnia and Herzegovina,2016,0.0
+Bosnia and Herzegovina,2017,0.0
+Bosnia and Herzegovina,2018,0.0
+Bosnia and Herzegovina,2019,5151183703.82515
+Botswana,2016,0.0
+Botswana,2017,0.0
+Botswana,2018,0.0
+Botswana,2019,1341163806.07631
+Brazil,2016,0.0
+Brazil,2017,0.0
+Brazil,2018,0.0
+Brazil,2019,220428922074.766
+Bulgaria,2016,0.0
+Bulgaria,2017,0.0
+Bulgaria,2018,0.0
+Bulgaria,2019,13296443826.9957
+Burkina Faso,2016,0.0
+Burkina Faso,2017,0.0
+Burkina Faso,2018,0.0
+Burkina Faso,2019,2233652781.30799
+Burundi,2016,0.0
+Burundi,2017,0.0
+Burundi,2018,0.0
+Burundi,2019,355034965.309689
+Cambodia,2016,0.0
+Cambodia,2017,0.0
+Cambodia,2018,0.0
+Cambodia,2019,6014050064.6544
+Cameroon,2016,0.0
+Cameroon,2017,0.0
+Cameroon,2018,0.0
+Cameroon,2019,8188090383.16665
+Cape Verde,2016,0.0
+Cape Verde,2017,0.0
+Cape Verde,2018,0.0
+Cape Verde,2019,1598157906.1993
+Central African Republic,2016,0.0
+Central African Republic,2017,0.0
+Central African Republic,2018,0.0
+Central African Republic,2019,491872515.732977
+Chad,2016,0.0
+Chad,2017,0.0
+Chad,2018,0.0
+Chad,2019,2949049186.05042
+China,2016,0.0
+China,2017,0.0
+China,2018,0.0
+China,2019,263466370065.83
+Colombia,2016,0.0
+Colombia,2017,0.0
+Colombia,2018,0.0
+Colombia,2019,88540279848.2506
+Comoros,2016,0.0
+Comoros,2017,0.0
+Comoros,2018,0.0
+Comoros,2019,145172851.295742
+Congo,2016,0.0
+Congo,2017,0.0
+Congo,2018,0.0
+Congo,2019,3675227633.723
+Costa Rica,2016,0.0
+Costa Rica,2017,0.0
+Costa Rica,2018,0.0
+Costa Rica,2019,14844241932.1061
+Cote d'Ivoire,2016,0.0
+Cote d'Ivoire,2017,0.0
+Cote d'Ivoire,2018,0.0
+Cote d'Ivoire,2019,15717466867.7148
+Democratic Republic of Congo,2016,0.0
+Democratic Republic of Congo,2017,0.0
+Democratic Republic of Congo,2018,0.0
+Democratic Republic of Congo,2019,7828368757.2513
+Djibouti,2016,0.0
+Djibouti,2017,0.0
+Djibouti,2018,0.0
+Djibouti,2019,1771816239.55856
+Dominica,2016,0.0
+Dominica,2017,0.0
+Dominica,2018,0.0
+Dominica,2019,242175616.684326
+Dominican Republic,2016,0.0
+Dominican Republic,2017,0.0
+Dominican Republic,2018,0.0
+Dominican Republic,2019,29434270045.2786
+East Asia & Pacific (excluding high income),2016,0.0
+East Asia & Pacific (excluding high income),2017,0.0
+East Asia & Pacific (excluding high income),2018,0.0
+East Asia & Pacific (excluding high income),2019,675737455728.273
+Ecuador,2016,0.0
+Ecuador,2017,0.0
+Ecuador,2018,0.0
+Ecuador,2019,42598074565.1679
+Egypt,2016,0.0
+Egypt,2017,0.0
+Egypt,2018,0.0
+Egypt,2019,97843184590.3838
+El Salvador,2016,0.0
+El Salvador,2017,0.0
+El Salvador,2018,0.0
+El Salvador,2019,12582420423.8592
+Eritrea,2016,0.0
+Eritrea,2017,0.0
+Eritrea,2018,0.0
+Eritrea,2019,609373841.387894
+Eswatini,2016,0.0
+Eswatini,2017,0.0
+Eswatini,2018,0.0
+Eswatini,2019,511769000.0
+Ethiopia,2016,0.0
+Ethiopia,2017,0.0
+Ethiopia,2018,0.0
+Ethiopia,2019,23697836731.397
+Europe & Central Asia (excluding high income),2016,0.0
+Europe & Central Asia (excluding high income),2017,0.0
+Europe & Central Asia (excluding high income),2018,0.0
+Europe & Central Asia (excluding high income),2019,532536847924.419
+Fiji,2016,0.0
+Fiji,2017,0.0
+Fiji,2018,0.0
+Fiji,2019,1084973989.4198
+Gabon,2016,0.0
+Gabon,2017,0.0
+Gabon,2018,0.0
+Gabon,2019,6600902182.37232
+Gambia,2016,0.0
+Gambia,2017,0.0
+Gambia,2018,0.0
+Gambia,2019,487239310.663481
+Georgia,2016,0.0
+Georgia,2017,0.0
+Georgia,2018,0.0
+Georgia,2019,6459537799.84235
+Ghana,2016,0.0
+Ghana,2017,0.0
+Ghana,2018,0.0
+Ghana,2019,18711834472.127
+Grenada,2016,0.0
+Grenada,2017,0.0
+Grenada,2018,0.0
+Grenada,2019,500427656.611473
+Guatemala,2016,0.0
+Guatemala,2017,0.0
+Guatemala,2018,0.0
+Guatemala,2019,9569496070.38396
+Guinea,2016,0.0
+Guinea,2017,0.0
+Guinea,2018,0.0
+Guinea,2019,1778200813.91415
+Guinea-Bissau,2016,0.0
+Guinea-Bissau,2017,0.0
+Guinea-Bissau,2018,0.0
+Guinea-Bissau,2019,412374200.704372
+Guyana,2016,0.0
+Guyana,2017,0.0
+Guyana,2018,0.0
+Guyana,2019,1218097118.99514
+Haiti,2016,0.0
+Haiti,2017,0.0
+Haiti,2018,0.0
+Haiti,2019,1583576141.1343
+Honduras,2016,0.0
+Honduras,2017,0.0
+Honduras,2018,0.0
+Honduras,2019,7739655056.71833
+India,2016,0.0
+India,2017,0.0
+India,2018,0.0
+India,2019,170999897645.333
+Indonesia,2016,0.0
+Indonesia,2017,0.0
+Indonesia,2018,0.0
+Indonesia,2019,240907625748.0
+Iran,2016,0.0
+Iran,2017,0.0
+Iran,2018,0.0
+Iran,2019,1220539998.21979
+Jamaica,2016,0.0
+Jamaica,2017,0.0
+Jamaica,2018,0.0
+Jamaica,2019,13430947794.3684
+Jordan,2016,0.0
+Jordan,2017,0.0
+Jordan,2018,0.0
+Jordan,2019,18371654087.5338
+Kazakhstan,2016,0.0
+Kazakhstan,2017,0.0
+Kazakhstan,2018,0.0
+Kazakhstan,2019,29059162050.2126
+Kenya,2016,0.0
+Kenya,2017,0.0
+Kenya,2018,0.0
+Kenya,2019,26677931010.5278
+Kosovo,2016,0.0
+Kosovo,2017,0.0
+Kosovo,2018,0.0
+Kosovo,2019,483810933.209677
+Kyrgyzstan,2016,0.0
+Kyrgyzstan,2017,0.0
+Kyrgyzstan,2018,0.0
+Kyrgyzstan,2019,3226708030.05547
+Laos,2016,0.0
+Laos,2017,0.0
+Laos,2018,0.0
+Laos,2019,8425125085.27078
+Latin America & Caribbean (excluding high income),2016,0.0
+Latin America & Caribbean (excluding high income),2017,0.0
+Latin America & Caribbean (excluding high income),2018,0.0
+Latin America & Caribbean (excluding high income),2019,1142610249648.97
+Lebanon,2016,0.0
+Lebanon,2017,0.0
+Lebanon,2018,0.0
+Lebanon,2019,41444950469.479
+Lesotho,2016,0.0
+Lesotho,2017,0.0
+Lesotho,2018,0.0
+Lesotho,2019,788469808.810973
+Liberia,2016,0.0
+Liberia,2017,0.0
+Liberia,2018,0.0
+Liberia,2019,617587666.434887
+Low & middle income,2016,0.0
+Low & middle income,2017,0.0
+Low & middle income,2018,0.0
+Low & middle income,2019,3275541830715.16
+Low income,2016,0.0
+Low income,2017,0.0
+Low income,2018,0.0
+Low income,2019,112562192380.171
+Lower middle income,2016,0.0
+Lower middle income,2017,0.0
+Lower middle income,2018,0.0
+Lower middle income,2019,910351627883.352
+Madagascar,2016,0.0
+Madagascar,2017,0.0
+Madagascar,2018,0.0
+Madagascar,2019,2267041798.02235
+Malawi,2016,0.0
+Malawi,2017,0.0
+Malawi,2018,0.0
+Malawi,2019,1392748919.45478
+Maldives,2016,0.0
+Maldives,2017,0.0
+Maldives,2018,0.0
+Maldives,2019,1998110905.96181
+Mali,2016,0.0
+Mali,2017,0.0
+Mali,2018,0.0
+Mali,2019,3127905348.9171
+Mauritania,2016,0.0
+Mauritania,2017,0.0
+Mauritania,2018,0.0
+Mauritania,2019,4403349467.69573
+Mexico,2016,0.0
+Mexico,2017,0.0
+Mexico,2018,0.0
+Mexico,2019,393672584853.823
+Middle East & North Africa (excluding high income),2016,0.0
+Middle East & North Africa (excluding high income),2017,0.0
+Middle East & North Africa (excluding high income),2018,0.0
+Middle East & North Africa (excluding high income),2019,230906209927.509
+Middle income,2016,0.0
+Middle income,2017,0.0
+Middle income,2018,0.0
+Middle income,2019,3162979638334.99
+Moldova,2016,0.0
+Moldova,2017,0.0
+Moldova,2018,0.0
+Moldova,2019,1529826103.82759
+Mongolia,2016,0.0
+Mongolia,2017,0.0
+Mongolia,2018,0.0
+Mongolia,2019,8164282285.71891
+Montenegro,2016,0.0
+Montenegro,2017,0.0
+Montenegro,2018,0.0
+Montenegro,2019,3683271510.82712
+Morocco,2016,0.0
+Morocco,2017,0.0
+Morocco,2018,0.0
+Morocco,2019,34239267928.7822
+Mozambique,2016,0.0
+Mozambique,2017,0.0
+Mozambique,2018,0.0
+Mozambique,2019,9682523399.47309
+Myanmar,2016,0.0
+Myanmar,2017,0.0
+Myanmar,2018,0.0
+Myanmar,2019,10057152617.7114
+Nepal,2016,0.0
+Nepal,2017,0.0
+Nepal,2018,0.0
+Nepal,2019,3950736061.3378
+Nicaragua,2016,0.0
+Nicaragua,2017,0.0
+Nicaragua,2018,0.0
+Nicaragua,2019,5403844266.07619
+Niger,2016,0.0
+Niger,2017,0.0
+Niger,2018,0.0
+Niger,2019,2202056558.00902
+Nigeria,2016,0.0
+Nigeria,2017,0.0
+Nigeria,2018,0.0
+Nigeria,2019,29132707240.154
+North Macedonia,2016,0.0
+North Macedonia,2017,0.0
+North Macedonia,2018,0.0
+North Macedonia,2019,4320644994.60823
+Pakistan,2016,0.0
+Pakistan,2017,0.0
+Pakistan,2018,0.0
+Pakistan,2019,72231501091.5687
+Papua New Guinea,2016,0.0
+Papua New Guinea,2017,0.0
+Papua New Guinea,2018,0.0
+Papua New Guinea,2019,3558343023.41213
+Paraguay,2016,0.0
+Paraguay,2017,0.0
+Paraguay,2018,0.0
+Paraguay,2019,7553373029.8543
+Peru,2016,0.0
+Peru,2017,0.0
+Peru,2018,0.0
+Peru,2019,23864717460.4064
+Philippines,2016,0.0
+Philippines,2017,0.0
+Philippines,2018,0.0
+Philippines,2019,48628113671.5498
+Russia,2016,0.0
+Russia,2017,0.0
+Russia,2018,0.0
+Russia,2019,194062511921.839
+Rwanda,2016,0.0
+Rwanda,2017,0.0
+Rwanda,2018,0.0
+Rwanda,2019,2408832136.28221
+Saint Lucia,2016,0.0
+Saint Lucia,2017,0.0
+Saint Lucia,2018,0.0
+Saint Lucia,2019,583988862.448866
+Saint Vincent and the Grenadines,2016,0.0
+Saint Vincent and the Grenadines,2017,0.0
+Saint Vincent and the Grenadines,2018,0.0
+Saint Vincent and the Grenadines,2019,298510074.440119
+Samoa,2016,0.0
+Samoa,2017,0.0
+Samoa,2018,0.0
+Samoa,2019,341857720.119694
+Sao Tome and Principe,2016,0.0
+Sao Tome and Principe,2017,0.0
+Sao Tome and Principe,2018,0.0
+Sao Tome and Principe,2019,225378548.345691
+Senegal,2016,0.0
+Senegal,2017,0.0
+Senegal,2018,0.0
+Senegal,2019,11723118413.4951
+Serbia,2016,0.0
+Serbia,2017,0.0
+Serbia,2018,0.0
+Serbia,2019,15644680642.5979
+Sierra Leone,2016,0.0
+Sierra Leone,2017,0.0
+Sierra Leone,2018,0.0
+Sierra Leone,2019,878953031.0397
+Solomon Islands,2016,0.0
+Solomon Islands,2017,0.0
+Solomon Islands,2018,0.0
+Solomon Islands,2019,83075761.6132015
+Somalia,2016,0.0
+Somalia,2017,0.0
+Somalia,2018,0.0
+Somalia,2019,5510178329.78329
+South Africa,2016,0.0
+South Africa,2017,0.0
+South Africa,2018,0.0
+South Africa,2019,76101790687.1161
+South Asia,2016,0.0
+South Asia,2017,0.0
+South Asia,2018,0.0
+South Asia,2019,320859324315.098
+Sri Lanka,2016,0.0
+Sri Lanka,2017,0.0
+Sri Lanka,2018,0.0
+Sri Lanka,2019,36886230517.0219
+Sub-Saharan Africa (excluding high income),2016,0.0
+Sub-Saharan Africa (excluding high income),2017,0.0
+Sub-Saharan Africa (excluding high income),2018,0.0
+Sub-Saharan Africa (excluding high income),2019,372891743170.886
+Sudan,2016,0.0
+Sudan,2017,0.0
+Sudan,2018,0.0
+Sudan,2019,20402916374.4926
+Syria,2016,0.0
+Syria,2017,0.0
+Syria,2018,0.0
+Syria,2019,4233347246.5544
+Tajikistan,2016,0.0
+Tajikistan,2017,0.0
+Tajikistan,2018,0.0
+Tajikistan,2019,2713776944.53922
+Tanzania,2016,0.0
+Tanzania,2017,0.0
+Tanzania,2018,0.0
+Tanzania,2019,11008112663.6526
+Thailand,2016,0.0
+Thailand,2017,0.0
+Thailand,2018,0.0
+Thailand,2019,34487457432.6123
+Timor,2016,0.0
+Timor,2017,0.0
+Timor,2018,0.0
+Timor,2019,142552706.665727
+Togo,2016,0.0
+Togo,2017,0.0
+Togo,2018,0.0
+Togo,2019,1018765509.3571
+Tonga,2016,0.0
+Tonga,2017,0.0
+Tonga,2018,0.0
+Tonga,2019,146989500.136447
+Tunisia,2016,0.0
+Tunisia,2017,0.0
+Tunisia,2018,0.0
+Tunisia,2019,24269177975.0496
+Turkey,2016,0.0
+Turkey,2017,0.0
+Turkey,2018,0.0
+Turkey,2019,140240854087.513
+Turkmenistan,2016,0.0
+Turkmenistan,2017,0.0
+Turkmenistan,2018,0.0
+Turkmenistan,2019,488726225.8824
+Uganda,2016,0.0
+Uganda,2017,0.0
+Uganda,2018,0.0
+Uganda,2019,6113002674.84995
+Ukraine,2016,0.0
+Ukraine,2017,0.0
+Ukraine,2018,0.0
+Ukraine,2019,55850825979.4849
+Upper middle income,2016,0.0
+Upper middle income,2017,0.0
+Upper middle income,2018,0.0
+Upper middle income,2019,2252628010451.63
+Uzbekistan,2016,0.0
+Uzbekistan,2017,0.0
+Uzbekistan,2018,0.0
+Uzbekistan,2019,9174987421.14911
+Vanuatu,2016,0.0
+Vanuatu,2017,0.0
+Vanuatu,2018,0.0
+Vanuatu,2019,265851258.9376
+Venezuela,2016,0.0
+Venezuela,2017,0.0
+Venezuela,2018,0.0
+Venezuela,2019,42285336690.9987
+Vietnam,2016,0.0
+Vietnam,2017,0.0
+Vietnam,2018,0.0
+Vietnam,2019,49963634796.6204
+Yemen,2016,0.0
+Yemen,2017,0.0
+Yemen,2018,0.0
+Yemen,2019,5622577780.84147
+Zambia,2016,0.0
+Zambia,2017,0.0
+Zambia,2018,0.0
+Zambia,2019,10499745975.2669
+Zimbabwe,2016,0.0
+Zimbabwe,2017,0.0
+Zimbabwe,2018,0.0
+Zimbabwe,2019,5884767462.55393
