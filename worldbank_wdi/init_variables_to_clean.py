@@ -34,6 +34,7 @@ def main():
         "array of variables to clean. Expected 0 duplicate variable names."
     )
 
+    variables_to_clean = sorted(variables_to_clean, key=lambda x: x["name"])
     with open(os.path.join(OUTPATH, "variables_to_clean.json"), "w") as f:
         json.dump(
             {
