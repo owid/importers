@@ -27,7 +27,6 @@ from tqdm import tqdm
 from un_sdg import (
     INFILE,
     ENTFILE,
-    METAPATH,
     OUTPATH,
     CONFIGPATH,
     DATASET_NAME,
@@ -39,8 +38,6 @@ from un_sdg import (
 from un_sdg.core import (
     create_short_unit,
     extract_datapoints,
-    extract_description,
-    # get_distinct_entities,
     clean_datasets,
     dimensions_description,
     attributes_description,
@@ -136,7 +133,8 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "additionalInfo": None,
     }
     all_series = (
-        original_df[["SeriesCode", "SeriesDescription", "[Units]", "Indicator"]]
+        # original_df[["SeriesCode", "SeriesDescription", "[Units]", "Indicator"]]
+        original_df[["SeriesCode", "SeriesDescription"]]
         .drop_duplicates()
         .reset_index()
     )
@@ -167,20 +165,13 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "dataPublisherSource"
             ] = "Data from multiple sources compiled by the UN"
         try:
-            source_description["additionalInfo"] = "%s: %s; %s: %s; %s: %s; %s: %s " % (
+            source_description["additionalInfo"] = "%s: %s;\n %s: %s;\n %s: %s; \n" % (
                 "Variable description",
                 row["SeriesDescription"],
                 "Variable code",
                 row["SeriesCode"],
                 "Detailed sources",
                 dp_source.str.cat(sep=" "),
-                "Metadata",
-                extract_description(
-                    os.path.join(METAPATH, "Metadata-%s.pdf")
-                    % "-".join(
-                        [part.rjust(2, "0") for part in row["Indicator"].split(".")]
-                    )
-                ),
             )
         except:
             pass
@@ -189,9 +180,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "id": i,
                 "name": source_description["dataPublisherSource"],
                 "description": json.dumps(source_description),
-                "dataset_id": df_datasets.iloc[0][
-                    "id"
-                ],  # this may need to be more flexible!
+                "dataset_id": df_datasets.iloc[0]["id"],
                 "series_code": row["SeriesCode"],
             },
             ignore_index=True,
@@ -199,7 +188,7 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         assert (
             df_sources.duplicated(subset=["name", "dataset_id", "description"]).sum()
             == 0
-        ), (print(df_sources[["id", "name"]]) + "is duplicated!")
+        ), (print(i + source_description["dataPublisherSource"]) + "is duplicated!")
     print("Saving sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
