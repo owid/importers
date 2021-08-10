@@ -528,7 +528,7 @@ def get_distinct_entities() -> List[str]:
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entities.update(df_temp["country"].unique().tolist())
 
-    entity_list = list(entities)
+    entity_list = sorted(entities)
     assert pd.notnull(entity_list).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
