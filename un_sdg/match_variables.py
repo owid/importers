@@ -26,6 +26,9 @@ def main():
 
         # retrieves old and new variables
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets["id"].tolist())
+        df_old_vars = df_old_vars[
+            df_old_vars["id"] > 100000
+        ]  # bit of a hack to exclude the original upload which had a small number of variables.
         df_new_vars = get_variables(db=db, dataset_ids=df_new_datasets["id"].tolist())
         df_vars = pd.merge(
             df_old_vars,
@@ -76,7 +79,7 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%un_sdg_2019%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%un_sdg%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])
