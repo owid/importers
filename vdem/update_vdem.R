@@ -47,7 +47,7 @@ create_sources <- function() {
         additional_info
     )
     df <- data.table(
-        name = "V-Dem Dataset Version 11.1 (2021)",
+        name = "V-Dem Dataset (2021)",
         description = desc,
         dataset_id = 0,
         id = 0
