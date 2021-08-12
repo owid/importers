@@ -1,6 +1,10 @@
+import os
+
 # Dataset constants.
 DATASET_NAME = "Varieties of Democracy (V-Dem)"
 DATASET_AUTHORS = "V-Dem (Varieties of Democracy) Institute"
 DATASET_VERSION = "11.1"
 DATASET_LINK = "https://www.v-dem.net/en/data/data"
-DATASET_RETRIEVED_DATE = "August 12, 2021"
+DATASET_RETRIEVED_DATE = "12-August-2021"
+DATASET_DIR = os.path.dirname(__file__).split("/")[-1]
+DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
