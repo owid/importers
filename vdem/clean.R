@@ -142,6 +142,9 @@ create_datapoints <- function() {
         | str_detect(description, "[wW]hat (share|percent)"),
     unit := "%"]
     variables[, short_unit := unit]
+    
+    variables[, description := str_replace_all(description, "percentage \\(\\)", "percentage (%)")]
+    variables[, description := str_replace_all(description, " percent \\(\\)", "%")]
 
     fwrite(variables, "output/variables.csv")
     message(nrow(variables), " variables ready for DB import.")

@@ -157,16 +157,16 @@ v2regendtype,0,53,Regime end type,"","Could you specify the type of process that
 The information on this question has been pre-coded for as many years as possible. Any pre-coded years contain an orange triangle. This means that what is considered the most important process that eventually ended the relevant regime has already been entered. We are asking you only to add your confidence in the pre-coded information This means that the information has already been entered, so we are asking you only to add your confidence in the pre-coded rating; we do not want you to change the rating, as we need all the Country Experts to answer the subsequent questions for the same regime.",,""
 v2ddyrrf,0,55,Occurrence of referendum this year,"","How many referendums occurred this year?
 Numeric.",,""
-v2ellostsl,0,56,Lower chamber election seat share won by largest party,%,"In this election, what percentage () of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the largest party?
+v2ellostsl,0,56,Lower chamber election seat share won by largest party,%,"In this election, what percentage (%) of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the largest party?
 Percent.
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); Chronicle of Parliamentary Elections (IPU).",,%
-v2ddspmor,0,59,Obligatory referendum super majority,%,"What percentage () of the vote is regarded as sufficient, by law, for the approval of an obligatory referendum?
+v2ddspmor,0,59,Obligatory referendum super majority,%,"What percentage (%) of the vote is regarded as sufficient, by law, for the approval of an obligatory referendum?
 Percent.
 For 2/3, enter 66 .",,%
 v2ddsignrf,0,61,Referendums signatures,"","How many signatures are required in order to place a referendum on the ballot?
 Numeric.
-If the law treats this as a percentage () of registered voters, please leave this question blank and answer the next question instead.
+If the law treats this as a percentage (%) of registered voters, please leave this question blank and answer the next question instead.
 Converted from (B) to (A) coding by David Altman.",,""
 v2xdd_toc,0,62,Top-Down component of direct popular vote index,"","To what extent is the Top-Down Component utilized?
 This index is the normalized average of the scores of both indices of mechanism of direct democracy which are not citizen-initiated obligatory referendums and plebiscites. For an elaboration of the weighting factor of each component, see David Altman 2016. The index is aggregated using this formula: v2xdd_toc = [v2xdd_i_pl+v2xdd_i_or] / 4
@@ -214,11 +214,11 @@ For detailed information, please see the V--Dem Country Coding Units document.",
 e_migdpgro,0,82,GDP growth,"","What is the GDP per capita growth rate?
 Estimated from the variable GDP per capita.
 Source: The Maddison Project Database (2018)",,""
-v2ellostts,0,86,Lower chamber election seat share won by third largest party,%,"In this election, what percentage () of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
+v2ellostts,0,86,Lower chamber election seat share won by third largest party,%,"In this election, what percentage (%) of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
 Numeric.
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010).",,%
-v2ellovttm,0,87,Lower chamber election vote share of third-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage () of the vote was received by the second largest party in the first/only round?
+v2ellovttm,0,87,Lower chamber election vote share of third-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage (%) of the vote was received by the second largest party in the first/only round?
 Numeric.
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010).",,%
@@ -272,7 +272,7 @@ project,0,114,V--Dem Project,"","Indication what project team has coded country 
 0: Contemporary.
 1: Historical.
 2: Both (overlap).",,""
-v2lgfemleg,0,116,Lower chamber female legislators,%,"What percentage () of the lower (or unicameral) chamber of the legislature is female?
+v2lgfemleg,0,116,Lower chamber female legislators,%,"What percentage (%) of the lower (or unicameral) chamber of the legislature is female?
 Percent.
 Source: Edgel (2014); Paxton et al. (2008); Carmichael et al. (2014); Chronicle of Parliamentary Elections (IPU); genderproject.org.",,%
 v2elpdcamp,0,120,Election paid campaign advertisements,"","In this national election, were parties or candidates able to run paid campaign ads on national broadcast media?
@@ -342,7 +342,7 @@ v2psorgs,0,160,Party organizations,"","How many political parties for national-l
 3: More than half of the parties.
 4: All parties.
 A permanent organization connotes a substantial number of personnel who are responsible for carrying out party activities outside of the election season.",,""
-v2ellovtsm,0,167,Lower chamber election vote share of second-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage () of the vote was received by the second largest party in the first/only round?
+v2ellovtsm,0,167,Lower chamber election vote share of second-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage (%) of the vote was received by the second largest party in the first/only round?
 Percent.
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); Chronicle of Parliamentary Elections (IPU).",,%
@@ -353,7 +353,7 @@ v2x_gencs,0,175,Women civil society participation index,"","Do women have the ab
 Women's civil society participation is understood to include open discussion of political issues, participation in civil society organizations, and representation in the ranks of journalists.
 The index is formed by taking the point estimates from a Bayesian factor analysis model of the indicators for freedom of discussion for women (v2cldiscw), CSO women's participation (v2csgender), and female journalists (v2mefemjrn).
 Source: v2cldiscw v2csgender v2mefemjrn",,""
-v2ddsigpci,0,177,Initiatives signatures \%,%,"How many signatures --- expressed as the percentage () of registered voters --- are required in order to place an initiative on the ballot?
+v2ddsigpci,0,177,Initiatives signatures \%,%,"How many signatures --- expressed as the percentage (%) of registered voters --- are required in order to place an initiative on the ballot?
 Percent.
 Converted from (B) to (A) coding by David Altman.",,%
 v2elgvsuflvl,0,178,Suffrage level,"","What is the level of suffrage practiced?
@@ -386,7 +386,7 @@ v2clfmove,0,181,Freedom of foreign movement,"","Is there freedom of foreign trav
 3: Mostly respected by public authorities. Limitations on freedom of movement and residence are not directed at political opponents but minor restrictions exist. For example, exit visas may be required and citizens may be prohibited from traveling outside the country when accompanied by other members of their family.
 4: Fully respected by the government. The freedom of citizens to travel from and to the country, and to emigrate and repatriate, is not restricted by public authorities.
 This indicator specifies the extent to which citizens are able to travel freely to and from the country and to emigrate without being subject to restrictions by public authorities.",,""
-v2elvotlrg,0,189,Presidential election vote share of largest vote-getter,%,"In the first (or only round) of this presidential election, what percentage () of the vote was received by candidate eventually winning office?
+v2elvotlrg,0,189,Presidential election vote share of largest vote-getter,%,"In the first (or only round) of this presidential election, what percentage (%) of the vote was received by candidate eventually winning office?
 Percent.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); IFES.",,%
 codingend,0,191,End of coding period,"","Either a maximum year of country coding period or the year when the country ceased to exist because it lost functional or formal sovereignty.
@@ -461,7 +461,7 @@ v2ex_hosconhog,0,233,HOG appointed by HOS,"","Is the head of government HOG appo
 0: No.
 1: Yes.
 Source: v2expathhg","{""numDecimalPlaces"": 0}",""
-v2ddspmrf,0,236,Referendums super majority,%,"What percentage () of the vote is regarded as sufficient, by law, for the approval of a referendum?
+v2ddspmrf,0,236,Referendums super majority,%,"What percentage (%) of the vote is regarded as sufficient, by law, for the approval of a referendum?
 Percent.
 For 2/3, enter 66 .
 Converted from (B) to (A) coding by David Altman.",,%
@@ -505,7 +505,7 @@ v2pscomprg,0,251,Party competition across regions,"","Which of the following bes
 1: Most major parties are competitive in some regions of the country, but not in others.
 2: Most major parties are competitive in most regions of the country.
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.",,""
-v3eltrnout,0,252,Election turnout,%,"In this national election, what percentage () of all registered voters cast a vote according to official results?
+v3eltrnout,0,252,Election turnout,%,"In this national election, what percentage (%) of all registered voters cast a vote according to official results?
 Source: IDEA; Nohlen and colleagues (1999, 2002, 2005, 2010); NELDA (Hyde, Marinov 2012). Caramani (2000). Websites of National Parliaments. Library of Congress - Country Studies. Various country-specific sources.",,%
 v2ddyrci,0,253,Occurrence of citizen-initiatives this year,"","How many citizen-initiative occurred this year?
 Numeric.",,""
@@ -635,18 +635,18 @@ v2dlcountr,0,299,Respect counterarguments,"","When important policy changes are 
 5: Elites almost always acknowledge counterarguments and explicitly value them, and frequently also even accept them and change their position.
 Because discourse varies greatly from person to person, base your answer on the style that is most typical of prominent national political leaders.",,""
 v2peedueq,0,300,Educational equality,"","To what extent is high quality basic education guaranteed to all, sufficient to enable them to exercise their basic rights as adult citizens?
-0: Extreme. Provision of high quality basic education is extremely unequal and at least 75 percent () of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
-1: Unequal. Provision of high quality basic education is extremely unequal and at least 25 percent () of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
-2: Somewhat equal. Basic education is relatively equal in quality but ten to 25 percent () of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
-3: Relatively equal. Basic education is overall equal in quality but five to ten percent () of children receive such low-quality education that probably undermines their ability to exercise their basic rights as adult citizens.
-4: Equal. Basic education is equal in quality and less than five percent () of children receive such low-quality education that probably undermines their ability to exercise their basic rights as adult citizens.
+0: Extreme. Provision of high quality basic education is extremely unequal and at least 75% of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
+1: Unequal. Provision of high quality basic education is extremely unequal and at least 25% of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
+2: Somewhat equal. Basic education is relatively equal in quality but ten to 25% of children receive such low-quality education that undermines their ability to exercise their basic rights as adult citizens.
+3: Relatively equal. Basic education is overall equal in quality but five to ten% of children receive such low-quality education that probably undermines their ability to exercise their basic rights as adult citizens.
+4: Equal. Basic education is equal in quality and less than five% of children receive such low-quality education that probably undermines their ability to exercise their basic rights as adult citizens.
 Basic education refers to ages typically between 6 and 16 years of age but this varies slightly among countries.",,""
 v2pehealth,0,305,Health equality,"","To what extent is high quality basic healthcare guaranteed to all, sufficient to enable them to exercise their basic political rights as adult citizens?
-0: Extreme. Because of poor-quality healthcare, at least 75 percent () of citizens' ability to exercise their political rights as adult citizens is undermined.
-1: Unequal. Because of poor-quality healthcare, at least 25 percent () of citizens' ability to exercise their political rights as adult citizens is undermined.
-2: Somewhat equal. Because of poor-quality healthcare, ten to 25 percent () of citizens' ability to exercise their political rights as adult citizens is undermined.
-3: Relatively equal. Basic health care is overall equal in quality but because of poor-quality healthcare, five to ten percent () of citizens' ability to exercise their political rights as adult citizens is undermined.
-4: Equal. Basic health care is equal in quality and less than five percent () of citizens cannot exercise their basic political rights as adult citizens.
+0: Extreme. Because of poor-quality healthcare, at least 75% of citizens' ability to exercise their political rights as adult citizens is undermined.
+1: Unequal. Because of poor-quality healthcare, at least 25% of citizens' ability to exercise their political rights as adult citizens is undermined.
+2: Somewhat equal. Because of poor-quality healthcare, ten to 25% of citizens' ability to exercise their political rights as adult citizens is undermined.
+3: Relatively equal. Basic health care is overall equal in quality but because of poor-quality healthcare, five to ten% of citizens' ability to exercise their political rights as adult citizens is undermined.
+4: Equal. Basic health care is equal in quality and less than five% of citizens cannot exercise their basic political rights as adult citizens.
 Poor-quality healthcare can make citizens unable to exercise their basic rights as adult citizens by failing to adequately treat preventable and treatable illnesses that render them unable to work, participate in social or political organizations, or vote (where voting is allowed).",,""
 v2clacfree,0,307,Freedom of academic and cultural expression,"","Is there academic freedom and freedom of cultural expression related to political issues?
 0: Not respected by public authorities. Censorship and intimidation are frequent. Academic activities and cultural expressions are severely restricted or controlled by the government.
@@ -663,7 +663,7 @@ v2jupurge,0,308,Judicial purges,"","Judges are sometimes removed from their post
 The second and third response categories permit you to distinguish among limited arbitrary removals (i.e., when only a few judges are targeted) by the political importance of the removal. For example, you may consider the arbitrary removal of a few high court judges as more important than the arbitrary removal of a few lower court judges.",,""
 v2exl_legitideol,0,309,Ideology,"","To what extent does the current government promote a specific ideology or societal model (an officially codified set of beliefs used to justify a particular set of social, political, and economic relations; for example, socialism, nationalism, religious traditionalism, etc.) in order to justify the regime in place?
 0: Not at all.1: To a small extent.2: To some extent but it is not the most important component.3: To a large extent but not exclusively.4: Almost exclusively.",,""
-v2ddsigprf,0,311,Referendums signatures \%,%,"How many signatures --- expressed as the percentage () of registered voters --- are required in order to place a referendum on the ballot?
+v2ddsigprf,0,311,Referendums signatures \%,%,"How many signatures --- expressed as the percentage (%) of registered voters --- are required in order to place a referendum on the ballot?
 Percent.
 If the law treats this as a raw number of registered voters, please leave this question blank and answer the previous question instead.
 Converted from (B) to (A) coding by David Altman.",,%
@@ -794,7 +794,7 @@ v2elturnhos,0,350,Election HOS turnover ordinal,"","Was there turnover in the of
 2: Yes. The head of state lost their position(s) as a result of the outcome of the election. In presidential systems this code applies when the new president is both a different person and from a different party than before the election or an independent candidate is elected. This code also applies if this is the first head of state elected for a newly (semi-) independent state country.
 Turnover can occur in presidential, semi-presidential, as well as parliamentary systems, and it refers not only to the individual person holding office but also to that person's party.
 Source: Henisz (2000; 2002); Lentz (1994; 1999); worldstatesmen.org; V-Dem Country Coordinators.","{""numDecimalPlaces"": 0}",""
-v2elvotsml,0,351,Presidential election vote share of second-largest vote-getter,%,"In this presidential election, what percentage () of the vote was received by the second most successful candidate in the first round?
+v2elvotsml,0,351,Presidential election vote share of second-largest vote-getter,%,"In this presidential election, what percentage (%) of the vote was received by the second most successful candidate in the first round?
 Percent.
 In uncontested elections this question is coded 0.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); IFES.",,%
@@ -814,7 +814,7 @@ v2csrlgcon,0,357,Religious organization consultation,"","Are major religious org
 0: No. There is a high degree of insulation of the government from input from religious organizations. The government may sometimes enlist or mobilize religious organizations after policies are adopted to sell them to the public at large. But typically, it does not consult with them in formulating policies.
 1: To some degree. Religious organizations are but one set of voices that policymakers sometimes take into account.
 2: Yes. Important religious organizations are recognized as stakeholders in important policy areas and given voice on such issues. This can be accomplished through formal corporatist arrangements or through less formal arrangements.",,""
-v2elvaptrn,0,359,Election VAP turnout,%,"In this national election, what percentage () of the adult voting-age population cast a vote according to official results?
+v2elvaptrn,0,359,Election VAP turnout,%,"In this national election, what percentage (%) of the adult voting-age population cast a vote according to official results?
 Percent.
 The VAP can reflect irregularities such as problems with the voters' register or registration system. VAP numbers are estimates since they do not take into account legal or systemic barriers to the exercise of the franchise or account for non-eligible members of the population. Thus, it can occur that VAP values surpass 100 which is not an error but reflects such conditions.
 In cases where executive and legislative elections were held on the same day but there is a different VAP turnout for each election, the VAP turnout for this date is coded for the executive elections only. The VAP turnout data for the legislative elections, in these cases, can be found in the IDEA Voter turnout database (see references).
@@ -866,7 +866,7 @@ v2eltvrig,0,374,Lower chamber election turnover,"","Did control of the lower (or
 2: Yes. The incumbent party or coalition lost its majority or plurality-dominant position in the legislature and a different party or coalition assumes the majority position.
 Converted from (B) to (A) coding.
 Source: V-Dem country coordinators; Nohlen et al. (1999, 2002, 2005, 2010); Chronicle of Parliamentary Elections (IPU).","{""numDecimalPlaces"": 0}",""
-v2ellovtlg,0,376,Lower chamber election vote share of largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage () of the vote was received by the largest party in the first/only round?
+v2ellovtlg,0,376,Lower chamber election vote share of largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage (%) of the vote was received by the largest party in the first/only round?
 Percent.
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); Chronicle of Parliamentary Elections (IPU).",,%
@@ -980,11 +980,11 @@ Women's political empowerment is defined as a process of increasing capacity for
 The index is formed by taking the average of women's civil liberties index (v2x_gencl), women's civil society participation index (v2x_gencs), and women's political participation index (v2x_genpp).
 Source: v2x_gencl v2x_gencs v2x_genpp",,""
 v2peasbecon,0,417,Access to state business opportunities by socio-economic position,"","Are state business opportunities equally available to qualified individuals regardless of socio-economic position?
-0: Extreme. Because of poverty or low income makes 75 percent () or more of the population, even if qualified, lack access to state business opportunities.
-1: Unequal. Because of poverty or low income makes 25 percent () or more of the population, even if qualified, lack access to state business opportunities.
-2: Somewhat Equal. Because of poverty or low income makes 10 to 25 percent () of the population, even if qualified, lack access to state business opportunities.
-3: Relatively Equal. Because of poverty or low income makes 5 to 10 percent () of the population, even if qualified, lack access to state business opportunities.
-4: Equal. Because of poverty or low income makes less than 5 percent () of the population, even if qualified, lack access to state business opportunities.
+0: Extreme. Because of poverty or low income makes 75% or more of the population, even if qualified, lack access to state business opportunities.
+1: Unequal. Because of poverty or low income makes 25% or more of the population, even if qualified, lack access to state business opportunities.
+2: Somewhat Equal. Because of poverty or low income makes 10 to 25% of the population, even if qualified, lack access to state business opportunities.
+3: Relatively Equal. Because of poverty or low income makes 5 to 10% of the population, even if qualified, lack access to state business opportunities.
+4: Equal. Because of poverty or low income makes less than 5% of the population, even if qualified, lack access to state business opportunities.
 State business opportunities refer to the ability to compete for or receive a public procurement contract, to partner with the government in public-private partnerships, etc. Socio-economic position defines groups based on attributes of wealth, occupation, or other economic circumstances such as owning property.",,""
 v2psplats,0,418,Distinct party platforms,"","How many political parties with representation in the national legislature or presidency have publicly available party platforms (manifestos) that are publicized and relatively distinct from one another?
 0: None, or nearly none.
@@ -1051,7 +1051,7 @@ v2regantireg,0,434,Strongest anti-regime preferences,"","Which (one) group has t
 12: Rural middle classes (e.g., family farmers)
 13: A foreign government or colonial power.
 Consider only the anti-regime preferences of the actors in this group, and do not take into consideration the abilities of this group to actually affect regime survival and change. Hence, the group with the strongest anti-regime preferences need not be the most important opposition group. Both capable and incapable political actors may have strong anti-regime preferences and want to see the regime removed from power. We also remind that the group needs not be currently mobilized or explicitly engaged in high-level opposition activities to be counted; individuals may strongly resent a regime, without taking particular actions, in a given year. One way to think about what pro-/anti-regime preferences mean, independently of ability to affect regime survival is: what would individuals hypothetically (honestly) answer if asked in a survey: “On a scale from 0-10, how pleased are you with the current political regime”.We remind you of the definition of a regime as the set of formal and/or informal rules that are essential for choosing political leaders and/or maintaining political leaders in power. Hence, we are not asking about which groups oppose the current government in a democracy (and who would vote for another party), but still accept the democratic rules as legitimate. We are, instead, asking about groups that want to see the wider political regime removed and replaced.",,""
-v2clsnlpct,0,437,Weaker civil liberties population,%,"What percentage () of the total population of the country lives in the areas where government officials' respect for civil liberties is significantly weaker than the country average?
+v2clsnlpct,0,437,Weaker civil liberties population,%,"What percentage (%) of the total population of the country lives in the areas where government officials' respect for civil liberties is significantly weaker than the country average?
 Percent.",,%
 v2clkill,0,438,Freedom from political killings,"","Is there freedom from political killings?
 0: Not respected by public authorities. Political killings are practiced systematically and they are typically incited and approved by top leaders of government.
@@ -1162,7 +1162,7 @@ v3lgbudglo,0,487,Lower chamber budget,"","Is the lower chamber of the legislatur
 0: No. Includes situations in which (a) there are no formal budget bills, or (b) the executive entirely by-passes the lower house or ignores its actions.
 1: Yes. Includes situations in which (a) the executive exercises selective ('line-item') vetoes, and (b) there is a prolonged period in which no budget is passed and the executive is unable to raise and spend money, or must operate under the terms of the previous budget.
 The budget refers to major revenue (appropriations) and expenditure (spending) bills. Typically, these are passed annually or bi-annually. Approval is understood to mean a formal vote on the floor of the chamber in which at least 50 of those voting approve the measure.","{""numDecimalPlaces"": 0}",""
-v2mefemjrn,0,488,Female journalists,%,"Please estimate the percentage () of journalists in the print and broadcast media who are women.
+v2mefemjrn,0,488,Female journalists,%,"Please estimate the percentage (%) of journalists in the print and broadcast media who are women.
 Percent.",,%
 v3lginses,0,489,Lower chamber in session,"","During the year, for how long was the lower (or unicameral) chamber of the legislature in session?
 0: It did not convene at all during the year.
@@ -1309,7 +1309,7 @@ The lowest score would be reserved for a country that has no elected local or re
 V-Dem originally intended to generate indices to measure concepts inspired by Arend Lijphart’s two dimensions of consensus vs. majoritarian democracy. The project no longer plans to produce such indices. Instead, it offers the two indices, the Divided party control index and the Division of power index, which are conceptually thinner than Lijphart’s concepts and not equivalent substitutes for them. However, these alternatives are useful for some purposes.
 This index is an equally weighted average of a local government index and a regional government index. The local government index is the product of a dummy variable for the existence of local government (v2ellocgov), a recoded version of Local government elected (v2ellocelc), and a CDF of local offices relative power (v2ellocpwr). Local governments are recoded as unelected 0 if they did not exist or if data is missing. They are coded 0.5 if an executive is elected but no assembly, and 1 if an assembly is elected, with or without an executive. The regional government index is calculated the same way but using the existence of regional government (v2elreggov), regional government elected (v2elsrgel), and regional offices relative power (v2elrgpwr).
 Source: v2ellocgov v2elreggov v2ellocelc v2elsrgel v2ellocpwr v2elrgpwr",,""
-v2eltrnout,0,538,Election turnout,%,"In this national election, what percentage () of all registered voters cast a vote according to official results?
+v2eltrnout,0,538,Election turnout,%,"In this national election, what percentage (%) of all registered voters cast a vote according to official results?
 Percent.
 In cases where executive and legislative elections were held on the same day but there is a different turnout for each election, the turnout for this date is coded for the executive elections only. The turnout data for the legislative elections, in these cases, can be found in the IDEA Voter turnout database (see references).
 Source: IDEA; Nohlen et al. (1999, 2002, 2005, 2010); NELDA (Hyde and Marinov 2012).",,%
@@ -1445,7 +1445,7 @@ Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Website
 v3elncbmaj,0,578,Minority or majority government,"","In the first cabinet after this national election, did the political parties that were represented in the cabinet hold a majority of the seats in the (lower chamber of) the legislature?
 0: Parties are not allowed.1: No, the parties represented in cabinet held less than half of the (lower chamber) legislative seats.2: Yes, the parties represented in cabinet held half, or more than half, of the (lower chamber) legislative seats.3: Parties are allowed but nonexistent or so diffuse as to be more like factions, and the factions represented in government hold less than half of the (lower chamber) legislative seats.4: Parties are allowed but nonexistent or so diffuse as to be more like factions, but the factions represented in government hold half, or more than half, of the (lower chamber) legislative seats.
 Source: http://www.countrystudies.us, various country specific sources.","{""numDecimalPlaces"": 0}",""
-v3elupvtsm,0,579,Upper chamber election vote share of second-largest vote-getter,%,"In this election to the upper chamber of the legislature, what percentage () of the vote was received by the second largest party in the first/only round?
+v3elupvtsm,0,579,Upper chamber election vote share of second-largest vote-getter,%,"In this election to the upper chamber of the legislature, what percentage (%) of the vote was received by the second largest party in the first/only round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v3elupstsl,0,580,Upper chamber election seats won by largest party,"","In this election to the upper chamber of the legislature, how many seats were obtained by the largest party?
@@ -1500,14 +1500,14 @@ v3pechilabl,0,596,Child labor laws,"","Is there national regulation prohibiting 
 1: For nonagricultural employment only.
 2: For all sectors.
 Source: Child Labor: A Global View (A World View of Social Issues) Hardcover-- October 30, 2004 by Cathryne L. Schmitz (Editor), Elizabeth K. Collardey (Editor), Desi Larson (Editor). CCP (v592) asks Does the constitution place limits on child employment? The Routledge History of Childhood in the Western World, 2013, Paula S. Fass (editor). The World of Child Labor: An Historical and Regional Survey, 2009 by Hugh D. Hindman.","{""numDecimalPlaces"": 0}",""
-v3elwomcab,0,597,Election women in the cabinet,%,"In the first cabinet after this national election, what percentage () of the ministers was female?
+v3elwomcab,0,597,Election women in the cabinet,%,"In the first cabinet after this national election, what percentage (%) of the ministers was female?
 Percent.
 A 'minister' is defined as a person with a specific set of duties (a portfolio). It excludes ministers without portfolio and no specific responsibilities. Please provide an estimate if you do not know the exact figure.
 Source: http://countrystudies.us, various country specific sources.",,%
-v3elvotsml,0,598,Presidential election vote share of second-largest vote-getter,%,"In this presidential election, what percentage () of the vote was received by the second most successful candidate in the first round?
+v3elvotsml,0,598,Presidential election vote share of second-largest vote-getter,%,"In this presidential election, what percentage (%) of the vote was received by the second most successful candidate in the first round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed. Record only direct presidential elections. Cases where the presidents are elected indirectly by the legislature (i.e. Germany) are not being coded since there is no popular vote share. However, in countries where electoral college is present (i.e. U.S.), the percentage of popular vote should be recorded if available.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
-v3ellovtlg,0,599,Lower chamber election vote share of largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage () of the vote was received by the largest party in the first/only round?
+v3ellovtlg,0,599,Lower chamber election vote share of largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage (%) of the vote was received by the largest party in the first/only round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v2ex_elechog,0,600,HOG directly elected,"","Is the head of government HOG directly elected?
@@ -1542,18 +1542,18 @@ Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikiped
 v3ellostlg,0,605,Lower chamber election seats won by largest party,"","In this election to the lower (or unicameral) chamber of the legislature, how many seats were obtained by the largest party?
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,""
-v3elvotlrg,0,606,Presidential election vote share of largest vote-getter,%,"In this presidential election, what percentage () of the vote was received by the winning candidate in the first round?
+v3elvotlrg,0,606,Presidential election vote share of largest vote-getter,%,"In this presidential election, what percentage (%) of the vote was received by the winning candidate in the first round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed. Record only direct presidential elections. Cases where the presidents are elected indirectly by the legislature (i.e. Germany) are not being coded since there is no popular vote share. However, in countries where electoral college is present (i.e. U.S.), the percentage of popular vote should be recorded if available.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v2mecenefibin,0,608,Internet binary,"","Is there Internet in this country?
 0: No.1: Yes.",,""
-v3ellovtsm,0,609,Lower chamber election vote share of second-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage () of the vote was received by the second largest party in the first/only round?
+v3ellovtsm,0,609,Lower chamber election vote share of second-largest vote-getter,%,"In this election to the lower (or unicameral) chamber of the legislature, what percentage (%) of the vote was received by the second largest party in the first/only round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v3ellostsm,0,610,Lower chamber election seats won by second largest party,"","In this election, how many seats in the lower (or unicameral) chamber of the legislature were obtained by the next-largest party?
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,""
-v3ellostss,0,611,Lower chamber election seat share won by second largest party,%,"In this election, what percentage () of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
+v3ellostss,0,611,Lower chamber election seat share won by second largest party,%,"In this election, what percentage (%) of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v3eltvrig,0,612,Lower chamber election turnover,"","Did control of the lower (or unicameral) chamber of the legislature change as a result of this election, according to official results?
@@ -1793,11 +1793,11 @@ v2elrgstry,0,669,Election voter registry,"","In this national election, was ther
 3: Yes, somewhat. The registry was imperfect but less than 10 of eligible voters may have been disenfranchised, and double-voting and impersonation could not have affected the results significantly.
 4: Yes. The voter registry was reasonably accurate (less than 1 of voters were affected by any flaws) and it was applied in a reasonable fashion.",,""
 v2peasjsoecon,0,670,Access to state jobs by socio-economic position,"","Are state jobs equally open to qualified individuals regardless of socio-economic position?
-0: Extreme. Because of poverty or low income, 75 percent () or more of the population, even if qualified, lack access to state jobs.
-1: Unequal. Because of poverty or low income, makes 25 percent () or more of the population, even if qualified, lack access to state jobs.
-2: Somewhat Equal. Because of poverty or low income, 10 to 25 percent () of the population, even if qualified, lack access to state jobs.
-3: Relatively Equal. Because of poverty or low income, 5 to 10 percent () of the population, even if qualified, lack access to state jobs.
-4: Equal. Because of poverty or low income, less than 5 percent () of the population, even if qualified, lack access to state jobs.
+0: Extreme. Because of poverty or low income, 75% or more of the population, even if qualified, lack access to state jobs.
+1: Unequal. Because of poverty or low income, makes 25% or more of the population, even if qualified, lack access to state jobs.
+2: Somewhat Equal. Because of poverty or low income, 10 to 25% of the population, even if qualified, lack access to state jobs.
+3: Relatively Equal. Because of poverty or low income, 5 to 10% of the population, even if qualified, lack access to state jobs.
+4: Equal. Because of poverty or low income, less than 5% of the population, even if qualified, lack access to state jobs.
 Socio-economic position defines groups based on attributes of wealth, occupation, or other economic circumstances such as owning property.",,""
 v2clrgunev,0,671,Subnational civil liberties unevenness,"","Does government respect for civil liberties vary across different areas of the country?
 0: Yes. Government officials in some areas of the country respect civil liberties significantly more (or, alternatively, significantly less) than government officials in other areas of the country.
@@ -1852,7 +1852,7 @@ v2smpolcap,0,701,Political parties cyber security capacity,"","Do the major poli
 4: Yes. The government has the resources to combat sophisticated cyber attacks, even those launched by highly skilled actors.",,""
 v2lgqugent,0,702,Lower chamber gender quota threshold,%,"What is the threshold of the quota for the lower (or unicameral) chamber of the legislature?
 Percent.
-A quota is the minimum threshold, understood as a percentage () of the total seats in the legislature. Coded only for years where a gender quota was present.
+A quota is the minimum threshold, understood as a percentage (%) of the total seats in the legislature. Coded only for years where a gender quota was present.
 Source: QAROT dataset (Hughes, Paxton, Clayton, and Zetterberg 2017), Quota project (2017); Coding by project manager.",,%
 v2smregcon,0,703,Internet legal regulation content,"","What type of content is covered in the legal framework to regulate Internet?
 0: The state can remove any content at will.1: The state can remove most content, and the law protects speech in only specific, and politically uncontroversial contexts.2: The legal framework is ambiguous. The state can remove some politically sensitive content, while other is protected by law.3: The law protects most political speech, but the state can remove especially politically controversial content.4: The law protects political speech, and the state can only remove content if it violates well-established legal criteria.",,""
@@ -2222,7 +2222,7 @@ v2ddapprci,0,822,Initiatives approval threshold,%,"What threshold of approval --
 Percent.
 Enter 0 if there is no threshold.
 Converted from (B) to (A) coding by David Altman.",,%
-v2ddspmci,0,823,Initiatives super majority,%,"What percentage () of the vote is regarded as sufficient, by law, for the approval of an initiative?
+v2ddspmci,0,823,Initiatives super majority,%,"What percentage (%) of the vote is regarded as sufficient, by law, for the approval of an initiative?
 Percent.
 For 2/3, enter 66 .
 Converted from (B) to (A) coding by David Altman.",,%
@@ -2265,7 +2265,7 @@ v2elwestmon,0,836,Fraud allegations by Western monitors,"","Were there allegatio
 1: Yes
 If there were no Western monitors, or no international monitors, this variable is coded as missing.
 Source: NELDA 47 (Hyde and Marinov 2012); IDEA; websites by Western election monitors.",,""
-v2ddspmpl,0,840,Plebiscites super majority,%,"What percentage () of the vote is regarded as sufficient, by law, for the approval of a plebiscite?
+v2ddspmpl,0,840,Plebiscites super majority,%,"What percentage (%) of the vote is regarded as sufficient, by law, for the approval of a plebiscite?
 Percent.
 For 2/3, enter 66 .
 Converted from (B) to (A) coding by David Altman.",,%
@@ -2299,9 +2299,9 @@ v2svinlaut,0,853,International autonomy,"","Is the state autonomous from the con
 0: Non-autonomous. Foreign policy is controlled by an external power, either de facto or de jure. The most common examples of this are colonial rule and military occupation (e.g. quadripartite occupation of Germany in 1945). Situations in which domestic actors provide de jure cover for de facto control by a foreign power should not be construed as semi-autonomy (e.g. Vichy France). Governments in exile that control underground forces waging unconventional warfare are not considered as mitigating an occupation regime (e.g. countries under German occupation during WWII).
 1: Semi-autonomous. An external political actor directly constrains the ability of domestic actors to pursue an independent foreign policy course in some important areas. This may be the product of explicit treaty provisions or well-understood rules of the game from which the subject state cannot withdraw. Examples would include Soviet strictures over rule in so-called 'satellite' states in Eastern Europe, and explicitly negotiated postwar settlements (e.g. Austria following WWII).
 2: Autonomous. Domestic political actors exercise foreign policy free of the direct control of external political actors. Direct control is meant to exclude the exercise of constraint or the impact of interdependence in the international system. Treaties in which states concede some part of that control to a supra- or international organization voluntarily, and from which there is a possibility of exit should not be interpreted as a violation of autonomy.",,""
-v2svstterr,0,854,State authority over territory,%,"Over what percentage () of the territory does the state have effective control?
+v2svstterr,0,854,State authority over territory,%,"Over what percentage (%) of the territory does the state have effective control?
 Percent.
-With this question we seek to judge the extent of recognition of the preeminent authority of the state over its territory. We are not interested here in perfect control by the state, or whether it is relatively effective in comparison to other states, but an assessment of the areas over which it is hegemonic, e.g. where it is recognized as the preeminent authority and in a contest of wills it can assert its control over political forces that reject its authority. Several illustrative examples may help in this coding. During civil wars the claim of the state to rule is effectively neutralized by insurgent groups (e.g., the Tamil Tigers in Sri Lanka). There are also situations in which criminals or warlords exert control in contravention of state authority (e.g. opium growers in parts of Indochina). There are also cases of failed states where the central government cannot assert control over a share of its territory (e.g., contemporary Somalia). Here, we ask you to estimate the size of the territory that the state has effective control over, as a percentage () of the total territory that is officially part of the country. By 'officially part of the country' we refer to international law. In cases where international law is not entirely clear, we refer you to general understandings. For example, China claims sovereignty over Taiwan, but it remains under the control of its own government. For purposes of this question, Taiwan should not be considered a failure to control its territory by the government of the PRC.",,%
+With this question we seek to judge the extent of recognition of the preeminent authority of the state over its territory. We are not interested here in perfect control by the state, or whether it is relatively effective in comparison to other states, but an assessment of the areas over which it is hegemonic, e.g. where it is recognized as the preeminent authority and in a contest of wills it can assert its control over political forces that reject its authority. Several illustrative examples may help in this coding. During civil wars the claim of the state to rule is effectively neutralized by insurgent groups (e.g., the Tamil Tigers in Sri Lanka). There are also situations in which criminals or warlords exert control in contravention of state authority (e.g. opium growers in parts of Indochina). There are also cases of failed states where the central government cannot assert control over a share of its territory (e.g., contemporary Somalia). Here, we ask you to estimate the size of the territory that the state has effective control over, as a percentage (%) of the total territory that is officially part of the country. By 'officially part of the country' we refer to international law. In cases where international law is not entirely clear, we refer you to general understandings. For example, China claims sovereignty over Taiwan, but it remains under the control of its own government. For purposes of this question, Taiwan should not be considered a failure to control its territory by the government of the PRC.",,%
 v2cseeorgs,0,855,CSO entry and exit,"","To what extent does the government achieve control over entry and exit by civil society organizations (CSOs) into public life?
 0: Monopolistic control. The government exercises an explicit monopoly over CSOs. The only organizations allowed to engage in political activity such as endorsing parties or politicians, sponsoring public issues forums, organizing rallies or demonstrations, engaging in strikes, or publicly commenting on public officials and policies are government-sponsored organizations. The government actively represses those who attempt to defy its monopoly on political activity.
 1: Substantial control. The government licenses all CSOs and uses political criteria to bar organizations that are likely to oppose the government. There are at least some citizen-based organizations that play a limited role in politics independent of the government. The government actively represses those who attempt to flout its political criteria and bars them from any political activity.
@@ -2451,11 +2451,11 @@ v2exbribe,0,893,Executive bribery and corrupt exchanges,"","How routinely do mem
 3: It happens occasionally but is not expected.
 4: It never, or hardly ever, happens.",,""
 v2peasjgen,0,894,Access to state jobs by gender,"","Are state jobs equally open to qualified individuals regardless of gender?
-0: Extreme. Because of their gender, 75 percent () or more of women, even if qualified, lack access to state jobs.
-1: Unequal. Because of their gender, 25 percent () or more of women, even if qualified, lack access to state jobs.
-2: Somewhat Equal. Because of their gender, 10 to 25 percent () of women, even if qualified, lack access to state jobs.
-3: Relatively Equal. Because of their gender, 5 to 10 percent () of women, even if qualified, lack access to state jobs.
-4: Equal. Because of their gender, less than 5 percent () of women, even if qualified, lack access to state jobs.",,""
+0: Extreme. Because of their gender, 75% or more of women, even if qualified, lack access to state jobs.
+1: Unequal. Because of their gender, 25% or more of women, even if qualified, lack access to state jobs.
+2: Somewhat Equal. Because of their gender, 10 to 25% of women, even if qualified, lack access to state jobs.
+3: Relatively Equal. Because of their gender, 5 to 10% of women, even if qualified, lack access to state jobs.
+4: Equal. Because of their gender, less than 5% of women, even if qualified, lack access to state jobs.",,""
 v2exembez,0,895,Executive embezzlement and theft,"","How often do members of the executive (the head of state, the head of government, and cabinet ministers), or their agents, steal, embezzle, or misappropriate public funds or other state resources for personal or family use?
 0: Constantly. Members of the executive act as though all public resources were their personal or family property.
 1: Often. Members of the executive are responsible stewards of selected public resources but treat the rest like personal property.
@@ -2505,10 +2505,10 @@ v2exapupap,0,905,Chief executive appointment by upper chamber implicit approval,
 The chief executive is defined by whether the head of state or the head of government have more relative power (v2ex_hosw, v2ex_hogw). Answer v2exapupap only if the legislature is playing a role in the appointment of the chief executive (if v2exaphos or v2exaphogp are 1).
 Source: National constitutions; Websites of national governments.","{""numDecimalPlaces"": 0}",""
 v2peasjsoc,0,909,Access to state jobs by social group,"","Are state jobs equally open to qualified individuals regardless of social group?
-0: Extreme. Because of their social group, 75 percent () or more of the population, even if qualified, lack access to state jobs.1: Unequal. Because of their social group identity, 25 percent () or more of the population, even if qualified, lack access to state jobs.
-2: Somewhat Equal. Because of their social group identity, 10 to 25 percent () of the population, even if qualified, lack access to state jobs.
-3: Relatively Equal. Because of their social group identity, 5 to 10 percent () of the population, even if qualified, lack access to state jobs.
-4: Equal. Because of their social group identity, less than 5 percent () of the population, even if qualified, lack access to state jobs.
+0: Extreme. Because of their social group, 75% or more of the population, even if qualified, lack access to state jobs.1: Unequal. Because of their social group identity, 25% or more of the population, even if qualified, lack access to state jobs.
+2: Somewhat Equal. Because of their social group identity, 10 to 25% of the population, even if qualified, lack access to state jobs.
+3: Relatively Equal. Because of their social group identity, 5 to 10% of the population, even if qualified, lack access to state jobs.
+4: Equal. Because of their social group identity, less than 5% of the population, even if qualified, lack access to state jobs.
 Social group is differentiated within a country by caste, ethnicity, language, race, region, religion, migration status, or some combination thereof. (It does not include identities grounded in sexual orientation, gender, or socioeconomic status.)",,""
 v2pepwrsoc,0,913,Power distributed by social group,"","Is political power distributed according to social groups?
 0: Political power is monopolized by one social group comprising a minority of the population. This monopoly is institutionalized, i.e., not subject to frequent change.
@@ -2525,11 +2525,11 @@ v2exthftps,0,916,Public sector theft,"","How often do public sector employees st
 4: Never, or hardly ever. Public sector employees are almost always responsible stewards of public resources and keep them separate from personal or family property.
 When responding to this question, we would like you to think about a typical person employed by the public sector, excluding the military. If you think there are large discrepancies between branches of the public sector, between the national/federal and subnational/state level, or between the core bureaucracy and employees working with public service delivery, please try to average them out before stating your response.",,""
 v2peasbsoc,0,917,Access to state business opportunities by social group,"","Are state business opportunities equally available to qualified individuals or firms regardless of social group?
-0: Extreme. Because of their social group, 75 percent () or more of the population, even if qualified, lack access to state business opportunities.
-1: Unequal. Because of their social group, 25 percent () or more of the population, even if qualified, lack access to state business opportunities.
-2: Somewhat Equal. Because of their social group, 10 to 25 percent () of the population, even if qualified, lack access to state business opportunities.
-3: Relatively Equal. Because of their social group, 5 to 10 percent () of the population, even if qualified, lack access to state business opportunities.
-4: Equal. Because of their social group, less than 5 percent () of the population, even if qualified, lack access to state business opportunities.
+0: Extreme. Because of their social group, 75% or more of the population, even if qualified, lack access to state business opportunities.
+1: Unequal. Because of their social group, 25% or more of the population, even if qualified, lack access to state business opportunities.
+2: Somewhat Equal. Because of their social group, 10 to 25% of the population, even if qualified, lack access to state business opportunities.
+3: Relatively Equal. Because of their social group, 5 to 10% of the population, even if qualified, lack access to state business opportunities.
+4: Equal. Because of their social group, less than 5% of the population, even if qualified, lack access to state business opportunities.
 State business opportunities refer to the ability to compete for or receive a public procurement contract, to partner with the government in public-private partnerships, etc. Social group is differentiated within a country by caste, ethnicity, language, race, region, religion, migration status, or some combination thereof. (It does not include identities grounded in sexual orientation, gender, or socioeconomic status.)",,""
 v2exaphos,0,919,HOS selection by legislature in practice,"","Was approval of the legislature necessary for the appointment of the head of state?
 0: No.
@@ -2589,11 +2589,11 @@ v2eldommon,0,938,Election domestic election monitors,"","In this national electi
 0: No
 1: Yes","{""numDecimalPlaces"": 0}",""
 v2peasbgen,0,944,Access to state business opportunities by gender,"","Are state business opportunities equally available to qualified individuals or firms regardless of gender?
-0: Extreme. Because of their gender, 75 percent () or more of women, even if qualified, lack access to state business opportunities.
-1: Unequal. Because of their gender, 25 percent () or more of women, even if qualified, lack access to state business opportunities.
-2: Somewhat Equal. Because of their gender, 10 to 25 percent () of women, even if qualified, lack access to state business opportunities.
-3: Relatively Equal. Because of their gender, 5 to 10 percent () of women, even if qualified, lack access to state business opportunities.
-4: Equal. Because of their gender, 5 percent () of women, even if qualified, lack access to state business opportunities.
+0: Extreme. Because of their gender, 75% or more of women, even if qualified, lack access to state business opportunities.
+1: Unequal. Because of their gender, 25% or more of women, even if qualified, lack access to state business opportunities.
+2: Somewhat Equal. Because of their gender, 10 to 25% of women, even if qualified, lack access to state business opportunities.
+3: Relatively Equal. Because of their gender, 5 to 10% of women, even if qualified, lack access to state business opportunities.
+4: Equal. Because of their gender, 5% of women, even if qualified, lack access to state business opportunities.
 State business opportunities refer to the ability to compete for or receive a public procurement contract, to partner with the government in public-private partnerships, etc.",,""
 v2exaphogp,0,945,HOG selection by legislature in practice,"","Was the approval of the legislature necessary for the appointment of the head of government?
 0: No
@@ -2628,7 +2628,7 @@ v2ex_legconhog,0,952,HOG appointed by legislature,"","Is the head of government 
 0: No.
 1: Yes.
 Source: v2expathhg v2exaphogp","{""numDecimalPlaces"": 0}",""
-v3ellostsl,0,953,Lower chamber election seat share won by largest party,%,"In this election, what percentage () of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the largest party?
+v3ellostsl,0,953,Lower chamber election seat share won by largest party,%,"In this election, what percentage (%) of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the largest party?
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v3lgdomchm,0,955,Legislature dominant chamber,"","If the legislature is bicameral, which chamber is dominant?
@@ -2644,7 +2644,7 @@ v2elmonref,0,957,Monitors refuse to be present,"","Did any monitors refuse to go
 0: No/Unclear
 1: Yes
 Source: NELDA 49 (Hyde and Marinov 2012); websites of election monitors.",,""
-v3elupvtlg,0,958,Upper chamber election vote share of largest vote-getter,%,"In this election to the upper chamber of the legislature, what percentage () of the vote was received by the largest party in the first/only round?
+v3elupvtlg,0,958,Upper chamber election vote share of largest vote-getter,%,"In this election to the upper chamber of the legislature, what percentage (%) of the vote was received by the largest party in the first/only round?
 Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen and colleagues (1999, 2002, 2005, 2010). Caramani (2000). Wikipedia. Websites of National Parliaments. Websites of National Bureau of Statistics. Various country-specific sources.",,%
 v3psagesecond,0,959,Party age second largest,"","How many years have passed since the party that holds the second most seats in the lower chamber (or only chamber) of the legislature was formed?
@@ -2711,7 +2711,7 @@ v2elrgpwr,0,978,Regional offices relative power,"","How would you characterize t
 3: Most non-elected offices are subordinate to elected offices at the regional level.
 4: All or nearly all non-elected offices are subordinate to elected offices at the regional level.
 We are concerned with the relative power of regional offices to each other, not the power of regional offices relative to higher or lower levels of government. Please consider only major offices, such as the executive, assembly, and judiciary, not those of minor bureaucrats. (A body of government officials, such as an assembly or judiciary, counts as one office.) An office is ''subordinate'' if its officeholders can be chosen and removed by another office or if its decisions can be blocked or modified by another office, but it cannot similarly constrain the other office.",,""
-v2ellostss,0,979,Lower chamber election seat share won by second largest party,%,"In this election, what percentage () of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
+v2ellostss,0,979,Lower chamber election seat share won by second largest party,%,"In this election, what percentage (%) of the total seats in the lower (or unicameral) chamber of the legislature was obtained by the next-largest party?
 Percent.
 Does not include appointed (nonelected) seats. Leave this question blank if election was nonpartisan, i.e., no parties (not even pro-government parties) were allowed.
 Source: Nohlen et al. (1999, 2002, 2005, 2010); Chronicle of Parliamentary Elections (IPU).",,%
@@ -2740,11 +2740,11 @@ In systems of neopatrimonial rule, politicians use their offices for private and
 The index is formed by taking the reversed point estimates (so that higher scores = more regime corruption) from a Bayesian factor analysis model of the indicators for executive executive embezzlement (v2exembez), executive bribes (v2exbribe), legislative corruption (v2xlgcrrpt) and judicial corruption (v2jucorrdc).
 Source: v2exembez v2exbribe v2lgcrrpt v2jucorrdc",,""
 v2peapssoc,0,998,Access to public services distributed by social group,"","Are basic public services, such as order and security, primary education, clean water, and healthcare, distributed equally across social groups?
-0: Extreme. Because of their social group, 75 percent () or more of the population lack access to basic public services of good quality.
-1: Unequal. Because of their social group, 25 percent () or more of the population lack access to basic public services of good quality.
-2: Somewhat Equal. Because of their social group, 10 to 25 percent () of the population lack access to basic public services of good quality.
-3: Relatively Equal. Because of their social group, only 5 to 10 percent () of the population lack access to basic public services of good quality.
-4: Equal. Because of their social group, less than 5 percent () of the population lack access to basic public services of good quality.
+0: Extreme. Because of their social group, 75% or more of the population lack access to basic public services of good quality.
+1: Unequal. Because of their social group, 25% or more of the population lack access to basic public services of good quality.
+2: Somewhat Equal. Because of their social group, 10 to 25% of the population lack access to basic public services of good quality.
+3: Relatively Equal. Because of their social group, only 5 to 10% of the population lack access to basic public services of good quality.
+4: Equal. Because of their social group, less than 5% of the population lack access to basic public services of good quality.
 This question asks if social group is an important cleavage in society for the distribution of public services. Thus, if there are inequalities in access to public services, but these are not mainly due to differentiation between particular social groups, the code should be “4” (equal). The situation could of course vary by type of public service, such that a social group is denied access to some basic public services but not others. Please base your response on whether access to most of the aforementioned services are distributed equally or unequally.",,""
 v2elparlel,0,999,Lower chamber electoral system,"","What was the electoral system used in this election for the lower or unicameral chamber of the legislature?
 0: Majoritarian.
@@ -2763,11 +2763,11 @@ This indicator captures if universities have (ever) existed in this country. Thu
 Country-specific sources were consulted where 4icu.org and whed.net suggested conflicting years of establishment of first university.
 Source: Apfeld (2019) drawing on 4icu.org (Atuzzo 2019); whed.net; various country-specific sources.","{""numDecimalPlaces"": 0}",""
 v2peapsgen,0,1002,Access to public services distributed by gender,"","Is access to basic public services, such as order and security, primary education, clean water, and healthcare, distributed equally according to gender?
-0: Extreme. Because of their gender, 75 percent () or more of women lack access to basic public services of good quality.
-1: Unequal. Because of their gender, 25 percent () or more of women lack access to basic public services of good quality.
-2: Somewhat Equal. Because of their gender, 10 to 25 percent () of women lack access to basic public services of good quality.
-3: Relatively Equal. Because of their gender, 5 to 10 percent () of women lack access to basic public services of good quality.
-4: Equal. Because of their gender, less than 5 percent () of women lack access to basic public services of good quality.
+0: Extreme. Because of their gender, 75% or more of women lack access to basic public services of good quality.
+1: Unequal. Because of their gender, 25% or more of women lack access to basic public services of good quality.
+2: Somewhat Equal. Because of their gender, 10 to 25% of women lack access to basic public services of good quality.
+3: Relatively Equal. Because of their gender, 5 to 10% of women lack access to basic public services of good quality.
+4: Equal. Because of their gender, less than 5% of women lack access to basic public services of good quality.
 This question asks if gender is an important cleavage in society for the distribution of public services. Thus, if there are inequalities in access to public services, but these are not mainly due to differentiation between gender, the code should be “4” (equal). The situation could of course vary by type of public service, such that women are denied access to some basic public services but not others. Please base your response on whether access to most of the aforementioned services are distributed equally or unequally.",,""
 v2ellostlg,0,1003,Lower chamber election seats won by largest party,"","In this election to the lower (or unicameral) chamber of the legislature, how many seats were obtained by the largest party?
 Numeric.
@@ -2778,53 +2778,53 @@ Percent.
 This variable, in contrast to v2elsuffrage, covers de facto enfranchised adults and not de jure. For example, the scores reflect whether an electoral regime was interrupted or not. If an electoral regime is interrupted (see v2x_elecreg), v2msuffrage is zero while v2elsuffrage may still be 100.
 Source: Bilinski (2015); Chronicle of Parliamentary Elections (IPU); Nohlen et al. (1999, 2002, 2005, 2010); constituteproject.org; v2x_elecreg.",,%
 v2peapsecon,0,1005,Access to public services distributed by socio-economic position,"","Is access to basic public services, such as order and security, primary education, clean water, and healthcare, distributed equally according to socioeconomic position?
-0: Extreme. Because of poverty or low income, 75 percent () or more of the population lack access to basic public services of good quality.
-1: Unequal. Because of poverty or low income, 25 percent () or more of the population lack access to basic public services of good quality.
-2: Somewhat Equal. Because of poverty or low income, 10 to 25 percent () of the population lack access to basic public services of good quality.
-3: Relatively Equal. Because of poverty or low income, 5 to 10 percent () of the population lack access to basic public services of good quality.
-4: Equal. Because of poverty or low income, less than 5 percent () of the population lack access to basic public services of good quality.
+0: Extreme. Because of poverty or low income, 75% or more of the population lack access to basic public services of good quality.
+1: Unequal. Because of poverty or low income, 25% or more of the population lack access to basic public services of good quality.
+2: Somewhat Equal. Because of poverty or low income, 10 to 25% of the population lack access to basic public services of good quality.
+3: Relatively Equal. Because of poverty or low income, 5 to 10% of the population lack access to basic public services of good quality.
+4: Equal. Because of poverty or low income, less than 5% of the population lack access to basic public services of good quality.
 This question asks if socio-economic position is an important cleavage in society for the distribution of public services. Thus, if there are inequalities in access to public services, but these are not mainly due to differentiation between particular socio-economic position, the code should be “4” (equal). The situation could of course vary by type of public service, such that a socio-economic group is denied access to some basic public services but not others. Please base your response on whether access to most of the aforementioned services are distributed equally or unequally.",,""
 v2peasbepol,0,1006,Access to state business opportunities by political group,"","Are state business opportunities equally available to qualified individuals or firms regardless of an individual’s association with a political group?
-0: Extreme. Because of their political group affiliation 75 percent () or more of the population, even if qualified, lack access to state business opportunities.
-1: Unequal. Because of their political group affiliation 25 percent () or more of the population, even if qualified, lack access to state business opportunities.
-2: Somewhat Equal. Because of their political group affiliation 10 to 25 percent () of the population, even if qualified, lack access to state business opportunities.
-3: Relatively Equal. Because of their political group affiliation 5 to 10 percent () of the population, even if qualified, lack access to state business opportunities.
-4: Equal. Because of their political group affiliation less than 5 percent () of the population, even if qualified, lack equal access to state business opportunities.
+0: Extreme. Because of their political group affiliation 75% or more of the population, even if qualified, lack access to state business opportunities.
+1: Unequal. Because of their political group affiliation 25% or more of the population, even if qualified, lack access to state business opportunities.
+2: Somewhat Equal. Because of their political group affiliation 10 to 25% of the population, even if qualified, lack access to state business opportunities.
+3: Relatively Equal. Because of their political group affiliation 5 to 10% of the population, even if qualified, lack access to state business opportunities.
+4: Equal. Because of their political group affiliation less than 5% of the population, even if qualified, lack equal access to state business opportunities.
 State business opportunities refer to the ability to compete for or receive a public procurement contract, to partner with the government in public-private partnerships, etc. A political group is defined as those who are affiliated with a particular political party or candidate, or a group of parties/candidates that can be distinguished from others in terms of access to power. Responses should not reflect which party controls the legislature and executive.",,""
 v2peapspol,0,1007,Access to public services distributed by political group,"","Is access to basic public services, such as order and security, primary education, clean water, and healthcare, distributed equally across political groups?
-0: Extreme. Because of their political group affiliation 75 percent () or more of the population lack access to basic public services of good quality.
-1: Unequal. Because of their political group affiliation 25 percent () or more of the population lack access to basic public services of good quality.
-2: Somewhat Equal. Because of their political group affiliation 10 to 25 percent () of the population lack access to basic public services of good quality.
-3: Relatively Equal. Because of their political group affiliation only 5 to 10 percent () of the population lack access to basic public services of good quality.
-4: Equal. Because of their political group affiliation less than 5 percent () of the population lack access to basic public services of good quality.
+0: Extreme. Because of their political group affiliation 75% or more of the population lack access to basic public services of good quality.
+1: Unequal. Because of their political group affiliation 25% or more of the population lack access to basic public services of good quality.
+2: Somewhat Equal. Because of their political group affiliation 10 to 25% of the population lack access to basic public services of good quality.
+3: Relatively Equal. Because of their political group affiliation only 5 to 10% of the population lack access to basic public services of good quality.
+4: Equal. Because of their political group affiliation less than 5% of the population lack access to basic public services of good quality.
 A political group is defined as those who are affiliated with a particular political party or candidate, or a group of parties/candidates. This question asks if political group is an important cleavage in society for the distribution of public services. Thus, if there are inequalities in access to public services, but these are not mainly due to differentiation between particular political groups, the code should be “4” (equal). The situation could of course vary by type of public service, such that a political group is denied access to some basic public services but not others. Please base your response on whether access to most of the aforementioned services are distributed equally or unequally.",,""
 v2peapsgeo,0,1008,Access to public services distributed by urban-rural location,"","Is access to basic public services, such as order and security, primary education, clean water, and healthcare, distributed equally across urban and rural areas?
-0: Extreme. Because they live in rural areas, 75 percent () or more of the population lack access to basic public services of good quality.
-1: Unequal. Because they live in rural areas, 25 percent () or more of the population lack access to basic public services of good quality.
-2: Somewhat Equal. Because they live in rural areas, 10 to 25 percent () of the population lack access to basic public services of good quality.
-3: Relatively Equal. Because they live in rural areas, only 5 to 10 percent () of the population lack access to basic public services of good quality.
-4: Equal. Because they live in rural areas, less than 5 percent () of the population lack access to basic public services of good quality.
+0: Extreme. Because they live in rural areas, 75% or more of the population lack access to basic public services of good quality.
+1: Unequal. Because they live in rural areas, 25% or more of the population lack access to basic public services of good quality.
+2: Somewhat Equal. Because they live in rural areas, 10 to 25% of the population lack access to basic public services of good quality.
+3: Relatively Equal. Because they live in rural areas, only 5 to 10% of the population lack access to basic public services of good quality.
+4: Equal. Because they live in rural areas, less than 5% of the population lack access to basic public services of good quality.
 5: Rural-Bias: Because they live in urban areas, 25 or more of the population lack access to basic public services of good quality.
 Urban areas are defined as an area that meets the following conditions: population density exceeds a threshold of 150 persons per square kilometer, there is access to a sizeable settlement of 50,000 people or more within some reasonable travel time, for example 60 minutes by road. (World Development Report, 2009: 54). This question asks if geographic group is an important cleavage in society for the distribution of public services. Thus, if there are inequalities in access to public services, but these are not mainly due to differentiation between urban and rural areas, the code should be “4” (equal). The situation could of course vary by type of public service, such that a geographic group is denied access to some basic public services but not others. Please base your response on whether access to most of the aforementioned services are distributed equally or unequally.",,""
 v2peasjgeo,0,1009,Access to state jobs by urban-rural location,"","Are state jobs equally open to qualified individuals regardless of their rural or urban location?
-0: Extreme. Because they live in rural areas, 75 percent () or more of the population, even if qualified, lack access to state jobs.1: Unequal. Because they live in rural areas, 25 percent () or more of the population, even if qualified, lack access to state jobs.2: Somewhat Equal. Because they live in rural areas, 10 to 25 percent () of the population, even if qualified, lack access to state jobs.
-3: Relatively Equal. Because they live in rural areas, only 5 to 10 percent () of the population, even if qualified, lack access to state jobs.
-4: Equal. Because they live in rural areas, less than 5 percent () of the population, even if qualified, lack access to state jobs.5: Rural-Bias. Because they live in urban areas, 25 or more of the population, even if qualified, lack access to state jobs.
+0: Extreme. Because they live in rural areas, 75% or more of the population, even if qualified, lack access to state jobs.1: Unequal. Because they live in rural areas, 25% or more of the population, even if qualified, lack access to state jobs.2: Somewhat Equal. Because they live in rural areas, 10 to 25% of the population, even if qualified, lack access to state jobs.
+3: Relatively Equal. Because they live in rural areas, only 5 to 10% of the population, even if qualified, lack access to state jobs.
+4: Equal. Because they live in rural areas, less than 5% of the population, even if qualified, lack access to state jobs.5: Rural-Bias. Because they live in urban areas, 25 or more of the population, even if qualified, lack access to state jobs.
 Urban areas are defined as an area that meets the following conditions: population density exceeds a threshold of 150 persons per square kilometer, there is access to a sizeable settlement of 50,000 people or more within some reasonable travel time, for example 60 minutes by road. (World Development Report, 2009: 54)",,""
 v2peasjpol,0,1010,Access to state jobs by political group,"","Are state jobs equally open to qualified individuals regardless of their association with a political group?
-0: Extreme. Because of their political group affiliation, 75 percent () or more of the population, even if qualified, lack access to state jobs.
-1: Unequal. Because of their political group affiliation, 25 percent () or more of the population, even if qualified, lack access to state jobs.
-2: Somewhat Equal. Because of their political group affiliation, 10 to 25 percent () of the population, even if qualified, lack access to state jobs.
-3: Relatively Equal. Because of their political group affiliation, 5 to 10 percent () of the population, even if qualified, lack access to state jobs.
-4: Equal. Because of their political group affiliation, less than 5 percent () of the population, even if qualified, lack access to state jobs.
+0: Extreme. Because of their political group affiliation, 75% or more of the population, even if qualified, lack access to state jobs.
+1: Unequal. Because of their political group affiliation, 25% or more of the population, even if qualified, lack access to state jobs.
+2: Somewhat Equal. Because of their political group affiliation, 10 to 25% of the population, even if qualified, lack access to state jobs.
+3: Relatively Equal. Because of their political group affiliation, 5 to 10% of the population, even if qualified, lack access to state jobs.
+4: Equal. Because of their political group affiliation, less than 5% of the population, even if qualified, lack access to state jobs.
 A political group is defined as those who are affiliated with a particular political party or candidate, or a group of parties/candidates.",,""
 v2peasbegeo,0,1011,Access to state business opportunities by urban-rural location,"","Are state business opportunities equally available to qualified individuals or firms regardless of their rural or urban locations?
-0: Extreme. Because they live in rural areas, 75 percent () or more of the population, even if qualified, lack access to state business opportunities.
-1: Unequal. Because they live in rural areas, 25 percent () or more of the population, even if qualified, lack access to state business opportunities.
-2: Somewhat Equal. Because they live in rural areas, 10 to 25 percent () of the population, even if qualified, lack access to state business opportunities.
-3: Relatively Equal. Because they live in rural areas, 5 to 10 percent () of the population, even if qualified, lack access to state business opportunities.
-4: Equal. Because they live in rural areas, less than 5 percent () of the population, even if qualified, lack access to state business opportunities.
-5: Rural-Bias. Because they live in urban areas, 25 percent () of the population, even if qualified, lack access to state business opportunities.
+0: Extreme. Because they live in rural areas, 75% or more of the population, even if qualified, lack access to state business opportunities.
+1: Unequal. Because they live in rural areas, 25% or more of the population, even if qualified, lack access to state business opportunities.
+2: Somewhat Equal. Because they live in rural areas, 10 to 25% of the population, even if qualified, lack access to state business opportunities.
+3: Relatively Equal. Because they live in rural areas, 5 to 10% of the population, even if qualified, lack access to state business opportunities.
+4: Equal. Because they live in rural areas, less than 5% of the population, even if qualified, lack access to state business opportunities.
+5: Rural-Bias. Because they live in urban areas, 25% of the population, even if qualified, lack access to state business opportunities.
 State business opportunities refer to the ability to compete for or receive a public procurement contract, to partner with the government in public-private partnerships, etc. Urban areas are defined as an area that meets the following conditions: population density exceeds a threshold of 150 persons per square kilometer, there is access to a sizeable settlement of 50,000 people or more within some reasonable travel time, for example 60 minutes by road. (World Development Report, 2009: 54)",,""
 v2caacadfree,0,1012,International legal commitment to academic freedom under ICESCR,"","Is the state party to the International Covenant on Economic, Social and Cultural Rights (ICESCR) without reservations to article 15 (right to science)?
 0: State not a party to ICESCR, or made reservations to article 15.
@@ -2850,7 +2850,7 @@ Numeric.
 Autocracy is defined operationally in terms of the presence of a distinctive set of political characteristics. In mature form, autocracies sharply restrict or suppress competitive political participation. Their chief executives are chosen in a regularized process of selection within the political elite, and once in office they exercise power with few institutional constraints.
 This variable is rescaled between 0 and 1 for comparison with V-Dem democracy indices for the online visualisation tools on the website.
 Source: Polity 5 (Marshall and Jaggers 2020).",,""
-v2elsuffrage,0,1016,Percentage of population with suffrage,%,"What percentage () of adult citizens (as defined by statute) has the legal right to vote in national elections?
+v2elsuffrage,0,1016,Percentage of population with suffrage,%,"What percentage (%) of adult citizens (as defined by statute) has the legal right to vote in national elections?
 Percent.
 This question does not take into consideration restrictions based on age, residence, having been convicted for crime, being in the military service or being legally incompetent. It covers legal (de jure) restrictions, not restrictions that may be operative in practice (de facto). The adult population (as defined by statute) is defined by citizens in the case of independent countries or the people living in the territorial entity in the case of colonies. Universal suffrage is coded as 100. Universal male suffrage is only coded as 50. Years before electoral provisions are introduced are scored 0. The scores do not reflect whether an electoral regime was interrupted or not. Only if new constitutions, electoral laws, or the like explicitly introduce new regulations of suffrage, the scores were adjusted accordingly if the changes suggested doing so. If qualifying criteria other than gender apply (such as property, tax payments, income, literacy, region, race, ethnicity, religion, and/or 'economic independence'), estimates have been calculated by combining information on the restrictions with different kinds of statistical information (on population size, age distribution, wealth distribution, literacy rates, size of ethnic groups, etc.), secondary country-specific sources, and --- in the case of very poor information --- the conditions in similar countries or colonies. The scores reflect de jure provisions of suffrage extension in percentage of the adult population. If the suffrage law is revised in a way that affects the extension, the scores reflect this change as of the calendar year the law was enacted.
 In Version 3 of the dataset this variable was re-coded from scratch based on the modified criteria reflected in the clarification section (above).
