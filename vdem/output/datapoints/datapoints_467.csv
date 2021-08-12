@@ -1,3080 +1,1484 @@
 country,year,value
-Mexico,1946,89.75
-Mexico,1949,72.31
-Mexico,1952,74.15
-Mexico,1955,69.24
-Mexico,1958,70.21
-Mexico,1961,68.43
-Mexico,1964,69.33
-Mexico,1967,62.82
-Mexico,1970,64.26
-Mexico,1973,60.3
-Mexico,1976,64.55
-Mexico,1979,49.43
-Mexico,1982,74.84
-Mexico,1985,51.82
-Mexico,1988,50.14
-Mexico,1991,61.11
-Mexico,1994,78.5
-Mexico,1997,57.69
-Mexico,2000,63.96
-Mexico,2003,61.68
-Mexico,2006,58.55
-Mexico,2009,44.61
-Mexico,2012,63.14
-Mexico,2015,47.72
-Mexico,2018,63.21
-Suriname,1973,76.03
-Suriname,1977,77.77
-Suriname,1987,84.96
-Suriname,1991,64.31
-Suriname,1996,66.66
-Suriname,2000,69.85
-Suriname,2005,46.68
-Suriname,2010,73.21
-Suriname,2015,72.72
-Sweden,1875,19.5
-Sweden,1878,20.3
-Sweden,1881,23.7
-Sweden,1884,25.2
-Sweden,1887,48.1
-Sweden,1890,38.5
-Sweden,1893,42.4
-Sweden,1896,45.3
-Sweden,1899,40.3
-Sweden,1902,47.2
-Sweden,1905,50.4
-Sweden,1908,61.3
-Sweden,1911,57
-Sweden,1914,69.9
-Sweden,1917,65.8
-Sweden,1920,55.3
-Sweden,1921,54.2
-Sweden,1924,53
-Sweden,1928,67.4
-Sweden,1932,67.6
-Sweden,1936,74.5
-Sweden,1940,70.3
-Sweden,1944,71.9
-Sweden,1948,82.74
-Sweden,1952,79.11
-Sweden,1956,79.84
-Sweden,1958,77.42
-Sweden,1960,85.91
-Sweden,1964,83.86
-Sweden,1968,89.29
-Sweden,1970,88.28
-Sweden,1973,90.84
-Sweden,1976,91.76
-Sweden,1979,90.72
-Sweden,1982,91.45
-Sweden,1985,89.85
-Sweden,1988,85.96
-Sweden,1991,86.74
-Sweden,1994,86.82
-Sweden,1998,81.39
-Sweden,2002,80.11
-Sweden,2006,81.99
-Sweden,2010,84.63
-Sweden,2014,85.81
-Sweden,2018,87.18
-Switzerland,1848,44.6
-Switzerland,1851,53.6
-Switzerland,1854,45.7
-Switzerland,1857,46.5
-Switzerland,1860,49.1
-Switzerland,1863,46.6
-Switzerland,1866,50.6
-Switzerland,1869,54.2
-Switzerland,1872,62.1
-Switzerland,1875,59.1
-Switzerland,1878,56.9
-Switzerland,1881,62.1
-Switzerland,1884,63.1
-Switzerland,1887,55.3
-Switzerland,1890,62.5
-Switzerland,1893,58.4
-Switzerland,1896,55.9
-Switzerland,1899,54.5
-Switzerland,1902,56.8
-Switzerland,1905,56.5
-Switzerland,1908,52.7
-Switzerland,1911,52.7
-Switzerland,1914,46.4
-Switzerland,1917,59.8
-Switzerland,1919,80.4
-Switzerland,1922,76.4
-Switzerland,1925,76.8
-Switzerland,1928,78.8
-Switzerland,1931,78.8
-Switzerland,1935,78.3
-Switzerland,1939,74.3
-Switzerland,1943,70
-Switzerland,1947,71.69
-Switzerland,1951,69.78
-Switzerland,1955,69.71
-Switzerland,1959,68.46
-Switzerland,1963,64.46
-Switzerland,1967,63.76
-Switzerland,1971,56.36
-Switzerland,1975,52.39
-Switzerland,1979,48.06
-Switzerland,1983,48.91
-Switzerland,1987,47.48
-Switzerland,1991,46.04
-Switzerland,1995,42.25
-Switzerland,1999,43.22
-Switzerland,2003,45.22
-Switzerland,2007,48.28
-Switzerland,2011,49.1
-Switzerland,2015,48.48
-Switzerland,2019,45.12
-Ghana,1956,50.06
-Ghana,1969,63.2
-Ghana,1979,35.25
-Ghana,1992,50.16
-Ghana,1996,78.21
-Ghana,2000,61.7
-Ghana,2004,85.12
-Ghana,2008,72.91
-Ghana,2012,80.15
-Ghana,2016,67.55
-South Africa,1989,69.5
-South Africa,1994,86.87
-South Africa,1999,89.28
-South Africa,2004,76.73
-South Africa,2009,77.3
-South Africa,2014,73.48
-South Africa,2019,66.05
-Japan,1890,93.73
-Japan,1892,91.59
-Japan,1894,88.76
-Japan,1898,87.5
-Japan,1902,88.4
-Japan,1903,86.2
-Japan,1904,86.1
-Japan,1908,85.3
-Japan,1912,89.6
-Japan,1920,86.7
-Japan,1924,91.2
-Japan,1928,80.3
-Japan,1930,83.34
-Japan,1932,81.67
-Japan,1936,78.6
-Japan,1937,73.3
-Japan,1946,72.08
-Japan,1947,67.95
-Japan,1949,74.04
-Japan,1952,76.43
-Japan,1953,74.21
-Japan,1955,75.83
-Japan,1958,76.98
-Japan,1960,73.5
-Japan,1963,71.14
-Japan,1967,73.98
-Japan,1969,68.5
-Japan,1972,71.75
-Japan,1976,73.44
-Japan,1979,68
-Japan,1980,74.56
-Japan,1983,67.98
-Japan,1986,63.99
-Japan,1990,73.31
-Japan,1993,67.02
-Japan,1996,59.65
-Japan,2000,60.62
-Japan,2003,59.8
-Japan,2005,67.46
-Japan,2009,69.27
-Japan,2012,59.32
-Japan,2014,52.66
-Japan,2017,53.68
-Myanmar,1947,49.8
-Myanmar,1951,18.75
-Myanmar,1956,51.97
-Myanmar,1960,66
-Myanmar,1974,94.6
-Myanmar,1978,93.3
-Myanmar,1981,94.6
-Myanmar,1990,73.33
-Myanmar,2010,77.26
-Myanmar,2015,69.75
-Russia,1917,48.44
-Russia,1991,74.66
-Russia,1993,50
-Russia,1995,64.73
-Russia,1996,69.7
-Russia,1999,62.33
-Russia,2000,68.64
-Russia,2003,55.67
-Russia,2004,64.39
-Russia,2007,63.71
-Russia,2008,69.71
-Russia,2011,60.1
-Russia,2012,65.27
-Russia,2016,47.88
-Russia,2018,67.5
-Albania,1991,98.92
-Albania,1992,91.5
-Albania,1996,89.08
-Albania,1997,72.56
-Albania,2001,54.95
-Albania,2005,48.73
-Albania,2009,50.77
-Albania,2013,53.31
-Albania,2017,46.76
-Egypt,1976,39.77
-Egypt,1984,43.14
-Egypt,1987,50.32
-Egypt,1990,44.43
-Egypt,1995,47.99
-Egypt,2005,28.13
-Egypt,2010,27.47
-Egypt,2011,62.04
-Egypt,2012,51.85
-Egypt,2014,48.5
-Egypt,2015,28.27
-Egypt,2018,41.05
-Yemen,1993,80.74
-Yemen,1997,60.71
-Yemen,2003,74.98
-Yemen,2006,65.16
-Yemen,2012,64.78
-Colombia,1938,30.2
-Colombia,1939,50.7
-Colombia,1945,38.42
-Colombia,1946,55.8
-Colombia,1947,56.35
-Colombia,1949,63.16
-Colombia,1958,68.85
-Colombia,1960,57.82
-Colombia,1962,57.88
-Colombia,1964,36.85
-Colombia,1966,44.47
-Colombia,1968,37.28
-Colombia,1970,52.5
-Colombia,1974,58.1
-Colombia,1978,40.3
-Colombia,1982,49.8
-Colombia,1986,45.6
-Colombia,1990,55.33
-Colombia,1991,33
-Colombia,1994,43.3
-Colombia,1998,59
-Colombia,2002,46.45
-Colombia,2006,45.11
-Colombia,2010,49.27
-Colombia,2014,47.9
-Colombia,2018,53.38
-Poland,1922,67.9
-Poland,1928,79
-Poland,1930,74.8
-Poland,1935,45.9
-Poland,1938,67.1
-Poland,1947,89.3
-Poland,1952,95.03
-Poland,1957,94.14
-Poland,1961,94.83
-Poland,1965,96.62
-Poland,1969,97.61
-Poland,1972,97.94
-Poland,1976,98.27
-Poland,1980,98.87
-Poland,1985,78.86
-Poland,1989,62.11
-Poland,1990,60.6
-Poland,1991,43.2
-Poland,1993,52.08
-Poland,1995,64.7
-Poland,1997,47.93
-Poland,2000,61.12
-Poland,2001,46.18
-Poland,2005,50.99
-Poland,2007,53.88
-Poland,2010,55.31
-Poland,2011,48.92
-Poland,2015,55.34
-Poland,2019,61.74
-Brazil,1945,83.12
-Brazil,1947,42.47
-Brazil,1950,72.06
-Brazil,1954,65.48
-Brazil,1955,59.68
-Brazil,1958,99.2
-Brazil,1960,80.98
-Brazil,1962,79.59
-Brazil,1966,77.21
-Brazil,1970,77.45
-Brazil,1974,80.9
-Brazil,1978,81.75
-Brazil,1982,82.33
-Brazil,1989,88.07
-Brazil,1990,84.61
-Brazil,1994,84.93
-Brazil,1998,78.51
-Brazil,2002,79.53
-Brazil,2006,83.27
-Brazil,2010,81.88
-Brazil,2014,80.6
-Brazil,2018,79.67
-United States,1790,16.4
-United States,1792,28.4
-United States,1794,20.9
-United States,1796,23.1
-United States,1798,30.8
-United States,1800,35.5
-United States,1802,29.8
-United States,1804,39
-United States,1806,35
-United States,1808,55
-United States,1810,40
-United States,1812,47.5
-United States,1814,48.1
-United States,1816,42.3
-United States,1818,33.2
-United States,1820,41.8
-United States,1822,42
-United States,1824,42.1
-United States,1826,46.5
-United States,1828,57.1
-United States,1830,54.4
-United States,1832,59.1
-United States,1834,62.1
-United States,1836,57.5
-United States,1838,69.9
-United States,1840,77.5
-United States,1842,62.1
-United States,1844,74.5
-United States,1846,58.9
-United States,1848,67.3
-United States,1850,56.6
-United States,1852,63.2
-United States,1854,60.2
-United States,1856,70.9
-United States,1858,62.1
-United States,1860,72.1
-United States,1862,56.3
-United States,1864,66.2
-United States,1866,62.4
-United States,1868,71.8
-United States,1870,66.8
-United States,1872,72.2
-United States,1874,65
-United States,1876,82.9
-United States,1878,65.3
-United States,1880,79.3
-United States,1882,66.1
-United States,1884,78.8
-United States,1886,64
-United States,1888,79.9
-United States,1890,64.9
-United States,1892,76.25
-United States,1894,67.4
-United States,1896,78.1
-United States,1898,60
-United States,1964,95.83
-United States,1970,70.32
-United States,1972,87.09
-United States,1974,58.15
-United States,1976,88.68
-United States,1978,57.04
-United States,1980,88.6
-United States,1982,61.1
-United States,1984,87.75
-United States,1986,54.89
-United States,1988,86.2
-United States,1990,56.03
-United States,1992,86.96
-United States,1994,57.64
-United States,1996,82.26
-United States,1998,51.55
-United States,2000,85.55
-United States,2002,45.31
-United States,2004,88.5
-United States,2006,47.52
-United States,2008,70.33
-United States,2010,48.59
-United States,2012,66.66
-United States,2014,42.5
-United States,2016,65.44
-United States,2018,49.3
-Portugal,1861,64.5
-Portugal,1864,68.1
-Portugal,1865,72
-Portugal,1868,72.6
-Portugal,1869,60.3
-Portugal,1870,61.9
-Portugal,1871,64.5
-Portugal,1874,56.4
-Portugal,1878,63.5
-Portugal,1879,64.9
-Portugal,1881,58.4
-Portugal,1906,72.5
-Portugal,1908,68.7
-Portugal,1915,59.9
-Portugal,1918,57
-Portugal,1922,69.1
-Portugal,1925,71
-Portugal,1934,80.2
-Portugal,1938,83.7
-Portugal,1942,87.1
-Portugal,1945,53.8
-Portugal,1949,75.8
-Portugal,1953,68.2
-Portugal,1957,70.4
-Portugal,1961,74
-Portugal,1965,73.6
-Portugal,1969,62.5
-Portugal,1973,66.4
-Portugal,1975,91.73
-Portugal,1976,83.27
-Portugal,1979,87.54
-Portugal,1980,85.45
-Portugal,1983,78.64
-Portugal,1985,75.73
-Portugal,1986,78.15
-Portugal,1987,72.64
-Portugal,1991,68.18
-Portugal,1995,66.3
-Portugal,1996,66.29
-Portugal,1999,61.05
-Portugal,2001,50.03
-Portugal,2002,62.84
-Portugal,2005,64.26
-Portugal,2006,61.53
-Portugal,2009,59.68
-Portugal,2011,58.03
-Portugal,2015,55.84
-Portugal,2016,48.7
-Portugal,2019,48.57
-El Salvador,1964,27.59
-El Salvador,1966,32.38
-El Salvador,1967,38.84
-El Salvador,1968,36.64
-El Salvador,1970,41.65
-El Salvador,1972,72.02
-El Salvador,1978,47.18
-El Salvador,1988,67.74
-El Salvador,1989,54.7
-El Salvador,1991,52.89
-El Salvador,1994,55.11
-El Salvador,1997,89.18
-El Salvador,1999,38.57
-El Salvador,2000,38.07
-El Salvador,2003,28.42
-El Salvador,2004,66.16
-El Salvador,2006,52.56
-El Salvador,2009,61.91
-El Salvador,2012,53
-El Salvador,2014,60.17
-El Salvador,2015,45.91
-El Salvador,2018,47.96
-El Salvador,2019,51.88
-Bangladesh,1973,54.91
-Bangladesh,1978,54.3
-Bangladesh,1979,51.29
-Bangladesh,1981,55.65
-Bangladesh,1986,60.31
-Bangladesh,1988,51.81
-Bangladesh,1991,55.45
-Bangladesh,1996,75.6
-Bangladesh,2001,74.97
-Bangladesh,2008,85.26
-Bangladesh,2014,51.37
-Bangladesh,2018,80
-Bolivia,1956,85.04
-Bolivia,1960,75.98
-Bolivia,1964,91.91
-Bolivia,1966,86.57
-Bolivia,1980,74.32
-Bolivia,1985,81.97
-Bolivia,1989,73.16
-Bolivia,1993,72.16
-Bolivia,1997,71.36
-Bolivia,2002,72.06
-Bolivia,2005,84.51
-Bolivia,2009,94.55
-Bolivia,2014,87.45
-Bolivia,2019,88.47
-Haiti,1990,50.16
-Haiti,1995,31.09
-Haiti,1997,27.8
-Haiti,2000,78.29
-Haiti,2006,59.26
-Haiti,2010,23
-Haiti,2011,22.36
-Haiti,2015,28.8
-Haiti,2016,18.11
-Honduras,1948,85.97
-Honduras,1954,61.41
-Honduras,1957,63.49
-Honduras,1965,75.3
-Honduras,1971,67.54
-Honduras,1980,81.35
-Honduras,1981,77.95
-Honduras,1985,84.02
-Honduras,1989,76.03
-Honduras,1993,64.97
-Honduras,1997,72.09
-Honduras,2001,66.34
-Honduras,2005,55.08
-Honduras,2009,49.88
-Honduras,2013,61.16
-Honduras,2017,59.49
-Mali,1957,34
-Mali,1959,32.3
-Mali,1964,88.9
-Mali,1979,97
-Mali,1982,96
-Mali,1988,97.8
-Mali,1992,23.6
-Mali,1997,28.41
-Mali,2002,38.57
-Mali,2007,36.24
-Mali,2013,45.78
-Mali,2018,42.7
-Pakistan,1977,55.02
-Pakistan,1985,52.93
-Pakistan,1988,43.07
-Pakistan,1990,45.46
-Pakistan,1993,40.28
-Pakistan,1997,35.17
-Pakistan,2002,41.8
-Pakistan,2008,44.55
-Pakistan,2013,53.62
-Pakistan,2018,50.14
-Peru,1931,82.5
-Peru,1945,58.76
-Peru,1950,70.96
-Peru,1956,84.04
-Peru,1962,88.6
-Peru,1963,94.38
-Peru,1980,81.83
-Peru,1985,91.15
-Peru,1990,79.66
-Peru,1995,72.96
-Peru,2000,82.58
-Peru,2001,81.37
-Peru,2006,88.66
-Peru,2011,83.72
-Peru,2016,81.88
-Senegal,1957,54.6
-Senegal,1959,74.5
-Senegal,1963,86.2
-Senegal,1968,94.6
-Senegal,1973,97
-Senegal,1983,58.2
-Senegal,1988,58.7
-Senegal,1993,51.5
-Senegal,1998,39.28
-Senegal,2000,61
-Senegal,2001,67.26
-Senegal,2007,70.62
-Senegal,2012,55
-Senegal,2017,53.66
-Senegal,2019,66.27
-Sudan,1968,59.86
-Sudan,1971,92.9
-Sudan,1977,98.3
-Sudan,1983,72
-Sudan,1996,72.2
-Sudan,2010,72
-Sudan,2015,46.4
-Vietnam,1960,99.9
-Vietnam,1964,97.8
-Vietnam,1971,98.9
-Vietnam,1975,98.26
-Vietnam,1976,98.8
-Vietnam,1981,98
-Vietnam,1987,98.8
-Vietnam,1992,99.1
-Vietnam,1997,99.6
-Vietnam,2002,99
-Vietnam,2007,99.64
-Vietnam,2011,99.51
-Vietnam,2016,99.26
-Republic of Vietnam,1961,89
-Republic of Vietnam,1966,80.8
-Republic of Vietnam,1967,83.2
-Republic of Vietnam,1971,89.9
-Afghanistan,1969,50
-Afghanistan,2004,83.66
-Afghanistan,2005,49.37
-Afghanistan,2009,38.8
-Afghanistan,2010,45.83
-Afghanistan,2014,38.9
-Afghanistan,2018,45.23
-Afghanistan,2019,19
-Argentina,1912,68.5
-Argentina,1914,55.7
-Argentina,1916,62.7
-Argentina,1918,56.4
-Argentina,1920,53
-Argentina,1922,55.2
-Argentina,1924,44.2
-Argentina,1926,49.2
-Argentina,1928,80.9
-Argentina,1930,75.1
-Argentina,1931,73.4
-Argentina,1934,65.9
-Argentina,1936,70.9
-Argentina,1948,74.2
-Argentina,1954,86
-Argentina,1960,87.07
-Argentina,1962,85.73
-Argentina,1965,83.46
-Argentina,1973,85.55
-Argentina,1983,83.25
-Argentina,1985,82.19
-Argentina,1987,83.61
-Argentina,1989,85.02
-Argentina,1991,89.71
-Argentina,1993,79.7
-Argentina,1995,80.96
-Argentina,1997,78.22
-Argentina,1999,78.61
-Argentina,2001,75.21
-Argentina,2003,76.9
-Argentina,2005,70.94
-Argentina,2007,71.81
-Argentina,2009,72.39
-Argentina,2011,79.39
-Argentina,2013,77.17
-Argentina,2015,81.07
-Argentina,2017,76.74
-Argentina,2019,79
-Ethiopia,1987,90.5
-Ethiopia,1994,87.5
-Ethiopia,1995,94.05
-Ethiopia,2000,90
-Ethiopia,2005,82.6
-Ethiopia,2010,93.44
-Ethiopia,2015,93.22
-India,1951,61.17
-India,1957,62.23
-India,1962,55.42
-India,1967,61.04
-India,1971,55.25
-India,1977,60.49
-India,1980,56.92
-India,1984,63.56
-India,1989,61.98
-India,1991,56.73
-India,1996,57.94
-India,1998,61.97
-India,1999,59.99
-India,2004,58.07
-India,2009,58.17
-India,2014,66.4
-India,2019,67.47
-Kenya,1992,66.81
-Kenya,1997,83.86
-Kenya,2002,57.18
-Kenya,2007,69.09
-Kenya,2013,85.91
-Kenya,2017,79.49
-North Korea,1948,99.91
-North Korea,1957,99.99
-North Korea,1962,100
-North Korea,1967,100
-North Korea,1972,100
-North Korea,1977,100
-North Korea,1982,100
-North Korea,1986,100
-North Korea,1990,99.78
-North Korea,1998,99.85
-North Korea,2003,99.9
-North Korea,2009,99.98
-North Korea,2014,99.97
-North Korea,2019,99.99
-South Korea,1948,95.5
-South Korea,1950,91.9
-South Korea,1952,88.1
-South Korea,1954,91.1
-South Korea,1956,94.4
-South Korea,1958,87.8
-South Korea,1960,97
-South Korea,1963,85
-South Korea,1967,76.12
-South Korea,1971,79.8
-South Korea,1973,71.36
-South Korea,1978,77.09
-South Korea,1981,78.42
-South Korea,1985,84.57
-South Korea,1987,35.9
-South Korea,1988,75.73
-South Korea,1992,71.86
-South Korea,1996,63.91
-South Korea,1997,80.65
-South Korea,2000,57.21
-South Korea,2002,70.83
-South Korea,2004,59.98
-South Korea,2007,63.01
-South Korea,2008,46.01
-South Korea,2012,75.84
-South Korea,2016,58.03
-South Korea,2017,77.2
-Kosovo,2004,49.52
-Kosovo,2007,43.23
-Kosovo,2010,45.62
-Kosovo,2014,42.63
-Kosovo,2017,41.3
-Kosovo,2019,43.2
-Lebanon,1943,50.9
-Lebanon,1947,61.5
-Lebanon,1951,54.7
-Lebanon,1953,50
-Lebanon,1957,53.2
-Lebanon,1960,50.7
-Lebanon,1964,53
-Lebanon,1968,49.6
-Lebanon,1972,54.4
-Lebanon,1992,30.35
-Lebanon,1996,43.14
-Lebanon,2000,44.97
-Lebanon,2005,46.47
-Lebanon,2009,53.98
-Lebanon,2018,49.7
-Nigeria,1959,79.52
-Nigeria,1979,35.25
-Nigeria,1983,38.9
-Nigeria,1992,25
-Nigeria,1999,52.26
-Nigeria,2003,69.08
-Nigeria,2007,57.49
-Nigeria,2011,53.68
-Nigeria,2015,43.7
-Nigeria,2019,34.75
-Philippines,1907,93.6
-Philippines,1909,92.4
-Philippines,1969,88.6
-Philippines,1978,85.52
-Philippines,1987,90
-Philippines,1992,70.56
-Philippines,1995,70.68
-Philippines,1998,81.32
-Philippines,2001,81.08
-Philippines,2004,76.97
-Philippines,2007,63.68
-Philippines,2010,74.98
-Philippines,2013,77.31
-Philippines,2016,81.95
-Philippines,2019,74.31
-Tanzania,1965,82.7
-Tanzania,1970,70.1
-Tanzania,1975,81.7
-Tanzania,1980,85.9
-Tanzania,1985,75
-Tanzania,1990,74.4
-Tanzania,1995,76.67
-Tanzania,2000,84.43
-Tanzania,2005,72.23
-Tanzania,2010,42.84
-Tanzania,2015,67.3
-Taiwan,1969,57.7
-Taiwan,1972,68.35
-Taiwan,1975,75.97
-Taiwan,1980,66.4
-Taiwan,1983,63.2
-Taiwan,1986,65.4
-Taiwan,1989,75.5
-Taiwan,1991,68.32
-Taiwan,1992,72.02
-Taiwan,1995,67.65
-Taiwan,1996,76.04
-Taiwan,1998,68.09
-Taiwan,2000,82.69
-Taiwan,2001,66.16
-Taiwan,2004,80.28
-Taiwan,2005,23.36
-Taiwan,2008,76.66
-Taiwan,2012,74.38
-Taiwan,2016,66.27
-Thailand,1946,32.52
-Thailand,1948,29.5
-Thailand,1952,38.95
-Thailand,1957,57.5
-Thailand,1969,49.16
-Thailand,1975,47
-Thailand,1976,43.69
-Thailand,1979,43.9
-Thailand,1983,50.76
-Thailand,1986,61.4
-Thailand,1988,63.56
-Thailand,1992,61.6
-Thailand,1995,62.04
-Thailand,1996,62.39
-Thailand,2001,69.95
-Thailand,2005,75.13
-Thailand,2007,78.51
-Thailand,2011,75.03
-Thailand,2014,46.79
-Thailand,2019,74.69
-Uganda,1958,86.2
-Uganda,1962,67.76
-Uganda,1980,85.3
-Uganda,1996,72.6
-Uganda,2001,70.31
-Uganda,2006,69.19
-Uganda,2011,59.29
-Uganda,2016,67.61
-Venezuela,1946,86.6
-Venezuela,1958,93.42
-Venezuela,1963,92.21
-Venezuela,1968,96.73
-Venezuela,1973,96.52
-Venezuela,1978,87.55
-Venezuela,1983,87.75
-Venezuela,1988,81.92
-Venezuela,1993,60.16
-Venezuela,1998,63.45
-Venezuela,1999,46.2
-Venezuela,2000,56.31
-Venezuela,2005,25.26
-Venezuela,2006,74.69
-Venezuela,2010,66.42
-Venezuela,2012,80.28
-Venezuela,2013,79.64
-Venezuela,2015,73.76
-Venezuela,2018,45.74
-Benin,1957,42.3
-Benin,1960,71
-Benin,1968,72.6
-Benin,1970,56.7
-Benin,1979,80.6
-Benin,1984,93.1
-Benin,1989,86
-Benin,1991,64.07
-Benin,1995,75.8
-Benin,1996,87.8
-Benin,1999,70.11
-Benin,2001,82
-Benin,2003,55.9
-Benin,2006,81.7
-Benin,2007,58.69
-Benin,2011,84.82
-Benin,2015,65.91
-Benin,2016,66.13
-Benin,2019,22.99
-Bhutan,2008,79.45
-Bhutan,2013,66.23
-Bhutan,2018,71.46
-Burkina Faso,1952,57.2
-Burkina Faso,1957,51.8
-Burkina Faso,1959,46.9
-Burkina Faso,1965,98.4
-Burkina Faso,1970,48.29
-Burkina Faso,1978,43.6
-Burkina Faso,1991,35.25
-Burkina Faso,1992,33.8
-Burkina Faso,1997,44.53
-Burkina Faso,1998,56.08
-Burkina Faso,2002,64.14
-Burkina Faso,2005,57.66
-Burkina Faso,2007,56.43
-Burkina Faso,2010,54.82
-Burkina Faso,2012,75.96
-Burkina Faso,2015,60
-Cambodia,1972,57.6
-Cambodia,1976,98
-Cambodia,1981,89.6
-Cambodia,1993,86.78
-Cambodia,1998,93.74
-Cambodia,2003,83.22
-Cambodia,2008,75.21
-Cambodia,2013,68.49
-Cambodia,2018,83.02
-Indonesia,1971,94.02
-Indonesia,1977,90.57
-Indonesia,1982,91.23
-Indonesia,1987,91.3
-Indonesia,1992,90.91
-Indonesia,1997,88.93
-Indonesia,1999,93.3
-Indonesia,2004,84.09
-Indonesia,2009,71.91
-Indonesia,2014,75.11
-Indonesia,2019,81.93
-Mozambique,1973,92.1
-Mozambique,1994,88.03
-Mozambique,1999,69.51
-Mozambique,2004,36.42
-Mozambique,2009,44.63
-Mozambique,2014,48.84
-Mozambique,2019,51.41
-Nepal,1959,42.19
-Nepal,1981,52.3
-Nepal,1986,60.31
-Nepal,1991,88.13
-Nepal,1994,86.74
-Nepal,1999,65.79
-Nepal,2008,63.29
-Nepal,2013,78.34
-Nepal,2017,68.67
-Nicaragua,1963,79.13
-Nicaragua,1972,73.04
-Nicaragua,1974,69.43
-Nicaragua,1990,86.23
-Nicaragua,1996,76.39
-Nicaragua,2001,74.91
-Nicaragua,2006,61.23
-Nicaragua,2011,79.09
-Nicaragua,2016,65.6
-Niger,1993,35.22
-Niger,1995,34.97
-Niger,1996,64.1
-Niger,1999,39.4
-Niger,2004,44.98
-Niger,2009,51.27
-Niger,2011,49.22
-Niger,2016,66.27
-Zambia,1962,90.24
-Zambia,1964,94.8
-Zambia,1968,82.47
-Zambia,1973,39
-Zambia,1978,66.7
-Zambia,1991,44.44
-Zambia,1996,55.52
-Zambia,2001,67.81
-Zambia,2006,70.77
-Zambia,2008,45.43
-Zambia,2011,53.65
-Zambia,2015,32.36
-Zambia,2016,56.45
-Zimbabwe,1979,63.89
-Zimbabwe,1995,30.81
-Zimbabwe,1996,32.3
-Zimbabwe,2000,48.33
-Zimbabwe,2002,54.33
-Zimbabwe,2005,47.66
-Zimbabwe,2008,42.8
-Zimbabwe,2013,54.38
-Zimbabwe,2018,85.16
-Guinea,1957,60.3
-Guinea,1961,99.4
-Guinea,1968,99.7
-Guinea,1974,99.7
-Guinea,1980,95.69
-Guinea,1982,98.8
-Guinea,1993,78.46
-Guinea,1995,61.86
-Guinea,1998,69.83
-Guinea,2002,71.98
-Guinea,2003,82.76
-Guinea,2010,67.87
-Guinea,2013,63.53
-Guinea,2015,68.36
-Cote d'Ivoire,1959,94.7
-Cote d'Ivoire,1960,98.8
-Cote d'Ivoire,1965,99.6
-Cote d'Ivoire,1970,99.2
-Cote d'Ivoire,1975,99.8
-Cote d'Ivoire,1980,82.3
-Cote d'Ivoire,1985,45.7
-Cote d'Ivoire,1990,70
-Cote d'Ivoire,1995,52.2
-Cote d'Ivoire,2000,37.42
-Cote d'Ivoire,2001,31.54
-Cote d'Ivoire,2010,83.73
-Cote d'Ivoire,2011,36.56
-Cote d'Ivoire,2015,52.86
-Cote d'Ivoire,2016,34.1
-Mauritania,1957,71.3
-Mauritania,1959,90.3
-Mauritania,1961,93.6
-Mauritania,1965,92.8
-Mauritania,1966,96.2
-Mauritania,1971,96.3
-Mauritania,1975,87.4
-Mauritania,1976,97.9
-Mauritania,1992,46.55
-Mauritania,1996,52.06
-Mauritania,1997,74.73
-Mauritania,2001,54.45
-Mauritania,2003,60.86
-Mauritania,2006,73.42
-Mauritania,2007,70.16
-Mauritania,2009,61.51
-Mauritania,2013,78.22
-Mauritania,2014,56.46
-Mauritania,2018,72.46
-Mauritania,2019,62.66
-Canada,1867,73.1
-Canada,1872,70.3
-Canada,1874,69.3
-Canada,1878,69.1
-Canada,1882,70.3
-Canada,1887,70.1
-Canada,1891,64.4
-Canada,1896,72.9
-Canada,1900,77.4
-Canada,1904,71.6
-Canada,1908,70.3
-Canada,1921,67.7
-Canada,1930,73.5
-Canada,1940,69.9
-Canada,1945,76.31
-Canada,1949,74.79
-Canada,1953,67.87
-Canada,1957,75.05
-Canada,1958,80.57
-Canada,1962,80.13
-Canada,1963,80.3
-Canada,1965,75.88
-Canada,1968,75.67
-Canada,1972,77.2
-Canada,1974,71
-Canada,1979,75.69
-Canada,1980,69.32
-Canada,1984,75.34
-Canada,1988,75.29
-Canada,1993,69.64
-Canada,1997,67
-Canada,2000,61.18
-Canada,2004,60.91
-Canada,2006,64.67
-Canada,2008,59.52
-Canada,2011,61.11
-Canada,2015,68.28
-Canada,2019,67.65
-Australia,1856,48.51
-Australia,1858,43.09
-Australia,1859,52.54
-Australia,1860,42.91
-Australia,1864,51.4
-Australia,1869,53.7
-Australia,1872,48.44
-Australia,1874,47.21
-Australia,1877,48.31
-Australia,1880,61.94
-Australia,1882,56.69
-Australia,1885,61.1
-Australia,1887,57.84
-Australia,1889,59.93
-Australia,1891,64.4
-Australia,1894,78.56
-Australia,1895,59.92
-Australia,1898,58.61
-Australia,1901,60
-Australia,1903,50.27
-Australia,1906,51.48
-Australia,1910,62.8
-Australia,1913,73.49
-Australia,1914,73.53
-Australia,1917,78.3
-Australia,1919,71.59
-Australia,1922,59.36
-Australia,1925,91.39
-Australia,1928,93.64
-Australia,1929,94.85
-Australia,1931,95.04
-Australia,1934,95.17
-Australia,1937,96.13
-Australia,1940,94.82
-Australia,1943,96.32
-Australia,1946,93.95
-Australia,1949,95.94
-Australia,1951,95.97
-Australia,1954,96.05
-Australia,1955,95
-Australia,1958,95.44
-Australia,1961,95.22
-Australia,1963,95.71
-Australia,1966,95.13
-Australia,1969,94.97
-Australia,1972,95.38
-Australia,1974,95.4
-Australia,1975,95.39
-Australia,1977,95.08
-Australia,1980,94.35
-Australia,1983,94.64
-Australia,1984,94.19
-Australia,1987,93.84
-Australia,1990,95.31
-Australia,1993,95.75
-Australia,1996,95.77
-Australia,1998,94.99
-Australia,2001,94.85
-Australia,2004,94.32
-Australia,2007,94.76
-Australia,2010,93.22
-Australia,2013,93.23
-Australia,2016,91.01
-Australia,2019,91.89
-Botswana,1965,74.5
-Botswana,1969,54.73
-Botswana,1974,31.22
-Botswana,1979,55.24
-Botswana,1984,77.58
-Botswana,1989,68.24
-Botswana,1994,76.55
-Botswana,1999,77.11
-Botswana,2004,76.2
-Botswana,2009,76.71
-Botswana,2014,84.75
-Botswana,2019,83.14
-Burundi,1961,75.39
-Burundi,1981,94
-Burundi,1982,95
-Burundi,1984,98.3
-Burundi,1993,97.31
-Burundi,2005,77.23
-Burundi,2010,76.98
-Burundi,2015,74.32
-Cape Verde,1975,86.7
-Cape Verde,1980,75
-Cape Verde,1985,68.9
-Cape Verde,1991,75.3
-Cape Verde,1995,76.52
-Cape Verde,1996,43.5
-Cape Verde,2001,58.94
-Cape Verde,2006,54.18
-Cape Verde,2011,76.01
-Cape Verde,2016,65.93
-Central African Republic,1957,58.7
-Central African Republic,1959,56.71
-Central African Republic,1964,93.81
-Central African Republic,1981,76.66
-Central African Republic,1987,50
-Central African Republic,1992,68.5
-Central African Republic,1993,67.93
-Central African Republic,1998,58.45
-Central African Republic,1999,59.14
-Central African Republic,2005,72.7
-Central African Republic,2011,61.2
-Central African Republic,2015,62.54
-Central African Republic,2016,59.01
-Chile,1873,53
-Chile,1876,75.7
-Chile,1879,70
-Chile,1931,73.5
-Chile,1932,74.4
-Chile,1938,88.4
-Chile,1942,80.2
-Chile,1945,65.3
-Chile,1946,75.93
-Chile,1949,79.46
-Chile,1952,86.61
-Chile,1953,70.83
-Chile,1957,68.39
-Chile,1958,83.5
-Chile,1961,74.54
-Chile,1964,86.81
-Chile,1965,80.57
-Chile,1969,74.15
-Chile,1970,83.47
-Chile,1973,81.75
-Chile,1989,94.72
-Chile,1993,90.47
-Chile,1997,87.32
-Chile,1999,90.6
-Chile,2000,90.63
-Chile,2001,87.11
-Chile,2005,83.85
-Chile,2006,87.12
-Chile,2009,87.67
-Chile,2010,86.94
-Chile,2013,49.25
-Chile,2017,46.7
-Costa Rica,1913,78
-Costa Rica,1917,69.2
-Costa Rica,1919,57.8
-Costa Rica,1923,70.5
-Costa Rica,1928,62.5
-Costa Rica,1932,64.2
-Costa Rica,1936,68.8
-Costa Rica,1940,80.8
-Costa Rica,1944,43.2
-Costa Rica,1948,60.02
-Costa Rica,1949,49.2
-Costa Rica,1953,67.25
-Costa Rica,1958,64.7
-Costa Rica,1962,80.87
-Costa Rica,1966,81.4
-Costa Rica,1970,83.34
-Costa Rica,1974,79.92
-Costa Rica,1978,81.27
-Costa Rica,1982,78.63
-Costa Rica,1986,84.85
-Costa Rica,1990,81.81
-Costa Rica,1994,81.11
-Costa Rica,1998,69.99
-Costa Rica,2002,68.84
-Costa Rica,2006,65.21
-Costa Rica,2010,69.12
-Costa Rica,2014,68.38
-Costa Rica,2018,66.45
-Timor,1973,87.4
-Timor,2001,86.03
-Timor,2002,97.26
-Timor,2007,81
-Timor,2012,78.1
-Timor,2017,76.74
-Timor,2018,80.98
-Ecuador,1947,56.69
-Ecuador,1948,61.84
-Ecuador,1950,64.11
-Ecuador,1952,64.91
-Ecuador,1954,81.62
-Ecuador,1956,73.41
-Ecuador,1960,76.01
-Ecuador,1968,77.49
-Ecuador,1978,72.83
-Ecuador,1979,80.49
-Ecuador,1984,78.13
-Ecuador,1986,74.02
-Ecuador,1988,77.7
-Ecuador,1990,69.42
-Ecuador,1992,73.1
-Ecuador,1994,65.49
-Ecuador,1996,71.71
-Ecuador,1998,70.13
-Ecuador,2002,63.51
-Ecuador,2006,76.01
-Ecuador,2009,75.72
-Ecuador,2013,80.84
-Ecuador,2017,81.74
-France,1792,10
-France,1831,75.1
-France,1834,75.6
-France,1837,76.3
-France,1839,81.9
-France,1842,78.9
-France,1848,83.5
-France,1849,68.1
-France,1852,63.3
-France,1857,64.5
-France,1863,72.9
-France,1869,78.1
-France,1876,74
-France,1877,80.5
-France,1881,68.6
-France,1885,77.6
-France,1889,76.6
-France,1893,71.1
-France,1898,76.1
-France,1945,79.83
-France,1946,81.85
-France,1951,80.19
-France,1956,82.69
-France,1958,77.18
-France,1962,68.69
-France,1965,84.2
-France,1967,81.12
-France,1968,79.85
-France,1969,77.08
-France,1973,81.31
-France,1974,87.33
-France,1978,71.63
-France,1981,83.38
-France,1986,78.48
-France,1988,84.06
-France,1993,68.93
-France,1995,79.66
-France,1997,67.96
-France,2002,79.71
-France,2007,83.97
-France,2012,80.35
-France,2017,78.2
-Germany,1867,65
-Germany,1871,54.2
-Germany,1874,61.2
-Germany,1877,60.6
-Germany,1878,63.3
-Germany,1881,56.3
-Germany,1884,60.5
-Germany,1887,77.5
-Germany,1890,71.5
-Germany,1893,72.4
-Germany,1898,68.1
-Germany,1903,76.1
-Germany,1907,84.7
-Germany,1912,84.9
-Germany,1919,83.02
-Germany,1920,79.2
-Germany,1924,78.8
-Germany,1925,77
-Germany,1928,75.6
-Germany,1930,82
-Germany,1932,85.6
-Germany,1933,95.3
-Germany,1936,99
-Germany,1938,99.59
-Germany,1949,78.49
-Germany,1953,85.99
-Germany,1957,87.77
-Germany,1961,87.74
-Germany,1965,86.77
-Germany,1969,86.67
-Germany,1972,91.11
-Germany,1976,90.75
-Germany,1980,88.57
-Germany,1983,89.09
-Germany,1987,84.33
-Germany,1990,77.76
-Germany,1994,78.97
-Germany,1998,82.2
-Germany,2002,79.08
-Germany,2005,77.65
-Germany,2009,70.78
-Germany,2013,71.53
-Germany,2017,76.15
-Guatemala,1944,86.25
-Guatemala,1950,71.59
-Guatemala,1954,69.46
-Guatemala,1959,44.64
-Guatemala,1961,44.48
-Guatemala,1966,56.27
-Guatemala,1970,53.82
-Guatemala,1974,46.41
-Guatemala,1978,36.52
-Guatemala,1982,45.83
-Guatemala,1984,78
-Guatemala,1985,60.21
-Guatemala,1990,59.44
-Guatemala,1991,45.26
-Guatemala,1994,21.01
-Guatemala,1995,36.91
-Guatemala,1996,36.9
-Guatemala,1999,40.39
-Guatemala,2003,54.5
-Guatemala,2007,60.46
-Guatemala,2011,69.38
-Guatemala,2015,71.33
-Guatemala,2019,62.16
-Iran,1963,91.7
-Iran,1967,35
-Iran,1971,35
-Iran,1975,48.6
-Iran,1980,67.4
-Iran,1984,65.1
-Iran,1989,60
-Iran,1993,63
-Iran,1997,80
-Iran,2001,72.76
-Iran,2004,50.27
-Iran,2005,62.66
-Iran,2008,49.47
-Iran,2009,84.77
-Iran,2012,64.2
-Iran,2013,72.71
-Iran,2016,60.09
-Iran,2017,73.33
-Iraq,1980,80
-Iraq,1995,99.47
-Iraq,1996,93.5
-Iraq,2002,100
-Iraq,2005,79.63
-Iraq,2010,62.4
-Iraq,2014,60.53
-Iraq,2018,44.85
-Ireland,1922,62.5
-Ireland,1923,61.3
-Ireland,1927,68.1
-Ireland,1932,76.5
-Ireland,1933,81.3
-Ireland,1937,76.2
-Ireland,1938,76.7
-Ireland,1943,74.2
-Ireland,1944,69.2
-Ireland,1945,60.24
-Ireland,1948,74.25
-Ireland,1951,75.27
-Ireland,1954,76.45
-Ireland,1957,71.25
-Ireland,1959,58.4
-Ireland,1961,70.61
-Ireland,1965,75.14
-Ireland,1966,65.35
-Ireland,1969,76.93
-Ireland,1973,76.61
-Ireland,1977,76.31
-Ireland,1981,76.22
-Ireland,1982,73.8
-Ireland,1987,73.33
-Ireland,1989,68.51
-Ireland,1990,64.1
-Ireland,1992,68.49
-Ireland,1997,65.92
-Ireland,2002,62.57
-Ireland,2007,67.03
-Ireland,2011,70.05
-Ireland,2016,65.05
-Ireland,2018,43.87
-Italy,1861,57.2
-Italy,1865,53.9
-Italy,1867,54.8
-Italy,1870,45.5
-Italy,1874,55.7
-Italy,1876,59.2
-Italy,1880,59.4
-Italy,1882,60.7
-Italy,1886,58.5
-Italy,1890,53.7
-Italy,1892,55.9
-Italy,1895,59.3
-Italy,1897,58.5
-Italy,1900,58.3
-Italy,1904,62.7
-Italy,1909,65
-Italy,1913,60.4
-Italy,1919,56.6
-Italy,1921,58.4
-Italy,1924,63.8
-Italy,1929,89.86
-Italy,1934,95.59
-Italy,1946,89.08
-Italy,1948,92.23
-Italy,1953,93.87
-Italy,1958,93.72
-Italy,1963,92.88
-Italy,1968,92.79
-Italy,1972,93.18
-Italy,1976,93.37
-Italy,1979,90.35
-Italy,1983,89.02
-Italy,1987,88.86
-Italy,1992,87.44
-Italy,1994,86.14
-Italy,1996,82.91
-Italy,2001,81.44
-Italy,2006,83.62
-Italy,2008,80.54
-Italy,2013,75.19
-Italy,2018,72.93
-Jordan,1967,70
-Jordan,1989,53.06
-Jordan,1993,54.77
-Jordan,1997,47.45
-Jordan,2003,57.75
-Jordan,2007,54
-Jordan,2010,53
-Jordan,2013,56.45
-Jordan,2016,36.1
-Latvia,1920,89.1
-Latvia,1922,83.1
-Latvia,1925,74.9
-Latvia,1928,79.3
-Latvia,1931,80
-Latvia,1990,81.2
-Latvia,1993,89.88
-Latvia,1995,71.9
-Latvia,1998,70.9
-Latvia,2002,71.17
-Latvia,2006,60.98
-Latvia,2010,64.72
-Latvia,2011,59.49
-Latvia,2014,58.8
-Latvia,2018,54.58
-Lesotho,1965,62.32
-Lesotho,1970,81.9
-Lesotho,1993,72.28
-Lesotho,1998,71.83
-Lesotho,2002,66.69
-Lesotho,2007,49
-Lesotho,2012,50.04
-Lesotho,2015,46.61
-Lesotho,2017,46.37
-Liberia,1901,46.61
-Liberia,1975,80
-Liberia,1997,89
-Liberia,2005,76.49
-Liberia,2011,71.64
-Liberia,2017,75.19
-Malawi,1961,75.71
-Malawi,1992,80
-Malawi,1994,80.54
-Malawi,1999,93.76
-Malawi,2004,63.59
-Malawi,2009,78.28
-Malawi,2014,70.75
-Malawi,2019,74.44
-Maldives,1968,99
-Maldives,1978,87.12
-Maldives,1989,68.68
-Maldives,1994,77.4
-Maldives,1998,76.67
-Maldives,1999,77.4
-Maldives,2005,71.29
-Maldives,2008,86.58
-Maldives,2009,78.87
-Maldives,2013,91.43
-Maldives,2014,77.93
-Maldives,2018,89.22
-Maldives,2019,75.52
-Mongolia,1951,99.9
-Mongolia,1954,100
-Mongolia,1957,100
-Mongolia,1960,100
-Mongolia,1963,100
-Mongolia,1966,100
-Mongolia,1969,100
-Mongolia,1973,100
-Mongolia,1977,100
-Mongolia,1981,100
-Mongolia,1986,100
-Mongolia,1990,98
-Mongolia,1992,95.6
-Mongolia,1993,59.9
-Mongolia,1996,88.39
-Mongolia,1997,85.1
-Mongolia,2000,82.42
-Mongolia,2001,82.9
-Mongolia,2004,81.84
-Mongolia,2005,74.9
-Mongolia,2008,74.31
-Mongolia,2009,73.48
-Mongolia,2012,65.24
-Mongolia,2013,66.79
-Mongolia,2016,73.58
-Mongolia,2017,68.63
-Morocco,1963,71.8
-Morocco,1970,85.34
-Morocco,1977,82.36
-Morocco,1984,67.43
-Morocco,1993,62.75
-Morocco,1997,58.3
-Morocco,2002,51.61
-Morocco,2007,37
-Morocco,2011,45.4
-Morocco,2016,43
-Netherlands,1848,80.4
-Netherlands,1850,67.6
-Netherlands,1852,48.3
-Netherlands,1853,71
-Netherlands,1854,50.7
-Netherlands,1856,48.7
-Netherlands,1858,41.9
-Netherlands,1860,41.1
-Netherlands,1862,42.2
-Netherlands,1864,52.4
-Netherlands,1866,73.9
-Netherlands,1868,65.5
-Netherlands,1869,67.4
-Netherlands,1871,60.2
-Netherlands,1873,61.1
-Netherlands,1875,66.3
-Netherlands,1877,56.6
-Netherlands,1879,57.5
-Netherlands,1881,58.2
-Netherlands,1883,62.1
-Netherlands,1884,69.1
-Netherlands,1886,75.6
-Netherlands,1887,55.1
-Netherlands,1888,81.7
-Netherlands,1891,71.6
-Netherlands,1894,57.2
-Netherlands,1897,78
-Netherlands,1925,91.4
-Netherlands,1929,92.7
-Netherlands,1933,94.5
-Netherlands,1937,94.4
-Netherlands,1946,93.12
-Netherlands,1948,93.67
-Netherlands,1952,94.98
-Netherlands,1956,95.5
-Netherlands,1959,95.57
-Netherlands,1963,95.13
-Netherlands,1967,94.95
-Netherlands,1971,79.08
-Netherlands,1972,83.5
-Netherlands,1977,88
-Netherlands,1981,87.03
-Netherlands,1982,80.98
-Netherlands,1986,85.76
-Netherlands,1989,80.27
-Netherlands,1994,78.75
-Netherlands,1998,73.23
-Netherlands,2002,79.06
-Netherlands,2003,80.04
-Netherlands,2006,80.35
-Netherlands,2010,75.4
-Netherlands,2012,74.56
-Netherlands,2017,81.93
-Panama,1948,70.86
-Panama,1952,67.52
-Panama,1956,79.34
-Panama,1960,59.26
-Panama,1964,67.1
-Panama,1968,60.1
-Panama,1972,84.39
-Panama,1978,83.64
-Panama,1984,73.45
-Panama,1989,63.99
-Panama,1994,73.7
-Panama,1999,76.17
-Panama,2004,76.9
-Panama,2009,68.57
-Panama,2014,76.76
-Panama,2019,73.01
-Papua New Guinea,1964,72.3
-Papua New Guinea,1968,48.45
-Papua New Guinea,1972,59.85
-Papua New Guinea,1977,60.35
-Papua New Guinea,1982,51.7
-Papua New Guinea,1987,73.54
-Papua New Guinea,1992,81.2
-Papua New Guinea,1997,65.74
-Papua New Guinea,2012,76.89
-Sierra Leone,1957,33.4
-Sierra Leone,1996,68.59
-Sierra Leone,2002,81.43
-Sierra Leone,2007,75.8
-Sierra Leone,2012,91.05
-Sierra Leone,2018,84.2
-Spain,1834,58.9
-Spain,1836,69.8
-Spain,1839,64
-Spain,1840,69.6
-Spain,1841,61.5
-Spain,1844,67.35
-Spain,1846,68
-Spain,1850,67.4
-Spain,1851,69.8
-Spain,1853,69.7
-Spain,1857,63.5
-Spain,1858,69.35
-Spain,1863,61.6
-Spain,1864,61.9
-Spain,1865,53.4
-Spain,1869,58.9
-Spain,1872,46.6
-Spain,1873,40.8
-Spain,1876,60.7
-Spain,1879,68.5
-Spain,1881,71.4
-Spain,1884,72.5
-Spain,1886,69.75
-Spain,1899,66
-Spain,1977,76.96
-Spain,1979,68.13
-Spain,1982,79.83
-Spain,1986,70.37
-Spain,1989,70.01
-Spain,1993,77.05
-Spain,1996,78.06
-Spain,2000,68.71
-Spain,2004,75.66
-Spain,2008,75.32
-Spain,2011,68.94
-Spain,2015,73.2
-Spain,2016,69.84
-Spain,2019,75.75
-Syria,1971,95.8
-Syria,1978,97
-Syria,1985,99.4
-Syria,1990,49.6
-Syria,1991,99.1
-Syria,1994,61.17
-Syria,1998,82.22
-Syria,1999,98.5
-Syria,2000,94.6
-Syria,2003,63.45
-Syria,2007,95.86
-Syria,2012,51.26
-Syria,2014,73.42
-Syria,2016,57.56
-Tunisia,1956,83.6
-Tunisia,1959,91.7
-Tunisia,1964,96.8
-Tunisia,1969,99.8
-Tunisia,1974,96.8
-Tunisia,1979,80.1
-Tunisia,1981,84.54
-Tunisia,1986,82.94
-Tunisia,1989,76.1
-Tunisia,1994,94.9
-Tunisia,1999,89.7
-Tunisia,2004,91.52
-Tunisia,2009,89.45
-Tunisia,2011,92.24
-Tunisia,2014,67.43
-Tunisia,2019,54.01
-Turkey,1931,88
-Turkey,1935,77.8
-Turkey,1950,87.75
-Turkey,1954,88.6
-Turkey,1957,76.6
-Turkey,1961,81.41
-Turkey,1965,71.3
-Turkey,1969,64.35
-Turkey,1973,66.82
-Turkey,1977,70.41
-Turkey,1983,92.27
-Turkey,1987,93.28
-Turkey,1991,83.92
-Turkey,1995,85.2
-Turkey,1999,87.09
-Turkey,2002,79.28
-Turkey,2007,84.25
-Turkey,2011,87.59
-Turkey,2014,74.13
-Turkey,2015,85.18
-Turkey,2018,86.24
-Ukraine,1994,75.81
-Ukraine,1998,70.65
-Ukraine,1999,74.92
-Ukraine,2002,69.24
-Ukraine,2004,81.12
-Ukraine,2006,67.19
-Ukraine,2007,62.03
-Ukraine,2010,69.7
-Ukraine,2012,57.4
-Ukraine,2014,60.82
-Ukraine,2019,63.78
-United Kingdom,1832,70.4
-United Kingdom,1835,65
-United Kingdom,1837,63.6
-United Kingdom,1841,63.4
-United Kingdom,1847,53.4
-United Kingdom,1852,57.9
-United Kingdom,1857,58.9
-United Kingdom,1859,63.7
-United Kingdom,1865,62.5
-United Kingdom,1868,68.5
-United Kingdom,1874,66.4
-United Kingdom,1880,72.2
-United Kingdom,1885,81.2
-United Kingdom,1886,74.2
-United Kingdom,1892,77.4
-United Kingdom,1895,78.4
-United Kingdom,1945,72.55
-United Kingdom,1950,83.61
-United Kingdom,1951,81.89
-United Kingdom,1955,76.78
-United Kingdom,1959,78.71
-United Kingdom,1964,77.17
-United Kingdom,1966,75.96
-United Kingdom,1970,72.15
-United Kingdom,1974,72.93
-United Kingdom,1979,76
-United Kingdom,1983,72.81
-United Kingdom,1987,75.42
-United Kingdom,1992,77.83
-United Kingdom,1997,71.46
-United Kingdom,2001,59.38
-United Kingdom,2005,61.36
-United Kingdom,2010,65.77
-United Kingdom,2015,66.12
-United Kingdom,2017,68.93
-United Kingdom,2019,67.3
-Uruguay,1946,65.34
-Uruguay,1950,70.52
-Uruguay,1954,67.87
-Uruguay,1958,71.3
-Uruguay,1962,76.63
-Uruguay,1966,74.28
-Uruguay,1971,88.61
-Uruguay,1984,85.76
-Uruguay,1989,84.97
-Uruguay,1994,91.44
-Uruguay,1999,91.84
-Uruguay,2004,88.29
-Uruguay,2009,89.91
-Uruguay,2014,90.51
-Uruguay,2019,90.13
-Algeria,1963,88.9
-Algeria,1964,85
-Algeria,1976,99.5
-Algeria,1977,75.84
-Algeria,1979,99
-Algeria,1982,67.34
-Algeria,1984,96.28
-Algeria,1987,87
-Algeria,1988,89.08
-Algeria,1991,59
-Algeria,1995,75.69
-Algeria,1997,65.6
-Algeria,1999,60.91
-Algeria,2002,46.17
-Algeria,2004,58.07
-Algeria,2007,35.51
-Algeria,2009,74.56
-Algeria,2012,43.14
-Algeria,2014,49.42
-Algeria,2017,37.09
-Algeria,2019,39.88
-Angola,1992,90.37
-Angola,2008,87.36
-Angola,2012,62.75
-Angola,2017,71.59
-Armenia,1990,60.2
-Armenia,1995,53.91
-Armenia,1996,60.32
-Armenia,1998,63.48
-Armenia,1999,51.72
-Armenia,2003,68.43
-Armenia,2007,59.99
-Armenia,2008,69.81
-Armenia,2012,62.87
-Armenia,2013,60.18
-Armenia,2017,60.93
-Armenia,2018,48.63
-Azerbaijan,1991,85.7
-Azerbaijan,1993,85.85
-Azerbaijan,1995,86.05
-Azerbaijan,1998,78.94
-Azerbaijan,2000,67.99
-Azerbaijan,2003,71.23
-Azerbaijan,2005,40.47
-Azerbaijan,2008,75.35
-Azerbaijan,2010,49.76
-Azerbaijan,2013,71.63
-Azerbaijan,2015,55.54
-Azerbaijan,2018,74.24
-Belarus,1994,69.9
-Belarus,1995,56.4
-Belarus,2000,61.08
-Belarus,2001,83.86
-Belarus,2004,90.14
-Belarus,2006,92.94
-Belarus,2008,76.74
-Belarus,2010,90.65
-Belarus,2012,74.2
-Belarus,2015,87.22
-Belarus,2016,74.7
-Belarus,2019,77.31
-Cameroon,1964,91.3
-Cameroon,1965,95.1
-Cameroon,1970,99.4
-Cameroon,1973,98.4
-Cameroon,1975,99.4
-Cameroon,1978,98
-Cameroon,1980,99
-Cameroon,1983,99.19
-Cameroon,1984,97.7
-Cameroon,1988,91.4
-Cameroon,1992,71.87
-Cameroon,1997,87
-Cameroon,2002,65.66
-Cameroon,2004,79.52
-Cameroon,2007,62.01
-Cameroon,2011,68.28
-Cameroon,2013,76.79
-Cameroon,2018,53.5
-Chad,1947,61.54
-Chad,1952,53.22
-Chad,1957,45.5
-Chad,1959,46.1
-Chad,1962,87.5
-Chad,1963,95.41
-Chad,1969,95.11
-Chad,1990,56.06
-Chad,1996,74.9
-Chad,1997,50.14
-Chad,2001,61.12
-Chad,2002,52.4
-Chad,2006,53.08
-Chad,2011,56.6
-Chad,2016,65.95
-Democratic Republic of Congo,1960,81.8
-Democratic Republic of Congo,1970,100.3
-Democratic Republic of Congo,1977,92.8
-Democratic Republic of Congo,2006,70.29
-Democratic Republic of Congo,2011,59.05
-Democratic Republic of Congo,2018,45.4
-Congo,1957,74.2
-Congo,1959,79.2
-Congo,1961,90.3
-Congo,1963,91.7
-Congo,1973,83.2
-Congo,1979,90.3
-Congo,1984,93.64
-Congo,1989,89.6
-Congo,1992,61.6
-Congo,2002,74.7
-Congo,2009,66.4
-Congo,2016,67.58
-Congo,2017,42.23
-Djibouti,1957,68
-Djibouti,1963,74.52
-Djibouti,1973,75.6
-Djibouti,1981,85
-Djibouti,1982,92.4
-Djibouti,1987,88.69
-Djibouti,1992,48.45
-Djibouti,1993,50.26
-Djibouti,1997,56.83
-Djibouti,1999,56.28
-Djibouti,2003,48.42
-Djibouti,2005,78.9
-Djibouti,2008,72.61
-Djibouti,2011,75.45
-Djibouti,2013,69.16
-Djibouti,2016,69.26
-Djibouti,2018,61.78
-Dominican Republic,1913,69.16
-Dominican Republic,1947,100
-Dominican Republic,1962,64.7
-Dominican Republic,1966,75.6
-Dominican Republic,1970,63.5
-Dominican Republic,1974,75.68
-Dominican Republic,1978,72.5
-Dominican Republic,1982,73.89
-Dominican Republic,1986,69.49
-Dominican Republic,1990,59.79
-Dominican Republic,1996,76.56
-Dominican Republic,1998,52.97
-Dominican Republic,2000,76.14
-Dominican Republic,2002,51.05
-Dominican Republic,2004,72.84
-Dominican Republic,2006,56.46
-Dominican Republic,2008,71.36
-Dominican Republic,2010,56.43
-Dominican Republic,2012,70.23
-Dominican Republic,2016,69.6
-Gabon,1957,49.5
-Gabon,1961,98.7
-Gabon,1964,85
-Gabon,1967,99
-Gabon,1973,79.8
-Gabon,1979,99.9
-Gabon,1985,95.6
-Gabon,1986,99.95
-Gabon,1993,88.08
-Gabon,1998,53.83
-Gabon,2005,63.47
-Gabon,2009,44.29
-Gabon,2011,34.28
-Gabon,2016,59.46
-Gabon,2018,58.63
-Gambia,1947,57.26
-Gambia,1954,97
-Gambia,1966,70.88
-Gambia,1972,76.07
-Gambia,1977,81.94
-Gambia,1996,80
-Gambia,1997,73.21
-Gambia,2001,89.71
-Gambia,2002,56.38
-Gambia,2006,58.58
-Gambia,2007,41.7
-Gambia,2011,82.55
-Gambia,2012,19.44
-Gambia,2016,59.35
-Gambia,2017,42
-Georgia,1990,69.9
-Georgia,1995,68.87
-Georgia,1999,67.9
-Georgia,2000,75.86
-Georgia,2003,60.06
-Georgia,2004,87.97
-Georgia,2008,56.19
-Georgia,2012,59.76
-Georgia,2013,46.96
-Georgia,2016,51.3
-Georgia,2018,56.15
-Guinea-Bissau,1994,79.83
-Guinea-Bissau,1999,71.89
-Guinea-Bissau,2000,71.9
-Guinea-Bissau,2004,74.34
-Guinea-Bissau,2005,87.63
-Guinea-Bissau,2008,82
-Guinea-Bissau,2009,61.09
-Guinea-Bissau,2012,55
-Guinea-Bissau,2014,89.3
-Guinea-Bissau,2019,84.69
-Jamaica,1944,58.7
-Jamaica,1949,65.16
-Jamaica,1955,65.12
-Jamaica,1959,66.07
-Jamaica,1962,72.88
-Jamaica,1967,82.24
-Jamaica,1972,78.88
-Jamaica,1976,85.21
-Jamaica,1980,86.91
-Jamaica,1983,2.73
-Jamaica,1989,78.38
-Jamaica,1993,67.68
-Jamaica,1997,65.42
-Jamaica,2002,59.06
-Jamaica,2007,60.4
-Jamaica,2011,53.17
-Jamaica,2016,47.72
-Kazakhstan,1990,84
-Kazakhstan,1991,88.2
-Kazakhstan,1994,73.52
-Kazakhstan,1995,80.73
-Kazakhstan,1999,85.77
-Kazakhstan,2004,56.49
-Kazakhstan,2005,76.78
-Kazakhstan,2007,68.41
-Kazakhstan,2011,89.99
-Kazakhstan,2012,75.44
-Kazakhstan,2015,95.21
-Kazakhstan,2016,77.1
-Kazakhstan,2019,77.54
-Kyrgyzstan,1990,92
-Kyrgyzstan,1991,89
-Kyrgyzstan,1995,86.19
-Kyrgyzstan,2000,77.26
-Kyrgyzstan,2005,74.97
-Kyrgyzstan,2007,75.2
-Kyrgyzstan,2009,79.2
-Kyrgyzstan,2010,56.59
-Kyrgyzstan,2011,61.28
-Kyrgyzstan,2015,56.62
-Kyrgyzstan,2017,56.32
-Laos,1955,75.6
-Laos,1958,85.1
-Laos,1972,67.76
-Laos,1989,98.4
-Laos,1992,99.26
-Laos,1997,99.37
-Laos,2002,99.9
-Laos,2006,99.76
-Laos,2011,99.69
-Laos,2016,97.94
-Libya,2012,61.58
-Libya,2014,41.74
-Madagascar,1965,94.43
-Madagascar,1970,94.77
-Madagascar,1982,86.75
-Madagascar,1983,72.75
-Madagascar,1989,81.04
-Madagascar,1992,74.67
-Madagascar,1993,68.49
-Madagascar,1996,60.93
-Madagascar,1998,60.13
-Madagascar,2001,66.85
-Madagascar,2002,67.86
-Madagascar,2006,61.93
-Madagascar,2013,61.76
-Madagascar,2018,53.9
-Madagascar,2019,40
-Moldova,1991,84
-Moldova,1994,79.31
-Moldova,1996,71.64
-Moldova,1998,69.12
-Moldova,2001,69.96
-Moldova,2005,64.84
-Moldova,2009,58.77
-Moldova,2010,63.37
-Moldova,2014,55.8
-Moldova,2016,53.45
-Moldova,2019,51.98
-Namibia,1978,80.2
-Namibia,1989,97.04
-Namibia,1994,74.18
-Namibia,1999,62.06
-Namibia,2004,85.47
-Namibia,2014,71.76
-Namibia,2019,60.38
-Palestine/West Bank,1996,72.05
-Palestine/West Bank,2005,45.56
-Palestine/West Bank,2006,77.7
-Rwanda,1961,95.6
-Rwanda,1965,87.6
-Rwanda,1969,90.9
-Rwanda,1981,96.47
-Rwanda,1988,98.5
-Rwanda,2003,96.5
-Rwanda,2008,98.5
-Rwanda,2010,97.51
-Rwanda,2013,98.8
-Rwanda,2017,98.15
-Rwanda,2018,93.04
-Somalia,1956,69.12
-Somalia,1984,99.86
-Sri Lanka,1947,55.81
-Sri Lanka,1952,70.7
-Sri Lanka,1956,69.04
-Sri Lanka,1960,75.9
-Sri Lanka,1965,81.13
-Sri Lanka,1970,84.88
-Sri Lanka,1977,86.69
-Sri Lanka,1982,81.06
-Sri Lanka,1988,55.32
-Sri Lanka,1989,63.59
-Sri Lanka,1994,76.24
-Sri Lanka,1999,73.31
-Sri Lanka,2000,75.63
-Sri Lanka,2001,76.03
-Sri Lanka,2004,75.96
-Sri Lanka,2005,72.91
-Sri Lanka,2010,74.5
-Sri Lanka,2015,81.52
-Sri Lanka,2019,83.72
-Swaziland,1964,52.5
-Swaziland,1967,79.8
-Swaziland,1972,74
-Swaziland,2018,28.84
-Tajikistan,1991,84.6
-Tajikistan,1994,88.33
-Tajikistan,1995,84
-Tajikistan,1999,98.9
-Tajikistan,2000,93.36
-Tajikistan,2005,93.23
-Tajikistan,2006,91.01
-Tajikistan,2010,90.84
-Tajikistan,2013,90.16
-Tajikistan,2015,82
-Togo,1952,82.3
-Togo,1958,64.9
-Togo,1961,90
-Togo,1963,91.1
-Togo,1979,99.5
-Togo,1985,78.62
-Togo,1986,99
-Togo,1993,36.1
-Togo,1994,65.12
-Togo,1998,69.81
-Togo,2002,67.43
-Togo,2003,71.99
-Togo,2005,63.58
-Togo,2007,84.92
-Togo,2010,64.68
-Togo,2013,66.06
-Togo,2015,60.94
-Togo,2018,59.25
-Trinidad and Tobago,1946,52.9
-Trinidad and Tobago,1950,70.09
-Trinidad and Tobago,1956,80.09
-Trinidad and Tobago,1961,88.11
-Trinidad and Tobago,1966,65.79
-Trinidad and Tobago,1971,33.17
-Trinidad and Tobago,1976,55.83
-Trinidad and Tobago,1981,56.43
-Trinidad and Tobago,1986,65.45
-Trinidad and Tobago,1991,65.76
-Trinidad and Tobago,1995,63.3
-Trinidad and Tobago,2000,63.05
-Trinidad and Tobago,2001,66.13
-Trinidad and Tobago,2002,69.64
-Trinidad and Tobago,2007,66.03
-Trinidad and Tobago,2010,69.45
-Trinidad and Tobago,2015,66.84
-Turkmenistan,1990,96.7
-Turkmenistan,1992,99.8
-Turkmenistan,1994,99.77
-Turkmenistan,1999,99.6
-Turkmenistan,2004,76.88
-Turkmenistan,2005,76.88
-Turkmenistan,2007,98.72
-Turkmenistan,2008,93.87
-Turkmenistan,2012,96.7
-Turkmenistan,2013,91.33
-Turkmenistan,2017,97.28
-Turkmenistan,2018,91.69
-East Germany,1949,95.2
-East Germany,1950,98.5
-East Germany,1954,98.5
-East Germany,1958,99.2
-East Germany,1990,93.4
-Somaliland,2010,50.31
-Somaliland,2017,80.32
-Uzbekistan,1990,93.5
-Uzbekistan,1991,94
-Uzbekistan,1995,93.58
-Uzbekistan,1999,93.46
-Uzbekistan,2004,85.1
-Uzbekistan,2007,90.6
-Uzbekistan,2009,88
-Uzbekistan,2010,87.76
-Uzbekistan,2014,88.51
-Uzbekistan,2015,91.08
-Uzbekistan,2016,87.73
-Uzbekistan,2019,67.8
-Austria,1907,84.6
-Austria,1911,80.2
-Austria,1919,84.4
-Austria,1920,80.3
-Austria,1923,87
-Austria,1927,89.3
-Austria,1930,90.2
-Austria,1945,94.31
-Austria,1949,96.78
-Austria,1951,96.89
-Austria,1953,95.83
-Austria,1956,95.95
-Austria,1957,97.16
-Austria,1959,94.21
-Austria,1962,93.77
-Austria,1963,95.58
-Austria,1965,95.99
-Austria,1966,93.8
-Austria,1970,91.78
-Austria,1971,95.29
-Austria,1974,94.06
-Austria,1975,92.9
-Austria,1979,92.24
-Austria,1980,91.63
-Austria,1983,92.59
-Austria,1986,90.46
-Austria,1990,86.14
-Austria,1992,84.4
-Austria,1994,82.46
-Austria,1995,85.98
-Austria,1998,74.4
-Austria,1999,80.42
-Austria,2002,84.27
-Austria,2004,71.6
-Austria,2006,78.46
-Austria,2008,78.81
-Austria,2010,53.57
-Austria,2013,74.91
-Austria,2016,72.8
-Austria,2017,80
-Austria,2019,75.59
-Bahrain,1973,78.4
-Bahrain,2002,53
-Bahrain,2006,73.6
-Bahrain,2010,67
-Bahrain,2014,52.6
-Bahrain,2018,65.34
-Barbados,1951,64.65
-Barbados,1956,60.29
-Barbados,1961,61.32
-Barbados,1966,79.27
-Barbados,1971,81.62
-Barbados,1976,74.09
-Barbados,1981,71.58
-Barbados,1986,76.7
-Barbados,1991,63.72
-Barbados,1994,60.25
-Barbados,1999,63.1
-Barbados,2003,56.88
-Barbados,2008,63.54
-Barbados,2013,65.05
-Barbados,2018,60.29
-Belgium,1831,62.2
-Belgium,1837,56
-Belgium,1839,66.4
-Belgium,1841,77
-Belgium,1843,86
-Belgium,1845,77
-Belgium,1847,77.7
-Belgium,1848,56
-Belgium,1850,69.1
-Belgium,1852,69.2
-Belgium,1854,61
-Belgium,1856,60.6
-Belgium,1857,69.1
-Belgium,1859,55.9
-Belgium,1861,58.4
-Belgium,1863,74.5
-Belgium,1864,76.7
-Belgium,1866,70
-Belgium,1868,55.6
-Belgium,1870,68
-Belgium,1872,55.5
-Belgium,1874,64.1
-Belgium,1876,67.5
-Belgium,1878,62.5
-Belgium,1880,67.2
-Belgium,1882,75.1
-Belgium,1884,79.1
-Belgium,1886,64
-Belgium,1888,73
-Belgium,1890,64.3
-Belgium,1892,76.6
-Belgium,1894,85.4
-Belgium,1896,82.1
-Belgium,1898,82.6
-Belgium,1902,95.7
-Belgium,1921,91.1
-Belgium,1925,92.8
-Belgium,1929,94
-Belgium,1932,94.3
-Belgium,1936,94.7
-Belgium,1939,93.3
-Belgium,1946,90.3
-Belgium,1949,94.41
-Belgium,1950,92.62
-Belgium,1954,93.18
-Belgium,1958,93.62
-Belgium,1961,92.34
-Belgium,1965,91.58
-Belgium,1968,90.02
-Belgium,1971,91.55
-Belgium,1974,90.35
-Belgium,1977,95.07
-Belgium,1978,94.87
-Belgium,1981,94.56
-Belgium,1985,93.59
-Belgium,1987,93.38
-Belgium,1991,92.71
-Belgium,1995,91.15
-Belgium,1999,90.57
-Belgium,2003,91.63
-Belgium,2007,91.08
-Belgium,2010,89.22
-Belgium,2014,89.37
-Belgium,2019,88.38
-Bosnia and Herzegovina,1996,60.32
-Bosnia and Herzegovina,1998,70.74
-Bosnia and Herzegovina,2000,63.7
-Bosnia and Herzegovina,2002,55.45
-Bosnia and Herzegovina,2006,50.51
-Bosnia and Herzegovina,2010,56.46
-Bosnia and Herzegovina,2014,54.54
-Bosnia and Herzegovina,2018,54.02
-Bulgaria,1879,32
-Bulgaria,1884,28.9
-Bulgaria,1887,33
-Bulgaria,1899,49.5
-Bulgaria,1901,42.7
-Bulgaria,1902,49.8
-Bulgaria,1903,41.2
-Bulgaria,1908,50.2
-Bulgaria,1911,54
-Bulgaria,1913,55
-Bulgaria,1914,67.1
-Bulgaria,1919,54.5
-Bulgaria,1920,77.3
-Bulgaria,1923,86.5
-Bulgaria,1927,84.3
-Bulgaria,1931,85.2
-Bulgaria,1938,69.5
-Bulgaria,1939,67.2
-Bulgaria,1945,84.8
-Bulgaria,1946,92.6
-Bulgaria,1949,98.9
-Bulgaria,1953,99.5
-Bulgaria,1957,99.8
-Bulgaria,1962,99.7
-Bulgaria,1966,99.6
-Bulgaria,1971,99.9
-Bulgaria,1976,99.9
-Bulgaria,1981,99.9
-Bulgaria,1986,99.5
-Bulgaria,1990,90.3
-Bulgaria,1991,83.87
-Bulgaria,1992,75.9
-Bulgaria,1994,75.23
-Bulgaria,1996,63.3
-Bulgaria,1997,58.87
-Bulgaria,2001,66.63
-Bulgaria,2005,55.76
-Bulgaria,2006,44.3
-Bulgaria,2009,60.64
-Bulgaria,2011,52.29
-Bulgaria,2013,52.49
-Bulgaria,2014,51.05
-Bulgaria,2016,56.25
-Bulgaria,2017,53.85
-Comoros,1972,81.5
-Comoros,1978,78.18
-Comoros,1987,65
-Comoros,1990,60.27
-Comoros,1992,69.3
-Comoros,1996,61.95
-Comoros,2002,76.28
-Comoros,2006,57.26
-Comoros,2010,52.8
-Comoros,2015,71.35
-Comoros,2016,67.8
-Comoros,2019,53.84
-Croatia,1992,74.9
-Croatia,1995,68.79
-Croatia,1997,54.62
-Croatia,2000,76.55
-Croatia,2003,61.65
-Croatia,2005,51.04
-Croatia,2007,59.58
-Croatia,2009,43.96
-Croatia,2010,50.13
-Croatia,2011,54.17
-Croatia,2014,47.12
-Croatia,2015,60.82
-Croatia,2016,52.6
-Croatia,2019,51.18
-Cuba,1905,74
-Cuba,1908,71
-Cuba,1910,68.7
-Cuba,1936,67.1
-Cuba,1938,44.2
-Cuba,1940,73.4
-Cuba,1948,78.7
-Cuba,1954,52.4
-Cuba,1993,98.71
-Cuba,1998,98.35
-Cuba,2003,97.67
-Cuba,2008,96.89
-Cuba,2013,90.88
-Cuba,2018,85.65
-Cyprus,1959,91.2
-Cyprus,1960,73.5
-Cyprus,1968,93.5
-Cyprus,1970,75.85
-Cyprus,1976,85.29
-Cyprus,1981,95.75
-Cyprus,1983,95
-Cyprus,1985,94.62
-Cyprus,1988,94.3
-Cyprus,1991,94.31
-Cyprus,1993,93.27
-Cyprus,1996,90.13
-Cyprus,1998,93.37
-Cyprus,2001,91.75
-Cyprus,2003,90.55
-Cyprus,2006,89
-Cyprus,2008,90.84
-Cyprus,2011,78.7
-Cyprus,2013,83.14
-Cyprus,2016,66.74
-Cyprus,2018,73.97
-Czech Republic,1971,99.4
-Czech Republic,1976,99.7
-Czech Republic,1981,99.4
-Czech Republic,1986,99.2
-Czech Republic,1990,96.33
-Czech Republic,1992,84.68
-Czech Republic,1996,76.29
-Czech Republic,1998,74
-Czech Republic,2002,57.95
-Czech Republic,2006,64.47
-Czech Republic,2010,62.6
-Czech Republic,2013,59.48
-Czech Republic,2017,60.84
-Czech Republic,2018,66.4
-Denmark,1849,32.5
-Denmark,1852,26.6
-Denmark,1853,40.4
-Denmark,1854,20.3
-Denmark,1855,15.8
-Denmark,1858,23.8
-Denmark,1861,32.7
-Denmark,1864,26.3
-Denmark,1866,41.1
-Denmark,1869,30.2
-Denmark,1872,40.4
-Denmark,1873,51.7
-Denmark,1876,48.6
-Denmark,1879,47.2
-Denmark,1881,55.6
-Denmark,1884,59
-Denmark,1887,69.6
-Denmark,1890,66.3
-Denmark,1892,63.8
-Denmark,1895,60.2
-Denmark,1898,59.8
-Denmark,1901,56.5
-Denmark,1903,57.5
-Denmark,1906,69.8
-Denmark,1909,71.3
-Denmark,1910,74.8
-Denmark,1913,74.5
-Denmark,1918,75.5
-Denmark,1920,80.6
-Denmark,1924,78.6
-Denmark,1926,77
-Denmark,1929,79.7
-Denmark,1932,81.5
-Denmark,1935,80.7
-Denmark,1939,79.2
-Denmark,1943,89.5
-Denmark,1945,86.29
-Denmark,1947,85.78
-Denmark,1950,81.87
-Denmark,1953,80.8
-Denmark,1957,83.73
-Denmark,1960,85.84
-Denmark,1964,85.51
-Denmark,1966,88.61
-Denmark,1968,89.28
-Denmark,1971,87.16
-Denmark,1973,88.72
-Denmark,1977,88.7
-Denmark,1979,85.62
-Denmark,1981,87.77
-Denmark,1984,88.44
-Denmark,1987,86.74
-Denmark,1988,85.7
-Denmark,1990,82.85
-Denmark,1994,84.25
-Denmark,1998,85.95
-Denmark,2001,87.15
-Denmark,2005,84.54
-Denmark,2007,86.59
-Denmark,2011,87.74
-Denmark,2015,85.89
-Denmark,2019,84.6
-Equatorial Guinea,1968,41.3
-Equatorial Guinea,1982,91.6
-Equatorial Guinea,1993,67.5
-Equatorial Guinea,1996,79.8
-Equatorial Guinea,1999,94.94
-Equatorial Guinea,2002,97.79
-Equatorial Guinea,2004,96.45
-Equatorial Guinea,2009,93.35
-Equatorial Guinea,2016,92.7
-Estonia,1919,70.1
-Estonia,1920,72.2
-Estonia,1923,67.9
-Estonia,1926,73.6
-Estonia,1929,69.3
-Estonia,1932,67.4
-Estonia,1936,57.8
-Estonia,1990,78.2
-Estonia,1992,67.84
-Estonia,1995,68.91
-Estonia,1999,57.43
-Estonia,2003,58.24
-Estonia,2007,61.91
-Estonia,2011,63.53
-Estonia,2015,64.23
-Estonia,2019,63.67
-Fiji,1972,85.2
-Fiji,1992,78.77
-Fiji,1994,74.8
-Fiji,1999,89.41
-Fiji,2001,81.05
-Fiji,2006,64
-Fiji,2014,84.6
-Fiji,2018,71.92
-Finland,1907,70.7
-Finland,1908,65
-Finland,1909,65.3
-Finland,1910,60.1
-Finland,1911,59.8
-Finland,1913,51.1
-Finland,1916,55.5
-Finland,1917,69.2
-Finland,1919,67.1
-Finland,1922,58.5
-Finland,1924,57.4
-Finland,1925,39.7
-Finland,1927,55.8
-Finland,1929,55.6
-Finland,1930,65.9
-Finland,1931,47.3
-Finland,1933,62.2
-Finland,1937,57.8
-Finland,1945,74.87
-Finland,1948,78.25
-Finland,1950,63.76
-Finland,1951,74.58
-Finland,1954,79.9
-Finland,1956,73.35
-Finland,1958,74.99
-Finland,1962,85.09
-Finland,1966,84.94
-Finland,1968,69.91
-Finland,1970,82.23
-Finland,1972,81.4
-Finland,1975,73.8
-Finland,1978,64.26
-Finland,1979,75.31
-Finland,1982,81.31
-Finland,1983,75.73
-Finland,1987,72.06
-Finland,1988,77.83
-Finland,1991,68.39
-Finland,1994,78.7
-Finland,1995,68.58
-Finland,1999,65.27
-Finland,2000,76.8
-Finland,2003,66.71
-Finland,2006,74.05
-Finland,2007,65.02
-Finland,2011,67.37
-Finland,2012,72.8
-Finland,2015,66.85
-Finland,2018,66.76
-Finland,2019,68.73
-Greece,1926,61.4
-Greece,1951,77.2
-Greece,1952,75.37
-Greece,1956,74.97
-Greece,1958,75.48
-Greece,1961,81.87
-Greece,1963,83.04
-Greece,1964,81.69
-Greece,1974,79.58
-Greece,1977,81.11
-Greece,1981,81.5
-Greece,1985,83.81
-Greece,1989,84.5
-Greece,1993,82.95
-Greece,1996,76.34
-Greece,2000,74.97
-Greece,2004,76.62
-Greece,2007,74.14
-Greece,2009,70.92
-Greece,2012,65.1
-Greece,2015,63.6
-Greece,2019,57.91
-Guyana,1947,71
-Guyana,1953,74.77
-Guyana,1957,55.79
-Guyana,1961,89.44
-Guyana,1964,96.98
-Guyana,1968,85.14
-Guyana,1973,82.92
-Guyana,1980,93.64
-Guyana,1985,73.8
-Guyana,1992,81
-Guyana,1997,88.42
-Guyana,2001,91.73
-Guyana,2006,68.82
-Guyana,2011,72.89
-Guyana,2015,72.19
-Hong Kong,1995,38.8
-Hong Kong,1998,53.29
-Hong Kong,2000,43.57
-Hong Kong,2004,55.64
-Hong Kong,2008,45.2
-Hong Kong,2012,53.05
-Hong Kong,2016,58.28
-Iceland,1916,49.2
-Iceland,1919,45.5
-Iceland,1923,70.9
-Iceland,1927,71.5
-Iceland,1931,78.2
-Iceland,1933,69
-Iceland,1934,81.5
-Iceland,1937,87.9
-Iceland,1942,82.3
-Iceland,1946,87.41
-Iceland,1949,89.03
-Iceland,1952,82.03
-Iceland,1953,89.9
-Iceland,1956,92.07
-Iceland,1959,90.63
-Iceland,1963,91.14
-Iceland,1967,91.37
-Iceland,1968,92.16
-Iceland,1971,90.44
-Iceland,1974,91.44
-Iceland,1978,90.27
-Iceland,1979,89.34
-Iceland,1980,90.5
-Iceland,1983,88.6
-Iceland,1987,90.1
-Iceland,1988,72.8
-Iceland,1991,87.62
-Iceland,1995,87.38
-Iceland,1996,85.9
-Iceland,1999,84.07
-Iceland,2003,87.7
-Iceland,2004,62.92
-Iceland,2007,83.6
-Iceland,2009,85.12
-Iceland,2012,69.32
-Iceland,2013,81.44
-Iceland,2016,79.18
-Iceland,2017,81.2
-Israel,1949,86.89
-Israel,1951,75.15
-Israel,1955,82.83
-Israel,1959,81.6
-Israel,1961,81.34
-Israel,1965,85.86
-Israel,1969,81.2
-Israel,1973,78.58
-Israel,1977,79.23
-Israel,1981,78.5
-Israel,1984,78.78
-Israel,1988,79.66
-Israel,1992,77.38
-Israel,1996,79.3
-Israel,2001,62.29
-Israel,2003,67.81
-Israel,2006,63.55
-Israel,2009,64.72
-Israel,2013,67.77
-Israel,2015,72.34
-Israel,2019,71.65
-Kuwait,1961,90
-Kuwait,1963,85
-Kuwait,1967,65.6
-Kuwait,1971,51.6
-Kuwait,1975,58.24
-Kuwait,1981,90
-Kuwait,1985,84.59
-Kuwait,1990,62.3
-Kuwait,1992,85
-Kuwait,1996,80
-Kuwait,1999,83.2
-Kuwait,2006,91.92
-Kuwait,2008,59.41
-Kuwait,2009,59
-Kuwait,2012,59.53
-Kuwait,2013,51.9
-Kuwait,2016,70
-Lithuania,1926,86.4
-Lithuania,1990,71.72
-Lithuania,1992,75.22
-Lithuania,1993,78.62
-Lithuania,1996,52.95
-Lithuania,1998,73.66
-Lithuania,2000,58.18
-Lithuania,2002,53.92
-Lithuania,2003,52.65
-Lithuania,2004,52.46
-Lithuania,2008,48.59
-Lithuania,2009,51.76
-Lithuania,2012,52.93
-Lithuania,2014,52.23
-Lithuania,2016,50.6
-Lithuania,2019,56.92
-Luxembourg,1919,48.4
-Luxembourg,1948,91.9
-Luxembourg,1951,90.78
-Luxembourg,1954,92.65
-Luxembourg,1959,92.33
-Luxembourg,1964,90.57
-Luxembourg,1968,88.56
-Luxembourg,1974,90.14
-Luxembourg,1979,88.85
-Luxembourg,1984,88.81
-Luxembourg,1989,87.39
-Luxembourg,1994,88.3
-Luxembourg,1999,86.51
-Luxembourg,2004,91.98
-Luxembourg,2009,90.63
-Luxembourg,2013,91.15
-Luxembourg,2018,89.66
-Macedonia,1994,77.76
-Macedonia,1998,72.9
-Macedonia,1999,69.1
-Macedonia,2002,74.6
-Macedonia,2004,53.64
-Macedonia,2006,55.98
-Macedonia,2008,57.99
-Macedonia,2009,56.9
-Macedonia,2011,63.48
-Macedonia,2014,54.36
-Macedonia,2016,66.79
-Macedonia,2019,46.65
-Malaysia,1955,82.8
-Malaysia,1959,73.3
-Malaysia,1964,78.9
-Malaysia,1969,73.6
-Malaysia,1982,72.1
-Malaysia,1986,74.39
-Malaysia,1990,70
-Malaysia,1995,71.8
-Malaysia,1999,68.65
-Malaysia,2004,73.9
-Malaysia,2008,75.99
-Malaysia,2013,84.84
-Malaysia,2018,82.32
-Malta,1947,75.44
-Malta,1950,76.02
-Malta,1951,74.59
-Malta,1953,80.37
-Malta,1955,81.16
-Malta,1962,90.77
-Malta,1966,89.71
-Malta,1971,92.93
-Malta,1976,95
-Malta,1981,94.64
-Malta,1987,96.11
-Malta,1992,96.04
-Malta,1996,97.16
-Malta,1998,95.4
-Malta,2003,95.7
-Malta,2008,93.3
-Malta,2013,92.95
-Malta,2017,92.06
-Mauritius,1967,88.9
-Mauritius,1976,88
-Mauritius,1982,90
-Mauritius,1983,87.04
-Mauritius,1987,85
-Mauritius,1991,84.08
-Mauritius,1995,76.69
-Mauritius,2000,80.87
-Mauritius,2005,81.25
-Mauritius,2010,77.82
-Mauritius,2014,74.41
-Mauritius,2019,77.01
-Montenegro,2002,74.6
-Montenegro,2003,48.38
-Montenegro,2006,72.05
-Montenegro,2008,68.7
-Montenegro,2009,66.19
-Montenegro,2012,70.56
-Montenegro,2013,63.9
-Montenegro,2016,73.41
-Montenegro,2018,63.92
-New Zealand,1879,66.5
-New Zealand,1881,66.5
-New Zealand,1884,60.6
-New Zealand,1887,67.1
-New Zealand,1890,80.4
-New Zealand,1893,75.3
-New Zealand,1896,76.1
-New Zealand,1899,77.6
-New Zealand,1902,76.7
-New Zealand,1905,83.3
-New Zealand,1908,79.8
-New Zealand,1911,83.5
-New Zealand,1914,84.7
-New Zealand,1919,80.5
-New Zealand,1922,87.7
-New Zealand,1925,90.02
-New Zealand,1928,88.01
-New Zealand,1931,83.3
-New Zealand,1935,90.75
-New Zealand,1938,92.9
-New Zealand,1943,82.8
-New Zealand,1946,97.6
-New Zealand,1949,97.01
-New Zealand,1951,96.21
-New Zealand,1954,94.57
-New Zealand,1957,93.44
-New Zealand,1960,90.26
-New Zealand,1963,89.56
-New Zealand,1966,86.6
-New Zealand,1969,89.88
-New Zealand,1972,89.83
-New Zealand,1975,83.17
-New Zealand,1978,84.9
-New Zealand,1981,91.44
-New Zealand,1984,93.71
-New Zealand,1987,89.06
-New Zealand,1990,85.24
-New Zealand,1993,85.2
-New Zealand,1996,88.28
-New Zealand,1999,84.77
-New Zealand,2002,76.98
-New Zealand,2005,80.29
-New Zealand,2008,79.46
-New Zealand,2011,74.21
-New Zealand,2014,76.95
-New Zealand,2017,79.75
-Norway,1829,45.3
-Norway,1832,48
-Norway,1835,52.3
-Norway,1838,50.3
-Norway,1841,50.9
-Norway,1844,49.4
-Norway,1847,49.1
-Norway,1850,50.3
-Norway,1853,45.4
-Norway,1856,44.1
-Norway,1859,47.7
-Norway,1862,44.6
-Norway,1865,41.8
-Norway,1868,47.6
-Norway,1870,45.1
-Norway,1873,45.6
-Norway,1876,43.1
-Norway,1879,48.7
-Norway,1882,72.5
-Norway,1885,75.1
-Norway,1888,70.4
-Norway,1891,73.7
-Norway,1894,90.2
-Norway,1897,85.3
-Norway,1900,57.3
-Norway,1903,55.5
-Norway,1906,60.9
-Norway,1909,56.6
-Norway,1912,65.9
-Norway,1915,57.6
-Norway,1918,60.5
-Norway,1921,67.9
-Norway,1924,69.9
-Norway,1927,68.1
-Norway,1930,77.6
-Norway,1933,76.4
-Norway,1936,84
-Norway,1945,76.36
-Norway,1949,82.02
-Norway,1953,79.33
-Norway,1957,78.32
-Norway,1961,79.07
-Norway,1965,85.43
-Norway,1969,83.84
-Norway,1973,80.24
-Norway,1977,82.89
-Norway,1981,81.99
-Norway,1985,84.03
-Norway,1989,83.16
-Norway,1993,75.85
-Norway,1997,78.33
-Norway,2001,75.48
-Norway,2005,77.44
-Norway,2009,76.37
-Norway,2013,78.23
-Norway,2017,78.22
-Oman,2007,62.7
-Oman,2011,76.04
-Oman,2015,56.66
-Oman,2019,49.02
-Paraguay,1963,85.12
-Paraguay,1967,68.9
-Paraguay,1968,73.14
-Paraguay,1973,77.39
-Paraguay,1978,85.96
-Paraguay,1983,92.62
-Paraguay,1988,92.17
-Paraguay,1989,54.03
-Paraguay,1991,51.7
-Paraguay,1993,69
-Paraguay,1998,80.54
-Paraguay,2003,64.2
-Paraguay,2008,60.34
-Paraguay,2013,68.02
-Paraguay,2018,61.25
-Romania,1922,76
-Romania,1926,75
-Romania,1927,77
-Romania,1928,77.4
-Romania,1931,72.5
-Romania,1932,70.8
-Romania,1933,68
-Romania,1937,66.1
-Romania,1939,89
-Romania,1948,91.2
-Romania,1952,97.9
-Romania,1957,99.2
-Romania,1961,99.8
-Romania,1969,100
-Romania,1975,100
-Romania,1980,99.99
-Romania,1985,100
-Romania,1990,86.2
-Romania,1992,76.3
-Romania,1996,76
-Romania,2000,65.3
-Romania,2004,58.5
-Romania,2008,39.2
-Romania,2009,58.02
-Romania,2012,41.76
-Romania,2014,64.11
-Romania,2016,37.79
-Romania,2019,54.46
-Sao Tome and Principe,1991,76.74
-Sao Tome and Principe,1994,52.09
-Sao Tome and Principe,1996,78.7
-Sao Tome and Principe,1998,64.68
-Sao Tome and Principe,2001,70.55
-Sao Tome and Principe,2002,66.29
-Sao Tome and Principe,2006,66.9
-Sao Tome and Principe,2010,88.45
-Sao Tome and Principe,2011,74.09
-Sao Tome and Principe,2014,74.91
-Sao Tome and Principe,2016,64.31
-Sao Tome and Principe,2018,80.65
-Serbia,1889,71.07
-Serbia,1992,64.1
-Serbia,2000,58.5
-Serbia,2003,58.7
-Serbia,2004,48.7
-Serbia,2007,60.57
-Serbia,2008,68.12
-Serbia,2012,57.77
-Serbia,2014,53.09
-Serbia,2016,56.07
-Serbia,2017,54.36
-Seychelles,1948,89
-Seychelles,1953,36
-Seychelles,1957,59
-Seychelles,1979,96.4
-Seychelles,1984,95.9
-Seychelles,1989,91.5
-Seychelles,1992,85.3
-Seychelles,1993,86.53
-Seychelles,1998,86.7
-Seychelles,2001,93.25
-Seychelles,2002,84.52
-Seychelles,2006,88.69
-Seychelles,2007,85.9
-Seychelles,2011,85.26
-Seychelles,2015,90.06
-Seychelles,2016,87.6
-Singapore,1955,52.7
-Singapore,1959,90.1
-Singapore,1963,95.1
-Singapore,1968,94.09
-Singapore,1972,82.15
-Singapore,1976,95.1
-Singapore,1980,95.48
-Singapore,1984,95.59
-Singapore,1988,94.7
-Singapore,1991,95.03
-Singapore,1993,94.48
-Singapore,1997,95.91
-Singapore,2001,94.61
-Singapore,2006,94.01
-Singapore,2011,94.65
-Singapore,2015,93.56
-Slovakia,1994,75.41
-Slovakia,1998,84.25
-Slovakia,1999,75.42
-Slovakia,2002,70.07
-Slovakia,2004,47.9
-Slovakia,2006,54.67
-Slovakia,2009,51.67
-Slovakia,2010,58.84
-Slovakia,2012,59.11
-Slovakia,2014,50.48
-Slovakia,2016,59.82
-Slovakia,2019,48.44
-Slovenia,1990,83
-Slovenia,1992,85.84
-Slovenia,1996,73.67
-Slovenia,1997,68.65
-Slovenia,2000,70.36
-Slovenia,2002,72.04
-Slovenia,2004,60.64
-Slovenia,2007,58.45
-Slovenia,2008,63.1
-Slovenia,2011,65.6
-Slovenia,2012,48.41
-Slovenia,2014,51.73
-Slovenia,2017,43.9
-Slovenia,2018,52.64
-Solomon Islands,1980,58.23
-Solomon Islands,1984,62.04
-Solomon Islands,1989,64.94
-Solomon Islands,1993,63.61
-Solomon Islands,1997,68.35
-Solomon Islands,2001,61.88
-Solomon Islands,2006,56.95
-Solomon Islands,2010,52.36
-Solomon Islands,2014,89.93
-Solomon Islands,2019,67.54
-Vanuatu,1983,74.9
-Vanuatu,1987,71.64
-Vanuatu,1991,71.3
-Vanuatu,1995,67.95
-Vanuatu,1998,61.61
-Vanuatu,2002,63.47
-Vanuatu,2004,68.58
-Vanuatu,2008,70.38
-Vanuatu,2012,63.22
-Vanuatu,2016,56.47
-United Arab Emirates,2011,27.75
-United Arab Emirates,2015,35.29
-United Arab Emirates,2019,34.82
-Hungary,1926,76
-Hungary,1939,89.7
-Hungary,1945,92.6
-Hungary,1949,94.7
-Hungary,1953,98
-Hungary,1958,98.4
-Hungary,1963,97.2
-Hungary,1967,98.8
-Hungary,1971,98.7
-Hungary,1975,97
-Hungary,1980,97
-Hungary,1985,94
-Hungary,1990,65.1
-Hungary,1994,68.92
-Hungary,1998,57.01
-Hungary,2002,73.51
-Hungary,2006,67.57
-Hungary,2010,64.38
-Hungary,2014,61.84
-Hungary,2018,69.67
-Zanzibar,1957,90.2
-Zanzibar,1961,99.6
-Zanzibar,1963,99.1
-Zanzibar,1995,95.7
-Zanzibar,2005,90.8
-Zanzibar,2010,89.52
-Zanzibar,2015,67.34
-Bavaria,1869,51
-Tuscany,1859,50
-Papal States,1849,33.33
-Piedmont-Sardinia,1848,64.68
-Piedmont-Sardinia,1849,65.93
-Piedmont-Sardinia,1853,59.99
-Piedmont-Sardinia,1857,64.72
-Piedmont-Sardinia,1860,53.47
+Mexico,1822,-1.012
+Mexico,1823,-1.012
+Mexico,1824,-1.02
+Mexico,1826,-1.01
+Mexico,1828,-1.003
+Mexico,1832,-1.021
+Mexico,1833,-1.021
+Mexico,1837,-1.024
+Mexico,1841,-1.008
+Mexico,1842,-1.027
+Mexico,1846,-1.05
+Mexico,1847,-1.05
+Mexico,1848,-1.05
+Mexico,1849,-1.05
+Mexico,1850,-1.05
+Mexico,1851,-1.05
+Mexico,1853,-1.023
+Mexico,1857,-1.026
+Mexico,1861,-0.998
+Mexico,1867,-0.998
+Mexico,1871,-0.984
+Mexico,1872,-0.996
+Mexico,1875,-1.015
+Mexico,1876,-0.976
+Mexico,1877,-0.976
+Mexico,1880,-1.014
+Mexico,1884,-1.026
+Mexico,1888,-1.012
+Mexico,1891,-1.007
+Mexico,1892,-0.994
+Mexico,1896,-1.016
+Mexico,1900,-0.898
+Mexico,1904,-0.93
+Mexico,1910,-0.9
+Mexico,1911,-0.897
+Mexico,1912,-0.888
+Mexico,1914,-0.898
+Mexico,1917,-0.9
+Mexico,1918,-0.9
+Mexico,1920,-0.906
+Sweden,1789,1.091
+Sweden,1792,1.108
+Sweden,1800,1.084
+Sweden,1809,1.093
+Sweden,1810,1.093
+Sweden,1812,1.106
+Sweden,1815,1.091
+Sweden,1817,1.063
+Sweden,1823,1.09
+Sweden,1828,1.097
+Sweden,1834,1.049
+Sweden,1840,1.075
+Sweden,1844,1.076
+Sweden,1847,1.067
+Sweden,1850,1.059
+Sweden,1853,1.088
+Sweden,1856,1.103
+Sweden,1859,1.076
+Sweden,1862,1.073
+Sweden,1865,1.084
+Sweden,1866,1.084
+Sweden,1869,1.096
+Sweden,1872,1.106
+Sweden,1875,1.072
+Sweden,1878,1.067
+Sweden,1881,1.073
+Sweden,1884,1.073
+Sweden,1887,1.102
+Sweden,1890,1.047
+Sweden,1893,1.046
+Sweden,1896,1.086
+Sweden,1899,1.107
+Sweden,1902,1.099
+Sweden,1905,1.079
+Sweden,1908,1.076
+Sweden,1911,1.055
+Sweden,1914,1.093
+Sweden,1917,1.105
+Sweden,1920,1.052
+Switzerland,1848,0.161
+Switzerland,1851,0.094
+Switzerland,1854,0.123
+Switzerland,1857,0.162
+Switzerland,1860,0.141
+Switzerland,1863,0.136
+Switzerland,1866,0.167
+Switzerland,1869,0.105
+Switzerland,1872,0.135
+Switzerland,1875,0.113
+Switzerland,1878,0.134
+Switzerland,1881,0.144
+Switzerland,1884,0.124
+Switzerland,1887,1.271
+Switzerland,1890,1.245
+Switzerland,1893,1.253
+Switzerland,1896,1.264
+Switzerland,1899,1.237
+Switzerland,1902,1.295
+Switzerland,1905,1.274
+Switzerland,1908,1.267
+Switzerland,1911,1.279
+Switzerland,1914,1.227
+Switzerland,1917,1.257
+Switzerland,1919,1.239
+Japan,1890,1.019
+Japan,1892,1.095
+Japan,1894,1.072
+Japan,1898,1.101
+Japan,1902,1.081
+Japan,1903,1.081
+Japan,1904,1.081
+Japan,1908,1.09
+Japan,1912,1.085
+Japan,1915,1.095
+Japan,1917,1.095
+Japan,1920,1.11
+Russia,1906,0.176
+Russia,1907,0.176
+Russia,1912,0.16
+Russia,1917,2.048
+Egypt,1883,0.175
+Colombia,1811,-1.739
+Colombia,1813,-1.767
+Colombia,1821,-1.71
+Colombia,1825,-1.741
+Colombia,1830,-1.735
+Colombia,1832,-1.732
+Colombia,1833,-1.732
+Colombia,1837,-1.747
+Colombia,1841,-1.76
+Colombia,1843,-1.729
+Colombia,1845,-1.713
+Colombia,1848,-1.668
+Colombia,1849,-1.746
+Colombia,1853,0.271
+Colombia,1855,0.26
+Colombia,1857,0.261
+Colombia,1859,0.245
+Colombia,1860,0.245
+Colombia,1863,0.23
+Colombia,1864,0.23
+Colombia,1866,0.249
+Colombia,1867,0.266
+Colombia,1868,0.266
+Colombia,1870,0.251
+Colombia,1872,0.233
+Colombia,1873,0.233
+Colombia,1874,0.233
+Colombia,1876,0.254
+Colombia,1878,0.235
+Colombia,1880,0.248
+Colombia,1882,0.277
+Colombia,1884,0.214
+Colombia,1886,0.239
+Colombia,1892,0.256
+Colombia,1896,0.258
+Colombia,1898,0.228
+Colombia,1903,0.276
+Colombia,1904,0.276
+Colombia,1909,0.256
+Colombia,1910,0.256
+Colombia,1911,0.256
+Colombia,1913,0.259
+Colombia,1914,0.259
+Colombia,1915,0.256
+Colombia,1917,0.251
+Colombia,1918,0.251
+Poland,1790,-1.591
+Poland,1793,-1.562
+Poland,1809,-1.603
+Poland,1811,-1.578
+Poland,1817,-1.563
+Poland,1820,1.983
+Poland,1822,1.969
+Poland,1824,1.979
+Poland,1826,1.991
+Poland,1828,1.987
+Poland,1830,1.971
+Poland,1919,1.953
+Poland,1922,1.997
+Poland,1928,1.986
+Poland,1930,0.702
+Poland,1935,0.698
+Poland,1938,0.698
+Brazil,1826,-1.56
+Brazil,1830,-1.555
+Brazil,1834,-1.556
+Brazil,1838,-1.559
+Brazil,1842,-1.542
+Brazil,1845,-1.547
+Brazil,1848,-1.568
+Brazil,1849,-1.568
+Brazil,1853,-1.565
+Brazil,1857,-1.547
+Brazil,1861,-1.575
+Brazil,1864,-1.546
+Brazil,1867,-1.567
+Brazil,1869,-1.543
+Brazil,1872,-1.525
+Brazil,1876,-1.55
+Brazil,1878,-1.546
+Brazil,1881,-1.562
+Brazil,1885,-1.564
+Brazil,1886,-1.564
+Brazil,1890,-1.535
+Brazil,1891,-1.535
+Brazil,1892,-1.535
+Brazil,1894,-1.548
+Brazil,1896,-1.552
+Brazil,1898,-1.56
+Brazil,1899,-1.56
+Brazil,1902,-1.544
+Brazil,1903,-1.544
+Brazil,1906,-1.546
+Brazil,1909,-1.523
+Brazil,1910,-1.538
+Brazil,1912,-1.524
+Brazil,1914,-1.534
+Brazil,1915,-1.534
+Brazil,1918,-1.543
+Brazil,1919,-1.524
+United States,1790,-1.492
+United States,1792,-1.471
+United States,1794,-1.508
+United States,1796,-1.499
+United States,1798,-1.49
+United States,1800,-1.472
+United States,1802,-1.499
+United States,1804,-1.509
+United States,1806,-1.502
+United States,1808,-1.5
+United States,1810,-1.47
+United States,1812,-1.497
+United States,1814,-1.497
+United States,1816,-1.493
+United States,1818,-1.504
+United States,1820,-1.498
+United States,1822,-1.511
+United States,1824,-1.496
+United States,1826,-1.493
+United States,1828,-1.506
+United States,1830,-1.488
+United States,1832,-1.495
+United States,1834,-1.502
+United States,1836,-1.47
+United States,1838,-1.532
+United States,1840,-1.497
+United States,1842,-1.511
+United States,1844,-1.542
+United States,1846,-1.541
+United States,1848,-1.51
+United States,1850,-1.488
+United States,1852,-1.506
+United States,1854,-1.492
+United States,1856,-1.5
+United States,1858,-1.477
+United States,1860,-1.507
+United States,1862,-1.501
+United States,1864,-1.53
+United States,1866,-1.528
+United States,1868,-1.532
+United States,1870,-1.485
+United States,1872,-1.5
+United States,1874,-1.489
+United States,1876,-1.524
+United States,1878,-1.501
+United States,1880,-1.502
+United States,1882,-1.519
+United States,1884,-1.54
+United States,1886,-1.513
+United States,1888,-1.506
+United States,1890,0.167
+United States,1892,0.177
+United States,1894,0.617
+United States,1896,0.62
+United States,1898,1.857
+United States,1900,1.879
+United States,1902,1.884
+United States,1904,1.89
+United States,1906,1.91
+United States,1908,1.89
+United States,1910,1.855
+United States,1912,1.889
+United States,1914,1.88
+United States,1916,1.885
+United States,1918,1.902
+United States,1920,1.899
+Portugal,1820,-1.775
+Portugal,1822,-1.742
+Portugal,1826,-1.722
+Portugal,1828,-1.736
+Portugal,1834,-1.738
+Portugal,1836,-1.692
+Portugal,1838,-1.745
+Portugal,1840,-1.713
+Portugal,1842,-1.722
+Portugal,1845,0.232
+Portugal,1847,0.231
+Portugal,1851,0.234
+Portugal,1852,0.233
+Portugal,1856,0.258
+Portugal,1858,0.243
+Portugal,1860,0.237
+Portugal,1861,0.241
+Portugal,1864,0.243
+Portugal,1865,0.243
+Portugal,1868,0.229
+Portugal,1869,0.234
+Portugal,1870,0.234
+Portugal,1871,0.234
+Portugal,1873,0.209
+Portugal,1874,0.209
+Portugal,1878,0.23
+Portugal,1879,0.23
+Portugal,1881,0.261
+Portugal,1884,0.225
+Portugal,1887,0.257
+Portugal,1889,0.234
+Portugal,1890,0.234
+Portugal,1892,0.242
+Portugal,1894,0.225
+Portugal,1895,0.263
+Portugal,1897,0.249
+Portugal,1899,0.256
+Portugal,1900,0.256
+Portugal,1901,0.256
+Portugal,1904,0.249
+Portugal,1905,0.249
+Portugal,1906,0.246
+Portugal,1908,0.249
+Portugal,1910,0.227
+Portugal,1911,0.227
+Portugal,1913,0.243
+Portugal,1915,0.256
+Portugal,1918,0.229
+Portugal,1919,0.229
+El Salvador,1842,-1.525
+El Salvador,1844,-1.515
+El Salvador,1850,-1.522
+El Salvador,1852,-1.482
+El Salvador,1854,-1.525
+El Salvador,1857,-1.49
+El Salvador,1860,-1.517
+El Salvador,1862,-1.51
+El Salvador,1863,-1.51
+El Salvador,1864,-1.509
+El Salvador,1869,-1.501
+El Salvador,1871,-1.528
+El Salvador,1872,-1.528
+El Salvador,1875,-1.503
+El Salvador,1876,-1.503
+El Salvador,1880,-1.508
+El Salvador,1884,-1.526
+El Salvador,1885,-1.509
+El Salvador,1887,-1.501
+El Salvador,1891,-1.506
+El Salvador,1892,-1.506
+El Salvador,1895,-1.536
+El Salvador,1898,-1.539
+El Salvador,1902,-1.48
+El Salvador,1903,-1.509
+El Salvador,1907,-1.497
+El Salvador,1910,-1.516
+El Salvador,1911,-1.521
+Bolivia,1825,-1.556
+Bolivia,1831,-1.564
+Bolivia,1835,-1.56
+Bolivia,1840,-1.56
+Bolivia,1842,-1.539
+Bolivia,1844,-1.558
+Bolivia,1846,-1.562
+Bolivia,1850,-1.579
+Bolivia,1855,-1.545
+Bolivia,1862,-1.549
+Bolivia,1868,-1.585
+Bolivia,1870,-1.556
+Bolivia,1872,-1.557
+Bolivia,1880,-1.573
+Bolivia,1882,-1.571
+Bolivia,1884,-1.573
+Bolivia,1886,-1.574
+Bolivia,1888,-1.553
+Bolivia,1890,-1.565
+Bolivia,1892,-1.562
+Bolivia,1894,-1.565
+Bolivia,1896,-1.581
+Bolivia,1898,-1.563
+Bolivia,1899,-1.563
+Bolivia,1900,-1.567
+Bolivia,1901,-1.569
+Bolivia,1902,-1.569
+Bolivia,1904,-1.577
+Bolivia,1906,-1.545
+Bolivia,1908,-1.563
+Bolivia,1909,-1.563
+Bolivia,1910,-1.563
+Bolivia,1912,-1.564
+Bolivia,1913,-1.564
+Bolivia,1914,-1.564
+Bolivia,1916,-1.592
+Bolivia,1917,-1.577
+Bolivia,1918,-1.569
+Bolivia,1920,-0.297
+Haiti,1806,-1.616
+Haiti,1818,-1.632
+Haiti,1847,-1.633
+Haiti,1905,0.155
+Haiti,1908,0.177
+Honduras,1839,-0.548
+Honduras,1847,-0.529
+Honduras,1852,-0.582
+Honduras,1856,-0.577
+Honduras,1860,-0.575
+Honduras,1864,-0.55
+Honduras,1865,-0.509
+Honduras,1866,-0.509
+Honduras,1869,-0.54
+Honduras,1874,-0.597
+Honduras,1877,-0.566
+Honduras,1880,-0.552
+Honduras,1881,-0.552
+Honduras,1883,-0.524
+Honduras,1887,-0.569
+Honduras,1891,-0.578
+Honduras,1893,-0.589
+Honduras,1894,-0.589
+Honduras,1898,-0.568
+Honduras,1902,-0.556
+Honduras,1903,-0.556
+Honduras,1905,-0.578
+Honduras,1908,-0.536
+Honduras,1910,-0.537
+Honduras,1911,-0.539
+Honduras,1915,-0.548
+Honduras,1916,-0.548
+Honduras,1919,-0.549
+Peru,1822,1.053
+Peru,1823,1.028
+Peru,1826,1.032
+Peru,1827,1.032
+Peru,1829,1.045
+Peru,1833,1.068
+Peru,1840,1.083
+Peru,1845,1.034
+Peru,1851,0.997
+Peru,1855,1.065
+Peru,1858,1.032
+Peru,1859,1.032
+Peru,1862,1.037
+Peru,1866,1.041
+Peru,1867,1.083
+Peru,1868,1.083
+Peru,1871,1.025
+Peru,1872,1.025
+Peru,1876,1.032
+Peru,1877,1.035
+Peru,1886,1.071
+Peru,1890,1.027
+Peru,1892,1.057
+Peru,1894,1.054
+Peru,1895,1.054
+Peru,1897,-1.707
+Peru,1899,-1.683
+Peru,1903,-1.687
+Peru,1904,-1.701
+Peru,1907,-1.673
+Peru,1908,-1.699
+Peru,1911,-1.685
+Peru,1912,-1.695
+Peru,1915,-1.707
+Peru,1919,-1.702
+Argentina,1826,-1.501
+Argentina,1853,-1.507
+Argentina,1854,-1.507
+Argentina,1856,-1.493
+Argentina,1858,-1.489
+Argentina,1859,-1.489
+Argentina,1860,-1.489
+Argentina,1862,-1.506
+Argentina,1864,-1.486
+Argentina,1866,-1.487
+Argentina,1868,-1.473
+Argentina,1870,-1.524
+Argentina,1872,-1.49
+Argentina,1874,-1.468
+Argentina,1876,-1.475
+Argentina,1878,-1.474
+Argentina,1880,-1.512
+Argentina,1882,-1.469
+Argentina,1884,-1.467
+Argentina,1886,-1.514
+Argentina,1888,-1.501
+Argentina,1890,-1.486
+Argentina,1892,-1.51
+Argentina,1894,-1.489
+Argentina,1896,-1.507
+Argentina,1898,-1.49
+Argentina,1900,-1.492
+Argentina,1902,-1.471
+Argentina,1904,-1.517
+Argentina,1906,-1.489
+Argentina,1908,-1.489
+Argentina,1910,-1.506
+Argentina,1918,-1.478
+India,1920,1.051
+Venezuela,1830,-0.544
+Venezuela,1835,-0.531
+Venezuela,1839,-0.539
+Venezuela,1843,-0.545
+Venezuela,1846,-0.563
+Venezuela,1847,-0.54
+Venezuela,1850,-0.539
+Venezuela,1855,-0.532
+Venezuela,1858,-0.525
+Venezuela,1860,-0.52
+Venezuela,1863,-0.544
+Venezuela,1865,-0.556
+Venezuela,1872,-0.525
+Venezuela,1877,-1.829
+Venezuela,1880,-1.871
+Venezuela,1882,-1.854
+Venezuela,1884,-1.844
+Venezuela,1886,-1.85
+Venezuela,1888,-1.861
+Venezuela,1890,-0.533
+Venezuela,1892,-0.536
+Venezuela,1893,-0.536
+Venezuela,1894,-0.536
+Venezuela,1897,-0.517
+Venezuela,1901,-0.534
+Venezuela,1904,-0.517
+Canada,1841,0.204
+Canada,1844,0.212
+Canada,1848,0.212
+Canada,1851,0.224
+Canada,1854,0.207
+Canada,1858,0.22
+Canada,1861,0.232
+Canada,1863,0.214
+Canada,1867,0.231
+Canada,1872,0.222
+Canada,1874,0.207
+Canada,1876,2.081
+Canada,1878,2.085
+Canada,1882,2.077
+Canada,1887,2.099
+Canada,1891,2.088
+Canada,1896,2.063
+Canada,1900,2.096
+Canada,1904,2.131
+Canada,1908,2.125
+Canada,1911,2.107
+Canada,1917,2.079
+Australia,1843,-1.488
+Australia,1848,-1.505
+Australia,1851,-1.515
+Australia,1856,-1.544
+Australia,1858,1.843
+Australia,1859,1.806
+Australia,1860,1.847
+Australia,1864,1.84
+Australia,1869,1.848
+Australia,1872,1.812
+Australia,1874,1.854
+Australia,1877,1.835
+Australia,1880,1.862
+Australia,1882,1.876
+Australia,1885,1.832
+Australia,1887,1.849
+Australia,1889,1.842
+Australia,1891,1.856
+Australia,1894,1.821
+Australia,1895,1.858
+Australia,1898,1.811
+Australia,1901,1.857
+Australia,1903,1.834
+Australia,1906,1.85
+Australia,1910,1.833
+Australia,1913,1.863
+Australia,1914,1.86
+Australia,1917,1.843
+Australia,1919,1.822
+Chile,1811,-0.712
+Chile,1817,-0.729
+Chile,1822,-0.712
+Chile,1823,-0.712
+Chile,1824,-0.712
+Chile,1825,-0.712
+Chile,1826,-0.691
+Chile,1827,-0.691
+Chile,1828,-0.691
+Chile,1829,-0.691
+Chile,1831,-0.763
+Chile,1834,-0.729
+Chile,1836,-0.742
+Chile,1837,-0.742
+Chile,1840,-0.73
+Chile,1841,-0.705
+Chile,1843,-0.766
+Chile,1846,-0.736
+Chile,1849,-0.723
+Chile,1851,-0.751
+Chile,1852,-0.751
+Chile,1855,-0.767
+Chile,1856,-0.723
+Chile,1858,-0.729
+Chile,1861,-0.72
+Chile,1864,-0.738
+Chile,1866,-0.72
+Chile,1867,-0.72
+Chile,1870,-0.732
+Chile,1871,-0.718
+Chile,1873,-0.765
+Chile,1876,1.279
+Chile,1879,1.242
+Chile,1881,1.223
+Chile,1882,1.223
+Chile,1885,1.256
+Chile,1886,1.241
+Chile,1888,1.285
+Chile,1891,1.237
+Chile,1894,1.231
+Chile,1896,1.261
+Chile,1897,1.261
+Chile,1900,1.283
+Chile,1901,1.286
+Chile,1903,1.286
+Chile,1906,1.248
+Chile,1909,1.273
+Chile,1910,1.27
+Chile,1912,1.252
+Chile,1915,1.244
+Chile,1918,1.24
+Costa Rica,1844,-1.486
+Costa Rica,1846,-1.469
+Costa Rica,1847,-1.475
+Costa Rica,1848,-1.475
+Costa Rica,1849,-1.482
+Costa Rica,1853,-1.466
+Costa Rica,1858,-1.475
+Costa Rica,1859,-1.47
+Costa Rica,1860,-1.511
+Costa Rica,1862,-1.462
+Costa Rica,1863,-1.477
+Costa Rica,1864,-1.477
+Costa Rica,1866,-1.471
+Costa Rica,1868,-1.502
+Costa Rica,1869,-1.497
+Costa Rica,1871,-1.44
+Costa Rica,1872,-1.44
+Costa Rica,1874,-1.49
+Costa Rica,1876,-1.469
+Costa Rica,1880,-1.455
+Costa Rica,1882,-1.481
+Costa Rica,1884,-1.459
+Costa Rica,1886,-1.468
+Costa Rica,1888,-1.488
+Costa Rica,1889,-1.485
+Costa Rica,1892,-1.475
+Costa Rica,1894,-1.509
+Costa Rica,1896,-1.486
+Costa Rica,1897,-1.475
+Costa Rica,1902,-1.497
+Costa Rica,1905,-1.464
+Costa Rica,1906,-1.446
+Costa Rica,1909,-1.495
+Costa Rica,1913,-1.466
+Costa Rica,1917,-1.51
+Costa Rica,1919,-1.492
+Ecuador,1830,1.854
+Ecuador,1835,1.843
+Ecuador,1839,1.837
+Ecuador,1843,1.835
+Ecuador,1845,1.841
+Ecuador,1851,1.843
+Ecuador,1852,1.843
+Ecuador,1856,1.834
+Ecuador,1861,1.852
+Ecuador,1865,1.841
+Ecuador,1868,1.831
+Ecuador,1869,1.831
+Ecuador,1875,1.822
+Ecuador,1878,1.826
+Ecuador,1884,1.873
+Ecuador,1888,1.826
+Ecuador,1892,1.847
+Ecuador,1896,1.849
+Ecuador,1897,1.849
+Ecuador,1901,1.819
+Ecuador,1904,1.843
+Ecuador,1905,1.855
+Ecuador,1906,1.878
+Ecuador,1911,1.858
+Ecuador,1912,1.858
+Ecuador,1914,1.83
+Ecuador,1916,1.848
+Ecuador,1920,1.847
+France,1789,0.24
+France,1791,0.235
+France,1795,0.24
+France,1798,0.212
+France,1815,0.246
+France,1816,0.201
+France,1817,0.201
+France,1818,0.233
+France,1819,0.233
+France,1820,0.226
+France,1824,0.219
+France,1827,0.206
+France,1830,0.205
+France,1831,0.205
+France,1834,0.21
+France,1837,0.191
+France,1839,0.226
+France,1842,0.217
+France,1846,0.233
+France,1848,0.258
+France,1849,0.258
+France,1852,0.205
+France,1857,0.216
+France,1863,0.222
+France,1866,0.22
+France,1869,0.206
+France,1871,0.247
+France,1873,0.212
+France,1876,0.238
+France,1877,0.213
+France,1879,0.236
+France,1881,0.233
+France,1885,0.252
+France,1887,0.217
+France,1889,0.208
+France,1893,0.258
+France,1894,0.258
+France,1895,0.258
+France,1898,0.219
+France,1899,0.219
+France,1902,0.225
+France,1906,0.256
+France,1910,2.241
+France,1913,0.212
+France,1914,1.61
+France,1919,2.261
+France,1920,2.261
+Germany,1848,-0.703
+Germany,1849,-0.703
+Germany,1867,0.257
+Germany,1868,0.257
+Germany,1871,0.281
+Germany,1874,0.256
+Germany,1877,0.268
+Germany,1878,0.277
+Germany,1881,0.271
+Germany,1884,0.248
+Germany,1887,0.262
+Germany,1890,0.247
+Germany,1893,0.246
+Germany,1898,0.251
+Germany,1903,1.082
+Germany,1907,1.237
+Germany,1912,1.156
+Germany,1919,1.748
+Germany,1920,1.805
+Guatemala,1824,0.283
+Guatemala,1826,0.3
+Guatemala,1828,0.337
+Guatemala,1829,0.337
+Guatemala,1830,0.337
+Guatemala,1831,0.292
+Guatemala,1835,0.31
+Guatemala,1842,0.258
+Guatemala,1844,0.272
+Guatemala,1851,0.316
+Guatemala,1852,0.316
+Guatemala,1865,0.299
+Guatemala,1869,0.33
+Guatemala,1871,-0.667
+Guatemala,1872,-0.667
+Guatemala,1873,-0.678
+Guatemala,1876,-0.687
+Guatemala,1878,-0.668
+Guatemala,1880,-0.668
+Guatemala,1885,0.308
+Guatemala,1891,0.305
+Guatemala,1897,-0.68
+Guatemala,1898,-1.72
+Guatemala,1904,-1.685
+Guatemala,1910,-1.661
+Guatemala,1916,-1.726
+Iran,1906,-0.148
+Iran,1909,-0.133
+Iran,1914,-0.179
+Italy,1861,1.121
+Italy,1865,1.154
+Italy,1867,1.142
+Italy,1870,1.118
+Italy,1874,1.143
+Italy,1876,1.106
+Italy,1880,1.151
+Italy,1882,1.149
+Italy,1886,1.132
+Italy,1890,1.131
+Italy,1892,1.124
+Italy,1895,1.146
+Italy,1897,1.129
+Italy,1900,0.963
+Italy,1904,0.948
+Italy,1909,1.111
+Italy,1913,0.889
+Italy,1919,1.45
+Liberia,1847,0.178
+Liberia,1849,0.191
+Liberia,1851,0.184
+Liberia,1853,0.152
+Liberia,1855,0.158
+Liberia,1857,0.178
+Liberia,1859,0.215
+Liberia,1861,0.183
+Liberia,1863,0.204
+Liberia,1865,0.207
+Liberia,1867,0.175
+Liberia,1869,0.183
+Liberia,1871,0.145
+Liberia,1873,0.159
+Liberia,1875,0.201
+Liberia,1877,0.188
+Liberia,1879,0.195
+Liberia,1881,0.2
+Liberia,1883,0.186
+Liberia,1885,0.209
+Liberia,1887,0.138
+Liberia,1889,0.203
+Liberia,1891,0.167
+Liberia,1893,0.156
+Liberia,1895,0.193
+Liberia,1897,0.202
+Liberia,1899,0.195
+Liberia,1901,0.187
+Liberia,1903,0.179
+Liberia,1905,0.189
+Liberia,1907,0.19
+Liberia,1911,0.205
+Liberia,1915,0.178
+Liberia,1919,0.196
+Netherlands,1796,1.97
+Netherlands,1797,1.97
+Netherlands,1798,1.97
+Netherlands,1805,1.926
+Netherlands,1848,1.926
+Netherlands,1850,1.945
+Netherlands,1852,1.968
+Netherlands,1853,1.968
+Netherlands,1854,1.924
+Netherlands,1856,1.951
+Netherlands,1858,1.925
+Netherlands,1860,1.933
+Netherlands,1862,1.936
+Netherlands,1864,1.952
+Netherlands,1866,1.934
+Netherlands,1868,1.913
+Netherlands,1869,1.951
+Netherlands,1871,1.952
+Netherlands,1873,1.942
+Netherlands,1875,1.953
+Netherlands,1877,1.958
+Netherlands,1879,1.916
+Netherlands,1881,1.953
+Netherlands,1883,1.934
+Netherlands,1884,1.915
+Netherlands,1886,1.953
+Netherlands,1887,1.929
+Netherlands,1888,1.929
+Netherlands,1891,1.924
+Netherlands,1894,1.961
+Netherlands,1897,1.938
+Netherlands,1901,1.952
+Netherlands,1905,1.943
+Netherlands,1909,1.924
+Netherlands,1913,1.933
+Netherlands,1917,1.924
+Netherlands,1918,1.935
+Spain,1813,-1.798
+Spain,1820,-1.806
+Spain,1822,-1.811
+Spain,1834,1.098
+Spain,1836,-1.837
+Spain,1837,-1.837
+Spain,1839,1.081
+Spain,1840,1.081
+Spain,1841,1.099
+Spain,1843,1.094
+Spain,1844,1.094
+Spain,1846,1.091
+Spain,1850,1.08
+Spain,1851,1.08
+Spain,1853,1.077
+Spain,1854,1.096
+Spain,1857,1.104
+Spain,1858,1.088
+Spain,1863,1.104
+Spain,1864,1.073
+Spain,1865,1.08
+Spain,1867,1.076
+Spain,1869,1.104
+Spain,1871,1.111
+Spain,1872,1.048
+Spain,1873,1.048
+Spain,1876,1.09
+Spain,1879,1.083
+Spain,1881,1.098
+Spain,1884,1.07
+Spain,1886,1.111
+Spain,1891,1.099
+Spain,1893,1.074
+Spain,1896,1.092
+Spain,1898,1.076
+Spain,1899,1.086
+Spain,1901,1.093
+Spain,1903,1.093
+Spain,1905,1.109
+Spain,1907,1.111
+Spain,1910,1.094
+Spain,1914,1.081
+Spain,1916,1.125
+Spain,1918,1.111
+Spain,1919,1.108
+Spain,1920,1.105
+Turkey,1877,1.536
+Turkey,1908,1.67
+Turkey,1912,-1.356
+Turkey,1914,-0.306
+Turkey,1919,1.707
+Turkey,1920,1.707
+United Kingdom,1790,-0.661
+United Kingdom,1796,-0.69
+United Kingdom,1801,-0.643
+United Kingdom,1802,-0.7
+United Kingdom,1806,-0.655
+United Kingdom,1807,-0.655
+United Kingdom,1810,-0.672
+United Kingdom,1812,-0.708
+United Kingdom,1818,-0.66
+United Kingdom,1820,-0.673
+United Kingdom,1826,-0.684
+United Kingdom,1830,-0.666
+United Kingdom,1831,-0.666
+United Kingdom,1832,-0.624
+United Kingdom,1835,-0.67
+United Kingdom,1837,-0.704
+United Kingdom,1841,-0.694
+United Kingdom,1847,-0.653
+United Kingdom,1852,-0.701
+United Kingdom,1865,-0.655
+United Kingdom,1868,-0.672
+United Kingdom,1874,-0.653
+United Kingdom,1880,1.276
+United Kingdom,1885,1.307
+United Kingdom,1886,1.307
+United Kingdom,1892,1.262
+United Kingdom,1895,1.268
+United Kingdom,1900,1.267
+United Kingdom,1906,1.313
+United Kingdom,1918,0.35
+Uruguay,1830,-0.7
+Uruguay,1833,-0.68
+Uruguay,1836,-0.678
+Uruguay,1838,-0.712
+Uruguay,1841,-0.716
+Uruguay,1842,-0.706
+Uruguay,1851,-0.694
+Uruguay,1854,-0.689
+Uruguay,1857,-0.716
+Uruguay,1860,-0.698
+Uruguay,1867,0.257
+Uruguay,1872,0.247
+Uruguay,1876,0.257
+Uruguay,1878,0.242
+Uruguay,1881,0.255
+Uruguay,1884,0.223
+Uruguay,1887,0.289
+Uruguay,1890,1.189
+Uruguay,1893,1.197
+Uruguay,1896,1.189
+Uruguay,1898,1.21
+Uruguay,1901,1.221
+Uruguay,1905,1.209
+Uruguay,1907,1.205
+Uruguay,1910,1.201
+Uruguay,1913,1.198
+Uruguay,1917,2.44
+Uruguay,1919,2.438
+China,1911,-1.772
+China,1912,-1.772
+China,1913,-1.772
+China,1918,-1.54
+Dominican Republic,1844,-0.631
+Dominican Republic,1845,-0.631
+Dominican Republic,1848,-0.619
+Dominican Republic,1849,-0.619
+Dominican Republic,1853,-0.636
+Dominican Republic,1858,-0.615
+Dominican Republic,1859,-0.615
+Dominican Republic,1865,-0.589
+Dominican Republic,1866,-0.589
+Dominican Republic,1874,-0.65
+Dominican Republic,1876,-0.625
+Dominican Republic,1878,-0.603
+Dominican Republic,1880,-0.625
+Dominican Republic,1882,-0.638
+Dominican Republic,1884,-0.593
+Dominican Republic,1886,-0.615
+Dominican Republic,1888,-0.623
+Dominican Republic,1892,-0.628
+Dominican Republic,1896,-0.647
+Dominican Republic,1899,-0.619
+Dominican Republic,1903,-0.644
+Dominican Republic,1904,-0.644
+Dominican Republic,1908,-0.63
+Dominican Republic,1912,-0.607
+Dominican Republic,1913,-0.607
+Dominican Republic,1914,-0.615
+Libya,1952,0.186
+Libya,1956,0.19
+Libya,1960,2.209
+Libya,1964,2.25
+Libya,1965,2.25
+Uzbekistan,1990,1.9
+Uzbekistan,1991,1.9
+Uzbekistan,1994,1.94
+Uzbekistan,1995,1.94
+Uzbekistan,1999,1.927
+Uzbekistan,2000,1.927
+Uzbekistan,2004,1.947
+Uzbekistan,2005,1.947
+Uzbekistan,2007,1.949
+Uzbekistan,2009,1.903
+Uzbekistan,2010,1.903
+Austria,1848,0.209
+Austria,1867,0.186
+Austria,1871,0.207
+Austria,1873,0.23
+Austria,1879,0.222
+Austria,1885,1.142
+Austria,1891,0.211
+Austria,1897,0.216
+Austria,1900,0.215
+Austria,1907,0.199
+Austria,1911,1.132
+Austria,1919,2.247
+Austria,1920,2.252
+Austria,1923,2.266
+Austria,1927,2.259
+Austria,1930,2.267
+Belgium,1830,0.218
+Belgium,1831,0.218
+Belgium,1833,0.191
+Belgium,1835,0.207
+Belgium,1837,0.191
+Belgium,1839,0.184
+Belgium,1841,0.206
+Belgium,1843,0.181
+Belgium,1845,0.191
+Belgium,1847,0.192
+Belgium,1848,0.174
+Belgium,1850,0.174
+Belgium,1852,0.19
+Belgium,1854,0.193
+Belgium,1856,0.175
+Belgium,1857,0.198
+Belgium,1859,0.182
+Belgium,1861,0.193
+Belgium,1863,0.207
+Belgium,1864,0.201
+Belgium,1866,0.202
+Belgium,1868,0.194
+Belgium,1870,0.193
+Belgium,1872,0.196
+Belgium,1874,0.187
+Belgium,1876,0.202
+Belgium,1878,2.038
+Belgium,1880,2.071
+Belgium,1882,2.055
+Belgium,1884,2.051
+Belgium,1886,2.045
+Belgium,1888,2.079
+Belgium,1890,2.074
+Belgium,1892,2.049
+Belgium,1894,2.07
+Belgium,1896,2.068
+Belgium,1898,2.065
+Belgium,1900,2.066
+Belgium,1902,2.065
+Belgium,1904,2.092
+Belgium,1906,2.037
+Belgium,1908,2.031
+Belgium,1910,2.062
+Belgium,1912,2.084
+Belgium,1914,2.035
+Belgium,1919,2.056
+Bulgaria,1879,0.246
+Bulgaria,1880,0.246
+Bulgaria,1881,0.201
+Bulgaria,1882,0.198
+Bulgaria,1884,0.235
+Bulgaria,1886,0.23
+Bulgaria,1887,0.22
+Bulgaria,1890,0.202
+Bulgaria,1893,0.206
+Bulgaria,1894,0.198
+Bulgaria,1896,0.209
+Bulgaria,1899,0.238
+Bulgaria,1901,0.235
+Bulgaria,1902,0.208
+Bulgaria,1903,0.21
+Bulgaria,1908,1.337
+Bulgaria,1911,1.327
+Bulgaria,1913,1.334
+Bulgaria,1914,1.334
+Bulgaria,1919,0.212
+Bulgaria,1920,0.212
+Cuba,1900,0.229
+Cuba,1901,0.23
+Cuba,1904,0.269
+Cuba,1905,0.268
+Cuba,1908,0.273
+Cuba,1910,0.221
+Cuba,1912,0.24
+Cuba,1914,0.26
+Cuba,1916,0.26
+Cuba,1918,0.27
+Cuba,1920,0.248
+Denmark,1848,-1.538
+Denmark,1849,-1.572
+Denmark,1852,-1.565
+Denmark,1853,-1.565
+Denmark,1854,-1.542
+Denmark,1855,-1.542
+Denmark,1856,-1.542
+Denmark,1858,-1.557
+Denmark,1859,-1.552
+Denmark,1861,-1.556
+Denmark,1863,-1.551
+Denmark,1864,-1.551
+Denmark,1865,-1.551
+Denmark,1866,-1.558
+Denmark,1869,-1.535
+Denmark,1870,-1.555
+Denmark,1872,-1.563
+Denmark,1873,-1.591
+Denmark,1874,-1.591
+Denmark,1876,-1.533
+Denmark,1877,-1.59
+Denmark,1879,-1.559
+Denmark,1881,-1.551
+Denmark,1882,-1.55
+Denmark,1884,-1.565
+Denmark,1886,-1.565
+Denmark,1887,-1.565
+Denmark,1890,-1.564
+Denmark,1892,-1.566
+Denmark,1894,-1.55
+Denmark,1895,-1.55
+Denmark,1898,-1.536
+Denmark,1901,0.852
+Denmark,1902,0.852
+Denmark,1903,0.852
+Denmark,1906,0.859
+Denmark,1909,0.845
+Denmark,1910,0.845
+Denmark,1913,0.83
+Denmark,1914,0.844
+Denmark,1915,0.86
+Denmark,1918,0.845
+Denmark,1920,0.856
+Finland,1863,1.06
+Finland,1867,1.104
+Finland,1872,1.066
+Finland,1877,1.079
+Finland,1882,1.094
+Finland,1885,1.086
+Finland,1888,1.086
+Finland,1891,1.057
+Finland,1894,1.077
+Finland,1897,1.084
+Finland,1899,1.09
+Finland,1900,1.09
+Finland,1901,1.09
+Finland,1905,1.069
+Finland,1907,2.273
+Finland,1908,2.277
+Finland,1909,2.28
+Finland,1910,2.28
+Finland,1911,2.28
+Finland,1913,2.256
+Finland,1916,2.277
+Finland,1917,2.272
+Finland,1919,2.307
+Greece,1823,0.148
+Greece,1825,0.133
+Greece,1827,0.12
+Greece,1828,0.12
+Greece,1831,0.138
+Greece,1843,0.138
+Greece,1844,-0.726
+Greece,1847,-0.77
+Greece,1850,1.192
+Greece,1853,1.177
+Greece,1856,-0.771
+Greece,1859,1.155
+Greece,1861,1.154
+Greece,1862,-0.77
+Greece,1865,1.146
+Greece,1868,-0.772
+Greece,1869,1.178
+Greece,1872,1.172
+Greece,1873,1.172
+Greece,1874,-0.762
+Greece,1875,1.164
+Greece,1879,1.134
+Greece,1881,1.176
+Greece,1885,1.156
+Greece,1887,1.156
+Greece,1890,1.191
+Greece,1892,1.15
+Greece,1895,1.129
+Greece,1899,1.144
+Greece,1902,1.159
+Greece,1905,1.143
+Greece,1906,1.193
+Greece,1910,1.149
+Greece,1912,1.165
+Greece,1915,-0.733
+Greece,1920,1.177
+Montenegro,1905,-1.643
+Montenegro,1906,-1.643
+Montenegro,1907,-1.643
+Montenegro,1911,-1.66
+Montenegro,1914,-1.665
+New Zealand,1853,0.798
+New Zealand,1855,0.79
+New Zealand,1860,0.809
+New Zealand,1866,0.79
+New Zealand,1868,0.777
+New Zealand,1871,0.79
+New Zealand,1875,2.032
+New Zealand,1879,2.013
+New Zealand,1881,2.036
+New Zealand,1884,2.063
+New Zealand,1887,2.047
+New Zealand,1890,2.015
+New Zealand,1893,2.036
+New Zealand,1896,2.052
+New Zealand,1899,2.039
+New Zealand,1902,2.035
+New Zealand,1905,2.032
+New Zealand,1908,2.056
+New Zealand,1911,2.045
+New Zealand,1914,2.039
+New Zealand,1919,2.03
+Norway,1814,-1.561
+Norway,1815,-1.561
+Norway,1817,-1.528
+Norway,1820,-1.554
+Norway,1823,-1.505
+Norway,1826,-1.522
+Norway,1829,-1.585
+Norway,1832,-1.55
+Norway,1835,-1.564
+Norway,1838,-1.542
+Norway,1841,-1.535
+Norway,1844,-1.554
+Norway,1847,-1.504
+Norway,1850,-1.574
+Norway,1853,-1.549
+Norway,1856,-1.562
+Norway,1859,-1.514
+Norway,1862,-1.539
+Norway,1865,-1.549
+Norway,1868,-1.527
+Norway,1870,-1.502
+Norway,1873,-1.57
+Norway,1876,-1.534
+Norway,1879,-1.516
+Norway,1882,-1.564
+Norway,1885,1.925
+Norway,1888,1.936
+Norway,1891,1.946
+Norway,1894,1.925
+Norway,1897,1.934
+Norway,1900,1.937
+Norway,1903,1.92
+Norway,1906,1.945
+Norway,1909,1.954
+Norway,1912,1.945
+Norway,1915,1.947
+Norway,1918,1.935
+Paraguay,1814,-1.665
+Paraguay,1841,-1.625
+Paraguay,1844,-1.687
+Paraguay,1854,-1.655
+Paraguay,1857,-1.647
+Paraguay,1862,-1.653
+Paraguay,1870,-1.651
+Paraguay,1874,-0.467
+Paraguay,1878,-0.468
+Paraguay,1880,-0.444
+Paraguay,1882,-0.468
+Paraguay,1886,-0.496
+Paraguay,1887,-0.496
+Paraguay,1890,-0.491
+Paraguay,1891,-0.498
+Paraguay,1893,-0.464
+Paraguay,1894,-0.464
+Paraguay,1896,-0.444
+Paraguay,1898,-1.66
+Paraguay,1902,-0.456
+Paraguay,1906,-0.49
+Paraguay,1910,-0.471
+Paraguay,1912,-1.661
+Paraguay,1916,-0.466
+Paraguay,1917,-0.466
+Paraguay,1919,-0.455
+Paraguay,1920,-0.455
+Romania,1831,-1.768
+Romania,1836,-1.766
+Romania,1841,-1.765
+Romania,1846,-1.744
+Romania,1859,0.211
+Romania,1860,0.23
+Romania,1861,0.22
+Romania,1864,0.216
+Romania,1866,0.217
+Romania,1869,0.176
+Romania,1870,0.176
+Romania,1871,0.176
+Romania,1875,0.212
+Romania,1876,0.212
+Romania,1879,0.223
+Romania,1883,0.233
+Romania,1884,0.233
+Romania,1888,0.206
+Romania,1891,0.251
+Romania,1892,0.251
+Romania,1895,0.246
+Romania,1899,0.219
+Romania,1901,0.21
+Romania,1905,0.227
+Romania,1907,0.217
+Romania,1911,0.216
+Romania,1912,0.218
+Romania,1914,0.193
+Romania,1918,0.22
+Romania,1919,0.214
+Romania,1920,0.183
+Serbia,1858,0.124
+Serbia,1861,0.117
+Serbia,1864,0.11
+Serbia,1870,0.099
+Serbia,1875,0.137
+Serbia,1877,0.091
+Serbia,1880,1.092
+Serbia,1884,1.068
+Serbia,1886,1.124
+Serbia,1888,1.115
+Serbia,1889,2.399
+Serbia,1893,1.102
+Serbia,1895,1.11
+Serbia,1903,1.103
+Serbia,1907,2.423
+Serbia,1908,2.409
+Serbia,1911,2.394
+Hungary,1848,-0.626
+Hungary,1861,-0.656
+Hungary,1865,-0.683
+Hungary,1869,-0.644
+Hungary,1872,-0.657
+Hungary,1875,-0.663
+Hungary,1878,-0.663
+Hungary,1881,-0.642
+Hungary,1884,-0.634
+Hungary,1887,-0.641
+Hungary,1892,-0.683
+Hungary,1896,-0.646
+Hungary,1901,-0.634
+Hungary,1905,-0.646
+Hungary,1906,-0.683
+Hungary,1910,-0.694
+Hungary,1919,-0.657
+Hungary,1920,-0.657
+Hungary,1922,-0.644
+Hungary,1926,-0.661
+Hungary,1931,-0.628
+Hungary,1935,-0.641
+Baden,1819,-1.592
+Baden,1825,-1.582
+Baden,1830,-1.619
+Baden,1833,-1.535
+Baden,1835,-1.584
+Baden,1837,-1.591
+Baden,1839,-1.571
+Baden,1841,-1.578
+Baden,1842,-1.578
+Baden,1843,-1.578
+Baden,1845,-1.565
+Baden,1846,-1.565
+Baden,1847,-1.565
+Baden,1851,-1.592
+Baden,1854,-1.555
+Baden,1855,-1.555
+Baden,1857,-1.556
+Baden,1859,-1.58
+Baden,1861,-1.629
+Baden,1863,-1.614
+Baden,1865,-1.588
+Baden,1867,-1.609
+Baden,1869,-1.593
+Bavaria,1818,-1.588
+Bavaria,1824,-1.578
+Bavaria,1830,-1.611
+Bavaria,1836,-1.617
+Bavaria,1839,-1.597
+Bavaria,1845,-1.588
+Bavaria,1848,-1.602
+Bavaria,1849,-1.602
+Bavaria,1855,-1.593
+Bavaria,1858,-1.59
+Bavaria,1863,-1.611
+Bavaria,1869,-1.611
+Modena,1859,0.656
+Parma,1859,2.309
+Saxony,1848,0.249
+Tuscany,1848,0.243
+Tuscany,1849,0.243
+Tuscany,1859,0.239
+Wurtemberg,1815,-1.611
+Wurtemberg,1819,-1.624
+Wurtemberg,1820,-1.624
+Wurtemberg,1825,-1.589
+Wurtemberg,1831,-1.61
+Wurtemberg,1833,-1.601
+Wurtemberg,1839,-1.592
+Wurtemberg,1844,-1.633
+Wurtemberg,1848,-1.578
+Wurtemberg,1849,-1.584
+Wurtemberg,1851,-1.593
+Wurtemberg,1855,-1.578
+Wurtemberg,1862,-1.59
+Wurtemberg,1868,0.978
+Two Sicilies,1848,0.983
+Two Sicilies,1849,0.939
+Hanover,1832,-1.668
+Hanover,1841,-1.65
+Hanover,1847,-1.656
+Hanover,1849,-1.658
+Hanover,1853,-1.672
+Hanover,1856,-1.674
+Hanover,1863,-1.688
+Hesse-Darmstadt,1820,-0.457
+Hesse-Darmstadt,1849,0.204
+Hesse-Darmstadt,1862,0.194
+Hesse-Darmstadt,1865,0.175
+Hesse-Darmstadt,1866,0.175
+Mecklenburg Schwerin,1848,1.031
+Papal States,1798,-1.722
+Papal States,1799,-1.722
+Papal States,1848,0.231
+Papal States,1849,0.231
+Oldenburg,1848,-1.696
+Saxe-Weimar-Eisenach,1816,-1.517
+Saxe-Weimar-Eisenach,1822,-1.528
+Saxe-Weimar-Eisenach,1825,-1.52
+Saxe-Weimar-Eisenach,1828,-1.548
+Saxe-Weimar-Eisenach,1834,-1.539
+Saxe-Weimar-Eisenach,1840,-1.538
+Saxe-Weimar-Eisenach,1846,-1.557
+Saxe-Weimar-Eisenach,1848,-1.526
+Saxe-Weimar-Eisenach,1849,-1.497
+Saxe-Weimar-Eisenach,1850,-1.497
+Piedmont-Sardinia,1848,0.263
+Piedmont-Sardinia,1849,0.263
+Piedmont-Sardinia,1853,0.293
+Piedmont-Sardinia,1857,0.275
+Piedmont-Sardinia,1860,0.23
