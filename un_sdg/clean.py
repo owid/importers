@@ -38,7 +38,6 @@ from un_sdg import (
 from un_sdg.core import (
     create_short_unit,
     extract_datapoints,
-    get_distinct_entities,
     clean_datasets,
     dimensions_description,
     attributes_description,
@@ -120,7 +119,7 @@ create_sources():
 - Each series code may be associated with multiple indicators
 - Each series code may be made up of multiple sources ('dataPublisherSource')
 - For each series we extract the 'dataPublisherSource', if there are two or fewer we record all of them,
- if there are more we state that '"Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"'
+ if there are more we state that '"Data from multiple sources compiled by the UN'
 """
 
 
@@ -134,7 +133,8 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         "additionalInfo": None,
     }
     all_series = (
-        original_df[["SeriesCode", "SeriesDescription", "[Units]"]]
+        # original_df[["SeriesCode", "SeriesDescription", "[Units]", "Indicator"]]
+        original_df[["SeriesCode", "SeriesDescription"]]
         .drop_duplicates()
         .reset_index()
     )
@@ -146,26 +146,51 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         ].Source.drop_duplicates()
         if len(dp_source) <= 2:
             source_description["dataPublisherSource"] = dp_source.str.cat(sep="; ")
+            if os.path.isfile(os.path.join(CONFIGPATH, "sources_edited.json")):
+                json_file_path = os.path.join(
+                    CONFIGPATH, "sources_edited.json"
+                )  # replacing the sources with manually created source names in sources_edited.json.
+                with open(json_file_path, "r") as j:
+                    edited_sources = json.loads(j.read())
+                    source_description["dataPublisherSource"] = source_description[
+                        "dataPublisherSource"
+                    ].replace(
+                        "\xa0", " "
+                    )  # there is some rogue unicode in one of the sources.
+                    source_description["dataPublisherSource"] = edited_sources[
+                        source_description["dataPublisherSource"]
+                    ]
         else:
             source_description[
                 "dataPublisherSource"
-            ] = "Data from multiple sources compiled by UN Global SDG Database - https://unstats.un.org/sdgs/indicators/database/"
+            ] = "Data from multiple sources compiled by the UN"
         try:
-            source_description["additionalInfo"] = None
+            source_description[
+                "additionalInfo"
+            ] = "%s: %s \n \n %s: %s \n \n %s: %s \n \n" % (
+                "Variable description",
+                row["SeriesDescription"],
+                "Variable code",
+                row["SeriesCode"],
+                "Detailed sources",
+                dp_source.str.cat(sep=" "),
+            )
         except:
             pass
         df_sources = df_sources.append(
             {
                 "id": i,
-                "name": "%s" % (row["SeriesDescription"]),
+                "name": source_description["dataPublisherSource"],
                 "description": json.dumps(source_description),
-                "dataset_id": df_datasets.iloc[0][
-                    "id"
-                ],  # this may need to be more flexible!
+                "dataset_id": df_datasets.iloc[0]["id"],
                 "series_code": row["SeriesCode"],
             },
             ignore_index=True,
         )
+        assert (
+            df_sources.duplicated(subset=["name", "dataset_id", "description"]).sum()
+            == 0
+        ), (print(i + source_description["dataPublisherSource"]) + "is duplicated!")
     print("Saving sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
@@ -244,7 +269,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                 "name": "%s - %s - %s"
                 % (row["Indicator"], row["SeriesDescription"], row["SeriesCode"]),
                 "description": None,
-                "code": row["SeriesCode"],
+                "code": None,
                 "unit": row["Units_long"],
                 "short_unit": row["short_unit"],
                 "timespan": "%s - %s"
@@ -304,9 +329,16 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
 
 
 def create_distinct_entities() -> None:
-    df_distinct_entities = pd.DataFrame(
-        get_distinct_entities(), columns=["name"]
-    )  # Goes through each datapoints to get the distinct entities
+    # df_distinct_entities = pd.DataFrame(
+    #    get_distinct_entities(), columns=["name"]
+    # )  # Goes through each datapoints to get the distinct entities
+    df_distinct_entities = pd.read_csv(
+        os.path.join(CONFIGPATH, "standardized_entity_names.csv")
+    )
+    df_distinct_entities = df_distinct_entities[["Our World In Data Name"]].rename(
+        columns={"Our World In Data Name": "name"}
+    )
+
     df_distinct_entities.to_csv(
         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
     )

@@ -12,6 +12,7 @@ Usage:
 import re
 from glob import glob
 import os
+import json
 
 from tqdm import tqdm
 import pandas as pd
@@ -59,14 +60,39 @@ def main(dataset_dir: str, dataset_namespace: str):
             datasets.at[i, "db_dataset_id"] = db_dataset_id
         print(f"Upserted {len(datasets)} datasets.")
 
+        # Upsert datasets
+        print("---\nUpserting namespace...")
+        if datasets.shape[0] == 1:
+            namespace_description = datasets["name"].iloc[0]
+        else:
+            namespace_description = f"{dataset_dir} datasets"
+        db.upsert_namespace(name=dataset_namespace, description=namespace_description)
+        print("Upserted 1 namespace.")
+
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        assert (
-            sources.groupby("dataset_id")["name"]
-            .apply(lambda gp: gp.duplicated().sum() == 0)
-            .all()
-        ), "All sources in a dataset must have a unique name."
+        for _, gp in sources.groupby(["dataset_id", "name", "description"]):
+            descriptions = pd.DataFrame(
+                gp["description"]
+                .apply(lambda x: json.loads(x))
+                .apply(
+                    lambda x: [
+                        x.get("dataPublishedBy"),
+                        x.get("dataPublisherSource"),
+                        x.get("additionalInfo"),
+                    ]
+                )
+                .values.tolist(),
+                columns=[
+                    "dataPublishedBy",
+                    "dataPublisherSource",
+                    "additionalInfo",
+                ],
+            )
+            assert (
+                descriptions.duplicated().sum() == 0
+            ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,

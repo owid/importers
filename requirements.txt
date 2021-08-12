@@ -1,10 +1,11 @@
-aiohttp==3.7.4.post0
+aiohttp>=3.7.4
 async-timeout==3.0.1
 attrs==20.3.0
 beautifulsoup4==4.9.3
 bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
+click
 et-xmlfile==1.1.0
 idna==2.10
 lxml==4.6.3
@@ -12,7 +13,9 @@ multidict==5.1.0
 numpy==1.20.1
 openpyxl==3.0.7
 pandas==1.2.3
+pdfminer.six
 PyMySQL==1.0.2
+PyPDF2
 python-dateutil==2.8.1
 python-dotenv==0.15.0
 pytz==2021.1

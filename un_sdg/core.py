@@ -5,6 +5,9 @@ import itertools
 import math
 import numpy as np
 import requests
+import pdfminer.high_level
+import pdfminer.layout
+import io
 
 from typing import List, Tuple
 from un_sdg import OUTPATH
@@ -220,3 +223,27 @@ def get_series_with_relevant_dimensions(
         dimension_names,
         dimension_unique_values,
     )
+
+
+def extract_description(pdf_path):
+    laparams = pdfminer.layout.LAParams()
+    for param in (
+        "all_texts",
+        "detect_vertical",
+        "word_margin",
+        "char_margin",
+        "line_margin",
+        "boxes_flow",
+    ):
+        paramv = locals().get(param, None)
+        if paramv is not None:
+            setattr(laparams, param, paramv)
+
+    inputf = open(pdf_path, "rb")
+    ff = io.StringIO()
+    pdfminer.high_level.extract_text_to_fp(inputf, ff, laparams=laparams)
+    inputf.close()
+
+    converted_text = ff.getvalue()
+
+    return converted_text
