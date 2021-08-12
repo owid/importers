@@ -1,5 +1,3 @@
-import os
-
 # Dataset constants.
 DATASET_NAME = "Varieties of Democracy (V-Dem)"
 DATASET_AUTHORS = "V-Dem (Varieties of Democracy) Institute"

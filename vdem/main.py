@@ -5,11 +5,11 @@ Usage:
     python -m vdem.main
 """
 
-from ..vdem import DATASET_NAMESPACE, DATASET_DIR
+from vdem import DATASET_NAMESPACE, DATASET_DIR
 
-from ..standard_importer import import_dataset
+from standard_importer import import_dataset
 
-# from ..standard_importer.chart_revision_suggester import ChartRevisionSuggester
+# from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
 def main():
