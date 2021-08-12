@@ -133,6 +133,7 @@ create_datapoints <- function() {
 
     # Pre-filled short units for variable that have percentages
     variables[str_detect(name, "(%)|([Pp]ercent)|([Ss]hare of)"), short_unit := "%"]
+    variables[str_detect(description, "[wW]hat (share|percent)"), short_unit := "%"]
 
     # Set zero decimal places for categorical and/or binary vars
     variables[
