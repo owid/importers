@@ -77,7 +77,8 @@ create_variables <- function() {
         scale == "We provide two versions of this index. The first is the normalized output from the the hierarchical latent variable analysis. It is on an unbounded interval scale. The second, denoted by *_osp, is a version of this output which we scale using a standard normal cumulative distribution function. It is thus scaled low to high (0-1).",
         scale := "Normalized output from the the hierarchical latent variable analysis on an unbounded interval scale"
     ]
-    unit <- paste(
+    unit <- ifelse(varbook$responses == "Percent.", "%", NA)
+    vartype <- paste(
         varbook$scale,
         sep = "\n"
     ) %>% str_replace_all("(\\\n)+", "\n") %>% str_replace("\\\n$", "") %>% str_replace_all('"', "'")
@@ -85,7 +86,7 @@ create_variables <- function() {
     name <- varbook$name
     id <- seq_along(name)
     dataset_id <- 0
-    df <- data.table(tag, dataset_id, id, name, unit, description)
+    df <- data.table(tag, dataset_id, id, name, unit, description, vartype)
     fwrite(df, "output/variables.csv")
 }
 
@@ -131,15 +132,19 @@ create_datapoints <- function() {
     writeLines(unprocessed, "output/unprocessed_variables.txt")
     variables <- variables[tag %in% processed]
 
-    # Pre-filled short units for variable that have percentages
-    variables[str_detect(name, "(%)|([Pp]ercent)|([Ss]hare of)"), short_unit := "%"]
-    variables[str_detect(description, "[wW]hat (share|percent)"), short_unit := "%"]
-
     # Set zero decimal places for categorical and/or binary vars
     variables[
-        unit %in% c("Nominal", "Dichotomous", "Ordinal.", "Dichotomous."),
+        vartype %in% c("Nominal", "Dichotomous", "Ordinal.", "Dichotomous."),
         display := '{"numDecimalPlaces": 0}'
     ]
+    variables[, vartype := NULL]
+    
+    # Pre-filled units for variable that have percentages
+    variables[
+        str_detect(name, "(%)|([Pp]ercent)|([Ss]hare of)")
+        | str_detect(description, "[wW]hat (share|percent)"),
+    unit := "%"]
+    variables[, short_unit := unit]
 
     fwrite(variables, "output/variables.csv")
     message(nrow(variables), " variables ready for DB import.")
