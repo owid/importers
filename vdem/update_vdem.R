@@ -64,6 +64,7 @@ create_variables <- function() {
             str_replace_all("<br>", "\n") %>%
             str_squish()
     }
+    varbook[, responses := str_replace_all(responses, " (\\d+): ", "\n\\1: ")]
     description <- paste(
         varbook$question,
         varbook$responses,
