@@ -1,15 +1,11 @@
 library(data.table)
 library(stringr)
 library(plyr)
-rm(list = setdiff(ls(), c("codebook", "vdem")))
 options(scipen = 999)
 
-# Download and load data
-download.file(url = "https://github.com/vdeminstitute/vdemdata/raw/master/data/codebook.RData", destfile = "input/codebook.RData")
+# Load data
 load("input/codebook.RData")
 setDT(codebook)
-
-download.file(url = "https://github.com/vdeminstitute/vdemdata/raw/master/data/vdem.RData", destfile = "input/vdem.RData")
 load("input/vdem.RData")
 setDT(vdem)
 
