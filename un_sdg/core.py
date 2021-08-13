@@ -8,9 +8,13 @@ import requests
 import pdfminer.high_level
 import pdfminer.layout
 import io
+import re
+import datetime
+
 
 from typing import List, Tuple
-from un_sdg import OUTPATH
+from un_sdg import CONFIGPATH, OUTPATH, METAPATH
+from pdfminer.high_level import extract_text
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
@@ -247,3 +251,48 @@ def extract_description(pdf_path):
     converted_text = ff.getvalue()
 
     return converted_text
+
+
+def extract_meta_text(file_path: str) -> dict:
+    now = datetime.datetime.now()
+    ext_txt = extract_text(file_path)
+    file_name = re.sub("Metadata-", "", re.sub(".pdf", "", os.path.basename(file_path)))
+
+    # There are a few different formats for the metadata pdfs, meaning that we need to use slightly different splits.
+    ext_txt_meth = ext_txt.split("Methodology")[0]
+    ext_txt_2b = ext_txt.split("2.b. Unit of measure")[0]
+
+    # We want to know which split has worked, this should be the shorter one.
+    test = [ext_txt_meth, ext_txt_2b]
+    ind = np.argmin([len(item) for item in test])
+
+    # Pass the shorter source description onto the rest of the function.
+    if ind == 0:
+        ext_txt_sub = ext_txt_meth
+    if ind == 1:
+        ext_txt_sub = ext_txt_2b
+
+    # Remove anything that is before 'Definition:' in the metadata. Mostly empty space and details on goal, target, indicator.
+    sd = ext_txt_sub[ext_txt_sub.find("Definition:") :]
+    s = re.sub(
+        r"\n\n\x0cLast updated:*.*(now.year-9|now.year-8|now.year-7|now.year-6||now.year-5||now.year-4|now.year-3|now.year-2|now.year-1|now.year|now.year+1) \n\n",
+        "",
+        sd,
+        flags=re.I,
+    )
+    metadata_update = {"indicator": file_name, "metadata": s}
+    return metadata_update
+
+
+fp = list(map(lambda x: METAPATH + "/" + x, os.listdir(METAPATH)))
+metadata_output = list(map(extract_meta_text, fp))
+
+# def create_meta_json(metapath: str) -> None:
+#    files = os.listdir(metapath)
+#    files = files[0:10]
+#    out_dict = {}
+#    for file in files:
+#        print(file)
+#        data = extract_meta_text(os.path.join(metapath, file))
+#        out_dict.update(data)
+#        print(out_dict)
