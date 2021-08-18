@@ -13,6 +13,8 @@ DATASET_RETRIEVED_DATE = "01-August-21"
 def generate_entitites_raw(df: pd.DataFrame, output_path: str):
     """Generate raw entity table file.
 
+    This is required to then produce the country_standardized table using Grapher Admin UI.
+
     Args:
         df (pd.DataFrame): Original source data.
         output_path (str): Path to store entity table file (contains one column : "Country").
@@ -25,8 +27,15 @@ def generate_entitites_raw(df: pd.DataFrame, output_path: str):
         .to_csv(output_path, index=False)
     )
 
+def load_data(input_path: str) -> pd.DataFrame:
+    """Load input CSV data.
 
-def load(input_path: str):
+    Args:
+        input_path (str): Path to input data (csv).
+
+    Returns:
+        pd.DataFrame: Input data
+    """
     df = pd.read_csv(input_path)
     # Drop nulls
     df = df.dropna(subset=["Value", "Area"])
@@ -34,11 +43,17 @@ def load(input_path: str):
 
 
 def create_datsets() -> pd.DataFrame:
-    df = pd.DataFrame({
-         {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
-    })
+    """Create datasets.csv file.
+
+    Returns:
+        pd.DataFrame: pd.Data
+    """
+    # Create data file
+    df = pd.DataFrame(
+        [{"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}]
+    )
+    # Export
     df.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
-    return df
 
 
 def create_sources():
@@ -54,11 +69,30 @@ def create_sources():
 def create_dictinct_entities():
     """This file lists all entities present in the data, so that new entities can be created if necessary. Located in
     output/distinct_countries_standardized.csv:
-    
+
     - name: name of the entity.
     """
+    col = "Our World In Data Name"
+    (
+        pd.read_csv(
+            os.path.join(DATASET_DIR, "config", "standardized_entity_names.csv"),
+            usecols=[col],
+        )
+        .rename(columns={col: "name"})
+        .to_csv(
+            os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
+        )
+    )
+
+
+def create_variables():
     pass
-#     df = None
-#     df.to_csv(
-#         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
-#     ) 
+
+
+def main(input_path: str):
+    # Load data into memory
+    df = load_data(input_path)
+    # datasets.csv
+    create_datsets()
+    # distinct_countries_standardized.csv
+    create_dictinct_entities()
