@@ -19,7 +19,9 @@ from faostat_fs._parsers import get_parser_args
 
 def main():
     with tempfile.TemporaryDirectory() as tmp_dir:
-        filepath = download.main(tmp_dir)
+        path_data, path_metadata = download.main(tmp_dir)
+    print(f"Data downloaded in {path_data}")
+    print(f"Metadata downloaded in {path_metadata}")
 
 
 if __name__ == "__main__":
