@@ -4,7 +4,7 @@ import zipfile
 import io
 
 
-URL = "http://walden.nyc3.digitaloceanspaces.com/faostat/2021/Food_Security_Data_E_All_Data_(Normalized).zip"
+URL = "http://walden.nyc3.digitaloceanspaces.com/faostat/2021/faostat_FS.zip"
 FILENAME = "Food_Security_Data_E_All_Data_(Normalized).csv"
 
 
