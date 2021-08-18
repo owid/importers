@@ -1,13 +1,12 @@
 import os
+import json
+from datetime import datetime
+
 import pandas as pd
 
 
 DATASET_DIR = os.path.dirname(__file__)
 OUTPATH = os.path.join(DATASET_DIR, "output")
-DATASET_NAME = "Food Security and Nutrition: Suite of Food Security Indicators"
-DATASET_AUTHORS = "Food and Agriculture Organization of the United Nations"
-DATASET_VERSION = "2021-07-21"
-DATASET_RETRIEVED_DATE = "01-August-21"
 
 
 def generate_entitites_raw(df: pd.DataFrame, output_path: str):
@@ -27,6 +26,7 @@ def generate_entitites_raw(df: pd.DataFrame, output_path: str):
         .to_csv(output_path, index=False)
     )
 
+
 def load_data(input_path: str) -> pd.DataFrame:
     """Load input CSV data.
 
@@ -42,28 +42,58 @@ def load_data(input_path: str) -> pd.DataFrame:
     return df
 
 
-def create_datsets() -> pd.DataFrame:
+def load_metadata(input_path: str):
+    """Load metadata.
+
+    Args:
+        input_path (str): Path to metadata file (JSON). Assumed to have Walden format.
+
+    Returns:
+        pd.DataFrame: Input data
+    """
+    with open(input_path, "r") as f:
+        return json.load(f)
+
+
+def create_datsets(metadata: dict) -> pd.DataFrame:
     """Create datasets.csv file.
 
     Returns:
         pd.DataFrame: pd.Data
     """
     # Create data file
-    df = pd.DataFrame(
-        [{"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}]
-    )
+    df = pd.DataFrame([{"id": 0, "name": metadata["source_name"]}])
     # Export
-    df.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
+    output_path = os.path.join(OUTPATH, "datasets.csv")
+    df.to_csv(output_path, index=False)
+    return output_path
 
 
-def create_sources():
-    source_description_template = {
-        "dataPublishedBy": "Food and Agriculture Organization of the United Nations",
+def create_sources(metadata: dict):
+    # Create sources data frame
+    source_description = {
+        "dataPublishedBy": metadata["source_name"],
         "dataPublisherSource": None,
-        "link": "http://www.fao.org/faostat/en/#data",
-        "retrievedDate": DATASET_RETRIEVED_DATE,
+        "link": metadata["url"],
+        "retrievedDate": datetime.strptime(
+            metadata["date_accessed"], "%Y-%m-%d"
+        ).strftime("%d-%B-%Y"),
         "additionalInfo": None,
     }
+    df = pd.DataFrame(
+        [
+            {
+                "id": 0,
+                "dataset_id": 0,
+                "name": metadata["source_name"],
+                "description": source_description,
+            }
+        ]
+    )
+    # Export
+    output_path = os.path.join(OUTPATH, "sources.csv")
+    df.to_csv(output_path, index=False)
+    return output_path
 
 
 def create_dictinct_entities():
@@ -72,6 +102,7 @@ def create_dictinct_entities():
 
     - name: name of the entity.
     """
+    output_path = os.path.join(OUTPATH, "distinct_countries_standardized.csv")
     col = "Our World In Data Name"
     (
         pd.read_csv(
@@ -79,20 +110,30 @@ def create_dictinct_entities():
             usecols=[col],
         )
         .rename(columns={col: "name"})
-        .to_csv(
-            os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
-        )
+        .to_csv(output_path, index=False)
     )
+    return output_path
 
 
 def create_variables():
-    pass
+    return "Not Implemented"
 
 
-def main(input_path: str):
+def create_datapoints():
+    return "Not Implemented"
+
+
+def main(path_data: str, path_metadata: str):
     # Load data into memory
-    df = load_data(input_path)
+    df = load_data(path_data)
+    metadata = load_metadata(path_metadata)
     # datasets.csv
-    create_datsets()
+    path_datasets = create_datsets(metadata)
+    # sources.csv
+    path_sources = create_sources(metadata)
     # distinct_countries_standardized.csv
-    create_dictinct_entities()
+    path_entities = create_dictinct_entities()
+    # TODO: variables.csv
+    path_variables = create_variables()
+    # TODO: datapoints.csv
+    path_datapoints = create_datapoints()
