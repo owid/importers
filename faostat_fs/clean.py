@@ -153,7 +153,7 @@ def create_variables_datapoints(df: pd.DataFrame, output_dir: str) -> tuple:
     # Build variables data frame
     df_var = _create_variables(df)
     path_variables = os.path.join(output_dir, "variables.csv")
-    df.to_csv(path_variables, index=False)
+    df_var.to_csv(path_variables, index=False)
     # Build datapoints dataframes
     var2id = _build_var_2_id(df_var)
     path_datapoints = create_datapoints(df, var2id, output_dir)
@@ -192,7 +192,8 @@ def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
             coverage=pd.NA,
             display=pd.NA,
             description=(
-                "Download at Definitions and standards file for Item field at http://www.fao.org/faostat/en/#data/FS"
+                "Download at Definitions and standards file for Item field at"
+                " http://www.fao.org/faostat/en/#data/FS"
             ),
             unit=pd.NA,
             short_unit=pd.NA,
@@ -253,5 +254,5 @@ def main(path_data: str, path_metadata: str, entities_path: str, output_dir: str
     path_sources = create_sources(metadata, output_dir)
     # distinct_countries_standardized.csv
     path_entities = create_dictinct_entities(entities_path, output_dir)
-    # TODO: variables.csv, datapoints/datapoints_*.csv
+    # variables.csv and datapoints/datapoints_*.csv
     path_variables, path_datapoints = create_variables_datapoints(df, output_dir)
