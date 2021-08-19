@@ -62,7 +62,7 @@ def load_and_clean() -> pd.DataFrame:
     # Load and clean the data
     print("Reading in original data...")
     original_df = pd.read_csv(INFILE, low_memory=False, compression="gzip")
-    original_df[
+    original_df = original_df[
         pd.to_numeric(original_df["Value"], errors="coerce").notnull()
     ]  # removing values that aren't numeric e.g. Null and N values
     # Clean the IHR Capacity column, duplicate labelling of some attributes which doesn't work well with the grapher
