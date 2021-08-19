@@ -184,9 +184,15 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                     ].replace(
                         "\xa0", " "
                     )  # there is some rogue unicode in one of the sources.
-                    source_description["dataPublisherSource"] = edited_sources[
-                        source_description["dataPublisherSource"]
-                    ]
+                    try:
+                        source_description["dataPublisherSource"] = edited_sources[
+                            source_description["dataPublisherSource"]
+                        ]
+                    except KeyError:
+                        print(
+                            source_description["dataPublisherSource"]
+                            + " not in config/sources_edited.json, please add."
+                        )
         else:
             source_description[
                 "dataPublisherSource"
