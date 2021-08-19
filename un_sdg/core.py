@@ -284,15 +284,23 @@ def extract_meta_text(file_path: str) -> dict:
     return metadata_update
 
 
-fp = list(map(lambda x: METAPATH + "/" + x, os.listdir(METAPATH)))
-metadata_output = list(map(extract_meta_text, fp))
-
-# def create_meta_json(metapath: str) -> None:
-#    files = os.listdir(metapath)
-#    files = files[0:10]
-#    out_dict = {}
-#    for file in files:
-#        print(file)
-#        data = extract_meta_text(os.path.join(metapath, file))
-#        out_dict.update(data)
-#        print(out_dict)
+def get_metadata_link(indicator: str) -> None:
+    url = os.path.join(
+        "https://unstats.un.org/sdgs/metadata/files/", "Metadata-%s.pdf"
+    ) % "-".join([part.rjust(2, "0") for part in indicator.split(".")])
+    r = requests.head(url)
+    ctype = r.headers["Content-Type"]
+    if ctype == "application/pdf":
+        url_out = url
+    elif ctype == "text/html":
+        url_a = os.path.join(
+            "https://unstats.un.org/sdgs/metadata/files/", "Metadata-%sa.pdf"
+        ) % "-".join([part.rjust(2, "0") for part in indicator.split(".")])
+        url_b = os.path.join(
+            "https://unstats.un.org/sdgs/metadata/files/", "Metadata-%sb.pdf"
+        ) % "-".join([part.rjust(2, "0") for part in indicator.split(".")])
+        url_out = url_a + " and " + url_b
+        url_check = requests.head(url_a)
+        ctype_a = url_check.headers["Content-Type"]
+        assert ctype_a == "application/pdf", url_a + "does not link to a pdf"
+    return url_out

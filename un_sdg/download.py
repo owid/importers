@@ -23,6 +23,7 @@ def main():
     download_data()
     delete_metadata()
     download_metadata()
+    clean_metadata(METAPATH)
 
 
 """
@@ -101,17 +102,24 @@ def download_metadata() -> None:
         path_to_file = os.path.join(METAPATH, file)
         os.remove(path_to_file)
 
+
+def clean_metadata(metapath) -> None:
     # Some indicators have multiple associated pdfs, this combines these PDFs into one, e.g. Metadata-01-01-01a.pdf and Metadata-01-01-01b.pdf. If not done then un_sdg.core.extract_description() will not work.
-    pdf_in_directory = os.listdir(METAPATH)
+    pdf_in_directory = os.listdir(metapath)
     for pdf in pdf_in_directory:
         pref = pdf[0:17]
         dup_pdf = [x for x in pdf_in_directory if x.startswith(pref)]
+        print(dup_pdf)
         if len(dup_pdf) > 1:
             merger = PdfFileMerger()
             for pdf in dup_pdf:
-                merger.append(os.path.join(METAPATH, pdf))
-            merger.write(os.path.join(METAPATH, pref + ".pdf"))
+                merger.append(os.path.join(metapath, pdf))
+            merger.write(os.path.join(metapath, pref + ".pdf"))
             merger.close()
+
+    for i in pdf_in_directory[:]:
+        if len(i) >= 22:
+            os.remove(os.path.join(metapath, i))
 
 
 if __name__ == "__main__":

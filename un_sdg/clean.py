@@ -38,6 +38,8 @@ from un_sdg import (
 from un_sdg.core import (
     create_short_unit,
     extract_datapoints,
+    get_metadata_link,
+    extract_meta_text,
     clean_datasets,
     dimensions_description,
     attributes_description,
@@ -60,7 +62,9 @@ def load_and_clean() -> pd.DataFrame:
     # Load and clean the data
     print("Reading in original data...")
     original_df = pd.read_csv(INFILE, low_memory=False, compression="gzip")
-    original_df = original_df[original_df["Value"].notnull()]
+    original_df[
+        pd.to_numeric(original_df["Value"], errors="coerce").notnull()
+    ]  # removing values that aren't numeric e.g. Null and N values
     # Clean the IHR Capacity column, duplicate labelling of some attributes which doesn't work well with the grapher
     original_df["[IHR Capacity]"] = original_df["[IHR Capacity]"].replace(
         [
@@ -86,7 +90,6 @@ def load_and_clean() -> pd.DataFrame:
             "SPAR12",
         ],
     )
-    # original_df["[IHR Capacity]"] = ihr_capacity_clean(original_df["[IHR Capacity]"])
     print("Extracting unique entities to " + ENTFILE + "...")
     original_df[["GeoAreaName"]].drop_duplicates().dropna().rename(
         columns={"GeoAreaName": "Country"}
@@ -110,6 +113,20 @@ def create_datasets() -> pd.DataFrame:
     print("Creating datasets csv...")
     df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     return df_datasets
+
+
+"""
+clean_sources():
+- Not currently in use but is a start on extracting sections from the UN SDG metadata pdfs
+
+"""
+
+
+def clean_sources(metapath: str) -> None:
+    fp = list(map(lambda x: metapath + "/" + x, os.listdir(metapath)))
+    metadata_output = list(map(extract_meta_text, fp))
+    with open(os.path.join(CONFIGPATH, "metadata.json"), "w") as f:
+        json.dump(metadata_output, f, indent=2)
 
 
 """
@@ -138,9 +155,19 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         .drop_duplicates()
         .reset_index()
     )
+
+    # Because some indicators have the same source we cannot include 'Indicator' in all_series and maintain uniqueness.
+    source_indicator = (
+        original_df[["SeriesCode", "Indicator"]]
+        .set_index("SeriesCode")
+        .squeeze()
+        .to_dict()
+    )
+
     source_description = source_description_template.copy()
     print("Extracting sources from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
+        indicator = source_indicator[row["SeriesCode"]]
         dp_source = original_df[
             original_df.SeriesCode == row["SeriesCode"]
         ].Source.drop_duplicates()
@@ -167,13 +194,15 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
         try:
             source_description[
                 "additionalInfo"
-            ] = "%s: %s \n \n %s: %s \n \n %s: %s \n \n" % (
+            ] = "%s: %s \n \n %s: %s \n \n %s: %s \n \n %s: %s" % (
                 "Variable description",
                 row["SeriesDescription"],
                 "Variable code",
+                dp_source.str.cat(sep=" "),
+                "Metadata available at",
+                get_metadata_link(indicator),
                 row["SeriesCode"],
                 "Detailed sources",
-                dp_source.str.cat(sep=" "),
             )
         except:
             pass
