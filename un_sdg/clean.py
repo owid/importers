@@ -204,11 +204,11 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
                 "Variable description",
                 row["SeriesDescription"],
                 "Variable code",
-                dp_source.str.cat(sep=" "),
+                row["SeriesCode"],
                 "Metadata available at",
                 get_metadata_link(indicator),
-                row["SeriesCode"],
                 "Detailed sources",
+                dp_source.str.cat(sep=" "),
             )
         except:
             pass
