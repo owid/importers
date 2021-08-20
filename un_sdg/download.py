@@ -109,7 +109,6 @@ def clean_metadata(metapath) -> None:
     for pdf in pdf_in_directory:
         pref = pdf[0:17]
         dup_pdf = [x for x in pdf_in_directory if x.startswith(pref)]
-        print(dup_pdf)
         if len(dup_pdf) > 1:
             merger = PdfFileMerger()
             for pdf in dup_pdf:
