@@ -118,7 +118,17 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
             "Population by country and region, historic and projections (Gapminder, HYDE & UN)",
         ]
     ]
-    df = df.sort_values(["Entity", "Year"])
+
+    # Add a metric "% of world population"
+    world_pop = df[df.Entity == "World"][
+        ["Year", "Total population (Gapminder, HYDE & UN)"]
+    ].rename(columns={"Total population (Gapminder, HYDE & UN)": "world_population"})
+    df = df.merge(world_pop, on="Year", how="left")
+    df["Share of world population"] = (
+        df["Total population (Gapminder, HYDE & UN)"].div(df.world_population)
+    ).round(4)
+
+    df = df.drop(columns="world_population").sort_values(["Entity", "Year"])
     return df
 
 
