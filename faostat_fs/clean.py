@@ -62,7 +62,7 @@ def create_datsets(metadata: dict, output_dir: str) -> str:
         str: Path to datasets CSV file.
     """
     # Create data file
-    df = pd.DataFrame([{"id": 0, "name": metadata["source_name"]}])
+    df = pd.DataFrame([{"id": 0, "name": metadata["name"]}])
     # Export
     output_path = os.path.join(output_dir, "datasets.csv")
     df.to_csv(output_path, index=False)
@@ -150,6 +150,7 @@ def create_variables_datapoints(df: pd.DataFrame, output_dir: str) -> tuple:
         .max(axis=1)
         .astype(int)
     )
+    _check_uniqueness(df)
     # Build variables data frame
     df_var = _create_variables(df)
     path_variables = os.path.join(output_dir, "variables.csv")
@@ -158,6 +159,13 @@ def create_variables_datapoints(df: pd.DataFrame, output_dir: str) -> tuple:
     var2id = _build_var_2_id(df_var)
     path_datapoints = create_datapoints(df, var2id, output_dir)
     return path_variables, path_datapoints
+
+
+def _check_uniqueness(df: pd.DataFrame) -> pd.DataFrame:
+    if (df.groupby("Item")[["Item Code", "Unit"]].nunique() > 1).any(axis=None):
+        raise ValueError(
+            "Field `Item` should have only one `Item Code` and `Unit` value."
+        )
 
 
 def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
@@ -170,7 +178,7 @@ def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: Variables data frame.
     """
     # Build variable data frame
-    grouper = df.groupby(["Item", "Item Code"])
+    grouper = df.groupby(["Item", "Item Code", "Unit"])
     df = (
         pd.DataFrame(
             grouper.year.min().astype(str) + "-" + grouper.year.max().astype(str)
@@ -183,6 +191,7 @@ def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
                 "Item": "name",
                 "Item Code": "code",
                 "year": "timespan",
+                "Unit": "unit",
             }
         )
         .assign(
@@ -195,7 +204,6 @@ def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
                 "Download at Definitions and standards file for Item field at"
                 " http://www.fao.org/faostat/en/#data/FS"
             ),
-            unit=pd.NA,
             short_unit=pd.NA,
         )
     )
