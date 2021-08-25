@@ -1,4 +1,6 @@
 """downloads EdStats data and saves it to disk.
+Usage:
+    python -m edstats.clean
 """
 
 import os
@@ -46,14 +48,7 @@ def _download_data_csv() -> None:
     logger.info(f'Downloading data from "{url}"...')
     res = requests.get(url)
     zf = zipfile.ZipFile(BytesIO(res.content))
-    fnames = zf.namelist()
     zf.extractall(path=INPATH)
-    for fname in fnames:
-        fname_zip = f"{fname}.zip"
-        pd.read_csv(os.path.join(INPATH, fname)).to_csv(
-            os.path.join(INPATH, fname_zip), index=False, compression="gzip"
-        )
-        os.remove(os.path.join(INPATH, fname))
 
 
 if __name__ == "__main__":
