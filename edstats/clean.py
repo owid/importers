@@ -95,6 +95,9 @@ def prepare_variables() -> pd.DataFrame:
     vars.loc[vars.description.str.contains("%|[Pp]ercent|[Ss]hare of"), "unit"] = "%"
     vars["short_unit"] = vars.unit
 
+    vars.loc[vars.source_name.str.contains("http"), "description"] = (
+        vars.description + "\n" + vars.source_name
+    )
     vars.loc[vars.limitations.notnull(), "description"] = (
         vars.description + "\n" + vars.limitations
     )
