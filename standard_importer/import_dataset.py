@@ -94,14 +94,18 @@ def main(dataset_dir: str, dataset_namespace: str):
                 'deprecated, and should be named "description" instead.'
             )
             variables.rename(columns={"notes": "description"}, inplace=True)
-        if "source_id" in variables:
-            on = "source_id"
-        else:
-            on = "dataset_id"
+        variables = pd.merge(
+            variables,
+            datasets,
+            left_on="dataset_id",
+            right_on="id",
+            suffixes=["__variable", "__dataset"],
+            validate="m:1",
+        )
         variables = pd.merge(
             variables,
             sources,
-            left_on=on,
+            left_on="source_id",
             right_on="id__source",
             how="left",
             validate="m:1",
@@ -109,9 +113,9 @@ def main(dataset_dir: str, dataset_namespace: str):
         )
         for i, variable_row in tqdm(variables.iterrows()):
             db_variable_id = db.upsert_variable(
-                name=variable_row["name"],
+                name=variable_row["name__variable"],
                 source_id=variable_row["db_source_id"],
-                dataset_id=variable_row["db_dataset_id"],
+                dataset_id=variable_row["db_dataset_id__variable"],
                 description=variable_row["description__variable"],
                 code=variable_row["code"]
                 if "code" in variable_row and variable_row["code"] != ""
