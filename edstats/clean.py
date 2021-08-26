@@ -137,9 +137,9 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
         dataset_id=pd.NA,
         description=json.dumps(
             {
-                "dataPublishedBy": None,
-                "dataPublisherSource": None,
-                "additionalInfo": None,
+                "dataPublishedBy": "",
+                "dataPublisherSource": "",
+                "additionalInfo": "",
             }
         ),
     )
