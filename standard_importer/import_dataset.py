@@ -149,7 +149,9 @@ def main(dataset_dir: str, dataset_namespace: str):
         datapoint_files = glob(os.path.join(data_path, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
             variable_id = int(re.search("\\d+", datapoint_file)[0])  # type: ignore
-            db_variable_id = variables[variables["id"] == variable_id]["db_variable_id"]
+            db_variable_id = variables[variables["id__variable"] == variable_id][
+                "db_variable_id"
+            ]
             data = pd.read_csv(datapoint_file)
             data = pd.merge(
                 data,
