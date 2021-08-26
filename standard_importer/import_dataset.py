@@ -40,16 +40,6 @@ def main(dataset_dir: str, dataset_namespace: str):
     with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
 
-        # Upsert entities
-        print("---\nUpserting entities...")
-        entities = pd.read_csv(
-            os.path.join(data_path, "distinct_countries_standardized.csv")
-        )
-        for entity_name in tqdm(entities.name):
-            db_entity_id = db.get_or_create_entity(entity_name)
-            entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
-        print(f"Upserted {len(entities)} entities.")
-
         # Upsert datasets
         print("---\nUpserting datasets...")
         datasets = pd.read_csv(os.path.join(data_path, "datasets.csv"))
@@ -139,6 +129,16 @@ def main(dataset_dir: str, dataset_namespace: str):
             )
             variables.at[i, "db_variable_id"] = db_variable_id
         print(f"Upserted {len(variables)} variables.")
+
+        # Upsert entities
+        print("---\nUpserting entities...")
+        entities = pd.read_csv(
+            os.path.join(data_path, "distinct_countries_standardized.csv")
+        )
+        for entity_name in tqdm(entities.name):
+            db_entity_id = db.get_or_create_entity(entity_name)
+            entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
+        print(f"Upserted {len(entities)} entities.")
 
         # Upserting datapoints
         print("---\nUpserting datapoints...")
