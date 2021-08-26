@@ -232,25 +232,24 @@ class DBUtils:
         return namespace_id
 
     def upsert_source(self, name, description, dataset_id):
-        # Handle sources with an empty dataset_id
-        dataset_id = "NULL" if pd.isnull(dataset_id) else dataset_id
-
         # There is no UNIQUE key constraint we can rely on to prevent duplicates
         # so we have to do a SELECT before INSERT...
         desc_json = json.loads(description)
-        row = self.fetch_one_or_none(
-            """
+        query = """
            SELECT id FROM sources
            WHERE name = %(name)s
-           AND datasetId = %(datasetId)s
            AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
            AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
            AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
-           LIMIT 1
-        """,
+        """
+        if pd.isnull(dataset_id):
+            query += "AND datasetId IS NULL"
+        else:
+            query += f"AND datasetId = {dataset_id}"
+        row = self.fetch_one_or_none(
+            query,
             {
                 "name": name,
-                "datasetId": dataset_id,
                 "dataPublishedBy": desc_json.get("dataPublishedBy"),
                 "dataPublisherSource": desc_json.get("dataPublisherSource"),
                 "additionalInfo": desc_json.get("additionalInfo"),
@@ -258,7 +257,7 @@ class DBUtils:
         )
 
         if row is None:
-            if dataset_id == "NULL":
+            if pd.isnull(dataset_id):
                 self.upsert_one(
                     """
                     INSERT INTO sources (name, description, createdAt, updatedAt)
@@ -276,18 +275,9 @@ class DBUtils:
                 )
             self.counts["sources_inserted"] += 1
             row = self.fetch_one(
-                """
-                SELECT id FROM sources
-                WHERE name = %(name)s
-                AND datasetId = %(datasetId)s
-                AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
-                AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
-                AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
-                LIMIT 1
-            """,
+                query,
                 {
                     "name": name,
-                    "datasetId": dataset_id,
                     "dataPublishedBy": desc_json.get("dataPublishedBy"),
                     "dataPublisherSource": desc_json.get("dataPublisherSource"),
                     "additionalInfo": desc_json.get("additionalInfo"),
