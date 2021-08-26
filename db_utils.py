@@ -1,6 +1,8 @@
 import json
 from unidecode import unidecode
 
+import pandas as pd
+
 UNMODIFIED = 0
 INSERT = 1
 UPDATE = 2
@@ -230,6 +232,9 @@ class DBUtils:
         return namespace_id
 
     def upsert_source(self, name, description, dataset_id):
+        # Handle sources with an empty dataset_id
+        dataset_id = "NULL" if pd.isnull(dataset_id) else dataset_id
+
         # There is no UNIQUE key constraint we can rely on to prevent duplicates
         # so we have to do a SELECT before INSERT...
         desc_json = json.loads(description)
