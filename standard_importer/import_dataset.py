@@ -12,7 +12,6 @@ Usage:
 import re
 from glob import glob
 import os
-import json
 
 from tqdm import tqdm
 import pandas as pd
