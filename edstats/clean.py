@@ -153,7 +153,7 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
             "description": json.dumps(
                 {
                     "dataPublishedBy": DATASET_AUTHORS,
-                    "dataPublisherSource": [DATASET_NAME],
+                    "dataPublisherSource": DATASET_NAME,
                     "link": DATASET_LINK,
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                 }
