@@ -74,6 +74,7 @@ def main(dataset_dir: str, dataset_namespace: str):
             left_on="dataset_id",
             right_on="id",
             suffixes=["__source", "__dataset"],
+            how="left",
         )
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
