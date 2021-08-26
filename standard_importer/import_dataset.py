@@ -72,27 +72,12 @@ def main(dataset_dir: str, dataset_namespace: str):
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        for _, gp in sources.groupby(["dataset_id", "name", "description"]):
-            descriptions = pd.DataFrame(
-                gp["description"]
-                .apply(lambda x: json.loads(x))
-                .apply(
-                    lambda x: [
-                        x.get("dataPublishedBy"),
-                        x.get("dataPublisherSource"),
-                        x.get("additionalInfo"),
-                    ]
-                )
-                .values.tolist(),
-                columns=[
-                    "dataPublishedBy",
-                    "dataPublisherSource",
-                    "additionalInfo",
-                ],
-            )
-            assert (
-                descriptions.duplicated().sum() == 0
-            ), "All sources in a dataset must have a unique dataset_id-name-description combination."
+        assert all(
+            sources.groupby(["dataset_id", "name", "description"])
+            .size()
+            .reset_index()[0]
+            == 1
+        ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,
