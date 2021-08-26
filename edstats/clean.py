@@ -135,7 +135,13 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
         }
     ).assign(
         dataset_id=pd.NA,
-        description="{}",
+        description=json.dumps(
+            {
+                "dataPublishedBy": None,
+                "dataPublisherSource": None,
+                "additionalInfo": None,
+            }
+        ),
     )
 
     # Add main dataset source
@@ -156,11 +162,6 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
     )
 
     sources["name"] = sources.name.str.replace("\.$", "", regex=True)
-    for _, row in sources.iterrows():
-        if "http" in row["name"] and row["description"] == "{}":
-            sources.loc[sources.name == row["name"], "description"] = json.dumps(
-                {"link": re.search(r"http.*", row["name"]).group(0)}
-            )
     sources["name"] = sources.name.str.replace(": http.*", "", regex=True)
 
     sources = pd.concat([sources, main_source])
