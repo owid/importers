@@ -204,6 +204,11 @@ def prepare_datapoints(vars: pd.DataFrame) -> None:
         shape_before == shape_after
     ), "Code mapping has changed the shape of the dataframe"
 
+    # Write distinct_countries_standardized.csv
+    df[["country"]].drop_duplicates().rename(columns={"country": "name"}).to_csv(
+        os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
+    )
+
     # Write datapoint files
     for id in tqdm(df.id.unique()):
         datapoints = df[df.id == id][["country", "year", "value"]]
