@@ -13,6 +13,7 @@ env/
 venv/
 __pycache__/
 .ipynb_checkpoints/
+edstats/input/*.csv
 povcal/data_by_poverty_line/
 povcal/output/
 un_sdg/input/**/*.csv
