@@ -258,15 +258,22 @@ class DBUtils:
         )
 
         if row is None:
-            self.upsert_one(
-                """
-                INSERT INTO sources
-                    (name, description, datasetId, createdAt, updatedAt)
-                VALUES
-                    (%s, %s, %s, NOW(), NOW())
-            """,
-                [name, description, dataset_id],
-            )
+            if dataset_id == "NULL":
+                self.upsert_one(
+                    """
+                    INSERT INTO sources (name, description, createdAt, updatedAt)
+                    VALUES (%s, %s, NOW(), NOW())
+                    """,
+                    [name, description],
+                )
+            else:
+                self.upsert_one(
+                    """
+                    INSERT INTO sources (name, description, datasetId, createdAt, updatedAt)
+                    VALUES (%s, %s, %s, NOW(), NOW())
+                    """,
+                    [name, description, dataset_id],
+                )
             self.counts["sources_inserted"] += 1
             row = self.fetch_one(
                 """
