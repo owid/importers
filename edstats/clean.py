@@ -156,6 +156,7 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
                     "dataPublisherSource": DATASET_NAME,
                     "link": DATASET_LINK,
                     "retrievedDate": DATASET_RETRIEVED_DATE,
+                    "additionalInfo": "The World Bank EdStats data holds over 4,000 internationally comparable indicators that describe education access, progression, completion, literacy, teachers, population, and expenditures. The indicators cover the education cycle from pre-primary to vocational and tertiary education. The data also holds learning outcome data from international and regional learning assessments (e.g. PISA, TIMSS, PIRLS), equity data from household surveys, and projection/attainment data to 2050. For further information, please visit the EdStats website: https://datatopics.worldbank.org/education/",
                 }
             ),
         }
