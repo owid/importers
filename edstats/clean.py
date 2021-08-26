@@ -148,7 +148,7 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
     main_source = pd.DataFrame(
         {
             "id": sources.id.max() + 1,
-            "name": [DATASET_NAME + "(" + DATASET_VERSION + ")"],
+            "name": [DATASET_NAME + " (" + DATASET_VERSION + ")"],
             "dataset_id": 0,
             "description": json.dumps(
                 {
