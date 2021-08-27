@@ -95,7 +95,7 @@ def prepare_variables() -> pd.DataFrame:
     vars.loc[vars.description.str.contains("%|[Pp]ercent|[Ss]hare of"), "unit"] = "%"
     vars["short_unit"] = vars.unit
 
-    vars.loc[vars.source_name.str.contains("http"), "description"] = (
+    vars.loc[vars.source_name.str.contains("www"), "description"] = (
         vars.description + "\n" + vars.source_name
     )
     vars.loc[vars.limitations.notnull(), "description"] = (
@@ -165,9 +165,19 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
         }
     )
 
-    sources["name"] = sources.name.str.replace("\.$", "", regex=True)
-    sources["name"] = sources.name.str.replace(": http.*", "", regex=True)
-
+    # Manual source name cleaning
+    sources["name"] = (
+        sources.name.str.replace("\.$", "", regex=True)
+        .str.replace("\. (Labor )?[Dd]ata retrieved in .*", "", regex=True)
+        .str.replace(" www", " http://www.")
+        .str.replace("(:|,| at) http.*", "", regex=True)
+        .str.replace(
+            "Programme d'Analyse des Systèmes Educatifs de la CONFEMEN/",
+            "",
+            regex=False,
+        )
+        .str.strip()
+    )
     sources = pd.concat([sources, main_source])
     return sources
 
