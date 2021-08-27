@@ -25,7 +25,6 @@ USER_ID = int(os.getenv("USER_ID"))  # type: ignore
 
 def main() -> None:
     df = get_fastt_to_fix()
-    df.iloc[0].subtitle
     for col in df:
         df[col] = replace_year(df[col], year=YEAR_TO_REPLACE)
     df["updatedBy"] = USER_ID
