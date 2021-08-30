@@ -92,7 +92,11 @@ def prepare_variables() -> pd.DataFrame:
 
     vars["code"] = vars.code.str.upper().str.strip()
 
-    vars.loc[vars.description.str.contains("%|[Pp]ercent|[Ss]hare of"), "unit"] = "%"
+    vars.loc[
+        (vars.description.str.contains("%|[Pp]ercent|[Ss]hare of|[Pp]roportion of"))
+        | (vars.name.str.contains("\(%\)")),
+        "unit",
+    ] = "%"
     vars["short_unit"] = vars.unit
 
     vars.loc[vars.source_name.str.contains("www"), "description"] = (
