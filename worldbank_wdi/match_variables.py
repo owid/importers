@@ -11,22 +11,29 @@ Usage:
 
 import os
 import simplejson as json
-import logging
-from typing import List
+from typing import List, Dict
 import pandas as pd
 from pymysql import Connection
 
 from db import get_connection
-from worldbank_wdi import OUTPATH
+from worldbank_wdi import OUTPATH, CONFIGPATH
 
-UPDATE_DB = False
-
-logging.basicConfig()
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+CUSTOM_FNAME = "custom_variable_replacements.json"
 
 
 def main():
+    old_var_id2new_var_id = get_variable_replacements_from_string_matches()
+    custom_old_var_id2new_var_id = get_variable_replacements_from_custom_matches()
+    old_var_id2new_var_id.update(custom_old_var_id2new_var_id)
+
+    if not os.path.exists(OUTPATH):
+        os.makedirs(OUTPATH)
+
+    with open(os.path.join(OUTPATH, "variable_replacements.json"), "w") as f:
+        json.dump(old_var_id2new_var_id, f, indent=2, sort_keys=True)
+
+
+def get_variable_replacements_from_string_matches() -> Dict[int, int]:
     with get_connection() as conn:
         # retrieves old and new datasets
         df_old_datasets = get_datasets(conn, new=False)
@@ -35,25 +42,79 @@ def main():
         # retrieves old and new variables
         df_old_vars = get_variables(conn, dataset_ids=df_old_datasets["id"])
         df_new_vars = get_variables(conn, dataset_ids=df_new_datasets["id"])
-        df_vars = pd.merge(
-            df_old_vars,
-            df_new_vars,
-            on="name",
-            how="inner",
-            suffixes=["_old", "_new"],
-            validate="m:1",
-        )
-        assert df_vars.id_old.notnull().all() and df_vars.id_new.notnull().all()
-        old_var_id2new_var_id = (
-            df_vars.dropna(subset=["id_old", "id_new"])
-            .set_index("id_old")["id_new"]
-            .squeeze()
-            .to_dict()
-        )
-        if not os.path.exists(OUTPATH):
-            os.makedirs(OUTPATH)
-        with open(os.path.join(OUTPATH, "variable_replacements.json"), "w") as f:
-            json.dump(old_var_id2new_var_id, f)
+
+    # merges old and new variables on name
+    df_vars = pd.merge(
+        df_old_vars,
+        df_new_vars,
+        on="name",
+        how="inner",
+        suffixes=["_old", "_new"],
+        validate="m:1",
+    )
+    assert df_vars.id_old.notnull().all() and df_vars.id_new.notnull().all()
+    old_var_id2new_var_id = (
+        df_vars.dropna(subset=["id_old", "id_new"])
+        .set_index("id_old")["id_new"]
+        .squeeze()
+        .to_dict()
+    )
+    return old_var_id2new_var_id
+
+
+def get_variable_replacements_from_custom_matches() -> Dict[int, int]:
+    with get_connection() as conn:
+        # retrieves old and new datasets
+        df_old_datasets = get_datasets(conn, new=False)
+        df_new_datasets = get_datasets(conn, new=True)
+
+        # retrieves old and new variables
+        df_old_vars = get_variables(conn, dataset_ids=df_old_datasets["id"])
+        df_new_vars = get_variables(conn, dataset_ids=df_new_datasets["id"])
+
+    if not os.path.exists(os.path.join(CONFIGPATH, CUSTOM_FNAME)):
+        return {}
+
+    with open(os.path.join(CONFIGPATH, CUSTOM_FNAME), "r") as f:
+        df_custom_replacements = pd.DataFrame(json.load(f))
+        n_expected = df_custom_replacements.shape[0]
+    df_custom_replacements = df_custom_replacements.merge(
+        df_new_vars[["name", "id"]],
+        left_on="newName",
+        right_on="name",
+        how="left",
+        validate="1:1",
+    ).merge(
+        df_old_vars[["name", "id"]],
+        left_on="oldId",
+        right_on="id",
+        how="left",
+        validate="1:1",
+        suffixes=["_new", "_old"],
+    )
+
+    assert (
+        df_custom_replacements["oldName"] == df_custom_replacements["name_old"]
+    ).all(), (
+        f"One or more old names in {CUSTOM_FNAME} do not match the "
+        "name of the variable with the corresponding `oldId`."
+    )
+    assert df_custom_replacements.shape[0] == n_expected, (
+        f"Something went wrong in constructing custom replacements. "
+        f"Expected {n_expected} custom replacements, but only "
+        f"{df_custom_replacements.shape[0]} match a new variable name "
+        "and old variable id."
+    )
+    assert df_custom_replacements["oldName"].duplicated().sum() == 0, (
+        "Expected 0 duplicate old variable names. Something is wrong with "
+        f"{CUSTOM_FNAME}."
+    )
+
+    custom_old_var_id2new_var_id = (
+        df_custom_replacements.set_index("id_old")["id_new"].squeeze().to_dict()
+    )
+    assert len(custom_old_var_id2new_var_id) == df_custom_replacements.shape[0]
+    return custom_old_var_id2new_var_id
 
 
 def get_datasets(conn: Connection, new: bool = True) -> pd.DataFrame:
