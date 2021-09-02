@@ -114,7 +114,7 @@ def replace_year(values: List[str], year: Union[int, str]) -> List[str]:
         else:
             while not changed and i < len(regexes):
                 regex = regexes[i]
-                new_s = re.sub(regex["pattern"], regex["repl"], s)
+                new_s = re.sub(regex["pattern"], regex["repl"], s)  # type: ignore
                 if new_s != s:
                     changed = True
                 i += 1

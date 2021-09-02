@@ -10,7 +10,7 @@ import os
 import re
 import simplejson as json
 import shutil
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Optional
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
@@ -549,10 +549,10 @@ def _load_variables(codes: List[str]) -> pd.DataFrame:
     return df_variables
 
 
-def _load_description_many_variables(codes: List[str]) -> List[str]:
+def _load_description_many_variables(codes: List[str]) -> List[Optional[str]]:
     df_variables = _load_variables(codes)
     # creates `description` column
-    descriptions = []
+    descriptions: List[Optional[str]] = []
     for _, var in df_variables.iterrows():
         desc = ""
         if (
@@ -591,8 +591,9 @@ def _load_description_many_variables(codes: List[str]) -> List[str]:
 
         desc = re.sub(r" *(\n+) *", r"\1", re.sub(r"[ \t]+", " ", desc)).strip()
         if len(desc) == 0:
-            desc = None
-        descriptions.append(desc)
+            descriptions.append(None)
+        else:
+            descriptions.append(desc)
 
     df_variables.loc[:, "description"] = descriptions
     if df_variables["description"].isnull().any():
