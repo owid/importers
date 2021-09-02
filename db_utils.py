@@ -238,9 +238,9 @@ class DBUtils:
            SELECT id FROM sources
            WHERE name = %(name)s
            AND datasetId = %(datasetId)s
-           AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
-           AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
-           AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
+           AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" IS NULL OR description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
+           AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" IS NULL OR description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
+           AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" IS NULL OR description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
            LIMIT 1
         """,
             {
@@ -268,9 +268,9 @@ class DBUtils:
                 SELECT id FROM sources
                 WHERE name = %(name)s
                 AND datasetId = %(datasetId)s
-                AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
-                AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
-                AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
+                AND IF(%(dataPublishedBy)s IS NULL, description->>"$.dataPublishedBy" IS NULL OR description->>"$.dataPublishedBy" = 'null', description->"$.dataPublishedBy" = %(dataPublishedBy)s)
+                AND IF(%(dataPublisherSource)s IS NULL, description->>"$.dataPublisherSource" IS NULL OR description->>"$.dataPublisherSource" = 'null', description->"$.dataPublisherSource" = %(dataPublisherSource)s)
+                AND IF(%(additionalInfo)s IS NULL, description->>"$.additionalInfo" IS NULL OR description->>"$.additionalInfo" = 'null', description->"$.additionalInfo" = %(additionalInfo)s)
                 LIMIT 1
             """,
                 {
