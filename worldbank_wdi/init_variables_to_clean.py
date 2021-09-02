@@ -175,7 +175,7 @@ def get_old_variables():
             WHERE id IN (
                 SELECT DISTINCT(variableId)
                 FROM chart_dimensions
-            ) 
+            )
             AND datasetId IN ({','.join([str(_id) for _id in df_old_datasets['id']])})
             AND id NOT IN ({','.join([str(_id) for _id in old_var_ids])})
             ORDER BY updatedAt DESC

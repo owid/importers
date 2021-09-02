@@ -1,4 +1,4 @@
-"""Removes hard-coded year "2011" from subtitles of charts containing the 
+"""Removes hard-coded year "2011" from subtitles of charts containing the
 GDP per capita, PPP (constant 2017 international $) variable.
 """
 
@@ -36,9 +36,9 @@ def main() -> None:
             """
             UPDATE suggested_chart_revisions
             SET suggestedConfig = JSON_REPLACE(
-                    suggestedConfig, 
-                    '$.title', JSON_UNQUOTE(%(title)s), 
-                    '$.subtitle', JSON_UNQUOTE(%(subtitle)s), 
+                    suggestedConfig,
+                    '$.title', JSON_UNQUOTE(%(title)s),
+                    '$.subtitle', JSON_UNQUOTE(%(subtitle)s),
                     '$.note', JSON_UNQUOTE(%(note)s)
                 ),
                 updatedAt = NOW(),
@@ -65,12 +65,12 @@ def get_fastt_to_fix() -> pd.DataFrame:
     ), f'Expected variable with id={VAR_ID} to have name="GDP per capita, PPP (constant 2017 international $)".'
     df = pd.read_sql(
         f"""
-        SELECT id, 
-            suggestedConfig->"$.title" as title, 
-            suggestedConfig->"$.subtitle" as subtitle, 
+        SELECT id,
+            suggestedConfig->"$.title" as title,
+            suggestedConfig->"$.subtitle" as subtitle,
             suggestedConfig->"$.note" as note
         FROM suggested_chart_revisions
-        WHERE status="pending" 
+        WHERE status="pending"
             AND JSON_CONTAINS(suggestedConfig->"$.dimensions[*].variableId", '{VAR_ID}', '$')
             AND (
                 suggestedConfig->"$.title" REGEXP "\s*2011\s*" OR
@@ -78,7 +78,7 @@ def get_fastt_to_fix() -> pd.DataFrame:
                 suggestedConfig->"$.note" REGEXP "\s*2011\s*"
             )
         ORDER BY updatedAt DESC
-    """,
+    """,  # noqa: W605
         get_connection(),
     )
     return df.set_index("id")
