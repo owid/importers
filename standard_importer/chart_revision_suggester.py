@@ -227,7 +227,10 @@ class ChartRevisionSuggester:
                 # problem_chart_ids = [r[0] for r in res]
                 s = ""
                 for nm, gp in df.groupby("chart_id"):
-                    s += f"Chart ID: {nm}. Suggested chart revision IDs: {gp['id'].tolist()}\n"
+                    s += (
+                        f"Chart ID: {nm}. Suggested chart revision IDs:"
+                        f" {gp['id'].tolist()}\n"
+                    )
                 raise RuntimeError(
                     "For one or more of the suggested chart revisions that you are "
                     "trying to insert, a suggested chart revision already exists for "
@@ -249,7 +252,8 @@ class ChartRevisionSuggester:
         except Exception as e:
             connection.rollback()
             logger.error(
-                f"INSERT operation into `suggested_chart_revisions` cancelled. Error: {e}"
+                "INSERT operation into `suggested_chart_revisions` cancelled."
+                f" Error: {e}"
             )
             if DEBUG:
                 traceback.print_exc()
@@ -258,7 +262,8 @@ class ChartRevisionSuggester:
             cursor.close()
             connection.close()
             logger.info(
-                f"{n_after - n_before} of {len(suggested_chart_revisions)} suggested chart revisions inserted."
+                f"{n_after - n_before} of {len(suggested_chart_revisions)} suggested"
+                " chart revisions inserted."
             )
 
     def _get_charts_from_old_variables(
