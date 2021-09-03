@@ -1,45 +1,8 @@
-"""
-
-https://datacatalog.worldbank.org/dataset/world-development-indicators
+"""Cleans WDI metadata and data points in preparation for MySQL insert.
 
 Usage:
 
     python -m worldbank_wdi.clean
-
-Instructions for manually standardizing entity names:
-
-0. Retrieve all unique entity names in the dataset:
-
-    ```
-    >>> df_entities = pd.read_csv(os.path.join(INPATH, 'WDICountry.csv.zip'))
-    >>> assert not df_entities['Country code'].duplicated().any()
-    >>> df_entities[['Country code']].drop_duplicates() \
-    >>>                                     .dropna() \
-    >>>                                     .rename(columns={'Country code': 'Country'}) \
-    >>>                                     .to_csv(outfpath, index=False)
-    ```
-
-1. Open the OWID Country Standardizer Tool
-   (https://owid.cloud/admin/standardize);
-
-2. Change the "Input Format" field to "ISO 3166-1 ALPHA-3 CODE";
-
-3. Change the "Output Format" field to "Our World In Data Name";
-
-4. In the "Choose CSV file" field, upload {outfpath};
-
-5. For any country codes that do NOT get matched, enter a custom name on
-   the webpage (in the "Or enter a Custom Name" table column);
-
-    * NOTE: For this dataset, you will most likely need to enter custom
-      names for regions/continents (e.g. "Arab World", "Lower middle
-      income");
-
-6. Click the "Download csv" button;
-
-7. Replace {outfpath} with the downloaded CSV;
-
-8. Rename the "Country" column to "country_code".
 
 """
 
@@ -47,7 +10,7 @@ import os
 import re
 import simplejson as json
 import shutil
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Optional
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
@@ -88,8 +51,8 @@ def main() -> None:
 
     # loads variables to be cleaned and uploaded.
     variables_to_clean = load_variables_to_clean()
-    variable_codes = [ind["code"] for ind in variables_to_clean]
-    assert all([pd.notnull(c) for c in variable_codes])
+    var_code2meta = {ind["code"]: ind for ind in variables_to_clean}
+    assert all([pd.notnull(c) for c in var_code2meta.keys()])
 
     # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
     # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
@@ -102,9 +65,23 @@ def main() -> None:
 
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
-    var_code2meta = clean_and_create_datapoints(
-        variable_codes=variable_codes, entity2owid_name=entity2owid_name
+    var_code2meta_temp = clean_and_create_datapoints(
+        variable_codes=list(var_code2meta.keys()), entity2owid_name=entity2owid_name
     )
+
+    # updates variable metadata with metadata constructed during data point
+    # creation and removes variables from cleaning that do not have any data
+    # values associated with them.
+    remove = []
+    for var_code, meta in var_code2meta.items():
+        if var_code in var_code2meta_temp:
+            meta.update(var_code2meta_temp[var_code])
+        else:  # no data values were constructed for this variable
+            remove.append(var_code)
+
+    for var_code in remove:
+        del var_code2meta[var_code]
+
     assert (
         df_datasets.shape[0] == 1
     ), f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
@@ -112,15 +89,14 @@ def main() -> None:
     df_sources, var_code2source_id = clean_sources(
         dataset_id=df_datasets["id"].iloc[0],
         dataset_name=df_datasets["name"].iloc[0],
-        variable_codes=variable_codes,
+        variable_codes=list(var_code2meta.keys()),
     )
     for var_code, source_id in var_code2source_id.items():
         var_code2meta[var_code]["source_id"] = source_id
 
     df_variables = clean_variables(
         dataset_id=df_datasets["id"].iloc[0],
-        variables=[var for var in variables_to_clean if var["code"] in var_code2meta],
-        var_code2meta=var_code2meta,
+        variables=[var for var in var_code2meta.values()],
     )
     assert df_sources["id"].isin(df_variables["source_id"].unique()).all()
 
@@ -319,12 +295,13 @@ def clean_sources(
     sources to the `sources` database table.
 
     Arguments:
-
-        variable_codes: List[str].
+        dataset_name: str. Dataset name.
+        dataset_id: int. Temporary dataset id.
+        variables_codes: List[str]. List of variable codes for which to clean
+            source metadata.
 
     Returns:
-
-        df_sources: pd.DataFrame. (Partially) Cleaned Dataframe of data sources
+        df_sources: pd.DataFrame. Cleaned dataframe of data sources
             to be uploaded.
 
         var_code2source_id: Dict[str, int]. Dict of "{var_code}" ->
@@ -339,122 +316,61 @@ def clean_sources(
 
 
     """
-    df_variables = _load_variables(codes=variable_codes)
-    i = 0
-    sources = []
-    source_temp_id2var_codes = {}
-    for nm, gp in df_variables.groupby("source"):
-        # if source name begins and ends with parentheses, remove the parentheses.
-        regex = re.search(r"^[\.\,]?\((.+)\)[\.\,]?$", nm)
-        if regex:
-            nm = regex.groups()[0]
-        # remove a few selected prefixes from source names.
-        regex_prefixes = re.compile(
-            r"Data are from|Derived using data from", re.IGNORECASE
+    with open(os.path.join(CONFIGPATH, "standardized_source_names.json"), "r") as f:
+        df_source_names = pd.DataFrame(json.load(f))
+        assert df_source_names["rawName"].duplicated().sum() == 0
+    df_variables = _load_variables(variable_codes)
+
+    df_source_names = (
+        df_source_names.merge(
+            df_variables.groupby("source")
+            .apply(lambda gp: gp["indicator_code"].unique().tolist())
+            .reset_index()
+            .rename(columns={0: "variable_codes"}),
+            left_on="rawName",
+            right_on="source",
+            how="left",
+            validate="1:1",
         )
-        nm = regex_prefixes.sub("", nm).strip()
-
-        # retrieves additional info, if it exists.
-        additional_info = None
-        if gp["notes_from_original_source"].notnull().any():
-            notes = gp["notes_from_original_source"].dropna().unique().tolist()
-            if len(notes) == 1:
-                additional_info = notes[0]
-
-        # constructs the source dict.
-        if len(nm) <= MAX_SOURCE_NAME_LEN:
-            source_nm = f"Data compiled by {DATASET_AUTHORS} from: {nm}"
-            source = {
-                "dataset_id": dataset_id,
-                "name": source_nm,
-                "description": json.dumps(
-                    {
-                        "link": DATASET_LINK,
-                        "retrievedDate": DATASET_RETRIEVED_DATE,
-                        "additionalInfo": additional_info,
-                        "dataPublishedBy": dataset_name,
-                        "dataPublisherSource": source_nm,
-                    },
-                    ignore_nan=True,
-                ),
-                "id": i,
-            }
-            assert source["id"] not in source_temp_id2var_codes
-            sources.append(source)
-            source_temp_id2var_codes[source["id"]] = (
-                gp["indicator_code"].unique().tolist()
-            )
-            i += 1
-        else:
-            for _, row in gp.iterrows():
-                var_name = row["indicator_name"]
-                source_nm = f"Data compiled by {DATASET_AUTHORS} from multiple sources for variable: {var_name}"
-                data_publisher_source = (
-                    f"Data compiled by {DATASET_AUTHORS} from multiple sources"
-                )
-                additional_info2 = f"Data compiled by {DATASET_AUTHORS} from the following sources: {nm}"
-                if additional_info is not None:
-                    additional_info2 += f"\n{additional_info}"
-                source = {
-                    "dataset_id": dataset_id,
-                    "name": source_nm,
-                    "description": json.dumps(
-                        {
-                            "link": DATASET_LINK,
-                            "retrievedDate": DATASET_RETRIEVED_DATE,
-                            "additionalInfo": additional_info2,
-                            "dataPublishedBy": dataset_name,
-                            "dataPublisherSource": data_publisher_source,
-                        },
-                        ignore_nan=True,
-                    ),
-                    "id": i,
-                }
-                assert source["id"] not in source_temp_id2var_codes
-                sources.append(source)
-                source_temp_id2var_codes[source["id"]] = [row["indicator_code"]]
-                i += 1
-
-    # creates a generic source for any variables that contain a null
-    # `source` column.
-    var_codes_null_source = (
-        df_variables.loc[df_variables["source"].isnull(), "indicator_code"]
-        .unique()
-        .tolist()
+        .drop("source", axis=1)
+        .dropna(subset=["variable_codes"])
     )
-    if len(var_codes_null_source):
+    sources = []
+    var_code2source_id = {}
+    for i, ((name, data_publisher_source), gp) in enumerate(
+        df_source_names.groupby(["name", "dataPublisherSource"])
+    ):
+        var_codes = [c for codes in gp["variable_codes"] for c in codes]
         source = {
+            "id": i,
             "dataset_id": dataset_id,
-            "name": dataset_name,
+            "name": name,
             "description": json.dumps(
                 {
                     "link": DATASET_LINK,
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                     "additionalInfo": None,
                     "dataPublishedBy": dataset_name,
-                    "dataPublisherSource": DATASET_AUTHORS,
+                    "dataPublisherSource": data_publisher_source,
                 },
                 ignore_nan=True,
             ),
-            "id": i,
         }
-        # assert generic_source['name'] not in source_nm2var_codes
         sources.append(source)
-        source_temp_id2var_codes[source["id"]] = var_codes_null_source
-        i += 1
-
+        for c in var_codes:
+            assert c not in var_code2source_id
+            var_code2source_id[c] = i
     df_sources = pd.DataFrame(sources)
-    var_code2source_id = {
-        var_code: source_id
-        for source_id, var_codes in source_temp_id2var_codes.items()
-        for var_code in var_codes
-    }
-    return df_sources, var_code2source_id  # type: ignore
+    missing_var_codes = [c for c in variable_codes if c not in var_code2source_id]
+    assert len(missing_var_codes) == 0, (
+        "All variable codes must have a source ID, but the following variables "
+        f"do not: {missing_var_codes}. Are the source names for these variables "
+        "missing from `standardized_source_names.json`?"
+    )
+    return df_sources, var_code2source_id
 
 
-def clean_variables(
-    dataset_id: int, variables: List[dict], var_code2meta: Dict[str, dict]
-) -> pd.DataFrame:
+def clean_variables(dataset_id: int, variables: List[dict]) -> pd.DataFrame:
     """Cleans a dataframe of variables in preparation for uploading the
     variables to the `variables` database table.
 
@@ -462,34 +378,27 @@ def clean_variables(
 
         dataset_id: int. Integer representing the dataset id for all variables.
 
-        variables: List[dict]. List of variables to clean. Example:
+        variables: List[dict]. List of variables with metadata. Contains some
+            metadata for each variable that was constructed during the
+            `clean_and_create_datapoints` step and the `clean_sources` step.
+            Also contains variable metadata that is present in
+            `variable_to_clean.json`. Example:
 
                 [
                     {
-                        "originalMetadata": {
-                            "IndicatorCode": "MDG_0000000007",
-                            "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
-                        },
                         "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
-                        "unit": "%",
-                        "shortUnit": "%",
-                        "description": "The share of newborns who die before reaching the age of five",
                         "code": "MDG_0000000007",
-                        "coverage": null,
-                        "timespan": null,
-                        "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 2},
-                        "replaces": null
+                        "old": {
+                            "unit": "%",
+                            "shortUnit": "%",
+                            "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 2},
+                        }
+                        "id": 0,
+                        "timespan": "2000-2019",
+                        "source_id": 0
                     },
                     ...
                 ]
-
-        var_code2meta: Dict[dict]. Dict of `variable code` -> `{variable meta}`
-            mappings. Contains some metadata for each variable that was
-            constructed during the `clean_and_create_datapoints` step. All
-            variable codes in `variables` MUST have a corresponding key in
-            `var_code2meta`. Example:
-
-                {"MDG_0000000001": {"id": 0, "timespan": "2000-2019"}, ...}
 
     Returns:
 
@@ -497,56 +406,87 @@ def clean_variables(
             to be uploaded.
     """
     assert all(
-        [pd.notnull(variable["code"]) for variable in variables]
+        [pd.notnull(var["code"]) for var in variables]
     ), "One or more variables has a null `code` field."
-    missing_var_codes = set([var["code"] for var in variables]).difference(
-        var_code2meta.keys()
-    )
-    assert len(missing_var_codes) == 0, (
-        "The following variable codes are not in `var_code2meta`: "
-        f"{missing_var_codes}"
-    )
-
-    # adds the variable metadata from `var_code2meta` to the variable metadata
-    # in `variables.`
-    for variable in variables:
-        meta = var_code2meta[variable["code"]]
-        for field in meta:
-            if field in variable and variable[field]:
-                logger.warning(
-                    f"The `{field}` field for variable {variable['code']} is "
-                    f"being overwritten. Existing value: {variable[field]}; "
-                    f"New value: {meta[field]}."
-                )
-            variable[field] = meta[field]
-
-    # Removes the "replaces" field if it exists, since it is not part of the SQL
-    # schema.
-    for variable in variables:
-        if "replaces" in variable:
-            variable.pop("replaces")
-
-    # converts the "originalMetadata" and "display" json fields to strings
-    # for variable in variables:
-    #     for field in ['originalMetadata', 'display']:
-    #         if field in variable:
-    #             variable[field] = json.dumps(variable[field], ignore_nan=True)
 
     df_variables = pd.DataFrame(variables)
 
-    json_fields = ["display", "originalMetadata"]
-    for field in json_fields:
-        df_variables[field] = df_variables[field].apply(
-            lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
-        )
-
-    # fetches description for each variable.
+    # fetches description for each variable
     df_variables["description"] = _load_description_many_variables(
         df_variables.code.tolist()
     )
 
-    # cleans variable names.
+    # cleans name column
     df_variables["name"] = df_variables["name"].str.replace(r"\s+", " ", regex=True)
+
+    # cleans display column
+    if "old" in df_variables.columns:
+        displays = []
+        for _, row in df_variables.iterrows():
+            display = row["old"].get("display") if pd.notnull(row["old"]) else None
+            if display:
+                year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
+                if year_in_name_regex:
+                    for k in ["name", "unit"]:
+                        if k in display:
+                            year = year_in_name_regex.groups()[0]
+                            year_in_val_regex = re.search(
+                                r"\b([1-2]\d{3})\b", display[k]
+                            )
+                            if year_in_val_regex:
+                                val_year = year_in_val_regex.groups()[0]
+                                if year != val_year:
+                                    new_val = re.sub(
+                                        r"\b([1-2]\d{3})\b", year, display[k]
+                                    )
+                                    logger.warning(
+                                        f'The "display.{k}" field for variable "{row["name"]}" '
+                                        f'contains a different year ("{display[k]}"). The {k} '
+                                        f'year is being replaced to become: "{new_val}"'
+                                    )
+                                    val = new_val
+                                    display[k] = val
+                display = json.dumps(display, ignore_nan=True)
+            displays.append(display)
+        df_variables["display"] = displays
+
+    # cleans shortUnit column
+    if "old" in df_variables.columns:
+        df_variables["shortUnit"] = df_variables["old"].apply(
+            lambda x: x.get("shortUnit") if pd.notnull(x) else None
+        )
+
+    # cleans unit column
+    if "old" in df_variables.columns:
+        units = []
+        for _, row in df_variables.iterrows():
+            unit = row["old"].get("unit") if pd.notnull(row["old"]) else None
+            if unit:
+                year_in_name_regex = re.search(r"\b([1-2]\d{3})\b", row["name"])
+                if year_in_name_regex:
+                    year = year_in_name_regex.groups()[0]
+                    year_in_unit_regex = re.search(r"\b([1-2]\d{3})\b", unit)
+                    if year_in_unit_regex:
+                        unit_year = year_in_unit_regex.groups()[0]
+                        if year != unit_year:
+                            new_unit = re.sub(r"\b([1-2]\d{3})\b", year, unit)
+                            logger.warning(
+                                f'The unit field for variable "{row["name"]}" '
+                                f'contains a different year ("{unit}"). The unit '
+                                f'year is being replaced to become: "{new_unit}"'
+                            )
+                            unit = new_unit
+            units.append(unit)
+        df_variables["unit"] = units
+
+    # cleans originalMetadata column
+    if "old" in df_variables.columns:
+        df_variables["originalMetadata"] = df_variables["old"].apply(
+            lambda x: x.get("originalMetadata") if pd.notnull(x) else None
+        )
+        df_variables["originalMetadata"] = df_variables["originalMetadata"].apply(
+            lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
+        )
 
     df_variables["dataset_id"] = dataset_id
 
@@ -554,12 +494,16 @@ def clean_variables(
     # `standard_importer.import_dataset` module.
     df_variables.columns = df_variables.columns.map(camel_case2snake_case)
 
+    if "old" in df_variables.columns:
+        df_variables.drop("old", axis=1, inplace=True)
+
     required_fields = ["id", "name", "dataset_id", "source_id"]
     for field in required_fields:
         assert field in df_variables.columns, f"`{field}` does not exist."
-        assert (
-            df_variables[field].notnull().all()
-        ), f"Every variable must have a non-null `{field}` field."
+        assert df_variables[field].notnull().all(), (
+            f"The following variables have a null `{field}` field:\n"
+            f"{df_variables.loc[df_variables[field].isnull(), required_fields]}"
+        )
 
     df_variables = df_variables.set_index(["id", "name"]).reset_index()
     return df_variables
@@ -584,7 +528,7 @@ def get_distinct_entities() -> List[str]:
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entities.update(df_temp["country"].unique().tolist())
 
-    entity_list = list(entities)
+    entity_list = sorted(entities)
     assert pd.notnull(entity_list).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
@@ -605,15 +549,53 @@ def _load_variables(codes: List[str]) -> pd.DataFrame:
     return df_variables
 
 
-def _load_description_many_variables(codes: List[str]) -> List[str]:
+def _load_description_many_variables(codes: List[str]) -> List[Optional[str]]:
     df_variables = _load_variables(codes)
     # creates `description` column
-    df_variables["description"] = df_variables.apply(
-        lambda s: s["long_definition"]
-        if pd.notnull(s["long_definition"])
-        else s["short_definition"],
-        axis=1,
-    )
+    descriptions: List[Optional[str]] = []
+    for _, var in df_variables.iterrows():
+        desc = ""
+        if (
+            pd.notnull(var["long_definition"])
+            and len(var["long_definition"].strip()) > 0
+        ):
+            desc += var["long_definition"]
+        elif (
+            pd.notnull(var["short_definition"])
+            and len(var["short_definition"].strip()) > 0
+        ):
+            desc += var["short_definition"]
+
+        if (
+            pd.notnull(var["limitations_and_exceptions"])
+            and len(var["limitations_and_exceptions"].strip()) > 0
+        ):
+            desc += (
+                f'\n\nLimitations and exceptions: {var["limitations_and_exceptions"]}'
+            )
+
+        if (
+            pd.notnull(var["statistical_concept_and_methodology"])
+            and len(var["statistical_concept_and_methodology"].strip()) > 0
+        ):
+            desc += f'\n\nStatistical concept and methodology: {var["statistical_concept_and_methodology"]}'
+
+        # retrieves additional source info, if it exists.
+        if (
+            pd.notnull(var["notes_from_original_source"])
+            and len(var["notes_from_original_source"].strip()) > 0
+        ):
+            desc += (
+                f'\n\nNotes from original source: {var["notes_from_original_source"]}'
+            )
+
+        desc = re.sub(r" *(\n+) *", r"\1", re.sub(r"[ \t]+", " ", desc)).strip()
+        if len(desc) == 0:
+            descriptions.append(None)
+        else:
+            descriptions.append(desc)
+
+    df_variables.loc[:, "description"] = descriptions
     if df_variables["description"].isnull().any():
         logger.warning(
             "The `description` column (i.e. variable definition) is null for the "
