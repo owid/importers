@@ -142,7 +142,7 @@ def postprocess_sources(sources: pd.DataFrame) -> pd.DataFrame:
             "source_id": "id",
         }
     ).assign(
-        dataset_id=pd.NA,
+        dataset_id=0,
         description=json.dumps(
             {
                 "dataPublishedBy": "",
