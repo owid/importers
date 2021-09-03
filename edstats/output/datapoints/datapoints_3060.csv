@@ -1,0 +1,721 @@
+country,year,value
+Barbados,1970,134.0
+Grenada,1970,71.0
+Saint Vincent and the Grenadines,1970,128.0
+Kuwait,1975,5652.0
+Turkey,1975,438813.0
+United Arab Emirates,1975,3969.0
+Uruguay,1975,18081.0
+Bolivia,1976,50394.0
+Cameroon,1976,100876.0
+Egypt,1976,468028.0
+Iran,1976,389302.0
+Eswatini,1976,4393.0
+Tonga,1976,23.0
+Maldives,1977,512.0
+Poland,1978,49730.0
+Rwanda,1978,40059.0
+Afghanistan,1979,130483.0
+Burundi,1979,49542.0
+Guinea-Bissau,1979,11727.0
+Jordan,1979,21499.0
+Vanuatu,1979,1397.0
+American Samoa,1980,25.0
+Argentina,1980,105116.0
+Brazil,1980,852823.0
+Comoros,1980,2405.0
+Guam,1980,79.0
+Hungary,1980,7453.0
+Kuwait,1980,6838.0
+Malaysia,1980,136218.0
+Mexico,1980,357178.0
+Philippines,1980,273355.0
+Singapore,1980,16482.0
+South Africa,1980,130335.0
+Thailand,1980,288785.0
+Trinidad and Tobago,1980,4151.0
+Turkey,1980,516404.0
+Bahrain,1981,3262.0
+Bangladesh,1981,906601.0
+Dominican Republic,1981,49773.0
+Greece,1981,56152.0
+Italy,1981,227047.0
+Montenegro,1981,3271.0
+Nepal,1981,167306.0
+Portugal,1981,175429.0
+Sao Tome and Principe,1981,917.0
+Spain,1981,171169.0
+Sri Lanka,1981,55899.0
+Syria,1981,81157.0
+Venezuela,1981,92623.0
+Chile,1982,60734.0
+Ecuador,1982,48711.0
+Haiti,1982,80528.0
+Morocco,1982,240072.0
+Paraguay,1982,22979.0
+Israel,1983,19589.0
+Myanmar,1983,127475.0
+Costa Rica,1984,9811.0
+Liberia,1984,25014.0
+Libya,1984,38005.0
+Tunisia,1984,119967.0
+Kuwait,1985,6705.0
+Maldives,1985,401.0
+Malta,1985,3039.0
+Turkey,1985,418875.0
+United Arab Emirates,1985,6702.0
+Uruguay,1985,16880.0
+Egypt,1986,623265.0
+Iran,1986,521659.0
+Qatar,1986,1521.0
+Eswatini,1986,5537.0
+Algeria,1987,258672.0
+Malawi,1987,47866.0
+Seychelles,1987,832.0
+Central African Republic,1988,39974.0
+Cote d'Ivoire,1988,127791.0
+Tanzania,1988,188711.0
+Armenia,1989,3413.0
+Belarus,1989,10182.0
+Estonia,1989,118.0
+Kazakhstan,1989,23738.0
+Latvia,1989,628.0
+Lithuania,1989,4452.0
+Moldova,1989,11493.0
+New Caledonia,1989,1042.0
+Russia,1989,110363.0
+Tajikistan,1989,7354.0
+Burundi,1990,63738.0
+Cape Verde,1990,3606.0
+China,1990,15675551.0
+Ecuador,1990,59331.0
+Guam,1990,63.0
+Maldives,1990,344.0
+Mauritius,1990,6777.0
+Mexico,1990,490946.0
+Panama,1990,16909.0
+Philippines,1990,181297.0
+Puerto Rico,1990,33519.0
+Singapore,1990,16122.0
+Trinidad and Tobago,1990,3392.0
+Turkey,1990,466748.0
+Argentina,1991,95696.0
+Bahrain,1991,4381.0
+Bangladesh,1991,1195163.0
+Belize,1991,2103.0
+Botswana,1991,10885.0
+Brunei,1991,2009.0
+Burkina Faso,1991,118836.0
+Croatia,1991,11848.0
+Greece,1991,71863.0
+India,1991,10080953.0
+Iran,1991,706413.0
+Malaysia,1991,158208.0
+Montenegro,1991,2761.0
+Namibia,1991,10943.0
+Nepal,1991,216206.0
+Nigeria,1991,889575.0
+Portugal,1991,166651.0
+Rwanda,1991,51441.0
+Samoa,1991,162.0
+Sao Tome and Principe,1991,1176.0
+Slovenia,1991,711.0
+Spain,1991,125224.0
+Uganda,1991,162662.0
+Bolivia,1992,68123.0
+Chile,1992,71949.0
+Cyprus,1992,3256.0
+El Salvador,1992,54015.0
+Paraguay,1992,19176.0
+Romania,1992,51942.0
+Saudi Arabia,1992,190735.0
+Chad,1993,91144.0
+Colombia,1993,169043.0
+Gabon,1993,21421.0
+Peru,1993,106400.0
+Guatemala,1994,88591.0
+Hungary,1994,4621.0
+Liberia,1994,24345.0
+Libya,1994,54655.0
+North Macedonia,1994,10013.0
+Morocco,1994,463683.0
+Poland,1994,15304.0
+Seychelles,1994,931.0
+Tunisia,1994,164759.0
+Vanuatu,1994,2012.0
+Yemen,1994,178431.0
+Kuwait,1995,9382.0
+Laos,1995,42703.0
+Maldives,1995,446.0
+Malta,1995,4630.0
+Turkmenistan,1995,4839.0
+Burkina Faso,1996,122324.0
+Colombia,1996,191238.0
+Egypt,1996,871502.0
+Guinea,1996,109631.0
+Iran,1996,857772.0
+South Africa,1996,291466.0
+Tonga,1996,64.0
+Uruguay,1996,15943.0
+Mozambique,1997,164242.0
+Qatar,1997,3006.0
+Palestine,1997,13608.0
+Cambodia,1998,64008.0
+Cote d'Ivoire,1998,214092.0
+Malawi,1998,69195.0
+Mali,1998,148233.0
+Pakistan,1998,2144150.0
+Azerbaijan,1999,7773.0
+Belarus,1999,1926.0
+Jamaica,1999,48081.0
+Kazakhstan,1999,4440.0
+Kyrgyzstan,1999,5480.0
+Zambia,1999,54408.0
+Aruba,2000,290.0
+Bosnia and Herzegovina,2000,8093.0
+Brazil,2000,1318238.0
+Burundi,2000,62279.0
+Cameroon,2000,145369.0
+Central African Republic,2000,50084.0
+Chad,2000,95586.0
+China,2000,9633753.0
+Comoros,2000,3563.0
+Costa Rica,2000,18305.0
+Cote d'Ivoire,2000,209557.0
+Equatorial Guinea,2000,2501.0
+Estonia,2000,173.0
+Gambia,2000,13665.0
+Ghana,2000,167121.0
+Guinea-Bissau,2000,17216.0
+Iraq,2000,257533.0
+Kenya,2000,215416.0
+Laos,2000,37361.0
+Latvia,2000,304.0
+Lesotho,2000,11806.0
+Madagascar,2000,91812.0
+Malaysia,2000,171856.0
+Maldives,2000,591.0
+Mauritania,2000,21604.0
+Mauritius,2000,10287.0
+Mexico,2000,590926.0
+Moldova,2000,17522.0
+Mongolia,2000,1720.0
+Myanmar,2000,113782.0
+Panama,2000,19521.0
+Papua New Guinea,2000,37850.0
+Philippines,2000,215172.0
+Rwanda,2000,76778.0
+Saudi Arabia,2000,212125.0
+Singapore,2000,20139.0
+Sudan,2000,239094.0
+Eswatini,2000,7497.0
+Tajikistan,2000,2441.0
+Thailand,2000,386282.0
+Togo,2000,47855.0
+Uzbekistan,2000,35946.0
+Vietnam,2000,344722.0
+Albania,2001,4169.0
+Angola,2001,86697.0
+Argentina,2001,86542.0
+Armenia,2001,1700.0
+Bahrain,2001,3963.0
+Bangladesh,2001,1629606.0
+Bolivia,2001,69780.0
+Brunei,2001,1840.0
+Bulgaria,2001,12928.0
+Democratic Republic of Congo,2001,235423.0
+Croatia,2001,5769.0
+Cyprus,2001,2565.0
+Ecuador,2001,70055.0
+Greece,2001,49346.0
+Honduras,2001,60405.0
+India,2001,11086205.0
+Italy,2001,159399.0
+Laos,2001,44383.0
+Lithuania,2001,1026.0
+Macao,2001,2762.0
+Namibia,2001,9940.0
+Nepal,2001,290394.0
+Nicaragua,2001,45478.0
+Niger,2001,129742.0
+Sao Tome and Principe,2001,1145.0
+Sri Lanka,2001,78712.0
+Ukraine,2001,19467.0
+Venezuela,2001,92730.0
+Algeria,2002,539737.0
+Benin,2002,74563.0
+Chile,2002,76034.0
+Cuba,2002,4486.0
+Dominican Republic,2002,77477.0
+Eritrea,2002,19986.0
+Georgia,2002,1435.0
+Guatemala,2002,124439.0
+North Macedonia,2002,6684.0
+Mexico,2002,750952.0
+Romania,2002,39737.0
+Russia,2002,53453.0
+Senegal,2002,113312.0
+Seychelles,2002,901.0
+Syria,2002,120058.0
+Tanzania,2002,276328.0
+Uganda,2002,168524.0
+Zambia,2002,48306.0
+Botswana,2003,14358.0
+Burkina Faso,2003,120517.0
+Guinea,2003,118151.0
+Haiti,2003,124922.0
+Jordan,2003,31102.0
+Montenegro,2003,729.0
+Mozambique,2003,177477.0
+Nigeria,2003,1181782.0
+Oman,2003,22662.0
+Philippines,2003,118411.0
+Brazil,2004,1418690.0
+Cambodia,2004,53450.0
+Chad,2004,114408.0
+Colombia,2004,213212.0
+Indonesia,2004,1500555.0
+Mexico,2004,800353.0
+Morocco,2004,567882.0
+Peru,2004,161323.0
+Qatar,2004,2734.0
+Saudi Arabia,2004,208808.0
+Sierra Leone,2004,45410.0
+Spain,2004,188314.0
+Suriname,2004,3736.0
+Syria,2004,143771.0
+Tunisia,2004,236226.0
+Turkey,2004,481383.0
+Palestine,2004,16358.0
+East Asia and Pacific (excluding high-income countries),2005,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2005,3203061.25
+Middle East and North Africa (excluding high-income countries),2005,2721485.0
+South Asia,2005,14773894.0
+Upper-middle-income countries,2005,3727863.5
+Bhutan,2005,10367.0
+Burkina Faso,2005,123455.0
+Colombia,2005,219931.0
+Egypt,2005,450087.0
+Ethiopia,2005,971570.0
+Greece,2005,163337.0
+Iran,2005,1135557.0
+Jordan,2005,32529.0
+Kuwait,2005,9837.0
+Laos,2005,39857.0
+Malta,2005,3925.0
+Mexico,2005,668950.0
+Nicaragua,2005,51114.0
+Niger,2005,116220.0
+Pakistan,2005,2420253.0
+Peru,2005,146460.0
+Spain,2005,148493.0
+Thailand,2005,397535.0
+Turkey,2005,424525.0
+United Arab Emirates,2005,11831.0
+East Asia and Pacific (excluding high-income countries),2006,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2006,3203061.25
+Middle East and North Africa (excluding high-income countries),2006,2721485.0
+South Asia,2006,14773894.0
+Upper-middle-income countries,2006,3727863.5
+Algeria,2006,599349.0
+Benin,2006,84157.0
+Brazil,2006,1476260.0
+Burkina Faso,2006,129795.0
+Colombia,2006,234420.0
+Egypt,2006,1006737.0
+El Salvador,2006,67973.0
+Haiti,2006,158180.0
+India,2006,12983629.0
+Indonesia,2006,762635.0
+Iran,2006,1152810.0
+Kuwait,2006,9229.0
+Macao,2006,2919.0
+Maldives,2006,606.0
+Mali,2006,144757.0
+Mexico,2006,608567.0
+Pakistan,2006,2330134.0
+Peru,2006,134572.0
+Senegal,2006,116098.0
+Sri Lanka,2006,103402.0
+Togo,2006,52123.0
+Tonga,2006,41.0
+Turkey,2006,437629.0
+Uganda,2006,158086.0
+Uruguay,2006,9257.0
+Palestine,2006,15356.0
+East Asia and Pacific (excluding high-income countries),2007,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2007,3203061.25
+Middle East and North Africa (excluding high-income countries),2007,2721485.0
+South Asia,2007,14773894.0
+Upper-middle-income countries,2007,3727863.5
+Azerbaijan,2007,5292.0
+Bangladesh,2007,1975731.0
+Bolivia,2007,58725.0
+Brazil,2007,1455611.0
+Burkina Faso,2007,123009.0
+Cameroon,2007,189621.0
+Cayman Islands,2007,120.0
+Colombia,2007,242902.0
+Democratic Republic of Congo,2007,217079.0
+Dominican Republic,2007,74931.0
+Ecuador,2007,147814.0
+El Salvador,2007,74987.0
+Ethiopia,2007,1002092.0
+Greece,2007,140554.0
+Honduras,2007,64998.0
+Jordan,2007,32432.0
+Kenya,2007,170358.0
+Kuwait,2007,8657.0
+Lebanon,2007,42867.0
+Liberia,2007,22385.0
+Mauritania,2007,27728.0
+Mexico,2007,616437.0
+Namibia,2007,15862.0
+Paraguay,2007,22504.0
+Peru,2007,135840.0
+Qatar,2007,3619.0
+South Africa,2007,346376.0
+Spain,2007,141906.0
+Tunisia,2007,234232.0
+Turkey,2007,424164.0
+Uruguay,2007,10519.0
+Venezuela,2007,124801.0
+Palestine,2007,15475.0
+East Asia and Pacific (excluding high-income countries),2008,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2008,3203061.25
+Middle East and North Africa (excluding high-income countries),2008,2721485.0
+South Asia,2008,14773894.0
+Upper-middle-income countries,2008,3727863.5
+Albania,2008,15279.0
+Algeria,2008,612679.0
+Bolivia,2008,67804.0
+Brazil,2008,1517607.0
+Burundi,2008,77969.0
+Cambodia,2008,54620.0
+Chile,2008,30434.0
+Colombia,2008,233979.0
+El Salvador,2008,69819.0
+Eritrea,2008,27354.0
+Indonesia,2008,1321623.0
+Iran,2008,1137918.0
+North Korea,2008,57.0
+Kuwait,2008,8117.0
+Mexico,2008,628148.0
+Morocco,2008,581483.0
+Nigeria,2008,1378592.0
+Oman,2008,28954.0
+Pakistan,2008,2382887.0
+Paraguay,2008,31312.0
+Philippines,2008,191195.0
+Qatar,2008,2592.0
+Sao Tome and Principe,2008,797.0
+South Sudan,2008,120245.0
+Spain,2008,158661.0
+Sri Lanka,2008,104979.0
+Sudan,2008,331434.0
+Suriname,2008,2537.0
+Tunisia,2008,238248.0
+Uruguay,2008,8144.0
+Palestine,2008,25064.0
+East Asia and Pacific (excluding high-income countries),2009,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2009,3203061.25
+Middle East and North Africa (excluding high-income countries),2009,2721485.0
+South Asia,2009,14773894.0
+Upper-middle-income countries,2009,3727863.5
+Azerbaijan,2009,2659.0
+Belarus,2009,2323.0
+Bolivia,2009,57036.0
+Brazil,2009,1563580.0
+Cambodia,2009,62873.0
+Chile,2009,31482.0
+Colombia,2009,262328.0
+Ecuador,2009,117523.0
+El Salvador,2009,69961.0
+Greece,2009,143742.0
+Guyana,2009,6318.0
+Indonesia,2009,1177285.0
+Kazakhstan,2009,2736.0
+Kyrgyzstan,2009,4332.0
+Lebanon,2009,46833.0
+Lesotho,2009,20525.0
+Mexico,2009,603859.0
+Morocco,2009,590267.0
+Mozambique,2009,199772.0
+Pakistan,2009,2454867.0
+Paraguay,2009,26389.0
+Qatar,2009,3761.0
+Senegal,2009,110118.0
+South Africa,2009,253585.0
+Spain,2009,161205.0
+Togo,2009,53160.0
+Turkey,2009,408714.0
+Uruguay,2009,8091.0
+Venezuela,2009,125915.0
+Vietnam,2009,190347.0
+Palestine,2009,15614.0
+East Asia and Pacific (excluding high-income countries),2010,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2010,3203061.25
+Middle East and North Africa (excluding high-income countries),2010,2721485.0
+South Asia,2010,14773894.0
+Upper-middle-income countries,2010,3727863.5
+Aruba,2010,432.0
+Azerbaijan,2010,2864.0
+Bahrain,2010,4135.0
+Brazil,2010,1568145.0
+Cameroon,2010,175405.0
+Central African Republic,2010,33877.0
+China,2010,7456683.0
+Colombia,2010,265853.0
+Dominican Republic,2010,78871.0
+Ecuador,2010,96972.0
+Egypt,2010,824734.0
+El Salvador,2010,72791.0
+Ghana,2010,183062.0
+Guinea,2010,134166.0
+Honduras,2010,71950.0
+Jordan,2010,29461.0
+Kazakhstan,2010,2173.0
+Kuwait,2010,7194.0
+Malawi,2010,70150.0
+Malaysia,2010,169938.0
+Mali,2010,150617.0
+Mexico,2010,740161.0
+Mongolia,2010,1169.0
+Oman,2010,28412.0
+Pakistan,2010,2508899.0
+Panama,2010,22246.0
+Paraguay,2010,29231.0
+Puerto Rico,2010,29600.0
+Qatar,2010,2541.0
+Russia,2010,25831.0
+Rwanda,2010,53337.0
+Seychelles,2010,859.0
+Singapore,2010,18237.0
+South Africa,2010,256080.0
+Spain,2010,148403.0
+Sri Lanka,2010,94881.0
+Suriname,2010,2970.0
+Eswatini,2010,7971.0
+Tanzania,2010,181488.0
+Thailand,2010,148124.0
+Timor,2010,18137.0
+Tunisia,2010,230313.0
+Turkey,2010,367329.0
+Uganda,2010,166850.0
+Uruguay,2010,10308.0
+Palestine,2010,14944.0
+Zambia,2010,48584.0
+East Asia and Pacific (excluding high-income countries),2011,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2011,3203061.25
+Middle East and North Africa (excluding high-income countries),2011,2721485.0
+South Asia,2011,14773894.0
+Upper-middle-income countries,2011,3727863.5
+Albania,2011,9679.0
+Armenia,2011,664.0
+Azerbaijan,2011,3269.0
+Bangladesh,2011,2494960.0
+Bolivia,2011,50702.0
+Bosnia and Herzegovina,2011,1929.0
+Brazil,2011,1550730.0
+Brunei,2011,1345.0
+Bulgaria,2011,7567.0
+Chile,2011,70442.0
+Colombia,2011,256426.0
+Congo,2011,8166.0
+Costa Rica,2011,16109.0
+Croatia,2011,2135.0
+Cyprus,2011,1449.0
+Dominican Republic,2011,72730.0
+Ecuador,2011,108673.0
+El Salvador,2011,70745.0
+Estonia,2011,157.0
+Greece,2011,36054.0
+Honduras,2011,80094.0
+India,2011,13189725.0
+Indonesia,2011,1134814.0
+Italy,2011,120494.0
+Jordan,2011,29612.0
+Laos,2011,56879.0
+Latvia,2011,80.0
+Lithuania,2011,323.0
+Macao,2011,2137.0
+Mali,2011,150120.0
+Malta,2011,4261.0
+Marshall Islands,2011,65.0
+Mauritius,2011,9031.0
+Mexico,2011,766437.0
+Montenegro,2011,407.0
+Morocco,2011,543827.0
+Namibia,2011,13204.0
+Nepal,2011,425557.0
+Pakistan,2011,2653528.0
+Portugal,2011,106699.0
+Qatar,2011,2101.0
+Romania,2011,18827.0
+Samoa,2011,154.0
+Senegal,2011,101276.0
+Serbia,2011,9014.0
+South Africa,2011,252242.0
+Spain,2011,151766.0
+Togo,2011,56767.0
+Tonga,2011,29.0
+Tunisia,2011,222290.0
+Turkey,2011,291995.0
+Uruguay,2011,8088.0
+Venezuela,2011,130477.0
+Palestine,2011,16353.0
+Zimbabwe,2011,35574.0
+East Asia and Pacific (excluding high-income countries),2012,1257721.25
+Latin America and the Caribbean (excluding high-income countries),2012,3203061.25
+Middle East and North Africa (excluding high-income countries),2012,2721485.0
+South Asia,2012,14773894.0
+Upper-middle-income countries,2012,3727863.5
+Albania,2012,12716.0
+Azerbaijan,2012,3414.0
+Benin,2012,106268.0
+Bhutan,2012,14927.0
+Bolivia,2012,43710.0
+Brazil,2012,1604452.0
+Cape Verde,2012,5144.0
+Comoros,2012,7295.0
+Democratic Republic of Congo,2012,223882.0
+Cote d'Ivoire,2012,223888.0
+Cuba,2012,5818.0
+Dominican Republic,2012,77256.0
+Ecuador,2012,102079.0
+Egypt,2012,1100412.0
+Gabon,2012,8200.0
+Guatemala,2012,150229.0
+Honduras,2012,65798.0
+Iran,2012,1082351.0
+Jordan,2012,5733.0
+Kuwait,2012,7825.0
+Madagascar,2012,113832.0
+Mexico,2012,672311.0
+Moldova,2012,2681.0
+Morocco,2012,456370.0
+Niger,2012,187410.0
+Pakistan,2012,2591902.0
+Peru,2012,93435.0
+Qatar,2012,1144.0
+Rwanda,2012,69111.0
+Sao Tome and Principe,2012,708.0
+South Africa,2012,231109.0
+Spain,2012,138408.0
+Suriname,2012,2781.0
+Tanzania,2012,296168.0
+Tunisia,2012,218179.0
+Turkey,2012,248899.0
+Uganda,2012,167547.0
+Ukraine,2012,0.0
+Uruguay,2012,6638.0
+Palestine,2012,15569.0
+Azerbaijan,2013,3177.0
+Bosnia and Herzegovina,2013,6970.0
+Brazil,2013,1700589.0
+Chile,2013,80738.0
+Dominican Republic,2013,69890.0
+Ecuador,2013,94215.0
+Egypt,2013,832692.0
+El Salvador,2013,70229.0
+Gambia,2013,18656.0
+Guatemala,2013,155087.0
+Honduras,2013,68468.0
+Iran,2013,1060159.0
+Iraq,2013,329014.0
+Kuwait,2013,5702.0
+Mexico,2013,689030.0
+Pakistan,2013,2714460.0
+Palau,2013,11.0
+Philippines,2013,172911.0
+Qatar,2013,1211.0
+Saudi Arabia,2013,135677.0
+Senegal,2013,116386.0
+Sierra Leone,2013,74540.0
+Spain,2013,128795.0
+Thailand,2013,480648.0
+Turkey,2013,233269.0
+Uruguay,2013,8230.0
+Uzbekistan,2013,678.0
+Palestine,2013,14367.0
+Angola,2014,131156.0
+Azerbaijan,2014,3251.0
+Brazil,2014,1699573.0
+Burkina Faso,2014,141771.0
+Burundi,2014,77007.0
+Colombia,2014,281166.0
+Cote d'Ivoire,2014,275709.0
+Dominican Republic,2014,63870.0
+Ecuador,2014,85527.0
+Georgia,2014,1107.0
+Guatemala,2014,135585.0
+Guinea,2014,136838.0
+Guinea-Bissau,2014,16257.0
+Guyana,2014,7863.0
+Honduras,2014,67130.0
+Indonesia,2014,1344871.0
+Iran,2014,1072483.0
+Kenya,2014,143274.0
+Lesotho,2014,21848.0
+Malawi,2014,78339.0
+Maldives,2014,589.0
+Mexico,2014,669397.0
+Oman,2014,31847.0
+Pakistan,2014,2754593.0
+Paraguay,2014,30125.0
+Peru,2014,111812.0
+Qatar,2014,1907.0
+South Africa,2014,207005.0
+Spain,2014,130847.0
+Tunisia,2014,166037.0
+Turkey,2014,220037.0
+Uruguay,2014,7799.0
+Uzbekistan,2014,1645.0
+Palestine,2014,14763.0
+Zimbabwe,2014,15004.0
+Andorra,2015,0.0
+Argentina,2015,90131.0
+Azerbaijan,2015,3285.0
+Bolivia,2015,56551.0
+Cape Verde,2015,4127.0
+Chad,2015,135680.0
+Colombia,2015,287188.0
+Dominican Republic,2015,66966.0
+Ecuador,2015,82032.0
+El Salvador,2015,64249.0
+Honduras,2015,64729.0
+Indonesia,2015,1086325.0
+Kuwait,2015,5675.0
+Malawi,2015,96524.0
+Mali,2015,154161.0
+Mexico,2015,698589.0
+Oman,2015,31170.0
+Palau,2015,84.0
+Paraguay,2015,28321.0
+Peru,2015,100195.0
+Singapore,2015,15885.0
+South Africa,2015,195737.0
+Spain,2015,124394.0
+Tanzania,2015,327221.0
+Thailand,2015,466117.0
+Togo,2015,54931.0
+Turkey,2015,207672.0
+Uruguay,2015,7589.0
+Uzbekistan,2015,882.0
+Venezuela,2015,102523.0
+Palestine,2015,13278.0
+Andorra,2016,0.0
+Azerbaijan,2016,3293.0
+Bangladesh,2016,1965173.0
+Chad,2016,147054.0
+Democratic Republic of Congo,2016,255155.0
+Ecuador,2016,88790.0
+Honduras,2016,57774.0
+Indonesia,2016,1115347.0
+Macao,2016,2357.0
+Myanmar,2016,382442.0
+Peru,2016,101466.0
+Serbia,2016,4534.0
+Spain,2016,119273.0
+Venezuela,2016,91610.0
+Palestine,2016,12018.0

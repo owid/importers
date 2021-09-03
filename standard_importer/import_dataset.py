@@ -12,7 +12,6 @@ Usage:
 import re
 from glob import glob
 import os
-import json
 
 from tqdm import tqdm
 import pandas as pd
@@ -40,16 +39,6 @@ def main(dataset_dir: str, dataset_namespace: str):
     with get_connection().cursor() as cursor:
         db = DBUtils(cursor)
 
-        # Upsert entities
-        print("---\nUpserting entities...")
-        entities = pd.read_csv(
-            os.path.join(data_path, "distinct_countries_standardized.csv")
-        )
-        for entity_name in tqdm(entities.name):
-            db_entity_id = db.get_or_create_entity(entity_name)
-            entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
-        print(f"Upserted {len(entities)} entities.")
-
         # Upsert datasets
         print("---\nUpserting datasets...")
         datasets = pd.read_csv(os.path.join(data_path, "datasets.csv"))
@@ -72,33 +61,19 @@ def main(dataset_dir: str, dataset_namespace: str):
         # Upsert sources
         print("---\nUpserting sources...")
         sources = pd.read_csv(os.path.join(data_path, "sources.csv"))
-        for _, gp in sources.groupby(["dataset_id", "name", "description"]):
-            descriptions = pd.DataFrame(
-                gp["description"]
-                .apply(lambda x: json.loads(x))
-                .apply(
-                    lambda x: [
-                        x.get("dataPublishedBy"),
-                        x.get("dataPublisherSource"),
-                        x.get("additionalInfo"),
-                    ]
-                )
-                .values.tolist(),
-                columns=[
-                    "dataPublishedBy",
-                    "dataPublisherSource",
-                    "additionalInfo",
-                ],
-            )
-            assert (
-                descriptions.duplicated().sum() == 0
-            ), "All sources in a dataset must have a unique dataset_id-name-description combination."
+        assert all(
+            sources.groupby(["dataset_id", "name", "description"])
+            .size()
+            .reset_index()[0]
+            == 1
+        ), "All sources in a dataset must have a unique dataset_id-name-description combination."
         sources = pd.merge(
             sources,
             datasets,
             left_on="dataset_id",
             right_on="id",
             suffixes=["__source", "__dataset"],
+            how="left",
         )
         for i, source_row in tqdm(sources.iterrows()):
             db_source_id = db.upsert_source(
@@ -119,14 +94,18 @@ def main(dataset_dir: str, dataset_namespace: str):
                 'deprecated, and should be named "description" instead.'
             )
             variables.rename(columns={"notes": "description"}, inplace=True)
-        if "source_id" in variables:
-            on = "source_id"
-        else:
-            on = "dataset_id"
+        variables = pd.merge(
+            variables,
+            datasets,
+            left_on="dataset_id",
+            right_on="id",
+            suffixes=["__variable", "__dataset"],
+            validate="m:1",
+        )
         variables = pd.merge(
             variables,
             sources,
-            left_on=on,
+            left_on="source_id",
             right_on="id__source",
             how="left",
             validate="m:1",
@@ -134,9 +113,9 @@ def main(dataset_dir: str, dataset_namespace: str):
         )
         for i, variable_row in tqdm(variables.iterrows()):
             db_variable_id = db.upsert_variable(
-                name=variable_row["name"],
+                name=variable_row["name__variable"],
                 source_id=variable_row["db_source_id"],
-                dataset_id=variable_row["db_dataset_id"],
+                dataset_id=variable_row["db_dataset_id__variable"],
                 description=variable_row["description__variable"],
                 code=variable_row["code"]
                 if "code" in variable_row and variable_row["code"] != ""
@@ -155,12 +134,24 @@ def main(dataset_dir: str, dataset_namespace: str):
             variables.at[i, "db_variable_id"] = db_variable_id
         print(f"Upserted {len(variables)} variables.")
 
+        # Upsert entities
+        print("---\nUpserting entities...")
+        entities = pd.read_csv(
+            os.path.join(data_path, "distinct_countries_standardized.csv")
+        )
+        for entity_name in tqdm(entities.name):
+            db_entity_id = db.get_or_create_entity(entity_name)
+            entities.loc[entities.name == entity_name, "db_entity_id"] = db_entity_id
+        print(f"Upserted {len(entities)} entities.")
+
         # Upserting datapoints
         print("---\nUpserting datapoints...")
         datapoint_files = glob(os.path.join(data_path, "datapoints/datapoints_*.csv"))
         for datapoint_file in tqdm(datapoint_files):
             variable_id = int(re.search("\\d+", datapoint_file)[0])  # type: ignore
-            db_variable_id = variables[variables["id"] == variable_id]["db_variable_id"]
+            db_variable_id = variables[variables["id__variable"] == variable_id][
+                "db_variable_id"
+            ]
             data = pd.read_csv(datapoint_file)
             data = pd.merge(
                 data,
