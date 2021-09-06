@@ -1,6 +1,15 @@
+import os
 import re
+import json
+import requests
 from typing import Any, Generator, List, Collection
 from dataclasses import dataclass, field
+
+from dotenv import load_dotenv
+
+load_dotenv()
+SITE_HOST = os.getenv("SITE_HOST")
+SITE_SESSION_ID = os.getenv("SITE_SESSION_ID")
 
 
 def write_file(file_path, content):
@@ -94,3 +103,22 @@ class IntRange:
 
     def to_values(self):
         return [self.min, self.max]
+
+
+def assert_admin_api_connection() -> None:
+    """raises an AssertionError if unable to successfully connect to the admin API."""
+    res = False
+    try:
+        charts = json.loads(
+            requests.get(
+                f"{SITE_HOST}/admin/api/charts.json?limit=1",
+                cookies={"sessionid": SITE_SESSION_ID},
+            ).content
+        )
+        res = len(charts["charts"]) > 0
+    except Exception:
+        res = False
+    assert res, (
+        "Failed to connect to admin API, have you set SITE_HOST and "
+        "SITE_SESSION_ID correctly in .env?"
+    )
