@@ -1,11 +1,11 @@
-"""Constructs a dataframe that counts the number of charts per OWID page that 
+"""Constructs a dataframe that counts the number of charts per OWID page that
 have been updated.
 
 Each row is in the dataframe is an OWID page.
 
-The exported csv file is intended to make it easy for OWID staff to see which 
-public OWID pages need to be checked for textual inconsistencies after one or 
-more suggested chart revisions have been approved as part of a bulk dataset 
+The exported csv file is intended to make it easy for OWID staff to see which
+public OWID pages need to be checked for textual inconsistencies after one or
+more suggested chart revisions have been approved as part of a bulk dataset
 update.
 
 Example:
@@ -17,8 +17,6 @@ Example:
     1                Women's employment     https://ourworldindata.org/female-labor-supply                   2                               9755.0
     2  Working women: Key facts and ...  https://ourworldindata.org/female-labor-force-...                   2                               6250.0
     0           Teachers and Professors  https://ourworldindata.org/teachers-and-profes...                   2                               1894.0
-
-    
 
 """
 
@@ -125,7 +123,7 @@ def get_charts_updated_data(dataset_id: int, since: str) -> pd.DataFrame:
     logger.info("Retrieving updated charts...")
     df = pd.read_sql(
         f"""
-        SELECT 
+        SELECT
             charts.id, charts.updatedAt, charts.createdAt, charts.lastEditedAt, charts.publishedAt
         FROM charts
         INNER JOIN chart_dimensions
@@ -134,7 +132,7 @@ def get_charts_updated_data(dataset_id: int, since: str) -> pd.DataFrame:
             SELECT id
             FROM variables
             WHERE datasetId = {dataset_id}
-        ) 
+        )
             AND charts.updatedAt >= "{since}"
         ORDER BY updatedAt DESC
     """,

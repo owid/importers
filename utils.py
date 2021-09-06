@@ -116,7 +116,7 @@ def assert_admin_api_connection() -> None:
             ).content
         )
         res = len(charts["charts"]) > 0
-    except:
+    except Exception:
         res = False
     assert res, (
         "Failed to connect to admin API, have you set SITE_HOST and "
