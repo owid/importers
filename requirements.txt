@@ -12,3 +12,6 @@ simplejson==3.17.5
 tqdm==4.62.2
 Unidecode==1.2.0
 black==21.8b0
+flake8==3.9.2
+xlrd==2.0.1
+pytest==6.2.5
