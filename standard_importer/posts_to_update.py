@@ -182,7 +182,3 @@ def get_charts_updated_data(dataset_id: int, since: str) -> pd.DataFrame:
         )
     )
     return df
-
-
-if __name__ == "__main__":
-    main()
