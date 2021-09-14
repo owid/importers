@@ -11,6 +11,7 @@ import atexit
 import tempfile
 import json
 from os import path
+from collections import defaultdict
 
 from . import dtypes
 
@@ -18,12 +19,75 @@ import frictionless
 import pandas as pd
 
 # ---------------------------------------------------------------------------------------------#
-# Frictionless data attempt
+# Frictionless data format
 # ---------------------------------------------------------------------------------------------#
 
 
 def error_on_set(self: Any, v: Any) -> NoReturn:
     raise Exception("setter not implemented")
+
+
+class Frictionless:
+    @staticmethod
+    def save(ds: dtypes.Dataset, dirname: str) -> None:
+        # export dataset metadata to dict
+        # prefix custom fields with underscore
+        # for each table:
+        #    - export metadata to dict
+        #    - remove dataset metadata
+        #    - prefix custom fields with underscore
+        #    - remap field names like primaryKey
+        #    - write table to csv
+        #
+        # save datapackage.json
+        pass
+
+    @staticmethod
+    def load(dirname: str) -> dtypes.Dataset:
+        return dtypes.InMemoryDataset()
+
+    @staticmethod
+    def encode_metadata(metadata: dtypes.AboutThisDataset) -> dict:
+        return {
+            "_namespace": metadata.namespace,
+            "name": metadata.short_name,
+            "title": metadata.title,
+            "description": metadata.description,
+            "licenses": [{"name": metadata.license_name, "url": metadata.license_url}],
+            "sources": [
+                {
+                    "name": metadata.source_name,
+                    "path": metadata.source_url,
+                    "_description": metadata.source_description,
+                    "_orig_data_url": metadata.source_data_url,
+                    "_owid_data_url": metadata.owid_data_url,
+                }
+            ],
+        }
+
+    @staticmethod
+    def decode_metadata(metadata: dict) -> dtypes.AboutThisDataset:
+        license = defaultdict(lambda: None)
+        if metadata.get("licenses"):
+            license.update(metadata["licenses"][0])
+
+        source = defaultdict(lambda: None)
+        if metadata.get("sources"):
+            source.update(metadata["sources"][0])
+
+        return dtypes.AboutThisDataset(
+            namespace=metadata.get("_namespace"),
+            short_name=metadata.get("name"),
+            title=metadata.get("title"),
+            description=metadata.get("description"),
+            license_name=(license["name"]),
+            license_url=(license["path"]),
+            source_data_url=source["_orig_data_url"],
+            owid_data_url=source["_owid_data_url"],
+            source_name=source["name"],
+            source_description=source["_description"],
+            source_url=source["path"],
+        )
 
 
 @dataclass

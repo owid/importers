@@ -12,3 +12,4 @@ simplejson==3.17.5
 tqdm==4.62.2
 Unidecode==1.2.0
 frictionless[pandas]
+dataclasses_json

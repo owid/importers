@@ -10,7 +10,7 @@ A first cut at making a Pythonic API that can handle data and metadata together.
 Philosophy:
 
 - Incremental: you should still be able to use with some or all metadata missing
-- General: aim for
+- General: where possible, aim for things many people would want, not just OWID
 """
 
 from os import path
@@ -19,11 +19,26 @@ from dataclasses import dataclass, field
 import datetime as dt
 
 import pandas as pd
+from dataclasses_json import dataclass_json
 
 
+@dataclass_json
 @dataclass
-class Provenance:
-    source: Optional[str] = None
+class AboutThisDataset:
+    """
+    Metadata for an entire dataset, meant to be shared by all tables in this dataset.
+    Most of this comes directly from Walden.
+
+    Goal: you can build an addressing scheme from this metadata.
+    """
+
+    namespace: Optional[str] = None
+    short_name: Optional[str] = None
+    title: Optional[str] = None
+    description: Optional[str] = None
+    source_name: Optional[str] = None
+    source_description: Optional[str] = None
+    source_url: Optional[str] = None
     source_data_url: Optional[str] = None
     owid_data_url: Optional[str] = None
     date_accessed: Optional[dt.date] = None
@@ -34,28 +49,14 @@ class Provenance:
 
 
 @dataclass
-class AboutThisDataset:
-    """
-    Metadata for an entire dataset, meant to be shared by all tables in this dataset.
-    """
-
-    namespace: Optional[str] = None
-    short_name: Optional[str] = None
-    name: Optional[str] = None
-    description: Optional[str] = None
-    provenance: Provenance = field(default_factory=Provenance)
-
-
-@dataclass
 class AboutThisSeries:
     """
     Metadata for an individual field in a table.
     """
 
     name: Optional[str] = None
-    long_name: Optional[str] = None
+    title: Optional[str] = None
     description: Optional[str] = None
-    uri: Optional[str] = None  # addressing scheme
     dataset: Optional["AboutThisDataset"] = None
 
     # XXX add units, type, etc
@@ -94,6 +95,8 @@ class RichDataFrame(pd.DataFrame):
     def __init__(self, *args, metadata: Optional[AboutThisTable] = None, **kwargs):
         super().__init__(*args, **kwargs)
         self.metadata = metadata or AboutThisTable()
+        if not self.primary_key:
+            self.primary_key = _detect_primary_key(self)
 
     @property
     def _constructor(self):
@@ -161,12 +164,38 @@ class Dataset(Protocol):
     def __iter__(self) -> Iterator[RichDataFrame]:
         ...
 
-    def __size__(self) -> int:
+    def __len__(self) -> int:
         ...
 
+
+class SerializableDataset(Dataset):
     def save(self, path: str) -> None:
         ...
 
     @staticmethod
     def load(path: str) -> "Dataset":
         ...
+
+
+def _detect_primary_key(df: pd.DataFrame) -> Optional[List[str]]:
+    primary_key: List[str] = list(df.index.names)
+    if primary_key[0] is not None:
+        return primary_key
+
+    return None
+
+
+@dataclass
+class InMemoryDataset:
+    tables: List[RichDataFrame] = field(default_factory=list)
+    metadata: AboutThisDataset = field(default_factory=AboutThisDataset)
+
+    def __len__(self) -> int:
+        return len(self.tables)
+
+    def __iter__(self) -> Iterator[RichDataFrame]:
+        yield from self.tables
+
+    def add_table(self, table: RichDataFrame) -> None:
+        table.dataset = self.metadata
+        self.tables.append(table)
