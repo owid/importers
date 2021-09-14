@@ -286,13 +286,13 @@ class Cleaner:
                 dataPublisherSource=default_data_publisher_source,
             ),
             "derived": _construct_source(
-                name=f"Our World in Data based on {DATASET_AUTHORS}",
-                dataPublishedBy=f"Our World in Data based on {DATASET_AUTHORS}",
+                name=f"Our World in Data based on the {DATASET_AUTHORS}",
+                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS}",
                 dataPublisherSource=default_data_publisher_source,
             ),
             "derived_population": _construct_source(
-                name=f"Our World in Data based on {DATASET_AUTHORS}",
-                dataPublishedBy=f"Our World in Data based on {DATASET_AUTHORS}",
+                name=f"Our World in Data based on the {DATASET_AUTHORS}",
+                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS}",
                 dataPublisherSource=default_data_publisher_source,
                 appendAdditionalInfo=(
                     "\n\nPopulation figures are sourced from "
@@ -301,8 +301,8 @@ class Cleaner:
                 ),
             ),
             "derived_gdp": _construct_source(
-                name=f"Our World in Data based on {DATASET_AUTHORS} and {gdp_source['s_name']}",
-                dataPublishedBy=f"Our World in Data based on {DATASET_AUTHORS} and {gdp_source['s_name']}",
+                name=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['s_name']}",
+                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['s_name']}",
                 dataPublisherSource=f"{default_data_publisher_source} and {gdp_source['s_name']}",
                 appendAdditionalInfo=(
                     f"\n\nGDP figures are sourced from "
@@ -311,8 +311,8 @@ class Cleaner:
                 ),
             ),
             "derived_primary_energy": _construct_source(
-                name=f"Our World in Data based on {DATASET_AUTHORS}, {primary_energy_source_name}",
-                dataPublishedBy=f"Our World in Data based on {DATASET_AUTHORS}, {primary_energy_source_name}",
+                name=f"Our World in Data based on the {DATASET_AUTHORS}, {primary_energy_source_name}",
+                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS}, {primary_energy_source_name}",
                 dataPublisherSource=f"{default_data_publisher_source}, {primary_energy_source_name}",
                 appendAdditionalInfo=(
                     "\n\nPrimary energy consumption figures are sourced from "
