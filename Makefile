@@ -3,7 +3,7 @@
 #
 
 
-SRC = *.py standard_importer worldbank_wdi who_gho un_wpp
+SRC = *.py standard_importer worldbank_wdi who_gho un_wpp owid steps tests
 
 default:
 	@echo 'Available commands:'
