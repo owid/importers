@@ -1,6 +1,15 @@
+import os
+import shutil
 import re
-from typing import Any, Generator, List, Collection
+import json
+import datetime as dt
+from typing import Any, Generator, List, Collection, Dict, Union
 from dataclasses import dataclass, field
+from dateutil.parser import parse
+import requests
+import pandas as pd
+
+EPOCH_DATE = "2020-01-21"
 
 
 def write_file(file_path, content):
@@ -94,3 +103,117 @@ class IntRange:
 
     def to_values(self):
         return [self.min, self.max]
+
+
+def delete_input(dataset_dir: str) -> None:
+    """deletes all files and folders in `{DATASET_DIR}/input`.
+
+    Note: this method deletes all input data and is only intended for use
+    immediately prior to the "download raw data" step.
+    """
+    inpath = os.path.join(dataset_dir, "input")
+    if os.path.exists(inpath):
+        shutil.rmtree(inpath)
+
+
+def delete_output(dataset_dir: str, keep_paths: List[str] = None) -> None:
+    """deletes all files in `{dataset_dir}/output` EXCEPT for any file
+    names in `keep_paths`.
+
+    Arguments:
+
+        keep_paths: List[str]. List of subpaths in `{dataset_dir}/output` that
+            you do NOT want deleted. They will be temporarily move to `{dataset_dir}`
+            and then back into `{dataset_dir}/output` after everything else in
+            `{dataset_dir}/output` has been deleted.
+
+    Returns:
+
+        None.
+    """
+    if not keep_paths:
+        keep_paths = []
+    # temporarily moves some files out of the output directory so that they
+    # are not deleted.
+    outpath = os.path.join(dataset_dir, "output")
+    for path in keep_paths:
+        if os.path.exists(os.path.join(outpath, path)):
+            os.rename(os.path.join(outpath, path), os.path.join(outpath, "..", path))
+    # deletes all remaining output files
+    if os.path.exists(outpath):
+        shutil.rmtree(outpath)
+        os.makedirs(outpath)
+    # moves the exception files back into the output directory.
+    for path in keep_paths:
+        if os.path.exists(os.path.join(outpath, "..", path)):
+            os.rename(os.path.join(outpath, "..", path), os.path.join(outpath, path))
+
+
+def get_distinct_entities(dataset_dir: str) -> List[str]:
+    """retrieves a list of all distinct entities that contain at least
+    on non-null data point that have been saved to disk in the
+    `{dataset_dir}/output/datapoints` folder.
+
+    Returns:
+
+        entities: List[str]. List of distinct entity names.
+    """
+    path = os.path.join(dataset_dir, "output", "datapoints")
+    fnames = [fname for fname in os.listdir(path) if fname.endswith(".csv")]
+    entities = set({})
+    for fname in fnames:
+        df_temp = pd.read_csv(os.path.join(path, fname))
+        entities.update(df_temp["country"].unique().tolist())
+
+    entity_list = sorted(entities)
+    assert pd.notnull(entity_list).all(), (
+        "All entities should be non-null. Something went wrong during creation "
+        f"of the `datapoints_{id}.csv` files in {path}."
+    )
+    return entity_list
+
+
+def get_owid_variable(
+    variable_id: Union[int, str], to_frame: bool = False
+) -> Union[pd.DataFrame, dict]:
+    res = requests.get(
+        f"https://ourworldindata.org/grapher/data/variables/{variable_id}.json"
+    )
+    assert res.ok
+    result = json.loads(res.content)
+    if to_frame:
+        result = owid_variables_to_frame(result)
+    return result
+
+
+def get_owid_variable_source(variable_id: Union[int, str]) -> dict:
+    res = requests.get(
+        f"https://ourworldindata.org/grapher/data/variables/{variable_id}.json"
+    )
+    assert res.ok
+    result = json.loads(res.content)["variables"][str(variable_id)]
+    for k in ["years", "entities", "values"]:
+        del result[k]
+    return result
+
+
+def owid_variables_to_frame(owid_json: Dict[str, dict]) -> pd.DataFrame:
+    entity_map = {int(k): v["name"] for k, v in owid_json["entityKey"].items()}
+    frames = []
+    for variable in owid_json["variables"].values():
+        df = pd.DataFrame(
+            {
+                "year": variable["years"],
+                "entity": [entity_map[e] for e in variable["entities"]],
+                "variable": variable["name"],
+                "value": variable["values"],
+            }
+        )
+        if variable.get("display", {}).get("yearIsDay"):
+            zero_day = parse(variable["display"].get("zeroDay", EPOCH_DATE)).date()
+            df["date"] = df.pop("year").apply(lambda y: zero_day + dt.timedelta(days=y))
+            df = df[["date", "entity", "variable", "value"]]
+
+        frames.append(df)
+
+    return pd.concat(frames)
