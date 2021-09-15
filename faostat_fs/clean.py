@@ -1,8 +1,9 @@
 import os
-import json
 from datetime import datetime
 
 import pandas as pd
+
+from faostat_fs.utils import load_data, load_metadata_walden, load_metadata_fao
 
 
 def generate_entitites_raw(df: pd.DataFrame, output_path: str):
@@ -23,34 +24,6 @@ def generate_entitites_raw(df: pd.DataFrame, output_path: str):
     )
 
 
-def load_data(input_path: str) -> pd.DataFrame:
-    """Load input CSV data.
-
-    Args:
-        input_path (str): Path to input data (csv).
-
-    Returns:
-        pd.DataFrame: Input data
-    """
-    df = pd.read_csv(input_path)
-    # Drop nulls
-    df = df.dropna(subset=["Value", "Area"])
-    return df
-
-
-def load_metadata(input_path: str):
-    """Load metadata.
-
-    Args:
-        input_path (str): Path to metadata file (JSON). Assumed to have Walden format.
-
-    Returns:
-        pd.DataFrame: Input data
-    """
-    with open(input_path, "r") as f:
-        return json.load(f)
-
-
 def create_datsets(metadata: dict, output_dir: str) -> str:
     """Create datasets.csv file.
 
@@ -69,35 +42,38 @@ def create_datsets(metadata: dict, output_dir: str) -> str:
     return output_path
 
 
-def create_sources(metadata: dict, output_dir: str) -> str:
+def create_sources(
+    df_meta_fao: pd.DataFrame, metadata_walden: dict, output_dir: str
+) -> str:
     """Create sources.csv file.
 
     Args:
         output_dir (str): Folder to store all generated files.
-        metadata (dict): Metadata dictionary.
+        metadata_walden (dict): Metadata dictionary.
 
     Returns:
         str: Path to sources CSV file.
     """
-    # Create sources data frame
-    source_description = {
-        "dataPublishedBy": metadata["source_name"],
-        "dataPublisherSource": None,
-        "link": metadata["url"],
-        "retrievedDate": datetime.strptime(
-            metadata["date_accessed"], "%Y-%m-%d"
-        ).strftime("%d-%B-%Y"),
-        "additionalInfo": None,
-    }
-    df = pd.DataFrame(
-        [
-            {
-                "id": 0,
-                "dataset_id": 0,
-                "name": metadata["source_name"],
-                "description": source_description,
-            }
-        ]
+
+    def _create_source_description(name, metadata):
+        return {
+            "dataPublishedBy": name,
+            "dataPublisherSource": None,
+            "link": metadata["url"],
+            "retrievedDate": datetime.strptime(
+                metadata["date_accessed"], "%Y-%m-%d"
+            ).strftime("%d-%B-%Y"),
+            "additionalInfo": None,
+        }
+
+    cols = ["source_name", "source_id"]
+    df = df_meta_fao[cols].drop_duplicates()
+    df = df.rename(columns={"source_name": "name", "source_id": "id"})
+    df = df.assign(
+        dataset_id=0,
+        description=df.name.apply(
+            lambda name: _create_source_description(name, metadata_walden)
+        ),
     )
     # Export
     output_path = os.path.join(output_dir, "sources.csv")
@@ -133,11 +109,14 @@ def create_dictinct_entities(entities_path: str, output_dir: str) -> str:
     return output_path
 
 
-def create_variables_datapoints(df: pd.DataFrame, output_dir: str) -> tuple:
+def create_variables_datapoints(
+    df: pd.DataFrame, df_meta_fao: pd.DataFrame, output_dir: str
+) -> tuple:
     """Create datapoints_*.csv and variables.csv files
 
     Args:
-        df (pd.DataFrame): Input data
+        df (pd.DataFrame): Input data.
+        df_meta_fao (pd.DataFrame): Auxiliary metadata table from FAO.
         output_dir (str): Folder to store all generated files.
 
     Returns:
@@ -152,7 +131,7 @@ def create_variables_datapoints(df: pd.DataFrame, output_dir: str) -> tuple:
     )
     _check_uniqueness(df)
     # Build variables data frame
-    df_var = _create_variables(df)
+    df_var = _create_variables(df, df_meta_fao)
     path_variables = os.path.join(output_dir, "variables.csv")
     df_var.to_csv(path_variables, index=False)
     # Build datapoints dataframes
@@ -168,11 +147,12 @@ def _check_uniqueness(df: pd.DataFrame) -> pd.DataFrame:
         )
 
 
-def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
+def _create_variables(df: pd.DataFrame, df_meta_fao: pd.DataFrame) -> pd.DataFrame:
     """Create variables.csv file.
 
     Args:
         df (pd.DataFrame): Data.
+        df_meta_fao (pd.DataFrame): Auxiliary metadata table from FAO.
 
     Returns:
         pd.DataFrame: Variables data frame.
@@ -196,17 +176,25 @@ def _create_variables(df: pd.DataFrame) -> pd.DataFrame:
         )
         .assign(
             dataset_id=0,
-            sources_id=0,
+            sources_id=0,  # Build from special df
             original_metadata=pd.NA,
             coverage=pd.NA,
             display=pd.NA,
-            description=(
+            description=(  # Build from special df
                 "Download at Definitions and standards file for Item field at"
                 " http://www.fao.org/faostat/en/#data/FS"
             ),
             short_unit=pd.NA,
         )
     )
+    # print(df.shape)
+    # print(df_meta_fao.columns)
+    df = df.merge(
+        df_meta_fao[["description", "source_id", "variable_name"]],
+        left_on="name",
+        right_on="variable_name",
+    )
+    # print(df.shape)
     return df
 
 
@@ -241,12 +229,19 @@ def create_datapoints(df: pd.DataFrame, var2id: dict, output_dir: str):
     return output_path
 
 
-def main(path_data: str, path_metadata: str, entities_path: str, output_dir: str):
+def main(
+    path_data: str,
+    path_metadata_walden: str,
+    path_metadata_fao: str,
+    entities_path: str,
+    output_dir: str,
+):
     """Clean pipeline.
 
     Args:
         path_data (str): Path to downlaoded data file.
-        path_metadata (str): Path to metadata file.
+        path_metadata_walden (str): Path to metadata file in Walden.
+        path_metadata_fao (str): Path to metadata file in FAO site.
         entities_path (str): Path to entities standardized file. You can generate it with method
                              `generate_entitites_raw`
         output_dir (str): Folder where to export generated files.
@@ -255,12 +250,19 @@ def main(path_data: str, path_metadata: str, entities_path: str, output_dir: str
         os.makedirs(output_dir)
     # Load data into memory
     df = load_data(path_data)
-    metadata = load_metadata(path_metadata)
+    metadata_walden = load_metadata_walden(path_metadata_walden)
+    df_meta_fao = load_metadata_fao(path_metadata_fao)
     # datasets.csv
-    path_datasets = create_datsets(metadata, output_dir)
+    print("Cleaning datasets")
+    path_datasets = create_datsets(metadata_walden, output_dir)
     # sources.csv
-    path_sources = create_sources(metadata, output_dir)
+    print("Cleaning sources")
+    path_sources = create_sources(df_meta_fao, metadata_walden, output_dir)
     # distinct_countries_standardized.csv
+    print("Cleaning entities")
     path_entities = create_dictinct_entities(entities_path, output_dir)
     # variables.csv and datapoints/datapoints_*.csv
-    path_variables, path_datapoints = create_variables_datapoints(df, output_dir)
+    print("Cleaning variables and datapoints")
+    path_variables, path_datapoints = create_variables_datapoints(
+        df, df_meta_fao, output_dir
+    )
