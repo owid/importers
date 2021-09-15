@@ -53,10 +53,10 @@ class Frictionless:
             "name": metadata.short_name,
             "title": metadata.title,
             "description": metadata.description,
-            "licenses": [{"name": metadata.license_name, "url": metadata.license_url}],
+            "licenses": [{"name": metadata.license_name, "path": metadata.license_url}],
             "sources": [
                 {
-                    "name": metadata.source_name,
+                    "title": metadata.source_name,
                     "path": metadata.source_url,
                     "_description": metadata.source_description,
                     "_orig_data_url": metadata.source_data_url,
@@ -84,7 +84,7 @@ class Frictionless:
             license_url=(license["path"]),
             source_data_url=source["_orig_data_url"],
             owid_data_url=source["_owid_data_url"],
-            source_name=source["name"],
+            source_name=source["title"],
             source_description=source["_description"],
             source_url=source["path"],
         )

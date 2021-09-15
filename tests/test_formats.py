@@ -18,7 +18,28 @@ import pandas as pd
 def test_encode_metadata_to_frictionless():
     metadata = mock_dataset_metadata()
     d = Frictionless.encode_metadata(metadata)
-    assert frictionless.validate(d).valid
+
+    # the frictionless standard requires at least one resources, so add a dummy one
+    d["resources"] = [
+        {
+            "path": "https://owid-test.nyc3.digitaloceanspaces.com/importers/01-minimal.csv"
+        }
+    ]
+
+    assert metadata.namespace == d["_namespace"]
+    assert metadata.short_name == d["name"]
+    assert metadata.title == d["title"]
+    assert metadata.description == d["description"]
+    assert metadata.license_name == d["licenses"][0]["name"]
+    assert metadata.license_url == d["licenses"][0]["path"]
+    assert metadata.source_name == d["sources"][0]["title"]
+    assert metadata.source_description == d["sources"][0]["_description"]
+    assert metadata.source_url == d["sources"][0]["path"]
+    assert metadata.source_data_url == d["sources"][0]["_orig_data_url"]
+    assert metadata.owid_data_url == d["sources"][0]["_owid_data_url"]
+
+    # validate against the frictionless standard
+    assert frictionless.validate(d).errors == []
 
 
 def test_decode_metadata_from_frictionless():
@@ -29,9 +50,9 @@ def test_decode_metadata_from_frictionless():
         "description": "Long markdown doc...",
         "sources": [
             {
-                "name": "Bartender's guide 2040",
-                "_description": "An extremely long markdown description...",
+                "title": "Bartender's guide 2040",
                 "path": "https://dev.null/",
+                "_description": "An extremely long markdown description...",
                 "_orig_data_url": "https://dev.null/example.csv",
                 "_owid_data_url": "https://fake.ourworldindata.org/example.csv",
             }
@@ -50,7 +71,7 @@ def test_decode_metadata_from_frictionless():
     assert metadata.description == d["description"]
     assert metadata.license_name == d["licenses"][0]["name"]
     assert metadata.license_url == d["licenses"][0]["path"]
-    assert metadata.source_name == d["sources"][0]["name"]
+    assert metadata.source_name == d["sources"][0]["title"]
     assert metadata.source_description == d["sources"][0]["_description"]
     assert metadata.source_url == d["sources"][0]["path"]
     assert metadata.source_data_url == d["sources"][0]["_orig_data_url"]
