@@ -947,6 +947,7 @@ class DataValuesCleaner:
         self.check_all_time_series_full(df_long)
         self.check_values_gte_zero(df_long)
         self.check_pct_minmax(df_long)
+        self.check_cumulative_is_monotonic(df_long)
 
     def check_world_sums(self, df: pd.DataFrame) -> None:
         for src in self.emission_sources:
@@ -1069,6 +1070,28 @@ class DataValuesCleaner:
         assert (
             len(vars_with_invalid) == 0
         ), f"The following variables have one or more values > 100 or < 0: {vars_with_invalid}"
+
+    def check_cumulative_is_monotonic(self, df_long: pd.DataFrame) -> None:
+        """Checks that each "cumulative" variable is monotonically increasing
+        for each country time series."""
+        with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
+            cumul_variables: List[str] = []
+            for v in json.load(f)["variables"]:
+                if re.search(r"cumul", v["name"], re.I) and not v["shortUnit"] == "%":
+                    cumul_variables.append(v["name"])
+                    if pd.notnull(v.get("cleaningMetadata", {}).get("fillna")):
+                        cumul_variables.append(f"{v['name']} (zero filled)")
+            assert len(cumul_variables) > 0
+        assert (
+            df_long.where(lambda df: df["variable"].isin(cumul_variables))
+            .dropna()
+            .groupby(["variable", self.entity_col])["value"]
+            .apply(lambda gp: gp.is_monotonic)
+            .all()
+        ), (
+            "One or more 'cumulative' variables contain a country time series "
+            "that is NOT monotonically increasing."
+        )
 
 
 if __name__ == "__main__":
