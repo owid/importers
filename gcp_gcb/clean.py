@@ -987,14 +987,14 @@ class DataValuesCleaner:
         assert is_integer_dtype(df_long[self.date_col])
         assert is_numeric_dtype(df_long["value"])
 
-    def check_no_duplicates(self, df_long: pd.DataFrame) -> pd.DataFrame:
+    def check_no_duplicates(self, df_long: pd.DataFrame) -> None:
         """checks there are no entity-date-variable duplicate rows in long
         dataframe."""
         assert not df_long.duplicated(
             subset=[self.entity_col, self.date_col, "variable"]
         ).any()
 
-    def check_all_time_series_full(self, df: pd.DataFrame) -> pd.DataFrame:
+    def check_all_time_series_full(self, df: pd.DataFrame) -> None:
         """checks that each time series has all the same date values.
 
         Note: this method works when dataset is in either wide or long format.
@@ -1013,7 +1013,7 @@ class DataValuesCleaner:
             .all()
         )
 
-    def check_values_gte_zero(self, df_long: pd.DataFrame) -> pd.DataFrame:
+    def check_values_gte_zero(self, df_long: pd.DataFrame) -> None:
         """checks that all values are > 0 for all variables
         (except "growth" and "net" variables).
         """
@@ -1038,7 +1038,7 @@ class DataValuesCleaner:
             len(vars_with_negatives) == 0
         ), f"The following variables have one or more negative values: {vars_with_negatives}"
 
-    def check_pct_minmax(self, df_long: pd.DataFrame) -> pd.DataFrame:
+    def check_pct_minmax(self, df_long: pd.DataFrame) -> None:
         """checks that percentage variables have values between 0 and 100 (inclusive).
 
         Note: "growth" and "...embedded in trade" (i.e. "net") variables can
