@@ -13,7 +13,7 @@
         "sourceKey": "primary",
         "rawName": "total",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -26,7 +26,7 @@
         "sourceKey": "primary",
         "rawName": "coal",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -39,7 +39,7 @@
         "sourceKey": "primary",
         "rawName": "oil",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -52,7 +52,7 @@
         "sourceKey": "primary",
         "rawName": "gas",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -65,7 +65,7 @@
         "sourceKey": "primary",
         "rawName": "cement",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -78,7 +78,7 @@
         "sourceKey": "primary",
         "rawName": "flaring",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -91,7 +91,7 @@
         "sourceKey": "primary",
         "rawName": "other",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -162,7 +162,7 @@
         "sourceKey": "derived_population",
         "rawName": "total_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -175,7 +175,7 @@
         "sourceKey": "derived_population",
         "rawName": "coal_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -188,7 +188,7 @@
         "sourceKey": "derived_population",
         "rawName": "oil_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -201,7 +201,7 @@
         "sourceKey": "derived_population",
         "rawName": "gas_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -214,7 +214,7 @@
         "sourceKey": "derived_population",
         "rawName": "flaring_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -227,7 +227,7 @@
         "sourceKey": "derived_population",
         "rawName": "cement_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -240,7 +240,7 @@
         "sourceKey": "derived_population",
         "rawName": "other_percap",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"value": 0}
       }
     },
     {
@@ -354,7 +354,7 @@
         "sourceKey": "derived",
         "rawName": "total_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -378,7 +378,7 @@
         "sourceKey": "derived",
         "rawName": "coal_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -402,7 +402,7 @@
         "sourceKey": "derived",
         "rawName": "oil_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -426,7 +426,7 @@
         "sourceKey": "derived",
         "rawName": "gas_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -450,7 +450,7 @@
         "sourceKey": "derived",
         "rawName": "flaring_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -474,7 +474,7 @@
         "sourceKey": "derived",
         "rawName": "cement_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
@@ -498,7 +498,7 @@
         "sourceKey": "derived",
         "rawName": "other_cumul",
         "conversionFactor": 1e6,
-        "fillna": 0
+        "fillna": {"method": "ffill"}
       }
     },
     {
