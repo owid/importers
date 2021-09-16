@@ -769,7 +769,7 @@ class DataValuesCleaner:
         df_regions = (
             df_regions.merge(df, on=self.entity_col, how="left", validate="m:m")
             .groupby(["region", self.date_col], as_index=False)
-            .sum()
+            .sum(min_count=1)
             .rename(columns={"region": self.entity_col})
         )
         return df_regions
