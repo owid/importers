@@ -167,6 +167,13 @@ def main(dataset_dir: str, dataset_namespace: str):
                 data["db_entity_id"].astype(int),
                 [int(db_variable_id)] * len(data),
             )
+            db.cursor.execute(
+                """
+                DELETE FROM data_values WHERE variableId=%s
+            """,
+                [int(db_variable_id)],
+            )
+
             query = """
                 INSERT INTO data_values
                     (value, year, entityId, variableId)
