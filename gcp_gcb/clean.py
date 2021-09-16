@@ -908,10 +908,13 @@ class DataValuesCleaner:
         digits.
         """
         with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
-            var2unit: Dict[str, str] = {
-                var["cleaningMetadata"]["rawName"]: var["unit"]
-                for var in json.load(f)["variables"]
-            }
+            var2unit: Dict[str, str] = {}
+            for var in json.load(f)["variables"]:
+                raw_name = var["cleaningMetadata"]["rawName"]
+                var2unit[raw_name] = var["unit"]
+                if pd.notnull(var.get("cleaningMetadata", {}).get("fillna")):
+                    var2unit[f"{raw_name}_zero_filled"] = var["unit"]
+
         for var_name, unit in var2unit.items():
             if unit == "%":
                 digits = 2
