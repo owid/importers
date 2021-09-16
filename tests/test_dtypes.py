@@ -34,7 +34,6 @@ def test_rich_series_slicing_and_access():
 def test_rich_dataframe_no_metadata():
     d = dtypes.RichDataFrame({"a": [1, 2, 3], "b": ["dog", "sheep", "pig"]})
     assert d.metadata.is_empty()
-    assert d.metadata == dtypes.AboutThisTable()
 
 
 def test_rich_dataframe_detect_primary_key():
@@ -43,9 +42,12 @@ def test_rich_dataframe_detect_primary_key():
         index=pd.MultiIndex.from_tuples(
             [(1, 2020), (2, 2020), (2, 2021)], names=["a", "b"]
         ),
+        metadata=dtypes.AboutThisTable(short_name="example"),
     )
     assert d.primary_key == ["a", "b"]
-    assert d.metadata == dtypes.AboutThisTable(primary_key=["a", "b"])
+    assert d.metadata == dtypes.AboutThisTable(
+        short_name="example", primary_key=["a", "b"]
+    )
 
 
 def test_rich_dataframe_creates_rich_series():
