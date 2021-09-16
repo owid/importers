@@ -604,6 +604,7 @@ class DataValuesCleaner:
             .pipe(self.convert_units)
             .pipe(self.replace_with_nan)
             .pipe(self.mk_nan_filled_variables)
+            .pipe(self.round_variables)
         )
 
         # Clean up dataset for grapher
@@ -889,10 +890,23 @@ class DataValuesCleaner:
                 for v in json.load(f)["variables"]
                 if pd.notnull(v.get("cleaningMetadata", {}).get("fillna"))
             }
-        for nm, fillna in raw_name2fillna.items():
-            if fillna != 0:
-                raise NotImplementedError(f"fillna=={fillna} is not supported.")
-            df[f"{nm}_zero_filled"] = df[nm].fillna(fillna)
+    def round_variables(self, df: pd.DataFrame) -> pd.DataFrame:
+        """rounds variables.
+
+        Rounds to 2 digits if variable is a percentage, otherwise rounds to 4
+        digits.
+        """
+        with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
+            var2unit: Dict[str, str] = {
+                var["cleaningMetadata"]["rawName"]: var["unit"]
+                for var in json.load(f)["variables"]
+            }
+        for var_name, unit in var2unit.items():
+            if unit == "%":
+                digits = 2
+            else:
+                digits = 4
+            df[var_name] = df[var_name].round(digits)
         return df
 
     def rename_variables(self, df: pd.DataFrame) -> pd.DataFrame:
