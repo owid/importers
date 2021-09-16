@@ -354,7 +354,7 @@ class Cleaner:
             vars_to_clean = json.load(f)["variables"]
             zero_filled_vars = []
             for var in vars_to_clean:
-                if var.get("cleaningMetadata", {}).get("fillna") == 0:
+                if pd.notnull(var.get("cleaningMetadata", {}).get("fillna")):
                     zero_filled_var = deepcopy(var)
                     zero_filled_var["name"] = f"{var['name']} (zero filled)"
                     zero_filled_var["cleaningMetadata"][
@@ -362,7 +362,6 @@ class Cleaner:
                     ] = f"{var['cleaningMetadata']['rawName']} (zero filled)"
                     zero_filled_vars.append(zero_filled_var)
             vars_to_clean += zero_filled_vars
-
         df = pd.DataFrame(vars_to_clean)
         df["dataset_id"] = self.dataset["id"]
 
@@ -879,17 +878,29 @@ class DataValuesCleaner:
         return df.dropna(how="all", axis=1)
 
     def mk_nan_filled_variables(self, df: pd.DataFrame) -> pd.DataFrame:
-        """constructs "zero filled" variables, which have NaN values filled with
-        0.
+        """constructs "NaN-filled" variables, which have NaN values filled with
+        non-NaN values using pandas.Series.fillna
 
         These variables are used in stacked area charts.
         """
         with open(os.path.join(CONFIGPATH, "variables_to_clean.json"), "r") as f:
-            raw_name2fillna: Dict[str, str] = {
+            raw_name2fillna_kwargs: Dict[str, str] = {
                 v["cleaningMetadata"]["rawName"]: v["cleaningMetadata"]["fillna"]
                 for v in json.load(f)["variables"]
                 if pd.notnull(v.get("cleaningMetadata", {}).get("fillna"))
             }
+        df.sort_values([self.entity_col, self.date_col], inplace=True)
+        for nm, fillna_kwargs in raw_name2fillna_kwargs.items():
+            df[f"{nm}_zero_filled"] = df.groupby(self.entity_col)[nm].fillna(
+                **fillna_kwargs
+            )
+            # fills any remaining NaNs with 0.
+            # e.g. in fillna(method='ffill'), NaNs at the beginning of the
+            # time series will still be NaN.
+            if df[f"{nm}_zero_filled"].isnull().any():
+                df[f"{nm}_zero_filled"] = df[f"{nm}_zero_filled"].fillna(0)
+        return df
+
     def round_variables(self, df: pd.DataFrame) -> pd.DataFrame:
         """rounds variables.
 
@@ -923,7 +934,7 @@ class DataValuesCleaner:
                 name = var["name"]
                 if raw_name:
                     raw_name2clean_name[raw_name] = name
-                if var.get("cleaningMetadata", {}).get("fillna") == 0:
+                if pd.notnull(var.get("cleaningMetadata", {}).get("fillna")):
                     raw_name2clean_name[
                         f"{raw_name}_zero_filled"
                     ] = f"{name} (zero filled)"
