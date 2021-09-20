@@ -1,54 +1,60 @@
 import datetime
 import pandas as pd
 
-MAPPING_PATH = "country_mapping.csv"
+COUNTRY_MAPPING = "input/country_mapping.csv"
 
-# https://population.un.org/wpp/Download/Standard/CSV/
-UN_PATH = "WPP2019_TotalPopulationBySex.csv"
+# https://dataportaal.pbl.nl/downloads/HYDE/
+# select version -> download baseline.zip -> extract -> popc_c.txt
+# select version -> download general_files.zip -> extract -> HYDE_country_codes.xlsx
+HYDE_DATA = "input/popc_c.txt"
+HYDE_CODES = "input/HYDE_country_codes.xlsx"
 
-# https://www.gapminder.org/data/documentation/gd003/
-GAPMINDER_PATH = "_GM-Population - Dataset - v6.xlsx"
-
-# https://owid.cloud/admin/datasets/70
-PRE1800_PATH = "pre1800_global_pop.csv"
+# http://gapm.io/dl_popv6
+GAPMINDER_DATA = "input/GM-Population - Dataset - v6.xlsx"
 
 # https://ourworldindata.org/grapher/continents-according-to-our-world-in-data
-CONTINENTS_PATH = "continents-according-to-our-world-in-data.csv"
+CONTINENT_LIST = "input/continents-according-to-our-world-in-data.csv"
 
 
-def load_pre1800(path: str) -> pd.DataFrame:
-    pre1800 = pd.read_csv(f"input/{path}")
-    pre1800["Source"] = "HYDE"
-    return pre1800
-
-
-def load_un(path: str) -> pd.DataFrame:
-    un = pd.read_csv(f"input/{path}")
-    un = un[un.Variant == "Medium"]
-    un = un[["Location", "Time", "PopTotal"]]
-    un = un.rename(
-        columns={"Location": "Entity", "Time": "Year", "PopTotal": "Population"}
+def load_hyde(country_path: str, code_path: str) -> pd.DataFrame:
+    codes = pd.read_excel(code_path, sheet_name="country", usecols="A:B").rename(
+        columns={"ISO-CODE": "region", "Country": "Entity"}
     )
-    un["Population"] = un.Population.mul(1000).astype(int)
-    un["Source"] = "UN"
-    return un
+    codes["Entity"] = codes["Entity"].str.strip()
+    codes = codes.drop_duplicates(subset="region", keep="first")
+
+    countries = pd.read_csv(country_path, sep=" ").melt(
+        id_vars="region", var_name="Year", value_name="Population"
+    )
+    countries = countries[-countries.region.isin(["Total"])]
+    countries["region"] = countries.region.astype(int)
+
+    hyde = (
+        pd.merge(codes, countries, on="region", how="inner", validate="one_to_many")
+        .drop(columns="region")
+        .assign(source="hyde")
+    )
+    hyde[["Population", "Year"]] = hyde[["Population", "Year"]].astype(int)
+    return hyde
 
 
 def load_gapminder(path: str) -> pd.DataFrame:
-    countries = pd.read_excel(
-        f"input/{path}", sheet_name="data-for-countries-etc-by-year"
+    """
+    Gapminder data is the primary source for years when it's available.
+    """
+    return (
+        pd.read_excel(
+            path,
+            sheet_name="data-for-countries-etc-by-year",
+            usecols=["name", "time", "Population"],
+        )
+        .rename(columns={"name": "Entity", "time": "Year"})
+        .assign(source="gapminder")
     )
-    world = pd.read_excel(f"input/{path}", sheet_name="data-for-world-by-year")
-    gap = pd.concat([countries, world], ignore_index=True)
-    gap = gap[["name", "time", "Population"]]
-    gap = gap.rename(columns={"name": "Entity", "time": "Year"})
-    gap[["Year", "Population"]] = gap[["Year", "Population"]].astype(int)
-    gap["Source"] = "Gapminder"
-    return gap
 
 
 def rename_entities(df: pd.DataFrame) -> pd.DataFrame:
-    mapping = pd.read_csv(f"input/{MAPPING_PATH}").drop_duplicates()
+    mapping = pd.read_csv(COUNTRY_MAPPING).drop_duplicates()
     df = df.merge(mapping, left_on="Entity", right_on="Country", how="outer")
 
     missing = df[pd.isnull(df["Our World In Data Name"])]
@@ -64,38 +70,51 @@ def rename_entities(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def select_source(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Rows are selected according to the following logic: "gapminder" > "hyde"
+    """
     return (
-        df.sort_values("Source", ascending=False)
-        .groupby(["Entity", "Year"])
-        .head(1)
-        .drop(columns=["Source"])
+        df.sort_values("source")
+        .drop_duplicates(subset=["Entity", "Year"], keep="first")
+        .drop(columns=["source"])
     )
 
 
-def aggregate_continents(df: pd.DataFrame) -> pd.DataFrame:
-    df["Source"] = "original"
-    continents = pd.read_csv(
-        f"input/{CONTINENTS_PATH}", usecols=["Entity", "Continent"]
-    )
-    aggregated = (
-        df.merge(continents, on="Entity")
+def calculate_aggregates(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Aggregate our own totals according to OWID continent definitions.
+    """
+    df = df[
+        -df.Entity.isin(
+            [
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania",
+                "World",
+            ]
+        )
+    ]
+
+    continent_list = pd.read_csv(CONTINENT_LIST, usecols=["Entity", "Continent"])
+    continents = (
+        df.merge(continent_list, on="Entity")
         .groupby(["Continent", "Year"], as_index=False)
         .sum()
         .rename(columns={"Continent": "Entity"})
     )
-    aggregated[["Year", "Population"]] = aggregated[["Year", "Population"]].astype(
-        "Int64"
-    )
-    aggregated["Source"] = "aggregated"
 
-    df = pd.concat([df, aggregated], ignore_index=True)
-
-    return (
-        df.sort_values("Source", ascending=False)
-        .groupby(["Entity", "Year"])
-        .head(1)
-        .drop(columns=["Source"])
+    world = (
+        df[["Year", "Population"]]
+        .groupby("Year")
+        .sum()
+        .reset_index()
+        .assign(Entity="World")
     )
+
+    return pd.concat([df, continents, world], ignore_index=True)
 
 
 def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
@@ -132,24 +151,22 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def population_pipeline(
-    pre1800: pd.DataFrame, un: pd.DataFrame, gap: pd.DataFrame
-) -> pd.DataFrame:
+def population_pipeline(hyde: pd.DataFrame, gapminder: pd.DataFrame) -> pd.DataFrame:
     return (
-        pd.concat([pre1800, un, gap], ignore_index=True)
+        pd.concat([hyde, gapminder], ignore_index=True)
         .pipe(rename_entities)
         .pipe(select_source)
-        .pipe(aggregate_continents)
+        .pipe(calculate_aggregates)
         .pipe(prepare_dataset)
     )
 
 
 def main():
-    pre1800 = load_pre1800(PRE1800_PATH)
-    un = load_un(UN_PATH)
-    gap = load_gapminder(GAPMINDER_PATH)
-    df = population_pipeline(pre1800, un, gap)
-    df.to_csv("output/Population (Gapminder, HYDE & UN).csv", index=False)
+    hyde = load_hyde(HYDE_DATA, HYDE_CODES)
+    gapminder = load_gapminder(GAPMINDER_DATA)
+    population_pipeline(hyde, gapminder).to_csv(
+        "output/Population (Gapminder, HYDE & UN).csv", index=False
+    )
 
 
 if __name__ == "__main__":
