@@ -55,7 +55,7 @@ def load_gapminder(path: str) -> pd.DataFrame:
 
 def rename_entities(df: pd.DataFrame) -> pd.DataFrame:
     mapping = pd.read_csv(COUNTRY_MAPPING).drop_duplicates()
-    df = df.merge(mapping, left_on="Entity", right_on="Country", how="outer")
+    df = df.merge(mapping, left_on="Entity", right_on="Country", how="left")
 
     missing = df[pd.isnull(df["Our World In Data Name"])]
     if len(missing) > 0:
@@ -118,6 +118,7 @@ def calculate_aggregates(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
+    df = df[df.Population > 0].copy()
     df.loc[
         df.Year <= datetime.date.today().year, "Total population (Gapminder, HYDE & UN)"
     ] = df.Population
