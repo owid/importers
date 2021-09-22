@@ -1,18 +1,18 @@
-"""executes bulk dataset import + chart updates for the UN_SDGs dataset.
+"""executes bulk dataset import + chart updates for the WHO GHE dataset.
 Usage:
-    python -m un_sdg.main
+    python -m who_ghe.main
 
 To run the code without downloading the data again: 
-    python -m un_sdg.main --skip_download
+    python -m who_ghe.main --skip_download
 
 To run the code without downloading or cleaning the data again: 
-    python -m un_sdg.main --skip_download --skip_clean
+    python -m who_ghe.main --skip_download --skip_clean
 """
 import click
 
 from who_ghe import DATASET_DIR, DATASET_NAMESPACE
 
-from un_sdg import download, clean, match_variables
+from who_ghe import download, clean, match_variables
 
 from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
