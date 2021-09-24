@@ -16,6 +16,7 @@ __pycache__/
 edstats/input/*.csv
 povcal/data_by_poverty_line/
 povcal/output/
+ihme_gbd/input/
 un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
