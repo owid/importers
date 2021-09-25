@@ -3,6 +3,9 @@ import time
 import glob
 import pandas as pd
 import glob
+import itertools
+import numpy as np
+from pathlib import Path
 
 # os.environ["MODIN_ENGINE"] = "ray"
 # import ray
@@ -44,6 +47,7 @@ def load_and_clean() -> None:
         df_merged[["location_name"]].drop_duplicates().dropna().rename(
             columns={"location_name": "Country"}
         ).to_csv(ENTFILE, index=False)
+    Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
     return df_merged
 
 
@@ -75,37 +79,10 @@ def create_sources() -> None:
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
 
-def create_variables(mdf_merged: pd.DataFrame):
-
-    all_series = mdf_merged[
-        ["measure_name", "cause_name", "sex_name", "age_name", "metric_name"]
-    ].drop_duplicates()
-    all_series["variable_name"] = (
-        all_series["measure_name"]
-        + " - "
-        + all_series["cause_name"]
-        + " - Sex:"
-        + all_series["sex_name"]
-        + " - Age:"
-        + all_series["age_name"]
-        + " ("
-        + all_series["metric_name"]
-        + ")"
-    )
-
-    for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
-        data_filtered = pd.DataFrame(
-            mdf_merged[(mdf_merged.variable_name == row["variable_name"])]
-        )
-        print(data_filtered.shape)
-
-
-for data in df_merged:
-    print(data.shape)
-
-
 def get_variables() -> None:
-    df_merged = pd.read_csv(os.path.join(INPATH, "all_data.csv"), chunksize=10 ** 5)
+    df_merged = pd.read_csv(
+        os.path.join(INPATH, "all_data.csv"), chunksize=10 ** 5
+    )  # working through the data 100k rows at a time
     var_list = []
     df_list = []
     for chunk in df_merged:
@@ -121,24 +98,68 @@ def get_variables() -> None:
             + chunk["metric_name"]
             + ")"
         )
-        #  print(chunk["variable_name"])
         var_list.append(chunk["variable_name"])
         df_list.append(chunk)
     var_list = pd.concat(var_list).drop_duplicates()
     return var_list, df_list
 
 
+t = time()
 var_list, df_list = get_variables()
+time() - t
+
+var_list_test = var_list
 
 
-for chunk in df_list:
-    print(chunk.shape)
+def create_variables_datapoints():
+    variable_idx = 0
+    variables = pd.DataFrame()
+    for var in var_list_test:
+        var_data = []
+        for df in df_list:
+            var_df = df[df["variable_name"] == var]
+            var_data.append(var_df)
+        df = pd.concat(var_data)
+
+        df[["location_name", "year", "val"]].rename(
+            columns={"location_name": "country", "val": "value"}
+        ).to_csv(
+            os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
+            index=False,
+        )
+        # standardise country name
+
+        variable = {
+            "dataset_id": int(0),
+            "source_id": int(0),
+            "id": variable_idx,
+            "name": "%s" % (var),
+            "description": None,
+            "code": None,
+            "unit": df[["metric_name"]].drop_duplicates(),
+            "short_unit": None,
+            "timespan": "%s - %s"
+            % (
+                int(np.min(df["year"])),
+                int(np.max(df["year"])),
+            ),
+            "coverage": None,
+            "display": None,
+            "original_metadata": None,
+        }
+        variables = variables.append(variable, ignore_index=True)
+        variable_idx += 1
+
+    variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
 
-df_merged_it = pd.read_csv(os.path.join(INPATH, "all_data.csv"), iterator=True)
+t = time()
+create_variables_datapoints()
+time() - t
 
-
-df_merged_it.get_chunk(10)
 
 if __name__ == "__main__":
     main()
+
+
+# columns=["id", "name", "unit", "dataset_id", "source_id", "code", "unit", "short_unit", "timespan", "coverage", "display", "original_metadata"]
