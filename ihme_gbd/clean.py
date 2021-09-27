@@ -1,19 +1,9 @@
 import os
-import time
 import glob
 import pandas as pd
 import glob
-import itertools
 import numpy as np
 from pathlib import Path
-
-# os.environ["MODIN_ENGINE"] = "ray"
-# import ray
-# ray.init(num_gpus=0)
-# import modin.pandas as pd #requires pandas 1.3.2
-
-from tqdm import tqdm
-from time import time
 
 from ihme_gbd import (
     INPATH,
@@ -23,19 +13,21 @@ from ihme_gbd import (
     DATASET_VERSION,
     OUTPATH,
     DATASET_RETRIEVED_DATE,
+    CONFIGPATH,
 )
 from ihme_gbd.core import clean_datasets
 
 
 def main() -> None:
-    df_merged = load_and_clean()
+    load_and_clean()
     create_datasets()
+    create_sources()
+    var_list, df_list = get_variables()
+    create_variables_datapoints(var_list, df_list)
 
 
 def load_and_clean() -> None:
-    if os.path.isfile(os.path.join("input", "all_data.csv")):
-        df_merged = pd.read_csv(os.path.join(INPATH, "all_data.csv"), chunksize=10 ** 5)
-    else:
+    if not os.path.isfile(os.path.join(INPATH, "all_data.csv")):
         all_files = [
             i for i in glob.glob(os.path.join(INPATH, "gbd_cause", "csv", "*.csv"))
         ]
@@ -48,10 +40,6 @@ def load_and_clean() -> None:
             columns={"location_name": "Country"}
         ).to_csv(ENTFILE, index=False)
     Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
-    return df_merged
-
-
-## Not sure how to best deal with the IHME data as it is split into four distinct datasets - causes, prevalence, risk and mental health. We should have a different dataset for each of these?
 
 
 def create_datasets() -> pd.DataFrame:
@@ -76,6 +64,7 @@ def create_sources() -> None:
             "additionalInfo": [None],
         }
     )
+    print("Creating sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
 
@@ -101,33 +90,35 @@ def get_variables() -> None:
         var_list.append(chunk["variable_name"])
         df_list.append(chunk)
     var_list = pd.concat(var_list).drop_duplicates()
+    print("Creating list of variables")
     return var_list, df_list
 
 
-t = time()
-var_list, df_list = get_variables()
-time() - t
-
-var_list_test = var_list
-
-
-def create_variables_datapoints():
+def create_variables_datapoints(var_list: list, df_list: list):
     variable_idx = 0
     variables = pd.DataFrame()
-    for var in var_list_test:
+
+    entity2owid_name = (
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
+        .set_index("Country")
+        .squeeze()
+        .to_dict()
+    )
+
+    for var in var_list:
         var_data = []
         for df in df_list:
             var_df = df[df["variable_name"] == var]
             var_data.append(var_df)
         df = pd.concat(var_data)
-
+        df["country"] = df["location_name"].apply(lambda x: entity2owid_name[x])
         df[["location_name", "year", "val"]].rename(
             columns={"location_name": "country", "val": "value"}
         ).to_csv(
             os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
             index=False,
         )
-        # standardise country name
+        print("Creating datapoints_%d.csv" % variable_idx)
 
         variable = {
             "dataset_id": int(0),
@@ -153,13 +144,5 @@ def create_variables_datapoints():
     variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
 
-t = time()
-create_variables_datapoints()
-time() - t
-
-
 if __name__ == "__main__":
     main()
-
-
-# columns=["id", "name", "unit", "dataset_id", "source_id", "code", "unit", "short_unit", "timespan", "coverage", "display", "original_metadata"]
