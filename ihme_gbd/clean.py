@@ -35,10 +35,12 @@ def load_and_clean() -> None:
         df_merged = pd.concat(df_from_each_file, ignore_index=True)
         assert sum(df_merged.isnull().sum()) == 0, print("Null values in dataframe")
         df_merged.to_csv(os.path.join(INPATH, "all_data.csv"))
+        print("Saving all data from raw csv files")
     if not os.path.isfile(ENTFILE):
         df_merged[["location_name"]].drop_duplicates().dropna().rename(
             columns={"location_name": "Country"}
         ).to_csv(ENTFILE, index=False)
+        print("Saving entity files")
     Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
 
 
@@ -79,9 +81,9 @@ def get_variables() -> None:
             chunk["measure_name"]
             + " - "
             + chunk["cause_name"]
-            + " - Sex:"
+            + " - Sex: "
             + chunk["sex_name"]
-            + " - Age:"
+            + " - Age: "
             + chunk["age_name"]
             + " ("
             + chunk["metric_name"]
@@ -105,6 +107,8 @@ def create_variables_datapoints(var_list: list, df_list: list):
         .to_dict()
     )
 
+    units_dict = {"Percent": "%", "Rate": "", "Number": ""}
+
     for var in var_list:
         var_data = []
         for df in df_list:
@@ -127,8 +131,8 @@ def create_variables_datapoints(var_list: list, df_list: list):
             "name": "%s" % (var),
             "description": None,
             "code": None,
-            "unit": df[["metric_name"]].drop_duplicates(),
-            "short_unit": None,
+            "unit": df["metric_name"].iloc[0],
+            "short_unit": units_dict[df["metric_name"].iloc[0]],
             "timespan": "%s - %s"
             % (
                 int(np.min(df["year"])),
