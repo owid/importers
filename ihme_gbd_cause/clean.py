@@ -9,7 +9,7 @@ import glob
 import numpy as np
 from pathlib import Path
 
-from ihme_gbd import (
+from ihme_gbd_cause import (
     INPATH,
     ENTFILE,
     DATASET_NAME,
