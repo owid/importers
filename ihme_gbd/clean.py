@@ -1,6 +1,10 @@
 import os
 import glob
+import ray
 import pandas as pd
+
+ray.init()
+import modin.pandas as mpd
 import glob
 import numpy as np
 from pathlib import Path
@@ -15,27 +19,35 @@ from ihme_gbd import (
     DATASET_RETRIEVED_DATE,
     CONFIGPATH,
 )
-from ihme_gbd.core import clean_datasets
 
 
 def main() -> None:
     load_and_clean()
     create_datasets()
     create_sources()
-    var_list, df_list = get_variables()
-    create_variables(var_list, df_list)
-    create_datapoints(var_list, df_list)
+    get_variables()
+    create_variables_datapoints()
 
 
 def load_and_clean() -> None:
-    if not os.path.isfile(os.path.join(INPATH, "all_data.csv")):
+    if not os.path.isfile(os.path.join(INPATH, "all_data_filtered.csv")):
         all_files = [
             i for i in glob.glob(os.path.join(INPATH, "gbd_cause", "csv", "*.csv"))
         ]
-        df_from_each_file = (pd.read_csv(f, sep=",") for f in all_files)
+        fields = [
+            "measure_name",
+            "location_name",
+            "sex_name",
+            "age_name",
+            "cause_name",
+            "metric_name",
+            "year",
+            "val",
+        ]  # removing id columns and the upper and lower bounds around value in the hope the all_data file will be smaller.
+        df_from_each_file = (pd.read_csv(f, sep=",", usecols=fields) for f in all_files)
         df_merged = pd.concat(df_from_each_file, ignore_index=True)
         assert sum(df_merged.isnull().sum()) == 0, print("Null values in dataframe")
-        df_merged.to_csv(os.path.join(INPATH, "all_data.csv"))
+        df_merged.to_csv(os.path.join(INPATH, "all_data_filtered.csv"), index=False)
         print("Saving all data from raw csv files")
     if not os.path.isfile(ENTFILE):
         df_merged[["location_name"]].drop_duplicates().dropna().rename(
@@ -43,6 +55,20 @@ def load_and_clean() -> None:
         ).to_csv(ENTFILE, index=False)
         print("Saving entity files")
     Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
+
+
+def clean_datasets(
+    DATASET_NAME: str, DATASET_AUTHORS: str, DATASET_VERSION: str
+) -> pd.DataFrame:
+    """Constructs a dataframe where each row represents a dataset to be
+    upserted.
+    Note: often, this dataframe will only consist of a single row.
+    """
+    data = [
+        {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
+    ]
+    df = pd.DataFrame(data)
+    return df
 
 
 def create_datasets() -> pd.DataFrame:
@@ -72,83 +98,45 @@ def create_sources() -> None:
 
 
 def get_variables() -> None:
-    df_merged = pd.read_csv(
-        os.path.join(INPATH, "all_data.csv"), chunksize=10 ** 5, low_memory=True
-    )  # working through the data 1mil rows at a time
-    var_list = []
-    df_list = []
-    for chunk in df_merged:
-        chunk["variable_name"] = (
-            chunk["measure_name"]
-            + " - "
-            + chunk["cause_name"]
-            + " - Sex: "
-            + chunk["sex_name"]
-            + " - Age: "
-            + chunk["age_name"]
-            + " ("
-            + chunk["metric_name"]
-            + ")"
-        )
-        var_list.append(chunk["variable_name"].drop_duplicates())
-        df_list.append(chunk)
-    var_list = pd.concat(var_list)
-    print("Creating list of variables")
-    return var_list, df_list
+    if not os.path.isfile(os.path.join(INPATH, "all_data_with_var.csv")):
+        var_list = []
+        df_merged = pd.read_csv(
+            os.path.join(INPATH, "all_data_filtered.csv")
+        )  # working through the data 1mil rows at a time
+        df_merged["variable_name"] = [
+            p1 + " - " + p2 + " - " + p3 + " - " + p4 + " (" + p5 + ")"
+            for p1, p2, p3, p4, p5 in zip(
+                df_merged["measure_name"],
+                df_merged["cause_name"],
+                df_merged["sex_name"],
+                df_merged["age_name"],
+                df_merged["metric_name"],
+            )
+        ]
+        var_list = df_merged["variable_name"].drop_duplicates()
+        var_list.to_csv(os.path.join(INPATH, "all_variables.csv"), index=False)
+        df_merged.to_csv(os.path.join(INPATH, "all_data_with_var.csv"), index=False)
 
 
-def create_variables(var_list: list, df_list: list):
+def create_variables_datapoints() -> None:
+
+    var_list = pd.read_csv(os.path.join(INPATH, "all_variables.csv"))[
+        "variable_name"
+    ].to_list()
+    fields = [
+        "variable_name",
+        "location_name",
+        "metric_name",
+        "year",
+        "val",
+    ]  # this is a very large dataframe but we only need five columns from it so we'll just read those ones in
+
+    df = pd.read_csv(os.path.join(INPATH, "all_data_with_var.csv"), usecols=fields)
+
     variable_idx = 0
     variables = pd.DataFrame()
 
     units_dict = {"Percent": "%", "Rate": "", "Number": ""}
-
-    for var in var_list:
-        var_data = []
-        for df in df_list:
-
-            var_df = df[
-                df["variable_name"] == var
-            ]  # this just needs to get the first one - first row that matches
-            var_data.append(var_df)
-        df = pd.concat(var_data)
-
-        variable = {
-            "dataset_id": int(0),
-            "source_id": int(0),
-            "id": variable_idx,
-            "name": "%s" % (var),
-            "description": None,
-            "code": "%s %s %s %s %s %s"
-            % (
-                df["measure_id"].iloc[0],
-                df["location_id"].iloc[0],
-                df["sex_id"].iloc[0],
-                df["age_id"].iloc[0],
-                df["cause_id"].iloc[0],
-                df["metric_id"].iloc[0],
-            ),
-            "unit": df["metric_name"].iloc[0],
-            "short_unit": units_dict[df["metric_name"].iloc[0]],
-            "timespan": "%s - %s"
-            % (
-                int(np.min(df["year"])),
-                int(np.max(df["year"])),
-            ),
-            "coverage": None,
-            "display": None,
-            "original_metadata": None,
-        }
-        print(variable)
-        variables = variables.append(variable, ignore_index=True)
-        variable_idx += 1
-
-    variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
-
-
-def create_datapoints(var_list: list, df_list: list):
-    variable_idx = 0
-    variables = pd.DataFrame()
 
     entity2owid_name = (
         pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
@@ -158,19 +146,39 @@ def create_datapoints(var_list: list, df_list: list):
     )
 
     for var in var_list:
-        var_data = []
-        for df in df_list:
-            var_df = df[df["variable_name"] == var]
-            var_data.append(var_df)
-        df = pd.concat(var_data)
-        df["country"] = df["location_name"].apply(lambda x: entity2owid_name[x])
-        df[["location_name", "year", "val"]].rename(
+        print(var)
+        var_df = df[df["variable_name"] == var]
+
+        variable = {
+            "dataset_id": int(0),
+            "source_id": int(0),
+            "id": variable_idx,
+            "name": "%s" % (var),
+            "description": None,
+            "code": None,  # removed the columns used for this as I don't think we actually use it and it made the data handling a lot easier if we got rid off them
+            "unit": var_df["metric_name"].iloc[0],
+            "short_unit": units_dict[var_df["metric_name"].iloc[0]],
+            "timespan": "%s - %s"
+            % (
+                int(np.min(var_df["year"])),
+                int(np.max(var_df["year"])),
+            ),
+            "coverage": None,
+            "display": None,
+            "original_metadata": None,
+        }
+        variables = variables.append(variable, ignore_index=True)
+        variable_idx += 1
+
+        var_df["country"] = var_df["location_name"].apply(lambda x: entity2owid_name[x])
+        var_df[["location_name", "year", "val"]].rename(
             columns={"location_name": "country", "val": "value"}
         ).to_csv(
             os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
             index=False,
         )
-        print("Creating datapoints_%d.csv" % variable_idx)
+
+    variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
 
 if __name__ == "__main__":

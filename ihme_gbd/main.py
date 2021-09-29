@@ -13,9 +13,9 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
 def main():
-    clean.import_csv_files()
+    clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main()
+    # match_variables.main()
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
