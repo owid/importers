@@ -7,6 +7,7 @@ import numpy as np
 from pathlib import Path
 
 from ihme_gbd_cause import (
+    DATASET_DIR,
     INPATH,
     ENTFILE,
     DATASET_NAME,
@@ -174,7 +175,6 @@ def create_variables_datapoints() -> None:
             "original_metadata": None,
         }
         variables = variables.append(variable, ignore_index=True)
-        variable_idx += 1
 
         var_df["location_name"] = var_df["location_name"].apply(
             lambda x: entity2owid_name[x]
@@ -185,6 +185,8 @@ def create_variables_datapoints() -> None:
             os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
             index=False,
         )
+
+        variable_idx += 1
 
     variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 
