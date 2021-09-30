@@ -1,10 +1,7 @@
 import os
 import glob
-import ray
+import json
 import pandas as pd
-
-ray.init()
-import modin.pandas as mpd
 import glob
 import numpy as np
 from pathlib import Path
@@ -27,6 +24,7 @@ def main() -> None:
     create_sources()
     get_variables()
     create_variables_datapoints()
+    create_distinct_entities()
 
 
 def load_and_clean() -> None:
@@ -82,17 +80,25 @@ def create_datasets() -> pd.DataFrame:
 
 
 def create_sources() -> None:
+
+    source_description = {
+        "dataPublishedBy": "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2021.",
+        "dataPublisherSource": "Institute for Health Metrics and Evaluation",
+        "link": "http://ghdx.healthdata.org/gbd-results-tool",
+        "retrievedDate": DATASET_RETRIEVED_DATE,
+        "additionalInfo": None,
+    }
+
     df_sources = pd.DataFrame(
         {
-            "dataPublishedBy": [
-                "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2021."
-            ],
-            "dataPublisherSource": [None],
-            "link": ["http://ghdx.healthdata.org/gbd-results-tool"],
-            "retrievedDate": [DATASET_RETRIEVED_DATE],
-            "additionalInfo": [None],
+            "id": [0],
+            "name": [source_description["dataPublisherSource"]],
+            "description": [json.dumps(source_description)],
+            "dataset_id": [0],
+            "series_code": [None],
         }
     )
+
     print("Creating sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
@@ -170,7 +176,9 @@ def create_variables_datapoints() -> None:
         variables = variables.append(variable, ignore_index=True)
         variable_idx += 1
 
-        var_df["country"] = var_df["location_name"].apply(lambda x: entity2owid_name[x])
+        var_df["location_name"] = var_df["location_name"].apply(
+            lambda x: entity2owid_name[x]
+        )
         var_df[["location_name", "year", "val"]].rename(
             columns={"location_name": "country", "val": "value"}
         ).to_csv(
@@ -179,6 +187,22 @@ def create_variables_datapoints() -> None:
         )
 
     variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
+
+
+def create_distinct_entities() -> None:
+    # df_distinct_entities = pd.DataFrame(
+    #    get_distinct_entities(), columns=["name"]
+    # )  # Goes through each datapoints to get the distinct entities
+    df_distinct_entities = pd.read_csv(
+        os.path.join(CONFIGPATH, "standardized_entity_names.csv")
+    )
+    df_distinct_entities = df_distinct_entities[["Our World In Data Name"]].rename(
+        columns={"Our World In Data Name": "name"}
+    )
+
+    df_distinct_entities.to_csv(
+        os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
+    )
 
 
 if __name__ == "__main__":

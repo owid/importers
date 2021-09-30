@@ -2,7 +2,6 @@ import requests
 import os
 import time
 from pathlib import Path
-from gbd_tools import import_csv_files
 
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 
@@ -89,4 +88,3 @@ for i in range(1, 20):
             else:
                 trycnt -= 1  # retry
             time.sleep(0.5)
-

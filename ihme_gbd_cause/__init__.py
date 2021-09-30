@@ -1,6 +1,6 @@
 import os
 
-DATASET_NAME = "IHME - Global Burden of Disease - Causes"
+DATASET_NAME = "IHME - Global Burden of Disease - Deaths and DALYs"
 DATASET_AUTHORS = "Institute for Health Metrics and Evaluation "
 DATASET_VERSION = "2021-09"
 DATASET_LINK = "http://ghdx.healthdata.org/gbd-results-tool"
