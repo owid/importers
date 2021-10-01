@@ -61,7 +61,7 @@ CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 #         unzip \*.zip -x citation.txt -d csv/
 #
 
-Path("ihme_gbd/input/causes").mkdir(parents=True, exist_ok=True)
+Path("ihme_gbd_cause/input/causes").mkdir(parents=True, exist_ok=True)
 
 
 for i in range(1, 20):

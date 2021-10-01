@@ -7,7 +7,6 @@ import numpy as np
 from pathlib import Path
 
 from ihme_gbd_cause import (
-    DATASET_DIR,
     INPATH,
     ENTFILE,
     DATASET_NAME,
