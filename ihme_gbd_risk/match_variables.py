@@ -3,7 +3,7 @@
 `variable_replacements.json` is used in `suggest_chart_revisions.py` for
 determining which charts to update.
 Usage:
-    python -m ihme_gbd_cause.match_variables
+    python -m ihme_gbd_risk.match_variables
 """
 
 import os
@@ -13,7 +13,7 @@ import pandas as pd
 
 from db import get_connection
 from db_utils import DBUtils
-from ihme_gbd_cause import OUTPATH
+from ihme_gbd_risk import OUTPATH
 
 
 def main():
@@ -76,7 +76,7 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%gbd_cause%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%gbd_risk%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])

@@ -35,7 +35,6 @@ def load_and_clean() -> None:
             "location_name",
             "sex_name",
             "age_name",
-            "cause_name",
             "rei_name",
             "metric_name",
             "year",
@@ -112,7 +111,7 @@ def get_variables() -> None:
             os.path.join(INPATH, "all_data_filtered.csv")
         )  # working through the data 1mil rows at a time
         df_merged["variable_name"] = [
-            p1 + " - " + p2 + " - " + p3 + " - " + p4 + " (" + p5 + ")"
+            p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
             for p1, p2, p3, p4, p5 in zip(
                 df_merged["measure_name"],
                 df_merged["rei_name"],
