@@ -105,24 +105,23 @@ def create_sources() -> None:
 
 
 def get_variables() -> None:
-    if not os.path.isfile(os.path.join(INPATH, "all_data_with_var.csv")):
-        var_list = []
-        df_merged = pd.read_csv(
-            os.path.join(INPATH, "all_data_filtered.csv")
-        )  # working through the data 1mil rows at a time
-        df_merged["variable_name"] = [
-            p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
-            for p1, p2, p3, p4, p5 in zip(
-                df_merged["measure_name"],
-                df_merged["rei_name"],
-                df_merged["sex_name"],
-                df_merged["age_name"],
-                df_merged["metric_name"],
-            )
-        ]
-        var_list = df_merged["variable_name"].drop_duplicates()
-        var_list.to_csv(os.path.join(INPATH, "all_variables.csv"), index=False)
-        df_merged.to_csv(os.path.join(INPATH, "all_data_with_var.csv"), index=False)
+    var_list = []
+    df_merged = pd.read_csv(
+        os.path.join(INPATH, "all_data_filtered.csv")
+    )  # working through the data 1mil rows at a time
+    df_merged["variable_name"] = [
+        p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
+        for p1, p2, p3, p4, p5 in zip(
+            df_merged["measure_name"],
+            df_merged["rei_name"],
+            df_merged["sex_name"],
+            df_merged["age_name"],
+            df_merged["metric_name"],
+        )
+    ]
+    var_list = df_merged["variable_name"].drop_duplicates()
+    var_list.to_csv(os.path.join(INPATH, "all_variables.csv"), index=False)
+    df_merged.to_csv(os.path.join(INPATH, "all_data_with_var.csv"), index=False)
 
 
 def create_variables_datapoints() -> None:
