@@ -16,8 +16,10 @@ __pycache__/
 edstats/input/*.csv
 povcal/data_by_poverty_line/
 povcal/output/
-ihme_gbd_cause/input/
-ihme_gbd_cause/output/
+ihme_gbd_cause/input/*
+ihme_gbd_cause/output/*
+ihme_gbd_risk/input/*
+ihme_gbd_risk/output/*
 un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
