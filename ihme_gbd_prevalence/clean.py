@@ -1,14 +1,10 @@
 import os
-import glob
 import json
 import pandas as pd
-import glob
 import numpy as np
-from pathlib import Path
 
 from ihme_gbd_prevalence import (
     INPATH,
-    ENTFILE,
     DATASET_NAME,
     DATASET_AUTHORS,
     DATASET_VERSION,
@@ -19,41 +15,11 @@ from ihme_gbd_prevalence import (
 
 
 def main() -> None:
-    load_and_clean()
     create_datasets()
     create_sources()
     get_variables()
     create_variables_datapoints()
     create_distinct_entities()
-
-
-def load_and_clean() -> None:
-    if not os.path.isfile(os.path.join(INPATH, "all_data_filtered.csv")):
-        all_files = [i for i in glob.glob(os.path.join(INPATH, "csv", "*.csv"))]
-        fields = [
-            "measure_name",
-            "location_name",
-            "sex_name",
-            "age_name",
-            "cause_name",
-            "metric_name",
-            "year",
-            "val",
-        ]  # removing id columns and the upper and lower bounds around value in the hope the all_data file will be smaller.
-        df_from_each_file = (pd.read_csv(f, sep=",", usecols=fields) for f in all_files)
-        df_merged = pd.concat(df_from_each_file, ignore_index=True)
-        assert sum(df_merged.isnull().sum()) == 0, print("Null values in dataframe")
-        df_merged.to_csv(os.path.join(INPATH, "all_data_filtered.csv"), index=False)
-        print("Saving all data from raw csv files")
-    if not os.path.isfile(ENTFILE):
-        df_merged[["location_name"]].drop_duplicates().dropna().rename(
-            columns={"location_name": "Country"}
-        ).to_csv(ENTFILE, index=False)
-        print(
-            "Saving entity files"
-        )  # use this file in the country standardizer tool - save standardized file as config/standardized_entity_names.csv
-
-    Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
 
 
 def clean_datasets(
@@ -127,6 +93,13 @@ def get_variables() -> None:
         df_merged.to_csv(os.path.join(INPATH, "all_data_with_var.csv"), index=False)
 
 
+def get_metric_value():
+    if row["metric_name"] == "Percent":
+        return str(float(row["val"]) * 100)
+    else:
+        return row["val"]
+
+
 def create_variables_datapoints() -> None:
 
     var_list = pd.read_csv(os.path.join(INPATH, "all_variables.csv"))[
@@ -181,6 +154,10 @@ def create_variables_datapoints() -> None:
         var_df["location_name"] = var_df["location_name"].apply(
             lambda x: entity2owid_name[x]
         )
+
+        if var_df["metric_name"].iloc[0] == "Percent":
+            var_df["val"] = var_df["val"] * 100
+
         var_df[["location_name", "year", "val"]].rename(
             columns={"location_name": "country", "val": "value"}
         ).to_csv(
@@ -194,9 +171,6 @@ def create_variables_datapoints() -> None:
 
 
 def create_distinct_entities() -> None:
-    # df_distinct_entities = pd.DataFrame(
-    #    get_distinct_entities(), columns=["name"]
-    # )  # Goes through each datapoints to get the distinct entities
     df_distinct_entities = pd.read_csv(
         os.path.join(CONFIGPATH, "standardized_entity_names.csv")
     )
