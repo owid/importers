@@ -2,14 +2,12 @@
 The download step is quite manual at the moment so will not be included in main.py
 
 Usage:
-    python -m ihme_gbd_risk.main
+    python -m ihme_gbd_prevalence.main
 """
-
 import click
+from ihme_gbd_prevalence import DATASET_DIR, DATASET_NAMESPACE
 
-from ihme_gbd_risk import DATASET_DIR, DATASET_NAMESPACE
-
-from ihme_gbd_risk import clean, match_variables
+from ihme_gbd_prevalence import clean, match_variables
 
 from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester

@@ -4,6 +4,7 @@ The download step is quite manual at the moment so will not be included in main.
 Usage:
     python -m ihme_gbd_cause.main
 """
+import click
 from ihme_gbd_cause import DATASET_DIR, DATASET_NAMESPACE
 
 from ihme_gbd_cause import clean, match_variables
@@ -12,8 +13,15 @@ from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
-def main():
-    clean.main()
+@click.command()
+@click.option(
+    "--clean_data/--skip_clean",
+    default=True,
+    help="Whether or not to clean the data, useful for just upserting previously cleaned data",
+)
+def main(clean_data):
+    if clean_data:
+        clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     match_variables.main()
 
