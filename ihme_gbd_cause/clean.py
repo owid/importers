@@ -104,7 +104,9 @@ def create_sources() -> None:
 
 
 def get_variables() -> None:
-    if not os.path.isfile(os.path.join(INPATH, "all_data_filtered.csv")):
+    if not os.path.isfile(
+        os.path.join(INPATH, "all_data_with_var.csv")
+    ) and os.path.isfile(os.path.join(INPATH, "all_variables.csv")):
         var_list = []
         df_merged = pd.read_csv(
             os.path.join(INPATH, "all_data_filtered.csv")

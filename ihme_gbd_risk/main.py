@@ -2,7 +2,7 @@
 The download step is quite manual at the moment so will not be included in main.py
 
 Usage:
-    python -m ihme_gbd_risk.main
+    python -m ihme_gbd_risk.main --skip_clean
 """
 
 import click
