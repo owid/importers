@@ -20,6 +20,8 @@ ihme_gbd_cause/input/*
 ihme_gbd_cause/output/*
 ihme_gbd_risk/input/*
 ihme_gbd_risk/output/*
+ihme_gbd_prevalence/input/*
+ihme_gbd_prevalence/output/*
 un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
