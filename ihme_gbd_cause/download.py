@@ -1,9 +1,15 @@
 import requests
 import os
+import glob
 import time
+import pandas as pd
+import zipfile
+import io
 from pathlib import Path
 
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
+
+from ihme_gbd_cause import INPATH, OUTPATH, ENTFILE, CONFIGPATH
 
 ################################################################################
 ### Causes                                                                   ###
@@ -61,30 +67,67 @@ CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 #         unzip \*.zip -x citation.txt -d csv/
 #
 
-Path("ihme_gbd_cause/input/causes").mkdir(parents=True, exist_ok=True)
+
+url_lead = "https://s3.healthdata.org/gbd-api-2019-public/6bc81b0cecef147c44df55608fe573f3_files/IHME-GBD_2019_DATA-6bc81b0c-"
 
 
-for i in range(1, 20):
-    fname = (
-        "https://s3.healthdata.org/gbd-api-2019-public/6bc81b0cecef147c44df55608fe573f3_files/IHME-GBD_2019_DATA-6bc81b0c-%s.zip"
-        # "https://s3.healthdata.org/gbd-api-2019-public/f01933bdc3867c8239be6fa3f87c9485_files/IHME-GBD_2019_DATA-f01933bd-%s.zip"
-        % i
-    )
-    print(fname)
-    trycnt = 3
-    while trycnt > 0:
-        try:
-            r = requests.get(fname)
-            assert r.ok
-            zname = os.path.join("ihme_gbd/input/causes", os.path.basename(fname))
-            print(zname)
-            zfile = open(zname, "wb")
-            zfile.write(r.content)
-            zfile.close()
-            break
-        except requests.exceptions.ChunkedEncodingError:
-            if trycnt <= 0:
-                print("Failed to retrieve: " + fname + "\n")  # done retrying
-            else:
-                trycnt -= 1  # retry
-            time.sleep(0.5)
+def main() -> None:
+    make_dirs()
+    download_data(url_lead)
+    load_and_filter()
+
+
+def make_dirs() -> None:
+    Path(INPATH).mkdir(parents=True, exist_ok=True)
+    Path(OUTPATH, "datapoints").mkdir(parents=True, exist_ok=True)
+    Path(CONFIGPATH).mkdir(parents=True, exist_ok=True)
+
+
+def download_data(url: str) -> None:
+    for i in range(1, 32):
+        fname = url + "%s.zip" % i
+        print(fname)
+        trycnt = 3
+        while trycnt > 0:
+            try:
+                r = requests.get(fname)
+                assert r.ok
+                zname = os.path.join(INPATH, os.path.basename(fname))
+                print(zname)
+                z = zipfile.ZipFile(io.BytesIO(r.content))
+                z.extractall(os.path.join(INPATH, "csv"))
+                break
+            except requests.exceptions.ChunkedEncodingError:
+                if trycnt <= 0:
+                    print("Failed to retrieve: " + fname + "\n")  # done retrying
+                else:
+                    trycnt -= 1  # retry
+                time.sleep(0.5)
+    os.remove(os.path.join(INPATH, "csv", "citation.txt"))
+
+
+def load_and_filter() -> None:
+    if not os.path.isfile(os.path.join(INPATH, "all_data_filtered.csv")):
+        all_files = [i for i in glob.glob(os.path.join(INPATH, "csv", "*.csv"))]
+        fields = [
+            "measure_name",
+            "location_name",
+            "sex_name",
+            "age_name",
+            "cause_name",
+            "metric_name",
+            "year",
+            "val",
+        ]  # removing id columns and the upper and lower bounds around value in the hope the all_data file will be smaller.
+        df_from_each_file = (pd.read_csv(f, sep=",", usecols=fields) for f in all_files)
+        df_merged = pd.concat(df_from_each_file, ignore_index=True)
+        assert sum(df_merged.isnull().sum()) == 0, print("Null values in dataframe")
+        df_merged.to_csv(os.path.join(INPATH, "all_data_filtered.csv"), index=False)
+        print("Saving all data from raw csv files")
+    if not os.path.isfile(ENTFILE):
+        df_merged[["location_name"]].drop_duplicates().dropna().rename(
+            columns={"location_name": "Country"}
+        ).to_csv(ENTFILE, index=False)
+        print(
+            "Saving entity files"
+        )  # use this file in the country standardizer tool - save standardized file as config/standardized_entity_names.csv

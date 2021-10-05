@@ -28,7 +28,7 @@ def main() -> None:
 
 
 def load_and_clean() -> None:
-    if not os.path.isfile(os.path.join(INPATH, "all_data_filtered.csv")):
+    if not os.path.isfile(os.path.join(INPATH, "all_data_with_var.csv")):
         all_files = [
             i for i in glob.glob(os.path.join(INPATH, "gbd_cause", "csv", "*.csv"))
         ]

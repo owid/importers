@@ -93,13 +93,6 @@ def get_variables() -> None:
         df_merged.to_csv(os.path.join(INPATH, "all_data_with_var.csv"), index=False)
 
 
-def get_metric_value():
-    if row["metric_name"] == "Percent":
-        return str(float(row["val"]) * 100)
-    else:
-        return row["val"]
-
-
 def create_variables_datapoints() -> None:
 
     var_list = pd.read_csv(os.path.join(INPATH, "all_variables.csv"))[

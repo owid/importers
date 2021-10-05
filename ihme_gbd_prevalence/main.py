@@ -3,8 +3,10 @@ The download step is quite manual at the moment so will not be included in main.
 
 Usage:
     python -m ihme_gbd_prevalence.main
+
+    python -m ihme_gbd_prevalence.main --skip_download --skip_clean
 """
-from ihme_gbd_prevalence.download import download_data
+
 import click
 from ihme_gbd_prevalence import DATASET_DIR, DATASET_NAMESPACE
 
