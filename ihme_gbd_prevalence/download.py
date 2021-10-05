@@ -3,6 +3,8 @@ import os
 import glob
 import time
 import pandas as pd
+import zipfile
+import io
 from pathlib import Path
 
 
@@ -91,9 +93,8 @@ def download_data(url: str) -> None:
                 assert r.ok
                 zname = os.path.join(INPATH, os.path.basename(fname))
                 print(zname)
-                zfile = open(zname, "wb")
-                zfile.write(r.content)
-                zfile.close()
+                z = zipfile.ZipFile(io.BytesIO(r.content))
+                z.extractall(os.path.join(INPATH, "csv"))
                 break
             except requests.exceptions.ChunkedEncodingError:
                 if trycnt <= 0:
@@ -101,6 +102,7 @@ def download_data(url: str) -> None:
                 else:
                     trycnt -= 1  # retry
                 time.sleep(0.5)
+    os.remove(os.path.join(INPATH, "csv", "citation.txt"))
 
 
 def load_and_filter() -> None:
