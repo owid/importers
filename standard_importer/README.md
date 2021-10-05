@@ -47,7 +47,7 @@ Located in `output/sources.csv`:
 
 * `id`: temporary source ID for loading process
 * `name`: name of the source
-* `description`: JSON string with `dataPublishedBy` (string), `dataPublisherSource` (string), `link` (string), `retrievedDate` (string), `additionalInfo` (string)
+* `description`: JSON object with `dataPublishedBy` (string), `dataPublisherSource` (string), `link` (string), `retrievedDate` (string), `additionalInfo` (string)
 * `dataset_id`: foreign key matching each source with a dataset ID
 
 
