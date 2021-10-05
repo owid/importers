@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 
-from ihme_gbd_cause import (
+from ihme_gbd_mental_health import (
     INPATH,
     DATASET_NAME,
     DATASET_AUTHORS,
