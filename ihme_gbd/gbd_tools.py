@@ -100,9 +100,7 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
 
 
 def get_variables(inpath: str) -> None:
-    if not os.path.isfile(
-        os.path.join(inpath, "all_data_with_var.csv")
-    ) and os.path.isfile(os.path.join(inpath, "all_variables.csv")):
+    if not os.path.isfile(os.path.join(inpath, "all_data_with_var.csv")):
         var_list = []
         df_merged = pd.read_csv(
             os.path.join(inpath, "all_data_filtered.csv")
