@@ -20,8 +20,8 @@ def main(outpath: str):
     with connection.cursor() as cursor:
         db = DBUtils(cursor)
         # retrieves old and new datasets
-        df_old_datasets = get_datasets(db=db, new=False)
-        df_new_datasets = get_datasets(db=db, new=True)
+        df_old_datasets = get_datasets(outpath=outpath, db=db, new=False)
+        df_new_datasets = get_datasets(outpath=outpath, db=db, new=True)
 
         # retrieves old and new variables
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets["id"].tolist())
