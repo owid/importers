@@ -34,10 +34,21 @@ def download_data(url: str, inpath: str) -> None:
 def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
     if not os.path.isfile(os.path.join(inpath, "all_data_filtered.csv")):
         all_files = [i for i in glob.glob(os.path.join(inpath, "csv", "*.csv"))]
-        fields = column_fields  # removing id columns and the upper and lower bounds around value in the hope the all_data file will be smaller.
-        df_from_each_file = (pd.read_csv(f, sep=",", usecols=fields) for f in all_files)
+        df_from_each_file = (pd.read_csv(f, sep=",") for f in all_files)
         df_merged = pd.concat(df_from_each_file, ignore_index=True)
         assert sum(df_merged.isnull().sum()) == 0, print("Null values in dataframe")
+        # standardising column names
+        df_merged = df_merged.rename(
+            columns={
+                "measure": "measure_name",
+                "location": "location_name",
+                "sex": "sex_name",
+                "age": "age_name",
+                "cause": "cause_name",
+                "metric": "metric_name",
+            }
+        )
+        df_merged = df_merged[column_fields]
         df_merged.to_csv(os.path.join(inpath, "all_data_filtered.csv"), index=False)
         print("Saving all data from raw csv files")
     if not os.path.isfile(entfile):
