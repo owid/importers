@@ -4,7 +4,7 @@ The download step is quite manual at the moment so will not be included in main.
 Usage:
     python -m ihme_gbd.ihme_gbd_mental_health.main
 
-    python -m ihme_gbd.ihme_gbd_mental_health.main --skip_download
+    python -m ihme_gbd.ihme_gbd_mental_health.main --skip_download --skip_clean
 """
 import click
 from ihme_gbd.ihme_gbd_mental_health import DATASET_DIR, DATASET_NAMESPACE, OUTPATH

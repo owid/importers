@@ -75,7 +75,7 @@ def get_datasets(outpath: str, db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%gbd_prevalence%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%gbd_%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])
