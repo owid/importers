@@ -6,16 +6,23 @@ import zipfile
 import io
 import json
 import numpy as np
+from tqdm import tqdm
 from pathlib import Path
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
+    """
+    Creating the necessary directories for the input, output and config files
+    """
     Path(inpath).mkdir(parents=True, exist_ok=True)
     Path(outpath, "datapoints").mkdir(parents=True, exist_ok=True)
     Path(configpath).mkdir(parents=True, exist_ok=True)
 
 
 def download_data(url: str, inpath: str) -> None:
+    """
+    Downloading the input data from a given URL STUB - these expire after a few days so need to be requested and updated following the instructions in download.py
+    """
     status = True
     while status:
         for i in range(1, 9999):
@@ -32,6 +39,11 @@ def download_data(url: str, inpath: str) -> None:
 
 
 def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
+    """
+    Loading and merging all of the input csv files into one large csv files.
+    We standardise the column names here as this can vary based on what is selected from the source.
+    We select out only the columns we need for the rest of the import in order to keep the size of the file down.
+    """
     if not os.path.isfile(os.path.join(inpath, "all_data_filtered.csv")):
         all_files = [i for i in glob.glob(os.path.join(inpath, "csv", "*.csv"))]
         df_from_each_file = (pd.read_csv(f, sep=",") for f in all_files)
@@ -46,6 +58,7 @@ def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
                 "age": "age_name",
                 "cause": "cause_name",
                 "metric": "metric_name",
+                "rei": "rei_name",
             }
         )
         df_merged = df_merged[column_fields]
@@ -60,8 +73,8 @@ def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
         )  # use this file in the country standardizer tool - save standardized file as config/standardized_entity_names.csv
 
 
-def clean_datasets(
-    dataset_name: str, dataset_authors: str, dataset_version: str
+def create_datasets(
+    dataset_name: str, dataset_authors: str, dataset_version: str, outpath: str
 ) -> pd.DataFrame:
     """Constructs a dataframe where each row represents a dataset to be
     upserted.
@@ -70,14 +83,7 @@ def clean_datasets(
     data = [
         {"id": 0, "name": f"{dataset_name} - {dataset_authors} ({dataset_version})"}
     ]
-    df = pd.DataFrame(data)
-    return df
-
-
-def create_datasets(
-    dataset_name: str, dataset_authors: str, dataset_version: str, outpath: str
-) -> pd.DataFrame:
-    df_datasets = clean_datasets(dataset_name, dataset_authors, dataset_version)
+    df_datasets = pd.DataFrame(data)
     assert (
         df_datasets.shape[0] == 1
     ), f"Only expected one dataset in {os.path.join(outpath, 'datasets.csv')}."
@@ -87,7 +93,8 @@ def create_datasets(
 
 
 def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
-
+    """Creating the information to go into the source tab.
+    We don't have any additional variable level metadata for this dataset so we just have this generic source tab."""
     source_description = {
         "dataPublishedBy": "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2021.",
         "dataPublisherSource": "Institute for Health Metrics and Evaluation",
@@ -111,6 +118,9 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
 
 
 def get_variables(inpath: str) -> None:
+    """Outputting a list of each unique combination of measure, cause, sex, age and metric.
+    We add this variable as a column name to the filtered dataset so that we can access it
+    and iterate through variables in the next step."""
     if not os.path.isfile(os.path.join(inpath, "all_data_with_var.csv")):
         var_list = []
         df_merged = pd.read_csv(
@@ -134,6 +144,8 @@ def get_variables(inpath: str) -> None:
 def create_variables_datapoints(
     inpath: str, configpath: str, outpath: str, column_fields: tuple
 ) -> None:
+    """Iterating through each variable and pulling out the relevant datapoints.
+    Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
     var_list = pd.read_csv(os.path.join(inpath, "all_variables.csv"))[
         "variable_name"
@@ -154,8 +166,7 @@ def create_variables_datapoints(
         .to_dict()
     )
 
-    for var in var_list:
-        print(var)
+    for var in tqdm(var_list):
         var_df = df[df["variable_name"] == var]
 
         variable = {
@@ -198,6 +209,7 @@ def create_variables_datapoints(
 
 
 def create_distinct_entities(configpath: str, outpath: str) -> None:
+    """Creating a list of distinct entities for use in upserting to the grapher db"""
     df_distinct_entities = pd.read_csv(
         os.path.join(configpath, "standardized_entity_names.csv")
     )
