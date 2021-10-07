@@ -37,6 +37,8 @@ def main(download_data, clean_data, import_data):
         download.main()
     if clean_data:
         clean.main()
+    if import_data:
+        import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     match_variables.main(outpath=OUTPATH)
 
