@@ -26,7 +26,7 @@ def process_concentration_file(
 def monthly_concentrations() -> pd.DataFrame:
     gases = {
         "co2": ("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt", 57),
-        "ch4": ("https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt", 62),
+        "ch4": ("https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt", 60),
         "n2o": ("https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt", 60),
     }
     for k, v in gases.items():
