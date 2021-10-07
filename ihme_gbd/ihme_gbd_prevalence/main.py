@@ -4,7 +4,7 @@ The download step is quite manual at the moment so will not be included in main.
 Usage:
     python -m ihme_gbd.ihme_gbd_prevalence.main
 
-    python -m ihme_gbd.ihme_gbd_prevalence.main --skip_download --skip_clean
+    python -m ihme_gbd.ihme_gbd_prevalence.main --skip_download --skip_clean --skip_import
 """
 
 import click
@@ -40,7 +40,6 @@ def main(download_data, clean_data, import_data):
         clean.main()
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     match_variables.main(outpath=OUTPATH)
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
