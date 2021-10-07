@@ -1,8 +1,10 @@
-"""executes bulk dataset import + chart updates for the UN_SDGs dataset.
-The download step is quite manual at the moment so will not be included in main.py
+"""Executes bulk dataset import + chart updates for the IHME GBD Risk dataset.
+
+The download step is fairly manual and needs some setting up before running. More details in download.py.
+
 
 Usage:
-    python -m ihme_gbd.ihme_gbd_risk.main --skip_clean
+    python -m ihme_gbd.ihme_gbd_risk.main --skip_download  --skip_clean --skip_import
 """
 
 import click
