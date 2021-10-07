@@ -7,6 +7,7 @@ Usage:
     python -m ihme_gbd.ihme_gbd_mental_health.main --skip_download --skip_clean
 """
 import click
+import re
 from ihme_gbd.ihme_gbd_mental_health import (
     DATASET_DIR,
     DATASET_NAMESPACE,
@@ -44,7 +45,7 @@ def main(download_data, clean_data, import_data):
         clean.main()
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main(outpath=OUTPATH, namespace=NAMESPACE)
+    match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
