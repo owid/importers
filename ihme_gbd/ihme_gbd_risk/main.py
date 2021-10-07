@@ -6,7 +6,7 @@ Usage:
 """
 
 import click
-from ihme_gbd.ihme_gbd_risk import DATASET_DIR, DATASET_NAMESPACE, OUTPATH
+from ihme_gbd.ihme_gbd_risk import DATASET_DIR, DATASET_NAMESPACE, NAMESPACE, OUTPATH
 
 from ihme_gbd.ihme_gbd_risk import download, clean
 from ihme_gbd import match_variables
@@ -38,7 +38,7 @@ def main(download_data, clean_data, import_data):
         clean.main()
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main(outpath=OUTPATH)
+    match_variables.main(outpath=OUTPATH, namespace=NAMESPACE)
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()

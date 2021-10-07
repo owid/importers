@@ -5,7 +5,6 @@ determining which charts to update.
 Usage:
     python -m ihme_gbd_prevalence.match_variables
 """
-
 import os
 import simplejson as json
 from typing import List
@@ -15,13 +14,17 @@ from db import get_connection
 from db_utils import DBUtils
 
 
-def main(outpath: str):
+def main(outpath: str, namespace: str):
     connection = get_connection()
     with connection.cursor() as cursor:
         db = DBUtils(cursor)
         # retrieves old and new datasets
-        df_old_datasets = get_datasets(outpath=outpath, db=db, new=False)
-        df_new_datasets = get_datasets(outpath=outpath, db=db, new=True)
+        df_old_datasets = get_datasets(
+            outpath=outpath, db=db, new=False, namespace=namespace
+        )
+        df_new_datasets = get_datasets(
+            outpath=outpath, db=db, new=True, namespace=namespace
+        )
 
         # retrieves old and new variables
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets["id"].tolist())
@@ -47,7 +50,9 @@ def main(outpath: str):
             json.dump(old_var_id2new_var_id, f, indent=2)
 
 
-def get_datasets(outpath: str, db: DBUtils, new: bool = True) -> pd.DataFrame:
+def get_datasets(
+    outpath: str, db: DBUtils, namespace: str, new: bool = True
+) -> pd.DataFrame:
     """retrieves new datasets if `new=True`, else retrieves old datasets.
 
     Arguments:
@@ -75,7 +80,7 @@ def get_datasets(outpath: str, db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%gbd_%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%{namespace}%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])
