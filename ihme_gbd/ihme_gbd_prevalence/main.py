@@ -28,7 +28,12 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to clean the data, useful for just upserting previously cleaned data",
 )
-def main(download_data, clean_data):
+@click.option(
+    "--import_data/--skip_import",
+    default=True,
+    help="Whether or not to import the data",
+)
+def main(download_data, clean_data, import_data):
     if download_data:
         download.main()
     if clean_data:
