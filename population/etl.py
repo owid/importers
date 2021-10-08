@@ -12,6 +12,9 @@ HYDE_CODES = "input/HYDE_country_codes.xlsx"
 # http://gapm.io/dl_popv6
 GAPMINDER_DATA = "input/GM-Population - Dataset - v6.xlsx"
 
+# https://population.un.org/wpp/Download/Standard/CSV/
+UNWPP_DATA = "input/WPP2019_TotalPopulationBySex.csv"
+
 # https://ourworldindata.org/grapher/continents-according-to-our-world-in-data
 CONTINENT_LIST = "input/continents-according-to-our-world-in-data.csv"
 
@@ -39,9 +42,6 @@ def load_hyde(country_path: str, code_path: str) -> pd.DataFrame:
 
 
 def load_gapminder(path: str) -> pd.DataFrame:
-    """
-    Gapminder data is the primary source for years when it's available.
-    """
     return (
         pd.read_excel(
             path,
@@ -53,13 +53,28 @@ def load_gapminder(path: str) -> pd.DataFrame:
     )
 
 
+def load_unwpp(path: str) -> pd.DataFrame:
+    df = pd.read_csv(path, usecols=["Location", "Variant", "Time", "PopTotal"])
+    df = (
+        df[df.Variant == "Medium"]
+        .drop(columns="Variant")
+        .rename(
+            columns={"Location": "Entity", "Time": "Year", "PopTotal": "Population"}
+        )
+        .assign(source="unwpp")
+    )
+    df["Population"] = df.Population.mul(1000).astype(int)
+    return df
+
+
 def rename_entities(df: pd.DataFrame) -> pd.DataFrame:
     mapping = pd.read_csv(COUNTRY_MAPPING).drop_duplicates()
     df = df.merge(mapping, left_on="Entity", right_on="Country", how="left")
 
     missing = df[pd.isnull(df["Our World In Data Name"])]
     if len(missing) > 0:
-        raise Exception(f"Missing entities in mapping: {missing.Entity.unique()}")
+        missing = "\n".join(missing.Entity.unique())
+        raise Exception(f"Missing entities in mapping:\n{missing}")
 
     df = df.drop(columns=["Entity", "Country"]).rename(
         columns={"Our World In Data Name": "Entity"}
@@ -70,14 +85,30 @@ def rename_entities(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def select_source(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Rows are selected according to the following logic: "gapminder" > "hyde"
-    """
-    return (
-        df.sort_values("source")
-        .drop_duplicates(subset=["Entity", "Year"], keep="first")
-        .drop(columns=["source"])
-    )
+
+    df = df[df.Population > 0]
+
+    # If a country has UN data, then remove all non-UN data after 1949
+    has_un_data = set(df.loc[df.source == "unwpp", "Entity"])
+    df = df[
+        -((df.Entity.isin(has_un_data)) & (df.Year >= 1950) & (df.source != "unwpp"))
+    ]
+
+    # If a country has Gapminder data, then remove all non-Gapminder data between 1800 and 1949
+    has_gapminder_data = set(df.loc[df.source == "gapminder", "Entity"])
+    df = df[
+        -(
+            (df.Entity.isin(has_gapminder_data))
+            & (df.Year >= 1800)
+            & (df.Year <= 1949)
+            & (df.source != "gapminder")
+        )
+    ]
+
+    # Test if all countries have only one row per year
+    assert df.shape == df.drop_duplicates(subset=["Entity", "Year"]).shape
+
+    return df.drop(columns=["source"])
 
 
 def calculate_aggregates(df: pd.DataFrame) -> pd.DataFrame:
@@ -152,9 +183,11 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def population_pipeline(hyde: pd.DataFrame, gapminder: pd.DataFrame) -> pd.DataFrame:
+def population_pipeline(
+    hyde: pd.DataFrame, gapminder: pd.DataFrame, unwpp: pd.DataFrame
+) -> pd.DataFrame:
     return (
-        pd.concat([hyde, gapminder], ignore_index=True)
+        pd.concat([hyde, gapminder, unwpp], ignore_index=True)
         .pipe(rename_entities)
         .pipe(select_source)
         .pipe(calculate_aggregates)
@@ -163,9 +196,10 @@ def population_pipeline(hyde: pd.DataFrame, gapminder: pd.DataFrame) -> pd.DataF
 
 
 def main():
+    unwpp = load_unwpp(UNWPP_DATA)
     hyde = load_hyde(HYDE_DATA, HYDE_CODES)
     gapminder = load_gapminder(GAPMINDER_DATA)
-    population_pipeline(hyde, gapminder).to_csv(
+    population_pipeline(hyde, gapminder, unwpp).to_csv(
         "output/Population (Gapminder, HYDE & UN).csv", index=False
     )
 
