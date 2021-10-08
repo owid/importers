@@ -57,14 +57,31 @@ def fix_variable_codes(vars: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_description(vars: pd.DataFrame) -> pd.DataFrame:
+    vars = vars.reset_index(drop=True)
     vars["description"] = vars.description.fillna("")
+
+    vars.loc[
+        vars.longpop
+        == "The base unit is the individual (rather than the household). This is equivalent to assuming no sharing of resources within couples.",
+        "longpop",
+    ] = pd.NA
     vars.loc[vars.longpop.notnull(), "description"] = (
         vars.description + "\n" + vars.longpop
     )
+
+    vars["longage"] = vars.longage.str.replace(
+        "individuals of in the", "individuals in the"
+    )
+    vars.loc[
+        vars.longage == "The population is comprised of individuals of all ages.",
+        "longage",
+    ] = pd.NA
     vars.loc[vars.longage.notnull(), "description"] = (
         vars.description + "\n" + vars.longage
     )
+
     vars["description"] = vars.description.str.strip()
+
     return vars.drop(columns=["longpop", "longage"])
 
 
@@ -79,7 +96,7 @@ def clean_sources(vars: pd.DataFrame) -> pd.DataFrame:
     multi_sources = multi_sources[multi_sources["size"] > 1]
     vars.loc[
         vars.code.isin(multi_sources.code), "source"
-    ] = "Data compiled by WID.world from multiple sources. For a complete list of sources, please visit https://wid.world/"
+    ] = "Data compiled by WID.world from multiple sources"
 
     vars["source"] = (
         vars.source.str.replace(r"\[URL_LINK\][^[]+\[.URL_LINK\]", " ", regex=True)
