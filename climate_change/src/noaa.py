@@ -39,7 +39,7 @@ def get_sea_level_url(source_page: str) -> str:
     soup = BeautifulSoup(requests.get(source_page).content, "html.parser")
     links = soup.find_all("a")
     for link in links:
-        if link.text == "download":
+        if link.text == "data":
             source_url = link["href"]
             break
     return source_url
