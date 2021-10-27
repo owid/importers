@@ -1,0 +1,1 @@
+This is a preliminary bulk importer for [the IMF's WEO dataset](https://www.imf.org/external/datamapper/datasets/WEO). As of October 2021, it only generates a grapher-compatible dataset with 1 variable (GDP growth). But this first version could fairly easily be extended to a traditional bulk import for the entire dataset later.
