@@ -511,7 +511,7 @@ class DataValuesCleaner:
 
     @property
     def production_emissions_fname(self) -> str:
-        return "GCB2020v18_MtCO2_flat.csv"
+        return "GCB2021v32_MtCO2_flat.csv"
 
     @property
     def consumption_emissions_fname(self) -> str:

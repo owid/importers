@@ -31,9 +31,7 @@ def download_unofficial() -> None:
     Contains time series from 1750-today.
     """
     mk_inpath()
-    res = requests.get(
-        "https://folk.uio.no/roberan/GCP/data2020/GCB2020v18_MtCO2_flat.zip"
-    )
+    res = requests.get("https://figshare.com/ndownloader/files/30968722")
     zf = zipfile.ZipFile(BytesIO(res.content))
     zf.extractall(os.path.join(DATASET_DIR, "input"))
 
