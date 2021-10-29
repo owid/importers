@@ -596,6 +596,7 @@ class DataValuesCleaner:
             .pipe(self.mk_growth_variables)
             .pipe(self.mk_traded_variables)
             .pipe(self.mk_per_capita_variables)
+            .pipe(self.mk_global_variables)
             .pipe(self.mk_share_variables)
             .pipe(self.mk_cumul_variables)
             .pipe(self.mk_intensity_variables)
@@ -813,14 +814,22 @@ class DataValuesCleaner:
             df[f"{src}_percap"] = df[src] / df["population"]
         return df
 
+    def mk_global_variables(self, df: pd.DataFrame) -> pd.DataFrame:
+        """constructs "global {source} emissions" variables."""
+        self.check_world_sums(df)
+        df_world = (
+            df[df["geo_lvl"] == "country"]
+            .groupby(self.date_col)[self.emission_sources]
+            .sum(min_count=1)
+            .sort_index()
+            .reset_index()
+            .rename(columns={src: f"{src}_global" for src in self.emission_sources})
+        )
+        df = df.merge(df_world, on=self.date_col, how="left", validate="m:1")
+        return df
+
     def mk_share_variables(self, df: pd.DataFrame) -> pd.DataFrame:
         """constructs "share of global emissions" variables."""
-        self.check_world_sums(df)
-        df_world = df.loc[
-            df[self.entity_col] == "World", [self.date_col] + self.emission_sources
-        ].rename(columns={src: f"{src}_global" for src in self.emission_sources})
-        df = df.merge(df_world, on=self.date_col, how="left", validate="m:1")
-
         for src in self.emission_sources:
             df[f"{src}_pct"] = df[src] / df[f"{src}_global"] * 100
             self.variables_to_drop.append(f"{src}_global")
@@ -967,7 +976,7 @@ class DataValuesCleaner:
             world_sums_computed = (
                 df[df["geo_lvl"] == "country"]
                 .groupby(self.date_col)[src]
-                .sum()
+                .sum(min_count=1)
                 .sort_index()
             )
             world_sums_raw = (
@@ -975,6 +984,21 @@ class DataValuesCleaner:
                 .set_index(self.date_col)[src]
                 .sort_index()
             )
+            one_nan = (
+                pd.concat([world_sums_computed, world_sums_raw], axis=1)
+                .isnull()
+                .sum(axis=1)
+                == 1
+            )
+            if one_nan.any():
+                logger.warning(
+                    f"For one or more years in the '{src}' variable, EITHER "
+                    "the global emissions value provided in the raw data is null "
+                    "OR the global emissions value computed by summing all "
+                    "country values is null (but not both). You may want to "
+                    "investigate this discrepancy.\nYears affected: "
+                    f"{world_sums_computed.index[one_nan].astype(int).tolist()}"
+                )
             max_diff = (
                 (world_sums_raw - world_sums_computed).abs() / world_sums_raw
             ).max()
