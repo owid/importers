@@ -260,8 +260,7 @@ class Cleaner:
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                     "additionalInfo": (
                         f"The {DATASET_NAME} dataset is available at "
-                        f"{DATASET_LINK} (1750-2019) and "
-                        "https://doi.org/10.18160/GCP-2020 (1959-2019)."
+                        f"{DATASET_LINK}."
                         "\n\n"
                         f"Full reference for the {self.dataset['name']} "
                         "dataset: Friedlingstein et al, Global Carbon Budget "
