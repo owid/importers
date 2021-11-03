@@ -29,16 +29,33 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to clean the data, useful for just upserting previously cleaned data",
 )
-def main(download_data, clean_data):
+@click.option(
+    "--import_data/--skip_import",
+    default=True,
+    help="Whether or not to import the data to the database",
+)
+@click.option(
+    "--match_vars/--skip_match",
+    default=True,
+    help="Whether or not to match the imported variables to existing variables in database",
+)
+@click.option(
+    "--suggest_charts/--skip_suggest",
+    default=True,
+    help="Whether or not to suggest chart revisions",
+)
+def main(download_data, clean_data, import_data, match_vars, suggest_charts):
     if download_data:
         download.main()
     if clean_data:
         clean.main()
-    import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main()
-
-    suggester = ChartRevisionSuggester(DATASET_DIR)
-    suggester.suggest()
+    if import_data:
+        import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
+    if match_vars:
+        match_variables.main()
+    if suggest_charts:
+        suggester = ChartRevisionSuggester(DATASET_DIR)
+        suggester.suggest()
 
 
 if __name__ == "__main__":
