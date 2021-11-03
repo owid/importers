@@ -106,7 +106,7 @@ class IntRange:
 
 
 def delete_input(dataset_dir: str, keep_paths: List[str] = None) -> None:
-    """deletes all files and folders in `{DATASET_DIR}/input` EXCEPT for any 
+    """deletes all files and folders in `{DATASET_DIR}/input` EXCEPT for any
     file names in `keep_paths`.
 
     Arguments:
