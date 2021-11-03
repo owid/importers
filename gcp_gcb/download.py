@@ -12,10 +12,12 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+KEEP_PATHS = ["National_Carbon_Emissions_2021v0.4.xlsx"]
+
 
 def main() -> None:
     logger.info("Downloading dataset...")
-    delete_input(DATASET_DIR)
+    delete_input(DATASET_DIR, KEEP_PATHS)
     download_official()
     download_unofficial()
 

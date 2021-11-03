@@ -515,7 +515,7 @@ class DataValuesCleaner:
 
     @property
     def consumption_emissions_fname(self) -> str:
-        return "National_Carbon_Emissions_2020v1.0.xlsx"
+        return "National_Carbon_Emissions_2021v0.4.xlsx"
 
     @property
     def population_id(self) -> int:
