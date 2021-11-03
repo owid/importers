@@ -6,7 +6,7 @@ To run the code without downloading the data again:
     python -m un_sdg.main --skip_download
 
 To run the code without downloading or cleaning the data again: 
-    python -m un_sdg.main --skip_download --skip_clean
+    python -m un_sdg.main --skip_download --skip_clean 
 """
 import click
 
