@@ -285,7 +285,6 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     all_series["short_unit"] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
-        print(row)
         data_filtered = pd.DataFrame(
             original_df[
                 (original_df.Indicator == row["Indicator"])
@@ -356,7 +355,6 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                     "original_metadata": None,
                 }
                 variables = variables.append(variable, ignore_index=True)
-                print(table)
                 extract_datapoints(table).to_csv(
                     os.path.join(
                         OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx
