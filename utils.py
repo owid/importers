@@ -105,15 +105,36 @@ class IntRange:
         return [self.min, self.max]
 
 
-def delete_input(dataset_dir: str) -> None:
-    """deletes all files and folders in `{DATASET_DIR}/input`.
+def delete_input(dataset_dir: str, keep_paths: List[str] = None) -> None:
+    """deletes all files and folders in `{DATASET_DIR}/input` EXCEPT for any 
+    file names in `keep_paths`.
 
-    Note: this method deletes all input data and is only intended for use
-    immediately prior to the "download raw data" step.
+    Arguments:
+
+        keep_paths: List[str]. List of subpaths in `{dataset_dir}/input` that
+            you do NOT want deleted. They will be temporarily move to `{dataset_dir}`
+            and then back into `{dataset_dir}/input` after everything else in
+            `{dataset_dir}/input` has been deleted.
+
+    Returns:
+
+        None.
     """
+    if not keep_paths:
+        keep_paths = []
     inpath = os.path.join(dataset_dir, "input")
+    # temporarily moves some files out of the input directory so that they
+    # are not deleted.
+    for path in keep_paths:
+        if os.path.exists(os.path.join(inpath, path)):
+            os.rename(os.path.join(inpath, path), os.path.join(inpath, "..", path))
     if os.path.exists(inpath):
         shutil.rmtree(inpath)
+        os.makedirs(inpath)
+    # moves the kept files back into the input directory.
+    for path in keep_paths:
+        if os.path.exists(os.path.join(inpath, "..", path)):
+            os.rename(os.path.join(inpath, "..", path), os.path.join(inpath, path))
 
 
 def delete_output(dataset_dir: str, keep_paths: List[str] = None) -> None:
