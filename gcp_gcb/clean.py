@@ -511,7 +511,7 @@ class DataValuesCleaner:
 
     @property
     def production_emissions_fname(self) -> str:
-        return "GCB2021v32_MtCO2_flat.csv"
+        return "GCB2021v34_MtCO2_flat.csv"
 
     @property
     def consumption_emissions_fname(self) -> str:
@@ -627,7 +627,7 @@ class DataValuesCleaner:
     ) -> pd.DataFrame:
         """loads production emissions dataframe."""
         df = pd.read_csv(
-            os.path.join(INPATH, self.production_emissions_fname), encoding="latin1"
+            os.path.join(INPATH, self.production_emissions_fname), encoding="utf-8"
         ).drop(columns=["ISO 3166-1 alpha-3", "Per Capita"])
         df.columns = df.columns.str.lower()
         if standardize_entities:
