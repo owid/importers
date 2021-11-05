@@ -12,12 +12,10 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-KEEP_PATHS = ["National_Carbon_Emissions_2021v0.4.xlsx"]
-
 
 def main() -> None:
     logger.info("Downloading dataset...")
-    delete_input(DATASET_DIR, KEEP_PATHS)
+    delete_input(DATASET_DIR)
     download_official()
     download_unofficial()
 
@@ -47,22 +45,22 @@ def download_official() -> None:
     mk_inpath()
     # national data
     res = requests.get(
-        "https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D"
+        "https://data.icos-cp.eu/licence_accept?ids=%5B%22rmU_viZcddCV7LdflaFGN-My%22%5D"
     )
     fname = re.search(
         r'attachment; filename="(.+)"', res.headers["Content-Disposition"]
     ).groups()[0]
-    with open(os.path.join(DATASET_DIR, "input", fname), "wb") as f:
+    with open(os.path.join(INPATH, fname), "wb") as f:
         f.write(res.content)
 
     # global data
     res = requests.get(
-        "https://data.icos-cp.eu/licence_accept?ids=%5B%226QlPjfn_7uuJtAeuGGFXuPwz%22%5D"
+        "https://data.icos-cp.eu/licence_accept?ids=%5B%22axNWlHezpbMiXg1Z1VyFI9Fa%22%5D"
     )
     fname = re.search(
         r'attachment; filename="(.+)"', res.headers["Content-Disposition"]
     ).groups()[0]
-    with open(os.path.join(DATASET_DIR, "input", fname), "wb") as f:
+    with open(os.path.join(INPATH, fname), "wb") as f:
         f.write(res.content)
 
 
