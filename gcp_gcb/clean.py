@@ -223,7 +223,7 @@ class Cleaner:
         sources to the `sources` database table.
         """
         assert self.dataset is not None
-        default_data_publisher_source = "Friedlingstein et al. (2020)"
+        default_data_publisher_source = "Global Carbon Project"
         gdp_source = get_owid_variable_source(DataValuesCleaner().gdp_id)
         population_source = get_owid_variable_source(DataValuesCleaner().population_id)
         # primary_energy_source = get_owid_variable_source(DataValuesCleaner().primary_energy_id)
@@ -260,13 +260,17 @@ class Cleaner:
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                     "additionalInfo": (
                         f"The {DATASET_NAME} dataset is available at "
-                        f"{DATASET_LINK} (1750-2019) and "
-                        "https://doi.org/10.18160/GCP-2020 (1959-2019)."
+                        f"{DATASET_LINK} and https://doi.org/10.5281/zenodo.5569235."
                         "\n\n"
-                        f"Full reference for the {self.dataset['name']} "
-                        "dataset: Friedlingstein et al, Global Carbon Budget "
-                        "2020, Earth Syst. Sci. Data, 12, 3269–3340, "
-                        "https://doi.org/10.5194/essd-12-3269-2020, 2020."
+                        "Full references:"
+                        "\n\n"
+                        "Global Carbon Project. (2021). Supplemental "
+                        "data of Global Carbon Project 2021 (1.0) [Data set]. "
+                        f"Global Carbon Project. {DATASET_LINK}."
+                        "\n\n"
+                        "Andrew, Robbie M., & Peters, Glen P. (2021). The "
+                        "Global Carbon Project's fossil CO2 emissions dataset "
+                        "[Data set]. Zenodo. https://doi.org/10.5281/zenodo.5569235."
                         "\n\n"
                         "Our World in Data have renamed the category "
                         '"bunker fuels" as "International transport" '
@@ -512,11 +516,11 @@ class DataValuesCleaner:
 
     @property
     def production_emissions_fname(self) -> str:
-        return "GCB2020v18_MtCO2_flat.csv"
+        return "GCB2021v34_MtCO2_flat.csv"
 
     @property
     def consumption_emissions_fname(self) -> str:
-        return "National_Carbon_Emissions_2020v1.0.xlsx"
+        return "National_Carbon_Emissions_2021v0.4.xlsx"
 
     @property
     def population_id(self) -> int:
@@ -597,6 +601,7 @@ class DataValuesCleaner:
             .pipe(self.mk_growth_variables)
             .pipe(self.mk_traded_variables)
             .pipe(self.mk_per_capita_variables)
+            .pipe(self.mk_global_variables)
             .pipe(self.mk_share_variables)
             .pipe(self.mk_cumul_variables)
             .pipe(self.mk_intensity_variables)
@@ -627,7 +632,7 @@ class DataValuesCleaner:
     ) -> pd.DataFrame:
         """loads production emissions dataframe."""
         df = pd.read_csv(
-            os.path.join(INPATH, self.production_emissions_fname), encoding="latin1"
+            os.path.join(INPATH, self.production_emissions_fname), encoding="utf-8"
         ).drop(columns=["ISO 3166-1 alpha-3", "Per Capita"])
         df.columns = df.columns.str.lower()
         if standardize_entities:
@@ -814,14 +819,22 @@ class DataValuesCleaner:
             df[f"{src}_percap"] = df[src] / df["population"]
         return df
 
+    def mk_global_variables(self, df: pd.DataFrame) -> pd.DataFrame:
+        """constructs "global {source} emissions" variables."""
+        self.check_world_sums(df)
+        df_world = (
+            df[df["geo_lvl"] == "country"]
+            .groupby(self.date_col)[self.emission_sources]
+            .sum(min_count=1)
+            .sort_index()
+            .reset_index()
+            .rename(columns={src: f"{src}_global" for src in self.emission_sources})
+        )
+        df = df.merge(df_world, on=self.date_col, how="left", validate="m:1")
+        return df
+
     def mk_share_variables(self, df: pd.DataFrame) -> pd.DataFrame:
         """constructs "share of global emissions" variables."""
-        self.check_world_sums(df)
-        df_world = df.loc[
-            df[self.entity_col] == "World", [self.date_col] + self.emission_sources
-        ].rename(columns={src: f"{src}_global" for src in self.emission_sources})
-        df = df.merge(df_world, on=self.date_col, how="left", validate="m:1")
-
         for src in self.emission_sources:
             df[f"{src}_pct"] = df[src] / df[f"{src}_global"] * 100
             self.variables_to_drop.append(f"{src}_global")
@@ -968,7 +981,7 @@ class DataValuesCleaner:
             world_sums_computed = (
                 df[df["geo_lvl"] == "country"]
                 .groupby(self.date_col)[src]
-                .sum()
+                .sum(min_count=1)
                 .sort_index()
             )
             world_sums_raw = (
@@ -976,6 +989,21 @@ class DataValuesCleaner:
                 .set_index(self.date_col)[src]
                 .sort_index()
             )
+            one_nan = (
+                pd.concat([world_sums_computed, world_sums_raw], axis=1)
+                .isnull()
+                .sum(axis=1)
+                == 1
+            )
+            if one_nan.any():
+                logger.warning(
+                    f"For one or more years in the '{src}' variable, EITHER "
+                    "the global emissions value provided in the raw data is null "
+                    "OR the global emissions value computed by summing all "
+                    "country values is null (but not both). You may want to "
+                    "investigate this discrepancy.\nYears affected: "
+                    f"{world_sums_computed.index[one_nan].astype(int).tolist()}"
+                )
             max_diff = (
                 (world_sums_raw - world_sums_computed).abs() / world_sums_raw
             ).max()
