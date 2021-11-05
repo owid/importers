@@ -223,7 +223,7 @@ class Cleaner:
         sources to the `sources` database table.
         """
         assert self.dataset is not None
-        default_data_publisher_source = "Friedlingstein et al. (2020)"
+        default_data_publisher_source = "Global Carbon Project"
         gdp_source = get_owid_variable_source(DataValuesCleaner().gdp_id)
         population_source = get_owid_variable_source(DataValuesCleaner().population_id)
         # primary_energy_source = get_owid_variable_source(DataValuesCleaner().primary_energy_id)
@@ -260,12 +260,17 @@ class Cleaner:
                     "retrievedDate": DATASET_RETRIEVED_DATE,
                     "additionalInfo": (
                         f"The {DATASET_NAME} dataset is available at "
-                        f"{DATASET_LINK}."
+                        f"{DATASET_LINK} and https://doi.org/10.5281/zenodo.5569235."
                         "\n\n"
-                        f"Full reference for the {self.dataset['name']} "
-                        "dataset: Friedlingstein et al, Global Carbon Budget "
-                        "2020, Earth Syst. Sci. Data, 12, 3269–3340, "
-                        "https://doi.org/10.5194/essd-12-3269-2020, 2020."
+                        "Full references:"
+                        "\n\n"
+                        "Global Carbon Project. (2021). Supplemental "
+                        "data of Global Carbon Project 2021 (1.0) [Data set]. "
+                        f"Global Carbon Project. {DATASET_LINK}."
+                        "\n\n"
+                        "Andrew, Robbie M., & Peters, Glen P. (2021). The "
+                        "Global Carbon Project's fossil CO2 emissions dataset "
+                        "[Data set]. Zenodo. https://doi.org/10.5281/zenodo.5569235."
                         "\n\n"
                         "Our World in Data have renamed the category "
                         '"bunker fuels" as "International transport" '
