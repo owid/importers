@@ -10,6 +10,7 @@ PARTS = [
     "education_programs",
     "ethics_principles",
     "gender_skill_ratio",
+    "national_strategies",
 ]
 
 COUNTRY_MAPPING = pd.read_csv("input/countries_standardized.csv")
