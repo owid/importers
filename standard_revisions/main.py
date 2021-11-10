@@ -5,11 +5,12 @@ Usage:
 python -m standard_revisions.main
 """
 
+from standard_revisions import DATASET_DIR
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
 def main():
-    suggester = ChartRevisionSuggester("standard_revisions")
+    suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
 
 
