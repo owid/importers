@@ -7,6 +7,10 @@ To run the code without downloading the data again:
 
 To run the code without downloading or cleaning the data again: 
     python -m un_sdg.main --skip_download --skip_clean 
+
+To just run the chart revision suggester again:
+
+    python -m un_sdg.main --skip_download --skip_clean --skip_import --skip_match
 """
 import click
 
