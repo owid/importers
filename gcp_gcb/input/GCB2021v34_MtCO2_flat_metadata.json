@@ -1,0 +1,108 @@
+{
+	"fields": [
+		{
+			"name": "Country",
+			"title": "Country name",
+			"type": "string"
+		},
+		{
+			"name": "ISO 3166-1 alpha-3",
+			"title": "ISO code",
+			"type": "string"
+		},
+		{
+			"name": "Year",
+			"title": "Year",
+			"note": "In almost all cases this is calendar year",
+			"type": "number"
+		},
+		{
+			"name": "Total",
+			"title": "Total fossil CO2 emissions",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Coal",
+			"title": "Fossil CO2 emissions from Coal",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Oil",
+			"title": "Fossil CO2 emissions from Oil",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Gas",
+			"title": "Fossil CO2 emissions from Gas",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Cement",
+			"title": "Fossil CO2 emissions from Cement",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Flaring",
+			"title": "Fossil CO2 emissions from Flaring",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Other",
+			"title": "Fossil CO2 emissions from Other",
+			"units": "millions of tonnes of CO2",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		},
+		{
+			"name": "Per Capita",
+			"title": "Per capita fossil CO2 emissions",
+			"units": "tonnes of CO2 per capita",
+			"source": "Global Carbon Budget 2021",
+			"organisation": "Global Carbon Project",
+			"version": "2021v34",
+			"type": "number",
+			"licence": "Licensed under Creative Commons Attribution 4.0 International",
+			"citation": "Friedlingstein et al 2020 (DOI: 10.5194/essd-12-3269-2020)"
+		}
+	]
+}

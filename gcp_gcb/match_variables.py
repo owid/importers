@@ -15,7 +15,7 @@ from typing import List, Dict
 import pandas as pd
 
 from db import get_connection
-from gcp_gcb import OUTPATH, CONFIGPATH, DATASET_NAMESPACE
+from gcp_gcb import OUTPATH, CONFIGPATH, DATASET_NAMESPACE, DATASET_NAME
 
 CUSTOM_FNAME = "custom_variable_replacements.json"
 
@@ -157,13 +157,20 @@ def get_datasets(new: bool = True) -> pd.DataFrame:
             WHERE name="{dataset_name}" AND namespace="{DATASET_NAMESPACE}"
         """
     else:
-        with open(os.path.join(CONFIGPATH, "old_datasets.json"), "r") as f:
-            _ids = [str(d["id"]) for d in json.load(f)["datasets"]]
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE id IN ({','.join(_ids)})
+            WHERE (
+                name LIKE "{DATASET_NAME}%" AND 
+                namespace LIKE "{DATASET_NAMESPACE.split('@')[0]}@%" AND 
+                namespace != "{DATASET_NAMESPACE}"
+            )
         """
+        if os.path.exists(os.path.join(CONFIGPATH, "custom_old_datasets.json")):
+            with open(os.path.join(CONFIGPATH, "custom_old_datasets.json"), "r") as f:
+                custom_ids = [str(d["id"]) for d in json.load(f)["datasets"]]
+            if len(custom_ids):
+                query += f" OR id IN ({','.join(custom_ids)})"
     df_datasets = pd.read_sql(query, get_connection())
     return df_datasets
 

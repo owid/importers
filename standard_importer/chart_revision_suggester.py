@@ -351,13 +351,14 @@ class ChartRevisionSuggester:
 
     def _modify_chart_config_map(self, chart_config: dict) -> None:
         """modifies chart config map."""
-        can_modify = (
-            "map" in chart_config
-            and "variableId" in chart_config["map"]
-            and chart_config["map"]["variableId"] in self.old_var_id2new_var_id
-        )
-        if can_modify:
-            old_var_id = chart_config["map"]["variableId"]
+        old_var_id = None
+        if "map" in chart_config:
+            if "variableId" in chart_config["map"]:
+                old_var_id = chart_config["map"]["variableId"]
+            elif len(chart_config["dimensions"]) == 1:
+                old_var_id = chart_config["dimensions"][0]["variableId"]
+
+        if old_var_id is not None and old_var_id in self.old_var_id2new_var_id:
             new_var_id = self.old_var_id2new_var_id[old_var_id]
             chart_config["map"]["variableId"] = new_var_id
             old_range = self._vars_to_range([old_var_id])
