@@ -1,8 +1,7 @@
-import datetime
-
 import pandas as pd
 
 COUNTRY_MAPPING = pd.read_csv("input/countries_standardized.csv")
+POPULATION = pd.read_csv("input/population.csv").drop(columns="Code")
 
 
 def main():
@@ -28,7 +27,7 @@ def main():
                 "education_programs_short",
             ]
         ]
-        .assign(Year=datetime.date.today().year)
+        .assign(Year=2020)
     )
 
     # Standardize counties
@@ -47,6 +46,9 @@ def main():
         columns={"Our World In Data Name": "Entity"}
     )
 
+    # Add per-capita metrics
+    df = df.merge(POPULATION, how="left", validate="one_to_one", on=["Entity", "Year"])
+
     eu_countries = pd.read_csv("input/eu_countries.csv")
     eu = (
         df[df.Entity.isin(eu_countries.Entity)]
@@ -56,6 +58,17 @@ def main():
         .assign(Entity="European Union")
     )
     df = pd.concat([df, eu])
+
+    df["education_programs_bachelor_per_million"] = (
+        df.education_programs_bachelor.div(df.Population).mul(1000000).round(2)
+    )
+    df["education_programs_master_per_million"] = (
+        df.education_programs_master.div(df.Population).mul(1000000).round(2)
+    )
+    df["education_programs_short_per_million"] = (
+        df.education_programs_short.div(df.Population).mul(1000000).round(2)
+    )
+    df = df.drop(columns="Population")
 
     df.to_csv("transformed/education_programs.csv", index=False)
 
