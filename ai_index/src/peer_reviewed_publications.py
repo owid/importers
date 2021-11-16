@@ -10,14 +10,17 @@ def main():
         usecols=[
             "Collaboration Level",
             "Year",
+            "Country Code",
             "Country Name",
             "Number of AI Publications",
         ],
     )
 
+    df.loc[df["Country Code"] == "WLD", "Country Name"] = "World"
+
     df = (
         df[(df["Collaboration Level"] == "ALL") & (df["Country Name"].notnull())]
-        .drop(columns="Collaboration Level")
+        .drop(columns=["Collaboration Level", "Country Code"])
         .rename(
             columns={
                 "Country Name": "Entity",
@@ -43,10 +46,9 @@ def main():
     )
 
     world_total = (
-        df.groupby("Year")
-        .sum()
-        .reset_index()
+        df[df.Entity == "World"]
         .rename(columns={"ai_publications_absolute": "world"})
+        .drop(columns="Entity")
     )
 
     eu_countries = pd.read_csv("input/eu_countries.csv")
@@ -63,6 +65,7 @@ def main():
     df["ai_publications_share_world"] = (df.ai_publications_absolute / df.world).round(
         4
     )
+    df.loc[df.Entity == "World", "ai_publications_share_world"] = pd.NA
     df = df.drop(columns="world")
 
     df.to_csv("transformed/peer_reviewed_publications.csv", index=False)
