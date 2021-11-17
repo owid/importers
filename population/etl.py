@@ -153,30 +153,53 @@ def prepare_dataset(df: pd.DataFrame) -> pd.DataFrame:
     df.loc[
         df.Year <= datetime.date.today().year, "Population (historical estimates)"
     ] = df.Population
-    df[["Population (historical estimates)", "Population", "Year"]] = df[
-        ["Population (historical estimates)", "Population", "Year"]
-    ].astype("Int64")
+    df.loc[
+        df.Year > datetime.date.today().year, "Population (future projections)"
+    ] = df.Population
+    df[
+        [
+            "Population (historical estimates)",
+            "Population (future projections)",
+            "Population",
+            "Year",
+        ]
+    ] = df[
+        [
+            "Population (historical estimates)",
+            "Population (future projections)",
+            "Population",
+            "Year",
+        ]
+    ].astype(
+        "Int64"
+    )
     df = df.rename(
         columns={
             "Population": "Population (historical estimates and future projections)"
         }
-    )
-    df = df[
+    )[
         [
             "Entity",
             "Year",
             "Population (historical estimates)",
             "Population (historical estimates and future projections)",
+            "Population (future projections)",
         ]
     ]
 
     # Add a metric "% of world population"
     world_pop = df[df.Entity == "World"][
-        ["Year", "Population (historical estimates)"]
-    ].rename(columns={"Population (historical estimates)": "world_population"})
+        ["Year", "Population (historical estimates and future projections)"]
+    ].rename(
+        columns={
+            "Population (historical estimates and future projections)": "world_population"
+        }
+    )
     df = df.merge(world_pop, on="Year", how="left")
-    df["Share of world population (historical estimates)"] = (
-        df["Population (historical estimates)"].div(df.world_population)
+    df["Share of world population"] = (
+        df["Population (historical estimates and future projections)"].div(
+            df.world_population
+        )
     ).round(4)
 
     df = df.drop(columns="world_population").sort_values(["Entity", "Year"])
