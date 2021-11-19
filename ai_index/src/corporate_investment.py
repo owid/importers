@@ -32,13 +32,6 @@ def main():
             index=["Year", "Entity"], columns="investment_type", values="dollars"
         )
         .reset_index()
-        .rename(
-            columns={
-                "Merger/Acquisition": "funding_ma",
-                "Private Investment": "funding_private",
-                "Public Offering": "funding_public",
-            }
-        )
         .fillna(0)
     )
 
@@ -58,8 +51,29 @@ def main():
         columns={"Our World In Data Name": "Entity"}
     )
 
-    world = df.groupby("Year").sum().reset_index().assign(Entity="World")
-    df = pd.concat([df, world])
+    # Import global figures
+    world = pd.read_excel(
+        "input/NetBase Quid - 2021 AI Index Report.xlsx",
+        sheet_name="Event Type",
+        usecols="A:G",
+        skiprows=1,
+        nrows=4,
+    )
+    world = (
+        world.set_index("Event Type")
+        .transpose()
+        .reset_index()
+        .rename(columns={"index": "Year"})
+        .assign(Entity="World")
+    )
+    df = pd.concat([df, world]).rename(
+        columns={
+            "Merger/Acquisition": "funding_ma",
+            "Private Investment": "funding_private",
+            "Public Offering": "funding_public",
+            "Minority Stake": "funding_minority",
+        }
+    )
 
     eu_countries = pd.read_csv("input/eu_countries.csv")
     eu = (
@@ -69,7 +83,7 @@ def main():
         .reset_index()
         .assign(Entity="European Union")
     )
-    df = pd.concat([df, eu])
+    df = pd.concat([df, eu]).fillna(0)
 
     df["Year"] = df.Year.astype(int)
 
