@@ -14,7 +14,16 @@ def ocean_ph():
         .rename(columns={"pHcalc_insitu": "ocean_ph"})
         .assign(location="Hawaii")
     )
-    df["date"] = pd.to_datetime(df.date).dt.date
+
+    df["date"] = pd.to_datetime(df.date)
+    desired_index = pd.date_range(start=df.date.min(), end=df.date.max(), freq="1D")
+    df = df.set_index("date")
+    df = df.reindex(df.index.union(desired_index))
+    df["ocean_ph_yearly_average"] = (
+        df.ocean_ph.interpolate(method="time").rolling(365).mean().round(4)
+    )
+
+    df = df.dropna(subset=["ocean_ph"]).reset_index().rename(columns={"index": "date"})
     df.to_csv("ready/hawaii_ocean-ph.csv", index=False)
 
 

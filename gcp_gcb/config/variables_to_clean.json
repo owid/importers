@@ -348,7 +348,7 @@
       "name": "Cumulative CO2 emissions",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -361,7 +361,7 @@
       "name": "Share of global cumulative CO2 emissions",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) since 1750, measured as a percentage of global production-based emissions of CO2 since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions has been calculated by Our World in Data using global CO2 emissions provided in the Global Carbon Budget dataset. Global emissions include all country emissions as well as emissions from international aviation and shipping.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions has been calculated by Our World in Data using global CO2 emissions provided in the Global Carbon Budget dataset. Global emissions include all country emissions as well as emissions from international aviation and shipping.",
       "display": {"name": "Share of global cumulative CO₂ emissions"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -372,7 +372,7 @@
       "name": "Cumulative CO2 emissions from coal",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from coal since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from coal since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from coal"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -385,7 +385,7 @@
       "name": "Share of global cumulative CO2 emissions from coal",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from coal since 1750, measured as a percentage of global production-based emissions of CO2 from coal since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from coal has been calculated by Our World in Data using global CO2 emissions from coal provided in the Global Carbon Budget dataset. Global coal emissions include all country emissions.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from coal since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from coal since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from coal has been calculated by Our World in Data using global CO2 emissions from coal provided in the Global Carbon Budget dataset. Global coal emissions include all country emissions.",
       "display": {"name": "Share of global cumulative CO₂ emissions from coal"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -396,7 +396,7 @@
       "name": "Cumulative CO2 emissions from oil",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from oil since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from oil since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from oil"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -409,7 +409,7 @@
       "name": "Share of global cumulative CO2 emissions from oil",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from oil since 1750, measured as a percentage of global production-based emissions of CO2 from oil since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from oil has been calculated by Our World in Data using global CO2 emissions from oil provided in the Global Carbon Budget dataset. Global oil emissions include all country emissions as well as emissions from international aviation and shipping.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from oil since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from oil since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from oil has been calculated by Our World in Data using global CO2 emissions from oil provided in the Global Carbon Budget dataset. Global oil emissions include all country emissions as well as emissions from international aviation and shipping.",
       "display": {"name": "Share of global cumulative CO₂ emissions from oil"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -420,7 +420,7 @@
       "name": "Cumulative CO2 emissions from gas",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from gas since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from gas since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from gas"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -433,7 +433,7 @@
       "name": "Share of global cumulative CO2 emissions from gas",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from gas since 1750, measured as a percentage of global production-based emissions of CO2 from gas since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from gas has been calculated by Our World in Data using global CO2 emissions from gas provided in the Global Carbon Budget dataset. Global gas emissions include all country emissions.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from gas since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from gas since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from gas has been calculated by Our World in Data using global CO2 emissions from gas provided in the Global Carbon Budget dataset. Global gas emissions include all country emissions.",
       "display": {"name": "Share of global cumulative CO₂ emissions from gas"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -444,7 +444,7 @@
       "name": "Cumulative CO2 emissions from flaring",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from flaring since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from flaring since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from flaring"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -457,7 +457,7 @@
       "name": "Share of global cumulative CO2 emissions from flaring",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from flaring since 1750, measured as a percentage of global production-based emissions of CO2 from flaring since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from flaring has been calculated by Our World in Data using global CO2 emissions from flaring provided in the Global Carbon Budget dataset. Global flaring emissions include all country emissions.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from flaring since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from flaring since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from flaring has been calculated by Our World in Data using global CO2 emissions from flaring provided in the Global Carbon Budget dataset. Global flaring emissions include all country emissions.",
       "display": {"name": "Share of global cumulative CO₂ emissions from flaring"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -468,7 +468,7 @@
       "name": "Cumulative CO2 emissions from cement",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from cement since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from cement since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from cement"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -481,7 +481,7 @@
       "name": "Share of global cumulative CO2 emissions from cement",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from cement since 1750, measured as a percentage of global production-based emissions of CO2 from cement since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from cement has been calculated by Our World in Data using global CO2 emissions from cement provided in the Global Carbon Budget dataset. Global cement emissions include all country emissions.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from cement since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from cement since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from cement has been calculated by Our World in Data using global CO2 emissions from cement provided in the Global Carbon Budget dataset. Global cement emissions include all country emissions.",
       "display": {"name": "Share of global cumulative CO₂ emissions from cement"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -492,7 +492,7 @@
       "name": "Cumulative CO2 emissions from other industry",
       "unit": "tonnes",
       "shortUnit": "t",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from other industry sources since 1750, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from other industry sources since the first year of data availability, measured in tonnes. This is based on territorial emissions, which do not account for emissions embedded in traded goods.",
       "display": {"name": "Cumulative CO₂ emissions from other industry"},
       "cleaningMetadata": {
         "sourceKey": "derived",
@@ -505,7 +505,7 @@
       "name": "Share of global cumulative CO2 emissions from other industry",
       "unit": "%",
       "shortUnit": "%",
-      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from other industry sources since 1750, measured as a percentage of global production-based emissions of CO2 from other industry sources since 1750. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from other industry sources has been calculated by Our World in Data using global CO2 emissions from other industry sources provided in the Global Carbon Budget dataset. Global emissions from other industry sources include all country emissions.",
+      "description": "Cumulative production-based emissions of carbon dioxide (CO2) from other industry sources since the first year of data availability, measured as a percentage of global cumulative production-based emissions of CO2 from other industry sources since the first year of data availability. This is based on territorial emissions, which do not account for emissions embedded in traded goods. Each country's share of global CO2 emissions from other industry sources has been calculated by Our World in Data using global CO2 emissions from other industry sources provided in the Global Carbon Budget dataset. Global emissions from other industry sources include all country emissions.",
       "display": {"name": "Share of global cumulative CO₂ emissions from other industry"},
       "cleaningMetadata": {
         "sourceKey": "derived",

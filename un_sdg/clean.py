@@ -248,7 +248,9 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     original_df.columns = new_columns
 
     entity2owid_name = (
-        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
+        pd.read_csv(
+            os.path.join(CONFIGPATH, "standardized_entity_names.csv"), encoding="utf-8"
+        )
         .set_index("country_code")
         .squeeze()
         .to_dict()
@@ -266,6 +268,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     original_df["country"] = original_df["GeoAreaName"].apply(
         lambda x: entity2owid_name[x]
     )
+
     original_df["Units_long"] = original_df["Units"].apply(
         lambda x: unit_description[x]
     )

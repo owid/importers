@@ -28,7 +28,6 @@ Armenia,Armenia
 Australia and New Zealand,Australia and New Zealand
 Melanesia,Melanesia
 Belgium,Belgium
-Polynesia,Polynesia
 Central and Southern Asia,Central and Southern Asia
 Bhutan,Bhutan
 Bolivia (Plurinational State of),Bolivia
@@ -106,7 +105,8 @@ Japan,Japan
 Kazakhstan,Kazakhstan
 Jordan,Jordan
 Kenya,Kenya
-Republic of Korea,Korea
+Republic of Korea,South Korea
+Kosovo,Kosovo
 Kyrgyzstan,Kyrgyzstan
 Lao People's Democratic Republic,Laos
 Latin America and the Caribbean,Latin America and the Caribbean
@@ -132,11 +132,12 @@ Republic of Moldova,Moldova
 Montenegro,Montenegro
 Morocco,Morocco
 Mozambique,Mozambique
-Europe and Northern America,Europe and North America
+Europe and Northern America,Europe and Northern America
 "Developed regions (Europe, Cyprus, Israel, Northern America, Japan, Australia & New Zealand)","Developed regions (Europe, Cyprus, Israel, Northern America, Japan, Australia & New Zealand)"
 Developing regions,Developing regions
 Namibia,Namibia
 Eastern Asia (excluding Japan),Eastern Asia (excluding Japan)
+Nauru,Nauru
 Nepal,Nepal
 Netherlands,Netherlands
 Oceania (exc. Australia and New Zealand),Oceania (exc. Australia and New Zealand)
@@ -145,7 +146,7 @@ Nicaragua,Nicaragua
 Niger,Niger
 Nigeria,Nigeria
 Norway,Norway
-Micronesia (Federated States of),Micronesia (region)
+Micronesia (Federated States of),Micronesia (country)
 Pakistan,Pakistan
 Panama,Panama
 Papua New Guinea,Papua New Guinea
@@ -155,7 +156,7 @@ Philippines,Philippines
 Poland,Poland
 Portugal,Portugal
 Guinea-Bissau,Guinea-Bissau
-Timor-Leste,Timor-Leste
+Timor-Leste,Timor
 Romania,Romania
 Russian Federation,Russia
 Rwanda,Rwanda
@@ -168,6 +169,7 @@ Sierra Leone,Sierra Leone
 Slovakia,Slovakia
 Viet Nam,Vietnam
 Slovenia,Slovenia
+Somalia,Somalia
 South Africa,South Africa
 Zimbabwe,Zimbabwe
 Small island developing States (SIDS),Small island developing States (SIDS)
@@ -214,6 +216,7 @@ Eritrea,Eritrea
 Palau,Palau
 Antigua and Barbuda,Antigua and Barbuda
 Bahamas,Bahamas
+Polynesia,Polynesia
 Brunei Darussalam,Brunei
 Other non-specified areas in Eastern Asia,Other non-specified areas in Eastern Asia
 Cuba,Cuba
@@ -245,11 +248,10 @@ Andorra,Andorra
 Barbados,Barbados
 British Virgin Islands,British Virgin Islands
 Cayman Islands,Cayman Islands
-"China, Hong Kong Special Administrative Region",Hong Kong
+"China, Hong Kong Special Administrative Region","China, Hong Kong Special Administrative Region"
 Kuwait,Kuwait
 Libya,Libya
 "China, Macao Special Administrative Region",Macao
-Nauru,Nauru
 Curaçao,Curacao
 Sint Maarten (Dutch part),Sint Maarten (Dutch part)
 New Caledonia,New Caledonia
@@ -257,9 +259,8 @@ Qatar,Qatar
 Isle of Man,Isle of Man
 Oman,Oman
 American Samoa,American Samoa
-Micronesia,Micronesia (country)
+Micronesia,Micronesia
 Mayotte,Mayotte
-Faroe Islands,Faeroe Islands
 Falkland Islands (Malvinas),Falkland Islands
 French Polynesia,French Polynesia
 Gibraltar,Gibraltar
@@ -268,53 +269,59 @@ Guam,Guam
 Democratic People's Republic of Korea,North Korea
 Monaco,Monaco
 Montserrat,Montserrat
-"Bonaire, Sint Eustatius and Saba",Bonaire Sint Eustatius and Saba
 Niue,Niue
 Northern Mariana Islands,Northern Mariana Islands
 Réunion,Reunion
+Saint Barthélemy,Saint Barthlemy
 Saint Helena,Saint Helena
-Somalia,Somalia
 Tokelau,Tokelau
 Channel Islands,Channel Islands
 Wallis and Futuna Islands,Wallis and Futuna
-Kosovo,Kosovo
+Low income economies (WB),Low income economies (WB)
+Lower middle economies (WB),Lower middle economies (WB)
+Low and middle income economies (WB),Low and middle income economies (WB)
+Upper middle economies (WB),Upper middle economies (WB)
+WTO Developing Member States,WTO Developing Member States
 Holy See,Vatican
 Southern Asia (excluding India),Southern Asia (excluding India)
 Eastern Asia (excluding Japan and China),Eastern Asia (excluding Japan and China)
+International Centers (FAO),International Centers (FAO)
+Regional Centres (FAO),Regional Centres (FAO)
+Faroe Islands,Faeroe Islands
+ODA residual,ODA residual
+European Union,European Union
+Åland Islands,Aland Islands
+Netherlands Antilles,Netherlands Antilles
+Serbia and Montenegro [former],Serbia and Montenegro [former]
+Jersey,Jersey
+Western Sahara,Western Sahara
 British Indian Ocean Territory,British Indian Ocean Territory
 Christmas Island,Christmas Island
 Cocos (Keeling) Islands,Cocos Islands
 South Georgia and the South Sandwich Islands,South Georgia and the South Sandwich Islands
-Åland Islands,Aland Islands
 French Southern Territories,French Southern Territories
 Heard Island and McDonald Islands,Heard Island and McDonald Islands
 Norfolk Island,Norfolk Island
-United States Minor Outlying Islands,United States Minor Outlying Islands
 Pitcairn,Pitcairn
-Saint Barthélemy,Saint Barthlemy
-Western Sahara,Western Sahara
 Svalbard and Jan Mayen Islands,Svalbard and Jan Mayen
 Guernsey,Guernsey
-Jersey,Jersey
-International Centers (FAO),International Centers (FAO)
-Regional Centres (FAO),Regional Centres (FAO)
-ODA residual,ODA residual
-European Union,European Union
-Netherlands Antilles,Netherlands Antilles
-Serbia and Montenegro [former],Serbia and Montenegro [former]
+"Bonaire, Sint Eustatius and Saba",Bonaire Sint Eustatius and Saba
 Residual/unallocated ODA: Central Asia and Southern Asia,Residual/unallocated ODA: Central Asia and Southern Asia
 Residual/unallocated ODA: Eastern and South-eastern Asia,Residual/unallocated ODA: Eastern and South-eastern Asia
 Residual/unallocated ODA: Latin America and the Caribbean,Residual/unallocated ODA: Latin America and the Caribbean
 Residual/unallocated ODA: Oceania excl. Aus. and N. Zealand,Residual/unallocated ODA: Oceania excl. Aus. and N. Zealand
 Residual/unallocated ODA: Sub-Saharan Africa,Residual/unallocated ODA: Sub-Saharan Africa
 Residual/unallocated ODA: Western Asia and Northern Africa,Residual/unallocated ODA: Western Asia and Northern Africa
+United States Minor Outlying Islands,United States Minor Outlying Islands
 Other non-OECD Asia,Other non-OECD Asia
 Other non-OECD Oceania,Other non-OECD Oceania
 Other non-OECD Americas,Other non-OECD Americas
 Areas not elsewhere specified,Areas not elsewhere specified
+Other Africa (IEA),Other Africa (IEA)
 World Marine Bunkers,World Marine Bunkers
 World Aviation Bunkers,World Aviation Bunkers
 Latin America,Latin America
+European Union (EU) Institutions,European Union (EU) Institutions
 "FAO Major Fishing Area: Pacific, Eastern Central","FAO Major Fishing Area: Pacific, Eastern Central"
 "FAO Major Fishing Area: Pacific, Northeast","FAO Major Fishing Area: Pacific, Northeast"
 "FAO Major Fishing Area: Pacific, Northwest","FAO Major Fishing Area: Pacific, Northwest"
@@ -336,12 +343,5 @@ Iraq (Kurdistan Region),Iraq (Kurdistan Region)
 United Kingdom (England and Wales),United Kingdom (England and Wales)
 United Kingdom (Northern Ireland),United Kingdom (Northern Ireland)
 United Kingdom (Scotland),United Kingdom (Scotland)
-European Union (EU) Institutions,European Union (EU) Institutions
 Yugoslavia [former],Yugoslavia [former]
 Belgium and Luxembourg,Belgium and Luxembourg
-Other Africa (IEA),Other Africa (IEA)
-Low income economies (WB),Low income economies (WB)
-Lower middle economies (WB),Lower middle economies (WB)
-Low and middle income economies (WB),Low and middle income economies (WB)
-Upper middle economies (WB),Upper middle economies (WB)
-WTO Developing Member States,WTO Developing Member States

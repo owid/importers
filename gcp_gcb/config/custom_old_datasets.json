@@ -1,0 +1,15 @@
+{
+  "meta": "Array of old datasets, where any charts using variables in these old datasets should have the variable ids be replaced in the chart config by corresponding variables in the new dataset.",
+  "datasets": [
+    {
+      "id": 5242,
+      "name": "CO2 emissions (Aggregate dataset (2021))",
+      "namespace": "owid"
+    },
+    {
+      "id": 5252,
+      "name": "CO2 emissions, zero filled (Aggregate dataset (2021))",
+      "namespace": "owid"
+    }
+  ]
+}

@@ -1,9 +1,8 @@
 import os
 import re
-import zipfile
 import logging
-from io import BytesIO
 import requests
+import pandas as pd
 
 from gcp_gcb import DATASET_DIR, INPATH
 from utils import delete_input
@@ -31,11 +30,23 @@ def download_unofficial() -> None:
     Contains time series from 1750-today.
     """
     mk_inpath()
-    res = requests.get(
-        "https://folk.uio.no/roberan/GCP/data2020/GCB2020v18_MtCO2_flat.zip"
+
+    # retrieves data
+    url_data = "https://zenodo.org/record/5569235/files/GCB2021v34_MtCO2_flat.csv"
+    fname_data = url_data.split("/")[-1]
+    pd.read_csv(url_data, encoding="ISO-8859-1").to_csv(
+        os.path.join(INPATH, fname_data), index=False
     )
-    zf = zipfile.ZipFile(BytesIO(res.content))
-    zf.extractall(os.path.join(DATASET_DIR, "input"))
+
+    # retrieves variable metadata
+    url_meta = (
+        "https://zenodo.org/record/5569235/files/GCB2021v34_MtCO2_flat_metadata.json"
+    )
+    fname_meta = url_meta.split("/")[-1]
+    res = requests.get(url_meta)
+    assert res.ok
+    with open(os.path.join(INPATH, fname_meta), "w") as f:
+        f.write(res.text)
 
 
 def download_official() -> None:
@@ -47,22 +58,22 @@ def download_official() -> None:
     mk_inpath()
     # national data
     res = requests.get(
-        "https://data.icos-cp.eu/licence_accept?ids=%5B%22xUUehljs1oTazlGlmigAhvfe%22%5D"
+        "https://data.icos-cp.eu/licence_accept?ids=%5B%22rmU_viZcddCV7LdflaFGN-My%22%5D"
     )
     fname = re.search(
         r'attachment; filename="(.+)"', res.headers["Content-Disposition"]
     ).groups()[0]
-    with open(os.path.join(DATASET_DIR, "input", fname), "wb") as f:
+    with open(os.path.join(INPATH, fname), "wb") as f:
         f.write(res.content)
 
     # global data
     res = requests.get(
-        "https://data.icos-cp.eu/licence_accept?ids=%5B%226QlPjfn_7uuJtAeuGGFXuPwz%22%5D"
+        "https://data.icos-cp.eu/licence_accept?ids=%5B%22axNWlHezpbMiXg1Z1VyFI9Fa%22%5D"
     )
     fname = re.search(
         r'attachment; filename="(.+)"', res.headers["Content-Disposition"]
     ).groups()[0]
-    with open(os.path.join(DATASET_DIR, "input", fname), "wb") as f:
+    with open(os.path.join(INPATH, fname), "wb") as f:
         f.write(res.content)
 
 
