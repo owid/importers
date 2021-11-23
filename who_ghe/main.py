@@ -12,10 +12,9 @@ import click
 
 from who_ghe import DATASET_DIR, DATASET_NAMESPACE
 
-from who_ghe import download, clean, match_variables
+from who_ghe import download, clean
 
 from standard_importer import import_dataset
-from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
 @click.command()
@@ -35,10 +34,6 @@ def main(download_data, clean_data):
     if clean_data:
         clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main()
-
-    suggester = ChartRevisionSuggester(DATASET_DIR)
-    suggester.suggest()
 
 
 if __name__ == "__main__":

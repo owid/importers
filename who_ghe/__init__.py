@@ -12,3 +12,5 @@ DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
 INPATH = os.path.join(DATASET_DIR, "input")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 INFILE = os.path.join(INPATH, "who_ghe", "_all_countries.csv")
+ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
+CONFIGPATH = os.path.join(DATASET_DIR, "config")
