@@ -135,7 +135,7 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
 def create_variables_datapoints(
     data: pd.DataFrame, configpath: str, outpath: str
 ) -> None:
-    ### make the data long and create the variables.
+    ### make the data long and create the variables column
 
     dfm = pd.melt(
         data,
@@ -222,6 +222,7 @@ def create_variables_datapoints(
     var_list = dfm["variable"].drop_duplicates()
 
     variable_idx = 0
+    variables = pd.DataFrame()
     for var in tqdm(var_list):
         var_df = dfm[dfm["variable"] == var]
         variable = {
@@ -250,6 +251,8 @@ def create_variables_datapoints(
         )
         print(var)
         variable_idx += 1
+
+    variables.to_csv(os.path.join(outpath, "variables.csv"), index=False)
 
 
 def create_distinct_entities(configpath: str, outpath: str) -> None:

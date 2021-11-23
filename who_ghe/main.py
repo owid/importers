@@ -35,6 +35,7 @@ def main(download_data, clean_data):
         clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
 
+# dataset is new to grapher so doesn't require match_variables or ChartSuggester
 
 if __name__ == "__main__":
     main()
