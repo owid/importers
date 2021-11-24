@@ -15,7 +15,6 @@ INPATH = os.path.join(
     "importers",
     "ihme_gbd_cause",
     "input",
-    "csv/",
 )
 # INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
