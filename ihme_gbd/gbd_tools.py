@@ -8,6 +8,7 @@ import json
 import numpy as np
 from tqdm import tqdm
 from pathlib import Path
+import feather
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -44,7 +45,7 @@ def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
     We standardise the column names here as this can vary based on what is selected from the source.
     We select out only the columns we need for the rest of the import in order to keep the size of the file down.
     """
-    if not os.path.isfile(os.path.join(inpath, "all_data_filtered.csv")):
+    if not os.path.isfile(os.path.join(inpath, "all_data_filtered.ftr")):
         all_files = [i for i in glob.glob(os.path.join(inpath, "csv", "*.csv"))]
         df_from_each_file = (pd.read_csv(f, sep=",") for f in all_files)
         df_merged = pd.concat(df_from_each_file, ignore_index=True)
@@ -63,7 +64,7 @@ def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
         )
         df_merged = df_merged[column_fields]
         # df_merged = df_merged[df_merged['sex_name'].isin(sex_list) & df_merged['age_name'].isin(age_list) & df_merged['metric_name'].isin(metric_list)]
-        df_merged.to_csv(os.path.join(inpath, "all_data_filtered.csv"), index=False)
+        df_merged.to_feather(os.path.join(inpath, "all_data_filtered.ftr"))
         print("Saving all data from raw csv files")
     if not os.path.isfile(entfile):
         df_merged[["location_name"]].drop_duplicates().dropna().rename(
@@ -122,10 +123,10 @@ def get_variables(inpath: str) -> None:
     """Outputting a list of each unique combination of measure, cause, sex, age and metric.
     We add this variable as a column name to the filtered dataset so that we can access it
     and iterate through variables in the next step."""
-    if not os.path.isfile(os.path.join(inpath, "all_data_with_var.csv")):
+    if not os.path.isfile(os.path.join(inpath, "all_data_with_var.ftr")):
         var_list = []
-        df_merged = pd.read_csv(
-            os.path.join(inpath, "all_data_filtered.csv")
+        df_merged = pd.read_feather(
+            os.path.join(inpath, "all_data_filtered.ftr")
         )  # working through the data 1mil rows at a time
         df_merged["variable_name"] = [
             p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
@@ -141,8 +142,8 @@ def get_variables(inpath: str) -> None:
             ["measure_name", "sex_name", "age_name", "cause_name"], axis=1
         )
         var_list = df_merged["variable_name"].drop_duplicates()
-        var_list.to_csv(os.path.join(inpath, "all_variables.csv"), index=False)
-        df_merged.to_csv(os.path.join(inpath, "all_data_with_var.csv"), index=False)
+        var_list.to_feather(os.path.join(inpath, "all_variables.ftr"))
+        df_merged.to_feather(os.path.join(inpath, "all_data_with_var.ftr"))
 
 
 def create_variables_datapoints(
@@ -151,12 +152,12 @@ def create_variables_datapoints(
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
-    var_list = pd.read_csv(os.path.join(inpath, "all_variables.csv"))[
+    var_list = pd.read_feather(os.path.join(inpath, "all_variables.ftr"))[
         "variable_name"
     ].to_list()
     fields = column_fields  # this is a very large dataframe but we only need five columns from it so we'll just read those ones in
 
-    df = pd.read_csv(os.path.join(inpath, "all_data_with_var.csv"), usecols=fields)
+    df = pd.read_csv(os.path.join(inpath, "all_data_with_var.ftr"), usecols=fields)
 
     variable_idx = 0
     variables = pd.DataFrame()
