@@ -8,7 +8,20 @@ DATASET_DIR = os.path.join("ihme_gbd", os.path.dirname(__file__).split("/")[-1])
 NAMESPACE = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{NAMESPACE}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
-INPATH = os.path.join(DATASET_DIR, "input")
+CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
+INPATH = os.path.join(
+    CURRENT_PATH,
+    "..",
+    "..",
+    "..",
+    ".." "mnt",
+    "owid_staging_neurath_temp",
+    "importers",
+    "ihme_gbd_cause",
+    "input",
+    "csv",
+)
+# INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 DATASET_RETRIEVED_DATE = "2021-09-22"

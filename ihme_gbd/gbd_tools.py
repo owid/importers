@@ -6,6 +6,7 @@ import zipfile
 import io
 import json
 import numpy as np
+import numexpr as ne
 from tqdm import tqdm
 from pathlib import Path
 
@@ -38,7 +39,9 @@ def download_data(url: str, inpath: str) -> None:
                 break
 
 
-def load_and_filter(inpath: str, entfile: str, column_fields: tuple, dimensions: dict) -> None:
+def load_and_filter(
+    inpath: str, entfile: str, column_fields: tuple, dimensions: dict
+) -> None:
     """
     Loading and merging all of the input csv files into one large csv files.
     We standardise the column names here as this can vary based on what is selected from the source.
@@ -62,9 +65,11 @@ def load_and_filter(inpath: str, entfile: str, column_fields: tuple, dimensions:
             }
         )
         df_merged = df_merged[column_fields]
-       # df_merged = df_merged[df_merged['sex_name'].isin(sex_list) & df_merged['age_name'].isin(age_list) & df_merged['metric_name'].isin(metric_list)]
+        # df_merged = df_merged[df_merged['sex_name'].isin(sex_list) & df_merged['age_name'].isin(age_list) & df_merged['metric_name'].isin(metric_list)]
 
-        df_merged.loc[(df_merged[list(dimensions)] == pd.Series(dimensions)).all(axis=1)]
+        df_merged.loc[
+            (df_merged[list(dimensions)] == pd.Series(dimensions)).all(axis=1)
+        ]
         df_merged.to_csv(os.path.join(inpath, "all_data_filtered.csv"), index=False)
         print("Saving all data from raw csv files")
     if not os.path.isfile(entfile):
@@ -139,6 +144,9 @@ def get_variables(inpath: str) -> None:
                 df_merged["metric_name"],
             )
         ]
+        df_merged = df_merged.drop(
+            ["measure_name", "sex_name", "age_name", "cause_name"], axis=1
+        )
         var_list = df_merged["variable_name"].drop_duplicates()
         var_list.to_csv(os.path.join(inpath, "all_variables.csv"), index=False)
         df_merged.to_csv(os.path.join(inpath, "all_data_with_var.csv"), index=False)
@@ -169,8 +177,15 @@ def create_variables_datapoints(
         .to_dict()
     )
 
+    df["location_name"] = df["location_name"].apply(  # move this out of loop
+        lambda x: entity2owid_name[x]
+    )
+
     for var in tqdm(var_list):
-        var_df = df[df["variable_name"] == var]
+        # var_df = df[df["variable_name"] == var]
+        var_df = df.query("variable_name == var")
+        vn = df.variable_name.values
+        var_df = df[ne.evaluate("vn == var")]
 
         variable = {
             "dataset_id": int(0),
@@ -191,10 +206,6 @@ def create_variables_datapoints(
             "original_metadata": None,
         }
         variables = variables.append(variable, ignore_index=True)
-
-        var_df["location_name"] = var_df["location_name"].apply(
-            lambda x: entity2owid_name[x]
-        )
 
         if var_df["metric_name"].iloc[0] == "Percent":
             var_df["val"] = var_df["val"] * 100
