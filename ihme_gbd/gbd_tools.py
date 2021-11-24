@@ -6,7 +6,6 @@ import zipfile
 import io
 import json
 import numpy as np
-import numexpr as ne
 from tqdm import tqdm
 from pathlib import Path
 
@@ -182,11 +181,9 @@ def create_variables_datapoints(
     )
 
     for var in tqdm(var_list):
-        # var_df = df[df["variable_name"] == var]
-        var_df = df.query("variable_name == var")
-        vn = df.variable_name.values
-        var_df = df[ne.evaluate("vn == var")]
-
+        var_df = df.query(
+            'variable_name == "%s"' % var
+        )  # faster than df[df["variable_name"] == var]
         variable = {
             "dataset_id": int(0),
             "source_id": int(0),
@@ -207,7 +204,7 @@ def create_variables_datapoints(
         }
         variables = variables.append(variable, ignore_index=True)
 
-        if var_df["metric_name"].iloc[0] == "Percent":
+        if var_df.loc[0, "metric_name"] == "Percent":
             var_df["val"] = var_df["val"] * 100
 
         var_df[["location_name", "year", "val"]].rename(
