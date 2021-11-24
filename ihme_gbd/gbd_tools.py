@@ -38,9 +38,7 @@ def download_data(url: str, inpath: str) -> None:
                 break
 
 
-def load_and_filter(
-    inpath: str, entfile: str, column_fields: tuple, dimensions: dict
-) -> None:
+def load_and_filter(inpath: str, entfile: str, column_fields: tuple) -> None:
     """
     Loading and merging all of the input csv files into one large csv files.
     We standardise the column names here as this can vary based on what is selected from the source.
@@ -65,10 +63,6 @@ def load_and_filter(
         )
         df_merged = df_merged[column_fields]
         # df_merged = df_merged[df_merged['sex_name'].isin(sex_list) & df_merged['age_name'].isin(age_list) & df_merged['metric_name'].isin(metric_list)]
-
-        df_merged.loc[
-            (df_merged[list(dimensions)] == pd.Series(dimensions)).all(axis=1)
-        ]
         df_merged.to_csv(os.path.join(inpath, "all_data_filtered.csv"), index=False)
         print("Saving all data from raw csv files")
     if not os.path.isfile(entfile):

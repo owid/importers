@@ -31,6 +31,7 @@ fields = [
 
 def main() -> None:
     print(CURRENT_PATH)
+    print(INPATH)
     load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=fields)
     create_datasets(
         dataset_name=DATASET_NAME,
