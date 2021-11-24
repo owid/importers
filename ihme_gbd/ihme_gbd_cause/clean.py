@@ -19,6 +19,16 @@ from ihme_gbd.gbd_tools import (
     load_and_filter,
 )
 
+filter_fields = [
+    "measure_name",
+    "location_name",
+    "sex_name",
+    "age_name",
+    "cause_name",
+    "metric_name",
+    "year",
+    "val",
+]
 
 fields = [
     "variable_name",
@@ -32,7 +42,7 @@ fields = [
 def main() -> None:
     print(CURRENT_PATH)
     print(INPATH)
-    load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=fields)
+    load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=filter_fields)
     create_datasets(
         dataset_name=DATASET_NAME,
         dataset_authors=DATASET_AUTHORS,

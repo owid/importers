@@ -46,16 +46,6 @@ from ihme_gbd.ihme_gbd_cause import INPATH, OUTPATH, CONFIGPATH, URL_STUB
 from ihme_gbd.gbd_tools import make_dirs, download_data
 
 # names of columns we are interested in
-fields = [
-    "measure_name",
-    "location_name",
-    "sex_name",
-    "age_name",
-    "cause_name",
-    "metric_name",
-    "year",
-    "val",
-]
 
 
 def main() -> None:
