@@ -6,6 +6,7 @@ from ihme_gbd.ihme_gbd_mental_health import (
     OUTPATH,
     DATASET_RETRIEVED_DATE,
     CONFIGPATH,
+    ENTFILE,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -14,6 +15,7 @@ from ihme_gbd.gbd_tools import (
     get_variables,
     create_variables_datapoints,
     create_distinct_entities,
+    load_and_filter,
 )
 
 
@@ -27,6 +29,7 @@ fields = [
 
 
 def main() -> None:
+    load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=fields)
     create_datasets(
         dataset_name=DATASET_NAME,
         dataset_authors=DATASET_AUTHORS,
