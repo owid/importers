@@ -10,13 +10,6 @@ DATASET_NAMESPACE = f"{NAMESPACE}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 INPATH = os.path.join(
-    CURRENT_PATH,
-    "..",
-    "..",
-    "..",
-    "..",
-    "..",
-    "..",
     "mnt",
     "owid_staging_neurath_temp",
     "importers",
