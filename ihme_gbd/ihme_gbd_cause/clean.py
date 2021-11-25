@@ -13,7 +13,6 @@ from ihme_gbd.ihme_gbd_cause import (
 from ihme_gbd.gbd_tools import (
     create_datasets,
     create_sources,
-    get_variables,
     create_variables_datapoints,
     create_distinct_entities,
     load_and_filter,
@@ -25,14 +24,6 @@ filter_fields = [
     "sex_name",
     "age_name",
     "cause_name",
-    "metric_name",
-    "year",
-    "val",
-]
-
-fields = [
-    "variable_name",
-    "location_name",
     "metric_name",
     "year",
     "val",
@@ -50,10 +41,7 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    get_variables(inpath=INPATH)
-    create_variables_datapoints(
-        inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH, column_fields=fields
-    )
+    create_variables_datapoints(inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
 

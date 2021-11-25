@@ -1,3 +1,4 @@
+from typing import Tuple
 import requests
 import os
 import glob
@@ -119,45 +120,32 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     df_sources.to_csv(os.path.join(outpath, "sources.csv"), index=False)
 
 
-def get_variables(inpath: str) -> None:
+def get_variables(df: pd.DataFrame) -> Tuple[pd.DataFrame, list]:
     """Outputting a list of each unique combination of measure, cause, sex, age and metric.
     We add this variable as a column name to the filtered dataset so that we can access it
     and iterate through variables in the next step."""
-    if not os.path.isfile(os.path.join(inpath, "all_data_with_var.ftr")):
-        var_list = []
-        df_merged = pd.read_feather(
-            os.path.join(inpath, "all_data_filtered.ftr")
-        )  # working through the data 1mil rows at a time
-        df_merged["variable_name"] = [
-            p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
-            for p1, p2, p3, p4, p5 in zip(
-                df_merged["measure_name"],
-                df_merged["cause_name"],
-                df_merged["sex_name"],
-                df_merged["age_name"],
-                df_merged["metric_name"],
-            )
-        ]
-        df_merged = df_merged.drop(
-            ["measure_name", "sex_name", "age_name", "cause_name"], axis=1
+    df["variable_name"] = [
+        p1 + " - " + p2 + " - Sex: " + p3 + " - Age: " + p4 + " (" + p5 + ")"
+        for p1, p2, p3, p4, p5 in zip(
+            df["measure_name"],
+            df["cause_name"],
+            df["sex_name"],
+            df["age_name"],
+            df["metric_name"],
         )
-        var_list = df_merged["variable_name"].drop_duplicates()
-        var_list.to_feather(os.path.join(inpath, "all_variables.ftr"))
-        df_merged.to_feather(os.path.join(inpath, "all_data_with_var.ftr"))
+    ]
+    df_fil = df.drop(["measure_name", "sex_name", "age_name", "cause_name"], axis=1)
+    var_list = df_fil["variable_name"].drop_duplicates().to_list()
+    return (df_fil, var_list)
 
 
-def create_variables_datapoints(
-    inpath: str, configpath: str, outpath: str, column_fields: tuple
-) -> None:
+def create_variables_datapoints(inpath: str, configpath: str, outpath: str) -> None:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
-    var_list = pd.read_feather(os.path.join(inpath, "all_variables.ftr"))[
-        "variable_name"
-    ].to_list()
-    fields = column_fields  # this is a very large dataframe but we only need five columns from it so we'll just read those ones in
+    df_all = pd.read_feather(os.path.join(inpath, "all_data_filtered.ftr"))
 
-    df = pd.read_csv(os.path.join(inpath, "all_data_with_var.ftr"), usecols=fields)
+    df, var_list = get_variables(df_all)
 
     variable_idx = 0
     variables = pd.DataFrame()
