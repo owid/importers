@@ -8,14 +8,17 @@ from ihme_gbd.ihme_gbd_cause import (
     CONFIGPATH,
     ENTFILE,
     CURRENT_PATH,
+    DATAPOINTS_DIR,
 )
 
 from ihme_gbd.gbd_tools import (
+    create_datapoints,
     create_datasets,
     create_sources,
-    create_variables_datapoints,
+    create_variables,
     create_distinct_entities,
-    load_and_filter,
+    find_countries,
+    delete_datapoints,
 )
 
 filter_fields = [
@@ -33,7 +36,8 @@ filter_fields = [
 def main() -> None:
     print(CURRENT_PATH)
     print(INPATH)
-    load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=filter_fields)
+    delete_datapoints(DATAPOINTS_DIR)
+    find_countries(inpath=INPATH, entfile=ENTFILE)
     create_datasets(
         dataset_name=DATASET_NAME,
         dataset_authors=DATASET_AUTHORS,
@@ -41,7 +45,8 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    create_variables_datapoints(inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
+    vars = create_variables(inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
+    create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
 
