@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import shutil
 
+
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     """
     Creating the necessary directories for the input, output and config files
@@ -17,7 +18,7 @@ def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     Path(configpath).mkdir(parents=True, exist_ok=True)
 
 
-def delete_datapoints(datapoints_dir)-> None:
+def delete_datapoints(datapoints_dir) -> None:
     if os.path.exists(datapoints_dir):
         shutil.rmtree(datapoints_dir)
     os.makedirs(datapoints_dir)
@@ -129,7 +130,7 @@ def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame
 
     vars_out = []
     for path in paths:
-        print(path)
+        print("creating variables.csv")
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
         df["name"] = create_var_name(df)
         df_t = df.drop(
@@ -148,7 +149,7 @@ def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame
     df_t["max"] = df_t["max"].astype("str")
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
-    df_t = df_t.drop_duplicates()
+    # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
     return df_t
@@ -157,6 +158,7 @@ def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame
 def create_datapoints(
     vars: pd.DataFrame, inpath: str, configpath: str, outpath: str
 ) -> None:
+    print("creating datapoints")
     paths = []
     d = os.path.join(inpath, "csv")
     for path in os.listdir(d):

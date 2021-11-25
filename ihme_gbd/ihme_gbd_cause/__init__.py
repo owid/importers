@@ -9,14 +9,14 @@ NAMESPACE = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{NAMESPACE}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
-# INPATH = os.path.join(
-#    "/mnt",
-#    "owid_staging_neurath_temp",
-#    "importers",
-#    "ihme_gbd_cause",
-#    "input",
-# )
-INPATH = os.path.join(DATASET_DIR, "input")
+INPATH = os.path.join(
+    "/mnt",
+    "owid_staging_neurath_temp",
+    "importers",
+    "ihme_gbd_cause",
+    "input",
+)
+# INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 DATASET_RETRIEVED_DATE = "2021-09-22"
