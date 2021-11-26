@@ -21,7 +21,7 @@ from ihme_gbd.gbd_tools import (
     delete_datapoints,
 )
 
-filter_fields = [
+FILTER_FIELDS = [
     "measure_name",
     "location_name",
     "sex_name",
@@ -32,12 +32,14 @@ filter_fields = [
     "val",
 ]
 
+COUNTRY_COL = "location_name"
+
 
 def main() -> None:
     print(CURRENT_PATH)
     print(INPATH)
     delete_datapoints(DATAPOINTS_DIR)
-    find_countries(inpath=INPATH, entfile=ENTFILE)
+    find_countries(country_col=COUNTRY_COL, inpath=INPATH, entfile=ENTFILE)
     create_datasets(
         dataset_name=DATASET_NAME,
         dataset_authors=DATASET_AUTHORS,
@@ -45,7 +47,7 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
+    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 

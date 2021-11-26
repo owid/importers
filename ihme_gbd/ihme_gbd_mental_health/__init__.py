@@ -14,3 +14,5 @@ ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 DATASET_RETRIEVED_DATE = "2021-10-05"
 URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/4e6e42bccc2497b99d4709602fb0c4b8_files/IHME-GBD_2019_DATA-4e6e42bc-"
+DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
+CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))

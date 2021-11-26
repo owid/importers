@@ -1,4 +1,3 @@
-from numpy.ma import outer
 import requests
 import os
 import pandas as pd
@@ -7,6 +6,7 @@ import io
 import json
 from pathlib import Path
 import shutil
+import re
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -43,7 +43,7 @@ def download_data(url: str, inpath: str) -> None:
                 break
 
 
-def find_countries(inpath: str, entfile: str) -> None:
+def find_countries(country_col: str, inpath: str, entfile: str) -> None:
     paths = []
     d = os.path.join(inpath, "csv")
     for path in os.listdir(d):
@@ -53,11 +53,11 @@ def find_countries(inpath: str, entfile: str) -> None:
 
     all_countries = []
     for path in paths:
-        countries = pd.read_csv(path, usecols=["location_name"]).drop_duplicates()
+        countries = pd.read_csv(path, usecols=[country_col]).drop_duplicates()
         all_countries.append(countries)
 
     all_count_cat = pd.concat(all_countries)
-    all_count_cat.drop_duplicates().rename(columns={"location_name": "Country"}).to_csv(
+    all_count_cat.drop_duplicates().rename(columns={country_col: "Country"}).to_csv(
         entfile, index=False
     )
 
@@ -106,7 +106,7 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     df_sources.to_csv(os.path.join(outpath, "sources.csv"), index=False)
 
 
-def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame:
+def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
@@ -119,27 +119,28 @@ def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame
         if os.path.isfile(full_path):
             paths.append(full_path)
 
-    fields = [
-        "measure_name",
-        "sex_name",
-        "age_name",
-        "cause_name",
-        "metric_name",
-        "year",
-    ]
+    r = re.compile(r"measure|sex|age|cause|metric|year")
+
+    fields = list(filter(r.match, filter_fields))
+
+    rd = re.compile(r"measure|sex|age|cause")
+
+    field_drop = list(filter(rd.match, fields))
 
     vars_out = []
-    print("creating variables.csv")
+    print("Creating variables.csv")
     for path in paths:
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
         df["name"] = create_var_name(df)
-        df_t = df.drop(
-            ["measure_name", "cause_name", "sex_name", "age_name"], axis=1
-        ).drop_duplicates()
+        df_t = df.drop(field_drop, axis=1).drop_duplicates()
         df_t["dataset_id"] = int(0)
         df_t["source_id"] = int(0)
         df_t[["description", "code", "coverage", "display", "original_metadata"]] = None
-        df_t = df_t.rename(columns={"metric_name": "unit"})
+        if "metric_name" in df_t.columns:
+            df_t = df_t.rename(columns={"metric_name": "unit"})
+        if "metric" in df_t.columns:
+            df_t = df_t.rename(columns={"metric": "unit"})
+        assert "unit" in df_t.columns
         df_t["short_unit"] = df_t["unit"].map(units_dict)
         vars_out.append(df_t)
 
@@ -178,9 +179,14 @@ def create_datapoints(
         df = pd.read_csv(path)
         df["name"] = create_var_name(df)
         df_m = df.merge(vars[["name", "id"]], on="name")
-        df_m = df_m[["location_name", "year", "val", "id"]].rename(
-            columns={"location_name": "country", "val": "value"}
-        )
+        if "location_name" in df_m.columns:
+            df_m = df_m[["location_name", "year", "val", "id"]].rename(
+                columns={"location_name": "country", "val": "value"}
+            )
+        if "location" in df_m.columns:
+            df_m = df_m[["location", "year", "val", "id"]].rename(
+                columns={"location": "country", "val": "value"}
+            )
         df_m["country"] = df_m["country"].map(entity2owid_name)
         df_g = df_m.groupby("id")
         for name, group in df_g:
@@ -215,16 +221,32 @@ def create_distinct_entities(configpath: str, outpath: str) -> None:
 
 
 def create_var_name(df: pd.DataFrame) -> pd.Series:
-    df["name"] = (
-        df["measure_name"]
-        + " - "
-        + df["cause_name"]
-        + " - Sex: "
-        + df["sex_name"]
-        + " - Age: "
-        + df["age_name"]
-        + " ("
-        + df["metric_name"]
-        + ")"
-    )
+
+    if "measure_name" in df.columns:
+        df["name"] = (
+            df["measure_name"]
+            + " - "
+            + df["cause_name"]
+            + " - Sex: "
+            + df["sex_name"]
+            + " - Age: "
+            + df["age_name"]
+            + " ("
+            + df["metric_name"]
+            + ")"
+        )
+    if "measure" in df.columns:
+        df["name"] = (
+            df["measure"]
+            + " - "
+            + df["cause"]
+            + " - Sex: "
+            + df["sex"]
+            + " - Age: "
+            + df["age"]
+            + " ("
+            + df["metric"]
+            + ")"
+        )
+    assert "name" in df.columns
     return df["name"]
