@@ -129,8 +129,8 @@ def create_variables(inpath: str, configpath: str, outpath: str) -> pd.DataFrame
     ]
 
     vars_out = []
+    print("creating variables.csv")
     for path in paths:
-        print("creating variables.csv")
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
         df["name"] = create_var_name(df)
         df_t = df.drop(
