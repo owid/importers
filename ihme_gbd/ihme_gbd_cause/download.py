@@ -31,14 +31,14 @@
 #
 #    Context: Cause
 #
+#    Sex:
+#    - Both
+#
 #    Location:
 #    - select all countries
 #    and then also:
 #    - All "higher level" districts, e.g. Sub-Saharan Africa
 #    - Also England, Scotland, Wales & Northern Ireland
-#
-#    Sex:
-#    - Both
 #
 
 
