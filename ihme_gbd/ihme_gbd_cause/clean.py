@@ -22,17 +22,17 @@ from ihme_gbd.gbd_tools import (
 )
 
 FILTER_FIELDS = [
-    "measure_name",
-    "location_name",
-    "sex_name",
-    "age_name",
-    "cause_name",
-    "metric_name",
+    "measure",
+    "location",
+    "sex",
+    "age",
+    "cause",
+    "metric",
     "year",
     "val",
 ]
 
-COUNTRY_COL = "location_name"
+COUNTRY_COL = "location"
 
 
 def main() -> None:
