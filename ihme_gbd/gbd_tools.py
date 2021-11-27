@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import shutil
 import re
+import glob
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -22,6 +23,18 @@ def delete_datapoints(datapoints_dir) -> None:
     if os.path.exists(datapoints_dir):
         shutil.rmtree(datapoints_dir)
     os.makedirs(datapoints_dir)
+
+
+def list_input_files(inpath: str) -> list:
+    paths = []
+    d = os.path.join(inpath, "csv")
+    for path in os.listdir(d):
+        print(path)
+        full_path = os.path.join(d, path)
+        if os.path.isfile(full_path):
+            if full_path.endswith(".csv"):
+                paths.append(full_path)
+    return paths
 
 
 def download_data(url: str, inpath: str) -> None:
@@ -44,15 +57,12 @@ def download_data(url: str, inpath: str) -> None:
 
 
 def find_countries(country_col: str, inpath: str, entfile: str) -> None:
-    paths = []
-    d = os.path.join(inpath, "csv")
-    for path in os.listdir(d):
-        full_path = os.path.join(d, path)
-        if os.path.isfile(full_path):
-            paths.append(full_path)
+
+    paths = list_input_files(inpath)
 
     all_countries = []
     for path in paths:
+        print(path)
         countries = pd.read_csv(path, usecols=[country_col]).drop_duplicates()
         all_countries.append(countries)
 
@@ -112,12 +122,7 @@ def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataF
 
     units_dict = {"Percent": "%", "Rate": "", "Number": ""}
 
-    paths = []
-    d = os.path.join(inpath, "csv")
-    for path in os.listdir(d):
-        full_path = os.path.join(d, path)
-        if os.path.isfile(full_path):
-            paths.append(full_path)
+    paths = list_input_files(inpath)
 
     r = re.compile(r"measure|sex|age|cause|metric|year")
 
@@ -159,13 +164,8 @@ def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataF
 def create_datapoints(
     vars: pd.DataFrame, inpath: str, configpath: str, outpath: str
 ) -> None:
-    print("creating datapoints")
-    paths = []
-    d = os.path.join(inpath, "csv")
-    for path in os.listdir(d):
-        full_path = os.path.join(d, path)
-        if os.path.isfile(full_path):
-            paths.append(full_path)
+    print("Creating datapoints")
+    paths = list_input_files(inpath)
 
     entity2owid_name = (
         pd.read_csv(os.path.join(configpath, "standardized_entity_names.csv"))
