@@ -177,6 +177,11 @@ def create_datapoints(
         print(path)
         df = pd.read_csv(path)
         df["name"] = create_var_name(df)
+
+        df["val"][df["metric"] == "Percent"] = (
+            df["val"][df["metric"] == "Percent"] * 100
+        )
+
         df_m = df.merge(vars[["name", "id"]], on="name")
         if "location_name" in df_m.columns:
             df_m = df_m[["location_name", "year", "val", "id"]].rename(
@@ -187,6 +192,7 @@ def create_datapoints(
                 columns={"location": "country", "val": "value"}
             )
         df_m["country"] = df_m["country"].map(entity2owid_name)
+
         df_g = df_m.groupby("id")
         for name, group in df_g:
             if os.path.isfile(
