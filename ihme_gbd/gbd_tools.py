@@ -29,7 +29,6 @@ def list_input_files(inpath: str) -> list:
     paths = []
     d = os.path.join(inpath, "csv")
     for path in os.listdir(d):
-        print(path)
         full_path = os.path.join(d, path)
         if os.path.isfile(full_path):
             if full_path.endswith(".csv"):
