@@ -6,27 +6,41 @@ from ihme_gbd.ihme_gbd_mental_health import (
     OUTPATH,
     DATASET_RETRIEVED_DATE,
     CONFIGPATH,
+    ENTFILE,
+    CURRENT_PATH,
+    DATAPOINTS_DIR,
 )
 
 from ihme_gbd.gbd_tools import (
+    create_datapoints,
     create_datasets,
     create_sources,
-    get_variables,
-    create_variables_datapoints,
+    create_variables,
     create_distinct_entities,
+    find_countries,
+    delete_datapoints,
 )
 
 
-fields = [
-    "variable_name",
-    "location_name",
-    "metric_name",
+FILTER_FIELDS = [
+    "measure",
+    "location",
+    "sex",
+    "age",
+    "cause",
+    "metric",
     "year",
     "val",
 ]
 
+COUNTRY_COL = "location"
+
 
 def main() -> None:
+    print(CURRENT_PATH)
+    print(INPATH)
+    delete_datapoints(DATAPOINTS_DIR)
+    find_countries(country_col=COUNTRY_COL, inpath=INPATH, entfile=ENTFILE)
     create_datasets(
         dataset_name=DATASET_NAME,
         dataset_authors=DATASET_AUTHORS,
@@ -34,10 +48,8 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    get_variables(inpath=INPATH)
-    create_variables_datapoints(
-        inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH, column_fields=fields
-    )
+    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
+    create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
 

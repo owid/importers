@@ -31,37 +31,26 @@
 #
 #    Context: Cause
 #
+#    Sex:
+#    - Both
+#
 #    Location:
 #    - select all countries
 #    and then also:
 #    - All "higher level" districts, e.g. Sub-Saharan Africa
 #    - Also England, Scotland, Wales & Northern Ireland
 #
-#    Sex:
-#    - Both
-#
 
 
-from ihme_gbd.ihme_gbd_cause import INPATH, OUTPATH, ENTFILE, CONFIGPATH, URL_STUB
-from ihme_gbd.gbd_tools import make_dirs, download_data, load_and_filter
+from ihme_gbd.ihme_gbd_cause import INPATH, OUTPATH, CONFIGPATH, URL_STUB
+from ihme_gbd.gbd_tools import make_dirs, download_data
 
 # names of columns we are interested in
-fields = [
-    "measure_name",
-    "location_name",
-    "sex_name",
-    "age_name",
-    "cause_name",
-    "metric_name",
-    "year",
-    "val",
-]
 
 
 def main() -> None:
     make_dirs(inpath=INPATH, outpath=OUTPATH, configpath=CONFIGPATH)
     download_data(url=URL_STUB, inpath=INPATH)
-    load_and_filter(inpath=INPATH, entfile=ENTFILE, column_fields=fields)
 
 
 if __name__ == "__main__":
