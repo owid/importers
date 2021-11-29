@@ -8,8 +8,27 @@ DATASET_DIR = os.path.join("ihme_gbd", os.path.dirname(__file__).split("/")[-1])
 NAMESPACE = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{NAMESPACE}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
-INPATH = os.path.join(DATASET_DIR, "input")
+if os.path.isdir(
+    os.path.join(
+        "/mnt",
+        "owid_staging_neurath_temp",
+        "importers",
+        "ihme_gbd_cause",
+        "input",
+    )
+):
+    INPATH = os.path.join(
+        "/mnt",
+        "owid_staging_neurath_temp",
+        "importers",
+        "ihme_gbd_cause",
+        "input",
+    )
+else:
+    INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 DATASET_RETRIEVED_DATE = "2021-09-22"
-URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/6bc81b0cecef147c44df55608fe573f3_files/IHME-GBD_2019_DATA-6bc81b0c-"
+URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/90cb407770760529c678968bcc371908_files/IHME-GBD_2019_DATA-90cb4077-"  # link to data without number.z
+DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
+CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))

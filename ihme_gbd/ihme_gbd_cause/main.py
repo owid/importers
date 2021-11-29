@@ -5,7 +5,7 @@ The download step is fairly manual and needs some setting up before running. Mor
 Usage:
     python -m ihme_gbd.ihme_gbd_cause.main
 
-    python -m ihme_gbd.ihme_gbd_cause.main --skip_download
+    python -m ihme_gbd.ihme_gbd_cause.main --skip_download --skip_clean --skip_import
 """
 import click
 import re
