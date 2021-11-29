@@ -61,7 +61,6 @@ def find_countries(country_col: str, inpath: str, entfile: str) -> None:
 
     all_countries = []
     for path in paths:
-        print(path)
         countries = pd.read_csv(path, usecols=[country_col]).drop_duplicates()
         all_countries.append(countries)
 
