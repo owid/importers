@@ -9,9 +9,15 @@ Usage:
 """
 import click
 import re
-from ihme_gbd.ihme_gbd_cause import DATASET_DIR, DATASET_NAMESPACE, NAMESPACE, OUTPATH
+from ihme_gbd.ihme_gbd_cause import (
+    DATASET_DIR,
+    DATASET_NAMESPACE,
+    NAMESPACE,
+    OUTPATH,
+    CLEAN_ALL_VARIABLES,
+)
 
-from ihme_gbd.ihme_gbd_cause import download, clean
+from ihme_gbd.ihme_gbd_cause import download, clean, init_variables_to_clean
 from ihme_gbd import match_variables
 
 from standard_importer import import_dataset
@@ -37,6 +43,8 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 def main(download_data, clean_data, import_data):
     if download_data:
         download.main()
+    if not CLEAN_ALL_VARIABLES:
+        init_variables_to_clean.main()
     if clean_data:
         clean.main()
     if import_data:

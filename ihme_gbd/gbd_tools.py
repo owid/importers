@@ -114,6 +114,24 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     df_sources.to_csv(os.path.join(outpath, "sources.csv"), index=False)
 
 
+def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
+
+    paths = list_input_files(inpath)
+
+    r = re.compile(r"measure|sex|age|cause|metric|year")
+
+    fields = list(filter(r.match, filter_fields))
+
+    vars_out = []
+    for path in paths:
+        df = pd.read_csv(path, usecols=fields).drop_duplicates()
+        df["name"] = create_var_name(df)
+        vars_out.append(df["name"])
+
+    vars = pd.concat(vars_out)
+    return vars
+
+
 def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""

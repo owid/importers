@@ -32,3 +32,14 @@ DATASET_RETRIEVED_DATE = "2021-09-22"
 URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/90cb407770760529c678968bcc371908_files/IHME-GBD_2019_DATA-90cb4077-"  # link to data without number.z
 DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
+CLEAN_ALL_VARIABLES = False
+FILTER_FIELDS = [
+    "measure",
+    "location",
+    "sex",
+    "age",
+    "cause",
+    "metric",
+    "year",
+    "val",
+]

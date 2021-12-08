@@ -9,6 +9,7 @@ from ihme_gbd.ihme_gbd_cause import (
     ENTFILE,
     CURRENT_PATH,
     DATAPOINTS_DIR,
+    FILTER_FIELDS,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -21,16 +22,6 @@ from ihme_gbd.gbd_tools import (
     delete_datapoints,
 )
 
-FILTER_FIELDS = [
-    "measure",
-    "location",
-    "sex",
-    "age",
-    "cause",
-    "metric",
-    "year",
-    "val",
-]
 
 COUNTRY_COL = "location"
 
