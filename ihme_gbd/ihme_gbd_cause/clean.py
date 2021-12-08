@@ -1,4 +1,5 @@
 from ihme_gbd.ihme_gbd_cause import (
+    CLEAN_ALL_VARIABLES,
     INPATH,
     DATASET_NAME,
     DATASET_AUTHORS,
@@ -38,7 +39,12 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
+    vars = create_variables(
+        inpath=INPATH,
+        filter_fields=FILTER_FIELDS,
+        outpath=OUTPATH,
+        clean_all_vars=CLEAN_ALL_VARIABLES,
+    )
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 

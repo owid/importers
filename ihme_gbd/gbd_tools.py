@@ -9,6 +9,8 @@ import shutil
 import re
 import glob
 
+from ihme_gbd.ihme_gbd_cause import CONFIGPATH
+
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     """
@@ -129,10 +131,13 @@ def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
         vars_out.append(df["name"])
 
     vars = pd.concat(vars_out)
+
     return vars
 
 
-def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataFrame:
+def create_variables(
+    inpath: str, filter_fields: list, outpath: str, clean_all_vars: bool
+) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
@@ -148,22 +153,34 @@ def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataF
 
     field_drop = list(filter(rd.match, fields))
 
+    f = open(os.path.join(CONFIGPATH, "variables_to_clean.json"))
+    ch_vars = json.load(f)
+    ch_vars = ch_vars["variables"]
+
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
         df["name"] = create_var_name(df)
-        df_t = df.drop(field_drop, axis=1).drop_duplicates()
-        df_t["dataset_id"] = int(0)
-        df_t["source_id"] = int(0)
-        df_t[["description", "code", "coverage", "display", "original_metadata"]] = None
-        if "metric_name" in df_t.columns:
-            df_t = df_t.rename(columns={"metric_name": "unit"})
-        if "metric" in df_t.columns:
-            df_t = df_t.rename(columns={"metric": "unit"})
-        assert "unit" in df_t.columns
-        df_t["short_unit"] = df_t["unit"].map(units_dict)
-        vars_out.append(df_t)
+        if not clean_all_vars:
+            df = df[df["name"].isin(ch_vars)]
+        if (
+            df.shape[0]
+            > 0  # check there are some rows left after the previous if statement
+        ):
+            df_t = df.drop(field_drop, axis=1).drop_duplicates()
+            df_t["dataset_id"] = int(0)
+            df_t["source_id"] = int(0)
+            df_t[
+                ["description", "code", "coverage", "display", "original_metadata"]
+            ] = None
+            if "metric_name" in df_t.columns:
+                df_t = df_t.rename(columns={"metric_name": "unit"})
+            if "metric" in df_t.columns:
+                df_t = df_t.rename(columns={"metric": "unit"})
+            assert "unit" in df_t.columns
+            df_t["short_unit"] = df_t["unit"].map(units_dict)
+            vars_out.append(df_t)
 
     df = pd.concat(vars_out)
     df_t = df.join(df.groupby("name")["year"].agg(["min", "max"]), on="name")
