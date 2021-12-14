@@ -1,0 +1,121 @@
+{
+    "meta": {
+        "notes": "This file contains an array of WHO GHO variables to upsert to SQL. Any variables NOT in this array will be ignored."
+    },
+    "variables": [
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_DALYNUM",
+                "IndicatorName": "Disability-adjusted life years (DALYs)"
+            },
+            "name": "Disability-adjusted life years (DALYs)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_DALYNUM",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Disability-adjusted life years (DALYs)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_DALYRATE",
+                "IndicatorName": "Disability-adjusted life years (DALYs) (per 100 000 population)"
+            },
+            "name": "Disability-adjusted life years (DALYs) (per 100 000 population)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_DALYRATE",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Disability-adjusted life years (DALYs) (per 100 000 population)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_YLDNUM",
+                "IndicatorName": "Years of healthy life lost due to disability (YLDs)"
+            },
+            "name": "Years of healthy life lost due to disability (YLDs)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_YLDNUM",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Years of healthy life lost due to disability (YLDs)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_YLDRATE",
+                "IndicatorName": "Years of healthy life lost due to disability (YLDs) (per 100 000 population)"
+            },
+            "name": "Years of healthy life lost due to disability (YLDs) (per 100 000 population)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_YLDRATE",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Years of healthy life lost due to disability (YLDs) (per 100 000 population)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_YLLNUM",
+                "IndicatorName": "Years of life lost from mortality (YLLs)"
+            },
+            "name": "Years of life lost from mortality (YLLs)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_YLLNUM",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Years of life lost from mortality (YLLs)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "GHE_YLLRATE",
+                "IndicatorName": "Years of life lost from mortality (YLLs) (per 100 000 population)"
+            },
+            "name": "Years of life lost from mortality (YLLs) (per 100 000 population)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "GHE_YLLRATE",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Years of life lost from mortality (YLLs) (per 100 000 population)",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        }
+    ]
+}

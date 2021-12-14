@@ -1,0 +1,237 @@
+{
+    "meta": {
+        "notes": "This file contains an array of WHO GHO variables to upsert to SQL. Any variables NOT in this array will be ignored."
+    },
+    "variables": [
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MDG_0000000007",
+                "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
+            },
+            "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MDG_0000000007",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Child mortality rate",
+                "unit": "%",
+                "shortUnit": "%",
+                "numDecimalPlaces": 1,
+                "conversionFactor": 0.1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MDG_0000000001",
+                "IndicatorName": "Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)"
+            },
+            "name": "Infant mortality rate (probability of dying between birth and age 1 per 1000 live births)",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MDG_0000000001",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Infant mortality rate",
+                "unit": "%",
+                "shortUnit": "%",
+                "numDecimalPlaces": 1,
+                "conversionFactor": 0.1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MDG_0000000026",
+                "IndicatorName": "Maternal mortality ratio (per 100 000 live births)"
+            },
+            "name": "Maternal mortality ratio (per 100 000 live births)",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MDG_0000000026",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Maternal mortality ratio",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "WHOSIS_000001",
+                "IndicatorName": "Life expectancy at birth (years)"
+            },
+            "name": "Life expectancy at birth (years)",
+            "unit": "years",
+            "shortUnit": "years",
+            "description": null,
+            "code": "WHOSIS_000001",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Life expectancy at birth",
+                "unit": "years",
+                "shortUnit": "years",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "WHS4_100",
+                "IndicatorName": "Diphtheria tetanus toxoid and pertussis (DTP3) immunization coverage among 1-year-olds (%)"
+            },
+            "name": "Diphtheria tetanus toxoid and pertussis (DTP3) immunization coverage among 1-year-olds (%)",
+            "unit": "%",
+            "shortUnit": "%",
+            "description": null,
+            "code": "WHS4_100",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Share of one-year-olds vaccinated against diphtheria, pertussis, and tetanus (DTP3)",
+                "unit": "%",
+                "shortUnit": "%",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "WHS4_544",
+                "IndicatorName": "Polio (Pol3) immunization coverage among 1-year-olds (%)"
+            },
+            "name": "Polio (Pol3) immunization coverage among 1-year-olds (%)",
+            "unit": "%",
+            "shortUnit": "%",
+            "description": null,
+            "code": "WHS4_544",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Share of one-year-olds vaccinated against polio (Pol3)",
+                "unit": "%",
+                "shortUnit": "%",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "WHS8_110",
+                "IndicatorName": "Measles-containing-vaccine first-dose (MCV1) immunization coverage among 1-year-olds (%)"
+            },
+            "name": "Measles-containing-vaccine first-dose (MCV1) immunization coverage among 1-year-olds (%)",
+            "unit": "%",
+            "shortUnit": "%",
+            "description": null,
+            "code": "WHS8_110",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Share of one-year-olds vaccinated against measles (MCV1)",
+                "unit": "%",
+                "shortUnit": "%",
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MALARIA001",
+                "IndicatorName": "Malaria - number of reported deaths"
+            },
+            "name": "Malaria - number of reported deaths",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MALARIA001",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Reported number of deaths from malaria",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MALARIA003",
+                "IndicatorName": "Estimated number of malaria deaths"
+            },
+            "name": "Estimated number of malaria deaths",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MALARIA003",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Estimated number of deaths from malaria",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "HIV_0000000006",
+                "IndicatorName": "Number of deaths due to HIV/AIDS"
+            },
+            "name": "Number of deaths due to HIV/AIDS",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "HIV_0000000006",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Number of deaths from HIV/AIDS",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "TB_e_mort_exc_tbhiv_num",
+                "IndicatorName": "Number of deaths due to tuberculosis, excluding HIV"
+            },
+            "name": "Number of deaths due to tuberculosis, excluding HIV",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "TB_e_mort_exc_tbhiv_num",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Number of deaths from tuberculosis among HIV-negative people",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        },
+        {
+            "originalMetadata": {
+                "IndicatorCode": "MDG_0000000017",
+                "IndicatorName": "Deaths due to tuberculosis among HIV-negative people (per 100 000 population)"
+            },
+            "name": "Deaths due to tuberculosis among HIV-negative people (per 100 000 population)",
+            "unit": null,
+            "shortUnit": null,
+            "description": null,
+            "code": "MDG_0000000017",
+            "coverage": null,
+            "timespan": null,
+            "display": {
+                "name": "Death rate from tuberculosis among HIV-negative people",
+                "unit": null,
+                "shortUnit": null,
+                "numDecimalPlaces": 1
+            }
+        }
+    ]
+}

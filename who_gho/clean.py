@@ -10,24 +10,6 @@ Instructions for manually standardizing entity names:
 
 0. Retrieve all unique entity names in the dataset:
 
-```
-import requests
-import json
-import pandas as pd
-dimensions = ["country", "region"]
-entities = []
-for dim in dimensions:
-    entities += json.loads(requests.get(f"https://ghoapi.azureedge.net/api/DIMENSION/{dim}/DimensionValues").content)["value"]
-
-df_entities = pd.DataFrame(entities)
-df_entities = df_entities[df_entities['Title'] != "SPATIAL_SYNONYM"]
-# assert not df_entities['Title'].duplicated().any()
-df_entities[['Code', 'Title']].drop_duplicates() \
-                     .dropna() \
-                     .rename(columns={'Title': 'Country'}) \
-                     .to_csv("countries.csv", index=False)
-```
-
 1. Open the OWID Country Standardizer Tool
    (https://owid.cloud/admin/standardize);
 
@@ -77,6 +59,8 @@ from who_gho import (
     DATASET_RETRIEVED_DATE,
 )
 
+from who_gho.core import clean_datasets
+
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -102,20 +86,6 @@ KEEP_PATHS = ["standardized_entity_names.csv"]
 
 
 def main() -> None:
-    if DELETE_EXISTING_INPUTS:
-        delete_input()
-
-    delete_output(KEEP_PATHS)
-    mk_input_output_dirs()
-
-    # loads variables to be cleaned and uploaded.
-    variables_to_clean = load_variables_to_clean()
-    variable_codes = [
-        ind["originalMetadata"]["IndicatorCode"] for ind in variables_to_clean
-    ]
-
-    if DOWNLOAD_INPUTS:
-        download_data(variable_codes=variable_codes)
 
     # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
     # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
@@ -157,172 +127,6 @@ def main() -> None:
     df_distinct_entities.to_csv(
         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
     )
-
-
-def delete_input() -> None:
-    """deletes all files and folders in `{INPATH}`.
-
-    WARNING: this method deletes all input data and is only intended for use
-    immediately prior to `download_data()`.
-
-    Returns:
-
-        None.
-    """
-    assert DOWNLOAD_INPUTS, (
-        "You may only delete existing data inputs if `DOWNLOAD_DATA=True`. "
-        "Existing data inputs have not been deleted."
-    )
-    if os.path.exists(INPATH):
-        shutil.rmtree(INPATH)
-    logger.info(f"Deleted all existing input files in {INPATH}")
-
-
-def load_variables_to_clean() -> List[dict]:
-    """loads the array of variables to clean.
-
-    Returns:
-
-        variables: List[dict]. Array of variables to clean. Example:
-
-            [
-                {
-                    "originalMetadata": {
-                        "IndicatorCode": "MDG_0000000007",
-                        "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
-                    },
-                    "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
-                    "unit": "%",
-                    "shortUnit": "%",
-                    "description": "The share of newborns who die before reaching the age of five",
-                    "code": "MDG_0000000007",
-                    "coverage": null,
-                    "timespan": null,
-                    "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
-                },
-                ...
-            ]
-    """
-    with open(os.path.join(CURRENT_DIR, "config", "variables_to_clean.json"), "r") as f:
-        variables = json.load(f)["variables"]
-    return variables
-
-
-def download_data(variable_codes: List[str]) -> None:
-    """Downloads the raw WHO GHO data for aa subset of variable codes and saves
-    the data in csv format to `{INPATH}`.
-
-    Arguments:
-
-        variable_codes: List[str]. List of variable codes for which to download
-            WHO GHO data. Example:
-
-                ["MDG_0000000017", "WHS4_100", ...]
-
-    Returns:
-
-        None.
-    """
-    logger.info("Downloading data...")
-    batch_size = 200
-    wait = 2
-    n_batches = int(np.ceil(len(variable_codes) / batch_size))
-    dataframes = []
-    # NOTE: we retrieve the indicators in batches of {batch_size} with a
-    # brief between batchs in order to avoid sending >2000 requests to
-    # the api simultaneously.
-    for batch in tqdm(batchify(variable_codes, batch_size=batch_size), total=n_batches):
-        dataframes += _fetch_data_many_variables(batch)
-        time.sleep(wait)
-
-    df = pd.concat([df for df in dataframes if df is not None], axis=0)
-
-    codes_not_fetched = set(variable_codes).difference(df["IndicatorCode"].unique())
-    assert len(codes_not_fetched) == 0, (
-        "Failed to retrieve data for the following variable codes: "
-        f"{codes_not_fetched}"
-    )
-
-    df.sort_values(["IndicatorCode", "SpatialDim", "TimeDim", "Dim1Type"], inplace=True)
-
-    # KLUDGE: drops indicator-country-year duplicates. Some duplicates
-    # may exist b/c the WHO GHO stores the same indicator-country-year
-    # row twice for some indicators, one with (Dim1Type==None,
-    # Dim1==None) and one with (Dim1Type=="SEX", Dim1=="BTSX").
-    # e.g. MDG_0000000001, MDG_0000000007
-    # df[df[['IndicatorCode', 'SpatialDim', 'TimeDim']].duplicated(keep=False)]
-    df.drop_duplicates(
-        subset=["IndicatorCode", "SpatialDim", "TimeDim"], keep="first", inplace=True
-    )
-
-    df.to_csv(os.path.join(INPATH, "data.csv"), index=False)
-    logger.info(f"Data succcessfully downloaded to {INPATH}")
-
-
-def delete_output(keep_paths: List[str]) -> None:
-    """deletes all files in `{CURRENT_DIR}/output` EXCEPT for any file
-    names in `keep_paths`.
-
-    Arguments:
-
-        keep_paths: List[str]. List of subpaths in `{CURRENT_DIR}/output`
-            that you do NOT want deleted. They will be temporarily moved to
-            `{CURRENT_DIR}` and then back into `{CURRENT_DIR}/output` after
-            everything else in `{CURRENT_DIR}/output` has been deleted.
-
-    Returns:
-
-        None.
-    """
-    # temporarily moves some files out of the output directory so that they
-    # are not deleted.
-    for path in keep_paths:
-        if os.path.exists(os.path.join(OUTPATH, path)):
-            os.rename(os.path.join(OUTPATH, path), os.path.join(OUTPATH, "..", path))
-    # deletes all remaining output files
-    if os.path.exists(OUTPATH):
-        shutil.rmtree(OUTPATH)
-        os.makedirs(OUTPATH)
-    # moves the exception files back into the output directory.
-    for path in keep_paths:
-        if os.path.exists(os.path.join(OUTPATH, "..", path)):
-            os.rename(os.path.join(OUTPATH, "..", path), os.path.join(OUTPATH, path))
-
-
-def mk_input_output_dirs() -> None:
-    """creates input and output directories, if they do not already exist.
-
-    Returns:
-
-        None.
-    """
-    if not os.path.exists(INPATH):
-        os.makedirs(INPATH)
-
-    if not os.path.exists(OUTPATH):
-        os.makedirs(OUTPATH)
-
-
-def clean_datasets() -> pd.DataFrame:
-    """Constructs a dataframe where each row represents a dataset to be
-    upserted.
-
-    Note: often, this dataframe will only consist of a single row.
-
-    Returns:
-
-        df: pd.DataFrame. Dataframe where each row represents a dataset to be
-            upserted. Example:
-
-            id                                               name
-        0   0  Global Health Observatory - World Health Organ...
-
-    """
-    data = [
-        {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
-    ]
-    df = pd.DataFrame(data)
-    return df
 
 
 def clean_and_create_datapoints(
