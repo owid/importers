@@ -27,6 +27,7 @@ ihme_gbd/ihme_gbd_mental_health/output/*
 un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
+who_gho/input/**/*.csv
 *.Rproj.user
 *.Rhistory
 *.Rproj
