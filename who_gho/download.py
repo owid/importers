@@ -24,7 +24,7 @@ from who_gho import (
     SELECTED_VARS_ONLY,
 )
 
-from who_gho.core import _fetch_data_many_variables
+from who_gho.core import _fetch_data_many_variables, get_variable_codes
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -147,16 +147,8 @@ def load_variables_to_clean() -> List[dict]:
 
 
 def download_data(selected_vars_only: bool) -> None:
-    if selected_vars_only:
-        variables_to_clean = load_variables_to_clean()
-        variable_codes = [
-            ind["originalMetadata"]["IndicatorCode"] for ind in variables_to_clean
-        ]
-    else:
-        indicator_url = os.path.join(DATASET_LINK, "Indicator")
-        ind_json = requests.get(indicator_url).json()["value"]
-        ind = pd.DataFrame.from_records(ind_json)
-        variable_codes = ind["IndicatorCode"].to_list()
+
+    variable_codes = get_variable_codes(selected_vars_only)
 
     for ind_code in variable_codes:
         print(f"{INPATH}/{ind_code}.csv", end="", flush=True)

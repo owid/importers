@@ -165,20 +165,6 @@ def delete_output(keep_paths: List[str], outpath: str) -> None:
             os.rename(os.path.join(outpath, "..", path), os.path.join(outpath, path))
 
 
-def mk_input_output_dirs() -> None:
-    """creates input and output directories, if they do not already exist.
-
-    Returns:
-
-        None.
-    """
-    if not os.path.exists(INPATH):
-        os.makedirs(INPATH)
-
-    if not os.path.exists(OUTPATH):
-        os.makedirs(OUTPATH)
-
-
 def clean_datasets() -> pd.DataFrame:
     """Constructs a dataframe where each row represents a dataset to be
     upserted.
@@ -769,7 +755,25 @@ def get_metadata_url() -> pd.DataFrame:
 
     assert len(ind_codes) == len(ind_name) == len(urls)
 
+    url_dict = zip(ind_codes, urls)
+    url_dict = dict(url_dict)
+
     url_df = pd.DataFrame(
         list(zip(ind_codes, ind_name, urls)), columns=["code", "name", "url"]
     )
-    return url_df
+    return url_dict, url_df
+
+
+def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
+    if selected_vars_only:
+        variables_to_clean = load_variables_to_clean()
+        variable_codes = [
+            ind["originalMetadata"]["IndicatorCode"] for ind in variables_to_clean
+        ]
+    else:
+        indicator_url = os.path.join(DATASET_LINK, "Indicator")
+        ind_json = requests.get(indicator_url).json()["value"]
+        ind = pd.DataFrame.from_records(ind_json)
+        variable_codes = ind["IndicatorCode"].to_list()
+
+    return variable_codes

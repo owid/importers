@@ -57,9 +57,11 @@ from who_gho import (
     DATASET_VERSION,
     DATASET_LINK,
     DATASET_RETRIEVED_DATE,
+    CONFIGPATH,
+    SELECTED_VARS_ONLY,
 )
 
-from who_gho.core import clean_datasets
+from who_gho.core import clean_datasets, get_variable_codes
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -90,7 +92,7 @@ def main() -> None:
     # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
     # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
     entity2owid_name = (
-        pd.read_csv(os.path.join(OUTPATH, "standardized_entity_names.csv"))
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
         .set_index("Code")["Our World In Data Name"]
         .squeeze()
         .to_dict()
@@ -101,6 +103,8 @@ def main() -> None:
     assert (
         df_datasets.shape[0] == 1
     ), f"Only expected one dataset in {os.path.join(OUTPATH, 'datasets.csv')}."
+
+    variable_codes = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
 
     var_code2meta = clean_and_create_datapoints(
         variable_codes=variable_codes, entity2owid_name=entity2owid_name
@@ -591,11 +595,12 @@ def _fetch_description_one_variable(url: str) -> str:
         "method of estimation",
     ]
     soup = BeautifulSoup(requests.get(url).content, features="lxml")
-    divs = soup.find("div", {"id": "metadata"}).find_all(
+    divs = soup.find_all(
         "div", {"class": "metadata-box"}
     )
     text = ""
     for div in divs:
+        print(div)
         heading_text = re.sub(
             r":$", "", div.find("div", {"class": "metadata-title"}).text.strip().lower()
         )
