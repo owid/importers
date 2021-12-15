@@ -40,8 +40,15 @@ import logging
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
 
-from dotenv import load_dotenv
-from who_gho import CONFIGPATH, SELECTED_VARS_ONLY, OUTPATH
+from who_gho import (
+    CONFIGPATH,
+    SELECTED_VARS_ONLY,
+    OUTPATH,
+    KEEP_PATHS,
+    DOWNLOAD_INPUTS,
+    DELETE_EXISTING_INPUTS,
+    INPATH,
+)
 
 from who_gho.core import (
     clean_datasets,
@@ -57,25 +64,6 @@ from who_gho.core import (
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-
-load_dotenv()
-
-CURRENT_DIR = os.path.dirname(__file__)
-# CURRENT_DIR = os.path.join(os.getcwd(), 'who_gho')
-INPATH = os.path.join(CURRENT_DIR, "input")
-OUTPATH = os.path.join(CURRENT_DIR, "output")
-
-
-# DELETE_EXISTING_INPUTS: If True, deletes all existing input data on disk in
-# `os.path.join(CURRENT_DIR, 'input')`
-DELETE_EXISTING_INPUTS = True
-
-# DOWNLOAD_INPUTS: If True, downloads input data and saves it to disk.
-DOWNLOAD_INPUTS = True
-
-# KEEP_PATHS: Names of files in `{CURRENT_DIR}/output` that you do NOT
-# want deleted in the beginning of this script.
-KEEP_PATHS = ["standardized_entity_names.csv"]
 
 
 def main() -> None:

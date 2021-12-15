@@ -1,20 +1,13 @@
-from asyncio.futures import Future
 import os
 import re
-import time
 import simplejson as json
 import logging
 import shutil
 from typing import Any, List, Dict
-import asyncio
-from aiohttp import ClientSession
-from pathlib import Path
 import requests
-import numpy as np
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from who_gho import (
     CONFIGPATH,
@@ -85,57 +78,6 @@ def load_variables_to_clean() -> List[dict]:
     return variables
 
 
-def download_data(variable_codes: List[str]) -> None:
-    """Downloads the raw WHO GHO data for aa subset of variable codes and saves
-    the data in csv format to `{INPATH}`.
-
-    Arguments:
-
-        variable_codes: List[str]. List of variable codes for which to download
-            WHO GHO data. Example:
-
-                ["MDG_0000000017", "WHS4_100", ...]
-
-    Returns:
-
-        None.
-    """
-    logger.info("Downloading data...")
-    batch_size = 200
-    wait = 2
-    n_batches = int(np.ceil(len(variable_codes) / batch_size))
-    dataframes = []
-    # NOTE: we retrieve the indicators in batches of {batch_size} with a
-    # brief between batchs in order to avoid sending >2000 requests to
-    # the api simultaneously.
-    for batch in tqdm(batchify(variable_codes, batch_size=batch_size), total=n_batches):
-        dataframes += _fetch_data_many_variables(batch)
-        time.sleep(wait)
-
-    df = pd.concat([df for df in dataframes if df is not None], axis=0)
-
-    codes_not_fetched = set(variable_codes).difference(df["IndicatorCode"].unique())
-    assert len(codes_not_fetched) == 0, (
-        "Failed to retrieve data for the following variable codes: "
-        f"{codes_not_fetched}"
-    )
-
-    df.sort_values(["IndicatorCode", "SpatialDim", "TimeDim", "Dim1Type"], inplace=True)
-
-    # KLUDGE: drops indicator-country-year duplicates. Some duplicates
-    # may exist b/c the WHO GHO stores the same indicator-country-year
-    # row twice for some indicators, one with (Dim1Type==None,
-    # Dim1==None) and one with (Dim1Type=="SEX", Dim1=="BTSX").
-    # e.g. MDG_0000000001, MDG_0000000007
-    # df[df[['IndicatorCode', 'SpatialDim', 'TimeDim']].duplicated(keep=False)]
-    df.drop_duplicates(
-        subset=["IndicatorCode", "SpatialDim", "TimeDim"], keep="first", inplace=True
-    )
-
-    df.to_csv(os.path.join(INPATH, "data.csv"), index=False)
-    logger.info(f"Data succcessfully downloaded to {INPATH}")
-
-
 def delete_output(keep_paths: List[str], outpath: str) -> None:
     """deletes all files in `{CURRENT_DIR}/output` EXCEPT for any file
     names in `keep_paths`.
@@ -186,6 +128,45 @@ def clean_datasets() -> pd.DataFrame:
     ]
     df = pd.DataFrame(data)
     return df
+
+
+def clean_sources(dataset_id: int, dataset_name: str) -> pd.DataFrame:
+    """Cleans data sources in preparation for uploading the sources to
+    the `sources` database table.
+
+    Arguments:
+
+        dataset_id: int. Integer representing the dataset id for all variables
+            and sources.
+
+        dataset_name: str. Dataset name.
+
+    Returns:
+
+        df_sources: pd.DataFrame. Cleaned Dataframe of data sources to be
+            uploaded.
+
+    """
+    sources = [
+        {
+            "dataset_id": dataset_id,
+            "name": dataset_name,
+            "description": json.dumps(
+                {
+                    "link": DATASET_LINK,
+                    "retrievedDate": DATASET_RETRIEVED_DATE,
+                    "additionalInfo": None,
+                    "dataPublishedBy": dataset_name,
+                    "dataPublisherSource": None,
+                },
+                ignore_nan=True,
+            ),
+            "id": 0,
+        }
+    ]
+    df_sources = pd.DataFrame(sources)
+
+    return df_sources
 
 
 def clean_and_create_datapoints(
@@ -399,9 +380,11 @@ def clean_variables(
         )
 
     # fetches description for each variable.
-    df_variables["description"] = _fetch_description_many_variables(
-        df_variables.code.tolist()
-    )
+    df_variables["description"]
+
+    ## Add in json template here
+
+    code2desc = _fetch_description_many_variables(df_variables.code.tolist())
 
     # cleans variable names.
     df_variables["name"] = df_variables["name"].str.replace(r"\s+", " ", regex=True)
@@ -421,45 +404,6 @@ def clean_variables(
 
     df_variables = df_variables.set_index(["id", "name"]).reset_index()
     return df_variables
-
-
-def clean_sources(dataset_id: int, dataset_name: str) -> pd.DataFrame:
-    """Cleans data sources in preparation for uploading the sources to
-    the `sources` database table.
-
-    Arguments:
-
-        dataset_id: int. Integer representing the dataset id for all variables
-            and sources.
-
-        dataset_name: str. Dataset name.
-
-    Returns:
-
-        df_sources: pd.DataFrame. Cleaned Dataframe of data sources to be
-            uploaded.
-
-    """
-    sources = [
-        {
-            "dataset_id": dataset_id,
-            "name": dataset_name,
-            "description": json.dumps(
-                {
-                    "link": DATASET_LINK,
-                    "retrievedDate": DATASET_RETRIEVED_DATE,
-                    "additionalInfo": None,
-                    "dataPublishedBy": dataset_name,
-                    "dataPublisherSource": None,
-                },
-                ignore_nan=True,
-            ),
-            "id": 0,
-        }
-    ]
-    df_sources = pd.DataFrame(sources)
-
-    return df_sources
 
 
 def get_distinct_entities() -> List[str]:
@@ -530,7 +474,7 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
     return variable_codes
 
 
-def _fetch_description_many_variables(codes: List[str]) -> List[str]:
+def _fetch_description_many_variables(codes: List[str]) -> dict:
     """Fetches the description for multiple variables.
 
     Arguments:
@@ -548,12 +492,14 @@ def _fetch_description_many_variables(codes: List[str]) -> List[str]:
     var_code2url, url_df = get_metadata_url()
     descs = {}
     for name in indicators:
+        print(name)
         url = var_code2url[name]
-        if not url == "":
+        print(url)
+        if url.startswith("http"):
             desc = _fetch_description_one_variable(url)
-            descs["name"] = desc
+            descs[name] = desc
         else:
-            descs["name"] = ""
+            descs[name] = ""
     return descs
 
 
@@ -574,16 +520,24 @@ def _fetch_description_one_variable(url: str) -> str:
         "method of measurement",
         "method of estimation",
     ]
-    soup = BeautifulSoup(requests.get(url).content, features="lxml")
-    divs = soup.find_all("div", {"class": "metadata-box"})
-    text = ""
-    for div in divs:
-        heading_text = re.sub(
-            r":$", "", div.find("div", {"class": "metadata-title"}).text.strip().lower()
-        )
-        if heading_text in headings_to_use:
-            text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
-    text = text.strip()
+
+    try:
+        r = requests.get(url)
+        soup = BeautifulSoup(r.content, features="lxml")
+        divs = soup.find_all("div", {"class": "metadata-box"})
+        text = ""
+        for div in divs:
+            heading_text = re.sub(
+                r":$",
+                "",
+                div.find("div", {"class": "metadata-title"}).text.strip().lower(),
+            )
+            if heading_text in headings_to_use:
+                text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
+        text = text.strip()
+    except requests.exceptions.RequestException as e:  # This is the correct syntax
+        print(e)
+        text = ""
     return text
 
 
