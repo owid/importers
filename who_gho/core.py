@@ -7,6 +7,8 @@ from typing import Any, List, Dict
 import requests
 import pandas as pd
 
+pd.set_option("display.max_rows", None)
+
 pd.set_option("display.max_colwidth", None)
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
@@ -202,6 +204,7 @@ def add_missing_dims(dim_val_dict: dict):
     dim_val_dict["NGO_TREATMENT"] = "Treatment"
     dim_val_dict["NGO_PREVENTION"] = "Prevention"
     dim_val_dict["DROPIN_SERVICES"] = '"Drop-in" services'
+    dim_val_dict["WHO_TOTL"] = "WHO Total"
     return dim_val_dict
 
 
@@ -215,7 +218,7 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
         .to_dict()
     )
 
-    if any(x in dims for x in ["NGO", "PROGRAMME"]):
+    if any(x in dims for x in ["NGO", "PROGRAMME", "WEALTHQUINTILE"]):
         dim_val_dict = add_missing_dims(dim_val_dict)
 
     df[["Dim1m", "Dim2m", "Dim3m"]] = df[["Dim1", "Dim2", "Dim3"]].applymap(
@@ -243,6 +246,9 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
 
     # Check all of the dim types have an associated value
     end_check = (":", " - ")
+
+    # df[df["variable_name"].str.endswith(end_check)]
+
     assert df["variable_name"].str.endswith(end_check).sum() == 0
 
     return df["variable_name"]
@@ -270,10 +276,9 @@ def clean_variables(variables: list, var_code2meta: dict, var_code2name: dict) -
             lambda x: var_code2name[x] if x in var_code2name else None
         )
         df["variable"] = create_var_name(df, dim_values, dim_dict)
-        var_df.append(df[["IndicatorCode", "variable"]])
+        var_df.append(df)
 
     var_df = pd.concat(var_df)
-    assert len(var_df[var_df.duplicated()]) == 0
 
 
 def create_datapoints():
