@@ -30,12 +30,7 @@ Instructions for manually standardizing entity names:
 7. Replace {outfpath} with the downloaded CSV;
 
 """
-
-from asyncio.futures import Future
 import os
-import re
-import time
-import simplejson as json
 import logging
 import pandas as pd
 from pandas.api.types import is_numeric_dtype
@@ -52,12 +47,13 @@ from who_gho import (
 
 from who_gho.core import (
     clean_datasets,
-    get_variable_codes,
     get_metadata_url,
+    get_variable_codes,
     clean_and_create_datapoints,
     clean_sources,
     clean_variables,
     get_distinct_entities,
+    get_metadata,
 )
 
 
@@ -67,15 +63,6 @@ logger.setLevel(logging.INFO)
 
 
 def main() -> None:
-
-    # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
-    # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
-    entity2owid_name = (
-        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
-        .set_index("Code")["Our World In Data Name"]
-        .squeeze()
-        .to_dict()
-    )
 
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
@@ -90,15 +77,14 @@ def main() -> None:
 
     variable_codes = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
 
-    var_code2meta = clean_and_create_datapoints(
-        variable_codes=variable_codes, entity2owid_name=entity2owid_name
-    )
+    code2url, code2name = get_metadata_url()
+
+    var_code2meta = get_metadata(var_code2url=code2url)
 
     df_variables = clean_variables(
-        dataset_id=df_datasets["id"].iloc[0],
-        source_id=df_sources["id"].iloc[0],
         variables=variable_codes,
         var_code2meta=var_code2meta,
+        var_code2name = code2name,
     )
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])

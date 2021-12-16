@@ -6,6 +6,8 @@ import shutil
 from typing import Any, List, Dict
 import requests
 import pandas as pd
+
+pd.set_option("display.max_colwidth", None)
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
 from bs4 import BeautifulSoup
@@ -169,6 +171,118 @@ def clean_sources(dataset_id: int, dataset_name: str) -> pd.DataFrame:
     return df_sources
 
 
+def get_dimensions():
+    dims_url = "https://ghoapi.azureedge.net/api/Dimension"
+    resp = requests.get(dims_url)
+    dim_json = resp.json()
+    dim_names = pd.DataFrame.from_records(dim_json["value"]).set_index("Code")
+
+    dim_dict = dim_names.squeeze().to_dict()
+
+    dim_values = get_dim_values(dim_names)
+    return dim_dict, dim_values
+
+
+def get_dim_values(dims: pd.DataFrame):
+    dim_val_url = "https://ghoapi.azureedge.net/api/DIMENSION/{code}/DimensionValues"
+    dim_values_frames = []
+    for code in dims.index:
+        url = dim_val_url.format(code=code)
+        value_json = requests.get(url).json()["value"]
+        value_df = pd.DataFrame.from_records(value_json)
+        dim_values_frames.append(value_df)
+
+    dim_values = pd.concat(dim_values_frames)
+    return dim_values
+
+
+def add_missing_dims(dim_val_dict: dict):
+    dim_val_dict["NGO_REHABILITATION"] = "Rehabilitation"
+    dim_val_dict["NGO_ADVOCACY"] = "Advocacy"
+    dim_val_dict["NGO_TREATMENT"] = "Treatment"
+    dim_val_dict["NGO_PREVENTION"] = "Prevention"
+    dim_val_dict["DROPIN_SERVICES"] = '"Drop-in" services'
+    return dim_val_dict
+
+
+def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
+
+    dims = df[["Dim1Type", "Dim2Type", "Dim3Type"]].drop_duplicates().stack().tolist()
+
+    dim_val_dict = (
+        dim_values[dim_values["Dimension"].isin(dims)]
+        .set_index("Code")["Title"]
+        .to_dict()
+    )
+
+    if any(x in dims for x in ["NGO", "PROGRAMME"]):
+        dim_val_dict = add_missing_dims(dim_val_dict)
+
+    df[["Dim1m", "Dim2m", "Dim3m"]] = df[["Dim1", "Dim2", "Dim3"]].applymap(
+        dim_val_dict.get
+    )
+
+    df[["Dim1Typem", "Dim2Typem", "Dim3Typem"]] = df[
+        ["Dim1Type", "Dim2Type", "Dim3Type"]
+    ].applymap(dim_dict.get)
+
+    cols = ["Dim1Typem", "Dim2Typem", "Dim3Typem"]
+    df[cols] = " - " + df[cols] + ":"
+
+    col_com = [
+        "indicator_name",
+        "Dim1Typem",
+        "Dim1m",
+        "Dim2Typem",
+        "Dim2m",
+        "Dim3Typem",
+        "Dim3m",
+    ]
+
+    df["variable_name"] = "Indicator:" + df[col_com].fillna("").sum(axis=1)
+
+    # Check all of the dim types have an associated value
+    end_check = (":", " - ")
+    assert df["variable_name"].str.endswith(end_check).sum() == 0
+
+    return df["variable_name"]
+
+
+def clean_variables(variables: list, var_code2meta: dict, var_code2name: dict) -> None:
+
+    # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
+    # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
+    entity2owid_name = (
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
+        .set_index("Code")["Our World In Data Name"]
+        .squeeze()
+        .to_dict()
+    )
+
+    dim_dict, dim_values = get_dimensions()
+
+    var_df = []
+    for var in variables:
+        print(var)
+        df = pd.read_csv(f"{INPATH}/{var}.csv")
+
+        df["indicator_name"] = df["IndicatorCode"].apply(
+            lambda x: var_code2name[x] if x in var_code2name else None
+        )
+        df["variable"] = create_var_name(df, dim_values, dim_dict)
+        var_df.append(df[["IndicatorCode", "variable"]])
+
+    var_df = pd.concat(var_df)
+    assert len(var_df[var_df.duplicated()]) == 0
+
+
+def create_datapoints():
+    df = df[df["NumericValue"].notna()]
+    df["country"] = df["SpatialDim"].apply(
+        lambda x: entity2owid_name[x] if x in entity2owid_name else None
+    )
+
+
 def clean_and_create_datapoints(
     variable_codes: List[str], entity2owid_name: Dict[str, str]
 ) -> Dict[str, dict]:
@@ -292,55 +406,11 @@ def clean_and_create_datapoints(
     return var_code2meta
 
 
-def clean_variables(
-    dataset_id: int,
-    source_id: int,
+def clean_variables_bob(
     variables: List[dict],
     var_code2meta: Dict[str, dict],
 ) -> pd.DataFrame:
-    """Cleans a dataframe of variables in preparation for uploading the
-    variables to the `variables` database table.
 
-
-    Arguments:
-
-        dataset_id: int. Integer representing the dataset id for all variables.
-
-        source_id: int. Integer representing the data source id for all variables.
-
-        variables: List[dict]. List of variables to clean. Example:
-
-            [
-                {
-                    "originalMetadata": {
-                        "IndicatorCode": "MDG_0000000007",
-                        "IndicatorName": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)"
-                    },
-                    "name": "Under-five mortality rate (probability of dying by age 5 per 1000 live births)",
-                    "unit": "%",
-                    "shortUnit": "%",
-                    "description": "The share of newborns who die before reaching the age of five",
-                    "code": "MDG_0000000007",
-                    "coverage": null,
-                    "timespan": null,
-                    "display": {"name": "Child mortality rate", "unit": "%", "shortUnit": "%", "numDecimalPlaces": 1}
-                },
-                ...
-            ]
-
-        var_code2meta: Dict[str, dict]. Dict of `variable code` -> `{variable meta}`
-            mappings. Contains some metadata for each variable that was
-            constructed during the `clean_and_create_datapoints` step. All
-            variable codes in `variables` MUST have a corresponding key in
-            `var_cod2meta`. Example:
-
-                {"MDG_0000000001": {"id": 0, "timespan": "2000-2019"}, ...}
-
-    Returns:
-
-        df_variables: pd.DataFrame. Cleaned dataframe of variables
-            to be uploaded.
-    """
     assert all(
         [pd.notnull(variable["code"]) for variable in variables]
     ), "One or more variables has a null `code` field."
@@ -441,9 +511,6 @@ def get_metadata_url() -> pd.DataFrame:
     ind_codes = pd.json_normalize(url_json, record_path=["dimension", "code"])[
         "label"
     ].to_list()
-    ind_name = pd.json_normalize(url_json, record_path=["dimension", "code"])[
-        "display"
-    ].to_list()
     urls = pd.json_normalize(url_json, record_path=["dimension", "code"])[
         "url"
     ].to_list()
@@ -453,10 +520,10 @@ def get_metadata_url() -> pd.DataFrame:
     url_dict = zip(ind_codes, urls)
     url_dict = dict(url_dict)
 
-    url_df = pd.DataFrame(
-        list(zip(ind_codes, ind_name, urls)), columns=["code", "name", "url"]
-    )
-    return url_dict, url_df
+    name_dict = zip(ind_codes, ind_name)
+    name_dict = dict(name_dict)
+
+    return url_dict, name_dict
 
 
 def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
@@ -474,32 +541,24 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
     return variable_codes
 
 
-def _fetch_description_many_variables(codes: List[str]) -> dict:
-    """Fetches the description for multiple variables.
-
-    Arguments:
-
-        codes: List[str]. List of variable codes for which to download WHO GHO
-            data. Example:
-
-                ["MDG_0000000017", "WHS4_100", ...]
-
-    Returns:
-
-        descs: List[str]. List of variable descriptions.
-    """
-    indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
-    var_code2url, url_df = get_metadata_url()
-    descs = {}
-    for name in indicators:
-        print(name)
-        url = var_code2url[name]
-        print(url)
-        if url.startswith("http"):
-            desc = _fetch_description_one_variable(url)
-            descs[name] = desc
-        else:
-            descs[name] = ""
+def get_metadata(var_code2url: dict) -> dict:
+    if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
+        indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
+        descs = {}
+        for name in indicators:
+            print(name)
+            url = var_code2url[name]
+            print(url)
+            if url.startswith("http"):
+                desc = _fetch_description_one_variable(url)
+                descs[name] = desc
+            else:
+                descs[name] = ""
+            with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
+                json.dump(descs, fp, indent=2)
+    else:
+        with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
+            descs = json.load(fp)
     return descs
 
 
