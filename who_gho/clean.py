@@ -33,20 +33,13 @@ Instructions for manually standardizing entity names:
 import os
 import logging
 import pandas as pd
-from pandas.api.types import is_numeric_dtype
 
 from who_gho import (
-    CONFIGPATH,
     SELECTED_VARS_ONLY,
     OUTPATH,
-    KEEP_PATHS,
-    DOWNLOAD_INPUTS,
-    DELETE_EXISTING_INPUTS,
-    INPATH,
 )
 
 from who_gho.core import (
-    add_variable_name,
     clean_datasets,
     get_metadata_url,
     get_variable_codes,
@@ -56,12 +49,8 @@ from who_gho.core import (
     get_distinct_entities,
     get_metadata,
     standardise_country_name,
+    clean_variables,
 )
-
-
-logging.basicConfig()
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 
 
 def main() -> None:
@@ -89,18 +78,14 @@ def main() -> None:
 
     df["country"] = standardise_country_name(df["SpatialDim"])
 
-    df_variables = clean_variables(
-        variables=variable_codes,
-        var_code2meta=var_code2meta,
-        var_code2name=code2name,
-    )
+    df_variables = clean_variables(df, var_code2meta)
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])
 
     # saves datasets, sources, variables, and distinct entities to disk.
     df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
-    df_variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
+    # df_variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
     df_distinct_entities.to_csv(
         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
     )

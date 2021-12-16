@@ -6,10 +6,7 @@ import shutil
 from typing import Any, List, Dict
 import requests
 import pandas as pd
-
-pd.set_option("display.max_rows", None)
-
-pd.set_option("display.max_colwidth", None)
+import numpy as np
 from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
 from bs4 import BeautifulSoup
@@ -140,7 +137,7 @@ def clean_sources(dataset_id: int, dataset_name: str) -> pd.DataFrame:
 
     Arguments:
 
-        dataset_id: int. Integer representing the dataset id for all variables
+        dataset_id: int. Integer representing the dataset idx for all variables
             and sources.
 
         dataset_name: str. Dataset name.
@@ -254,6 +251,48 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
     return df["variable_name"]
 
 
+def clean_variables(df: pd.DataFrame, var_code2meta):
+
+    df_grouped = df.groupby("variable")
+
+    variable_idx = 0
+    for group_name, df_group in df_grouped:
+        variable = {
+            "dataset_id": 0,
+            "source_id": 0,
+            "id": variable_idx,
+            "name": group_name,
+            "description": var_code2meta[df_group["IndicatorCode"][0]],
+            "code": df_group["IndicatorCode"][0],
+            "unit": None,
+            "short_unit": None,
+            "timespan": "%s - %s"
+            % (
+                int(np.min(df_group["TimeDim"])),
+                int(np.max(df_group["TimeDim"])),
+            ),
+            "coverage": None,
+            "display": None,
+            "original_metadata": None,
+        }
+        variables = variables.append(variable, ignore_index=True)
+        extract_datapoints(df).to_csv(
+            os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
+            index=False,
+        )
+        variable_idx += 1
+
+
+def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "country": df["country"],
+            "year": int(df["TimeDim"]),
+            "value": df["NumericValue"],
+        }
+    ).dropna()
+
+
 def load_all_data_and_add_variable_name(
     variables: list, var_code2name: dict
 ) -> pd.DataFrame:
@@ -301,13 +340,6 @@ def standardise_country_name(country_col: pd.Series):
         lambda x: entity2owid_name[x] if x in entity2owid_name else None
     )
     return country_col_owid
-
-
-def create_datapoints():
-    df = df[df["NumericValue"].notna()]
-    df["country"] = df["SpatialDim"].apply(
-        lambda x: entity2owid_name[x] if x in entity2owid_name else None
-    )
 
 
 def clean_and_create_datapoints(
