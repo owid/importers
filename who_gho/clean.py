@@ -46,14 +46,16 @@ from who_gho import (
 )
 
 from who_gho.core import (
+    add_variable_name,
     clean_datasets,
     get_metadata_url,
     get_variable_codes,
     clean_and_create_datapoints,
     clean_sources,
-    clean_variables,
+    load_all_data_and_add_variable_name,
     get_distinct_entities,
     get_metadata,
+    standardise_country_name,
 )
 
 
@@ -81,10 +83,16 @@ def main() -> None:
 
     var_code2meta = get_metadata(var_code2url=code2url)
 
+    df = load_all_data_and_add_variable_name(
+        variables=variable_codes, var_code2name=code2name
+    )
+
+    df["country"] = standardise_country_name(df["SpatialDim"])
+
     df_variables = clean_variables(
         variables=variable_codes,
         var_code2meta=var_code2meta,
-        var_code2name = code2name,
+        var_code2name=code2name,
     )
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])

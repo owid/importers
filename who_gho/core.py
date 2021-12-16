@@ -254,16 +254,9 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
     return df["variable_name"]
 
 
-def clean_variables(variables: list, var_code2meta: dict, var_code2name: dict) -> None:
-
-    # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
-    # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
-    entity2owid_name = (
-        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
-        .set_index("Code")["Our World In Data Name"]
-        .squeeze()
-        .to_dict()
-    )
+def load_all_data_and_add_variable_name(
+    variables: list, var_code2name: dict
+) -> pd.DataFrame:
 
     dim_dict, dim_values = get_dimensions()
 
@@ -279,6 +272,35 @@ def clean_variables(variables: list, var_code2meta: dict, var_code2name: dict) -
         var_df.append(df)
 
     var_df = pd.concat(var_df)
+
+    var_df = var_df[
+        [
+            "IndicatorCode",
+            "SpatialDim",
+            "TimeDim",
+            "DataSourceDimType",
+            "DataSourceDim",
+            "NumericValue",
+            "variable",
+        ]
+    ]
+
+    return var_df
+
+
+def standardise_country_name(country_col: pd.Series):
+    # loads mapping of "{UNSTANDARDIZED_ENTITY_CODE}" -> "{STANDARDIZED_OWID_NAME}"
+    # i.e. {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
+    entity2owid_name = (
+        pd.read_csv(os.path.join(CONFIGPATH, "standardized_entity_names.csv"))
+        .set_index("Code")["Our World In Data Name"]
+        .squeeze()
+        .to_dict()
+    )
+    country_col_owid = country_col.apply(
+        lambda x: entity2owid_name[x] if x in entity2owid_name else None
+    )
+    return country_col_owid
 
 
 def create_datapoints():
@@ -516,6 +538,10 @@ def get_metadata_url() -> pd.DataFrame:
     ind_codes = pd.json_normalize(url_json, record_path=["dimension", "code"])[
         "label"
     ].to_list()
+    ind_name = pd.json_normalize(url_json, record_path=["dimension", "code"])[
+        "display"
+    ].to_list()
+
     urls = pd.json_normalize(url_json, record_path=["dimension", "code"])[
         "url"
     ].to_list()
