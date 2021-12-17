@@ -28,6 +28,7 @@ un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
 who_gho/input/**/*.csv
+who_gho/output/**/*.csv
 *.Rproj.user
 *.Rhistory
 *.Rproj
