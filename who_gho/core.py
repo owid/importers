@@ -347,7 +347,8 @@ def load_all_data_and_add_variable_name(
         [
             "IndicatorCode",
             "SpatialDim",
-            "SpatialDimType" "TimeDim",
+            "SpatialDimType",
+            "TimeDim",
             "DataSourceDimType",
             "DataSourceDim",
             "NumericValue",
@@ -355,7 +356,9 @@ def load_all_data_and_add_variable_name(
         ]
     ]
 
-    var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
+    var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
+
+    var_df = var_df[var_df["SpatialDimType"].notna()]
 
     return var_df
 
@@ -369,6 +372,14 @@ def standardise_country_name(country_col: pd.Series):
         .squeeze()
         .to_dict()
     )
+    entity2owid_name["SDG_LAMRC"] = "Latin America"
+    entity2owid_name["SDG_SSAFR"] = "Sub-Saharan Africa"
+    entity2owid_name["WHO_GLOBAL"] = "World"
+    entity2owid_name["REGION_WB_LI"] = "Low Income Economies (World Bank)"
+    entity2owid_name["REGION_ WB_LMI"] = "Lower-Middle Income Economies (World Bank)"
+    entity2owid_name["REGION_ WB_UMI"] = "Upper-Middle Income Economies (World Bank)"
+    entity2owid_name["REGION_ WB_HI"] = "High Income Economies (World Bank)"
+
     country_col_owid = country_col.apply(
         lambda x: entity2owid_name[x] if x in entity2owid_name else None
     )

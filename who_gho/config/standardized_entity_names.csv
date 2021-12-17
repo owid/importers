@@ -295,6 +295,7 @@ MDG_EAEXCH,Eastern Asia excluding China,Eastern Asia excluding China
 MDG_EAS,Eastern Asia,Eastern Asia
 MDG_LAC,Latin America and the Caribbean,Latin America and the Caribbean
 MDG_NAF,Northern Africa,Northern Africa
+MGHE_GLOBAL, World, World
 WBINC_LOINC,Low-income,Low-income
 WBINC_UMINC,Upper-middle-income,Upper-middle-income
 WBDCP_LAC,Latin America and Caribbean,Latin America and Caribbean
@@ -439,3 +440,10 @@ LMI_EMR,Low- and middle-income countries of the Eastern Mediterranean Region,Low
 LMI_EUR,Low- and middle-income countries of the European Region,Low- and middle-income countries of the European Region
 LMI_SEAR,Low- and middle-income countries of the South-East Asia Region,Low- and middle-income countries of the South-East Asia Region
 LMI_WPR,Low- and middle-income countries of the Western Pacific Region,Low- and middle-income countries of the Western Pacific Region
+WB_HI,High-income,High-income
+WB_LI,Low-income,Low-income
+WB_LIMI,Low- and middle-income,Low- and middle-income
+WB_LMI,Lower-middle-income,Lower-middle-income
+WB_MI,Middle-income,Middle-income
+WB_UMI,Upper-middle-income,Upper-middle-income
+WB_WORLD_INCOME,Global,World

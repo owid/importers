@@ -80,6 +80,7 @@ def get_entities():
         "UNSDGREGION",
         "WHOINCOMEREGION",
         "WORLDBANKREGION",
+        "WORLDBANKINCOMEGROUP",
     ]
     entities = []
     for dim in dimensions:

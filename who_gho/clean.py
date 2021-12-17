@@ -47,6 +47,7 @@ from who_gho.core import (
     load_all_data_and_add_variable_name,
     get_distinct_entities,
     get_metadata,
+    get_dimensions,
     standardise_country_name,
     clean_variables,
 )
@@ -77,6 +78,7 @@ def main() -> None:
 
     df["country"] = standardise_country_name(df["SpatialDim"])
 
+    assert df[df["country"].isnull()].shape[0] == 0
     df_variables = clean_variables(df, var_code2meta)
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])
