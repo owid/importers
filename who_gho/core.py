@@ -326,6 +326,10 @@ def load_all_data_and_add_variable_name(
 
     dim_dict, dim_values = get_dimensions()
 
+    spatial_dim_types_exclude = [
+        "DHSMICSGEOREGION"
+    ]  # Regional data we don't yet have capacity to use
+
     var_df = []
     for var in variables:
         print(var)
@@ -343,13 +347,15 @@ def load_all_data_and_add_variable_name(
         [
             "IndicatorCode",
             "SpatialDim",
-            "TimeDim",
+            "SpatialDimType" "TimeDim",
             "DataSourceDimType",
             "DataSourceDim",
             "NumericValue",
             "variable",
         ]
     ]
+
+    var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
 
     return var_df
 
