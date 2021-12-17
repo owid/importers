@@ -251,46 +251,73 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
     return df["variable_name"]
 
 
-def clean_variables(df: pd.DataFrame, var_code2meta):
+def clean_variables(df: pd.DataFrame, var_code2meta: dict):
 
-    df_grouped = df.groupby("variable")
+    all_series = (
+        df[["IndicatorCode", "variable"]].drop_duplicates().reset_index(drop=True)
+    )
 
     variable_idx = 0
-    for group_name, df_group in df_grouped:
-        variable = {
-            "dataset_id": 0,
-            "source_id": 0,
-            "id": variable_idx,
-            "name": group_name,
-            "description": var_code2meta[df_group["IndicatorCode"][0]],
-            "code": df_group["IndicatorCode"][0],
-            "unit": None,
-            "short_unit": None,
-            "timespan": "%s - %s"
-            % (
-                int(np.min(df_group["TimeDim"])),
-                int(np.max(df_group["TimeDim"])),
-            ),
-            "coverage": None,
-            "display": None,
-            "original_metadata": None,
-        }
-        variables = variables.append(variable, ignore_index=True)
-        extract_datapoints(df).to_csv(
-            os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
-            index=False,
+    variables = pd.DataFrame()
+    for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
+        print(row["IndicatorCode"])
+        data_filtered = pd.DataFrame(
+            df[
+                (df.IndicatorCode == row["IndicatorCode"])
+                & (df.variable == row["variable"])
+            ]
         )
+        data_filtered.dropna(subset=["TimeDim"], inplace=True)
+        values_to_exclude = ["Not applicable", "Not available"]
+        data_filtered = data_filtered[
+            ~data_filtered.NumericValue.isin(values_to_exclude)
+        ]
+        ignored_var_codes = set({})
+        if data_filtered.shape[0] == 0:
+            ignored_var_codes.add(row["IndicatorCode"])
+        else:
+            variable = {
+                "dataset_id": 0,
+                "source_id": 0,
+                "id": variable_idx,
+                "name": row["variable"],
+                "description": var_code2meta[row["IndicatorCode"]],
+                "code": row["IndicatorCode"],
+                "unit": None,
+                "short_unit": None,
+                "timespan": "%s - %s"
+                % (
+                    int(np.min(data_filtered["TimeDim"])),
+                    int(np.max(data_filtered["TimeDim"])),
+                ),
+                "coverage": None,
+                "display": None,
+                "original_metadata": None,
+            }
+            variables = variables.append(variable, ignore_index=True)
+            extract_datapoints(data_filtered).to_csv(
+                os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
+                index=False,
+            )
         variable_idx += 1
+        print(variable_idx)
+    logger.info(
+        f"Saved data points to csv for {i} variables. Excluded {len(ignored_var_codes)} variables."
+    )
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
-    return pd.DataFrame(
+
+    df_out = pd.DataFrame(
         {
             "country": df["country"],
-            "year": int(df["TimeDim"]),
+            "year": df["TimeDim"],
             "value": df["NumericValue"],
         }
-    ).dropna()
+    )
+
+    df_out = df_out[df_out["value"].notna()]
+    return df_out
 
 
 def load_all_data_and_add_variable_name(

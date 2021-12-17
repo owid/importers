@@ -31,8 +31,8 @@ Instructions for manually standardizing entity names:
 
 """
 import os
-import logging
 import pandas as pd
+
 
 from who_gho import (
     SELECTED_VARS_ONLY,
@@ -43,7 +43,6 @@ from who_gho.core import (
     clean_datasets,
     get_metadata_url,
     get_variable_codes,
-    clean_and_create_datapoints,
     clean_sources,
     load_all_data_and_add_variable_name,
     get_distinct_entities,

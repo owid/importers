@@ -71,7 +71,16 @@ def delete_input() -> None:
 
 
 def get_entities():
-    dimensions = ["country", "region"]
+    dimensions = [
+        "country",
+        "region",
+        "GBDREGION",
+        "MGHEREG",
+        "UNREGION",
+        "UNSDGREGION",
+        "WHOINCOMEREGION",
+        "WORLDBANKREGION",
+    ]
     entities = []
     for dim in dimensions:
         entities += json.loads(
