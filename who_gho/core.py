@@ -9,6 +9,13 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
+
+import pyarrow as pa
+import pyarrow.parquet as pq
+import glob
+from memory_profiler import profile
+from datetime import datetime
+
 from who_gho import (
     CONFIGPATH,
     DOWNLOAD_INPUTS,
@@ -352,20 +359,19 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
-    var_df = []
+    var_list = []
     for var in variables:
-        print(var)
-        df = pd.read_csv(f"{INPATH}/{var}.csv")
+        var_path = f"{INPATH}/{var}.csv"
+        var_list.append(var_path)
 
-        df["indicator_name"] = df["IndicatorCode"].apply(
-            lambda x: var_code2name[x] if x in var_code2name else None
-        )
-        df["variable"] = create_var_name(df, dim_values, dim_dict)
-        var_df.append(df)
+    csv_to_parquet(var_list)
+    main_df = pd.read_parquet(os.path.join(INPATH, "df_combined.parquet"))
+    main_df["indicator_name"] = main_df["IndicatorCode"].apply(
+        lambda x: var_code2name[x] if x in var_code2name else None
+    )
+    main_df["variable"] = create_var_name(main_df, dim_values, dim_dict)
 
-    var_df = pd.concat(var_df)
-
-    var_df = var_df[
+    var_df = main_df[
         [
             "IndicatorCode",
             "SpatialDim",
@@ -387,6 +393,63 @@ def load_all_data_and_add_variable_name(
     var_df = var_df[var_df["SpatialDimType"].notna()]
 
     return var_df
+
+
+def csv_to_parquet(files: iter) -> None:
+    chunksize = 1000000  # this is the number of lines
+    pqwriter = None
+    for file in files:
+        print(file)
+        for i, df in enumerate(
+            pd.read_csv(
+                file,
+                chunksize=chunksize,
+                usecols=[
+                    "IndicatorCode",
+                    "SpatialDimType",
+                    "SpatialDim",
+                    "TimeDimType",
+                    "TimeDim",
+                    "Dim1Type",
+                    "Dim1",
+                    "Dim2Type",
+                    "Dim2",
+                    "Dim3Type",
+                    "Dim3",
+                    "DataSourceDimType",
+                    "DataSourceDim",
+                    "Value",
+                    "NumericValue",
+                ],
+                dtype={
+                    "IndicatorCode": str,
+                    "SpatialDimType": str,
+                    "SpatialDim": str,
+                    "TimeDimType": str,
+                    "TimeDim": np.float64,
+                    "Dim1Type": str,
+                    "Dim1": str,
+                    "Dim2Type": str,
+                    "Dim2": str,
+                    "Dim3Type": str,
+                    "Dim3": str,
+                    "DataSourceDimType": str,
+                    "DataSourceDim": str,
+                    "Value": str,
+                    "NumericValue": np.float64,
+                },
+            ),
+        ):
+            table = pa.Table.from_pandas(df)
+            # for the first chunk of records
+            if i == 0:
+                # create a parquet write object giving it an output file
+                pqwriter = pq.ParquetWriter(
+                    os.path.join(INPATH, "df_combined.parquet"), table.schema
+                )
+            pqwriter.write_table(table)
+    if pqwriter:
+        pqwriter.close()
 
 
 def standardise_country_name(country_col: pd.Series):

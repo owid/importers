@@ -155,7 +155,7 @@ def download_data(selected_vars_only: bool) -> None:
     variable_codes = get_variable_codes(selected_vars_only)
 
     for ind_code in variable_codes:
-        print(f"{INPATH}/{ind_code}.csv", end="", flush=True)
+        print(f"{ind_code}", end="", flush=True)
         data = get_ind_data(ind_code)
         data.to_csv(f"{INPATH}/{ind_code}.csv")
     return variable_codes
