@@ -1,17 +1,12 @@
 import os
-from pandas.core.frame import DataFrame
 import json
 from typing import List
 from pathlib import Path
 import requests
 import numpy as np
 import logging
-import tqdm
-import time
 import pandas as pd
 import shutil
-from utils import batchify
-from pandas.api.types import is_numeric_dtype
 from who_gho import (
     CONFIGPATH,
     DELETE_EXISTING_INPUTS,
@@ -20,11 +15,10 @@ from who_gho import (
     OUTPATH,
     KEEP_PATHS,
     CURRENT_DIR,
-    DATASET_LINK,
     SELECTED_VARS_ONLY,
 )
 
-from who_gho.core import _fetch_data_many_variables, get_variable_codes
+from who_gho.core import get_variable_codes
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)

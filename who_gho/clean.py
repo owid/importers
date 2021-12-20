@@ -90,7 +90,6 @@ def main() -> None:
     # saves datasets, sources, variables, and distinct entities to disk.
     df_datasets.to_csv(os.path.join(OUTPATH, "datasets.csv"), index=False)
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
-    # df_variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
     df_distinct_entities.to_csv(
         os.path.join(OUTPATH, "distinct_countries_standardized.csv"), index=False
     )

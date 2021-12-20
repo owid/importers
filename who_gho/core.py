@@ -3,11 +3,10 @@ import re
 import simplejson as json
 import logging
 import shutil
-from typing import Any, List, Dict
+from typing import List
 import requests
 import pandas as pd
 import numpy as np
-from pandas.api.types import is_numeric_dtype
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 from who_gho import (
@@ -23,7 +22,6 @@ from who_gho import (
     DATASET_RETRIEVED_DATE,
     SELECTED_VARS_ONLY,
 )
-from utils import batchify, camel_case2snake_case
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -260,7 +258,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     variable_idx = 0
     variables = pd.DataFrame()
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
-        print(row["IndicatorCode"])
+        print(row["variable"])
         data_filtered = pd.DataFrame(
             df[
                 (df.IndicatorCode == row["IndicatorCode"])
@@ -277,6 +275,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
         if data_filtered.shape[0] == 0:
             ignored_var_codes.add(row["IndicatorCode"])
         else:
+            unit_var, short_unit_var = get_unit(row["variable"])
             variable = {
                 "dataset_id": 0,
                 "source_id": 0,
@@ -284,8 +283,8 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
                 "name": row["variable"],
                 "description": var_code2meta[row["IndicatorCode"]],
                 "code": row["IndicatorCode"],
-                "unit": None,
-                "short_unit": None,
+                "unit": unit_var,
+                "short_unit": short_unit_var,
                 "timespan": "%s - %s"
                 % (
                     int(np.min(data_filtered["TimeDim"])),
@@ -305,6 +304,17 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     logger.info(
         f"Saved data points to csv for {variable_idx} variables. Excluded {len(ignored_var_codes)} variables."
     )
+
+
+def get_unit(var: str) -> List[str]:
+    unit = "(%)"
+    if unit in var:
+        unit_out = "Percentage"
+        short_unit_out = "%"
+    else:
+        unit_out = None
+        short_unit_out = None
+    return unit_out, short_unit_out
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
@@ -393,199 +403,6 @@ def standardise_country_name(country_col: pd.Series):
         lambda x: entity2owid_name[x] if x in entity2owid_name else None
     )
     return country_col_owid
-
-
-def clean_and_create_datapoints(
-    variable_codes: List[str], entity2owid_name: Dict[str, str]
-) -> Dict[str, dict]:
-    """Cleans all entity-variable-year data observations and saves all
-    data points to csv in the `{OUTPATH}/datapoints` directory.
-
-    The data for each variable is saved as a separate csv file.
-
-    Arguments:
-
-        variable_codes: List[str]. List of variable codes for which to download
-            WHO GHO data. Example:
-
-            ["MDG_0000000017", "WHS4_100", ...]
-
-        entity2owid_name: Dict[str, str]. Dict of
-            "{UNSTANDARDIZED_ENTITY_NAME}" -> "{STANDARDIZED_OWID_NAME}"
-            key-value mappings. Example:
-
-            {"AFG": "Afghanistan", "SSF": "Sub-Saharan Africa", ...}
-
-    Returns:
-
-        var_code2meta: Dict[str, Dict]. Dict where keys are variable codes and
-            values are dict representing some basic metadata derived from the
-            data points. The metadata dicts also contain a temporary ID
-            assigned to the variable that matches it to the corresponding csv
-            that has just been created in `{OUTPATH}/datapoints` is Example:
-
-            {'HIV_0000000006': {'id': 0, 'timespan': '1990-2019'}, ...}
-
-
-    """
-
-    for var in variable_codes:
-        # loads data
-        df_data = pd.read_csv(
-            f"{INPATH}/{var}.csv",
-            usecols=[
-                "SpatialDim",
-                "SpatialDimType",
-                "TimeDim",
-                "IndicatorCode",
-                "TimeDim",
-                "TimeDimType",
-                "Dim1",
-                "Dim1Type",
-                "NumericValue",
-            ],
-        )
-    df_data.columns = df_data.columns.str.lower().str.replace(
-        r"[\s/-]+", "_", regex=True
-    )
-
-    assert all(df_data["timedimtype"].dropna() == "YEAR")
-    df_data.rename(
-        columns={
-            "timedim": "year",
-            "indicatorcode": "nonowid_id",
-            "numericvalue": "value",
-        },
-        inplace=True,
-    )
-
-    # subsets data to variable codes to be cleaned.
-    df_data = df_data[df_data["nonowid_id"].isin(variable_codes)]
-
-    # standardizes entity names.
-    df_data["country"] = df_data["spatialdim"].apply(
-        lambda x: entity2owid_name[x] if x in entity2owid_name else None
-    )
-
-    out_path = os.path.join(OUTPATH, "datapoints")
-    if not os.path.exists(out_path):
-        os.makedirs(out_path)
-
-    # df_data.dim1type.value_counts()
-    # cleans each variable and saves it to csv.
-    df_data.dropna(
-        subset=["nonowid_id", "country", "year", "value"], how="any", inplace=True
-    )
-    df_data["year"] = df_data["year"].astype(int)
-    df_data.sort_values(
-        by=["nonowid_id", "country", "year", "dim1type", "dim1"], inplace=True
-    )
-
-    grouped = df_data.groupby(["nonowid_id"])  # 'dim1type', 'dim1'
-    i = 0
-    ignored_var_codes = set({})
-    # kept_var_codes = set({})
-    var_code2meta = {}
-    logger.info("Saving data points for each variable to csv...")
-    for var_code, gp in tqdm(grouped, total=len(grouped)):
-        # print(var_code, dim1type, dim1val)
-        # if (dim1type or dim1val) and (dim1type != "SEX" and dim1val != "BTSX"):
-        #     raise NotImplementedError
-        gp_temp = gp[["country", "year", "value"]]
-        assert not gp_temp.duplicated(subset=["country", "year"]).any()
-        assert is_numeric_dtype(gp_temp["value"])
-        assert is_numeric_dtype(gp_temp["year"])
-        assert gp_temp.notnull().all().all()
-        if gp_temp.shape[0] == 0:
-            ignored_var_codes.add(var_code)
-        else:
-            # kept_var_codes.add(var_code)
-            assert var_code not in var_code2meta
-            timespan = f"{int(gp_temp['year'].min())}-{int(gp_temp['year'].max())}"
-            var_code2meta[var_code] = {"id": i, "timespan": timespan}
-            fpath = os.path.join(out_path, f"datapoints_{i}.csv")
-            assert not os.path.exists(fpath), (
-                f"{fpath} already exists. This should not be possible, because "
-                "each variable is supposed to be assigned its own unique "
-                "file name."
-            )
-            gp_temp.to_csv(fpath, index=False)
-            i += 1
-
-    logger.info(
-        f"Saved data points to csv for {i} variables. Excluded {len(ignored_var_codes)} variables."
-    )
-    return var_code2meta
-
-
-def clean_variables_bob(
-    variables: List[dict],
-    var_code2meta: Dict[str, dict],
-) -> pd.DataFrame:
-
-    assert all(
-        [pd.notnull(variable["code"]) for variable in variables]
-    ), "One or more variables has a null `code` field."
-    missing_var_codes = set([var["code"] for var in variables]).difference(
-        var_code2meta.keys()
-    )
-    assert len(missing_var_codes) == 0, (
-        "The following variable codes are not in `var_code2meta`: "
-        f"{missing_var_codes}"
-    )
-
-    # adds the variable metadata from `var_code2meta` to the variable metadata
-    # in `variables.`
-    for variable in variables:
-        meta = var_code2meta[variable["code"]]
-        for field in meta:
-            if field in variable and variable[field]:
-                logger.warning(
-                    f"The `{field}` field for variable {variable['code']} is "
-                    f"being overwritten. Existing value: {variable[field]}; "
-                    f"New value: {meta[field]}."
-                )
-            variable[field] = meta[field]
-
-    # converts the "originalMetadata" and "display" json fields to strings
-    # for variable in variables:
-    #     for field in ['originalMetadata', 'display']:
-    #         if field in variable:
-    #             variable[field] = json.dumps(variable[field], ignore_nan=True)
-
-    df_variables = pd.DataFrame(variables)
-
-    json_fields = ["display", "originalMetadata"]
-    for field in json_fields:
-        df_variables[field] = df_variables[field].apply(
-            lambda x: json.dumps(x, ignore_nan=True) if pd.notnull(x) else None
-        )
-
-    # fetches description for each variable.
-    df_variables["description"]
-
-    ## Add in json template here
-
-    code2desc = _fetch_description_many_variables(df_variables.code.tolist())
-
-    # cleans variable names.
-    df_variables["name"] = df_variables["name"].str.replace(r"\s+", " ", regex=True)
-
-    df_variables["dataset_id"] = dataset_id
-    df_variables["source_id"] = source_id
-
-    # converts column names to snake case b/c this is what is expected in the
-    # `standard_importer.import_dataset` module.
-    df_variables.columns = df_variables.columns.map(camel_case2snake_case)
-
-    required_fields = ["id", "name"]
-    for field in required_fields:
-        assert (
-            df_variables[field].notnull().all()
-        ), f"Every variable must have a non-null `{field}` field."
-
-    df_variables = df_variables.set_index(["id", "name"]).reset_index()
-    return df_variables
 
 
 def get_distinct_entities() -> List[str]:
