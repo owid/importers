@@ -3,7 +3,7 @@
 `variable_replacements.json` is used in `suggest_chart_revisions.py` for
 determining which charts to update.
 Usage:
-    python -m un_sdg.match_variables
+    python -m who_gho.match_variables
 """
 
 import os
@@ -13,7 +13,7 @@ import pandas as pd
 
 from db import get_connection
 from db_utils import DBUtils
-from un_sdg import OUTPATH
+from who_gho import OUTPATH
 
 
 def main():
