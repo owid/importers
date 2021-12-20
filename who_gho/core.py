@@ -290,8 +290,8 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
                 "short_unit": short_unit_var,
                 "timespan": "%s - %s"
                 % (
-                    int(np.min(data_filtered["TimeDim"])),
-                    int(np.max(data_filtered["TimeDim"])),
+                    int(float(np.min(data_filtered["TimeDim"]))),
+                    int(float(np.max(data_filtered["TimeDim"]))),
                 ),
                 "coverage": None,
                 "display": None,
