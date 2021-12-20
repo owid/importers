@@ -76,7 +76,11 @@ def main() -> None:
         variables=variable_codes, var_code2name=code2name
     )
 
-    df["country"] = standardise_country_name(df["SpatialDim"])
+    df.dropna(
+        subset=["TimeDim", "NumericValue"], inplace=True
+    )  # removing rows which don't have an associated year or numeric value. Some have information in the value common, not sure if we would want to keep these...
+
+    df["country"] = standardise_country_name(country_col=df["SpatialDim"])
 
     assert df[df["country"].isnull()].shape[0] == 0
     df_variables = clean_variables(df, var_code2meta)

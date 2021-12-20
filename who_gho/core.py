@@ -267,11 +267,12 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
                 & (df.variable == row["variable"])
             ]
         )
-        data_filtered.dropna(subset=["TimeDim"], inplace=True)
+
         values_to_exclude = ["Not applicable", "Not available"]
         data_filtered = data_filtered[
             ~data_filtered.NumericValue.isin(values_to_exclude)
         ]
+
         ignored_var_codes = set({})
         if data_filtered.shape[0] == 0:
             ignored_var_codes.add(row["IndicatorCode"])
@@ -299,10 +300,10 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
                 os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
                 index=False,
             )
-        variable_idx += 1
-        print(variable_idx)
+            variable_idx += 1
+            print(variable_idx)
     logger.info(
-        f"Saved data points to csv for {i} variables. Excluded {len(ignored_var_codes)} variables."
+        f"Saved data points to csv for {variable_idx} variables. Excluded {len(ignored_var_codes)} variables."
     )
 
 
@@ -329,6 +330,17 @@ def load_all_data_and_add_variable_name(
     spatial_dim_types_exclude = [
         "DHSMICSGEOREGION"
     ]  # Regional data we don't yet have capacity to use
+
+    spatial_dims_to_exclude = [
+        "SDG_LAMRC",
+        "SDG_SSAFR",
+        "WHO_GLOBAL",
+        "REGION_WB_LI",
+        "REGION_ WB_LI",
+        "REGION_ WB_LMI",
+        "REGION_ WB_UMI",
+        "REGION_ WB_HI",
+    ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
     var_df = []
     for var in variables:
@@ -357,6 +369,10 @@ def load_all_data_and_add_variable_name(
     ]
 
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
+    var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
+
+    assert var_df[var_df.SpatialDimType.isin(spatial_dim_types_exclude)].shape[0] == 0
+    assert var_df[var_df.SpatialDim.isin(spatial_dims_to_exclude)].shape[0] == 0
 
     var_df = var_df[var_df["SpatialDimType"].notna()]
 
@@ -372,13 +388,6 @@ def standardise_country_name(country_col: pd.Series):
         .squeeze()
         .to_dict()
     )
-    entity2owid_name["SDG_LAMRC"] = "Latin America"
-    entity2owid_name["SDG_SSAFR"] = "Sub-Saharan Africa"
-    entity2owid_name["WHO_GLOBAL"] = "World"
-    entity2owid_name["REGION_WB_LI"] = "Low Income Economies (World Bank)"
-    entity2owid_name["REGION_ WB_LMI"] = "Lower-Middle Income Economies (World Bank)"
-    entity2owid_name["REGION_ WB_UMI"] = "Upper-Middle Income Economies (World Bank)"
-    entity2owid_name["REGION_ WB_HI"] = "High Income Economies (World Bank)"
 
     country_col_owid = country_col.apply(
         lambda x: entity2owid_name[x] if x in entity2owid_name else None
