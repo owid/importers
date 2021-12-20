@@ -12,10 +12,6 @@ from bs4 import BeautifulSoup
 
 import pyarrow as pa
 import pyarrow.parquet as pq
-import glob
-from memory_profiler import profile
-from datetime import datetime
-
 from who_gho import (
     CONFIGPATH,
     DOWNLOAD_INPUTS,
@@ -370,7 +366,6 @@ def load_all_data_and_add_variable_name(
         lambda x: var_code2name[x] if x in var_code2name else None
     )
     main_df["variable"] = create_var_name(main_df, dim_values, dim_dict)
-
     var_df = main_df[
         [
             "IndicatorCode",
@@ -398,6 +393,7 @@ def load_all_data_and_add_variable_name(
 def csv_to_parquet(files: iter) -> None:
     chunksize = 1000000  # this is the number of lines
     pqwriter = None
+    j = 0
     for file in files:
         print(file)
         for i, df in enumerate(
@@ -422,32 +418,54 @@ def csv_to_parquet(files: iter) -> None:
                     "NumericValue",
                 ],
                 dtype={
-                    "IndicatorCode": str,
-                    "SpatialDimType": str,
-                    "SpatialDim": str,
-                    "TimeDimType": str,
-                    "TimeDim": np.float64,
-                    "Dim1Type": str,
-                    "Dim1": str,
-                    "Dim2Type": str,
-                    "Dim2": str,
-                    "Dim3Type": str,
-                    "Dim3": str,
-                    "DataSourceDimType": str,
-                    "DataSourceDim": str,
-                    "Value": str,
-                    "NumericValue": np.float64,
+                    "IndicatorCode": object,
+                    "SpatialDimType": object,
+                    "SpatialDim": object,
+                    "TimeDimType": object,
+                    "TimeDim": object,
+                    "Dim1Type": object,
+                    "Dim1": object,
+                    "Dim2Type": object,
+                    "Dim2": object,
+                    "Dim3Type": object,
+                    "Dim3": object,
+                    "DataSourceDimType": object,
+                    "DataSourceDim": object,
+                    "Value": object,
+                    "NumericValue": object,
                 },
             ),
         ):
-            table = pa.Table.from_pandas(df)
+
+            fields = [
+                pa.field("IndicatorCode", pa.string()),
+                pa.field("SpatialDimType", pa.string()),
+                pa.field("SpatialDim", pa.string()),
+                pa.field("TimeDimType", pa.string()),
+                pa.field("TimeDim", pa.string()),
+                pa.field("Dim1Type", pa.string()),
+                pa.field("Dim1", pa.string()),
+                pa.field("Dim2Type", pa.string()),
+                pa.field("Dim2", pa.string()),
+                pa.field("Dim3Type", pa.string()),
+                pa.field("Dim3", pa.string()),
+                pa.field("DataSourceDimType", pa.string()),
+                pa.field("DataSourceDim", pa.string()),
+                pa.field("Value", pa.string()),
+                pa.field("NumericValue", pa.string()),
+            ]
+
+            my_schema = pa.schema(fields)
+            table = pa.Table.from_pandas(df, schema=my_schema, preserve_index=False)
             # for the first chunk of records
-            if i == 0:
+            if j == 0:
                 # create a parquet write object giving it an output file
                 pqwriter = pq.ParquetWriter(
                     os.path.join(INPATH, "df_combined.parquet"), table.schema
                 )
             pqwriter.write_table(table)
+        j += 1
+
     if pqwriter:
         pqwriter.close()
 
