@@ -307,6 +307,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     logger.info(
         f"Saved data points to csv for {variable_idx} variables. Excluded {len(ignored_var_codes)} variables."
     )
+    return variables
 
 
 def get_unit(var: str) -> List[str]:
