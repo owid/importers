@@ -258,8 +258,6 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
         df[["IndicatorCode", "variable"]].drop_duplicates().reset_index(drop=True)
     )
 
-    all_series = all_series[all_series["IndicatorCode"] == "cci2030"]
-
     variable_idx = 0
     variables = pd.DataFrame()
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
