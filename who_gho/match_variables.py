@@ -13,16 +13,19 @@ import pandas as pd
 
 from db import get_connection
 from db_utils import DBUtils
-from who_gho import OUTPATH
 
 
-def main():
+def main(outpath: str, namespace: str):
     connection = get_connection()
     with connection.cursor() as cursor:
         db = DBUtils(cursor)
         # retrieves old and new datasets
-        df_old_datasets = get_datasets(db=db, new=False)
-        df_new_datasets = get_datasets(db=db, new=True)
+        df_old_datasets = get_datasets(
+            outpath=outpath, db=db, new=False, namespace=namespace
+        )
+        df_new_datasets = get_datasets(
+            outpath=outpath, db=db, new=True, namespace=namespace
+        )
 
         # retrieves old and new variables
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets["id"].tolist())
@@ -42,13 +45,15 @@ def main():
             .squeeze()
             .to_dict()
         )
-        if not os.path.exists(OUTPATH):
-            os.makedirs(OUTPATH)
-        with open(os.path.join(OUTPATH, "variable_replacements.json"), "w") as f:
+        if not os.path.exists(outpath):
+            os.makedirs(outpath)
+        with open(os.path.join(outpath, "variable_replacements.json"), "w") as f:
             json.dump(old_var_id2new_var_id, f, indent=2)
 
 
-def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
+def get_datasets(
+    outpath: str, db: DBUtils, namespace: str, new: bool = True
+) -> pd.DataFrame:
     """retrieves new datasets if `new=True`, else retrieves old datasets.
 
     Arguments:
@@ -60,7 +65,7 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
     """
     columns = ["id", "name", "createdAt", "updatedAt"]
     try:
-        datasets = pd.read_csv(os.path.join(OUTPATH, "datasets.csv"))
+        datasets = pd.read_csv(os.path.join(outpath, "datasets.csv"))
         new_dataset_names = datasets.name.unique().tolist()
     except FileNotFoundError:
         new_dataset_names = []
@@ -76,7 +81,7 @@ def get_datasets(db: DBUtils, new: bool = True) -> pd.DataFrame:
         query = f"""
             SELECT {','.join(columns)}
             FROM datasets
-            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%who_gho%'
+            WHERE namespace COLLATE UTF8_GENERAL_CI LIKE '%{namespace}%'
         """
         if len(new_dataset_names):
             new_dataset_names_str = ",".join([f'"{n}"' for n in new_dataset_names])

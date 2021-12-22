@@ -1,11 +1,11 @@
 """executes bulk dataset import + chart updates for the UN_SDGs dataset.
 Usage:
-    python -m who_gho.main
+    python -m who_gho.main --skip_download --skip_clean --skip_import
 
 """
 import click
 
-from who_gho import DATASET_DIR, DATASET_NAMESPACE
+from who_gho import DATASET_DIR, DATASET_NAMESPACE, OUTPATH
 
 from who_gho import download, clean, match_variables
 
@@ -47,7 +47,7 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
-        match_variables.main()
+        match_variables.main(outpath=OUTPATH, namespace=("who_gho"))
     if suggest_charts:
         suggester = ChartRevisionSuggester(DATASET_DIR)
         suggester.suggest()
