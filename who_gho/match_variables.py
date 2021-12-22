@@ -26,9 +26,6 @@ def main():
 
         # retrieves old and new variables
         df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets["id"].tolist())
-        df_old_vars = df_old_vars[
-            df_old_vars["id"] > 100000
-        ]  # bit of a hack to exclude the original upload which had a small number of variables.
         df_new_vars = get_variables(db=db, dataset_ids=df_new_datasets["id"].tolist())
         df_vars = pd.merge(
             df_old_vars,
