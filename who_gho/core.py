@@ -258,6 +258,8 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
         df[["IndicatorCode", "variable"]].drop_duplicates().reset_index(drop=True)
     )
 
+    all_series = all_series[all_series["IndicatorCode"] == "cci2030"]
+
     variable_idx = 0
     variables = pd.DataFrame()
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
@@ -514,7 +516,7 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def get_metadata_url() -> pd.DataFrame:
+def get_metadata_url(fix_var_code: bool) -> pd.DataFrame:
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
@@ -537,6 +539,14 @@ def get_metadata_url() -> pd.DataFrame:
 
     name_dict = zip(ind_codes, ind_name)
     name_dict = dict(name_dict)
+
+    arc_codes = [x for x in ind_codes if x.endswith("_ARCHIVED")]
+
+    for code in arc_codes:
+        name_dict[code] = name_dict[code] + " - Archived"
+
+    if fix_var_code:
+        name_dict["cci2030"] = "Composite coverage index - Countdown to 2030 (%)"
 
     return url_dict, name_dict
 

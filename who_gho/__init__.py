@@ -16,3 +16,4 @@ CONFIGPATH = os.path.join(CURRENT_DIR, "config")
 SELECTED_VARS_ONLY = False  # should we download just the selected vars in config/
 DATASET_DIR = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
+FIX_VAR_CODE = True  # Fixing issues where there is uplication of indicator and description in get_metadata_url

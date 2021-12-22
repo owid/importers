@@ -34,10 +34,7 @@ import os
 import pandas as pd
 
 
-from who_gho import (
-    SELECTED_VARS_ONLY,
-    OUTPATH,
-)
+from who_gho import FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
 
 from who_gho.core import (
     clean_datasets,
@@ -68,7 +65,7 @@ def main() -> None:
 
     variable_codes = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
 
-    code2url, code2name = get_metadata_url()
+    code2url, code2name = get_metadata_url(fix_var_code=FIX_VAR_CODE)
 
     var_code2meta = get_metadata(var_code2url=code2url)
 
