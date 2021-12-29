@@ -252,11 +252,47 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
     return df["variable_name"]
 
 
-def clean_variables(df: pd.DataFrame, var_code2meta: dict):
+def remove_dup_vars(all_series: pd.DataFrame, df: pd.DataFrame) -> pd.DataFrame:
+    dup_inds = all_series[["variable", "IndicatorCode"]][
+        all_series["variable"].duplicated(keep=False)
+    ]
+
+    var_keep = []
+    for ind in dup_inds["variable"]:
+        # print(ind)
+        df_ind = df[df["variable"] == ind]
+        df_gr = pd.DataFrame(
+            df_ind.groupby(["IndicatorCode"], sort=False).size(), columns=["size"]
+        )
+        df_gr["variable"] = df_gr.index
+        df_gr_max = df_gr["variable"][df_gr["size"] == df_gr["size"].max()].tolist()
+        assert len(df_gr_max) == 1
+        df_gr_max = "".join(df_gr_max)
+        var_keep.append(df_gr_max)
+
+    dup_inds["keep"] = var_keep
+
+    drop_var = dup_inds[["variable", "IndicatorCode"]][
+        dup_inds["IndicatorCode"] != dup_inds["keep"]
+    ]
 
     all_series = (
+        pd.merge(all_series, drop_var, indicator=True, how="outer")
+        .query('_merge=="left_only"')
+        .drop("_merge", axis=1)
+    )
+    return all_series
+
+
+def clean_variables(df: pd.DataFrame, var_code2meta: dict):
+
+    all_vars = (
         df[["IndicatorCode", "variable"]].drop_duplicates().reset_index(drop=True)
     )
+
+    # check for duplicated variables e.g. bcgv and vbcg both include info on BCG vax but vbcg has more recent data
+
+    all_series = remove_dup_vars(all_series=all_vars, df=df)
 
     variable_idx = 0
     variables = pd.DataFrame()
