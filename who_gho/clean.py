@@ -35,7 +35,14 @@ import pandas as pd
 from ihme_gbd.gbd_tools import make_dirs
 
 
-from who_gho import CONFIGPATH, FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
+from who_gho import (
+    CONFIGPATH,
+    FIX_VAR_CODE,
+    INPATH,
+    SELECTED_VARS_ONLY,
+    OUTPATH,
+    FIX_VAR_CODE,
+)
 
 from who_gho.core import (
     clean_datasets,
@@ -57,7 +64,7 @@ def main() -> None:
         keep_paths=[],
         outpath=OUTPATH,
     )
-    make_dirs()
+    make_dirs(inpath=INPATH, outpath=OUTPATH, configpath=CONFIGPATH)
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
     assert (

@@ -3,7 +3,8 @@ import re
 import simplejson as json
 import logging
 import shutil
-from typing import List, Path
+from typing import List
+from pathlib import Path
 import requests
 import pandas as pd
 import numpy as np
@@ -38,6 +39,7 @@ def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     Path(inpath).mkdir(parents=True, exist_ok=True)
     Path(outpath, "datapoints").mkdir(parents=True, exist_ok=True)
     Path(configpath).mkdir(parents=True, exist_ok=True)
+
 
 def delete_input(inpath: str) -> None:
     """deletes all files and folders in `{INPATH}`.
