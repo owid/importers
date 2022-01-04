@@ -3,7 +3,7 @@ import re
 import simplejson as json
 import logging
 import shutil
-from typing import List
+from typing import List, Path
 import requests
 import pandas as pd
 import numpy as np
@@ -30,6 +30,14 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
+
+def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
+    """
+    Creating the necessary directories for the input, output and config files
+    """
+    Path(inpath).mkdir(parents=True, exist_ok=True)
+    Path(outpath, "datapoints").mkdir(parents=True, exist_ok=True)
+    Path(configpath).mkdir(parents=True, exist_ok=True)
 
 def delete_input(inpath: str) -> None:
     """deletes all files and folders in `{INPATH}`.

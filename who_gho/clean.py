@@ -32,6 +32,7 @@ Instructions for manually standardizing entity names:
 """
 import os
 import pandas as pd
+from ihme_gbd.gbd_tools import make_dirs
 
 
 from who_gho import CONFIGPATH, FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
@@ -56,6 +57,7 @@ def main() -> None:
         keep_paths=[],
         outpath=OUTPATH,
     )
+    make_dirs()
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
     assert (
