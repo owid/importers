@@ -56,6 +56,7 @@ def main() -> None:
     delete_output(
         keep_paths=[os.path.join(CONFIGPATH, "standardized_entity_names.csv")],
         outpath=OUTPATH,
+        configpath=CONFIGPATH,
     )
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
