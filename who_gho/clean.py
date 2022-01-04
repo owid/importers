@@ -33,7 +33,6 @@ Instructions for manually standardizing entity names:
 import os
 import pandas as pd
 
-pd.set_option("max_colwidth", 400)
 
 from who_gho import CONFIGPATH, FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
 
