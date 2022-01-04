@@ -1,0 +1,8 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables to upsert to SQL. Any variables NOT in this file will be ignored."
+    },
+    "variables": [
+        "DALYs (Disability-Adjusted Life Years) - HIV/AIDS - Sex: Both - Age: All Ages (Number)"
+    ]
+}
