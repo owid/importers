@@ -80,7 +80,7 @@ def load_variables_to_clean() -> List[dict]:
     return variables
 
 
-def delete_output(keep_paths: List[str], outpath: str, configpath: str) -> None:
+def delete_output(keep_paths: List[str], outpath: str) -> None:
     """deletes all files in `{CURRENT_DIR}/output` EXCEPT for any file
     names in `keep_paths`.
 
@@ -100,25 +100,14 @@ def delete_output(keep_paths: List[str], outpath: str, configpath: str) -> None:
     for path in keep_paths:
         if os.path.exists(os.path.join(outpath, path)):
             os.rename(os.path.join(outpath, path), os.path.join(outpath, "..", path))
-        if os.path.exists(os.path.join(configpath, path)):
-            os.rename(
-                os.path.join(configpath, path), os.path.join(configpath, "..", path)
-            )
     # deletes all remaining output files
     if os.path.exists(outpath):
         shutil.rmtree(outpath)
         os.makedirs(outpath)
-    if os.path.exists(configpath):
-        shutil.rmtree(configpath)
-        os.makedirs(configpath)
     # moves the exception files back into the output directory.
     for path in keep_paths:
         if os.path.exists(os.path.join(outpath, "..", path)):
             os.rename(os.path.join(outpath, "..", path), os.path.join(outpath, path))
-        if os.path.exists(os.path.join(configpath, "..", path)):
-            os.rename(
-                os.path.join(configpath, "..", path), os.path.join(configpath, path)
-            )
 
 
 def clean_datasets() -> pd.DataFrame:

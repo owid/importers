@@ -53,12 +53,8 @@ from who_gho.core import (
 
 def main() -> None:
     delete_output(
-        keep_paths=[
-            "standardized_entity_names.csv",
-            "countries.csv",
-        ],
+        keep_paths=[],
         outpath=OUTPATH,
-        configpath=CONFIGPATH,
     )
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
