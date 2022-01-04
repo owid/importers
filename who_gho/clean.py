@@ -35,7 +35,7 @@ import pandas as pd
 
 pd.set_option("max_colwidth", 400)
 
-from who_gho import FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
+from who_gho import CONFIGPATH, FIX_VAR_CODE, SELECTED_VARS_ONLY, OUTPATH, FIX_VAR_CODE
 
 from who_gho.core import (
     clean_datasets,
@@ -48,11 +48,15 @@ from who_gho.core import (
     get_dimensions,
     standardise_country_name,
     clean_variables,
+    delete_output,
 )
 
 
 def main() -> None:
-
+    delete_output(
+        keep_paths=[os.path.join(CONFIGPATH, "standardized_entity_names.csv")],
+        outpath=OUTPATH,
+    )
     # cleans datasets, datapoints, variables, and sources.
     df_datasets = clean_datasets()
     assert (
