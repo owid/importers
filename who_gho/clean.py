@@ -53,7 +53,10 @@ from who_gho.core import (
 
 def main() -> None:
     delete_output(
-        keep_paths=[os.path.join(CONFIGPATH, "standardized_entity_names.csv")],
+        keep_paths=[
+            "standardized_entity_names.csv",
+            "countries.csv",
+        ],
         outpath=OUTPATH,
         configpath=CONFIGPATH,
     )
