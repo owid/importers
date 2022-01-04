@@ -609,8 +609,13 @@ def get_metadata(var_code2url: dict) -> dict:
             url = var_code2url[name]
             print(url)
             if url.startswith("http"):
-                desc = _fetch_description_one_variable(url)
-                descs[name] = desc
+                if name == "SDGHEALTHFACILITIESESSENTIALMEDS":
+                    descs[name] = (
+                        "Rationale: Measurement and monitoring of access to essential medicines are of high priority for the global development agenda given access is an integral part of the Universal Health Coverage movement and an indispensable element of the delivery of quality health care. Access to medicines is a composite multidimensional concept that is composed of the availability of medicines and the affordability of their prices. Information on these two dimensions has been collected and analysed since the 54th World Health Assembly in 2001, when Member States adopted the WHO Medicines Strategy (resolution WHA54.11). This resolution led to the launch of the joint project on Medicine Prices and Availability by WHO and the international non-governmental organization Health Action International (HAI/WHO), as well as a proposed HAI/WHO methodology for collecting data and measuring components of access to medicines.\n\nDefinition: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis.\nThe indicator is a multidimensional index reported as a proportion (%) of health facilities that have a defined core set of quality-assured medicines that are available and affordable relative to the total number of surveyed health facilities at national level.\n\nMethod of estimation: The index is computed as a ratio of the health facilities with available and affordable medicines for primary health care over the total number of the surveyed health facilities. For this indicator, the following variables are considered for a multidimensional understanding of the\ncomponents of access to medicines:\n\u2022 A core set of relevant essential medicines for primary healthcare\n\u2022 Regional burden of disease\n\u2022 Availability of a medicine\n\u2022 Price of a medicine\n\u2022 Treatment courses for each medicine (number of units per treatment & duration of\ntreatment)\n\u2022 National poverty line and lowest-paid unskilled government worker (LPGW) wage\n\u2022 Proxy for quality of the core set of relevant essential medicines.",
+                    )
+                else:
+                    desc = _fetch_description_one_variable(url)
+                    descs[name] = desc
             else:
                 descs[name] = ""
             with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
