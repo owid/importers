@@ -42,6 +42,7 @@ from who_gho import (
     SELECTED_VARS_ONLY,
     OUTPATH,
     FIX_VAR_CODE,
+    DELETE_OUTPUT,
 )
 
 from who_gho.core import (
@@ -52,7 +53,6 @@ from who_gho.core import (
     load_all_data_and_add_variable_name,
     get_distinct_entities,
     get_metadata,
-    get_dimensions,
     standardise_country_name,
     clean_variables,
     delete_output,
@@ -60,12 +60,13 @@ from who_gho.core import (
 
 
 def main() -> None:
-    delete_output(
-        keep_paths=[],
-        outpath=OUTPATH,
-    )
+    if DELETE_OUTPUT:
+        delete_output(
+            keep_paths=[],
+            outpath=OUTPATH,
+        )
     make_dirs(inpath=INPATH, outpath=OUTPATH, configpath=CONFIGPATH)
-    # cleans datasets, datapoints, variables, and sources.
+
     df_datasets = clean_datasets()
     assert (
         df_datasets.shape[0] == 1
@@ -88,7 +89,7 @@ def main() -> None:
 
     df.dropna(
         subset=["TimeDim", "NumericValue"], inplace=True
-    )  # removing rows which don't have an associated year or numeric value. Some have information in the value common, not sure if we would want to keep these...
+    )  # removing rows which don't have an associated year or numeric value. Some have information in the value column, not sure if we would want to keep these...
 
     df["country"] = standardise_country_name(country_col=df["SpatialDim"])
 

@@ -308,12 +308,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     variables = pd.DataFrame()
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
         print(row["variable"])
-        data_filtered = pd.DataFrame(
-            df[
-                (df.IndicatorCode == row["IndicatorCode"])
-                & (df.variable == row["variable"])
-            ]
-        )
+        data_filtered = pd.DataFrame(df[df.variable == row["variable"]])
 
         values_to_exclude = ["Not applicable", "Not available"]
         data_filtered = data_filtered[
@@ -331,7 +326,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
                 "id": variable_idx,
                 "name": row["variable"],
                 "description": var_code2meta[row["IndicatorCode"]],
-                "code": row["IndicatorCode"],
+                "code": None,
                 "unit": unit_var,
                 "short_unit": short_unit_var,
                 "timespan": "%s - %s"
