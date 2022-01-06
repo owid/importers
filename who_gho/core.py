@@ -414,6 +414,7 @@ def load_all_data_and_add_variable_name(
             "TimeDim",
             "DataSourceDimType",
             "DataSourceDim",
+            "Value",
             "NumericValue",
             "variable",
         ]
@@ -421,6 +422,10 @@ def load_all_data_and_add_variable_name(
 
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
     var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
+
+    var_df["NumericValue"] = np.where(
+        var_df["NumericValue"].isna(), var_df["Value"], var_df["NumericValue"]
+    )
 
     assert var_df[var_df.SpatialDimType.isin(spatial_dim_types_exclude)].shape[0] == 0
     assert var_df[var_df.SpatialDim.isin(spatial_dims_to_exclude)].shape[0] == 0
