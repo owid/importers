@@ -53,9 +53,11 @@ from who_gho.core import (
     load_all_data_and_add_variable_name,
     get_distinct_entities,
     get_metadata,
+    remove_empty_rows,
     standardise_country_name,
     clean_variables,
     delete_output,
+    remove_empty_rows,
 )
 
 
@@ -87,9 +89,7 @@ def main() -> None:
         variables=variable_codes, var_code2name=code2name
     )
 
-    df.dropna(
-        subset=["TimeDim", "NumericValue"], inplace=True
-    )  # removing rows which don't have an associated year or numeric value. Some have information in the value column, not sure if we would want to keep these...
+    df = remove_empty_rows(df)
 
     df["country"] = standardise_country_name(country_col=df["SpatialDim"])
 

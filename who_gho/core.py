@@ -267,15 +267,22 @@ def remove_dup_vars(all_series: pd.DataFrame, df: pd.DataFrame) -> pd.DataFrame:
 
     var_keep = []
     for ind in dup_inds["variable"]:
-        # print(ind)
+        print(ind)
         df_ind = df[df["variable"] == ind]
         df_gr = pd.DataFrame(
             df_ind.groupby(["IndicatorCode"], sort=False).size(), columns=["size"]
         )
         df_gr["variable"] = df_gr.index
         df_gr_max = df_gr["variable"][df_gr["size"] == df_gr["size"].max()].tolist()
-        assert len(df_gr_max) == 1
-        df_gr_max = "".join(df_gr_max)
+        if len(df_gr_max) == 1:
+            df_gr_max = "".join(df_gr_max)
+        else:
+            df_gr_max = (
+                df_ind.IndicatorCode[df_ind.TimeDim == df_ind.TimeDim.max()]
+                .drop_duplicates()
+                .tolist()
+            )
+            assert len(df_gr_max) == 1
         var_keep.append(df_gr_max)
 
     dup_inds["keep"] = var_keep
@@ -395,6 +402,8 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
+    vars_to_exclude = ["RSUD_890"]
+
     var_list = []
     for var in variables:
         var_path = f"{INPATH}/{var}.csv"
@@ -422,7 +431,8 @@ def load_all_data_and_add_variable_name(
 
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
     var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
-
+    var_df = var_df[~var_df.IndicatorCode.isin(vars_to_exclude)]
+    ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows
     var_df["NumericValue"] = np.where(
         var_df["NumericValue"].isna(), var_df["Value"], var_df["NumericValue"]
     )
@@ -433,6 +443,13 @@ def load_all_data_and_add_variable_name(
     var_df = var_df[var_df["SpatialDimType"].notna()]
 
     return var_df
+
+
+def remove_empty_rows(df: pd.DataFrame) -> pd.DataFrame:
+    df.dropna(subset=["TimeDim", "NumericValue"], inplace=True)
+    df = df[~(df.NumericValue.isin(["No data", "Not applicable"]))]
+
+    return df
 
 
 def csv_to_parquet(files: iter) -> None:
