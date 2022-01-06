@@ -94,6 +94,7 @@ def main() -> None:
     df["country"] = standardise_country_name(country_col=df["SpatialDim"])
 
     assert df[df["country"].isnull()].shape[0] == 0
+    assert len(df[df.IndicatorCode == "RSUD_890"]) == 0
     df_variables = clean_variables(df, var_code2meta)
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])

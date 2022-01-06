@@ -402,7 +402,7 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
-    vars_to_exclude = ["RSUD_890"]
+    vars_to_exclude = ["RSUD_880", "RSUD_890", "RSUD_900"]
 
     var_list = []
     for var in variables:
