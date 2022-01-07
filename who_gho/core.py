@@ -434,7 +434,9 @@ def load_all_data_and_add_variable_name(
     var_df = var_df[~var_df.IndicatorCode.isin(vars_to_exclude)]
     ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows
     var_df["NumericValue"] = np.where(
-        var_df["NumericValue"].isna(), var_df["Value"], var_df["NumericValue"]
+        var_df["NumericValue"].isna() & var_df["Value"].str.isnumeric(),
+        var_df["Value"],
+        var_df["NumericValue"],
     )
 
     assert var_df[var_df.SpatialDimType.isin(spatial_dim_types_exclude)].shape[0] == 0
