@@ -43,6 +43,7 @@ from who_gho import (
     OUTPATH,
     FIX_VAR_CODE,
     DELETE_OUTPUT,
+    DATASET_SOURCENAME,
 )
 
 from who_gho.core import (
@@ -76,7 +77,7 @@ def main() -> None:
 
     df_sources = clean_sources(
         dataset_id=df_datasets["id"].iloc[0],
-        dataset_name=df_datasets["name"].iloc[0],
+        dataset_name=DATASET_SOURCENAME,
     )
 
     variable_codes = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)

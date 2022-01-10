@@ -135,7 +135,9 @@ def clean_datasets() -> pd.DataFrame:
         0   0  Global Health Observatory - World Health Organ...
 
     """
-    data = [{"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS}"}]
+    data = [
+        {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
+    ]
     df = pd.DataFrame(data)
     return df
 
