@@ -9,6 +9,8 @@ from ihme_gbd.ihme_gbd_prevalence import (
     ENTFILE,
     CURRENT_PATH,
     DATAPOINTS_DIR,
+    FILTER_FIELDS,
+    CLEAN_ALL_VARIABLES,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -20,18 +22,6 @@ from ihme_gbd.gbd_tools import (
     find_countries,
     delete_datapoints,
 )
-
-
-FILTER_FIELDS = [
-    "measure",
-    "location",
-    "sex",
-    "age",
-    "cause",
-    "metric",
-    "year",
-    "val",
-]
 
 COUNTRY_COL = "location"
 
@@ -48,7 +38,13 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
+    vars = create_variables(
+        inpath=INPATH,
+        filter_fields=FILTER_FIELDS,
+        outpath=OUTPATH,
+        clean_all_vars=CLEAN_ALL_VARIABLES,
+        configpath=CONFIGPATH,
+    )
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 

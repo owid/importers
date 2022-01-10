@@ -7,9 +7,6 @@ import json
 from pathlib import Path
 import shutil
 import re
-import glob
-
-from ihme_gbd.ihme_gbd_cause import CONFIGPATH
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -135,8 +132,26 @@ def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
     return vars
 
 
+def list_variables_to_clean(configpath: str):
+    f = open(os.path.join(configpath, "variables_to_clean.json"))
+    ch_vars = json.load(f)
+    ch_vars = ch_vars["variables"]
+
+    if os.path.isfile(os.path.join(configpath, "manual_variables_to_clean.json")):
+        fm = open(os.path.join(configpath, "manual_variables_to_clean.json"))
+        ch_vars_man = json.load(fm)
+        ch_vars_man = ch_vars_man["variables"]
+        ch_vars = ch_vars + ch_vars_man
+        ch_vars = list(dict.fromkeys(ch_vars))
+    return ch_vars
+
+
 def create_variables(
-    inpath: str, filter_fields: list, outpath: str, clean_all_vars: bool
+    inpath: str,
+    filter_fields: list,
+    outpath: str,
+    clean_all_vars: bool,
+    configpath: str,
 ) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
@@ -153,9 +168,7 @@ def create_variables(
 
     field_drop = list(filter(rd.match, fields))
 
-    f = open(os.path.join(CONFIGPATH, "variables_to_clean.json"))
-    ch_vars = json.load(f)
-    ch_vars = ch_vars["variables"]
+    ch_vars = list_variables_to_clean(configpath)
 
     vars_out = []
     print("Creating variables.csv")

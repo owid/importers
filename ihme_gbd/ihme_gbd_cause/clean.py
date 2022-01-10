@@ -44,6 +44,7 @@ def main() -> None:
         filter_fields=FILTER_FIELDS,
         outpath=OUTPATH,
         clean_all_vars=CLEAN_ALL_VARIABLES,
+        configpath=CONFIGPATH,
     )
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)

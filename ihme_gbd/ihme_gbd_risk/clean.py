@@ -9,6 +9,8 @@ from ihme_gbd.ihme_gbd_risk import (
     ENTFILE,
     CURRENT_PATH,
     DATAPOINTS_DIR,
+    FILTER_FIELDS,
+    CLEAN_ALL_VARIABLES,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -21,16 +23,6 @@ from ihme_gbd.gbd_tools import (
     delete_datapoints,
 )
 
-FILTER_FIELDS = [
-    "measure_name",
-    "location_name",
-    "sex_name",
-    "age_name",
-    "cause_name",
-    "metric_name",
-    "year",
-    "val",
-]
 
 COUNTRY_COL = "location_name"
 
@@ -47,7 +39,13 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
+    vars = create_variables(
+        inpath=INPATH,
+        filter_fields=FILTER_FIELDS,
+        outpath=OUTPATH,
+        clean_all_vars=CLEAN_ALL_VARIABLES,
+        configpath=CONFIGPATH,
+    )
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 

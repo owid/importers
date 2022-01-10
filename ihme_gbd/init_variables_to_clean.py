@@ -10,8 +10,6 @@ from db_utils import DBUtils
 from ihme_gbd.match_variables import get_datasets
 from ihme_gbd.gbd_tools import get_variable_names
 
-CUSTOM_FNAME = "custom_variable_replacements.json"
-
 
 def main(configpath: str, inpath: str, outpath: str, namespace: str, fields: list):
     variables_to_clean = get_variables_to_clean_from_string_matches(
