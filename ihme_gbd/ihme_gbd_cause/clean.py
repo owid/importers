@@ -11,6 +11,7 @@ from ihme_gbd.ihme_gbd_cause import (
     CURRENT_PATH,
     DATAPOINTS_DIR,
     FILTER_FIELDS,
+    COUNTRY_COL,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -22,9 +23,6 @@ from ihme_gbd.gbd_tools import (
     find_countries,
     delete_datapoints,
 )
-
-
-COUNTRY_COL = "location"
 
 
 def main() -> None:

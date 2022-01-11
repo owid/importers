@@ -10,6 +10,7 @@ from ihme_gbd.ihme_gbd_mental_health import (
     CURRENT_PATH,
     DATAPOINTS_DIR,
     CLEAN_ALL_VARIABLES,
+    COUNTRY_COL,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -33,8 +34,6 @@ FILTER_FIELDS = [
     "year",
     "val",
 ]
-
-COUNTRY_COL = "location"
 
 
 def main() -> None:

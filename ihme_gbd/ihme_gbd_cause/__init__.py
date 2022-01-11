@@ -34,12 +34,13 @@ DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 CLEAN_ALL_VARIABLES = False
 FILTER_FIELDS = [
-    "measure",
-    "location",
-    "sex",
-    "age",
-    "cause",
-    "metric",
+    "measure_name",
+    "location_name",
+    "sex_name",
+    "age_name",
+    "cause_name",
+    "metric_name",
     "year",
     "val",
 ]
+COUNTRY_COL = "location_name"

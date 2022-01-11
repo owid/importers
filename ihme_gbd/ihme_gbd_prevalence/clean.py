@@ -11,6 +11,7 @@ from ihme_gbd.ihme_gbd_prevalence import (
     DATAPOINTS_DIR,
     FILTER_FIELDS,
     CLEAN_ALL_VARIABLES,
+    COUNTRY_COL,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -22,8 +23,6 @@ from ihme_gbd.gbd_tools import (
     find_countries,
     delete_datapoints,
 )
-
-COUNTRY_COL = "location"
 
 
 def main() -> None:

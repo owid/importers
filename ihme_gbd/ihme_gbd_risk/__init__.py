@@ -43,3 +43,4 @@ FILTER_FIELDS = [
     "year",
     "val",
 ]
+COUNTRY_COL = "location_name"
