@@ -225,11 +225,11 @@ def create_datapoints(
         df = pd.read_csv(path)
         df["name"] = create_var_name(df)
 
-        if "metric_name" in df_m.columns:
+        if "metric_name" in df.columns:
             df["val"][df["metric_name"] == "Percent"] = (
                 df["val"][df["metric_name"] == "Percent"] * 100
             )
-        if "metric" in df_m.columns:
+        if "metric" in df.columns:
             df["val"][df["metric"] == "Percent"] = (
                 df["val"][df["metric"] == "Percent"] * 100
             )
