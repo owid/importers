@@ -24,6 +24,8 @@ if os.path.isdir(
         "ihme_gbd_cause",
         "input",
     )
+elif os.path.isdir(os.path.join("/mnt", "importers", "data", "gbd_2019", "gbd_cause")):
+    INPATH = os.path.join("/mnt", "importers", "data", "gbd_2019", "gbd_cause")
 else:
     INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
