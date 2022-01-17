@@ -6,6 +6,7 @@ import re
 import simplejson as json
 import shutil
 from typing import Dict, List
+from copy import deepcopy
 from pandas.core.dtypes.common import is_numeric_dtype
 import pandas as pd
 from dotenv import load_dotenv
@@ -246,6 +247,46 @@ def clean_variables_and_datapoints(
             logger.error(
                 f"Failed to convert data for variable {var['name']}. Error: {e}"
             )
+
+    # constructs "NaN-filled" variables, which have NaN values filled with
+    # non-NaN values using pandas.Series.fillna
+    # These variables are used in stacked area charts.
+    name2fillna_kwargs = {
+        v["name"]: v["cleaningMetadata"]["fillna"]
+        for v in variables
+        if pd.notnull(v.get("cleaningMetadata", {}).get("fillna"))
+    }
+    df_data_filled = df_data.query(f"name in @name2fillna_kwargs.keys()").sort_values(
+        ["Country", "Year"]
+    )
+    uniq_dates = df_data_filled["Year"].drop_duplicates().sort_values().tolist()
+    df_data_filled = (
+        df_data_filled.groupby(["name", "Country"])
+        .apply(lambda gp: gp.set_index("Year").reindex(uniq_dates))
+        .drop(columns=["name", "Country"])  # gets re-inserted on reset_index()
+        .reset_index()
+        .sort_values(["name", "Country", "Year"])
+    )
+    df_data_filled["Value"] = df_data_filled.groupby("name")["Value"].apply(
+        lambda gp: gp.fillna(**name2fillna_kwargs[gp.name])
+    )
+    df_data_filled["name"] = df_data_filled["name"] + " (zero filled)"
+    assert df_data_filled["Value"].isnull().sum() == 0
+    df_data = pd.concat([df_data, df_data_filled], axis=0)
+    assert not df_data.duplicated(subset=["name", "Country", "Year"]).any()
+
+    zero_filled_vars = []
+    for var in variables:
+        if pd.notnull(var.get("cleaningMetadata", {}).get("fillna")):
+            zero_filled_var = deepcopy(var)
+            zero_filled_var["name"] = f"{var['name']} (zero filled)"
+            if len(zero_filled_var.get("description", "")) > 0:
+                zero_filled_var["description"] += (
+                    '\n Note: missing data values have been replaced with "0" '
+                    "for the purposes of data visualization."
+                )
+            zero_filled_vars.append(zero_filled_var)
+    variables += zero_filled_vars
 
     df_variables = pd.DataFrame(variables)
     df_timespans = (
