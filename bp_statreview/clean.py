@@ -282,7 +282,7 @@ def clean_variables_and_datapoints(
             zero_filled_var["name"] = f"{var['name']} (zero filled)"
             if len(zero_filled_var.get("description", "")) > 0:
                 zero_filled_var["description"] += (
-                    '\n Note: missing data values have been replaced with "0" '
+                    '\n\nNote: missing data values have been replaced with "0" '
                     "for the purposes of data visualization."
                 )
             zero_filled_vars.append(zero_filled_var)
