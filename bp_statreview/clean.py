@@ -271,6 +271,7 @@ def clean_variables_and_datapoints(
         lambda gp: gp.fillna(**name2fillna_kwargs[gp.name])
     )
     df_data_filled["name"] = df_data_filled["name"] + " (zero filled)"
+    df_data_filled["code"] = df_data_filled["code"] + "_zero_filled"
     assert df_data_filled["Value"].isnull().sum() == 0
     df_data = pd.concat([df_data, df_data_filled], axis=0)
     assert not df_data.duplicated(subset=["name", "Country", "Year"]).any()
@@ -280,6 +281,8 @@ def clean_variables_and_datapoints(
         if pd.notnull(var.get("cleaningMetadata", {}).get("fillna")):
             zero_filled_var = deepcopy(var)
             zero_filled_var["name"] = f"{var['name']} (zero filled)"
+            if pd.notnull(zero_filled_var["code"]):
+                zero_filled_var["code"] = zero_filled_var["code"] + "_zero_filled"
             if len(zero_filled_var.get("description", "")) > 0:
                 zero_filled_var["description"] += (
                     '\n\nNote: missing data values have been replaced with "0" '

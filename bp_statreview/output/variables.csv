@@ -48,7 +48,7 @@ Gas Production - EJ,gasprod_ej,Exajoules,EJ,Excludes gas flared or recycled. Inc
 Gas Production - TWh,,Terawatt-hours,TWh,Excludes gas flared or recycled. Includes natural gas produced for Gas-to-Liquids transformation.,"{""name"": ""Gas"", ""numDecimalPlaces"": 0}",1970-2020,40,0,0
 Geo Biomass Other - EJ,biogeo_ej,Exajoules,EJ,"Figures are based on gross generation and do not account for cross-border electricity supply. ""Input-equivalent"" energy is the amount of fuel that would be required by thermal power stations to generate the reported electricity output.","{""name"": ""Other renewables"", ""numDecimalPlaces"": 0}",1965-2020,41,0,0
 Geo Biomass Other - TWh,biogeo_twh,Terawatt-hours,TWh,Figures are based on gross generation and do not account for cross-border electricity supply.,"{""name"": ""Other renewables"", ""numDecimalPlaces"": 0}",1965-2020,42,0,0
-Geo Biomass Other - TWh (zero filled),biogeo_twh,Terawatt-hours,TWh,"Figures are based on gross generation and do not account for cross-border electricity supply.
+Geo Biomass Other - TWh (zero filled),biogeo_twh_zero_filled,Terawatt-hours,TWh,"Figures are based on gross generation and do not account for cross-border electricity supply.
 
 Note: missing data values have been replaced with ""0"" for the purposes of data visualization.","{""name"": ""Other renewables"", ""numDecimalPlaces"": 0}",1965-2020,43,0,0
 Geothermal Capacity,,Megawatts,MW,,,1975-2020,44,0,0
