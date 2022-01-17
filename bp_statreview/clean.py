@@ -260,10 +260,14 @@ def clean_variables_and_datapoints(
         ["Country", "Year"]
     )
     uniq_dates = df_data_filled["Year"].drop_duplicates().sort_values().tolist()
+    uniq_countries = df_data_filled["Country"].drop_duplicates().sort_values().tolist()
+    idx = pd.MultiIndex.from_product(
+        [uniq_countries, uniq_dates], names=["Country", "Year"]
+    )
     df_data_filled = (
-        df_data_filled.groupby(["name", "Country"])
-        .apply(lambda gp: gp.set_index("Year").reindex(uniq_dates))
-        .drop(columns=["name", "Country"])  # gets re-inserted on reset_index()
+        df_data_filled.groupby(["name"])
+        .apply(lambda gp: gp.set_index(["Country", "Year"]).reindex(idx))
+        .drop(columns=["name"])  # gets re-inserted on reset_index()
         .reset_index()
         .sort_values(["name", "Country", "Year"])
     )
