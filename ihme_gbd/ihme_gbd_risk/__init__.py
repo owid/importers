@@ -13,7 +13,7 @@ if os.path.isdir(
         "/mnt",
         "owid_staging_neurath_temp",
         "importers",
-        "ihme_gbd_risk",
+        "ihme_gbd_prevalence",
         "input",
     )
 ):
@@ -21,9 +21,13 @@ if os.path.isdir(
         "/mnt",
         "owid_staging_neurath_temp",
         "importers",
-        "ihme_gbd_risk",
+        "ihme_gbd_prevalence",
         "input",
     )
+elif os.path.isdir(
+    os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_prevalence")
+):
+    INPATH = os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_prevalence")
 else:
     INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
@@ -32,3 +36,15 @@ DATASET_RETRIEVED_DATE = "2021-11-27"
 URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/806c7f4cb77080df1ded8d65a35ed99c_files/IHME-GBD_2019_DATA-806c7f4c-"
 DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
+CLEAN_ALL_VARIABLES = False
+FILTER_FIELDS = [
+    "measure",
+    "location",
+    "sex",
+    "age",
+    "cause",
+    "metric",
+    "year",
+    "val",
+]
+COUNTRY_COL = "location_name"

@@ -7,7 +7,6 @@ import json
 from pathlib import Path
 import shutil
 import re
-import glob
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -114,7 +113,46 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     df_sources.to_csv(os.path.join(outpath, "sources.csv"), index=False)
 
 
-def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataFrame:
+def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
+
+    paths = list_input_files(inpath)
+
+    r = re.compile(r"measure|sex|age|cause|metric|year")
+
+    fields = list(filter(r.match, filter_fields))
+
+    vars_out = []
+    for path in paths:
+        df = pd.read_csv(path, usecols=fields).drop_duplicates()
+        df["name"] = create_var_name(df)
+        vars_out.append(df["name"])
+
+    vars = pd.concat(vars_out)
+
+    return vars
+
+
+def list_variables_to_clean(configpath: str):
+    f = open(os.path.join(configpath, "variables_to_clean.json"))
+    ch_vars = json.load(f)
+    ch_vars = ch_vars["variables"]
+
+    if os.path.isfile(os.path.join(configpath, "manual_variables_to_clean.json")):
+        fm = open(os.path.join(configpath, "manual_variables_to_clean.json"))
+        ch_vars_man = json.load(fm)
+        ch_vars_man = ch_vars_man["variables"]
+        ch_vars = ch_vars + ch_vars_man
+        ch_vars = list(dict.fromkeys(ch_vars))
+    return ch_vars
+
+
+def create_variables(
+    inpath: str,
+    filter_fields: list,
+    outpath: str,
+    clean_all_vars: bool,
+    configpath: str,
+) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
 
@@ -130,22 +168,32 @@ def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataF
 
     field_drop = list(filter(rd.match, fields))
 
+    ch_vars = list_variables_to_clean(configpath)
+
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
         df["name"] = create_var_name(df)
-        df_t = df.drop(field_drop, axis=1).drop_duplicates()
-        df_t["dataset_id"] = int(0)
-        df_t["source_id"] = int(0)
-        df_t[["description", "code", "coverage", "display", "original_metadata"]] = None
-        if "metric_name" in df_t.columns:
-            df_t = df_t.rename(columns={"metric_name": "unit"})
-        if "metric" in df_t.columns:
-            df_t = df_t.rename(columns={"metric": "unit"})
-        assert "unit" in df_t.columns
-        df_t["short_unit"] = df_t["unit"].map(units_dict)
-        vars_out.append(df_t)
+        if not clean_all_vars:
+            df = df[df["name"].isin(ch_vars)]
+        if (
+            df.shape[0]
+            > 0  # check there are some rows left after the previous if statement
+        ):
+            df_t = df.drop(field_drop, axis=1).drop_duplicates()
+            df_t["dataset_id"] = int(0)
+            df_t["source_id"] = int(0)
+            df_t[
+                ["description", "code", "coverage", "display", "original_metadata"]
+            ] = None
+            if "metric_name" in df_t.columns:
+                df_t = df_t.rename(columns={"metric_name": "unit"})
+            if "metric" in df_t.columns:
+                df_t = df_t.rename(columns={"metric": "unit"})
+            assert "unit" in df_t.columns
+            df_t["short_unit"] = df_t["unit"].map(units_dict)
+            vars_out.append(df_t)
 
     df = pd.concat(vars_out)
     df_t = df.join(df.groupby("name")["year"].agg(["min", "max"]), on="name")
@@ -177,9 +225,14 @@ def create_datapoints(
         df = pd.read_csv(path)
         df["name"] = create_var_name(df)
 
-        df["val"][df["metric"] == "Percent"] = (
-            df["val"][df["metric"] == "Percent"] * 100
-        )
+        if "metric_name" in df.columns:
+            df["val"][df["metric_name"] == "Percent"] = (
+                df["val"][df["metric_name"] == "Percent"] * 100
+            )
+        if "metric" in df.columns:
+            df["val"][df["metric"] == "Percent"] = (
+                df["val"][df["metric"] == "Percent"] * 100
+            )
 
         df_m = df.merge(vars[["name", "id"]], on="name")
         if "location_name" in df_m.columns:

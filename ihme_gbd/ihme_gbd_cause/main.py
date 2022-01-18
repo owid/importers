@@ -9,10 +9,19 @@ Usage:
 """
 import click
 import re
-from ihme_gbd.ihme_gbd_cause import DATASET_DIR, DATASET_NAMESPACE, NAMESPACE, OUTPATH
+from ihme_gbd.ihme_gbd_cause import (
+    CONFIGPATH,
+    DATASET_DIR,
+    DATASET_NAMESPACE,
+    FILTER_FIELDS,
+    INPATH,
+    NAMESPACE,
+    OUTPATH,
+    CLEAN_ALL_VARIABLES,
+)
 
 from ihme_gbd.ihme_gbd_cause import download, clean
-from ihme_gbd import match_variables
+from ihme_gbd import init_variables_to_clean, match_variables
 
 from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
@@ -34,14 +43,28 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to import the data",
 )
-def main(download_data, clean_data, import_data):
+@click.option(
+    "--match_vars/--skip_match",
+    default=True,
+    help="Whether or not to match the imported variables to existing variables in database",
+)
+def main(download_data, clean_data, import_data, match_vars):
     if download_data:
         download.main()
+    if not CLEAN_ALL_VARIABLES:
+        init_variables_to_clean.main(
+            CONFIGPATH,
+            INPATH,
+            OUTPATH,
+            NAMESPACE,
+            FILTER_FIELDS,
+        )
     if clean_data:
         clean.main()
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
+    if match_vars:
+        match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
