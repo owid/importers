@@ -1,4 +1,5 @@
 from ihme_gbd.ihme_gbd_prevalence import (
+    CLEAN_ALL_VARIABLES,
     INPATH,
     DATASET_NAME,
     DATASET_AUTHORS,
@@ -10,7 +11,6 @@ from ihme_gbd.ihme_gbd_prevalence import (
     CURRENT_PATH,
     DATAPOINTS_DIR,
     FILTER_FIELDS,
-    CLEAN_ALL_VARIABLES,
     COUNTRY_COL,
 )
 
