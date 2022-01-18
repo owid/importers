@@ -46,7 +46,12 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to import the data",
 )
-def main(download_data, clean_data, import_data):
+@click.option(
+    "--match_vars/--skip_match",
+    default=True,
+    help="Whether or not to match the imported variables to existing variables in database",
+)
+def main(download_data, clean_data, import_data, match_vars):
     if download_data:
         download.main()
     if not CLEAN_ALL_VARIABLES:
@@ -61,7 +66,8 @@ def main(download_data, clean_data, import_data):
         clean.main()
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
+    if match_vars:
+        match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
