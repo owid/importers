@@ -162,11 +162,17 @@ def create_variables(
 
     paths = list_input_files(inpath)
 
-    r = re.compile(r"measure|sex|age|cause|metric|year")
+    if "cause" in filter_fields:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
+    if "rei" in filter_fields:
+        r = re.compile(r"measure|sex|age|rei|metric|year")
 
     fields = list(filter(r.match, filter_fields))
 
-    rd = re.compile(r"measure|sex|age|cause")
+    if "cause" in filter_fields:
+        rd = re.compile(r"measure|sex|age|cause")
+    if "rei" in filter_fields:
+        rd = re.compile(r"measure|sex|age|rei")
 
     field_drop = list(filter(rd.match, fields))
 
