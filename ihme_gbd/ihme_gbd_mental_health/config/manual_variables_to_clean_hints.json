@@ -1,0 +1,42 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables that have been changed since the lastupload. New variable names will have to be manually identified and saved in 'manual_variables_to_clean.json'"
+    },
+    "variables": [
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Both - Age: Age-standardized (Percent)",
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Both - Age: All Ages (Number)",
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Female - Age: Age-standardized (Percent)",
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Female - Age: All Ages (Number)",
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Male - Age: Age-standardized (Percent)",
+        "Prevalence - Asperger syndrome and other autistic spectrum disorders - Sex: Male - Age: All Ages (Number)",
+        "Prevalence - Autism - Sex: Both - Age: Age-standardized (Percent)",
+        "Prevalence - Autism - Sex: Both - Age: All Ages (Number)",
+        "Prevalence - Autism - Sex: Female - Age: Age-standardized (Percent)",
+        "Prevalence - Autism - Sex: Female - Age: All Ages (Number)",
+        "Prevalence - Autism - Sex: Male - Age: Age-standardized (Percent)",
+        "Prevalence - Autism - Sex: Male - Age: All Ages (Number)",
+        "Prevalence - Autistic spectrum disorders - Sex: Both - Age: Age-standardized (Percent)",
+        "Prevalence - Autistic spectrum disorders - Sex: Both - Age: All Ages (Number)",
+        "Prevalence - Autistic spectrum disorders - Sex: Female - Age: Age-standardized (Percent)",
+        "Prevalence - Autistic spectrum disorders - Sex: Female - Age: All Ages (Number)",
+        "Prevalence - Autistic spectrum disorders - Sex: Male - Age: Age-standardized (Percent)",
+        "Prevalence - Autistic spectrum disorders - Sex: Male - Age: All Ages (Number)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 10 to 14 (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 15 to 19 (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 15-49 years (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 20 to 24 (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 25 to 29 (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 30 to 34 (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 5-14 years (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 50-69 years (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: 70+ years (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: Age-standardized (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: Age-standardized (Rate)",
+        "Prevalence - Mental and substance use disorders - Sex: Both - Age: All Ages (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Female - Age: Age-standardized (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Female - Age: All Ages (Number)",
+        "Prevalence - Mental and substance use disorders - Sex: Male - Age: Age-standardized (Percent)",
+        "Prevalence - Mental and substance use disorders - Sex: Male - Age: All Ages (Number)",
+        "Prevalence - Other mental and substance use disorders - Sex: Both - Age: All Ages (Number)"
+    ]
+}
