@@ -13,7 +13,7 @@ if os.path.isdir(
         "/mnt",
         "owid_staging_neurath_temp",
         "importers",
-        "ihme_gbd_prevalence",
+        "ihme_gbd_risk",
         "input",
     )
 ):
@@ -21,13 +21,11 @@ if os.path.isdir(
         "/mnt",
         "owid_staging_neurath_temp",
         "importers",
-        "ihme_gbd_prevalence",
+        "ihme_gbd_risk",
         "input",
     )
-elif os.path.isdir(
-    os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_prevalence")
-):
-    INPATH = os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_prevalence")
+elif os.path.isdir(os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_risk")):
+    INPATH = os.path.join("/mnt", "importers", "data", "gbd_2021", "gbd_risk")
 else:
     INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
