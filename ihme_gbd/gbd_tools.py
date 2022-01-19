@@ -116,8 +116,10 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
 def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
 
     paths = list_input_files(inpath)
-
-    r = re.compile(r"measure|sex|age|cause|metric|year")
+    if "rei" in filter_fields:
+        r = re.compile(r"measure|sex|age|rei|metric|year")
+    else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
 
     fields = list(filter(r.match, filter_fields))
 
@@ -279,7 +281,7 @@ def create_distinct_entities(configpath: str, outpath: str) -> None:
 
 def create_var_name(df: pd.DataFrame) -> pd.Series:
 
-    if "measure_name" in df.columns:
+    if "cause_name" in df.columns:
         df["name"] = (
             df["measure_name"]
             + " - "
@@ -292,7 +294,7 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["metric_name"]
             + ")"
         )
-    if "measure" in df.columns:
+    if "cause" in df.columns:
         df["name"] = (
             df["measure"]
             + " - "
@@ -303,6 +305,32 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["age"]
             + " ("
             + df["metric"]
+            + ")"
+        )
+    if "rei" in df.columns:
+        df["name"] = (
+            df["measure"]
+            + " - "
+            + df["rei"]
+            + " - Sex: "
+            + df["sex"]
+            + " - Age: "
+            + df["age"]
+            + " ("
+            + df["metric"]
+            + ")"
+        )
+    if "rei_name" in df.columns:
+        df["name"] = (
+            df["measure_name"]
+            + " - "
+            + df["rei_name"]
+            + " - Sex: "
+            + df["sex_name"]
+            + " - Age: "
+            + df["age_name"]
+            + " ("
+            + df["metric_name"]
             + ")"
         )
     assert "name" in df.columns

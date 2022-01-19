@@ -32,8 +32,8 @@ else:
     INPATH = os.path.join(DATASET_DIR, "input")
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
-DATASET_RETRIEVED_DATE = "2021-11-27"
-URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/806c7f4cb77080df1ded8d65a35ed99c_files/IHME-GBD_2019_DATA-806c7f4c-"
+DATASET_RETRIEVED_DATE = "2022-01-19"
+URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/503960ca2945b0e3fe0d2eeed57d57b8_files/IHME-GBD_2019_DATA-503960ca-"
 DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 CLEAN_ALL_VARIABLES = False
@@ -42,9 +42,9 @@ FILTER_FIELDS = [
     "location",
     "sex",
     "age",
-    "cause",
     "metric",
+    "rei",
     "year",
     "val",
 ]
-COUNTRY_COL = "location_name"
+COUNTRY_COL = "location"

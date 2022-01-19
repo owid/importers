@@ -1,0 +1,16 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables to upsert to SQL. Any variables NOT in this file will be ignored."
+    },
+    "variables": [
+        "DALYs (Disability-Adjusted Life Years) - High LDL cholesterol - Sex: Both - Age: All Ages (Number)",
+        "Deaths - High LDL cholesterol - Sex: Both - Age: 15-49 years (Number)",
+        "Deaths - High LDL cholesterol - Sex: Both - Age: 50-69 years (Number)",
+        "Deaths - High LDL cholesterol - Sex: Both - Age: 70+ years (Number)",
+        "Deaths - High LDL cholesterol - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Low birth weight and short gestation - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Low birth weight and short gestation - Sex: Both - Age: Under 5 (Number)",
+        "Deaths - Low birth weight - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Low birth weight - Sex: Both - Age: Under 5 (Number)"
+    ]
+}

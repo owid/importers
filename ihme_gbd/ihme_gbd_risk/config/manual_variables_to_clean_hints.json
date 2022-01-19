@@ -1,0 +1,14 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables that have been changed since the lastupload. New variable names will have to be manually identified and saved in 'manual_variables_to_clean.json'"
+    },
+    "variables": [
+        "DALYs (Disability-Adjusted Life Years) - High total cholesterol - Sex: Both - Age: All Ages (Number)",
+        "Deaths - High total cholesterol - Sex: Both - Age: 15-49 years (Number)",
+        "Deaths - High total cholesterol - Sex: Both - Age: 50-69 years (Number)",
+        "Deaths - High total cholesterol - Sex: Both - Age: 70+ years (Number)",
+        "Deaths - High total cholesterol - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Low birth weight for gestation - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Low birth weight for gestation - Sex: Both - Age: Under 5 (Number)"
+    ]
+}

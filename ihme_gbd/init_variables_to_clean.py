@@ -12,9 +12,11 @@ from ihme_gbd.gbd_tools import get_variable_names
 
 
 def main(configpath: str, inpath: str, outpath: str, namespace: str, fields: list):
-    variables_to_clean = get_variables_to_clean_from_string_matches(
-        inpath, outpath, namespace, fields
-    )
+
+    (
+        variables_to_clean,
+        manual_variables_to_add,
+    ) = get_variables_to_clean_from_string_matches(inpath, outpath, namespace, fields)
 
     assert len(variables_to_clean) == len(set(variables_to_clean)), (
         "There are one or more duplicate variable names in the constructed "
@@ -22,6 +24,8 @@ def main(configpath: str, inpath: str, outpath: str, namespace: str, fields: lis
     )
 
     variables_to_clean = sorted(variables_to_clean)
+
+    manual_variables_to_add = sorted(manual_variables_to_add)
 
     with open(os.path.join(configpath, "variables_to_clean.json"), "w") as f:
         json.dump(
@@ -32,6 +36,23 @@ def main(configpath: str, inpath: str, outpath: str, namespace: str, fields: lis
                     "ignored."
                 },
                 "variables": variables_to_clean,
+            },
+            f,
+            ignore_nan=True,
+            indent=4,
+        )
+    with open(
+        os.path.join(configpath, "manual_variables_to_clean_hints.json"), "w"
+    ) as f:
+        json.dump(
+            {
+                "meta": {
+                    "notes": "This file contains an array of IHME GBD "
+                    "variables that have been changed since the last"
+                    "upload. New variable names will have to be manually "
+                    "identified and saved in 'manual_variables_to_clean.json'"
+                },
+                "variables": manual_variables_to_add,
             },
             f,
             ignore_nan=True,
@@ -55,7 +76,9 @@ def get_variables_to_clean_from_string_matches(
 
     variables_to_clean = list(set(df_old_vars) & set(df_new_vars))
 
-    return variables_to_clean
+    manual_variables_to_add = list(set(df_old_vars) - set(df_new_vars))
+
+    return variables_to_clean, manual_variables_to_add
 
 
 def get_old_variables(outpath: str, namespace_db: str):
