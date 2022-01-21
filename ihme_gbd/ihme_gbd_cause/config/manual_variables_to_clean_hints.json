@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables that have been changed since the lastupload. New variable names will have to be manually identified and saved in 'manual_variables_to_clean.json'"
+    },
+    "variables": [
+        "DALYs (Disability-Adjusted Life Years) - Asperger syndrome and other autistic spectrum disorders - Sex: Both - Age: All Ages (Number)",
+        "DALYs (Disability-Adjusted Life Years) - Autism - Sex: Both - Age: All Ages (Number)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: 15-49 years (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: 5-14 years (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: 50-69 years (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: 70+ years (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: Age-standardized (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: All Ages (Number)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: All Ages (Rate)",
+        "DALYs (Disability-Adjusted Life Years) - Mental and substance use disorders - Sex: Both - Age: Under 5 (Rate)",
+        "Deaths - Alzheimer disease and other dementias - Sex: Both - Age: Age-standardized (Rate)",
+        "Deaths - Diarrhea, lower respiratory, and other common infectious diseases - Sex: Both - Age: Under 5 (Rate)",
+        "Deaths - Hepatitis - Sex: Both - Age: Under 5 (Number)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: 15-49 years (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: 5-14 years (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: 50-69 years (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: 70+ years (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: Age-standardized (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: All Ages (Number)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: All Ages (Rate)",
+        "Deaths - Mental and substance use disorders - Sex: Both - Age: Under 5 (Rate)",
+        "Deaths - Neonatal preterm birth complications - Sex: Both - Age: Under 5 (Number)"
+    ]
+}
