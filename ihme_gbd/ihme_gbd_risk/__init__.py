@@ -41,6 +41,7 @@ FILTER_FIELDS = [
     "sex",
     "age",
     "metric",
+    "cause",
     "rei",
     "year",
     "val",

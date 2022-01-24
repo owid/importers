@@ -117,7 +117,7 @@ def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
 
     paths = list_input_files(inpath)
     if "rei" in filter_fields:
-        r = re.compile(r"measure|sex|age|rei|metric|year")
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
     else:
         r = re.compile(r"measure|sex|age|cause|metric|year")
 
@@ -162,17 +162,17 @@ def create_variables(
 
     paths = list_input_files(inpath)
 
-    if "cause" in filter_fields:
-        r = re.compile(r"measure|sex|age|cause|metric|year")
     if "rei" in filter_fields:
-        r = re.compile(r"measure|sex|age|rei|metric|year")
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
+    else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
 
     fields = list(filter(r.match, filter_fields))
 
-    if "cause" in filter_fields:
-        rd = re.compile(r"measure|sex|age|cause")
     if "rei" in filter_fields:
-        rd = re.compile(r"measure|sex|age|rei")
+        rd = re.compile(r"measure|sex|age|cause|rei")
+    else:
+        rd = re.compile(r"measure|sex|age|cause")
 
     field_drop = list(filter(rd.match, fields))
 
@@ -313,9 +313,12 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["metric"]
             + ")"
         )
+    # For risk factor variables we want to include the risk factor and the cause of death so need a slightly different variable format
     if "rei" in df.columns:
         df["name"] = (
             df["measure"]
+            + " - "
+            + df["cause"]
             + " - "
             + df["rei"]
             + " - Sex: "
@@ -329,6 +332,8 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
     if "rei_name" in df.columns:
         df["name"] = (
             df["measure_name"]
+            + " - "
+            + df["cause_name"]
             + " - "
             + df["rei_name"]
             + " - Sex: "
