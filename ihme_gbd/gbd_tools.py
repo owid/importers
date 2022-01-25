@@ -8,7 +8,7 @@ from pathlib import Path
 import shutil
 import re
 
-from ihme_gbd.ihme_gbd_risk import OUTPATH
+from ihme_gbd.ihme_gbd_risk import CONFIGPATH, OUTPATH
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -212,7 +212,7 @@ def create_variables(
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
 
-    df_t = add_owid_variables(df_t)
+    df_t = add_owid_variables(df_t, configpath=CONFIGPATH)
 
     # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
@@ -274,61 +274,30 @@ def create_datapoints(
                     os.path.join(outpath, "datapoints", "datapoints_%d.csv" % name),
                     index=False,
                 )
-    add_owid_var_data(vars, outpath=OUTPATH)
+    calc_owid_var_data(vars, outpath=OUTPATH, configpath=CONFIGPATH)
 
 
-def add_owid_var_data(vars: pd.DataFrame, outpath: str) -> None:
+def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> None:
 
-    cancer_smoking_vars = [
-        "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)",
-        "Deaths - Cause: All causes - Risk: Secondhand smoke - Sex: Both - Age: Age-standardized (Percent)",
-    ]
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
 
-    outdoor_air_pollution_vars = [
-        "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)",
-        "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Percent)",
-    ]
-
-    if vars.name.isin(cancer_smoking_vars).sum() == 2:
-        id_can = vars.loc[
-            vars["name"]
-            == "Deaths - Cause: All causes - Risk: Smoking - OWID - Sex: Both - Age: Age-standardized (Percent)"
-        ].id
-        dp = vars[vars.name.isin(cancer_smoking_vars)].id.to_list()
-        df_can = []
-        for file in dp:
+    for var in vars_to_calc:
+        id = vars.loc[vars["name"] == var].id
+        vars_to_sum = vars[vars.name.isin(vars_to_calc[var])].id.to_list()
+        df_sum = []
+        for file in vars_to_sum:
             df = pd.read_csv(
                 os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
                 index_col=None,
                 header=0,
             )
             df["id"] = file
-            df_can.append(df)
-        df = pd.concat(df_can, ignore_index=True)
+            df_sum.append(df)
+        df = pd.concat(df_sum, ignore_index=True)
         df = df.drop_duplicates()
         df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
-            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id_can)
-        )
-
-    if vars.name.isin(outdoor_air_pollution_vars).sum() == 2:
-        id_oap = vars.loc[
-            vars["name"]
-            == "Deaths - Cause: All causes - Risk: Outdoor air pollution - OWID - Sex: Both - Age: Age-standardized (Percent)"
-        ].id
-        dp = vars[vars.name.isin(outdoor_air_pollution_vars)].id.to_list()
-        df_can = []
-        for file in dp:
-            df = pd.read_csv(
-                os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
-                index_col=None,
-                header=0,
-            )
-            df["id"] = file
-            df_can.append(df)
-        df = pd.concat(df_can, ignore_index=True)
-        df = df.drop_duplicates()
-        df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
-            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id_oap)
+            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id)
         )
 
 
@@ -409,40 +378,21 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
     return df["name"]
 
 
-def add_owid_variables(vars: pd.DataFrame) -> pd.DataFrame:
-    cancer_smoking_vars = [
-        "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)",
-        "Deaths - Cause: All causes - Risk: Secondhand smoke - Sex: Both - Age: Age-standardized (Percent)",
-    ]
-    outdoor_air_pollution_vars = [
-        "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)",
-        "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Percent)",
-    ]
+def add_owid_variables(vars: pd.DataFrame, configpath: str) -> pd.DataFrame:
 
-    if vars.name.isin(cancer_smoking_vars).sum() == 2:
-        cs_df = vars.loc[
-            vars["name"]
-            == "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)"
-        ]
-        cs_df[
-            "name"
-        ] = "Deaths - Cause: All causes - Risk: Smoking - OWID - Sex: Both - Age: Age-standardized (Percent)"
-        cs_df[
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
+
+    vars_out = []
+    for item in vars_to_calc:
+        var_out = vars[vars.name == vars_to_calc[item][0]]
+        var_out["name"] = item
+        var_out[
             "description"
-        ] = "A variable calculated by OWID; the sum of 'Smoking' and 'Secondhand smoke'."
-        vars = pd.concat([vars, cs_df])
+        ] = f"Variable calculated by OWID: the sum of {vars_to_calc[item][0]} and {vars_to_calc[item][1]}"
+        vars_out.append(var_out)
 
-    if vars.name.isin(outdoor_air_pollution_vars).sum() == 2:
-        oap_df = vars.loc[
-            vars["name"]
-            == "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)"
-        ]
-        oap_df[
-            "name"
-        ] = "Deaths - Cause: All causes - Risk: Outdoor air pollution - OWID - Sex: Both - Age: Age-standardized (Percent)"
-        oap_df[
-            "description"
-        ] = "A variable calculated by OWID; the sum of 'Ambient particulate matter pollution' and 'Ambient ozone pollution'."
-        vars = pd.concat([vars, oap_df])
+    vars_out = pd.concat(vars_out)
 
+    vars = pd.concat([vars, vars_out])
     return vars

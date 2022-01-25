@@ -22,7 +22,6 @@ from ihme_gbd.gbd_tools import (
     create_distinct_entities,
     find_countries,
     delete_datapoints,
-    add_owid_variables,
 )
 
 
@@ -45,7 +44,6 @@ def main() -> None:
         clean_all_vars=CLEAN_ALL_VARIABLES,
         configpath=CONFIGPATH,
     )
-    # vars = add_owid_variables(vars)
     create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
