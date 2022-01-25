@@ -8,6 +8,8 @@ from pathlib import Path
 import shutil
 import re
 
+from ihme_gbd.ihme_gbd_risk import OUTPATH
+
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     """
@@ -209,6 +211,9 @@ def create_variables(
     df_t["max"] = df_t["max"].astype("str")
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
+
+    df_t = add_owid_variables(df_t)
+
     # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
@@ -269,6 +274,62 @@ def create_datapoints(
                     os.path.join(outpath, "datapoints", "datapoints_%d.csv" % name),
                     index=False,
                 )
+    add_owid_var_data(vars, outpath=OUTPATH)
+
+
+def add_owid_var_data(vars: pd.DataFrame, outpath: str) -> None:
+
+    cancer_smoking_vars = [
+        "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)",
+        "Deaths - Cause: All causes - Risk: Secondhand smoke - Sex: Both - Age: Age-standardized (Percent)",
+    ]
+
+    outdoor_air_pollution_vars = [
+        "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)",
+        "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Percent)",
+    ]
+
+    if vars.name.isin(cancer_smoking_vars).sum() == 2:
+        id_can = vars.loc[
+            vars["name"]
+            == "Deaths - Cause: All causes - Risk: Smoking - OWID - Sex: Both - Age: Age-standardized (Percent)"
+        ].id
+        dp = vars[vars.name.isin(cancer_smoking_vars)].id.to_list()
+        df_can = []
+        for file in dp:
+            df = pd.read_csv(
+                os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
+                index_col=None,
+                header=0,
+            )
+            df["id"] = file
+            df_can.append(df)
+        df = pd.concat(df_can, ignore_index=True)
+        df = df.drop_duplicates()
+        df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
+            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id_can)
+        )
+
+    if vars.name.isin(outdoor_air_pollution_vars).sum() == 2:
+        id_oap = vars.loc[
+            vars["name"]
+            == "Deaths - Cause: All causes - Risk: Outdoor air pollution - OWID - Sex: Both - Age: Age-standardized (Percent)"
+        ].id
+        dp = vars[vars.name.isin(outdoor_air_pollution_vars)].id.to_list()
+        df_can = []
+        for file in dp:
+            df = pd.read_csv(
+                os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
+                index_col=None,
+                header=0,
+            )
+            df["id"] = file
+            df_can.append(df)
+        df = pd.concat(df_can, ignore_index=True)
+        df = df.drop_duplicates()
+        df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
+            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id_oap)
+        )
 
 
 def create_distinct_entities(configpath: str, outpath: str) -> None:
@@ -317,9 +378,9 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
     if "rei" in df.columns:
         df["name"] = (
             df["measure"]
-            + " - "
+            + " - Cause: "
             + df["cause"]
-            + " - "
+            + " - Risk: "
             + df["rei"]
             + " - Sex: "
             + df["sex"]
@@ -332,9 +393,9 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
     if "rei_name" in df.columns:
         df["name"] = (
             df["measure_name"]
-            + " - "
+            + " - Cause: "
             + df["cause_name"]
-            + " - "
+            + " - Risk: "
             + df["rei_name"]
             + " - Sex: "
             + df["sex_name"]
@@ -346,3 +407,42 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
         )
     assert "name" in df.columns
     return df["name"]
+
+
+def add_owid_variables(vars: pd.DataFrame) -> pd.DataFrame:
+    cancer_smoking_vars = [
+        "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)",
+        "Deaths - Cause: All causes - Risk: Secondhand smoke - Sex: Both - Age: Age-standardized (Percent)",
+    ]
+    outdoor_air_pollution_vars = [
+        "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)",
+        "Deaths - Cause: All causes - Risk: Ambient ozone pollution - Sex: Both - Age: Age-standardized (Percent)",
+    ]
+
+    if vars.name.isin(cancer_smoking_vars).sum() == 2:
+        cs_df = vars.loc[
+            vars["name"]
+            == "Deaths - Cause: All causes - Risk: Smoking - Sex: Both - Age: Age-standardized (Percent)"
+        ]
+        cs_df[
+            "name"
+        ] = "Deaths - Cause: All causes - Risk: Smoking - OWID - Sex: Both - Age: Age-standardized (Percent)"
+        cs_df[
+            "description"
+        ] = "A variable calculated by OWID; the sum of 'Smoking' and 'Secondhand smoke'."
+        vars = pd.concat([vars, cs_df])
+
+    if vars.name.isin(outdoor_air_pollution_vars).sum() == 2:
+        oap_df = vars.loc[
+            vars["name"]
+            == "Deaths - Cause: All causes - Risk: Ambient particulate matter pollution - Sex: Both - Age: Age-standardized (Percent)"
+        ]
+        oap_df[
+            "name"
+        ] = "Deaths - Cause: All causes - Risk: Outdoor air pollution - OWID - Sex: Both - Age: Age-standardized (Percent)"
+        oap_df[
+            "description"
+        ] = "A variable calculated by OWID; the sum of 'Ambient particulate matter pollution' and 'Ambient ozone pollution'."
+        vars = pd.concat([vars, oap_df])
+
+    return vars
