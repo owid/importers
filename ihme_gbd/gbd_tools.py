@@ -8,6 +8,8 @@ from pathlib import Path
 import shutil
 import re
 
+from ihme_gbd.ihme_gbd_risk import CONFIGPATH, OUTPATH
+
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     """
@@ -117,7 +119,7 @@ def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
 
     paths = list_input_files(inpath)
     if "rei" in filter_fields:
-        r = re.compile(r"measure|sex|age|rei|metric|year")
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
     else:
         r = re.compile(r"measure|sex|age|cause|metric|year")
 
@@ -162,17 +164,17 @@ def create_variables(
 
     paths = list_input_files(inpath)
 
-    if "cause" in filter_fields:
-        r = re.compile(r"measure|sex|age|cause|metric|year")
     if "rei" in filter_fields:
-        r = re.compile(r"measure|sex|age|rei|metric|year")
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
+    else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
 
     fields = list(filter(r.match, filter_fields))
 
-    if "cause" in filter_fields:
-        rd = re.compile(r"measure|sex|age|cause")
     if "rei" in filter_fields:
-        rd = re.compile(r"measure|sex|age|rei")
+        rd = re.compile(r"measure|sex|age|cause|rei")
+    else:
+        rd = re.compile(r"measure|sex|age|cause")
 
     field_drop = list(filter(rd.match, fields))
 
@@ -209,6 +211,9 @@ def create_variables(
     df_t["max"] = df_t["max"].astype("str")
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
+
+    df_t = add_owid_variables(df_t, configpath=CONFIGPATH)
+
     # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
@@ -269,6 +274,31 @@ def create_datapoints(
                     os.path.join(outpath, "datapoints", "datapoints_%d.csv" % name),
                     index=False,
                 )
+    calc_owid_var_data(vars, outpath=OUTPATH, configpath=CONFIGPATH)
+
+
+def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> None:
+
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
+
+    for var in vars_to_calc:
+        id = vars.loc[vars["name"] == var].id
+        vars_to_sum = vars[vars.name.isin(vars_to_calc[var])].id.to_list()
+        df_sum = []
+        for file in vars_to_sum:
+            df = pd.read_csv(
+                os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
+                index_col=None,
+                header=0,
+            )
+            df["id"] = file
+            df_sum.append(df)
+        df = pd.concat(df_sum, ignore_index=True)
+        df = df.drop_duplicates()
+        df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
+            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id)
+        )
 
 
 def create_distinct_entities(configpath: str, outpath: str) -> None:
@@ -313,10 +343,13 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["metric"]
             + ")"
         )
+    # For risk factor variables we want to include the risk factor and the cause of death so need a slightly different variable format
     if "rei" in df.columns:
         df["name"] = (
             df["measure"]
-            + " - "
+            + " - Cause: "
+            + df["cause"]
+            + " - Risk: "
             + df["rei"]
             + " - Sex: "
             + df["sex"]
@@ -329,7 +362,9 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
     if "rei_name" in df.columns:
         df["name"] = (
             df["measure_name"]
-            + " - "
+            + " - Cause: "
+            + df["cause_name"]
+            + " - Risk: "
             + df["rei_name"]
             + " - Sex: "
             + df["sex_name"]
@@ -341,3 +376,23 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
         )
     assert "name" in df.columns
     return df["name"]
+
+
+def add_owid_variables(vars: pd.DataFrame, configpath: str) -> pd.DataFrame:
+
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
+
+    vars_out = []
+    for item in vars_to_calc:
+        var_out = vars[vars.name == vars_to_calc[item][0]]
+        var_out["name"] = item
+        var_out[
+            "description"
+        ] = f"Variable calculated by OWID: the sum of {vars_to_calc[item][0]} and {vars_to_calc[item][1]}"
+        vars_out.append(var_out)
+
+    vars_out = pd.concat(vars_out)
+
+    vars = pd.concat([vars, vars_out])
+    return vars
