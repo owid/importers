@@ -60,7 +60,9 @@ def main(download_data, clean_data, import_data):
     if clean_data:
         clean.main()
     if import_data:
-        import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
+        import_dataset.main(
+            dataset_dir=DATASET_DIR, dataset_namespace=DATASET_NAMESPACE
+        )
     match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
