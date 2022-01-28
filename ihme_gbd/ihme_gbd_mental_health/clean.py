@@ -11,6 +11,7 @@ from ihme_gbd.ihme_gbd_mental_health import (
     DATAPOINTS_DIR,
     CLEAN_ALL_VARIABLES,
     COUNTRY_COL,
+    CALCULATE_OWID_VARS,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -54,8 +55,15 @@ def main() -> None:
         outpath=OUTPATH,
         clean_all_vars=CLEAN_ALL_VARIABLES,
         configpath=CONFIGPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
     )
-    create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
+    create_datapoints(
+        vars,
+        inpath=INPATH,
+        configpath=CONFIGPATH,
+        outpath=OUTPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
+    )
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
 

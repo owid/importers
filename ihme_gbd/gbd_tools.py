@@ -8,8 +8,6 @@ from pathlib import Path
 import shutil
 import re
 
-from ihme_gbd.ihme_gbd_risk import CONFIGPATH, OUTPATH, CALCULATE_OWID_VARS
-
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
     """
@@ -156,6 +154,7 @@ def create_variables(
     outpath: str,
     clean_all_vars: bool,
     configpath: str,
+    calculate_owid_vars: str,
 ) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
@@ -212,8 +211,8 @@ def create_variables(
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
 
-    if CALCULATE_OWID_VARS:
-        df_t = add_owid_variables(df_t, configpath=CONFIGPATH)
+    if calculate_owid_vars:
+        df_t = add_owid_variables(df_t, configpath)
 
     # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
@@ -222,7 +221,11 @@ def create_variables(
 
 
 def create_datapoints(
-    vars: pd.DataFrame, inpath: str, configpath: str, outpath: str
+    vars: pd.DataFrame,
+    inpath: str,
+    configpath: str,
+    outpath: str,
+    calculate_owid_vars: str,
 ) -> None:
     print("Creating datapoints")
     paths = list_input_files(inpath)
@@ -275,8 +278,8 @@ def create_datapoints(
                     os.path.join(outpath, "datapoints", "datapoints_%d.csv" % name),
                     index=False,
                 )
-    if CALCULATE_OWID_VARS:
-        calc_owid_var_data(vars, outpath=OUTPATH, configpath=CONFIGPATH)
+    if calculate_owid_vars:
+        calc_owid_var_data(vars, outpath, configpath)
 
 
 def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> None:

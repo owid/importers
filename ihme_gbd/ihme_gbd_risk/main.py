@@ -20,7 +20,6 @@ from ihme_gbd.ihme_gbd_risk import (
     NAMESPACE,
     OUTPATH,
     CLEAN_ALL_VARIABLES,
-    FILTER_FIELDS,
 )
 
 from ihme_gbd.ihme_gbd_risk import download, clean
