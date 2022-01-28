@@ -87,7 +87,7 @@ def get_old_variables(outpath: str, namespace_db: str):
         db = DBUtils(cursor)
         # retrieves old and new datasets
         df_old_datasets = get_datasets(
-            outpath=outpath, db=db, new=False, namespace=namespace_db
+            outpath=outpath, db=db, new=True, namespace=namespace_db
         )
         query = f"""
             SELECT *

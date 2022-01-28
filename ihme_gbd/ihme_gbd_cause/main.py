@@ -53,11 +53,11 @@ def main(download_data, clean_data, import_data, match_vars):
         download.main()
     if not CLEAN_ALL_VARIABLES:
         init_variables_to_clean.main(
-            CONFIGPATH,
-            INPATH,
-            OUTPATH,
-            NAMESPACE,
-            FILTER_FIELDS,
+            configpath=CONFIGPATH,
+            inpath=INPATH,
+            outpath=OUTPATH,
+            namespace=NAMESPACE,
+            fields=FILTER_FIELDS,
         )
     if clean_data:
         clean.main()
