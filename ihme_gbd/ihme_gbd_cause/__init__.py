@@ -1,5 +1,7 @@
 import os
 
+from ihme_gbd.ihme_gbd_risk import CALCULATE_OWID_VARS
+
 DATASET_NAME = "IHME - Global Burden of Disease - Deaths and DALYs"
 DATASET_AUTHORS = "Institute for Health Metrics and Evaluation "
 DATASET_VERSION = "2021-09"
@@ -46,3 +48,4 @@ FILTER_FIELDS = [
     "val",
 ]
 COUNTRY_COL = "location_name"
+CALCULATE_OWID_VARS = False

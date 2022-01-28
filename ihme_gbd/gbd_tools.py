@@ -220,6 +220,30 @@ def create_variables(
     return df_t
 
 
+def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
+    if "metric_name" in df.columns:
+        df["val"][df["metric_name"] == "Percent"] = (
+            df["val"][df["metric_name"] == "Percent"] * 100
+        )
+        # Rounding deaths
+        df["val"][
+            (df["measure_name"] == "Deaths") & (df["metric_name"] == "Number")
+        ] = round(
+            df["val"][
+                (df["measure_name"] == "Deaths") & (df["metric_name"] == "Number")
+            ]
+        )
+
+    if "metric" in df.columns:
+        df["val"][df["metric"] == "Percent"] = (
+            df["val"][df["metric"] == "Percent"] * 100
+        )
+        df["val"][(df["measure"] == "Deaths") & (df["metric"] == "Number")] = round(
+            df["val"][(df["measure"] == "Deaths") & (df["metric"] == "Number")]
+        )
+    return df
+
+
 def create_datapoints(
     vars: pd.DataFrame,
     inpath: str,
@@ -241,15 +265,7 @@ def create_datapoints(
         print(path)
         df = pd.read_csv(path)
         df["name"] = create_var_name(df)
-
-        if "metric_name" in df.columns:
-            df["val"][df["metric_name"] == "Percent"] = (
-                df["val"][df["metric_name"] == "Percent"] * 100
-            )
-        if "metric" in df.columns:
-            df["val"][df["metric"] == "Percent"] = (
-                df["val"][df["metric"] == "Percent"] * 100
-            )
+        df = clean_units_and_values(df)
 
         df_m = df.merge(vars[["name", "id"]], on="name")
         if "location_name" in df_m.columns:

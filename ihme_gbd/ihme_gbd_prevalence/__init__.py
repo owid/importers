@@ -48,3 +48,4 @@ FILTER_FIELDS = [
     "val",
 ]
 COUNTRY_COL = "location"
+CALCULATE_OWID_VARS = False
