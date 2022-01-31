@@ -227,11 +227,11 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
         )
         # Rounding deaths
         df["val"][
-            (df["measure_name"] in ["Prevalence", "Incidence", "Deaths"])
+            (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
             & (df["metric_name"] == "Number")
         ] = round(
             df["val"][
-                (df["measure_name"] in ["Prevalence", "Incidence", "Deaths"])
+                (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
                 & (df["metric_name"] == "Number")
             ]
         )
@@ -241,11 +241,11 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
             df["val"][df["metric"] == "Percent"] * 100
         )
         df["val"][
-            (df["measure"] in ["Prevalence", "Incidence", "Deaths"])
+            (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
             & (df["metric"] == "Number")
         ] = round(
             df["val"][
-                (df["measure"] in ["Prevalence", "Incidence", "Deaths"])
+                (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
                 & (df["metric"] == "Number")
             ]
         )
