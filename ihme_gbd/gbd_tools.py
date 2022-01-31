@@ -241,11 +241,11 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
             df["val"][df["metric"] == "Percent"] * 100
         )
         df["val"][
-            (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
+            (df[df["measure"].isin(["Prevalence", "Incidence", "Deaths"])])
             & (df["metric"] == "Number")
         ] = round(
             df["val"][
-                (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
+                (df[df["measure"].isin(["Prevalence", "Incidence", "Deaths"])])
                 & (df["metric"] == "Number")
             ]
         )
