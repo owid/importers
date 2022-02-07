@@ -37,7 +37,7 @@ else:
 ENTFILE = os.path.join(INPATH, "entities-" + DATASET_VERSION + ".csv")
 OUTPATH = os.path.join(DATASET_DIR, "output")
 DATASET_RETRIEVED_DATE = "2022-02-01"
-URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/c63b7790685559456d640ea53a97e93b_files/IHME-GBD_2019_DATA-c63b7790-"  # link to data without "X.zip"
+URL_STUB = "https://s3.healthdata.org/gbd-api-2019-public/88c7860e9edbbdb5d1e27878596a54eb_files/IHME-GBD_2019_DATA-88c7860e-"  # link to data without "X.zip"
 DATAPOINTS_DIR = os.path.join(DATASET_DIR, "output", "datapoints")
 CURRENT_PATH = os.path.dirname(os.path.realpath(__file__))
 CLEAN_ALL_VARIABLES = False

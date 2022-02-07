@@ -249,6 +249,7 @@ def create_datapoints(
     for path in paths:
         df = pd.read_csv(path)
         df = create_var_name(df)
+        print(df["name"][0])
         df = clean_units_and_values(df)
         df_m = df.merge(vars[["name", "id"]], on="name")
         df_m = df_m[["location", "year", "val", "id"]].rename(
@@ -282,6 +283,7 @@ def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> Non
     vars_to_calc = json.load(f)
 
     for var in vars_to_calc:
+        print(var)
         id = vars.loc[vars["name"] == var].id
         assert (
             vars["name"] == var
@@ -371,11 +373,13 @@ def add_owid_variables(vars: pd.DataFrame, configpath: str) -> pd.DataFrame:
 
     vars_out = []
     for item in vars_to_calc:
+        print(item)
+        assert (vars.name == vars_to_calc[item][0]).any()
         var_out = vars[vars.name == vars_to_calc[item][0]]
         var_out["name"] = item
         var_out[
             "description"
-        ] = f"Variable calculated by OWID: the sum of {vars_to_calc[item][0]} and {vars_to_calc[item][1]}"
+        ] = f"Variable calculated by OWID: the sum of {vars_to_calc[item]}"
         vars_out.append(var_out)
 
     vars_out = pd.concat(vars_out)
