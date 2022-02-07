@@ -126,7 +126,7 @@ def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
     vars_out = []
     for path in paths:
         df = pd.read_csv(path, usecols=fields).drop_duplicates()
-        df["name"] = create_var_name(df)
+        df = create_var_name(df)
         vars_out.append(df["name"])
 
     vars = pd.concat(vars_out)
@@ -165,15 +165,12 @@ def create_variables(
 
     if "rei" in filter_fields:
         r = re.compile(r"measure|sex|age|cause|rei|metric|year")
-    else:
-        r = re.compile(r"measure|sex|age|cause|metric|year")
-
-    fields = list(filter(r.match, filter_fields))
-
-    if "rei" in filter_fields:
         rd = re.compile(r"measure|sex|age|cause|rei")
     else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
         rd = re.compile(r"measure|sex|age|cause")
+
+    fields = list(filter(r.match, filter_fields))
 
     field_drop = list(filter(rd.match, fields))
 
@@ -182,8 +179,8 @@ def create_variables(
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
-        df = pd.read_csv(path, usecols=fields).drop_duplicates()
-        df["name"] = create_var_name(df)
+        df = pd.read_csv(path, usecols=fields)
+        df = create_var_name(df)
         if not clean_all_vars:
             df = df[df["name"].isin(ch_vars)]
         if (
@@ -196,10 +193,7 @@ def create_variables(
             df_t[
                 ["description", "code", "coverage", "display", "original_metadata"]
             ] = None
-            if "metric_name" in df_t.columns:
-                df_t = df_t.rename(columns={"metric_name": "unit"})
-            if "metric" in df_t.columns:
-                df_t = df_t.rename(columns={"metric": "unit"})
+            df_t = df_t.rename(columns={"metric": "unit"})
             assert "unit" in df_t.columns
             df_t["short_unit"] = df_t["unit"].map(units_dict)
             vars_out.append(df_t)
@@ -214,41 +208,23 @@ def create_variables(
     if calculate_owid_vars:
         df_t = add_owid_variables(df_t, configpath)
 
-    # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
     return df_t
 
 
 def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
-    if "metric_name" in df.columns:
-        df["val"][df["metric_name"] == "Percent"] = (
-            df["val"][df["metric_name"] == "Percent"] * 100
-        )
-        # Rounding deaths
-        df["val"][
-            (df[df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"])])
-            & (df["metric_name"] == "Number")
-        ] = round(
-            df["val"][
-                (df["measure_name"].isin(["Prevalence", "Incidence", "Deaths"]))
-                & (df["metric_name"] == "Number")
-            ]
-        )
 
-    if "metric" in df.columns:
-        df["val"][df["metric"] == "Percent"] = (
-            df["val"][df["metric"] == "Percent"] * 100
-        )
+    df["val"][df["metric"] == "Percent"] = df["val"][df["metric"] == "Percent"] * 100
+    df["val"][
+        (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
+        & (df["metric"] == "Number")
+    ] = round(
         df["val"][
             (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
             & (df["metric"] == "Number")
-        ] = round(
-            df["val"][
-                (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
-                & (df["metric"] == "Number")
-            ]
-        )
+        ]
+    )
     return df
 
 
@@ -259,6 +235,7 @@ def create_datapoints(
     outpath: str,
     calculate_owid_vars: str,
 ) -> None:
+
     print("Creating datapoints")
     paths = list_input_files(inpath)
 
@@ -270,20 +247,13 @@ def create_datapoints(
     )
 
     for path in paths:
-        print(path)
         df = pd.read_csv(path)
-        df["name"] = create_var_name(df)
+        df = create_var_name(df)
         df = clean_units_and_values(df)
-
         df_m = df.merge(vars[["name", "id"]], on="name")
-        if "location_name" in df_m.columns:
-            df_m = df_m[["location_name", "year", "val", "id"]].rename(
-                columns={"location_name": "country", "val": "value"}
-            )
-        if "location" in df_m.columns:
-            df_m = df_m[["location", "year", "val", "id"]].rename(
-                columns={"location": "country", "val": "value"}
-            )
+        df_m = df_m[["location", "year", "val", "id"]].rename(
+            columns={"location": "country", "val": "value"}
+        )
         df_m["country"] = df_m["country"].map(entity2owid_name)
 
         df_g = df_m.groupby("id")
@@ -313,6 +283,9 @@ def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> Non
 
     for var in vars_to_calc:
         id = vars.loc[vars["name"] == var].id
+        assert (
+            vars["name"] == var
+        ).any(), "%s not in list of variables, check spelling!" % (var)
         vars_to_sum = vars[vars.name.isin(vars_to_calc[var])].id.to_list()
         df_sum = []
         for file in vars_to_sum:
@@ -346,33 +319,18 @@ def create_distinct_entities(configpath: str, outpath: str) -> None:
 
 def create_var_name(df: pd.DataFrame) -> pd.Series:
 
-    if "cause_name" in df.columns:
-        df["name"] = (
-            df["measure_name"]
-            + " - "
-            + df["cause_name"]
-            + " - Sex: "
-            + df["sex_name"]
-            + " - Age: "
-            + df["age_name"]
-            + " ("
-            + df["metric_name"]
-            + ")"
-        )
-    if "cause" in df.columns:
-        df["name"] = (
-            df["measure"]
-            + " - "
-            + df["cause"]
-            + " - Sex: "
-            + df["sex"]
-            + " - Age: "
-            + df["age"]
-            + " ("
-            + df["metric"]
-            + ")"
-        )
+    df.columns = df.columns.str.replace(r"_name$", "", regex=True)
     # For risk factor variables we want to include the risk factor and the cause of death so need a slightly different variable format
+
+    age_dict = {
+        "Early Neonatal": "0-6 days",
+        "Late Neonatal": "7-27 days",
+        "Post Neonatal": "28-364 days",
+        "1 to 4": "1-4 years",
+    }
+
+    df = df.replace({"age": age_dict}, regex=False)
+
     if "rei" in df.columns:
         df["name"] = (
             df["measure"]
@@ -388,23 +346,22 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["metric"]
             + ")"
         )
-    if "rei_name" in df.columns:
+    else:
         df["name"] = (
-            df["measure_name"]
-            + " - Cause: "
-            + df["cause_name"]
-            + " - Risk: "
-            + df["rei_name"]
+            df["measure"]
+            + " - "
+            + df["cause"]
             + " - Sex: "
-            + df["sex_name"]
+            + df["sex"]
             + " - Age: "
-            + df["age_name"]
+            + df["age"]
             + " ("
-            + df["metric_name"]
+            + df["metric"]
             + ")"
         )
+
     assert "name" in df.columns
-    return df["name"]
+    return df
 
 
 def add_owid_variables(vars: pd.DataFrame, configpath: str) -> pd.DataFrame:
