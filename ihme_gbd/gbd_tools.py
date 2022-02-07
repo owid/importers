@@ -179,7 +179,7 @@ def create_variables(
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
-        df = pd.read_csv(path, usecols=fields).drop_duplicates()
+        df = pd.read_csv(path, usecols=fields)
         df = create_var_name(df)
         if not clean_all_vars:
             df = df[df["name"].isin(ch_vars)]
@@ -208,7 +208,6 @@ def create_variables(
     if calculate_owid_vars:
         df_t = add_owid_variables(df_t, configpath)
 
-    # df_t = df_t.drop_duplicates()
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
     return df_t
@@ -327,6 +326,7 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
         "Early Neonatal": "0-6 days",
         "Late Neonatal": "7-27 days",
         "Post Neonatal": "28-364 days",
+        "1 to 4": "1-4 years",
     }
 
     df = df.replace({"age": age_dict}, regex=False)
