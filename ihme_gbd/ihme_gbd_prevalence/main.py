@@ -20,6 +20,7 @@ from ihme_gbd.ihme_gbd_prevalence import (
     NAMESPACE,
     OUTPATH,
     CLEAN_ALL_VARIABLES,
+    UPDATE_EXISTING_DATA_VERSION,
 )
 
 
@@ -61,6 +62,7 @@ def main(download_data, clean_data, import_data, match_vars):
             OUTPATH,
             NAMESPACE,
             FILTER_FIELDS,
+            update_existing_data=UPDATE_EXISTING_DATA_VERSION,
         )
     if clean_data:
         clean.main()
