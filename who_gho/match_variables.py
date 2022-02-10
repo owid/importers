@@ -28,7 +28,7 @@ def main(outpath: str, namespace: str):
         )
 
         # retrieves old and new variables
-        df_old_vars = get_variables(db=db, dataset_ids=[5441])
+        df_old_vars = get_variables(db=db, dataset_ids=df_old_datasets)
         df_new_vars = get_variables(db=db, dataset_ids=df_new_datasets["id"].tolist())
         df_vars = pd.merge(
             df_old_vars,
