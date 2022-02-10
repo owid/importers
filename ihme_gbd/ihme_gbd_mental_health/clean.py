@@ -9,6 +9,9 @@ from ihme_gbd.ihme_gbd_mental_health import (
     ENTFILE,
     CURRENT_PATH,
     DATAPOINTS_DIR,
+    CLEAN_ALL_VARIABLES,
+    COUNTRY_COL,
+    CALCULATE_OWID_VARS,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -33,8 +36,6 @@ FILTER_FIELDS = [
     "val",
 ]
 
-COUNTRY_COL = "location"
-
 
 def main() -> None:
     print(CURRENT_PATH)
@@ -48,8 +49,21 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
-    create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
+    vars = create_variables(
+        inpath=INPATH,
+        filter_fields=FILTER_FIELDS,
+        outpath=OUTPATH,
+        clean_all_vars=CLEAN_ALL_VARIABLES,
+        configpath=CONFIGPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
+    )
+    create_datapoints(
+        vars,
+        inpath=INPATH,
+        configpath=CONFIGPATH,
+        outpath=OUTPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
+    )
     create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
 
 

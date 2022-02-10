@@ -24,11 +24,17 @@ ihme_gbd/ihme_gbd_prevalence/input/*
 ihme_gbd/ihme_gbd_prevalence/output/*
 ihme_gbd/ihme_gbd_mental_health/input/*
 ihme_gbd/ihme_gbd_mental_health/output/*
+ihme_gbd/ihme_gbd_child_mortality/input/*
+ihme_gbd/ihme_gbd_child_mortality/output/*
 un_sdg/input/**/*.csv
 un_sdg/output/datapoints
 un_sdg/metadata/
 who_gho/input/
+<<<<<<< HEAD
 who_gho/output/**/*.csv
+=======
+who_gho/output/
+>>>>>>> master
 *.Rproj.user
 *.Rhistory
 *.Rproj

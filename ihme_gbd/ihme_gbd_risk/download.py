@@ -20,13 +20,19 @@
 #
 #    Metric:
 #    - Number
+#    - Percent
 #    - Rate
 #
 #    Year: select all
 #
 #    Risks: select all
 #
-#    Cause: Total All Causes
+#    Cause: 
+#    - Total All Causes
+#    - Cardiovascular diseases
+#    - Lower respiratory infections
+#    - Diarrheal diseases
+#    - Neoplasms
 #
 #    Context: Risk
 #

@@ -10,14 +10,18 @@ Usage:
 import click
 import re
 from ihme_gbd.ihme_gbd_mental_health import (
+    CONFIGPATH,
     DATASET_DIR,
     DATASET_NAMESPACE,
+    FILTER_FIELDS,
+    INPATH,
     NAMESPACE,
     OUTPATH,
+    CLEAN_ALL_VARIABLES,
 )
 
 from ihme_gbd.ihme_gbd_mental_health import download, clean
-from ihme_gbd import match_variables
+from ihme_gbd import match_variables, init_variables_to_clean
 
 from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
@@ -42,10 +46,20 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 def main(download_data, clean_data, import_data):
     if download_data:
         download.main()
+    if not CLEAN_ALL_VARIABLES:
+        init_variables_to_clean.main(
+            configpath=CONFIGPATH,
+            inpath=INPATH,
+            outpath=OUTPATH,
+            namespace=NAMESPACE,
+            fields=FILTER_FIELDS,
+        )
     if clean_data:
         clean.main()
     if import_data:
-        import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
+        import_dataset.main(
+            dataset_dir=DATASET_DIR, dataset_namespace=DATASET_NAMESPACE
+        )
     match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
 
     suggester = ChartRevisionSuggester(DATASET_DIR)
