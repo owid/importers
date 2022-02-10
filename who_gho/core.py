@@ -3,7 +3,7 @@ import re
 import simplejson as json
 import logging
 import shutil
-from typing import List
+from typing import List, Tuple
 from pathlib import Path
 import requests
 import pandas as pd
@@ -358,7 +358,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     return variables
 
 
-def get_unit(var: str) -> List[str]:
+def get_unit(var: str) -> Tuple[str, str]:
     unit = "(%)"
     if unit in var:
         unit_out = "Percentage"
@@ -464,7 +464,7 @@ def remove_empty_rows(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def csv_to_parquet(files: iter) -> None:
+def csv_to_parquet(files: list) -> None:
     chunksize = 1000000  # this is the number of lines
     pqwriter = None
     j = 0

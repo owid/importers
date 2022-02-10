@@ -123,7 +123,3 @@ def get_variables(db: DBUtils, dataset_ids: List[int]) -> pd.DataFrame:
     )
     df_vars = pd.DataFrame(rows, columns=columns)
     return df_vars
-
-
-if __name__ == "__main__":
-    main()
