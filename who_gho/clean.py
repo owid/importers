@@ -37,7 +37,6 @@ from ihme_gbd.gbd_tools import make_dirs
 
 from who_gho import (
     CONFIGPATH,
-    FIX_VAR_CODE,
     INPATH,
     SELECTED_VARS_ONLY,
     OUTPATH,
@@ -58,7 +57,6 @@ from who_gho.core import (
     standardise_country_name,
     clean_variables,
     delete_output,
-    remove_empty_rows,
 )
 
 
