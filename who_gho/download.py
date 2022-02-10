@@ -3,7 +3,6 @@ import json
 from typing import List
 from pathlib import Path
 import requests
-import numpy as np
 import logging
 import pandas as pd
 import shutil
