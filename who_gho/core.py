@@ -3,7 +3,7 @@ import re
 import simplejson as json
 import logging
 import shutil
-from typing import List, Tuple
+from typing import List, Tuple, Any
 from pathlib import Path
 import requests
 import pandas as pd
@@ -358,7 +358,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
     return variables
 
 
-def get_unit(var: str) -> Tuple[str, str]:
+def get_unit(var: str) -> Tuple[Any, Any]:
     unit = "(%)"
     if unit in var:
         unit_out = "Percentage"
@@ -465,7 +465,7 @@ def remove_empty_rows(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def csv_to_parquet(files: list) -> None:
-    chunksize = 1000000  # this is the number of lines
+    chunksize = 1000000  # this is the number of lines to read from the csv
     pqwriter = None
     j = 0
     for file in files:
@@ -587,7 +587,7 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def get_metadata_url(fix_var_code: bool) -> pd.DataFrame:
+def get_metadata_url(fix_var_code: bool) -> Tuple(zip, zip):
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
