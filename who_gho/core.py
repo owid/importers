@@ -651,7 +651,7 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
                     )
                 else:
                     desc = _fetch_description_one_variable(url)
-                    descs[str(name)] = str(desc)
+                    descs[Tuple[name]] = Tuple[desc]
             else:
                 descs[str(name)] = str("")
         with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
