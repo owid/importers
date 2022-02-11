@@ -600,7 +600,7 @@ def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
         "url"
     ].to_list()
 
-    urls = [None if x in ["0", "Nil"] else x for x in urls]
+    urls = ["" if x in ["0", "Nil"] else x for x in urls]
 
     assert len(ind_codes) == len(ind_name) == len(urls)
 
@@ -636,7 +636,7 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
     return variable_codes
 
 
-def get_metadata(var_code2url: dict[str, str]) -> dict[str, str]:
+def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
     if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
         indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
         descs = {}
