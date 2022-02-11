@@ -584,7 +584,7 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def get_metadata_url(fix_var_code: bool) -> Tuple(zip, zip):
+def get_metadata_url(fix_var_code: bool) -> Tuple[zip, zip]:
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
