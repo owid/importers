@@ -584,7 +584,7 @@ def get_distinct_entities() -> List[str]:
     return entities
 
 
-def get_metadata_url(fix_var_code: bool) -> Tuple[zip, zip]:
+def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
@@ -602,11 +602,11 @@ def get_metadata_url(fix_var_code: bool) -> Tuple[zip, zip]:
 
     assert len(ind_codes) == len(ind_name) == len(urls)
 
-    url_dict = zip(ind_codes, urls)
-    url_dict = dict(url_dict)
+    url_df = pd.DataFrame({"ind_codes": ind_codes, "urls": urls})
+    url_dict = pd.Series(url_df.urls.values, index=url_df.ind_codes).to_dict()
 
-    name_dict = zip(ind_codes, ind_name)
-    name_dict = dict(name_dict)
+    name_df = pd.DataFrame({"ind_codes": ind_codes, "ind_name": ind_name})
+    name_dict = pd.Series(name_df.ind_name.values, index=name_df.ind_codes).to_dict()
 
     arc_codes = [x for x in ind_codes if x.endswith("_ARCHIVED")]
 
