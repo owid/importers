@@ -363,10 +363,9 @@ def get_unit(var: str) -> Tuple[Any, Any]:
     if unit in var:
         unit_out = "Percentage"
         short_unit_out = "%"
+        return unit_out, short_unit_out
     else:
-        unit_out = None
-        short_unit_out = None
-    return unit_out, short_unit_out
+        return None, None
 
 
 def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
