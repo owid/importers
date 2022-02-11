@@ -600,7 +600,7 @@ def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
         "url"
     ].to_list()
 
-    urls = [None if x in ['0', 'Nil'] else x for x in urls] 
+    urls = [None if x in ["0", "Nil"] else x for x in urls]
 
     assert len(ind_codes) == len(ind_name) == len(urls)
 
@@ -699,7 +699,7 @@ def _fetch_description_one_variable(url: str) -> str:
                 if heading_text in headings_to_use:
                     text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
             text = text.strip()
-        except requests.exceptions.RequestException as e: 
+        except requests.exceptions.RequestException as e:
             print(e)
             text = ""
     return text
