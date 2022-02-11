@@ -468,6 +468,28 @@ def csv_to_parquet(files: list) -> None:
     chunksize = 1000000  # this is the number of lines to read from the csv
     pqwriter = None
     j = 0
+    fields = [
+        pa.field("IndicatorCode", pa.string()),
+        pa.field("SpatialDimType", pa.string()),
+        pa.field("SpatialDim", pa.string()),
+        pa.field("TimeDimType", pa.string()),
+        pa.field("TimeDim", pa.string()),
+        pa.field("Dim1Type", pa.string()),
+        pa.field("Dim1", pa.string()),
+        pa.field("Dim2Type", pa.string()),
+        pa.field("Dim2", pa.string()),
+        pa.field("Dim3Type", pa.string()),
+        pa.field("Dim3", pa.string()),
+        pa.field("DataSourceDimType", pa.string()),
+        pa.field("DataSourceDim", pa.string()),
+        pa.field("Value", pa.string()),
+        pa.field("NumericValue", pa.string()),
+    ]
+
+    my_schema = pa.schema(fields)
+    # create a parquet write object giving it an output file
+    pqwriter = pq.ParquetWriter(os.path.join(INPATH, "df_combined.parquet"), my_schema)
+
     for file in files:
         print(file)
         for i, df in enumerate(
@@ -510,33 +532,9 @@ def csv_to_parquet(files: list) -> None:
                 },
             ),
         ):
+            my_schema
 
-            fields = [
-                pa.field("IndicatorCode", pa.string()),
-                pa.field("SpatialDimType", pa.string()),
-                pa.field("SpatialDim", pa.string()),
-                pa.field("TimeDimType", pa.string()),
-                pa.field("TimeDim", pa.string()),
-                pa.field("Dim1Type", pa.string()),
-                pa.field("Dim1", pa.string()),
-                pa.field("Dim2Type", pa.string()),
-                pa.field("Dim2", pa.string()),
-                pa.field("Dim3Type", pa.string()),
-                pa.field("Dim3", pa.string()),
-                pa.field("DataSourceDimType", pa.string()),
-                pa.field("DataSourceDim", pa.string()),
-                pa.field("Value", pa.string()),
-                pa.field("NumericValue", pa.string()),
-            ]
-
-            my_schema = pa.schema(fields)
             table = pa.Table.from_pandas(df, schema=my_schema, preserve_index=False)
-            # for the first chunk of records
-            if j == 0:
-                # create a parquet write object giving it an output file
-                pqwriter = pq.ParquetWriter(
-                    os.path.join(INPATH, "df_combined.parquet"), table.schema
-                )
             pqwriter.write_table(table)
         j += 1
 
@@ -638,7 +636,7 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict) -> dict:
-    if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
+    if os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
         indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
         descs = {}
         for name in indicators:
