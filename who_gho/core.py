@@ -600,6 +600,8 @@ def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
         "url"
     ].to_list()
 
+    urls = [None if x in ['0', 'Nil'] else x for x in urls] 
+
     assert len(ind_codes) == len(ind_name) == len(urls)
 
     url_df = pd.DataFrame({"ind_codes": ind_codes, "urls": urls})
@@ -652,8 +654,8 @@ def get_metadata(var_code2url: dict[str, str]) -> dict[str, str]:
                     descs[str(name)] = str(desc)
             else:
                 descs[str(name)] = str("")
-            with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
-                json.dump(descs, fp, indent=2)
+        with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
+            json.dump(descs, fp, indent=2)
     else:
         with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
             descs = json.load(fp)
@@ -697,7 +699,7 @@ def _fetch_description_one_variable(url: str) -> str:
                 if heading_text in headings_to_use:
                     text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
             text = text.strip()
-        except requests.exceptions.RequestException as e:  # This is the correct syntax
+        except requests.exceptions.RequestException as e: 
             print(e)
             text = ""
     return text
