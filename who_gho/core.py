@@ -635,7 +635,7 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict) -> dict:
-    if os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
+    if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
         indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
         descs = {}
         for name in indicators:
@@ -649,9 +649,9 @@ def get_metadata(var_code2url: dict) -> dict:
                     )
                 else:
                     desc = _fetch_description_one_variable(url)
-                    descs[name] = desc
+                    descs[str(name)] = str(desc)
             else:
-                descs[name] = ""
+                descs[str(name)] = str("")
             with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
                 json.dump(descs, fp, indent=2)
     else:
