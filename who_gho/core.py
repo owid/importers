@@ -390,6 +390,20 @@ def is_number(s):
         return False
 
 
+def is_number_or_short_str(s):
+    try:
+        float(s)
+        return True
+    except (ValueError, TypeError):
+        try:
+            if len(s) <= 60:
+                return True
+            else:
+                return False
+        except (ValueError, TypeError):
+            return False
+
+
 def load_all_data_and_add_variable_name(
     variables: list, var_code2name: dict
 ) -> pd.DataFrame:
@@ -441,9 +455,9 @@ def load_all_data_and_add_variable_name(
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
     var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
     var_df = var_df[~var_df.IndicatorCode.isin(vars_to_exclude)]
-    ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows
+    ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows (if it is a number or a string shorter than 60 char)
     var_df["NumericValue"] = np.where(
-        var_df["NumericValue"].isna() & var_df["Value"].apply(is_number),
+        var_df["NumericValue"].isna() & var_df["Value"].apply(is_number_or_short_str),
         var_df["Value"],
         var_df["NumericValue"],
     )
@@ -651,9 +665,9 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
                     )
                 else:
                     desc = _fetch_description_one_variable(url)
-                    descs[(name)] = str(desc)
+                    descs[name] = str(desc)
             else:
-                descs[str(name)] = str("")
+                descs[name] = str("")
         with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
             json.dump(descs, fp, indent=2)
     else:
