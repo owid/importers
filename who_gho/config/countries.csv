@@ -1,0 +1,448 @@
+Code,Country
+ABW,Aruba
+AFG,Afghanistan
+AGO,Angola
+AIA,Anguilla
+ALB,Albania
+AND,Andorra
+ARE,United Arab Emirates
+ARG,Argentina
+ARM,Armenia
+ASM,American Samoa
+ATG,Antigua and Barbuda
+AUS,Australia
+AUT,Austria
+AZE,Azerbaijan
+BDI,Burundi
+BEL,Belgium
+BEN,Benin
+BFA,Burkina Faso
+BGD,Bangladesh
+BGR,Bulgaria
+BHR,Bahrain
+BHS,Bahamas
+BIH,Bosnia and Herzegovina
+BLR,Belarus
+BLZ,Belize
+BMU,Bermuda
+BOL,Bolivia (Plurinational State of)
+BRA,Brazil
+BRB,Barbados
+BRN,Brunei Darussalam
+BTN,Bhutan
+BWA,Botswana
+CAF,Central African Republic
+CAN,Canada
+CHE,Switzerland
+CHI,Channel islands
+CHL,Chile
+CHN,China
+CIV,Côte d'Ivoire
+CMR,Cameroon
+COD,Democratic Republic of the Congo
+COG,Congo
+COK,Cook Islands
+COL,Colombia
+COM,Comoros
+CPV,Cabo Verde
+CRI,Costa Rica
+CUB,Cuba
+CUW,Curaçao
+CYM,Cayman Islands
+CYP,Cyprus
+CZE,Czechia
+DEU,Germany
+DJI,Djibouti
+DMA,Dominica
+DNK,Denmark
+DOM,Dominican Republic
+DZA,Algeria
+ECU,Ecuador
+EGY,Egypt
+ERI,Eritrea
+ESP,Spain
+EST,Estonia
+ETH,Ethiopia
+FIN,Finland
+FJI,Fiji
+FLK,Falkland Islands (Malvinas)
+FRA,France
+FRO,Faroe Islands
+FSM,Micronesia (Federated States of)
+GAB,Gabon
+GBR,United Kingdom of Great Britain and Northern Ireland
+GEO,Georgia
+GHA,Ghana
+GIB,Gibraltar
+GIN,Guinea
+GLP,Guadeloupe
+GMB,Gambia
+GNB,Guinea-Bissau
+GNQ,Equatorial Guinea
+GRC,Greece
+GRD,Grenada
+GRL,Greenland
+GTM,Guatemala
+GUF,French Guiana
+GUM,Guam
+GUY,Guyana
+HKG,"China, Hong Kong Special Administrative Region"
+HND,Honduras
+HRV,Croatia
+HTI,Haiti
+HUN,Hungary
+IDN,Indonesia
+IMN,Isle of Man
+IND,India
+IRL,Ireland
+IRN,Iran (Islamic Republic of)
+IRQ,Iraq
+ISL,Iceland
+ISR,Israel
+ITA,Italy
+JAM,Jamaica
+JOR,Jordan
+JPN,Japan
+KAZ,Kazakhstan
+KEN,Kenya
+KGZ,Kyrgyzstan
+KHM,Cambodia
+KIR,Kiribati
+KNA,Saint Kitts and Nevis
+KOR,Republic of Korea
+KWT,Kuwait
+LAO,Lao People's Democratic Republic
+LBN,Lebanon
+LBR,Liberia
+LBY,Libya
+LCA,Saint Lucia
+LIE,Liechtenstein
+LKA,Sri Lanka
+LSO,Lesotho
+LTU,Lithuania
+LUX,Luxembourg
+LVA,Latvia
+MAC,"China, Macao Special Administrative Region"
+MAR,Morocco
+MCO,Monaco
+MDA,Republic of Moldova
+MDG,Madagascar
+MDV,Maldives
+ME1,The former state union Serbia and Montenegro
+MEX,Mexico
+MHL,Marshall Islands
+MKD,North Macedonia
+MLI,Mali
+MLT,Malta
+MMR,Myanmar
+MNE,Montenegro
+MNG,Mongolia
+MNP,Northern Mariana Islands
+MOZ,Mozambique
+MRT,Mauritania
+MTQ,Martinique
+MUS,Mauritius
+MWI,Malawi
+MYS,Malaysia
+MYT,Mayotte
+NAM,Namibia
+NCL,New Caledonia
+NER,Niger
+NGA,Nigeria
+NIC,Nicaragua
+NIU,Niue
+NLD,Netherlands
+NOR,Norway
+NPL,Nepal
+NRU,Nauru
+NZL,New Zealand
+OMN,Oman
+PAK,Pakistan
+PAN,Panama
+PER,Peru
+PHL,Philippines
+PLW,Palau
+PNG,Papua New Guinea
+POL,Poland
+PRI,Puerto Rico
+PRK,Democratic People's Republic of Korea
+PRT,Portugal
+PRY,Paraguay
+PSE,"occupied Palestinian territory, including east Jerusalem"
+PYF,French Polynesia
+QAT,Qatar
+REU,Reunion
+ROU,Romania
+RUS,Russian Federation
+RWA,Rwanda
+SAU,Saudi Arabia
+SDF,Sudan (former)
+SDN,Sudan
+SEN,Senegal
+SGP,Singapore
+SHN,Saint Helena
+SLB,Solomon Islands
+SLE,Sierra Leone
+SLV,El Salvador
+SMR,San Marino
+SOM,Somalia
+SPM,Saint Pierre and Miquelon
+SRB,Serbia
+SSD,South Sudan
+STP,Sao Tome and Principe
+SUR,Suriname
+SVK,Slovakia
+SVN,Slovenia
+SWE,Sweden
+SWZ,Eswatini
+SXM,Sint Maarten (Dutch part)
+SYC,Seychelles
+SYR,Syrian Arab Republic
+TCA,Turks and Caicos Islands
+TCD,Chad
+TGO,Togo
+THA,Thailand
+TJK,Tajikistan
+TKL,Tokelau
+TKM,Turkmenistan
+TLS,Timor-Leste
+TON,Tonga
+TTO,Trinidad and Tobago
+TUN,Tunisia
+TUR,Turkey
+TUV,Tuvalu
+TZA,United Republic of Tanzania
+UGA,Uganda
+UKR,Ukraine
+URY,Uruguay
+USA,United States of America
+UZB,Uzbekistan
+VCT,Saint Vincent and the Grenadines
+VEN,Venezuela (Bolivarian Republic of)
+VGB,British Virgin Islands
+VIR,Virgin Islands (USA)
+VNM,Viet Nam
+VUT,Vanuatu
+WSM,Samoa
+YEM,Yemen
+ZAF,South Africa
+ZMB,Zambia
+ZWE,Zimbabwe
+AFR,Africa
+AMR,Americas
+EMR,Eastern Mediterranean
+EUR,Europe
+GBD_REG14_AFRD,"Africa region, stratum D (AFR D)"
+GBD_REG14_AFRE,"Africa region, stratum E(AFR E)"
+GBD_REG14_AMRA,"Americas region, stratum A (AMR A)"
+GBD_REG14_AMRB,"Americas region, stratum B (AMR B)"
+GBD_REG14_AMRD,"Americas region, stratum D (AMR D)"
+GBD_REG14_EMRB,"Eastern Mediterranean region, stratum B (EMR B)"
+GBD_REG14_EMRD,"Eastern Mediterranean region, stratum D (EMR D)"
+GBD_REG14_EURA,"Europe region, stratum A (EUR A)"
+GBD_REG14_EURB,"Europe region, stratum B (EUR B)"
+GBD_REG14_EURC,"Europe region, stratum C (EUR C)"
+GBD_REG14_SEARB,"South East Asia region, stratum B (SEAR B)"
+GBD_REG14_SEARD,"South East Asia region, stratum D (SEAR D)"
+GBD_REG14_WORLD,World (WHO subregions by child and adult mortality)
+GBD_REG14_WPRA,"Western Pacific region, stratum A (WPR A)"
+GBD_REG14_WPRB,"Western Pacific region, stratum B (WPR B)"
+GLOBAL,Global
+OECD_HII_AMR,"Americas, high-income OECD"
+OECD_HII_EUR,"Europe, high-income OECD"
+OECD_HII_WPR,"Western Pacific , high-income OECD"
+OECD_NON_AFR,Africa
+OECD_NON_AMR,"Americas, non-OECD"
+OECD_NON_EMR,Eastern Mediterranean
+OECD_NON_EUR,"Europe, non-OECD"
+OECD_NON_SEAR,South-East Asia
+OECD_NON_WPR,"Western Pacific, non-OECD"
+SEAR,South-East Asia
+WHO_HI_GLOBAL,WHO High income countries of the world
+WHO_LMI_AFR,Low-and-middle-income countries of the African Region
+WHO_LMI_AMR,Low-and-middle-income countries of the Americas
+WHO_LMI_EMR,Low-and-middle-income countries of the Eastern Mediterranean Region
+WHO_LMI_EUR,Low-and-middle-income countries of the European Region
+WHO_LMI_HIC,High income countries
+WHO_LMI_SEAR,Low-and-middle-income countries of the South-East Asia Region
+WHO_LMI_WORLD,Global
+WHO_LMI_WPR,Low-and-middle-income countries of the Western Pacific Region
+WPR,Western Pacific
+GBD_IHME_ASIACEN,"Asia, Central"
+GBD_IHME_ASIAEAS,"Asia, East"
+GBD_IHME_ASIAPACHI,"Asia Pacific, High-income"
+GBD_IHME_ASIASE,"Asia, Southeast"
+GBD_IHME_ASIASOU,"Asia, South"
+GBD_IHME_AUSASIA,Australasia
+GBD_IHME_CAR,Caribbean
+GBD_IHME_EUROCEN,"Europe, Central"
+GBD_IHME_EUROEAS,"Europe, Eastern"
+GBD_IHME_EUROWES,"Europe, Western"
+GBD_IHME_LATAMAND,"Latin America, Andean"
+GBD_IHME_LATAMCEN,"Latin America, Central"
+GBD_IHME_LATAMSOU,"Latin America, Southern"
+GBD_IHME_LATAMTRO,"Latin America, Tropical"
+GBD_IHME_NORAFRMIDEAS,North Africa/Middle East
+GBD_IHME_NORAMEHI,"North America, High-income"
+GBD_IHME_OCEANIA,Oceania
+GBD_IHME_SUBSAHACEN,"Sub-Saharan Africa, Central"
+GBD_IHME_SUBSAHAEAS,"Sub-Saharan Africa, East"
+GBD_IHME_SUBSAHASOU,"Sub-Saharan Africa, Southern"
+GBD_IHME_SUBSAHAWES,"Sub-Saharan Africa, West"
+MDG_CCA,Caucasus and Central Asia
+MDG_DEV,Developed regions
+MDG_EAEXCH,Eastern Asia excluding China
+MDG_EAS,Eastern Asia
+MDG_LAC,Latin America and the Caribbean
+MDG_NAF,Northern Africa
+MDG_OCE,Oceania
+MDG_SAEXIND,Southern Asia excluding India
+MDG_SEA,South-eastern Asia
+MDG_SOA,Southern Asia
+MDG_SSA,Sub-Saharan Africa
+MDG_WAS,Western Asia
+REG6_AFR,Africa Region
+REG6_AMR,Region of the Americas
+REG6_EMR,Eastern Mediterranean Region
+REG6_EUR,European Region
+REG6_SEAR,South-East Asia Region
+REG6_WPR,Western Pacific Region
+REG7_AFR,African Region (LMIC)
+REG7_AHIGH,High-income countries
+REG7_AMR,Region of the Americas (LMIC)
+REG7_EMR,Eastern Mediterranean Region (LMIC)
+REG7_EUR,European Region (LMIC)
+REG7_SEAR,South-East Asia Region (LMIC)
+REG7_WPR,Western Pacific Region (LMIC)
+SDG_AUSNZL,Australia and New Zealand
+SDG_CENSOUASIA,Central Asia and Southern Asia
+SDG_ESEASIA,Eastern Asia and South-eastern Asia
+SDG_NORAMEUR,Northern America and Europe
+SDG_OCEANIAexAUSNZL,Oceania excluding Australia and New Zealand
+SDG_WASIANAFRICA,Western Asia�and Northern Africa
+UNICEF_CEECIS,"Central and Eastern Europe, Commonwealth of Independent States"
+UNICEF_EAPRO,East Asia and the Pacific
+UNICEF_ESARO,Eastern and Southern Africa
+UNICEF_IND,Industrialized
+UNICEF_MENA,Middle East and North Africa
+UNICEF_ROSA,South Asia
+UNICEF_TACRO,The Americas and Caribbean
+UNICEF_WCARO,West and Central Africa
+WBDCP_EAP,East Asia and Pacific
+WBDCP_EURCASIA,Europe and Central Asia
+WBDCP_HIINCOME,High income
+WBDCP_LAC,Latin America and Caribbean
+WBDCP_MIDEASTNAF,Middle East and North Africa
+WBDCP_SASIA,South Asia
+WBDCP_SSA,Sub-Saharan Africa
+WBINC_HIINC,High-income
+WBINC_LMINC,Lower-middle-income
+WBINC_LOINC,Low-income
+WBINC_UMINC,Upper-middle-income
+1,World
+11,Western Africa
+13,Central America
+135,Caucasus and Central Asia (MDG)
+14,Eastern Africa
+142,Asia
+143,Central Asia
+145,Western Asia
+15,Northern Africa
+150,Europe
+151,Eastern Europe
+154,Northern Europe
+155,Western Europe
+17,Middle Africa
+18,Southern Africa
+19,Americas
+197,Less Developed Regions
+199,Least Developed Countries (LDCs)
+2,Africa
+202,Sub-Saharan Africa
+21,Northern America
+29,Caribbean
+30,Eastern Asia
+34,Southern Asia
+35,South-Eastern Asia
+39,Southern Europe
+419,Latin America and the Caribbean
+432,Landlocked developing countries (LLDCs)
+485,"Western Asia (exc. Armenia, Azerbaijan, Cyprus, Israel and Georgia)"
+5,South America
+513,Northern America and Europe
+514,Developed regions (MDG)
+515,Developing regions (MDG)
+518,Eastern Asia (MDG)
+53,Australia and New Zealand
+54,Melanesia
+543,Oceania (exc. Australia and New Zealand)
+57,Micronesia
+61,Polynesia
+62,Central Asia and Southern Asia
+64,South-Central Asia
+722,Small island developing States (SIDS)
+738,Sub-Saharan Africa (inc. Sudan)
+746,Northern Africa (exc. Sudan)
+747,Northern Africa and Western Asia
+753,Eastern Asia and South-eastern Asia
+9,Oceania
+UN_Africa,Africa
+UN_Asia,Asia
+UN_Europe,Europe
+UN_Latin America_Caribbean,Latin America and Caribbean
+UN_Northern_America,Northern America
+UN_Oceania,Oceania
+UNSDG_AUSTRALIANEWZEALAND,Australia and New Zealand
+UNSDG_CARIBBEAN,Caribbean
+UNSDG_CCA,Caucasus and Central Asia
+UNSDG_CENTRALAMR,Central America
+UNSDG_CENTRALASIA,Central Asia
+UNSDG_CENTRALASIASOUTHERNASIA,Central Asia and Southern Asia
+UNSDG_DEVELOPED,Developed regions
+UNSDG_DEVELOPING,Developing regions
+UNSDG_EASTERNAFR,Eastern Africa
+UNSDG_EASTERNASIA,Eastern Asia
+UNSDG_EASTERNASIASOUTHEASTERNASIA,Eastern Asia and South-eastern Asia
+UNSDG_EUROPE,Europe
+UNSDG_EUROPENORTHERNAMERICAAUSTRALIANEWZEALAND,"Europe, Northern America, Australia and New Zealand"
+UNSDG_EUROPENORTHERNAMR,Europe and Northern America
+UNSDG_LAC,Latin America and the Caribbean
+UNSDG_LDC,Least developed countries
+UNSDG_LEASTDEVELOPED,Least developed countries
+UNSDG_LLDC,Landlocked developing countries (LLDCs)
+UNSDG_MELANESIA,Melanesia
+UNSDG_MICRONESIA,Micronesia
+UNSDG_MIDDLEAFR,Middle Africa
+UNSDG_NORTHAFR,Northern Africa
+UNSDG_NORTHERNAMR,Northern America
+UNSDG_OCEANIA,Oceania
+UNSDG_OCEANIAexAUSNZL,Oceania excluding Australia and New Zealand
+UNSDG_POLYNESIA,Polynesia
+UNSDG_SIDS,Small Island developing States (SIDS)
+UNSDG_SOUTHAMR,South America
+UNSDG_SOUTHASIA,Southern Asia
+UNSDG_SOUTHEASTERNASIA,South-eastern Asia
+UNSDG_SOUTHERNAFR,Southern Africa
+UNSDG_SUBSAHARANAFRICA,Sub-Saharan Africa
+UNSDG_WESTERNAFR,Western Africa
+UNSDG_WESTERNASIA,Western Asia
+UNSDG_WESTERNASIANORTHERNAFR,Western Asia and Northern Africa
+UNSDG_WORLD,World
+HI_AMR,High-income countries of the Americas
+HI_EMR,High-income countries of the Eastern Mediterranean Region
+HI_EUR,High-income countries of the European Region
+HI_INCOME,High-income countries for all regions
+HI_WPR,High-income countries of the Western Pacific Region
+LMI_AFR,Low- and middle-income countries of the African Region
+LMI_AMR,Low- and middle-income countries of the Americas
+LMI_EMR,Low- and middle-income countries of the Eastern Mediterranean Region
+LMI_EUR,Low- and middle-income countries of the European Region
+LMI_SEAR,Low- and middle-income countries of the South-East Asia Region
+LMI_WPR,Low- and middle-income countries of the Western Pacific Region
+WB_HI,High-income
+WB_LI,Low-income
+WB_LIMI,Low- and middle-income
+WB_LMI,Lower-middle-income
+WB_MI,Middle-income
+WB_UMI,Upper-middle-income
+WB_WORLD_INCOME,Global
