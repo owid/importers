@@ -458,7 +458,7 @@ def load_all_data_and_add_variable_name(
     ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows (if it is a number or a string shorter than 60 char)
     var_df["NumericValue"] = np.where(
         var_df["NumericValue"].isna() & var_df["Value"].apply(is_number_or_short_str),
-        var_df["Value"],
+        var_df["Value"].str.strip(),
         var_df["NumericValue"],
     )
 
