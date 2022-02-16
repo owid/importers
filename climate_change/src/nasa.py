@@ -1,5 +1,7 @@
 import datetime
+import requests
 
+from bs4 import BeautifulSoup
 import pandas as pd
 
 
@@ -61,9 +63,10 @@ def global_temperature_anomaly() -> pd.DataFrame:
 
 
 def arctic_sea_ice_extent():
-    source_url = "https://climate.nasa.gov/system/internal_resources/details/original/2264_N_09_extent_v3.0.csv"
-    df = pd.read_csv(source_url)
-    df.columns = df.columns.str.strip()
+    source_url = "https://climate.nasa.gov/vital-signs/arctic-sea-ice/"
+    soup = BeautifulSoup(requests.get(source_url).content, "html.parser")
+    file_url = soup.find(class_="download_links").find("a").get("href")
+    df = pd.read_excel("https://climate.nasa.gov" + file_url)
     (
         df[["year", "extent"]]
         .rename(columns={"extent": "arctic_sea_ice_nasa"})
