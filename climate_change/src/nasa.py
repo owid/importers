@@ -1,3 +1,5 @@
+import datetime
+
 import pandas as pd
 
 
@@ -32,7 +34,9 @@ def process_file(loc: str, source_url: str) -> pd.DataFrame:
         )
     )
     df["date"] = pd.to_datetime(df.year.astype(str) + df.month + "15", format="%Y%b%d")
-    return df[["location", "date", "temperature_anomaly"]]
+    return df[["location", "date", "temperature_anomaly"]].dropna(
+        subset=["temperature_anomaly"]
+    )
 
 
 def global_temperature_anomaly() -> pd.DataFrame:
@@ -52,6 +56,7 @@ def global_temperature_anomaly() -> pd.DataFrame:
             ),
         ]
     )
+    df = df[df.date < datetime.datetime.now()]
     df.to_csv("ready/nasa_global-temperature-anomaly.csv", index=False)
 
 
