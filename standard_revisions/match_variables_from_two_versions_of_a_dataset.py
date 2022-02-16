@@ -23,12 +23,61 @@ OUTPUT_FILE = os.path.join(CURRENT_DIR, 'config', 'variable_replacements.json')
 # If so, identical variables will be matched automatically.
 # False to include variables with identical names in comparison.
 OMIT_IDENTICAL = True
-# Function to use to match old and new variables.
-# MATCHING_FUNCTION = fuzz.partial_token_set_ratio
-MATCHING_FUNCTION = fuzz.partial_ratio
+# Maximum number of suggested variables to display when fuzzy matching an old variable.
+N_MAX_SUGGESTIONS = 10
+# Name of default similarity function to use to match old and new variables.
+SIMILARITY_NAME = 'partial_ratio'
+# Similarity methods currently considered.
+SIMILARITY_NAMES = {
+    'ratio': fuzz.ratio,
+    'partial_ratio': fuzz.partial_ratio,
+    'partial_token_set_ratio': fuzz.partial_token_set_ratio,
+    'partial_token_sort_ratio': fuzz.partial_token_sort_ratio,
+    'token_set_ratio': fuzz.token_set_ratio,
+    'token_sort_ratio': fuzz.token_sort_ratio,
+}
+
+
+def get_similarity_function(similarity_name=SIMILARITY_NAME, similarity_names=SIMILARITY_NAMES):
+    """Return a similarity function given its name.
+
+    Parameters
+    ----------
+    similarity_name : str
+        Name of similarity function.
+    similarity_names : dict
+        Similarity methods currently considered.
+
+    Returns
+    -------
+
+    """
+    if similarity_name in similarity_names:
+        similarity_function = similarity_names[similarity_name]
+    else:
+        raise ValueError(f"ERROR: Unknown similarity function: {similarity_name}")
+
+    return similarity_function
 
 
 def get_dataset_id(db_conn, dataset_name):
+    """Get the dataset ID of a specific dataset name from database.
+
+    If more than one dataset is found for the same name, or if no dataset is found, an error is raised.
+
+    Parameters
+    ----------
+    db_conn : pymysql.connections.Connection
+        Connection to database.
+    dataset_name : str
+        Dataset name.
+
+    Returns
+    -------
+    dataset_id : int
+        Dataset ID.
+
+    """
     query = f"""
         SELECT id
         FROM datasets
@@ -36,22 +85,43 @@ def get_dataset_id(db_conn, dataset_name):
     """
     with db_conn.cursor() as cursor:
         cursor.execute(query)
-        result = cursor.fetchone()
-    if result is None:
-        print(f"WARNING: Dataset '{dataset_name}' not found.")
-        dataset_id = result
-    else:
-        dataset_id = result[0]
+        result = cursor.fetchall()
+
+    assert len(result) == 1, f"Ambiguous or unknown dataset name '{dataset_name}'"
+    dataset_id = result[0][0]
 
     return dataset_id
 
 
-def get_variables_in_dataset(db_conn, dataset_id):
+def get_variables_in_dataset(db_conn, dataset_id, only_used_in_charts=False):
+    """Get all variables data for a specific dataset ID from database.
+
+    Parameters
+    ----------
+    db_conn : pymysql.connections.Connection
+    dataset_id : int
+        Dataset ID.
+    only_used_in_charts : bool
+        True to select variables only if they have been used in at least one chart. False to select all variables.
+
+    Returns
+    -------
+    variables_data : pd.DataFrame
+        Variables data for considered dataset.
+
+    """
     query = f"""
         SELECT *
         FROM variables
         WHERE datasetId = {dataset_id}
     """
+    if only_used_in_charts:
+        query += """
+            AND id IN (
+                SELECT DISTINCT variableId
+                FROM chart_dimensions
+            )
+        """
     variables_data = pd.read_sql(query, con=db_conn)
 
     return variables_data
@@ -90,19 +160,21 @@ def save_data_to_json_file(data, json_file, **kwargs):
         Additional keyword arguments to pass to json dump function (e.g. indent=4, sort_keys=True).
 
     """
-    output_dir = os.path.dirname(json_file)
+    output_dir = os.path.dirname(os.path.abspath(json_file))
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
     with open(json_file, 'w') as _json_file:
         json.dump(data, _json_file, **kwargs)
 
 
-def _display_compared_variables(old_name, new_name, missing_new):
+def _display_compared_variables(old_name, new_name, missing_new, n_max_suggestions=N_MAX_SUGGESTIONS):
     print(f"\nOld variable: {old_name}")
     print(f"New variable: {new_name}")
     print(f"\n Other options:")
-    for i, row in missing_new.iloc[1:].iterrows():
-        print(f"  {i} - {row['name_new']} (index {row['id_new']})")
+    for i, row in missing_new.iloc[1: 1 + n_max_suggestions].iterrows():
+        print(
+            f"  {i:5} - {row['name_new']} (id={row['id_new']}, similarity={row['similarity']:.0f})"
+        )
 
 
 def _input_manual_decision(new_indexes):
@@ -254,21 +326,25 @@ def save_variable_replacements_file(mapping, output_file=OUTPUT_FILE):
     save_data_to_json_file(data=mapping_indexes, json_file=output_file, **{'indent': 4, 'sort_keys': True})
 
 
-def main(old_dataset_name, new_dataset_name, omit_identical=OMIT_IDENTICAL, matching_function=MATCHING_FUNCTION,
+def main(old_dataset_name, new_dataset_name, omit_identical=OMIT_IDENTICAL, similarity_name=SIMILARITY_NAME,
          output_file=OUTPUT_FILE):
     with get_connection() as db_conn:
         # Get old and new dataset ids.
         old_dataset_id = get_dataset_id(db_conn=db_conn, dataset_name=old_dataset_name)
         new_dataset_id = get_dataset_id(db_conn=db_conn, dataset_name=new_dataset_name)
 
-        # Get variables for old and new datasets.
-        old_variables = get_variables_in_dataset(db_conn=db_conn, dataset_id=old_dataset_id)
-        new_variables = get_variables_in_dataset(db_conn=db_conn, dataset_id=new_dataset_id)
-    
+        # Get variables from old dataset that have been used in at least one chart.
+        old_variables = get_variables_in_dataset(db_conn=db_conn, dataset_id=old_dataset_id, only_used_in_charts=True)
+        # Get all variables from new dataset.
+        new_variables = get_variables_in_dataset(db_conn=db_conn, dataset_id=new_dataset_id, only_used_in_charts=False)
+
+    # Select similarity function.
+    similarity_function = get_similarity_function(similarity_name=similarity_name)
+
     # Manually map old variable names to new variable names.
     mapping = map_old_and_new_variables(
         old_variables=old_variables, new_variables=new_variables, omit_identical=omit_identical,
-        matching_function=matching_function)
+        matching_function=similarity_function)
 
     # Display summary.
     display_summary(old_variables=old_variables, new_variables=new_variables, mapping=mapping)
@@ -299,6 +375,12 @@ if __name__ == '__main__':
         help=f"New dataset name (as defined in grapher).",
     )
     parser.add_argument(
+        "-s",
+        "--similarity_name",
+        help=f"Name of similarity function to use when fuzzy matching variables. Default: {SIMILARITY_NAME}. "
+             f"Available methods: {', '.join(list(SIMILARITY_NAMES))}.",
+    )
+    parser.add_argument(
         "-a",
         "--add_identical_pairs",
         default=False,
@@ -309,5 +391,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(old_dataset_name=args.old_dataset_name, new_dataset_name=args.new_dataset_name,
-         omit_identical=not args.add_identical_pairs, matching_function=MATCHING_FUNCTION,
+         omit_identical=not args.add_identical_pairs, similarity_name=SIMILARITY_NAME,
          output_file=args.output_file)
