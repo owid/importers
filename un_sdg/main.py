@@ -12,13 +12,15 @@ To just run the chart revision suggester again:
 
     python -m un_sdg.main --skip_download --skip_clean --skip_import --skip_match
 """
+import os
 import click
 
-from un_sdg import DATASET_DIR, DATASET_NAMESPACE
+from un_sdg import CONFIGPATH, DATASET_DIR, DATASET_NAMESPACE
 
 from un_sdg import download, clean, match_variables
 
 from standard_importer import import_dataset
+from standard_revisions import match_variables_from_two_versions_of_a_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
@@ -56,7 +58,12 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
-        match_variables.main()
+        # match_variables.main()
+        match_variables_from_two_versions_of_a_dataset.main(
+            old_dataset_name="United Nations Sustainable Development Goals - United Nations (2021-10)",
+            new_dataset_name="United Nations Sustainable Development Goals - United Nations (2022-02)",
+            output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
+        )
     if suggest_charts:
         suggester = ChartRevisionSuggester(DATASET_DIR)
         suggester.suggest()
