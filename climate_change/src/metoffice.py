@@ -1,3 +1,4 @@
+import datetime
 import io
 import requests
 
@@ -41,6 +42,7 @@ def annual_sea_surface_temperature() -> pd.DataFrame:
         "Tropics": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_TROP.csv",
     }
     df = pd.concat([process_file(k, v, period="annual") for k, v in files.items()])
+    df = df[df.year < datetime.date.today().year]
     df.to_csv("ready/metoffice_annual-sea-surface-temperature.csv", index=False)
 
 
