@@ -89,7 +89,7 @@ def combine_data() -> None:
         pd.read_csv(f, sep=",", low_memory=False, compression="gzip") for f in all_files
     )
     df_merged = pd.concat(df_from_each_file, ignore_index=True)
-    df_merged.to_csv(INFILE)
+    df_merged.to_csv(INFILE, compression="gzip")
     for file in all_files:
         os.remove(file)
 
