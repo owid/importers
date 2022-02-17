@@ -1,4 +1,5 @@
-"""snippet for downloading UN SDG data in CSV format from the SDG API.
+"""
+Functions for downloading UN SDG data in CSV format from the SDG API.
 """
 import glob
 import json
@@ -11,7 +12,7 @@ import shutil
 from PyPDF2 import PdfFileMerger
 from io import BytesIO
 from pathlib import Path
-from un_sdg import INFILE, OUTPATH, METAPATH, METADATA_LOC
+from un_sdg import INFILE, OUTPATH, METAPATH, METADATA_LOC, INPATH, DATASET_VERSION
 from typing import List
 
 base_url = "https://unstats.un.org/sdgapi"
@@ -21,6 +22,7 @@ keep_paths = []  # files not to be deleted
 def main():
     delete_output(keep_paths)
     download_data()
+    combine_data()
     delete_metadata()
     download_metadata()
     clean_metadata(METAPATH)
@@ -60,7 +62,7 @@ def download_data() -> None:
     assert res.ok
 
     goals = json.loads(res.content)
-    goal_codes = [int(goal["code"]) for goal in goals]
+    goal_codes = [str(goal["code"]) for goal in goals]
     # retrieves all area codes
     print("Retrieving area codes...")
     url = f"{base_url}/v1/sdg/GeoArea/List"
@@ -68,14 +70,28 @@ def download_data() -> None:
     assert res.ok
 
     areas = json.loads(res.content)
-    area_codes = [int(area["geoAreaCode"]) for area in areas]
+    area_codes = [str(area["geoAreaCode"]) for area in areas]
     # retrieves csv with data for all codes and areas
     print("Retrieving data...")
     url = f"{base_url}/v1/sdg/Goal/DataCSV"
-    res = requests.post(url, data={"goal": goal_codes, "areaCodes": area_codes})
-    assert res.ok
-    df = pd.read_csv(BytesIO(res.content), low_memory=False)
-    df.to_csv(INFILE, index=False, compression="gzip")
+    for goal in goal_codes:
+        res = requests.post(url, data={"goal": goal, "areaCodes": area_codes})
+        print(f"Goal {goal} downloaded {res.ok}")
+        assert res.ok
+        df = pd.read_csv(BytesIO(res.content), low_memory=False)
+        infile = os.path.join(INPATH, goal + "_un-sdg-" + DATASET_VERSION + ".csv.zip")
+        df.to_csv(infile, index=False, compression="gzip")
+
+
+def combine_data() -> None:
+    all_files = glob.glob(f"{INPATH}/*{os.path.basename(os.path.normpath(INFILE))}")
+    df_from_each_file = (
+        pd.read_csv(f, sep=",", low_memory=False, compression="gzip") for f in all_files
+    )
+    df_merged = pd.concat(df_from_each_file, ignore_index=True)
+    df_merged.to_csv(INFILE)
+    for file in all_files:
+        os.remove(file)
 
 
 def delete_metadata() -> None:

@@ -1,0 +1,453 @@
+goal,target_code,indicator,target,desired_direction,notes,target_value
+1,1.1,1.1.1,Extreme poverty,decrease,,0
+1,1.2,1.2.1,"National
+poverty lines",decrease,,half
+1,1.2,1.2.2,National poverty,decrease,,half
+1,1.3,1.3.1,"Social
+protection",increase,,
+1,1.4,1.4.1,Basic services,increase,,
+1,1.4,1.4.2,Secure land rights,increase,,
+1,1.5,1.5.1,Disaster deaths,decrease,,
+1,1.5,1.5.2,Disaster costs($),decrease,,
+1,1.5,1.5.3,"Disaster risk
+reduction",increase,,
+1,1.5,1.5.4,"Local disaster
+risk",increase,,
+1,1.a,1.a.1,"Poverty
+reduction prog",increase,check,
+1,1.a,1.a.2,Gov't spending,increase,,
+1,1.b,1.b.1,"Inflows to
+poverty reduction",increase,,
+2,2.1,2.1.1,Undernourishment,decrease,,
+2,2.1,2.1.2,Food insecurity,decrease,,
+2,2.2,2.2.1,Child stunting,decrease,,
+2,2.2,2.2.2,"Child
+wasting/obesity",decrease,,
+2,2.2,2.2.3,"Anemia
+prevalence",decrease,,
+2,2.3,2.3.1,"Prod per
+labour unit",increase,,
+2,2.3,2.3.2,"Small-scale
+farmer ($$)",increase,,
+2,2.4,2.4.1,"Sustainable
+production",increase,,
+2,2.5,2.5.1,"Genetic
+resources",increase,,
+2,2.5,2.5.2,"Local breed
+extinction",decrease,,
+2,2.a,2.a.1,"Agri-orientation
+index",increase,,
+2,2.a,2.a.2,ODA ($$) to agri,increase,check,
+2,2.b,2.b.1,"Agri export
+subsidies",decrease,,
+2,2.c,2.c.1,"Food
+prices anomaly",increase,check,
+3,3.1,3.1.1,Maternal mortality,decrease,,
+3,3.1,3.1.2,"Health
+staff at births",increase,,
+3,3.2,3.2.1,Child mortality,decrease,,
+3,3.2,3.2.2,Neonatal mortality,decrease,,
+3,3.3,3.3.1,"New HIV
+Infections",decrease,,
+3,3.3,3.3.2,"Tubercolosis
+incidence",decrease,,
+3,3.3,3.3.3,"Malaria
+incidence",decrease,,
+3,3.3,3.3.4,"Hepatitis B
+ incidence",decrease,,
+3,3.3,3.3.5,"Neglected
+tropical disease",decrease,,
+3,3.4,3.4.1,NCDs,decrease,,
+3,3.4,3.4.2,"Suicide
+mortality",decrease,,
+3,3.5,3.5.1,"Substance use
+treatment",increase,,
+3,3.5,3.5.2,Alcohol intake,decrease,,
+3,3.6,3.6.1,"Road
+traffic injury",decrease,,
+3,3.7,3.7.1,Family planning,increase,,
+3,3.7,3.7.2,"Adolescent
+births",decrease,,
+3,3.8,3.8.1,"Healthcare
+coverage",increase,,
+3,3.8,3.8.2,"Health
+expenditure",increase,,
+3,3.9,3.9.1,"Air pollution
+deaths",,,
+3,3.9,3.9.2,"Water,
+sanitation deaths",,,
+3,3.9,3.9.3,"Unintentional
+poisoning",,,
+3,3.a,3.a.1,Tobacco use,,,
+3,3.b,3.b.1,"Vaccine
+coverage",,,
+3,3.b,3.b.2,"ODA ($$)
+to health",,,
+3,3.b,3.b.3,"Medicine
+availability",,,
+3,3.c,3.c.1,Health workers,,,
+3,3.d,3.d.1,"Emergency
+preparedness",,,
+3,3.d,3.d.2,"AMR bloodstream
+infections",,,
+4,4.1,4.1.1,"Reading
+proficiency",,,
+4,4.1,4.1.2,"Education
+completion",,,
+4,4.2,4.2.1,"Children
+on-track",,,
+4,4.2,4.2.2,"Pre-primary
+participation",,,
+4,4.3,4.3.1,"Access further
+education",,,
+4,4.4,4.4.1,ICT skills,,,
+4,4.5,4.5.1,"Disparities
+in edu access",,,
+4,4.6,4.6.1,"Literacy
+& numeracy",,,
+4,4.7,4.7.1,"Edu for sust
+development",,,
+4,4.a,4.a.1,"Inclusive
+& safe schools",,,
+4,4.b,4.b.1,"ODA ($$) for
+scholarships",,,
+4,4.c,4.c.1,"Qualified
+teachers",,,
+5,5.1,5.1.1,"Frameworks
+for gender",,,
+5,5.2,5.2.1,"Violence
+by partner",,,
+5,5.2,5.2.2,"Violence by
+ non-partner",,,
+5,5.3,5.3.1,Forced marriage,,,
+5,5.3,5.3.2,"Genital
+mutilation",,,
+5,5.4,5.4.1,"Time on
+domestic work",,,
+5,5.5,5.5.1,"Women in
+parliament",,,
+5,5.5,5.5.2,"Women in
+management",,,
+5,5.6,5.6.1,"Own health
+ decisions",,,
+5,5.6,5.6.2,"Sexual
+health access",,,
+5,5.a,5.a.1,"Female
+land ownership",,,
+5,5.a,5.a.2,"Female
+land rights",,,
+5,5.b,5.b.1,"Mobile
+phone ownership",,,
+5,5.c,5.c.1,"Tracking
+gender equality",,,
+6,6.1,6.1.1,"Safe
+drinking water",,,
+6,6.2,6.2.1,"Sanitation
+& handwashing",,,
+6,6.3,6.3.1,"Treated
+wastewater",,,
+6,6.3,6.3.2,"Ambient
+water quality",,,
+6,6.4,6.4.1,"Water
+use efficiency",,,
+6,6.4,6.4.2,"Freshwater
+stress",,,
+6,6.5,6.5.1,"Integrated
+water mgmt",,,
+6,6.5,6.5.2,"Transboundary
+cooperation",,,
+6,6.6,6.6.1,"Water
+ecosystems",,,
+6,6.a,6.a.1,"ODA ($$)
+ for water",,,
+6,6.b,6.b.1,"Local
+sanitation mgmt",,,
+7,7.1,7.1.1,"Electrcity
+access",,,
+7,7.1,7.1.2,"Access to
+clean fuels",,,
+7,7.2,7.2.1,"Renewable
+energy share",,,
+7,7.3,7.3.1,Energy intensity,,,
+7,7.a,7.a.1,"Clean
+energy investment",,,
+7,7.b,7.b.1,"Renewable
+energy capacity",,,
+8,8.1,8.1.1,"GDP per
+capita growth",,,
+8,8.2,8.2.1,"GDP growth
+per employed",,,
+8,8.3,8.3.1,"Informal
+employment",,,
+8,8.4,8.4.1,"Material
+footprint",,,
+8,8.4,8.4.2,"Domestic
+consumption",,,
+8,8.5,8.5.1,Hourly earnings,,,
+8,8.5,8.5.2,"Unemployment
+rate",,,
+8,8.6,8.6.1,"Youth
+education/training",,,
+8,8.7,8.7.1,Child labour,,,
+8,8.8,8.8.1,"Occupational
+injuries",,,
+8,8.8,8.8.2,"Compliance
+labour rights",,,
+8,8.9,8.9.1,"Tourism GDP
+contribution",,,
+8,8.1,8.10.1,"Financial
+services access",,,
+8,8.1,8.10.2,"Financial
+account access",,,
+8,8.a,8.a.1,Aid for Trade,,,
+8,8.b,8.b.1,"Youth employment
+strategy",,,
+8,9.1,9.1.1,"Rural
+road access",,,
+9,9.1,9.1.2,"Passenger
+freight-volumes",,,
+9,9.2,9.2.1,"Manufacturing
+value",,,
+9,9.2,9.2.2,"Manufacturing
+employment",,,
+9,9.3,9.3.1,"Small-scale
+industry value",,,
+9,9.3,9.3.2,"Small-scale
+industry credit",,,
+9,9.4,9.4.1,"CO2 emissions
+intensity",,,
+9,9.5,9.5.1,R&D spending,,,
+9,9.5,9.5.2,"R&D
+researchers",,,
+9,9.a,9.a.1,"ODA ($$)
+infrastructure",,,
+9,9.b,9.b.1,"High-tech
+industry value",,,
+9,9.c,9.c.1,"Mobile
+network coverage",,,
+10,10.1,10.1.1,"Income
+growth inequality",,,
+10,10.2,10.2.1,"Pop <50%
+median income",,,
+10,10.3,10.3.1,"Discriminatory
+practices",,,
+10,10.4,10.4.1,"Labour
+share of GDP",,,
+10,10.4,10.4.2,"Redistribution 
+impact",,,
+10,10.5,10.5.1,"Financial
+soundness",,,
+10,10.6,10.6.1,"Equal int'l
+participation",,,
+10,10.7,10.7.1,"Migration
+recruitment cost",,,
+10,10.7,10.7.2,"Planned
+migration policy",,,
+10,10.7,10.7.3,Migrant deaths,,,
+10,10.7,10.7.4,Refugee population,,,
+10,10.a,10.a.1,"Differential
+tariffs",,,
+11,10.b,10.b.1,"Development
+assistance",,,
+11,10.c,10.c.1,Remittance costs,,,
+11,11.1,11.1.1,"Urban
+slum population",,,
+11,11.2,11.2.1,"Public
+transport access",,,
+11,11.3,11.3.1,"Sustainable
+urbanization",,,
+11,11.3,11.3.2,"Urban
+planning mgmt",,,
+11,11.4,11.4.1,"Cultural
+heritage",,,
+11,11.5,11.5.1,"Disaster
+deaths/injury",,,
+11,11.5,11.5.2,"Disaster
+losses($$)",,,
+11,11.6,11.6.1,"Solid waste
+management",,,
+11,11.6,11.6.2,"Urban air
+pollution",,,
+11,11.7,11.7.1,Open city spaces,,,
+11,11.7,11.7.2,Safe city spaces,,,
+11,11.a,11.a.1,Urban planning,,,
+11,11.b,11.b.1,"Integrated
+risk mgmt",,,
+12,11.b,11.b.2,Local risk mgmt,,,
+12,11.c,11.c.1,"Sustainable
+buildings",,,
+12,12.1,12.1.1,"Sustainable
+consumption plans",,,
+12,12.2,12.2.1,"Material
+footprint",,,
+12,12.2,12.2.2,"Domestic
+consumption",,,
+12,12.3,12.3.1,"Global
+food loss",,,
+12,12.4,12.4.1,"Hazardous
+waste agreement",,,
+12,12.4,12.4.2,"Hazardous
+waste",,,
+12,12.5,12.5.1,"Recycling
+rates",,,
+12,12.6,12.6.1,"Corporate
+sust reports",,,
+12,12.7,12.7.1,"National
+sust plans",,,
+12,12.8,12.8.1,"Sustainable
+lifestyles",,,
+12,12.a,12.a.1,"Support sust
+production",,,
+13,12.b,12.b.1,"Sustainable
+tourism",,,
+13,12.c,12.c.1,"Fossil fuel
+subsidies",,,
+13,13.1,13.1.1,"Disaster
+deaths/injury",,,
+13,13.1,13.1.2,"Disaster
+risk reduction",,,
+13,13.1,13.1.3,"Local
+disaster risk",,,
+13,13.2,13.2.1,"Integration
+climate policies",,,
+13,13.2,13.2.2,"Greenhouse
+gas emissions",,,
+13,13.3,13.3.1,"Sust. dev
+education",,,
+13,13.a,13.a.1,"Green
+climate fund ($$)",,,
+13,13.b,13.b.1,"Strategies
+adaptation plans",,,
+14,14.1,14.1.1,"Marine
+pollution",,,
+14,14.2,14.2.1,"Marine
+ecosystems",,,
+14,14.3,14.3.1,"Ocean
+acidification",,,
+14,14.4,14.4.1,Fish stock levels,,,
+14,14.5,14.5.1,"Marine
+protected areas",,,
+14,14.6,14.6.1,"Illegal/unregulated
+fishing",,,
+14,14.7,14.7.1,"Sustainable
+fishery income",,,
+14,14.a,14.a.1,"Research
+for marine tech",,,
+14,14.b,14.b.1,"Small-scale
+fisher support",,,
+14,14.c,14.c.1,"Implementing
+int'l sea law",,,
+15,15.1,15.1.1,"Forest
+area",,,
+15,15.1,15.1.2,"Protected
+biodiversity sites",,,
+15,15.2,15.2.1,"Forest
+management",,,
+15,15.3,15.3.1,"Degraded
+land",,,
+15,15.4,15.4.1,"Mountain
+protected areas",,,
+15,15.4,15.4.2,"Mountain
+green cover",,,
+15,15.5,15.5.1,Red List Index,,,
+15,15.6,15.6.1,"Genetic
+resource sharing",,,
+15,15.7,15.7.1,"Wildlife
+poaching",,,
+15,15.8,15.8.1,"Invasive
+alien species",,,
+15,15.9,15.9.1,"Biodiversity
+planning",,,
+15,15.a,15.a.1,"ODA ($$) for
+biodiversity",,,
+15,15.b,15.b.1,"ODA ($$) for
+forests",,,
+15,15.c,15.c.1,"Wildlife
+poaching",,,
+16,16.1,16.1.1,"Homicide
+rate",,,
+16,16.1,16.1.2,"Conflict-related
+deaths",,,
+16,16.1,16.1.3,"Violence
+prevalence",,,
+16,16.1,16.1.4,Public safety,,,
+16,16.2,16.2.1,"Violence
+against children",,,
+16,16.2,16.2.2,Human trafficking,,,
+16,16.2,16.2.3,Sexual violence,,,
+16,16.3,16.3.1,"Victim reports
+of crime",,,
+16,16.3,16.3.2,"Unsentenced
+detainees",,,
+16,16.3,16.3.3,"Dispute 
+resolution",,,
+16,16.4,16.4.1,"Illicit
+financial flows",,,
+16,16.4,16.4.2,"Seized or
+surrendered arms",,,
+16,16.5,16.5.1,"Bribery
+in public",,,
+16,16.5,16.5.2,"Bribery in
+business",,,
+16,16.6,16.6.1,"Gov't expenditure
+in budget",,,
+16,16.6,16.6.2,"Public service
+satisfaction",,,
+16,16.7,16.7.1,"Institutional
+representation",,,
+16,16.7,16.7.2,"Inclusive
+decision making",,,
+16,16.8,16.8.1,"Inclusive int'l
+participation",,,
+16,16.9,16.9.1,Birth registration,,,
+16,16.1,16.10.1,"Journalist &
+ media killings",,,
+16,16.1,16.10.2,"Public
+information access",,,
+16,16.a,16.a.1,"Human rights
+institutions",,,
+16,16.b,16.b.1,"Public
+discrimination",,,
+17,17.1,17.1.1,"Gov't
+revenue (% GDP)",,,
+17,17.1,17.1.2,Domestic taxes,,,
+17,17.2,17.2.1,"ODA ($$)
+ from OECD",,,
+17,17.3,17.3.1,"Foreign Direct
+Investment",,,
+17,17.3,17.3.2,"Personal
+remittances",,,
+17,17.4,17.4.1,Debt service,,,
+17,17.5,17.5.1,"Investment
+for LDCs",,,
+17,17.6,17.6.1,"Broadband
+subscriptions",,,
+17,17.7,17.7.1,"Sustainable
+technologies",,,
+17,17.8,17.8.1,Internet use,,,
+17,17.9,17.9.1,Finance support,,,
+17,17.1,17.10.1,Tariff rates,,,
+17,17.11,17.11.1,"Developing
+nation exports",,,
+17,17.12,17.12.1,"Developing
+nation tariffs",,,
+17,17.13,17.13.1,"Macroeconomic
+dashboard",,,
+17,17.14,17.14.1,"Policy for sust
+development",,,
+17,17.15,17.15.1,"National results
+framework",,,
+17,17.16,17.16.1,"Multistakeholder
+progress",,,
+17,17.17,17.1.1,"Public-private
+partnerships",,,
+17,17.18,17.18.1,"Statistical
+capacity",,,
+17,17.18,17.18.2,"Statistical
+legislation",,,
+17,17.18,17.18.3,"National
+statistical plans",,,
+17,17.19,17.19.1,"Statistical
+capacity resource",,,
+17,17.19,17.19.2,"Census
+completeness",,,
