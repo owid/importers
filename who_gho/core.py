@@ -378,7 +378,8 @@ def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
         }
     )
 
-    df_out = df_out[df_out["value"].notna()]
+    df_out["value"].replace("", np.nan, inplace=True)  # replacing empty strings with NA
+    df_out = df_out[df_out["value"].notna()]  # dropping na values
     return df_out
 
 
