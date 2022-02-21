@@ -450,6 +450,6 @@ if __name__ == "__main__":
         old_dataset_name=args.old_dataset_name,
         new_dataset_name=args.new_dataset_name,
         omit_identical=not args.add_identical_pairs,
-        similarity_name=SIMILARITY_NAME,
+        similarity_name=args.similarity_name,
         output_file=args.output_file,
     )
