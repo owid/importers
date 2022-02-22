@@ -361,7 +361,7 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
 def get_unit(var: str) -> Tuple[Any, Any]:
     unit = "(%)"
     if unit in var:
-        unit_out = "Percentage"
+        unit_out = "%"
         short_unit_out = "%"
         return unit_out, short_unit_out
     else:
@@ -471,9 +471,15 @@ def load_all_data_and_add_variable_name(
     return var_df
 
 
-def remove_empty_rows(df: pd.DataFrame) -> pd.DataFrame:
+def remove_rows_with_no_data(df: pd.DataFrame) -> pd.DataFrame:
     df.dropna(subset=["TimeDim", "NumericValue"], inplace=True)
-    df = df[~(df.NumericValue.isin(["No data", "Not applicable"]))]
+    df = df[
+        ~(
+            df.NumericValue.isin(
+                ["No data", "Not applicable", "", "-", "—", ".", "None"]
+            )
+        )
+    ]
 
     return df
 
@@ -720,7 +726,7 @@ def _fetch_description_one_variable(url: str) -> str:
     return text
 
 
-def _clean_datapoints_custom(df: pd.DataFrame) -> pd.DataFrame:
+def clean_datapoints_custom(df: pd.DataFrame) -> pd.DataFrame:
     """custom logic for cleaning specific variables.
 
     Arguments:
@@ -739,10 +745,45 @@ def _clean_datapoints_custom(df: pd.DataFrame) -> pd.DataFrame:
     # is otherwise for 2000), so this seems to be an error.
     nonowid_id = "WHOSIS_000001"
     drop = (
-        (df["nonowid_id"] == nonowid_id)
-        & (df["country"] == "Canada")
-        & (df["year"] == 1920)
+        (df["IndicatorCode"] == nonowid_id)
+        & (df["SpatialDim"] == "CAN")
+        & (df["TimeDim"] == "1920")
     ).values
     df = df[~drop]
 
+    return df
+
+
+def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
+    """custom logic for cleaning specific variables.
+
+    Arguments:
+
+        df: pd.DataFrame. Dataframe containing all datapoints to be cleaned.
+
+    Returns:
+
+        df: pd.DataFrame. Same dataframe as input, after custom data cleaning
+            has been applied.
+    """
+    # These variables should sum to 100, but historically there have been issues with this dataset
+    # Countries where these variables don't sum to 100 will be removed.
+    alc_var = "Indicator:Alcohol, consumers past 12 months (%) - Sex:Both sexes"
+    abst_var = "Indicator:Alcohol, abstainers past 12 months (%) - Sex:Both sexes"
+    alc_data = df[["SpatialDim", "TimeDim", "NumericValue"]][df["variable"] == alc_var]
+    abst_data = df[["SpatialDim", "TimeDim", "NumericValue"]][
+        df["variable"] == abst_var
+    ]
+    df_both = pd.merge(alc_data, abst_data, on=["SpatialDim", "TimeDim"])
+    df_both["sum"] = df_both["NumericValue_x"].astype(float) + df_both[
+        "NumericValue_y"
+    ].astype(float)
+    ent_drop = df_both["SpatialDim"][df_both["sum"] != 100.00]
+    drop = (
+        (df["variable"].isin([alc_var, abst_var])) & (df["SpatialDim"].isin(ent_drop))
+    ).values
+    df = df[~drop]
+    print(
+        f"{sum(drop)} rows dropped as alcohol consumers and abstainers values do not sum to 100"
+    )
     return df
