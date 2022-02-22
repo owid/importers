@@ -476,7 +476,18 @@ def remove_rows_with_no_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df[
         ~(
             df.NumericValue.isin(
-                ["No data", "Not applicable", "", "-", "—", ".", "None"]
+                [
+                    "No data",
+                    "Not applicable",
+                    "",
+                    "-",
+                    "—",
+                    ".",
+                    "–",
+                    "None",
+                    "none",
+                    "Data not available",
+                ]
             )
         )
     ]
