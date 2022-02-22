@@ -787,12 +787,3 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
         f"{sum(drop)} rows dropped as alcohol consumers and abstainers values do not sum to 100"
     )
     return df
-
-
-def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
-    """
-    Creating the necessary directories for the input, output and config files
-    """
-    Path(inpath).mkdir(parents=True, exist_ok=True)
-    Path(outpath, "datapoints").mkdir(parents=True, exist_ok=True)
-    Path(configpath).mkdir(parents=True, exist_ok=True)
