@@ -32,7 +32,6 @@ Instructions for manually standardizing entity names:
 """
 import os
 import pandas as pd
-from ihme_gbd.gbd_tools import make_dirs
 
 
 from who_gho import (
@@ -46,6 +45,8 @@ from who_gho import (
 )
 
 from who_gho.core import (
+    clean_datapoints_custom,
+    check_variables_custom,
     clean_datasets,
     get_metadata_url,
     get_variable_codes,
@@ -53,10 +54,11 @@ from who_gho.core import (
     load_all_data_and_add_variable_name,
     get_distinct_entities,
     get_metadata,
-    remove_empty_rows,
+    remove_rows_with_no_data,
     standardise_country_name,
     clean_variables,
     delete_output,
+    make_dirs,
 )
 
 
@@ -88,7 +90,9 @@ def main() -> None:
         variables=variable_codes, var_code2name=code2name
     )
 
-    df = remove_empty_rows(df)
+    df = remove_rows_with_no_data(df)
+    df = clean_datapoints_custom(df)
+    df = check_variables_custom(df)
 
     df["country"] = standardise_country_name(country_col=df["SpatialDim"])
 
