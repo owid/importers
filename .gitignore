@@ -37,3 +37,7 @@ who_gho/output/
 .Rproj.user
 venv
 .idea
+
+# Sanity checks and temporary files for CAIT datasets.
+cait/sanity_checks/*.html
+cait/grapher/temp.json
