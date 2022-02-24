@@ -1,3 +1,4 @@
+# type: ignore
 import os
 import re
 import simplejson as json

@@ -1,3 +1,4 @@
+# type: ignore
 """Creates a `variable_replacements.json` file of {old variable id} to
 {new variable id} key-value pairs.
 `variable_replacements.json` is used in `suggest_chart_revisions.py` for
