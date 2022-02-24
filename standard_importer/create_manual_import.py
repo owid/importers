@@ -1,3 +1,4 @@
+# type: ignore
 """Converts a folder's output to a single csv for manual import to
 https://owid.cloud/admin/import.
 

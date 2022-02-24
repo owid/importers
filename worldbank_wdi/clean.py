@@ -1,3 +1,4 @@
+# type: ignore
 """Cleans WDI metadata and data points in preparation for MySQL insert.
 
 Usage:

@@ -1,3 +1,4 @@
+# type: ignore
 """executes bulk dataset import + chart updates for the World Bank World
 Development Indicators dataset.
 
