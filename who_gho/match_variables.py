@@ -5,6 +5,7 @@ determining which charts to update.
 Usage:
     python -m who_gho.match_variables
 """
+# type: ignore
 
 import os
 import simplejson as json
