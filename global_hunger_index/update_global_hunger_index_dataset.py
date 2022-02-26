@@ -91,17 +91,22 @@ def main():
     )
 
     print("Preparing data.")
+
     # Add new rows for all countries that have been grouped in the same row.
     clean = data.copy()
     for case in GROUPED_COUNTRIES_CASES:
         clean = split_country_groups(data=clean, grouped_countries_name=case)
+
     # Name countries following owid naming.
     clean["Country"] = clean["Country"].replace(COUNTRY_REMAPPING)
+
     # Ensure all countries have names in owid population dataset.
     assert (set(clean["Country"]) - set(population["Country"])) == set()
+
     # Reshape dataframe
     clean_melt = clean.melt(id_vars="Country", value_name=GHI_NAME, var_name="Year")
     clean_melt["Year"] = clean_melt["Year"].astype("int64")
+
     # Replace values given as ranges by the mean of the range.
     range_values = [
         value
@@ -113,6 +118,7 @@ def main():
         value: np.array(value.replace("*", "").split("–")).astype(float).round().mean()
         for value in range_values
     }
+
     # Manually add other special cases.
     value_remapping.update(SPECIAL_CASES_REMAPPING)
     clean_melt[GHI_NAME] = clean_melt[GHI_NAME].replace(value_remapping)
