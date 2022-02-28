@@ -47,7 +47,10 @@ GROUPED_COUNTRIES_CASES = [
     "Guinea, Guinea-Bissau, Niger, Uganda, Zambia, and Zimbabwe*",
 ]
 
-COUNTRY_REMAPPING = {row['ghi_name']: row['owid_name'] for _, row in pd.read_csv(COUNTRIES_FILE).iterrows()}
+COUNTRY_REMAPPING = {
+    row["ghi_name"]: row["owid_name"]
+    for _, row in pd.read_csv(COUNTRIES_FILE).iterrows()
+}
 
 SPECIAL_CASES_REMAPPING = {
     "<5": 2.5,
@@ -81,7 +84,9 @@ def main():
         clean = split_country_groups(data=clean, grouped_countries_name=case)
 
     # Name countries following owid naming.
-    clean["Country"] = clean['Country'].str.replace('*', '', regex=False).replace(COUNTRY_REMAPPING)
+    clean["Country"] = (
+        clean["Country"].str.replace("*", "", regex=False).replace(COUNTRY_REMAPPING)
+    )
 
     # Ensure all countries have names in owid population dataset.
     assert (set(clean["Country"]) - set(population["Country"])) == set()
