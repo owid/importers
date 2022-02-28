@@ -12,6 +12,7 @@ from owid import catalog
 # Define common paths.
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 GRAPHER_DIR = os.path.join(CURRENT_DIR, "grapher")
+COUNTRIES_FILE = os.path.join(CURRENT_DIR, "config", "country_standardized.csv")
 DATA_URL = "https://www.globalhungerindex.org/xlsx/2021.xlsx"
 GHI_NAME = "Global Hunger Index (2021)"
 OUTPUT_FILE = os.path.join(GRAPHER_DIR, GHI_NAME + ".csv")
@@ -46,25 +47,7 @@ GROUPED_COUNTRIES_CASES = [
     "Guinea, Guinea-Bissau, Niger, Uganda, Zambia, and Zimbabwe*",
 ]
 
-COUNTRY_REMAPPING = {
-    "Bolivia (Plurinational State of)": "Bolivia",
-    "Cabo Verde": "Cape Verde",
-    "Congo (Republic of)": "Congo",
-    "Côte d'Ivoire": "Cote d'Ivoire",
-    "Democratic Republic of the Congo": "Democratic Republic of Congo",
-    "Iran (Islamic Republic of)": "Iran",
-    "Korea (DPR)": "North Korea",
-    "Lao PDR": "Laos",
-    "Moldova (Rep. of)*": "Moldova",
-    "Russian Federation": "Russia",
-    "Syrian Arab Republic": "Syria",
-    "Tajikistan*": "Tajikistan",
-    "Tanzania (United Republic of)": "Tanzania",
-    "Timor-Leste": "Timor",
-    "Trinidad & Tobago": "Trinidad and Tobago",
-    "Venezuela (Bolivarian Republic of)": "Venezuela",
-    "Viet Nam": "Vietnam",
-}
+COUNTRY_REMAPPING = {row['ghi_name']: row['owid_name'] for _, row in pd.read_csv(COUNTRIES_FILE).iterrows()}
 
 SPECIAL_CASES_REMAPPING = {
     "<5": 2.5,
@@ -98,7 +81,7 @@ def main():
         clean = split_country_groups(data=clean, grouped_countries_name=case)
 
     # Name countries following owid naming.
-    clean["Country"] = clean["Country"].replace(COUNTRY_REMAPPING)
+    clean["Country"] = clean['Country'].str.replace('*', '', regex=False).replace(COUNTRY_REMAPPING)
 
     # Ensure all countries have names in owid population dataset.
     assert (set(clean["Country"]) - set(population["Country"])) == set()
