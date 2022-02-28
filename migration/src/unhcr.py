@@ -21,10 +21,13 @@ def refugees_by_destination() -> pd.DataFrame:
     )
     assert res.ok
     z = zipfile.ZipFile(io.BytesIO(res.content))
-    z.extractall("migration/input/unhcr")
+    z.extractall("migration/input/unhcr/refugees_by_destination/")
 
-    df = pd.read_csv("migration/input/unhcr/population.csv", skiprows=14)
+    df = pd.read_csv(
+        "migration/input/unhcr/refugees_by_destination/population.csv", skiprows=14
+    )
     df = df[["Year", "Country of asylum", "Refugees under UNHCR's mandate"]]
+    df["Country of asylum"] = standardise_countries(df["Country of asylum"])
     df.to_csv("migration/output/unhcr_refugees_by_destination.csv", index=False)
     return df
 
@@ -44,7 +47,7 @@ def standardise_countries(country=pd.Series) -> pd.DataFrame:
 def refugees_by_destination_per_capita() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_destination()
-    refugees["Country of asylum"] = standardise_countries(refugees["Country of asylum"])
+    # refugees["Country of asylum"] = standardise_countries(refugees["Country of asylum"])
     refugees = refugees.merge(
         population,
         how="inner",
@@ -66,10 +69,13 @@ def refugees_by_origin() -> pd.DataFrame:
     )
     assert res.ok
     z = zipfile.ZipFile(io.BytesIO(res.content))
-    z.extractall("migration/input/unhcr")
+    z.extractall("migration/input/unhcr/refugees_by_origin/")
 
-    df = pd.read_csv("migration/input/unhcr/population.csv", skiprows=14)
+    df = pd.read_csv(
+        "migration/input/unhcr/refugees_by_origin/population.csv", skiprows=14
+    )
     df = df[["Year", "Country of origin", "Refugees under UNHCR's mandate"]]
+    df["Country of origin"] = standardise_countries(df["Country of origin"])
     df.to_csv("migration/output/unhcr_refugees_by_origin.csv", index=False)
     return df
 
@@ -77,7 +83,7 @@ def refugees_by_origin() -> pd.DataFrame:
 def refugees_by_origin_per_capita() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_origin()
-    refugees["Country of origin"] = standardise_countries(refugees["Country of origin"])
+    # refugees["Country of origin"] = standardise_countries(refugees["Country of origin"])
     refugees = refugees.merge(
         population,
         how="inner",
@@ -91,3 +97,22 @@ def refugees_by_origin_per_capita() -> pd.DataFrame:
         "migration/output/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
     )
     return refugees
+
+
+rbd = refugees_by_destination()
+rbo = refugees_by_origin()
+
+list(
+    dict.fromkeys(
+        rbd["Country of asylum"].to_list() + rbo["Country of origin"].to_list()
+    )
+)
+
+df = pd.DataFrame(
+    list(
+        dict.fromkeys(
+            rbd["Country of asylum"].to_list() + rbo["Country of origin"].to_list()
+        )
+    ),
+    columns=["Country"],
+)
