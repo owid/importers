@@ -29,6 +29,30 @@ def refugees_by_destination() -> pd.DataFrame:
     return df
 
 
+def standardise_countries(country=pd.Series) -> pd.DataFrame:
+    owid_countries = (
+        pd.read_csv("migration/countries_to_standardise_country_standardized.csv")
+        .set_index("Country")
+        .squeeze()
+        .to_dict()
+    )
+
+    countries_standardised = country.apply(lambda x: owid_countries[x])
+    return countries_standardised
+
+
 def refugees_by_destination_per_capita() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_destination()
+    refugees["Country of asylum"] = standardise_countries(refugees["Country of asylum"])
+    refugees = refugees.merge(
+        population,
+        how="inner",
+        left_on=["Country of asylum", "Year"],
+        right_on=["Country", "Year"],
+    )
+    refugees["refugees_per_capita"] = (
+        refugees["Refugees under UNHCR's mandate"] / refugees["Population"]
+    )
+    refugees.to_csv("migration/output/unhcr_refugees_per_capita.csv", index=False)
+    return refugees
