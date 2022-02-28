@@ -25,7 +25,7 @@ def refugees_by_destination() -> pd.DataFrame:
 
     df = pd.read_csv("migration/input/unhcr/population.csv", skiprows=14)
     df = df[["Year", "Country of asylum", "Refugees under UNHCR's mandate"]]
-    df.to_csv("migration/output/unhcr_refugees.csv", index=False)
+    df.to_csv("migration/output/unhcr_refugees_by_destination.csv", index=False)
     return df
 
 
@@ -54,5 +54,40 @@ def refugees_by_destination_per_capita() -> pd.DataFrame:
     refugees["refugees_per_capita"] = (
         refugees["Refugees under UNHCR's mandate"] / refugees["Population"]
     )
-    refugees.to_csv("migration/output/unhcr_refugees_per_capita.csv", index=False)
+    refugees.to_csv(
+        "migration/output/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
+    )
+    return refugees
+
+
+def refugees_by_origin() -> pd.DataFrame:
+    res = requests.get(
+        "https://api.unhcr.org/population/v1/population/?limit=20&dataset=population&displayType=totals&columns%5B%5D=refugees&yearFrom=1951&yearTo=2021&coo_all=true&download=true#_ga=2.95743388.180802795.1646058128-293029033.1646058128"
+    )
+    assert res.ok
+    z = zipfile.ZipFile(io.BytesIO(res.content))
+    z.extractall("migration/input/unhcr")
+
+    df = pd.read_csv("migration/input/unhcr/population.csv", skiprows=14)
+    df = df[["Year", "Country of origin", "Refugees under UNHCR's mandate"]]
+    df.to_csv("migration/output/unhcr_refugees_by_origin.csv", index=False)
+    return df
+
+
+def refugees_by_origin_per_capita() -> pd.DataFrame:
+    population = owid_population()
+    refugees = refugees_by_origin()
+    refugees["Country of origin"] = standardise_countries(refugees["Country of origin"])
+    refugees = refugees.merge(
+        population,
+        how="inner",
+        left_on=["Country of asylum", "Year"],
+        right_on=["Country", "Year"],
+    )
+    refugees["refugees_per_capita"] = (
+        refugees["Refugees under UNHCR's mandate"] / refugees["Population"]
+    )
+    refugees.to_csv(
+        "migration/output/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
+    )
     return refugees
