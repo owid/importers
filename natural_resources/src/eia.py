@@ -238,9 +238,18 @@ def add_percentage_columns(combined):
     return combined_added
 
 
+def clean_dataset(data, fixed_columns):
+    variables = [col for col in data.columns if col not in fixed_columns]
+    clean = data.copy()
+    clean = clean.dropna(subset=variables)
+    clean = clean.sort_values(fixed_columns).reset_index(drop=True)
+
+    return clean
+
+
 def load_oil_monthly_dataset():
     # Monthly oil production (million cubic meters).
-    conversion_factor = MBD_TO_MILLION_CUBIC_METERS_PER_MONTH,
+    conversion_factor = MBD_TO_MILLION_CUBIC_METERS_PER_MONTH
     variable_name = "oil_production_monthly"
     relevant_entity = "Total petroleum and other liquids (Mb/d)"
     data_file = find_last_data_file(variable_name=variable_name)
@@ -269,22 +278,28 @@ def generate_yearly_dataset():
         load_oil_data(),
     ]
 
-    print("* Combining data.")
+    print("* Combining yearly data.")
     combined = merge_dataframes(all_data)
 
     print("* Adding extra columns.")
     combined_added = add_percentage_columns(combined=combined)
 
+    print("* Cleaning yearly data.")
+    clean_data = clean_dataset(data=combined_added, fixed_columns=['Entity', 'Year'])
+
     print(f"* Saving data to file: {OUTPUT_YEARLY_FILE}")
-    combined_added.to_csv(OUTPUT_YEARLY_FILE, index=False)
+    clean_data.to_csv(OUTPUT_YEARLY_FILE, index=False)
 
 
 def generate_monthly_dataset():
     print("* Loading oil monthly production data.")
     monthly_data = load_oil_monthly_dataset()
 
+    print("* Cleaning monthly data.")
+    clean_data = clean_dataset(data=monthly_data, fixed_columns=['Entity', 'Date'])
+
     print(f"* Saving data to file: {OUTPUT_MONTHLY_FILE}")
-    monthly_data.to_csv(OUTPUT_MONTHLY_FILE, index=False)
+    clean_data.to_csv(OUTPUT_MONTHLY_FILE, index=False)
 
 
 def main():
@@ -295,7 +310,6 @@ def main():
     generate_monthly_dataset()
 
 
-# TODO:
-#  * Add per-capita columns.
+# TODO: Add per-capita columns.
 if __name__ == "__main__":
     main()
