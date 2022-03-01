@@ -9,3 +9,6 @@ def extract() -> None:
     unhcr.refugees_by_origin_per_capita()
     un_desa.international_migrants_by_destination()
     un_desa.share_of_pop_international_migrants_by_destination()
+    un_desa.international_migrants_by_origin()
+    un_desa.refugees_by_destination()
+    un_desa.refugees_by_destination_per_capita()
