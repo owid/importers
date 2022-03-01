@@ -22,11 +22,11 @@ TCF_TO_BILLION_CUBIC_METERS = 28.320
 # Conversion from thousand short tons (MST) to million tonnes.
 MST_TO_MILLION_TONNES = 0.9071847 * 1e-3
 # Convert from thousand barrels per day (Mb/d) to million cubic meters per year.
-MBD_TO_MILLION_M3_PER_YEAR = 0.058
-# Convert from billion barrels (billion b) to billion cubic meters.
-BB_TO_BILLION_CUBIC_METERS = 0.159
+MBD_TO_MILLION_CUBIC_METERS_PER_YEAR = 0.058
+# Convert from billion barrels (billion b) to million cubic meters.
+BB_TO_MILLION_CUBIC_METERS = 159
 # Convert from thousand barrels per day (Mb/d) to million cubic meters per month.
-MBD_TO_MILLION_M3_PER_MONTH = 0.0048
+MBD_TO_MILLION_CUBIC_METERS_PER_MONTH = 0.0048
 
 
 def find_last_data_file(variable_name, input_dir=INPUT_DIR):
@@ -42,176 +42,182 @@ def find_last_data_file(variable_name, input_dir=INPUT_DIR):
     return last_file
 
 
-def load_simple_dataset(variable_name, output_column_name, conversion_factor):
+def load_simple_dataset(variable_name, conversion_factor):
     data_file = find_last_data_file(variable_name=variable_name)
     variable_name_in_file = pd.read_csv(data_file, skiprows=1, na_values='--').iloc[0, 1]
     print(variable_name_in_file)
     data = pd.read_csv(data_file, skiprows=1, na_values='--').drop(0).drop(columns='API').\
-        rename(columns={'Unnamed: 1': 'Country'})
-    data_melt = data.melt(id_vars='Country', var_name='Year')
-    data_melt[output_column_name] = data_melt['value'].astype(float) * conversion_factor
+        rename(columns={'Unnamed: 1': 'Entity'})
+    data_melt = data.melt(id_vars='Entity', var_name='Year')
+    data_melt[variable_name] = data_melt['value'].astype(float) * conversion_factor
     data_melt['Year'] = data_melt['Year'].astype(int)
     data_melt = data_melt.drop(columns=['value'])
     # Remove appended spaces on country names.
-    data_melt['Country'] = data_melt['Country'].str.lstrip()
+    data_melt['Entity'] = data_melt['Entity'].str.lstrip()
 
     return data_melt
 
 
-def load_dataset_with_indented_entities(variable_name, output_column_name, conversion_factor, relevant_entity):
+def load_dataset_with_indented_entities(variable_name, conversion_factor, relevant_entity):
     data_file = find_last_data_file(variable_name=variable_name)
     data = pd.read_csv(data_file, skiprows=1, na_values='--').rename(columns={'Unnamed: 1': 'mixed'}).\
         drop(columns=['API'])
     print(data.loc[1]['mixed'].lstrip())
     # Add a column for country. To do so, assume that country names are not prepended by spaces.
-    data['Country'] = data['mixed'].copy()
-    data.loc[data['Country'].str.startswith(' '), 'Country'] = np.nan
-    data['Country'] = data['Country'].ffill()
+    data['Entity'] = data['mixed'].copy()
+    data.loc[data['Entity'].str.startswith(' '), 'Entity'] = np.nan
+    data['Entity'] = data['Entity'].ffill()
     data['mixed'] = data['mixed'].str.lstrip()
     # We only care about coal data.
     data = data[data['mixed'] == relevant_entity].drop(columns='mixed').reset_index(drop=True)
-    data_melt = data.melt(id_vars='Country', var_name='Year')
-    data_melt[output_column_name] = data_melt['value'] * conversion_factor
+    data_melt = data.melt(id_vars='Entity', var_name='Year')
+    data_melt[variable_name] = data_melt['value'] * conversion_factor
     data_melt = data_melt.drop(columns='value')
     data_melt['Year'] = data_melt['Year'].astype(int)
 
     return data_melt
 
 
-def merge_dataframes(data_dict):
+def merge_dataframes(list_of_dataframes):
     # Merge all dataframes into one.
-    combined = pd.DataFrame({'Country': [], 'Year': []})
-    for variable_name in data_dict:
-        combined = pd.merge(combined, data_dict[variable_name], on=('Country', 'Year'), how='outer')
+    combined = pd.DataFrame({'Entity': [], 'Year': []})
+    for dataframe in list_of_dataframes:
+        combined = pd.merge(combined, dataframe, on=('Entity', 'Year'), how='outer')
 
     return combined
 
 
 def load_gas_data():
-    gas_data = {
-        "gas_production": load_simple_dataset(
-            variable_name="gas_production",
-            output_column_name="Dry natural gas production (billion cubic meters)",
+    gas_data = [
+        # Dry natural gas production (billion cubic meters).
+        load_simple_dataset(
+            variable_name="natural_gas_production",
             conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
-        "gas_consumption": load_simple_dataset(
-            variable_name="gas_consumption",
-            output_column_name="Dry natural gas consumption (billion cubic meters)",
+        # Dry natural gas consumption (billion cubic meters).
+        load_simple_dataset(
+            variable_name="natural_gas_consumption",
             conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
-        "gas_imports": load_simple_dataset(
-            variable_name="gas_imports",
-            output_column_name="Dry natural gas imports (billion cubic meters)",
+        # Dry natural gas imports (billion cubic meters).
+        load_simple_dataset(
+            variable_name="natural_gas_imports",
             conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
-        "gas_exports": load_simple_dataset(
-            variable_name="gas_exports",
-            output_column_name="Dry natural gas exports (billion cubic meters)",
+        # Dry natural gas exports (billion cubic meters).
+        load_simple_dataset(
+            variable_name="natural_gas_exports",
             conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
-        "gas_reserves": load_simple_dataset(
-            variable_name="gas_reserves",
-            output_column_name="Natural gas reserves (billion cubic meters)",
+        # Dry natural gas reserves (billion cubic meters).
+        load_simple_dataset(
+            variable_name="natural_gas_reserves",
             conversion_factor=TCF_TO_BILLION_CUBIC_METERS),
-    }
+    ]
 
     # Merge all dataframes into one.
-    combined = merge_dataframes(data_dict=gas_data)
+    combined = merge_dataframes(list_of_dataframes=gas_data)
 
     return combined
 
 
 def load_coal_data():
-    coal_data = {
-        "coal_production": load_dataset_with_indented_entities(
+    coal_data = [
+        # Coal production (million tonnes).
+        load_dataset_with_indented_entities(
             variable_name="coal_production",
-            output_column_name="Coal production (million tonnes)",
             conversion_factor=MST_TO_MILLION_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        "coal_consumption": load_dataset_with_indented_entities(
+        # Coal consumption (million tonnes).
+        load_dataset_with_indented_entities(
             variable_name="coal_consumption",
-            output_column_name="Coal consumption (million tonnes)",
             conversion_factor=MST_TO_MILLION_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        "coal_imports": load_dataset_with_indented_entities(
+        # Coal imports (million tonnes).
+        load_dataset_with_indented_entities(
             variable_name="coal_imports",
-            output_column_name="Coal imports (million tonnes)",
             conversion_factor=MST_TO_MILLION_TONNES,
             relevant_entity='Coal (Mst)',
             ),
-        "coal_exports": load_dataset_with_indented_entities(
+        # Coal exports (million tonnes).
+        load_dataset_with_indented_entities(
             variable_name="coal_exports",
-            output_column_name="Coal exports (million tonnes)",
             conversion_factor=MST_TO_MILLION_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        "coal_reserves": load_simple_dataset(
+        # Coal reserves (million tonnes).
+        load_simple_dataset(
             variable_name="coal_reserves",
-            output_column_name="Coal reserves (million tonnes)",
             conversion_factor=MST_TO_MILLION_TONNES),
-    }
+    ]
 
     # Merge all dataframes into one.
-    combined = merge_dataframes(data_dict=coal_data)
+    combined = merge_dataframes(list_of_dataframes=coal_data)
 
     return combined
 
 
 def load_oil_data():
-    oil_data = {
-        "oil_production": load_dataset_with_indented_entities(
+    oil_data = [
+        # Production of petroleum and other liquids (million cubic meters).
+        load_dataset_with_indented_entities(
             variable_name="oil_production",
-            output_column_name="Production of petroleum and other liquids (million cubic meters)",
-            conversion_factor=MBD_TO_MILLION_M3_PER_YEAR,
+            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR,
             relevant_entity="Total petroleum and other liquids (Mb/d)"),
-        "oil_consumption": load_dataset_with_indented_entities(
+        # Consumption of refined petroleum products(million cubic meters).
+        load_dataset_with_indented_entities(
             variable_name="oil_consumption",
-            output_column_name="Consumption of refined petroleum products (million cubic meters)",
-            conversion_factor=MBD_TO_MILLION_M3_PER_YEAR,
+            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR,
             relevant_entity="Consumption (Mb/d)"),
-        "oil_imports": load_simple_dataset(
+        # Crude oil imports, including lease condensate (million cubic meters).
+        load_simple_dataset(
             variable_name="oil_imports",
-            output_column_name="Crude oil imports, including lease condensate (million cubic meters)",
-            conversion_factor=MBD_TO_MILLION_M3_PER_YEAR),
-        "oil_exports": load_simple_dataset(
+            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR),
+        # Crude oil exports, including lease condensate (million cubic meters).
+        load_simple_dataset(
             variable_name="oil_exports",
-            output_column_name="Crude oil exports, including lease condensate (million cubic meters)",
-            conversion_factor=MBD_TO_MILLION_M3_PER_YEAR),
-        "oil_reserves": load_simple_dataset(
+            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR),
+        # Crude oil reserves, including lease condensate (million cubic meters).
+        load_simple_dataset(
             variable_name="oil_reserves",
-            output_column_name="Crude oil reserves, including lease condensate (million cubic meters)",
-            conversion_factor=BB_TO_BILLION_CUBIC_METERS),
-    }
+            conversion_factor=BB_TO_MILLION_CUBIC_METERS),
+    ]
 
     # Merge all dataframes into one.
-    combined = merge_dataframes(data_dict=oil_data)
+    combined = merge_dataframes(list_of_dataframes=oil_data)
 
     return combined
 
 
 def add_percentage_columns(combined):
     percentage_columns = {
-        "Share of coal consumption that comes from imports (%)": {
-            "numerator": "Coal imports (million tonnes)",
-            "denominator": "Coal consumption (million tonnes)",
+        # Share of coal consumption that comes from imports (%)
+        "share_of_coal_consumption_imported": {
+            "numerator": "coal_imports",
+            "denominator": "coal_consumption",
         },
-        "Share of gas consumption that comes from imports (%)": {
-            "numerator": "Dry natural gas imports (billion cubic meters)",
-            "denominator": "Dry natural gas consumption (billion cubic meters)",
+        # Share of gas consumption that comes from imports (%).
+        "share_of_gas_consumption_imported": {
+            "numerator": "natural_gas_imports",
+            "denominator": "natural_gas_consumption",
         },
-        "Share of oil consumption that comes from imports (%)": {
-            "numerator": "Crude oil imports, including lease condensate (million cubic meters)",
-            "denominator": "Consumption of refined petroleum products (million cubic meters)",
+        # Share of oil consumption that comes from imports (%).
+        "share_of_oil_consumption_imported": {
+            "numerator": "oil_imports",
+            "denominator": "oil_consumption",
         },
-        "Share of coal production that is exported (%)": {
-            "numerator": "Coal exports (million tonnes)",
-            "denominator": "Coal production (million tonnes)",
+        # Share of coal production that is exported (%).
+        "share_of_coal_production_exported": {
+            "numerator": "coal_exports",
+            "denominator": "coal_production",
         },
-        "Share of gas production that is exported (%)": {
-            "numerator": "Dry natural gas exports (billion cubic meters)",
-            "denominator": "Dry natural gas production (billion cubic meters)",
+        # Share of gas production that is exported (%).
+        "share_of_gas_production_exported": {
+            "numerator": "natural_gas_exports",
+            "denominator": "natural_gas_production",
         },
-        "Share of oil production that is exported (%)": {
-            "numerator": "Crude oil exports, including lease condensate (million cubic meters)",
-            "denominator": "Production of petroleum and other liquids (million cubic meters)",
+        # Share of oil production that is exported (%).
+        "share_of_oil_production_exported": {
+            "numerator": "oil_exports",
+            "denominator": "oil_production",
         },
     }
     combined_added = combined.copy()
@@ -233,8 +239,8 @@ def add_percentage_columns(combined):
 
 
 def load_oil_monthly_dataset():
-    output_column_name = "Monthly oil production (million cubic meters)",
-    conversion_factor = MBD_TO_MILLION_M3_PER_MONTH,
+    # Monthly oil production (million cubic meters).
+    conversion_factor = MBD_TO_MILLION_CUBIC_METERS_PER_MONTH,
     variable_name = "oil_production_monthly"
     relevant_entity = "Total petroleum and other liquids (Mb/d)"
     data_file = find_last_data_file(variable_name=variable_name)
@@ -242,13 +248,13 @@ def load_oil_monthly_dataset():
         drop(columns=['API'])
     print(data.loc[1]['mixed'].lstrip())
     # Add a column for country. To do so, assume that country names are not prepended by spaces.
-    data['Country'] = data['mixed'].copy()
-    data.loc[data['Country'].str.startswith(' '), 'Country'] = np.nan
-    data['Country'] = data['Country'].ffill()
+    data['Entity'] = data['mixed'].copy()
+    data.loc[data['Entity'].str.startswith(' '), 'Entity'] = np.nan
+    data['Entity'] = data['Entity'].ffill()
     data['mixed'] = data['mixed'].str.lstrip()
     data = data[data['mixed'] == relevant_entity].drop(columns='mixed').reset_index(drop=True)
-    data_melt = data.melt(id_vars='Country', var_name='Date')
-    data_melt[output_column_name] = data_melt['value'] * conversion_factor
+    data_melt = data.melt(id_vars='Entity', var_name='Date')
+    data_melt[variable_name] = data_melt['value'] * conversion_factor
     data_melt = data_melt.drop(columns='value')
     data_melt['Date'] = pd.to_datetime(data_melt['Date']).astype(str)
 
@@ -257,11 +263,11 @@ def load_oil_monthly_dataset():
 
 def generate_yearly_dataset():
     print("* Loading yearly data.")
-    all_data = {
-        'gas_data': load_gas_data(),
-        'coal_data': load_coal_data(),
-        'oil data': load_oil_data(),
-    }
+    all_data = [
+        load_gas_data(),
+        load_coal_data(),
+        load_oil_data(),
+    ]
 
     print("* Combining data.")
     combined = merge_dataframes(all_data)
@@ -289,5 +295,7 @@ def main():
     generate_monthly_dataset()
 
 
+# TODO:
+#  * Add per-capita columns.
 if __name__ == "__main__":
     main()
