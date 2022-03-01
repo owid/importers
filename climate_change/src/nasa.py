@@ -70,7 +70,7 @@ def arctic_sea_ice_extent():
     (
         df[["year", "extent"]]
         .rename(columns={"extent": "arctic_sea_ice_nasa"})
-        .assign(location="Arctic")
+        .assign(location="World")
         .to_csv("ready/nasa_arctic-sea-ice.csv", index=False)
     )
 

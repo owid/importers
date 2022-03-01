@@ -10,7 +10,7 @@ def arctic_sea_ice():
         names=["date", "year", "month", "day", "arctic_sea_ice_osisaf"],
         sep=" ",
         na_values=-999,
-    ).assign(location="Arctic")
+    ).assign(location="World")
     df["date"] = pd.to_datetime(
         df.year.astype(str) + "-" + df.month.astype(str) + "-" + df.day.astype(str)
     ).dt.date
