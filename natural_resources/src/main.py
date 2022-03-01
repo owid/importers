@@ -8,8 +8,8 @@ from natural_resources.src import OUTPUT_DIR
 
 
 def extract():
-    eia.generate_yearly_data()
-    eia.generate_monthly_data()
+    eia.generate_yearly_dataset()
+    eia.generate_monthly_dataset()
 
 
 def transform():
