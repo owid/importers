@@ -16,17 +16,17 @@ OUTPUT_MONTHLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-monthly.csv
 # TODO: For the next update, apply for an API key to be able to use the API, instead of manually downloading files.
 
 # Conversion from billion cubit feet to million cubic meters.
-BCF_TO_BILLION_CUBIC_METERS = 0.02832
+BCF_TO_CUBIC_METERS = 28.32 * 1e6
 # Conversion from trillion cubit feet to million cubic meters.
-TCF_TO_BILLION_CUBIC_METERS = 28.320
+TCF_TO_CUBIC_METERS = 28.32 * 1e9
 # Conversion from thousand short tons (MST) to million tonnes.
-MST_TO_MILLION_TONNES = 0.9071847 * 1e-3
+MST_TO_TONNES = 0.9071847 * 1e3
 # Convert from thousand barrels per day (Mb/d) to million cubic meters per year.
-MBD_TO_MILLION_CUBIC_METERS_PER_YEAR = 0.058
+MBD_TO_CUBIC_METERS_PER_YEAR = 58 * 1e3
 # Convert from billion barrels (billion b) to million cubic meters.
-BB_TO_MILLION_CUBIC_METERS = 159
+BB_TO_CUBIC_METERS = 159 * 1e6
 # Convert from thousand barrels per day (Mb/d) to million cubic meters per month.
-MBD_TO_MILLION_CUBIC_METERS_PER_MONTH = 0.0048
+MBD_TO_CUBIC_METERS_PER_MONTH = 4.8 * 1e3
 
 
 def find_last_data_file(variable_name, input_dir=INPUT_DIR):
@@ -92,23 +92,23 @@ def load_gas_data():
         # Dry natural gas production (billion cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_production",
-            conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS),
         # Dry natural gas consumption (billion cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_consumption",
-            conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS),
         # Dry natural gas imports (billion cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_imports",
-            conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS),
         # Dry natural gas exports (billion cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_exports",
-            conversion_factor=BCF_TO_BILLION_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS),
         # Dry natural gas reserves (billion cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_reserves",
-            conversion_factor=TCF_TO_BILLION_CUBIC_METERS),
+            conversion_factor=TCF_TO_CUBIC_METERS),
     ]
 
     # Merge all dataframes into one.
@@ -122,31 +122,31 @@ def load_coal_data():
         # Coal production (million tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_production",
-            conversion_factor=MST_TO_MILLION_TONNES,
+            conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
         # Coal consumption (million tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_consumption",
-            conversion_factor=MST_TO_MILLION_TONNES,
+            conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
         # Coal imports (million tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_imports",
-            conversion_factor=MST_TO_MILLION_TONNES,
+            conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
             ),
         # Coal exports (million tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_exports",
-            conversion_factor=MST_TO_MILLION_TONNES,
+            conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
         # Coal reserves (million tonnes).
         load_simple_dataset(
             variable_name="coal_reserves",
-            conversion_factor=MST_TO_MILLION_TONNES),
+            conversion_factor=MST_TO_TONNES),
     ]
 
     # Merge all dataframes into one.
@@ -160,25 +160,25 @@ def load_oil_data():
         # Production of petroleum and other liquids (million cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_production",
-            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR,
+            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
             relevant_entity="Total petroleum and other liquids (Mb/d)"),
         # Consumption of refined petroleum products(million cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_consumption",
-            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR,
+            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
             relevant_entity="Consumption (Mb/d)"),
         # Crude oil imports, including lease condensate (million cubic meters).
         load_simple_dataset(
             variable_name="oil_imports",
-            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR),
+            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
         # Crude oil exports, including lease condensate (million cubic meters).
         load_simple_dataset(
             variable_name="oil_exports",
-            conversion_factor=MBD_TO_MILLION_CUBIC_METERS_PER_YEAR),
+            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
         # Crude oil reserves, including lease condensate (million cubic meters).
         load_simple_dataset(
             variable_name="oil_reserves",
-            conversion_factor=BB_TO_MILLION_CUBIC_METERS),
+            conversion_factor=BB_TO_CUBIC_METERS),
     ]
 
     # Merge all dataframes into one.
@@ -252,7 +252,7 @@ def clean_dataset(data, fixed_columns):
 
 def load_oil_monthly_dataset():
     # Monthly oil production (million cubic meters).
-    conversion_factor = MBD_TO_MILLION_CUBIC_METERS_PER_MONTH
+    conversion_factor = MBD_TO_CUBIC_METERS_PER_MONTH
     variable_name = "oil_production_monthly"
     relevant_entity = "Total petroleum and other liquids (Mb/d)"
     data_file = find_last_data_file(variable_name=variable_name)
