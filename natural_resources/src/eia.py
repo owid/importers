@@ -241,7 +241,10 @@ def add_percentage_columns(combined):
 def clean_dataset(data, fixed_columns):
     variables = [col for col in data.columns if col not in fixed_columns]
     clean = data.copy()
-    clean = clean.dropna(subset=variables)
+    # Replace infinities by nan.
+    clean = clean.replace([np.inf, -np.inf], np.nan)
+    # Remove rows where all columns are nan.
+    clean = clean.dropna(subset=variables, how='all')
     clean = clean.sort_values(fixed_columns).reset_index(drop=True)
 
     return clean
