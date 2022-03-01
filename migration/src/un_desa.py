@@ -302,7 +302,46 @@ def change_in_international_migrants_by_destination() -> None:
     migrants_lead.to_csv(
         "migration/ready/undesa_five_year_change_in_international_migrants_by_destination.csv"
     )
+    return migrants_lead
 
+
+def change_in_international_migrants_by_origin() -> None:
+    migrants = international_migrants_by_origin()
+    shifted = migrants.groupby("Country").shift(+1)
+    migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
+    migrants_lead["undesa_five_year_change_in_international_migrants_by_origin"] = (
+        migrants_lead["international_migrants_by_origin"]
+        - migrants_lead["international_migrants_by_origin_lead"]
+    )
+    migrants_lead = migrants_lead[
+        [
+            "Country",
+            "Year",
+            "undesa_five_year_change_in_international_migrants_by_origin",
+        ]
+    ]
+    migrants_lead.dropna(
+        subset=["undesa_five_year_change_in_international_migrants_by_origin"],
+        inplace=True,
+    )
+    migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_origin"
+    ] = migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_origin"
+    ].astype(
+        int
+    )
+    migrants_lead = migrants_lead[
+        migrants_lead[
+            "undesa_five_year_change_in_international_migrants_by_origin"
+        ].apply(is_number)
+    ]
+
+    migrants_lead = migrants_lead[migrants_lead.Year > 1990]
+
+    migrants_lead.to_csv(
+        "migration/ready/undesa_five_year_change_in_international_migrants_by_origin.csv"
+    )
     return migrants_lead
 
 
@@ -375,6 +414,88 @@ def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame
         index=False,
     )
     return migrants
+
+
+def change_in_international_migrants_by_destination_per_capita() -> None:
+    migrants = international_migrants_by_destination()
+    shifted = migrants.groupby("Country").shift(+1)
+    migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
+    migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_destination"
+    ] = (
+        migrants_lead["international_migrants_by_destination"]
+        - migrants_lead["international_migrants_by_destination_lead"]
+    )
+    migrants_lead = migrants_lead[
+        [
+            "Country",
+            "Year",
+            "undesa_five_year_change_in_international_migrants_by_destination",
+        ]
+    ]
+    migrants_lead.dropna(
+        subset=["undesa_five_year_change_in_international_migrants_by_destination"],
+        inplace=True,
+    )
+    migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_destination"
+    ] = migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_destination"
+    ].astype(
+        int
+    )
+    migrants_lead = migrants_lead[
+        migrants_lead[
+            "undesa_five_year_change_in_international_migrants_by_destination"
+        ].apply(is_number)
+    ]
+
+    migrants_lead = migrants_lead[migrants_lead.Year > 1990]
+
+    migrants_lead.to_csv(
+        "migration/ready/undesa_five_year_change_in_international_migrants_by_destination.csv"
+    )
+    return migrants_lead
+
+
+def change_in_international_migrants_by_origin_per_capita() -> None:
+    migrants = international_migrants_by_origin()
+    shifted = migrants.groupby("Country").shift(+1)
+    migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
+    migrants_lead["undesa_five_year_change_in_international_migrants_by_origin"] = (
+        migrants_lead["international_migrants_by_origin"]
+        - migrants_lead["international_migrants_by_origin_lead"]
+    )
+    migrants_lead = migrants_lead[
+        [
+            "Country",
+            "Year",
+            "undesa_five_year_change_in_international_migrants_by_origin",
+        ]
+    ]
+    migrants_lead.dropna(
+        subset=["undesa_five_year_change_in_international_migrants_by_origin"],
+        inplace=True,
+    )
+    migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_origin"
+    ] = migrants_lead[
+        "undesa_five_year_change_in_international_migrants_by_origin"
+    ].astype(
+        int
+    )
+    migrants_lead = migrants_lead[
+        migrants_lead[
+            "undesa_five_year_change_in_international_migrants_by_origin"
+        ].apply(is_number)
+    ]
+
+    migrants_lead = migrants_lead[migrants_lead.Year > 1990]
+
+    migrants_lead.to_csv(
+        "migration/ready/undesa_five_year_change_in_international_migrants_by_origin.csv"
+    )
+    return migrants_lead
 
 
 def average_annual_change_international_migrants_by_origin() -> pd.DataFrame:

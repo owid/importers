@@ -22,3 +22,5 @@ def extract() -> None:
     un_desa.child_migrants_by_destination_per_capita()
     un_desa.change_in_international_migrants_by_destination()
     un_desa.change_in_international_migrants_by_destination_per_capita()
+    un_desa.change_in_international_migrants_by_origin()
+    un_desa.change_in_international_migrants_by_origin_per_capita()

@@ -81,8 +81,8 @@ def refugees_by_origin_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    refugees["refugees_by_origin_per_capita"] = (
-        refugees["refugees_by_origin"] / refugees["Population"]
+    refugees["unhcr_refugees_by_origin_per_capita"] = (
+        refugees["unhcr_refugees_by_origin"] / refugees["Population"]
     )
     refugees[["Year", "Country", "unhcr_refugees_by_origin_per_capita"]].to_csv(
         "migration/ready/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
