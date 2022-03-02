@@ -90,6 +90,18 @@ def refugees_by_origin_per_capita() -> pd.DataFrame:
     return refugees
 
 
+def asylum_applications_by_origin() -> pd.DataFrame:
+    res = requests.get(
+        "https://api.unhcr.org/population/v1/asylum-applications/?limit=20&dataset=asylum-applications&displayType=totals&yearFrom=1951&yearTo=2021&coo_all=true&columns%5B%5D=procedure_type&columns%5B%5D=app_type&columns%5B%5D=app_pc&columns%5B%5D=app_size&columns%5B%5D=dec_level&columns%5B%5D=applied&sort%5Bdec_level%5D=desc&download=true#_ga=2.167766206.180802795.1646058128-293029033.1646058128"
+    )
+    assert res.ok
+    z = zipfile.ZipFile(io.BytesIO(res.content))
+    z.extractall("migration/input/unhcr/asylum_applications_by_origin/")
+    df = pd.read_csv(
+        "migration/input/unhcr/asylum_applications_by_origin/asylum-applications.csv"
+    )
+
+
 def main():
     refugees_by_destination()
     refugees_by_destination_per_capita()

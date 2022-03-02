@@ -136,7 +136,7 @@ def international_migrants_by_origin() -> pd.DataFrame:
     return df
 
 
-def refugees_by_destination() -> None:
+def refugees_by_destination() -> pd.DataFrame:
     df = pd.read_excel(
         "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
         sheet_name="Table 6",
@@ -176,7 +176,7 @@ def refugees_by_destination() -> None:
     return df
 
 
-def refugees_by_destination_per_capita() -> None:
+def refugees_by_destination_per_capita() -> pd.DataFrame:
     refugees = refugees_by_destination()
     population = owid_population()
     refugees = refugees.merge(
@@ -195,9 +195,10 @@ def refugees_by_destination_per_capita() -> None:
         "migration/ready/omm_un_desa_refugees_by_destination_per_capita.csv",
         index=False,
     )
+    return refugees
 
 
-def average_annual_change_international_migrants_by_destination() -> None:
+def average_annual_change_international_migrants_by_destination() -> pd.DataFrame:
     migrants = international_migrants_by_destination()
     # migrants.groupby("Country")
     years = range(1990, 2021)
@@ -263,7 +264,7 @@ def average_annual_change_international_migrants_by_destination() -> None:
     return interp_df_lead
 
 
-def change_in_international_migrants_by_destination() -> None:
+def change_in_international_migrants_by_destination() -> pd.DataFrame:
     migrants = international_migrants_by_destination()
     shifted = migrants.groupby("Country").shift(+1)
     migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
@@ -305,7 +306,7 @@ def change_in_international_migrants_by_destination() -> None:
     return migrants_lead
 
 
-def change_in_international_migrants_by_origin() -> None:
+def change_in_international_migrants_by_origin() -> pd.DataFrame:
     migrants = international_migrants_by_origin()
     shifted = migrants.groupby("Country").shift(+1)
     migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
@@ -345,7 +346,7 @@ def change_in_international_migrants_by_origin() -> None:
     return migrants_lead
 
 
-def average_annual_change_international_migrants_by_destination_per_capita() -> None:
+def average_annual_change_international_migrants_by_destination_per_capita() -> pd.DataFrame:
 
     annual_change = average_annual_change_international_migrants_by_destination()
     population = owid_population()
@@ -416,7 +417,7 @@ def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame
     return migrants
 
 
-def change_in_international_migrants_by_destination_per_capita() -> None:
+def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame:
     migrants = international_migrants_by_destination()
     shifted = migrants.groupby("Country").shift(+1)
     migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
@@ -458,7 +459,7 @@ def change_in_international_migrants_by_destination_per_capita() -> None:
     return migrants_lead
 
 
-def change_in_international_migrants_by_origin_per_capita() -> None:
+def change_in_international_migrants_by_origin_per_capita() -> pd.DataFrame:
     migrants = international_migrants_by_origin()
     shifted = migrants.groupby("Country").shift(+1)
     migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
@@ -561,7 +562,7 @@ def average_annual_change_international_migrants_by_origin() -> pd.DataFrame:
     return interp_df_lead
 
 
-def average_annual_change_international_migrants_by_origin_per_capita() -> None:
+def average_annual_change_international_migrants_by_origin_per_capita() -> pd.DataFrame:
 
     annual_change = average_annual_change_international_migrants_by_origin()
     population = owid_population()
@@ -596,7 +597,7 @@ def average_annual_change_international_migrants_by_origin_per_capita() -> None:
     return annual_change
 
 
-def net_migration_rate() -> None:
+def net_migration_rate() -> pd.DataFrame:
     df = pd.read_excel(
         "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/4_Migration/WPP2019_MIGR_F01_NET_MIGRATION_RATE.xlsx",
         sheet_name="ESTIMATES",
@@ -664,7 +665,7 @@ def net_migration_rate() -> None:
     return df
 
 
-def net_number_migrants() -> None:
+def net_number_migrants() -> pd.DataFrame:
     df = pd.read_excel(
         "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/4_Migration/WPP2019_MIGR_F02_NET_NUMBER_OF_MIGRANTS.xlsx",
         sheet_name="ESTIMATES",
@@ -788,7 +789,7 @@ def child_migrants_by_destination() -> pd.DataFrame:
     return df_u15, df_u20
 
 
-def child_migrants_by_destination_per_capita() -> None:
+def child_migrants_by_destination_per_capita() -> pd.DataFrame:
     df_u15, df_u20 = child_migrants_by_destination()
     population = owid_population()
 

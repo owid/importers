@@ -1,5 +1,7 @@
 import migration.src.unhcr as unhcr
 import migration.src.un_desa as un_desa
+import migration.src.unicef as unicef
+import migration.src.idmc as idmc
 
 
 def extract() -> None:
@@ -24,3 +26,13 @@ def extract() -> None:
     un_desa.change_in_international_migrants_by_destination_per_capita()
     un_desa.change_in_international_migrants_by_origin()
     un_desa.change_in_international_migrants_by_origin_per_capita()
+    unicef.under_eighteen_migrants_by_destination()
+    unicef.under_eighteen_migrants_by_destination_per_capita()
+    idmc.annual_internal_displacement_conflict()
+    idmc.share_annual_internal_displacement_conflict()
+    idmc.annual_internal_displacement_disaster()
+    idmc.share_annual_internal_displacement_disaster()
+    idmc.total_internal_displacement_conflict()
+    idmc.share_total_internal_displacement_conflict()
+    idmc.total_internal_displacement_disaster()
+    idmc.share_total_internal_displacement_disaster()
