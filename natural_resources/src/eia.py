@@ -1,5 +1,7 @@
 """Load and process EIA data and generate a file with yearly and a file with monthly data.
 
+TODO: For the next update, apply for an API key to be able to use the API, instead of manually downloading files.
+
 """
 
 import os
@@ -7,14 +9,18 @@ from datetime import datetime
 
 import numpy as np
 import pandas as pd
+from owid import catalog
 
-from natural_resources.src import INPUT_DIR, READY_DIR
+from natural_resources.src import CONFIG_DIR, INPUT_DIR, READY_DIR
 
+# Path to file translating country names from EIA to OWID country names.
+COUNTRIES_FILE = os.path.join(CONFIG_DIR, "country_standardized.csv")
+# Path to output file of yearly data.
 OUTPUT_YEARLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-yearly.csv")
+# Path to output file of monthly data.
 OUTPUT_MONTHLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-monthly.csv")
-
-# TODO: For the next update, apply for an API key to be able to use the API, instead of manually downloading files.
-
+# Number of significant figures to assume for the values of all variables in output data.
+N_SIGNIFICANT_FIGURES = 3
 # Conversion from billion cubit feet to million cubic meters.
 BCF_TO_CUBIC_METERS = 28.32 * 1e6
 # Conversion from trillion cubit feet to million cubic meters.
@@ -40,6 +46,14 @@ def find_last_data_file(variable_name, input_dir=INPUT_DIR):
     assert os.path.isfile(last_file)
 
     return last_file
+
+
+def load_population_dataset():
+    # Load OWID population dataset.
+    population = catalog.find("population", namespace="owid").load().reset_index()[["country", "population", "year"]].\
+        rename(columns={"country": "Entity", "population": "Population", "year": "Year"})
+
+    return population
 
 
 def load_simple_dataset(variable_name, conversion_factor):
@@ -238,6 +252,39 @@ def add_percentage_columns(combined):
     return combined_added
 
 
+def add_per_capita_columns(data):
+    data = data.copy()
+
+    # Create a per-capita column for each relevant variable.
+    per_capita_columns = [column for column in data.columns if column not in ['Entity', 'Year', 'Date']]
+
+    # Standardize country names.
+    country_remapping = pd.read_csv(COUNTRIES_FILE).set_index('eia_name').to_dict()['owid_name']
+    data['Entity'] = data['Entity'].replace(country_remapping)
+
+    # Add population data.
+    population = load_population_dataset()
+
+    # Temporarily add a year column to monthly data be able to merge with population dataset.
+    if 'Date' in data.columns:
+        data['Year'] = pd.to_datetime(data['Date']).dt.year
+
+    # Add population to data.
+    data = pd.merge(data, population, on=['Entity', 'Year'], how='left')
+
+    # Add per capita variables one by one.
+    for column in per_capita_columns:
+        new_column = column + '_per_capita'
+        data[new_column] = data[column] / data['Population']
+
+    # Remove unnecessary columns.
+    if 'Date' in data.columns:
+        del data['Year']
+    del data['Population']
+
+    return data
+
+
 def clean_dataset(data, fixed_columns):
     variables = [col for col in data.columns if col not in fixed_columns]
     clean = data.copy()
@@ -273,6 +320,22 @@ def load_oil_monthly_dataset():
     return data_melt
 
 
+def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_significant_figures=N_SIGNIFICANT_FIGURES):
+    # To save data using scientific notation, one could simply use:
+    # >>> data.to_csv(o_file, float_format="%.3e", index=False)
+    # However, this would add "e00" to all numbers between 0 and 10, which also implies saving all zeros as "0.000e00".
+    # This makes the file significantly larger.
+    # To avoid this, convert values to strings and format them in a more convenient way.
+    data = data.copy()
+    format_rule = f"{{:.{n_significant_figures}e}}"
+    for column in columns_to_format:
+        data[column] = data[column].map(format_rule.format).\
+            str.replace('e+00', '', regex=False).str.replace('nan', '', regex=False)
+        data.loc[data[column] == "0." + "0" * n_significant_figures, column] = "0"
+
+    data.to_csv(output_file, index=False)
+
+
 def generate_yearly_dataset():
     print("* Loading yearly data.")
     all_data = [
@@ -284,25 +347,37 @@ def generate_yearly_dataset():
     print("* Combining yearly data.")
     combined = merge_dataframes(all_data)
 
-    print("* Adding extra columns.")
-    combined_added = add_percentage_columns(combined=combined)
+    print("* Adding percentage columns.")
+    combined = add_percentage_columns(combined=combined)
+
+    print("* Add per-capita columns.")
+    combined = add_per_capita_columns(data=combined)
 
     print("* Cleaning yearly data.")
-    clean_data = clean_dataset(data=combined_added, fixed_columns=['Entity', 'Year'])
+    clean_data = clean_dataset(data=combined, fixed_columns=['Entity', 'Year'])
 
     print(f"* Saving data to file: {OUTPUT_YEARLY_FILE}")
-    clean_data.to_csv(OUTPUT_YEARLY_FILE, index=False)
+    save_data_in_a_convenient_format(
+        data=clean_data,
+        output_file=OUTPUT_YEARLY_FILE,
+        columns_to_format=[column for column in clean_data.columns if column not in ['Entity', 'Year']])
 
 
 def generate_monthly_dataset():
     print("* Loading oil monthly production data.")
     monthly_data = load_oil_monthly_dataset()
 
+    print("* Add per-capita columns.")
+    monthly_data = add_per_capita_columns(data=monthly_data)
+
     print("* Cleaning monthly data.")
     clean_data = clean_dataset(data=monthly_data, fixed_columns=['Entity', 'Date'])
 
     print(f"* Saving data to file: {OUTPUT_MONTHLY_FILE}")
-    clean_data.to_csv(OUTPUT_MONTHLY_FILE, index=False)
+    save_data_in_a_convenient_format(
+        data=clean_data,
+        output_file=OUTPUT_MONTHLY_FILE,
+        columns_to_format=[column for column in clean_data.columns if column not in ['Entity', 'Date']])
 
 
 def main():
@@ -313,6 +388,5 @@ def main():
     generate_monthly_dataset()
 
 
-# TODO: Add per-capita columns.
 if __name__ == "__main__":
     main()
