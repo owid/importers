@@ -281,6 +281,11 @@ def add_per_capita_columns(data):
     if 'Date' in data.columns:
         del data['Year']
 
+    first_columns = ['Entity', 'Year', 'Date', 'Population']
+    columns = [column for column in data.columns if column in first_columns] + \
+              [column for column in data.columns if column not in first_columns]
+    data = data[columns]
+
     return data
 
 
