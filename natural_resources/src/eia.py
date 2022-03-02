@@ -171,11 +171,11 @@ def load_coal_data():
 
 def load_oil_data():
     oil_data = [
-        # Production of petroleum and other liquids (million cubic meters).
+        # Crude oil production, including lease condensate (million cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_production",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
-            relevant_entity="Total petroleum and other liquids (Mb/d)"),
+            relevant_entity="Crude oil including lease condensate (Mb/d)"),
         # Consumption of refined petroleum products (million cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_consumption",
@@ -212,11 +212,6 @@ def add_percentage_columns(combined):
         "share_of_gas_consumption_imported": {
             "numerator": "natural_gas_imports",
             "denominator": "natural_gas_consumption",
-        },
-        # Share of oil consumption that comes from imports (%).
-        "share_of_oil_consumption_imported": {
-            "numerator": "oil_imports",
-            "denominator": "oil_consumption",
         },
         # Share of coal production that is exported (%).
         "share_of_coal_production_exported": {
@@ -302,10 +297,10 @@ def clean_dataset(data, fixed_columns):
 
 
 def load_oil_monthly_dataset():
-    # Monthly oil production (million cubic meters).
+    # Monthly production of crude oil including lease condensate (million cubic meters).
     conversion_factor = MBD_TO_CUBIC_METERS_PER_MONTH
     variable_name = "oil_production_monthly"
-    relevant_entity = "Total petroleum and other liquids (Mb/d)"
+    relevant_entity = "Crude oil including lease condensate (Mb/d)"
     data_file = find_last_data_file(variable_name=variable_name)
     data = pd.read_csv(data_file, skiprows=1, na_values='--').rename(columns={'Unnamed: 1': 'mixed'}).\
         drop(columns=['API'])
