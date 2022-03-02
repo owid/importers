@@ -20,19 +20,19 @@ OUTPUT_YEARLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-yearly.csv")
 # Path to output file of monthly data.
 OUTPUT_MONTHLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-monthly.csv")
 # Number of significant figures to assume for the values of all variables in output data.
-N_SIGNIFICANT_FIGURES = 3
-# Conversion from billion cubit feet to million cubic meters.
-BCF_TO_CUBIC_METERS = 28.32 * 1e6
-# Conversion from trillion cubit feet to million cubic meters.
-TCF_TO_CUBIC_METERS = 28.32 * 1e9
-# Conversion from thousand short tons (MST) to million tonnes.
-MST_TO_TONNES = 0.9071847 * 1e3
-# Convert from thousand barrels per day (Mb/d) to million cubic meters per year.
-MBD_TO_CUBIC_METERS_PER_YEAR = 58 * 1e3
-# Convert from billion barrels (billion b) to million cubic meters.
-BB_TO_CUBIC_METERS = 159 * 1e6
-# Convert from thousand barrels per day (Mb/d) to million cubic meters per month.
-MBD_TO_CUBIC_METERS_PER_MONTH = 4.8 * 1e3
+N_SIGNIFICANT_FIGURES = 4
+# Conversion from billion cubic feet to cubic meters.
+BCF_TO_CUBIC_METERS = 2.832e7
+# Conversion from trillion cubic feet to cubic meters.
+TCF_TO_CUBIC_METERS = 2.832e10
+# Conversion from thousand short tons (MST) to tonnes.
+MST_TO_TONNES = 9.072e2
+# Convert from thousand barrels per day (Mb/d) to cubic meters per year.
+MBD_TO_CUBIC_METERS_PER_YEAR = 5.807e+04
+# Convert from billion barrels (billion b) to cubic meters.
+BB_TO_CUBIC_METERS = 1.590e+08
+# Convert from thousand barrels per day (Mb/d) to cubic meters per month.
+MBD_TO_CUBIC_METERS_PER_MONTH = 4.839e+03
 
 
 def find_last_data_file(variable_name, input_dir=INPUT_DIR):
@@ -176,7 +176,7 @@ def load_oil_data():
             variable_name="oil_production",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
             relevant_entity="Total petroleum and other liquids (Mb/d)"),
-        # Consumption of refined petroleum products(million cubic meters).
+        # Consumption of refined petroleum products (million cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_consumption",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
@@ -280,7 +280,6 @@ def add_per_capita_columns(data):
     # Remove unnecessary columns.
     if 'Date' in data.columns:
         del data['Year']
-    del data['Population']
 
     return data
 
@@ -327,11 +326,11 @@ def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_sig
     # This makes the file significantly larger.
     # To avoid this, convert values to strings and format them in a more convenient way.
     data = data.copy()
-    format_rule = f"{{:.{n_significant_figures}e}}"
+    format_rule = f"{{:.{n_significant_figures -1}e}}"
     for column in columns_to_format:
         data[column] = data[column].map(format_rule.format).\
             str.replace('e+00', '', regex=False).str.replace('nan', '', regex=False)
-        data.loc[data[column] == "0." + "0" * n_significant_figures, column] = "0"
+        data.loc[data[column] == "0." + "0" * (n_significant_figures - 1), column] = "0"
 
     data.to_csv(output_file, index=False)
 
@@ -354,7 +353,7 @@ def generate_yearly_dataset():
     combined = add_per_capita_columns(data=combined)
 
     print("* Cleaning yearly data.")
-    clean_data = clean_dataset(data=combined, fixed_columns=['Entity', 'Year'])
+    clean_data = clean_dataset(data=combined, fixed_columns=['Entity', 'Year', 'Population'])
 
     print(f"* Saving data to file: {OUTPUT_YEARLY_FILE}")
     save_data_in_a_convenient_format(
@@ -371,7 +370,7 @@ def generate_monthly_dataset():
     monthly_data = add_per_capita_columns(data=monthly_data)
 
     print("* Cleaning monthly data.")
-    clean_data = clean_dataset(data=monthly_data, fixed_columns=['Entity', 'Date'])
+    clean_data = clean_dataset(data=monthly_data, fixed_columns=['Entity', 'Date', 'Population'])
 
     print(f"* Saving data to file: {OUTPUT_MONTHLY_FILE}")
     save_data_in_a_convenient_format(
