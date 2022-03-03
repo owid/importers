@@ -1,8 +1,7 @@
-from operator import index
 import pandas as pd
-import numpy as np
 
-from migration.src.utils import is_number, standardise_countries, owid_population
+
+from migration.src.utils import standardise_countries
 
 
 def migration_matrix_by_destination():
