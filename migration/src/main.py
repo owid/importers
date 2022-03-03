@@ -73,6 +73,10 @@ def transform():
     )
 
     year_df = year_df.rename(columns={"Country": "entity", "Year": "year"})
+
+    cols = ["wdi_remittances_received_share_gdp"]
+    year_df[cols] = year_df[cols].round(3)
+
     year_df.to_csv("migration/output/Migration.csv", index=False)
 
 
