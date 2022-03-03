@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 import shutil
 import re
+import numpy as np
+import os.path
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -50,7 +52,8 @@ def download_data(url: str, inpath: str) -> None:
                 z.extractall(os.path.join(inpath, "csv"))
             else:
                 status = False
-                os.remove(os.path.join(inpath, "csv", "citation.txt"))
+                if os.path.exists(os.path.join(inpath, "csv", "citation.txt")):
+                    os.remove(os.path.join(inpath, "csv", "citation.txt"))
                 break
 
 
@@ -148,6 +151,50 @@ def list_variables_to_clean(configpath: str):
     return ch_vars
 
 
+def create_units(df: pd.DataFrame) -> pd.DataFrame:
+
+    conds = [
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Rate")
+        ),
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Number")
+        ),
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Percent")
+        ),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Number")),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Percent")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Number")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Percent")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Number")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Percent")),
+    ]
+
+    choices = [
+        "DALYs per 100,000 people",
+        "DALYs",
+        "%",
+        "deaths",
+        "deaths per 100,000 people",
+        "%",
+        "",
+        "",
+        "%",
+        "",
+        "",
+        "%",
+    ]
+    df["metric"] = np.select(conds, choices)
+    return df
+
+
 def create_variables(
     inpath: str,
     filter_fields: list,
@@ -158,9 +205,6 @@ def create_variables(
 ) -> pd.DataFrame:
     """Iterating through each variable and pulling out the relevant datapoints.
     Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
-
-    units_dict = {"Percent": "%", "Rate": "", "Number": ""}
-
     paths = list_input_files(inpath)
 
     if "rei" in filter_fields:
@@ -179,8 +223,10 @@ def create_variables(
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
+        print(path)
         df = pd.read_csv(path, usecols=fields)
         df = create_var_name(df)
+        df = create_units(df)
         if not clean_all_vars:
             df = df[df["name"].isin(ch_vars)]
         if (
@@ -195,7 +241,8 @@ def create_variables(
             ] = None
             df_t = df_t.rename(columns={"metric": "unit"})
             assert "unit" in df_t.columns
-            df_t["short_unit"] = df_t["unit"].map(units_dict)
+
+            df_t["short_unit"] = np.where(df_t["unit"] == "%", "%", "")
             vars_out.append(df_t)
 
     df = pd.concat(vars_out)
