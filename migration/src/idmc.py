@@ -1,3 +1,4 @@
+from operator import index
 import pandas as pd
 import requests
 import json
@@ -28,7 +29,9 @@ def annual_internal_displacement_conflict():
         },
         inplace=True,
     )
-    df.to_csv("migration/ready/idmc_annual_internal_displacement_conflict.csv")
+    df.to_csv(
+        "migration/ready/idmc_annual_internal_displacement_conflict.csv", index=False
+    )
 
     return df
 
@@ -78,7 +81,9 @@ def annual_internal_displacement_disaster():
         },
         inplace=True,
     )
-    df.to_csv("migration/ready/idmc_annual_internal_displacement_disaster.csv")
+    df.to_csv(
+        "migration/ready/idmc_annual_internal_displacement_disaster.csv", index=False
+    )
 
     return df
 
@@ -128,7 +133,9 @@ def total_internal_displacement_conflict():
         },
         inplace=True,
     )
-    df.to_csv("migration/ready/idmc_total_internal_displacement_conflict.csv")
+    df.to_csv(
+        "migration/ready/idmc_total_internal_displacement_conflict.csv", index=False
+    )
 
     return df
 
@@ -177,7 +184,9 @@ def total_internal_displacement_disaster():
         },
         inplace=True,
     )
-    df.to_csv("migration/ready/idmc_total_internal_displacement_disaster.csv")
+    df.to_csv(
+        "migration/ready/idmc_total_internal_displacement_disaster.csv", index=False
+    )
 
     return df
 

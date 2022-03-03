@@ -45,9 +45,10 @@ def under_eighteen_migrants_by_destination_per_capita() -> pd.DataFrame:
     migrants = migrants[
         migrants["unicef_under_eighteen_migrants_by_destination"].apply(is_number)
     ]
-    migrants[
+    migrants = migrants[
         ["Year", "Country", "unicef_under_eighteen_migrants_by_destination_per_capita"]
-    ].to_csv(
+    ]
+    migrants.to_csv(
         "migration/ready/omm_unicef_under_eighteen_migrants_by_destination_per_capita.csv",
         index=False,
     )
