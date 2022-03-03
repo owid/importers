@@ -390,7 +390,8 @@ def add_per_capita_columns(data):
     data = data.copy()
 
     # Create a per-capita column for each relevant variable.
-    per_capita_columns = [column for column in data.columns if column not in ['Entity', 'Year', 'Date']]
+    per_capita_columns = [column for column in data.columns if column not in ['Entity', 'Year', 'Date']
+                          if not column.startswith('share_')]
 
     # Standardize country names.
     country_remapping = pd.read_csv(COUNTRIES_FILE).set_index('eia_name').to_dict()['owid_name']
