@@ -58,10 +58,6 @@ def load(year_df: pd.DataFrame, date_df: pd.DataFrame):
         "monthly_sea_surface_temperature_anomaly"
     ].round(4)
 
-    # Explorer files
-    year_df.to_csv("output/explorer_climate_impacts_yearly.csv", index=False)
-    date_df.to_csv("output/explorer_climate_impacts_monthly.csv", index=False)
-
     # Grapher file
     date_df["year"] = (pd.to_datetime(date_df.date) - pd.to_datetime(ZERO_DAY)).dt.days
     date_df = date_df.drop(columns="date")
