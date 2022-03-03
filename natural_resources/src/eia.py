@@ -55,8 +55,23 @@ BB_TO_CUBIC_METERS = 1.590e+08
 MBD_TO_CUBIC_METERS_PER_MONTH = 4.839e+03
 
 
-def find_last_data_file(variable_name, input_dir=INPUT_DIR):
-    data_dir = os.path.join(input_dir, variable_name)
+def find_last_data_file(variable_name):
+    """Find last data file inside a folder of a certain variable (within the input folder).
+
+    Assume that input folder contains a sub-folder for each variable, e.g. 'oil_production'.
+
+    Parameters
+    ----------
+    variable_name : str
+        Variable name (which coincides with the name of a sub-folder inside input folder).
+
+    Returns
+    -------
+    last_file : str
+        Path to latest input data file added for considered variable.
+
+    """
+    data_dir = os.path.join(INPUT_DIR, variable_name)
     assert os.path.isdir(data_dir)
     files_found = np.array([file.path for file in os.scandir(data_dir) if file.path.lower().endswith('.csv')])
     timestamps = np.array([datetime.strptime(os.path.basename(file).split('.')[0],
@@ -69,6 +84,14 @@ def find_last_data_file(variable_name, input_dir=INPUT_DIR):
 
 
 def load_population_dataset():
+    """Load OWID population dataset.
+
+    Returns
+    -------
+    population : pd.DataFrame
+        Population data.
+
+    """
     # Load OWID population dataset.
     population = catalog.find("population", namespace="owid").load().reset_index()[["country", "population", "year"]].\
         rename(columns={"country": "Entity", "population": "Population", "year": "Year"})
@@ -77,6 +100,21 @@ def load_population_dataset():
 
 
 def load_simple_dataset(variable_name, conversion_factor):
+    """Load a simple dataset (one with an easy structure) that has been manually downloaded from the EIA website.
+
+    Parameters
+    ----------
+    variable_name : str
+        Variable name (which coincides with the name of a sub-folder inside input folder).
+    conversion_factor : float
+        Factor to convert EIA units into OWID units.
+
+    Returns
+    -------
+    data_melt : pd.DataFrame
+        Data extracted from the dataset, in a convenient format and in convenient units.
+
+    """
     data_file = find_last_data_file(variable_name=variable_name)
     variable_name_in_file = pd.read_csv(data_file, skiprows=1, na_values='--').iloc[0, 1]
     print(variable_name_in_file)
@@ -93,6 +131,24 @@ def load_simple_dataset(variable_name, conversion_factor):
 
 
 def load_dataset_with_indented_entities(variable_name, conversion_factor, relevant_entity):
+    """Load a dataset that has been manually downloaded from the EIA website, where one of the columns has entity levels
+    defined by their indentation.
+
+    Parameters
+    ----------
+    variable_name : str
+        Variable name (which coincides with the name of a sub-folder inside input folder).
+    conversion_factor : float
+        Factor to convert EIA units into OWID units.
+    relevant_entity : str
+        Name of the relevant entity to be extracted from the original file.
+
+    Returns
+    -------
+    data_melt : pd.DataFrame
+        Data extracted from the dataset, in a convenient format and in convenient units.
+
+    """
     data_file = find_last_data_file(variable_name=variable_name)
     data = pd.read_csv(data_file, skiprows=1, na_values='--').rename(columns={'Unnamed: 1': 'mixed'}).\
         drop(columns=['API'])
@@ -113,6 +169,19 @@ def load_dataset_with_indented_entities(variable_name, conversion_factor, releva
 
 
 def merge_dataframes(list_of_dataframes):
+    """Outer merge multiple dataframes.
+
+    Parameters
+    ----------
+    list_of_dataframes : list
+        Dataframes to merge.
+
+    Returns
+    -------
+    combined : pd.DataFrame
+        Combined data.
+
+    """
     # Merge all dataframes into one.
     combined = pd.DataFrame({'Entity': [], 'Year': []})
     for dataframe in list_of_dataframes:
@@ -122,6 +191,14 @@ def merge_dataframes(list_of_dataframes):
 
 
 def load_gas_data():
+    """Load all natural gas data.
+
+    Returns
+    -------
+    combined : pd.DataFrame
+        Combined natural gas data.
+
+    """
     gas_data = [
         # Dry natural gas production (billion cubic meters).
         load_simple_dataset(
@@ -152,6 +229,14 @@ def load_gas_data():
 
 
 def load_coal_data():
+    """Load all coal data.
+
+    Returns
+    -------
+    combined : pd.DataFrame
+        Combined coal data.
+
+    """
     coal_data = [
         # Coal production (million tonnes).
         load_dataset_with_indented_entities(
@@ -190,6 +275,14 @@ def load_coal_data():
 
 
 def load_oil_data():
+    """Load all oil data.
+
+    Returns
+    -------
+    combined : pd.DataFrame
+        Combined oil data.
+
+    """
     oil_data = [
         # Crude oil production, including lease condensate (million cubic meters).
         load_dataset_with_indented_entities(
@@ -222,6 +315,19 @@ def load_oil_data():
 
 
 def add_percentage_columns(combined):
+    """Add percentage columns (e.g. share of coal consumption that is imported) to data.
+
+    Parameters
+    ----------
+    combined : pd.DataFrame
+        Combined (natural gas/coal/oil) data.
+
+    Returns
+    -------
+    combined_added : pd.DataFrame
+        Input data with additional percentage columns.
+
+    """
     percentage_columns = {
         # Share of coal consumption that comes from imports (%)
         "share_of_coal_consumption_imported": {
@@ -268,6 +374,19 @@ def add_percentage_columns(combined):
 
 
 def add_per_capita_columns(data):
+    """Add per-capita columns to data.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        Combined (natural gas/coal/oil) data.
+
+    Returns
+    -------
+    data : pd.DataFrame
+        Input data with additional per-capita columns.
+
+    """
     data = data.copy()
 
     # Create a per-capita column for each relevant variable.
@@ -305,6 +424,26 @@ def add_per_capita_columns(data):
 
 
 def clean_dataset(data, fixed_columns):
+    """Execute a basic cleaning of the data.
+
+    Cleaning steps:
+    * Replace infinities by nan.
+    * Drop rows where all relevant columns are nan.
+    * Sort rows in a convenient way.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        Combined (natural gas/coal/oil) data, which can contain additional percentage and per-capita columns.
+    fixed_columns : list
+        Fixed columns in data (usually 'Entity', 'Year' or 'Date').
+
+    Returns
+    -------
+    clean : pd.DataFrame
+        Clean data.
+
+    """
     variables = [col for col in data.columns if col not in fixed_columns]
     clean = data.copy()
     # Replace infinities by nan.
@@ -317,6 +456,14 @@ def clean_dataset(data, fixed_columns):
 
 
 def load_oil_monthly_dataset():
+    """Load monthly dataset for oil production.
+
+    Returns
+    -------
+    data_melt : pd.DataFrame
+        Monthly data of oil production in a convenient format and units.
+
+    """
     # Monthly production of crude oil including lease condensate (million cubic meters).
     conversion_factor = MBD_TO_CUBIC_METERS_PER_MONTH
     variable_name = "oil_production_monthly"
@@ -340,11 +487,26 @@ def load_oil_monthly_dataset():
 
 
 def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_significant_figures=N_SIGNIFICANT_FIGURES):
-    # To save data using scientific notation, one could simply use:
-    # >>> data.to_csv(o_file, float_format="%.3e", index=False)
-    # However, this would add "e00" to all numbers between 0 and 10, which also implies saving all zeros as "0.000e00".
-    # This makes the file significantly larger.
-    # To avoid this, convert values to strings and format them in a more convenient way.
+    """Save output data in a file using a convenient format.
+
+    To save data using scientific notation, one could simply use:
+    >>> data.to_csv(output_file, float_format="%.3e", index=False)
+    However, this would add "e00" to all numbers between 0 and 10, which also implies saving all zeros as "0.000e00",
+    which makes the file significantly larger.
+    To avoid this, convert values to strings and format them in a more convenient way.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        Data to be stored in a file.
+    output_file : str
+        Path to output file.
+    columns_to_format : list
+        Variables whose format has to be changed to a more convenient format.
+    n_significant_figures : int
+        Number of significant figures for all float variables.
+
+    """
     data = data.copy()
     format_rule = f"{{:.{n_significant_figures -1}e}}"
     for column in columns_to_format:
@@ -356,6 +518,9 @@ def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_sig
 
 
 def generate_yearly_dataset():
+    """Generate yearly dataset and store it in a file.
+
+    """
     print("* Loading yearly data.")
     all_data = [
         load_gas_data(),
@@ -383,6 +548,9 @@ def generate_yearly_dataset():
 
 
 def generate_monthly_dataset():
+    """Generate yearly dataset and store it in a file.
+
+    """
     print("* Loading oil monthly production data.")
     monthly_data = load_oil_monthly_dataset()
 
