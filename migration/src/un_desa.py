@@ -1,4 +1,3 @@
-from operator import is_
 import pandas as pd
 import numpy as np
 
@@ -183,7 +182,7 @@ def refugees_by_destination() -> pd.DataFrame:
     return df
 
 
-def refugees_by_destination_per_capita() -> pd.DataFrame:
+def refugees_by_destination_per_1000() -> pd.DataFrame:
     refugees = refugees_by_destination()
     population = owid_population()
     refugees = refugees.merge(
@@ -192,17 +191,15 @@ def refugees_by_destination_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    refugees["undesa_refugees_by_destination_per_capita"] = (
+    refugees["undesa_refugees_by_destination_per_1000"] = (
         refugees["undesa_refugees_by_destination"] / refugees["Population"]
-    )
+    ) * 1000
     refugees = refugees[
-        refugees["undesa_refugees_by_destination_per_capita"].apply(is_number)
+        refugees["undesa_refugees_by_destination_per_1000"].apply(is_number)
     ]
-    refugees = refugees[
-        ["Country", "Year", "undesa_refugees_by_destination_per_capita"]
-    ]
+    refugees = refugees[["Country", "Year", "undesa_refugees_by_destination_per_1000"]]
     refugees.to_csv(
-        "migration/ready/omm_undesa_refugees_by_destination_per_capita.csv",
+        "migration/ready/omm_undesa_refugees_by_destination_per_1000.csv",
         index=False,
     )
     return refugees
@@ -364,8 +361,7 @@ def change_in_international_migrants_by_origin() -> pd.DataFrame:
     return migrants_lead
 
 
-def average_annual_change_international_migrants_by_destination_per_capita() -> pd.DataFrame:
-
+def average_annual_change_international_migrants_by_destination_per_100000() -> pd.DataFrame:
     annual_change = average_annual_change_international_migrants_by_destination()
     population = owid_population()
     annual_change = annual_change.merge(
@@ -375,17 +371,17 @@ def average_annual_change_international_migrants_by_destination_per_capita() -> 
         right_on=["Country", "Year"],
     )
     annual_change[
-        "undesa_annual_average_change_in_international_migrants_by_destination_per_capita"
+        "undesa_annual_average_change_in_international_migrants_by_destination_per_100000"
     ] = (
         annual_change[
             "undesa_annual_average_change_in_international_migrants_by_destination"
         ]
         / annual_change["Population"]
-    )
+    ) * 100000
 
     annual_change = annual_change[
         annual_change[
-            "undesa_annual_average_change_in_international_migrants_by_destination_per_capita"
+            "undesa_annual_average_change_in_international_migrants_by_destination_per_100000"
         ].apply(is_number)
     ]
 
@@ -393,17 +389,17 @@ def average_annual_change_international_migrants_by_destination_per_capita() -> 
         [
             "Year",
             "Country",
-            "undesa_annual_average_change_in_international_migrants_by_destination_per_capita",
+            "undesa_annual_average_change_in_international_migrants_by_destination_per_100000",
         ]
     ]
     annual_change.to_csv(
-        "migration/ready/omm_undesa_annual_average_change_in_international_migrants_by_destination_per_capita.csv",
+        "migration/ready/omm_undesa_annual_average_change_in_international_migrants_by_destination_per_100000.csv",
         index=False,
     )
     return annual_change
 
 
-def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame:
+def change_in_international_migrants_by_destination_per_1000() -> pd.DataFrame:
     migrants = change_in_international_migrants_by_destination()
     population = owid_population()
     migrants = migrants.merge(
@@ -413,15 +409,15 @@ def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame
         right_on=["Country", "Year"],
     )
     migrants[
-        "undesa_five_year_change_in_international_migrants_by_destination_per_capita"
+        "undesa_five_year_change_in_international_migrants_by_destination_per_1000"
     ] = (
         migrants["undesa_five_year_change_in_international_migrants_by_destination"]
         / migrants["Population"]
-    )
+    ) * 1000
 
     migrants = migrants[
         migrants[
-            "undesa_five_year_change_in_international_migrants_by_destination_per_capita"
+            "undesa_five_year_change_in_international_migrants_by_destination_per_1000"
         ].apply(is_number)
     ]
 
@@ -429,54 +425,46 @@ def change_in_international_migrants_by_destination_per_capita() -> pd.DataFrame
         [
             "Year",
             "Country",
-            "undesa_five_year_change_in_international_migrants_by_destination_per_capita",
+            "undesa_five_year_change_in_international_migrants_by_destination_per_1000",
         ]
     ].to_csv(
-        "migration/ready/undesa_five_year_change_in_international_migrants_by_destination_per_capita.csv",
+        "migration/ready/undesa_five_year_change_in_international_migrants_by_destination_per_1000.csv",
         index=False,
     )
     return migrants
 
 
-def change_in_international_migrants_by_origin_per_capita() -> pd.DataFrame:
-    migrants = international_migrants_by_origin()
-    shifted = migrants.groupby("Country").shift(+1)
-    migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
-    migrants_lead["undesa_five_year_change_in_international_migrants_by_origin"] = (
-        migrants_lead["undesa_international_migrants_by_origin"]
-        - migrants_lead["undesa_international_migrants_by_origin_lead"]
+def change_in_international_migrants_by_origin_per_1000() -> pd.DataFrame:
+    migrants = change_in_international_migrants_by_origin()
+    population = owid_population()
+    migrants = migrants.merge(
+        population,
+        how="inner",
+        left_on=["Country", "Year"],
+        right_on=["Country", "Year"],
     )
-    migrants_lead = migrants_lead[
-        [
-            "Country",
-            "Year",
-            "undesa_five_year_change_in_international_migrants_by_origin",
-        ]
-    ]
-    migrants_lead.dropna(
-        subset=["undesa_five_year_change_in_international_migrants_by_origin"],
-        inplace=True,
-    )
-    migrants_lead[
-        "undesa_five_year_change_in_international_migrants_by_origin"
-    ] = migrants_lead[
-        "undesa_five_year_change_in_international_migrants_by_origin"
-    ].astype(
-        int
-    )
-    migrants_lead = migrants_lead[
-        migrants_lead[
-            "undesa_five_year_change_in_international_migrants_by_origin"
+    migrants["undesa_five_year_change_in_international_migrants_by_origin_per_1000"] = (
+        migrants["undesa_five_year_change_in_international_migrants_by_origin"]
+        / migrants["Population"]
+    ) * 1000
+
+    migrants = migrants[
+        migrants[
+            "undesa_five_year_change_in_international_migrants_by_origin_per_1000"
         ].apply(is_number)
     ]
 
-    migrants_lead = migrants_lead[migrants_lead.Year > 1990]
-
-    migrants_lead.to_csv(
-        "migration/ready/undesa_five_year_change_in_international_migrants_by_origin.csv",
+    migrants[
+        [
+            "Year",
+            "Country",
+            "undesa_five_year_change_in_international_migrants_by_origin_per_1000",
+        ]
+    ].to_csv(
+        "migration/ready/undesa_five_year_change_in_international_migrants_by_origin_per_1000.csv",
         index=False,
     )
-    return migrants_lead
+    return migrants
 
 
 def average_annual_change_international_migrants_by_origin() -> pd.DataFrame:
@@ -549,8 +537,7 @@ def average_annual_change_international_migrants_by_origin() -> pd.DataFrame:
     return interp_df_lead
 
 
-def average_annual_change_international_migrants_by_origin_per_capita() -> pd.DataFrame:
-
+def average_annual_change_international_migrants_by_origin_per_100000() -> pd.DataFrame:
     annual_change = average_annual_change_international_migrants_by_origin()
     population = owid_population()
     annual_change = annual_change.merge(
@@ -560,27 +547,27 @@ def average_annual_change_international_migrants_by_origin_per_capita() -> pd.Da
         right_on=["Country", "Year"],
     )
     annual_change[
-        "undesa_annual_average_change_in_international_migrants_by_origin_per_capita"
+        "undesa_annual_average_change_in_international_migrants_by_origin_per_100000"
     ] = (
         annual_change[
             "undesa_annual_average_change_in_international_migrants_by_origin"
         ]
         / annual_change["Population"]
-    )
+    ) * 100000
 
     annual_change = annual_change[
         annual_change[
-            "undesa_annual_average_change_in_international_migrants_by_origin_per_capita"
+            "undesa_annual_average_change_in_international_migrants_by_origin_per_100000"
         ].apply(is_number)
     ]
     annual_change[
         [
             "Year",
             "Country",
-            "undesa_annual_average_change_in_international_migrants_by_origin_per_capita",
+            "undesa_annual_average_change_in_international_migrants_by_origin_per_100000",
         ]
     ].to_csv(
-        "migration/ready/omm_undesa_annual_average_change_in_international_migrants_by_origin_per_capita.csv",
+        "migration/ready/omm_undesa_annual_average_change_in_international_migrants_by_origin_per_100000.csv",
         index=False,
     )
     return annual_change
@@ -780,7 +767,7 @@ def child_migrants_by_destination() -> pd.DataFrame:
     return df_u15, df_u20
 
 
-def child_migrants_by_destination_per_capita() -> pd.DataFrame:
+def child_migrants_by_destination_per_1000() -> pd.DataFrame:
     df_u15, df_u20 = child_migrants_by_destination()
     population = owid_population()
 
@@ -798,36 +785,36 @@ def child_migrants_by_destination_per_capita() -> pd.DataFrame:
         right_on=["Country", "Year"],
     )
 
-    df_u15["undesa_child_migrants_by_destination_under_15_per_capita"] = (
+    df_u15["undesa_child_migrants_by_destination_under_15_per_1000"] = (
         df_u15["undesa_child_migrants_by_destination_under_15"] / df_u15["Population"]
-    )
-    df_u20["undesa_child_migrants_by_destination_under_20_per_capita"] = (
+    ) * 1000
+    df_u20["undesa_child_migrants_by_destination_under_20_per_1000"] = (
         df_u20["undesa_child_migrants_by_destination_under_20"] / df_u20["Population"]
-    )
+    ) * 1000
 
     df_u15 = df_u15[
-        df_u15["undesa_child_migrants_by_destination_under_15_per_capita"].apply(
+        df_u15["undesa_child_migrants_by_destination_under_15_per_1000"].apply(
             is_number
         )
     ]
     df_u20 = df_u20[
-        df_u20["undesa_child_migrants_by_destination_under_20_per_capita"].apply(
+        df_u20["undesa_child_migrants_by_destination_under_20_per_1000"].apply(
             is_number
         )
     ]
 
     df_u15 = df_u15[
-        ["Year", "Country", "undesa_child_migrants_by_destination_under_15_per_capita"]
+        ["Year", "Country", "undesa_child_migrants_by_destination_under_15_per_1000"]
     ]
     df_u20 = df_u20[
-        ["Year", "Country", "undesa_child_migrants_by_destination_under_20_per_capita"]
+        ["Year", "Country", "undesa_child_migrants_by_destination_under_20_per_1000"]
     ]
     df_u15.to_csv(
-        "migration/ready/omm_undesa_child_migrants_by_destination_under_15_per_capita.csv",
+        "migration/ready/omm_undesa_child_migrants_by_destination_under_15_per_1000.csv",
         index=False,
     )
     df_u20.to_csv(
-        "migration/ready/omm_undesa_child_migrants_by_destination_under_20_per_capita.csv",
+        "migration/ready/omm_undesa_child_migrants_by_destination_under_20_per_1000.csv",
         index=False,
     )
     return df_u15, df_u20

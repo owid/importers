@@ -29,7 +29,7 @@ def refugees_by_destination() -> pd.DataFrame:
     return df
 
 
-def refugees_by_destination_per_capita() -> pd.DataFrame:
+def refugees_by_destination_per_1000() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_destination()
     # refugees["Country of asylum"] = standardise_countries(refugees["Country of asylum"])
@@ -39,12 +39,12 @@ def refugees_by_destination_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    refugees["unhcr_refugees_by_destination_per_capita"] = (
+    refugees["unhcr_refugees_by_destination_per_1000"] = (
         refugees["unhcr_refugees_by_destination"] / refugees["Population"]
-    )
-    refugees = refugees[["Year", "Country", "unhcr_refugees_by_destination_per_capita"]]
+    ) * 1000
+    refugees = refugees[["Year", "Country", "unhcr_refugees_by_destination_per_1000"]]
     refugees.to_csv(
-        "migration/ready/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
+        "migration/ready/omm_unhcr_refugees_by_destination_per_1000.csv", index=False
     )
     return refugees
 
@@ -73,7 +73,7 @@ def refugees_by_origin() -> pd.DataFrame:
     return df
 
 
-def refugees_by_origin_per_capita() -> pd.DataFrame:
+def refugees_by_origin_per_1000() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_origin()
     refugees = refugees.merge(
@@ -82,17 +82,17 @@ def refugees_by_origin_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    refugees["unhcr_refugees_by_origin_per_capita"] = (
+    refugees["unhcr_refugees_by_origin_per_1000"] = (
         refugees["unhcr_refugees_by_origin"] / refugees["Population"]
-    )
-    refugees = refugees[["Year", "Country", "unhcr_refugees_by_origin_per_capita"]]
+    ) * 1000
+    refugees = refugees[["Year", "Country", "unhcr_refugees_by_origin_per_1000"]]
     refugees.to_csv(
-        "migration/ready/omm_unhcr_refugees_by_destination_per_capita.csv", index=False
+        "migration/ready/omm_unhcr_refugees_by_destination_per_1000.csv", index=False
     )
     return refugees
 
 
-def asylum_applications_by_origin() -> pd.DataFrame:
+def asylum_seekers_by_origin() -> pd.DataFrame:
     res = requests.get(
         "https://api.unhcr.org/population/v1/population/?limit=20&dataset=population&displayType=totals&columns%5B%5D=asylum_seekers&yearFrom=1951&yearTo=2021&coo_all=true&download=true#_ga=2.172262819.180802795.1646058128-293029033.1646058128"
     )
@@ -115,8 +115,8 @@ def asylum_applications_by_origin() -> pd.DataFrame:
     return df
 
 
-def asylum_applications_by_origin_per_capita() -> pd.DataFrame:
-    asylum = asylum_applications_by_origin()
+def asylum_seekers_by_origin_per_100000() -> pd.DataFrame:
+    asylum = asylum_seekers_by_origin()
     population = owid_population()
     asylum = asylum.merge(
         population,
@@ -124,17 +124,17 @@ def asylum_applications_by_origin_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    asylum["unhcr_asylum_seekers_by_origin_per_capita"] = (
+    asylum["unhcr_asylum_seekers_by_origin_per_100000"] = (
         asylum["unhcr_asylum_seekers_by_origin"] / asylum["Population"]
-    )
-    asylum = asylum[["Year", "Country", "unhcr_asylum_seekers_by_origin_per_capita"]]
+    ) * 100000
+    asylum = asylum[["Year", "Country", "unhcr_asylum_seekers_by_origin_per_100000"]]
     asylum.to_csv(
-        "migration/ready/omm_unhcr_asylum_seekers_by_origin_per_capita.csv", index=False
+        "migration/ready/omm_unhcr_asylum_seekers_by_origin_per_100000.csv", index=False
     )
     return asylum
 
 
-def asylum_applications_by_destination() -> pd.DataFrame:
+def asylum_seekers_by_destination() -> pd.DataFrame:
     res = requests.get(
         "https://api.unhcr.org/population/v1/population/?limit=20&dataset=population&displayType=totals&columns%5B%5D=asylum_seekers&yearFrom=1951&yearTo=2021&coa_all=true&download=true#_ga=2.143090997.180802795.1646058128-293029033.1646058128"
     )
@@ -158,8 +158,8 @@ def asylum_applications_by_destination() -> pd.DataFrame:
     return df
 
 
-def asylum_applications_by_destination_per_capita() -> pd.DataFrame:
-    asylum = asylum_applications_by_destination()
+def asylum_seekers_by_destination_per_100000() -> pd.DataFrame:
+    asylum = asylum_seekers_by_destination()
     population = owid_population()
     asylum = asylum.merge(
         population,
@@ -167,14 +167,14 @@ def asylum_applications_by_destination_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    asylum["unhcr_asylum_seekers_by_destination_per_capita"] = (
+    asylum["unhcr_asylum_seekers_by_destination_per_100000"] = (
         asylum["unhcr_asylum_seekers_by_destination"] / asylum["Population"]
-    )
+    ) * 100000
     asylum = asylum[
-        ["Year", "Country", "unhcr_asylum_seekers_by_destination_per_capita"]
+        ["Year", "Country", "unhcr_asylum_seekers_by_destination_per_100000"]
     ]
     asylum.to_csv(
-        "migration/ready/omm_unhcr_asylum_seekers_by_destination_per_capita.csv",
+        "migration/ready/omm_unhcr_asylum_seekers_by_destination_per_100000.csv",
         index=False,
     )
     return asylum
@@ -206,7 +206,7 @@ def resettlement_arrivals_by_destination() -> pd.DataFrame:
     return df
 
 
-def resettlement_arrivals_by_destination_per_capita() -> pd.DataFrame:
+def resettlement_arrivals_by_destination_per_100000() -> pd.DataFrame:
     resettle = resettlement_arrivals_by_destination()
     population = owid_population()
     resettle = resettle.merge(
@@ -215,14 +215,16 @@ def resettlement_arrivals_by_destination_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    resettle["unhcr_resettlement_arrivals_by_destination_per_capita"] = (
+    resettle["unhcr_resettlement_arrivals_by_destination_per_100000"] = (
         resettle["unhcr_resettlement_arrivals_by_destination"] / resettle["Population"]
-    )
+    ) * 100000
+
     resettle = resettle[
-        ["Year", "Country", "unhcr_resettlement_arrivals_by_destination_per_capita"]
+        ["Year", "Country", "unhcr_resettlement_arrivals_by_destination_per_100000"]
     ]
+
     resettle.to_csv(
-        "migration/ready/omm_unhcr_resettlement_arrivals_by_destination_per_capita.csv",
+        "migration/ready/omm_unhcr_resettlement_arrivals_by_destination_per_100000.csv",
         index=False,
     )
     return resettle
@@ -252,7 +254,7 @@ def resettlement_arrivals_by_origin() -> pd.DataFrame:
     return df
 
 
-def resettlement_arrivals_by_origin_per_capita() -> pd.DataFrame:
+def resettlement_arrivals_by_origin_per_100000() -> pd.DataFrame:
     resettle = resettlement_arrivals_by_origin()
     population = owid_population()
     resettle = resettle.merge(
@@ -261,14 +263,14 @@ def resettlement_arrivals_by_origin_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    resettle["unhcr_resettlement_arrivals_by_origin_per_capita"] = (
+    resettle["unhcr_resettlement_arrivals_by_origin_per_100000"] = (
         resettle["unhcr_resettlement_arrivals_by_origin"] / resettle["Population"]
-    )
+    ) * 100000
     resettle = resettle[
-        ["Year", "Country", "unhcr_resettlement_arrivals_by_origin_per_capita"]
+        ["Year", "Country", "unhcr_resettlement_arrivals_by_origin_per_100000"]
     ]
     resettle.to_csv(
-        "migration/ready/omm_unhcr_resettlement_arrivals_by_origin_per_capita.csv",
+        "migration/ready/omm_unhcr_resettlement_arrivals_by_origin_per_100000.csv",
         index=False,
     )
     return resettle

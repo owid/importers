@@ -29,7 +29,7 @@ def under_eighteen_migrants_by_destination() -> pd.DataFrame:
     return df
 
 
-def under_eighteen_migrants_by_destination_per_capita() -> pd.DataFrame:
+def under_eighteen_migrants_by_destination_per_1000() -> pd.DataFrame:
     migrants = under_eighteen_migrants_by_destination()
     population = owid_population()
     migrants = migrants.merge(
@@ -38,18 +38,18 @@ def under_eighteen_migrants_by_destination_per_capita() -> pd.DataFrame:
         left_on=["Country", "Year"],
         right_on=["Country", "Year"],
     )
-    migrants["unicef_under_eighteen_migrants_by_destination_per_capita"] = (
+    migrants["unicef_under_eighteen_migrants_by_destination_per_1000"] = (
         migrants["unicef_under_eighteen_migrants_by_destination"]
         / migrants["Population"]
-    )
+    ) * 1000
     migrants = migrants[
         migrants["unicef_under_eighteen_migrants_by_destination"].apply(is_number)
     ]
     migrants = migrants[
-        ["Year", "Country", "unicef_under_eighteen_migrants_by_destination_per_capita"]
+        ["Year", "Country", "unicef_under_eighteen_migrants_by_destination_per_1000"]
     ]
     migrants.to_csv(
-        "migration/ready/omm_unicef_under_eighteen_migrants_by_destination_per_capita.csv",
+        "migration/ready/omm_unicef_under_eighteen_migrants_by_destination_per_1000.csv",
         index=False,
     )
     return migrants
