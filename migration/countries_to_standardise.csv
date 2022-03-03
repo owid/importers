@@ -1,190 +1,513 @@
-Country
-Australia
-Austria
-Belgium
-Canada
-Denmark
-France
-United Kingdom of Great Britain and Northern Ireland
-Germany
-Greece
-"China, Hong Kong SAR"
-Italy
-Luxembourg
-Morocco
-Netherlands
-Norway
-Spain
-Sweden
-Switzerland
-Tunisia
-Turkey
-Unknown 
-United States of America
-Dem. Rep. of the Congo
-Togo
-Burundi
-United Rep. of Tanzania
-Uganda
-Iran (Islamic Rep. of)
-Senegal
-Egypt
-"China, Macao SAR"
-Central African Rep.
-Cambodia
-India
-Nepal
-Lebanon
-Serbia and Kosovo: S/RES/1244 (1999)
-Rwanda
-Zambia
-Bhutan
-China
-Sudan
-New Zealand
-Botswana
-Cyprus
-Equatorial Guinea
-Ethiopia
-United Arab Emirates
-Venezuela (Bolivarian Republic of)
-Benin
-Liberia
-Sierra Leone
-Argentina
-Brazil
-Chile
-Congo
-Gabon
-Ghana
-Cote d'Ivoire
-Paraguay
-Peru
-Mexico
-Kenya
-Lesotho
-Eswatini
-Algeria
-Cameroon
-Colombia
-Dominican Rep.
-Uruguay
-Jordan
-Viet Nam
-Mali
-Ecuador
-Costa Rica
-Guatemala
-Guyana
-Lao People's Dem. Rep.
-Bolivia (Plurinational State of)
-Honduras
-Nicaragua
-Panama
-El Salvador
-Cuba
-Bahrain
-Saudi Arabia
-Thailand
-Mozambique
-Philippines
-Portugal
-Angola
-Nigeria
-Malaysia
-Romania
-Djibouti
-Somalia
-Niger
-Japan
-Yemen
-Papua New Guinea
-Bangladesh
-Indonesia
-Rep. of Korea
-Singapore
-Syrian Arab Rep.
-Pakistan
-Iraq
-Kuwait
-Qatar
-Zimbabwe
-Belize
-Guinea-Bissau
-Burkina Faso
-Ireland
-Finland
-Malawi
-Mauritania
-Hungary
-French Guiana
-Gambia
-Guinea
-Afghanistan
-Iceland
-Namibia
-Cabo Verde
-Czechia
-Jamaica
-Sri Lanka
-Poland
-Tajikistan
-Azerbaijan
-Armenia
-Slovenia
-Bahamas
-Suriname
-Albania
-Bulgaria
-Chad
-Croatia
-North Macedonia
-Kazakhstan
-Kyrgyzstan
-Turkmenistan
-Uzbekistan
-Libya
-Malta
-Eritrea
-South Africa
-Slovakia
-Belarus
-Ukraine
-Madagascar
-Fiji
-Solomon Islands
-Georgia
-Russian Federation
-Bosnia and Herzegovina
-Lithuania
-Saint Lucia
-Israel
-Rep. of Moldova
-Latvia
-Comoros
-Mauritius
-Liechtenstein
-Estonia
-Timor-Leste
-Oman
-Mongolia
-Myanmar
-Montenegro
-Trinidad and Tobago
-Vanuatu
-Palau
-Curacao 
-Brunei Darussalam
-South Sudan
-Grenada
-Sint Maarten (Dutch part)
-Monaco
-Turks and Caicos Islands
-Cayman Islands
-Nauru
-Micronesia (Federated States of)
-Haiti
-Antigua and Barbuda
-Samoa
-Saint Kitts and Nevis
-Aruba
+,Country
+0,Australia
+1,Austria
+2,Belgium
+3,Canada
+4,Denmark
+5,France
+6,United Kingdom
+7,Germany
+8,Greece
+9,Hong Kong
+10,Italy
+11,Luxembourg
+12,Morocco
+13,Netherlands
+14,Norway
+15,Spain
+16,Sweden
+17,Switzerland
+18,Tunisia
+19,Turkey
+20,Unknown
+21,United States
+22,Democratic Republic of Congo
+23,Togo
+24,Burundi
+25,Tanzania
+26,Uganda
+27,Iran
+28,Senegal
+29,Egypt
+30,Macao
+31,Central African Republic
+32,Cambodia
+33,India
+34,Nepal
+35,Lebanon
+36,Serbia and Kosovo: S/RES/1244 (1999)
+37,Rwanda
+38,Zambia
+39,Bhutan
+40,China
+41,Sudan
+42,New Zealand
+43,Botswana
+44,Cyprus
+45,Equatorial Guinea
+46,Ethiopia
+47,United Arab Emirates
+48,Venezuela
+49,Benin
+50,Liberia
+51,Sierra Leone
+52,Argentina
+53,Brazil
+54,Chile
+55,Congo
+56,Gabon
+57,Ghana
+58,Cote d'Ivoire
+59,Paraguay
+60,Peru
+61,Mexico
+62,Kenya
+63,Lesotho
+64,Eswatini
+65,Algeria
+66,Cameroon
+67,Colombia
+68,Dominican Republic
+69,Uruguay
+70,Jordan
+71,Vietnam
+72,Mali
+73,Ecuador
+74,Costa Rica
+75,Guatemala
+76,Guyana
+77,Laos
+78,Bolivia
+79,Honduras
+80,Nicaragua
+81,Panama
+82,El Salvador
+83,Cuba
+84,Bahrain
+85,Saudi Arabia
+86,Thailand
+87,Mozambique
+88,Philippines
+89,Portugal
+90,Angola
+91,Nigeria
+92,Malaysia
+93,Romania
+94,Djibouti
+95,Somalia
+96,Niger
+97,Japan
+98,Yemen
+99,Papua New Guinea
+100,Bangladesh
+101,Indonesia
+102,South Korea
+103,Singapore
+104,Syria
+105,Pakistan
+106,Iraq
+107,Kuwait
+108,Qatar
+109,Zimbabwe
+110,Belize
+111,Guinea-Bissau
+112,Burkina Faso
+113,Ireland
+114,Finland
+115,Malawi
+116,Mauritania
+117,Hungary
+118,French Guiana
+119,Gambia
+120,Guinea
+121,Afghanistan
+122,Iceland
+123,Namibia
+124,Cape Verde
+125,Czechia
+126,Jamaica
+127,Sri Lanka
+128,Poland
+129,Tajikistan
+130,Azerbaijan
+131,Armenia
+132,Slovenia
+133,Bahamas
+134,Suriname
+135,Albania
+136,Bulgaria
+137,Chad
+138,Croatia
+139,North Macedonia
+140,Kazakhstan
+141,Kyrgyzstan
+142,Turkmenistan
+143,Uzbekistan
+144,Libya
+145,Malta
+146,Eritrea
+147,South Africa
+148,Slovakia
+149,Belarus
+150,Ukraine
+151,Madagascar
+152,Fiji
+153,Solomon Islands
+154,Georgia
+155,Russia
+156,Bosnia and Herzegovina
+157,Lithuania
+158,Saint Lucia
+159,Israel
+160,Moldova
+161,Latvia
+162,Comoros
+163,Mauritius
+164,Liechtenstein
+165,Estonia
+166,Timor
+167,Oman
+168,Mongolia
+169,Myanmar
+170,Montenegro
+171,Trinidad and Tobago
+172,Vanuatu
+173,Palau
+174,Curacao
+175,Brunei
+176,South Sudan
+177,Grenada
+178,Sint Maarten (Dutch part)
+179,Monaco
+180,Turks and Caicos Islands
+181,Cayman Islands
+182,Nauru
+183,Micronesia (country)
+184,Haiti
+185,Antigua and Barbuda
+186,Samoa
+187,Saint Kitts and Nevis
+188,Aruba
+189,Unknown 
+190,Dem. Rep. of the Congo
+191,Russian Federation
+192,Viet Nam
+193,Tibetan
+194,Cabo Verde
+195,Syrian Arab Rep.
+196,Bolivia (Plurinational State of)
+197,United Rep. of Tanzania
+198,Lao People's Dem. Rep.
+199,Western Sahara
+200,Palestinian
+201,Dominican Rep.
+202,Iran (Islamic Rep. of)
+203,Stateless
+204,Central African Rep.
+205,Sao Tome and Principe
+206,Seychelles
+207,Rep. of Korea
+208,United States of America
+209,Venezuela (Bolivarian Republic of)
+210,Rep. of Moldova
+211,Barbados
+212,United Kingdom of Great Britain and Northern Ireland
+213,"China, Hong Kong SAR"
+214,Puerto Rico
+215,Saint Vincent and the Grenadines
+216,Brunei Darussalam
+217,Tuvalu
+218,Dem. People's Rep. of Korea
+219,Tonga
+220,San Marino
+221,Timor-Leste
+222,"China, Macao SAR"
+223,Dominica
+224,Andorra
+225,Kiribati
+226,Maldives
+227,Niue
+228,Curacao 
+229,Marshall Islands
+0,WORLD
+1,  Sub-Saharan Africa
+2,  Northern Africa and Western Asia
+3,  Central and Southern Asia
+4,  Eastern and South-Eastern Asia
+5,  Latin America and the Caribbean
+6,  Oceania (excluding Australia and New Zealand)
+7,  Australia and New Zealand
+8,  Europe and Northern America
+9,  Developed regions
+10,  Less developed regions
+11," Less developed regions, excluding least developed countries"
+12," Less developed regions, excluding China"
+13,  Least developed countries
+14,  Land-locked Developing Countries (LLDC)
+15,  Small island developing States (SIDS)
+16,  High-income countries
+17,  Middle-income countries
+18, Upper-middle-income countries
+19, Lower-middle-income countries
+20,  Low-income countries
+21, AFRICA
+22,  Eastern Africa
+23,   Burundi
+24,   Comoros
+25,   Djibouti
+26,   Eritrea
+27,   Ethiopia
+28,   Kenya
+29,   Madagascar
+30,   Malawi
+31,   Mauritius*
+32,   Mayotte*
+33,   Mozambique
+34,   Réunion*
+35,   Rwanda
+36,   Seychelles
+37,   Somalia
+38,   South Sudan
+39,   Uganda
+40,   United Republic of Tanzania*
+41,   Zambia
+42,   Zimbabwe
+43,  Middle Africa
+44,   Angola
+45,   Cameroon
+46,   Central African Republic
+47,   Chad
+48,   Congo
+49,   Democratic Republic of the Congo
+50,   Equatorial Guinea
+51,   Gabon
+52,   Sao Tome and Principe
+53,  Northern Africa
+54,   Algeria
+55,   Egypt
+56,   Libya
+57,   Morocco
+58,   Sudan
+59,   Tunisia
+60,   Western Sahara
+61,  Southern Africa
+62,   Botswana
+63,   Eswatini
+64,   Lesotho
+65,   Namibia
+66,   South Africa
+67,  Western Africa
+68,   Benin
+69,   Burkina Faso
+70,   Cabo Verde
+71,   Côte d'Ivoire
+72,   Gambia
+73,   Ghana
+74,   Guinea
+75,   Guinea-Bissau
+76,   Liberia
+77,   Mali
+78,   Mauritania
+79,   Niger
+80,   Nigeria
+81,   Saint Helena*
+82,   Senegal
+83,   Sierra Leone
+84,   Togo
+85, ASIA
+86,  Central Asia
+87,   Kazakhstan
+88,   Kyrgyzstan
+89,   Tajikistan
+90,   Turkmenistan
+91,   Uzbekistan
+92,  Eastern Asia
+93,   China*
+94,"   China, Hong Kong SAR*"
+95,"   China, Macao SAR*"
+96,"   China, Taiwan Province of China*"
+97,   Dem. People's Republic of Korea
+98,   Japan
+99,   Mongolia
+100,   Republic of Korea
+101,  South-Eastern Asia
+102,   Brunei Darussalam
+103,   Cambodia
+104,   Indonesia
+105,   Lao People's Democratic Republic
+106,   Malaysia*
+107,   Myanmar
+108,   Philippines
+109,   Singapore
+110,   Thailand
+111,   Timor-Leste
+112,   Viet Nam
+113,  Southern Asia
+114,   Afghanistan
+115,   Bangladesh
+116,   Bhutan
+117,   India
+118,   Iran (Islamic Republic of)
+119,   Maldives
+120,   Nepal
+121,   Pakistan
+122,   Sri Lanka
+123,  Western Asia
+124,   Armenia
+125,   Azerbaijan*
+126,   Bahrain
+127,   Cyprus*
+128,   Georgia*
+129,   Iraq
+130,   Israel
+131,   Jordan
+132,   Kuwait
+133,   Lebanon
+134,   Oman
+135,   Qatar
+136,   Saudi Arabia
+137,   State of Palestine*
+138,   Syrian Arab Republic
+139,   Turkey
+140,   United Arab Emirates
+141,   Yemen
+142, EUROPE
+143,  Eastern Europe
+144,   Belarus
+145,   Bulgaria
+146,   Czechia
+147,   Hungary
+148,   Poland
+149,   Republic of Moldova*
+150,   Romania
+151,   Russian Federation
+152,   Slovakia
+153,   Ukraine*
+154,  Northern Europe
+155,   Channel Islands*
+156,   Denmark*
+157,   Estonia
+158,   Faroe Islands*
+159,   Finland*
+160,   Iceland
+161,   Ireland
+162,   Isle of Man*
+163,   Latvia
+164,   Lithuania
+165,   Norway*
+166,   Sweden
+167,   United Kingdom*
+168,  Southern Europe
+169,   Albania
+170,   Andorra
+171,   Bosnia and Herzegovina
+172,   Croatia
+173,   Gibraltar*
+174,   Greece
+175,   Holy See*
+176,   Italy
+177,   Malta
+178,   Montenegro
+179,   North Macedonia
+180,   Portugal
+181,   San Marino
+182,   Serbia*
+183,   Slovenia
+184,   Spain*
+185,  Western Europe
+186,   Austria
+187,   Belgium
+188,   France*
+189,   Germany
+190,   Liechtenstein
+191,   Luxembourg
+192,   Monaco
+193,   Netherlands*
+194,   Switzerland
+195, LATIN AMERICA AND THE CARIBBEAN
+196,  Caribbean
+197,   Anguilla*
+198,   Antigua and Barbuda
+199,   Aruba*
+200,   Bahamas
+201,   Barbados
+202,"   Bonaire, Sint Eustatius and Saba*"
+203,   British Virgin Islands*
+204,   Cayman Islands*
+205,   Cuba
+206,   Curaçao*
+207,   Dominica
+208,   Dominican Republic
+209,   Grenada
+210,   Guadeloupe*
+211,   Haiti
+212,   Jamaica
+213,   Martinique*
+214,   Montserrat*
+215,   Puerto Rico*
+216,   Saint Barthélemy*
+217,   Saint Kitts and Nevis
+218,   Saint Lucia
+219,   Saint Martin (French part)*
+220,   Saint Vincent and the Grenadines
+221,   Sint Maarten (Dutch part)*
+222,   Trinidad and Tobago
+223,   Turks and Caicos Islands*
+224,   United States Virgin Islands*
+225,  Central America
+226,   Belize
+227,   Costa Rica
+228,   El Salvador
+229,   Guatemala
+230,   Honduras
+231,   Mexico
+232,   Nicaragua
+233,   Panama
+234,  South America
+235,   Argentina
+236,   Bolivia (Plurinational State of)
+237,   Brazil
+238,   Chile
+239,   Colombia
+240,   Ecuador
+241,   Falkland Islands (Malvinas)*
+242,   French Guiana*
+243,   Guyana
+244,   Paraguay
+245,   Peru
+246,   Suriname
+247,   Uruguay
+248,   Venezuela (Bolivarian Republic of)
+249, NORTHERN AMERICA
+250,   Bermuda*
+251,   Canada
+252,   Greenland*
+253,   Saint Pierre and Miquelon*
+254,   United States of America*
+255, OCEANIA 
+257,   Australia*
+258,   New Zealand*
+259,  Melanesia
+260,   Fiji
+261,   New Caledonia*
+262,   Papua New Guinea
+263,   Solomon Islands
+264,   Vanuatu
+265,  Micronesia
+266,   Guam*
+267,   Kiribati
+268,   Marshall Islands
+269,   Micronesia (Fed. States of)
+270,   Nauru
+271,   Northern Mariana Islands*
+272,   Palau
+273,  Polynesia*
+274,   American Samoa*
+275,   Cook Islands*
+276,   French Polynesia*
+277,   Niue*
+278,   Samoa
+279,   Tokelau*
+280,   Tonga
+281,   Tuvalu
+282,   Wallis and Futuna Islands*
