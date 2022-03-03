@@ -21,17 +21,37 @@ OUTPUT_YEARLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-yearly.csv")
 OUTPUT_MONTHLY_FILE = os.path.join(READY_DIR, "eia_natural-resources-monthly.csv")
 # Number of significant figures to assume for the values of all variables in output data.
 N_SIGNIFICANT_FIGURES = 4
-# Conversion from billion cubic feet to cubic meters.
+# Conversion of units, following the definitions at: https://www.eia.gov/state/seds/sep_prices/notes/pr_metric.pdf
+# * Conversion factor from billion cubic feet (bcf) to cubic meters.
+#   Given that 1 feet = 0.3048 meters,
+#   1 bcf = 1 billion cubic feet * (0.3048 meters / feet)**3 * (1e9 / billion) =
+#   = 2.832e7 cubic meters
 BCF_TO_CUBIC_METERS = 2.832e7
-# Conversion from trillion cubic feet to cubic meters.
+# * Conversion factor from trillion cubic feet (tcf) to cubic meters.
+#   Given that 1 feet = 0.3048 cubic meters,
+#   1 tcf = 1 trillion cubic feet * (0.3048 meters / feet)**3 * (1e12 / trillion) =
+#   = 2.832e10 cubic meters
 TCF_TO_CUBIC_METERS = 2.832e10
-# Conversion from thousand short tons (MST) to tonnes.
+# * Conversion factor from thousand short tons (MST) to tonnes.
+#   Given that 1 US (short) ton = 0.9071847 (metric) tonnes,
+#   1 MST = 1 thousand short tons * (0.9071847 tonnes / short tons) * (1e3 / thousand) =
+#   = 9.072e2 tonnes
 MST_TO_TONNES = 9.072e2
-# Convert from thousand barrels per day (Mb/d) to cubic meters per year.
+# * Conversion factor from thousand barrels per day (Mb/d) to cubic meters per year.
+#   Given that 1 barrel = 0.1589873 cubic meters, and given that 1 (Julian) year = 365.25 days,
+#   1 Mb/d = 1 thousand barrels / day * (0.1589873 cubic meters / barrel) * (1e3 / thousand) * (365.25 days / year) =
+#   = 5.807e+04 cubic meters / year
 MBD_TO_CUBIC_METERS_PER_YEAR = 5.807e+04
-# Convert from billion barrels (billion b) to cubic meters.
+# * Conversion factor from billion barrels (billion b) to cubic meters.
+#   Given that 1 barrel = 0.1589873 cubic meters,
+#   1 billion b = 1 billion barrels * (0.1589873 cubic meters / barrel) * (1e9 / billion) =
+#   = 1.590e+08 cubic meters
 BB_TO_CUBIC_METERS = 1.590e+08
-# Convert from thousand barrels per day (Mb/d) to cubic meters per month.
+# * Conversion factor from thousand barrels per day (Mb/d) to cubic meters per month.
+#   Given that 1 barrel = 0.1589873 cubic meters, and given that 1 average month in a (Julian) year = 365.25 / 12 days,
+#   1 Mb/d = 1 thousand barrels per day * (0.1589873 cubic meters / barrel) * (1e3 / thousand) * (365.25 days / year) *
+#   * (1 year / 12 months) =
+#   = 4.839e+03 cubic meters / month
 MBD_TO_CUBIC_METERS_PER_MONTH = 4.839e+03
 
 
