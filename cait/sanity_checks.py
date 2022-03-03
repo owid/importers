@@ -205,7 +205,7 @@ class SanityChecksOnSingleDataset(Check):
             set(self.data[self.name["country"]])
             - set(self.population[self.name["country"]])
         )
-        warnings = pd.DataFrame({"country": missing_countries})
+        warnings = pd.DataFrame({self.name["country"]: missing_countries})
 
         return warnings
 
