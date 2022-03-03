@@ -20,6 +20,7 @@ from ihme_gbd.ihme_gbd_risk import (
     NAMESPACE,
     OUTPATH,
     CLEAN_ALL_VARIABLES,
+    UPDATE_EXISTING_DATA_VERSION,
 )
 
 from ihme_gbd.ihme_gbd_risk import download, clean
@@ -55,6 +56,7 @@ def main(download_data, clean_data, import_data):
             outpath=OUTPATH,
             namespace=NAMESPACE,
             fields=FILTER_FIELDS,
+            update_existing_data=UPDATE_EXISTING_DATA_VERSION,
         )
     if clean_data:
         clean.main()
