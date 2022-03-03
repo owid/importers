@@ -217,6 +217,7 @@ def create_variables(
     fields = list(filter(r.match, filter_fields))
 
     field_drop = list(filter(rd.match, fields))
+    field_drop = [w.replace("_name", "") for w in field_drop]
 
     ch_vars = list_variables_to_clean(configpath)
 
