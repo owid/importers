@@ -1,3 +1,4 @@
+from ihme_gbd.ihme_gbd_cause import UPDATE_EXISTING_DATA_VERSION
 from ihme_gbd.ihme_gbd_prevalence import URL_STUB
 import os
 
@@ -50,3 +51,4 @@ FILTER_FIELDS = [
 ]
 COUNTRY_COL = "location"
 CALCULATE_OWID_VARS = False
+UPDATE_EXISTING_DATA_VERSION = True

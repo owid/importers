@@ -7,6 +7,7 @@ Usage:
 
     python -m ihme_gbd.ihme_gbd_mental_health.main --skip_download --skip_clean
 """
+from turtle import up
 import click
 import re
 from ihme_gbd.ihme_gbd_mental_health import (
@@ -18,6 +19,7 @@ from ihme_gbd.ihme_gbd_mental_health import (
     NAMESPACE,
     OUTPATH,
     CLEAN_ALL_VARIABLES,
+    UPDATE_EXISTING_DATA_VERSION,
 )
 
 from ihme_gbd.ihme_gbd_mental_health import download, clean
@@ -53,6 +55,7 @@ def main(download_data, clean_data, import_data):
             outpath=OUTPATH,
             namespace=NAMESPACE,
             fields=FILTER_FIELDS,
+            update_existing_data=UPDATE_EXISTING_DATA_VERSION,
         )
     if clean_data:
         clean.main()
