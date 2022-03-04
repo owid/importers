@@ -317,6 +317,9 @@ def load_oil_data():
 def add_percentage_columns(combined):
     """Add percentage columns (e.g. share of coal consumption that is imported) to data.
 
+    NOTE: We decided to not use these columns, since we are ignoring the effect of trading. For example, the percentage
+    of consumed gas that is imported may be larger than 100% (because part of that imported gas is exported).
+
     Parameters
     ----------
     combined : pd.DataFrame
@@ -532,8 +535,8 @@ def generate_yearly_dataset():
     print("* Combining yearly data.")
     combined = merge_dataframes(all_data)
 
-    print("* Adding percentage columns.")
-    combined = add_percentage_columns(combined=combined)
+    # print("* Adding percentage columns.")
+    # combined = add_percentage_columns(combined=combined)
 
     print("* Add per-capita columns.")
     combined = add_per_capita_columns(data=combined)

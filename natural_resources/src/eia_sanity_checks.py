@@ -15,6 +15,7 @@ from natural_resources.src import READY_DIR, SANITY_CHECKS_DIR
 from natural_resources.src.eia import load_population_dataset
 
 # TODO: Move sanity checks module outside of cait folder, to a shared folder.
+# TODO: Check that imports + production does not differ much from exports + consumption.
 
 # Date tag and output file for visual inspection of potential issues with the dataset.
 DATE_TAG = datetime.now().strftime("%Y-%m-%d")
@@ -31,21 +32,45 @@ EXPORT_INTERACTIVE_PLOTS = False
 MAX_NUM_PLOTS = 150
 
 all_columns = [
-    'Entity', 'Year', 'Population', 'natural_gas_production', 'natural_gas_consumption', 'natural_gas_imports',
-    'natural_gas_exports', 'natural_gas_reserves', 'coal_production', 'coal_consumption', 'coal_imports',
-    'coal_exports', 'coal_reserves', 'oil_production',
-    'oil_consumption', 'oil_imports', 'oil_exports', 'oil_reserves',
-    'share_of_coal_consumption_imported',
-    'share_of_gas_consumption_imported',
-    'share_of_coal_production_exported', 'share_of_gas_production_exported',
-    'share_of_oil_production_exported', 'natural_gas_production_per_capita',
-    'natural_gas_consumption_per_capita', 'natural_gas_imports_per_capita',
-    'natural_gas_exports_per_capita', 'natural_gas_reserves_per_capita',
-    'coal_production_per_capita', 'coal_consumption_per_capita',
-    'coal_imports_per_capita', 'coal_exports_per_capita',
-    'coal_reserves_per_capita', 'oil_production_per_capita',
-    'oil_consumption_per_capita', 'oil_imports_per_capita',
-    'oil_exports_per_capita', 'oil_reserves_per_capita']
+    'Entity',
+    'Year',
+    'Population',
+    'natural_gas_production',
+    'natural_gas_consumption',
+    'natural_gas_imports',
+    'natural_gas_exports',
+    'natural_gas_reserves',
+    'coal_production',
+    'coal_consumption',
+    'coal_imports',
+    'coal_exports',
+    'coal_reserves',
+    'oil_production',
+    'oil_consumption',
+    'oil_imports',
+    'oil_exports',
+    'oil_reserves',
+    # 'share_of_coal_consumption_imported',
+    # 'share_of_gas_consumption_imported',
+    # 'share_of_coal_production_exported',
+    # 'share_of_gas_production_exported',
+    # 'share_of_oil_production_exported',
+    'natural_gas_production_per_capita',
+    'natural_gas_consumption_per_capita',
+    'natural_gas_imports_per_capita',
+    'natural_gas_exports_per_capita',
+    'natural_gas_reserves_per_capita',
+    'coal_production_per_capita',
+    'coal_consumption_per_capita',
+    'coal_imports_per_capita',
+    'coal_exports_per_capita',
+    'coal_reserves_per_capita',
+    'oil_production_per_capita',
+    'oil_consumption_per_capita',
+    'oil_imports_per_capita',
+    'oil_exports_per_capita',
+    'oil_reserves_per_capita'
+]
 NAME = {
     'country': 'Entity',
     'year': 'Year',
@@ -77,11 +102,11 @@ RANGES = {
     'oil_imports': default_range,
     'oil_exports': default_range,
     'oil_reserves': default_range,
-    'share_of_coal_consumption_imported': default_range_percentage,
-    'share_of_gas_consumption_imported': default_range_percentage,
-    'share_of_coal_production_exported': default_range_percentage,
-    'share_of_gas_production_exported': default_range_percentage,
-    'share_of_oil_production_exported': default_range_percentage,
+    # 'share_of_coal_consumption_imported': default_range_percentage,
+    # 'share_of_gas_consumption_imported': default_range_percentage,
+    # 'share_of_coal_production_exported': default_range_percentage,
+    # 'share_of_gas_production_exported': default_range_percentage,
+    # 'share_of_oil_production_exported': default_range_percentage,
     'natural_gas_production_per_capita': {
         'min': 0,
         'max': 10000,
