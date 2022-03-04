@@ -94,5 +94,6 @@ def migration_matrix_by_destination():
     )
 
     res = df_both.apply(lambda x: x.fillna(""))
+    res.columns = res.columns.str.replace(" ", "").str.lower()
 
     res.to_csv("migration/output/Migration_matrix.csv", index=False)
