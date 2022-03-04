@@ -1,3 +1,5 @@
+# to run: python -m migration.src.main
+
 import glob
 import pandas as pd
 from functools import reduce
@@ -32,10 +34,6 @@ def extract_migration_data() -> None:
     un_desa.international_migrants_by_origin()
     un_desa.refugees_by_destination()
     un_desa.refugees_by_destination_per_1000()
-    un_desa.average_annual_change_international_migrants_by_destination()
-    un_desa.average_annual_change_international_migrants_by_destination_per_100000()
-    un_desa.average_annual_change_international_migrants_by_origin()
-    un_desa.average_annual_change_international_migrants_by_origin_per_100000()
     un_desa.net_migration_rate()
     un_desa.net_number_migrants()
     un_desa.child_migrants_by_destination()
@@ -84,11 +82,9 @@ def transform():
         "undesa_refugees_by_destination_per_1000",
         "share_idmc_total_internal_displacement_disaster",
         "unhcr_resettlement_arrivals_by_destination_per_100000",
-        "undesa_annual_average_change_in_international_migrants_by_origin_per_100000",
         "idmc_share_annual_internal_displacement_conflict",
         "unhcr_asylum_seekers_by_origin_per_100000",
         "unicef_under_eighteen_migrants_by_destination_per_1000",
-        "undesa_annual_average_change_in_international_migrants_by_destination_per_100000",
         "share_idmc_total_internal_displacement_conflict",
         "undesa_share_of_population_that_are_international_migrants_by_destination",
         "idmc_share_annual_internal_displacement_disaster",
