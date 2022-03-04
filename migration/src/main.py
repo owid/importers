@@ -9,11 +9,13 @@ import migration.src.un_desa as un_desa
 import migration.src.unicef as unicef
 import migration.src.idmc as idmc
 import migration.src.wb_wdi as wdi
+import migration.src.undesa_matrix as mig_matrix
 
 
 def main():
     extract_migration_data()
     transform()
+    mig_matrix.migration_matrix_by_destination()
 
 
 def extract_migration_data() -> None:
