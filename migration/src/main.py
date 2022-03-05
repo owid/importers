@@ -97,6 +97,7 @@ def transform():
     ]
     year_df[cols] = year_df[cols].round(3)
 
+    year_df.sort_values(by=["entity", "year"], ascending=True, inplace=True)
     year_df.to_csv("migration/output/Migration.csv", index=False)
 
 
