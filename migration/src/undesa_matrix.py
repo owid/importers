@@ -2,74 +2,28 @@ import pandas as pd
 import os.path
 
 from migration.src.utils import standardise_countries
-from migration.src.un_desa import (
-    international_migrants_by_destination,
-    international_migrants_by_origin,
-)
 
 
-def add_selected_country_value(df: pd.DataFrame) -> pd.DataFrame:
-
-    orig = international_migrants_by_origin()
-    dest = international_migrants_by_destination()
+def add_selected_country_value(
+    df: pd.DataFrame, total_origin: pd.DataFrame, total_dest: pd.DataFrame
+) -> pd.DataFrame:
 
     countries = df["Entity"].drop_duplicates()
-
     for country in countries:
-        df_sub = df.loc[
-            df["Entity"] == country, ["Entity", "Year", country + "_origin"]
-        ]
-        orig_sub = orig.loc[
-            orig["Country"] == country,
-            ["Country", "Year", "undesa_international_migrants_by_origin"],
-        ]
-        orig_comb = pd.merge(
-            df_sub.assign(Year=df_sub.Year.astype(str)),
-            orig_sub.assign(Year=orig_sub.Year.astype(str)),
-            left_on=["Entity", "Year"],
-            right_on=["Country", "Year"],
-            how="left",
+        print(country)
+        df.loc[df["Entity"] == country, country + "_origin"] = total_origin.loc[
+            total_origin["Entity"] == country, "total_origin"
+        ].to_list()
+        df.loc[df["Entity"] == country, country + "_origin"] = (
+            df.loc[df["Entity"] == country, country + "_origin"] * -1
         )
-        orig_comb = orig_comb[
-            ["Entity", "Year", "undesa_international_migrants_by_origin"]
-        ]
-        orig_comb.rename(
-            columns={"undesa_international_migrants_by_origin": country + "_origin"},
-            inplace=True,
-        )
-        orig_comb[country + "_origin"] * -1
-        df.loc[
-            df["Entity"] == country, ["Entity", "Year", country + "_origin"]
-        ] = orig_comb
 
-        # destination
-        df_sub = df.loc[
-            df["Entity"] == country, ["Entity", "Year", country + "_destination"]
-        ]
-        dest_sub = dest.loc[
-            dest["Country"] == country,
-            ["Country", "Year", "undesa_international_migrants_by_destination"],
-        ]
-        dest_comb = pd.merge(
-            df_sub.assign(Year=df_sub.Year.astype(str)),
-            dest_sub.assign(Year=orig_sub.Year.astype(str)),
-            left_on=["Entity", "Year"],
-            right_on=["Country", "Year"],
-            how="left",
+        df.loc[df["Entity"] == country, country + "_destination"] = total_dest.loc[
+            total_dest["Entity"] == country, "total_destination"
+        ].to_list()
+        df.loc[df["Entity"] == country, country + "_destination"] = (
+            df.loc[df["Entity"] == country, country + "_origin"] * -1
         )
-        dest_comb = dest_comb[
-            ["Entity", "Year", "undesa_international_migrants_by_destination"]
-        ]
-        dest_comb.rename(
-            columns={
-                "undesa_international_migrants_by_destination": country + "_destination"
-            },
-            inplace=True,
-        )
-        dest_comb[country + "_destination"] * -1
-        df.loc[
-            df["Entity"] == country, ["Entity", "Year", country + "_destination"]
-        ] = dest_comb
 
     return df
 
@@ -100,7 +54,7 @@ def migration_matrix():
     df["Region, development group, country or area of origin"] = standardise_countries(
         df["Region, development group, country or area of origin"]
     )
-
+    orig_total, dest_total = get_total_origin_destination(df)
     df = remove_regions(df)
 
     df["destination_origin"] = (
@@ -159,12 +113,76 @@ def migration_matrix():
         df_wide_origin, df_wide_destination, on=["Entity", "Year"], how="outer"
     )
 
-    df_both = add_selected_country_value(df=df_both)
+    df_both = add_selected_country_value(
+        df=df_both, total_origin=orig_total, total_dest=dest_total
+    )
 
     res = df_both.apply(lambda x: x.fillna(""))
     res.columns = res.columns.str.replace(" ", "").str.lower()
 
     res.to_csv("migration/output/Migration_matrix.csv", index=False)
+
+
+def get_total_origin_destination(df: pd.DataFrame):
+    orig_df = df[
+        [
+            "Region, development group, country or area of destination",
+            "Region, development group, country or area of origin",
+            "1990",
+            "1995",
+            "2000",
+            "2005",
+            "2010",
+            "2015",
+            "2020",
+        ]
+    ]
+    orig_df_tot = orig_df[
+        orig_df["Region, development group, country or area of destination"] == "World"
+    ]
+    orig_total = orig_df_tot.melt(
+        id_vars=["Region, development group, country or area of origin"],
+        value_vars=["1990", "1995", "2000", "2005", "2010", "2015", "2020"],
+    )
+    orig_total.rename(
+        columns={
+            "Region, development group, country or area of origin": "Entity",
+            "variable": "Year",
+            "value": "total_origin",
+        },
+        inplace=True,
+    )
+
+    dest_df = df[
+        [
+            "Region, development group, country or area of destination",
+            "Region, development group, country or area of origin",
+            "1990",
+            "1995",
+            "2000",
+            "2005",
+            "2010",
+            "2015",
+            "2020",
+        ]
+    ]
+    dest_df_tot = dest_df[
+        dest_df["Region, development group, country or area of origin"] == "World"
+    ]
+    dest_total = dest_df_tot.melt(
+        id_vars=["Region, development group, country or area of destination"],
+        value_vars=["1990", "1995", "2000", "2005", "2010", "2015", "2020"],
+    )
+    dest_total.rename(
+        columns={
+            "Region, development group, country or area of destination": "Entity",
+            "variable": "Year",
+            "value": "total_destination",
+        },
+        inplace=True,
+    )
+
+    return orig_total, dest_total
 
 
 def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
@@ -220,4 +238,5 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
         ~df["Region, development group, country or area of destination"].isin(regions)
     ]
     df = df[~df["Region, development group, country or area of origin"].isin(regions)]
+
     return df
