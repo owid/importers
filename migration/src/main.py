@@ -33,6 +33,7 @@ def extract_migration_data() -> None:
     unhcr.resettlement_arrivals_by_origin()
     unhcr.resettlement_arrivals_by_origin_per_100000()
     un_desa.share_of_pop_international_migrants_by_destination()
+    un_desa.share_of_pop_international_migrants_by_origin()
     un_desa.international_migrants_by_origin()
     un_desa.refugees_by_destination()
     un_desa.refugees_by_destination_per_1000()
@@ -88,12 +89,13 @@ def transform():
         "unhcr_asylum_seekers_by_origin_per_100000",
         "unicef_under_eighteen_migrants_by_destination_per_1000",
         "share_idmc_total_internal_displacement_conflict",
-        "undesa_share_of_population_that_are_international_migrants_by_destination",
         "idmc_share_annual_internal_displacement_disaster",
         "undesa_child_migrants_by_destination_under_15_per_1000",
         "unhcr_refugees_by_origin_per_1000",
         "unhcr_resettlement_arrivals_by_origin_per_100000",
         "unhcr_asylum_seekers_by_destination_per_100000",
+        "undesa_share_of_population_that_are_international_migrants_by_origin",
+        "undesa_share_of_population_that_are_international_migrants_by_destination",
     ]
     year_df[cols] = year_df[cols].round(3)
 

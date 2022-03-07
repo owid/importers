@@ -8,11 +8,11 @@ def add_selected_country_value(df: pd.DataFrame) -> pd.DataFrame:
     if "origin" in df.columns:
         countries = df["origin"].drop_duplicates()
         for country in countries:
-            df.loc[df["origin"] == country, country] = "Selected country"
+            df.loc[df["origin"] == country, country] = -1
     if "destination" in df.columns:
         countries = df["destination"].drop_duplicates()
         for country in countries:
-            df.loc[df["destination"] == country, country] = "Selected country"
+            df.loc[df["destination"] == country, country] = -1
     return df
 
 
