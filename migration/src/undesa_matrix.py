@@ -2,25 +2,74 @@ import pandas as pd
 import os.path
 
 from migration.src.utils import standardise_countries
+from migration.src.un_desa import (
+    international_migrants_by_destination,
+    international_migrants_by_origin,
+)
 
 
 def add_selected_country_value(df: pd.DataFrame) -> pd.DataFrame:
+
+    orig = international_migrants_by_origin()
+    dest = international_migrants_by_destination()
+
     countries = df["Entity"].drop_duplicates()
-    # orig_cols = [col for col in df.columns if "_origin" in col]
-    # dest_cols = [col for col in df.columns if "_destination" in col]
 
     for country in countries:
-        temp_orig_cols = [col for col in df.columns if "_origin" in col]
-        temp_orig_cols.remove(country + "_origin")
+        df_sub = df.loc[
+            df["Entity"] == country, ["Entity", "Year", country + "_origin"]
+        ]
+        orig_sub = orig.loc[
+            orig["Country"] == country,
+            ["Country", "Year", "undesa_international_migrants_by_origin"],
+        ]
+        orig_comb = pd.merge(
+            df_sub.assign(Year=df_sub.Year.astype(str)),
+            orig_sub.assign(Year=orig_sub.Year.astype(str)),
+            left_on=["Entity", "Year"],
+            right_on=["Country", "Year"],
+            how="left",
+        )
+        orig_comb = orig_comb[
+            ["Entity", "Year", "undesa_international_migrants_by_origin"]
+        ]
+        orig_comb.rename(
+            columns={"undesa_international_migrants_by_origin": country + "_origin"},
+            inplace=True,
+        )
+        orig_comb[country + "_origin"] * -1
+        df.loc[
+            df["Entity"] == country, ["Entity", "Year", country + "_origin"]
+        ] = orig_comb
 
-        temp_dest_cols = [col for col in df.columns if "_destination" in col]
-        temp_dest_cols.remove(country + "_destination")
-        df.loc[df["Entity"] == country, country + "_destination"] = (
-            df.loc[df["Entity"] == country, temp_orig_cols].sum(axis=1) * -1
+        # destination
+        df_sub = df.loc[
+            df["Entity"] == country, ["Entity", "Year", country + "_destination"]
+        ]
+        dest_sub = dest.loc[
+            dest["Country"] == country,
+            ["Country", "Year", "undesa_international_migrants_by_destination"],
+        ]
+        dest_comb = pd.merge(
+            df_sub.assign(Year=df_sub.Year.astype(str)),
+            dest_sub.assign(Year=orig_sub.Year.astype(str)),
+            left_on=["Entity", "Year"],
+            right_on=["Country", "Year"],
+            how="left",
         )
-        df.loc[df["Entity"] == country, country + "_origin"] = (
-            df.loc[df["Entity"] == country, temp_dest_cols].sum(axis=1) * -1
+        dest_comb = dest_comb[
+            ["Entity", "Year", "undesa_international_migrants_by_destination"]
+        ]
+        dest_comb.rename(
+            columns={
+                "undesa_international_migrants_by_destination": country + "_destination"
+            },
+            inplace=True,
         )
+        dest_comb[country + "_destination"] * -1
+        df.loc[
+            df["Entity"] == country, ["Entity", "Year", country + "_destination"]
+        ] = dest_comb
 
     return df
 
