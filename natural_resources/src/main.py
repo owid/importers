@@ -1,7 +1,6 @@
 """Load all intermediate datasets and generate natural resources dataset.
 
 """
-import eia
 
 from natural_resources.src import eia
 from natural_resources.src import OUTPUT_DIR
