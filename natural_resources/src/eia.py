@@ -200,23 +200,23 @@ def load_gas_data():
 
     """
     gas_data = [
-        # Dry natural gas production (billion cubic meters).
+        # Dry natural gas production (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_production",
             conversion_factor=BCF_TO_CUBIC_METERS),
-        # Dry natural gas consumption (billion cubic meters).
+        # Dry natural gas consumption (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_consumption",
             conversion_factor=BCF_TO_CUBIC_METERS),
-        # Dry natural gas imports (billion cubic meters).
+        # Dry natural gas imports (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_imports",
             conversion_factor=BCF_TO_CUBIC_METERS),
-        # Dry natural gas exports (billion cubic meters).
+        # Dry natural gas exports (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_exports",
             conversion_factor=BCF_TO_CUBIC_METERS),
-        # Dry natural gas reserves (billion cubic meters).
+        # Dry natural gas reserves (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_reserves",
             conversion_factor=TCF_TO_CUBIC_METERS),
@@ -238,31 +238,31 @@ def load_coal_data():
 
     """
     coal_data = [
-        # Coal production (million tonnes).
+        # Coal production (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_production",
             conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        # Coal consumption (million tonnes).
+        # Coal consumption (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_consumption",
             conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        # Coal imports (million tonnes).
+        # Coal imports (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_imports",
             conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
             ),
-        # Coal exports (million tonnes).
+        # Coal exports (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_exports",
             conversion_factor=MST_TO_TONNES,
             relevant_entity='Coal (Mst)',
         ),
-        # Coal reserves (million tonnes).
+        # Coal reserves (tonnes).
         load_simple_dataset(
             variable_name="coal_reserves",
             conversion_factor=MST_TO_TONNES),
@@ -284,25 +284,25 @@ def load_oil_data():
 
     """
     oil_data = [
-        # Crude oil production, including lease condensate (million cubic meters).
+        # Crude oil production, including lease condensate (cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_production",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
             relevant_entity="Crude oil including lease condensate (Mb/d)"),
-        # Consumption of refined petroleum products (million cubic meters).
+        # Consumption of refined petroleum products (cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_consumption",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
             relevant_entity="Consumption (Mb/d)"),
-        # Crude oil imports, including lease condensate (million cubic meters).
+        # Crude oil imports, including lease condensate (cubic meters).
         load_simple_dataset(
             variable_name="oil_imports",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
-        # Crude oil exports, including lease condensate (million cubic meters).
+        # Crude oil exports, including lease condensate (cubic meters).
         load_simple_dataset(
             variable_name="oil_exports",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
-        # Crude oil reserves, including lease condensate (million cubic meters).
+        # Crude oil reserves, including lease condensate (cubic meters).
         load_simple_dataset(
             variable_name="oil_reserves",
             conversion_factor=BB_TO_CUBIC_METERS),
@@ -490,7 +490,7 @@ def load_oil_monthly_dataset():
         Monthly data of oil production in a convenient format and units.
 
     """
-    # Monthly production of crude oil including lease condensate (million cubic meters).
+    # Monthly production of crude oil including lease condensate (cubic meters).
     conversion_factor = MBD_TO_CUBIC_METERS_PER_MONTH
     variable_name = "oil_production_monthly"
     relevant_entity = "Crude oil including lease condensate (Mb/d)"
