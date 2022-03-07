@@ -376,6 +376,28 @@ def add_percentage_columns(combined):
     return combined_added
 
 
+def add_net_imports(data):
+    """Add net imports to data.
+
+    Parameters
+    ----------
+    data : pd.DataFrame
+        Original data.
+
+    Returns
+    -------
+    data : pd.DataFrame
+        Original data after including columns on net imports.
+
+    """
+    data = data.copy()
+
+    for variable in ['natural_gas', 'coal', 'oil']:
+        data[f'{variable}_net_imports'] = data[f'{variable}_imports'] - data[f'{variable}_exports']
+
+    return data
+
+
 def add_per_capita_columns(data):
     """Add per-capita columns to data.
 
@@ -537,6 +559,9 @@ def generate_yearly_dataset():
 
     # print("* Adding percentage columns.")
     # combined = add_percentage_columns(combined=combined)
+
+    print("* Adding net imports.")
+    combined = add_net_imports(data=combined)
 
     print("* Add per-capita columns.")
     combined = add_per_capita_columns(data=combined)
