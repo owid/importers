@@ -15,7 +15,7 @@ import migration.src.undesa_matrix as mig_matrix
 def main():
     extract_migration_data()
     transform()
-    mig_matrix.migration_matrix_by_destination()
+    mig_matrix.migration_matrix()
 
 
 def extract_migration_data() -> None:
@@ -65,7 +65,6 @@ def transform():
     for file in glob.glob("migration/ready/*.csv"):
         print(file)
         tmp_df = pd.read_csv(file)
-        # print(tmp_df.shape)
         year_dataframes.append(tmp_df)
 
     year_df = reduce(
