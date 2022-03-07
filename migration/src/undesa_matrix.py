@@ -6,15 +6,20 @@ from migration.src.utils import standardise_countries
 
 def add_selected_country_value(df: pd.DataFrame) -> pd.DataFrame:
     countries = df["Entity"].drop_duplicates()
-    orig_cols = [col for col in df.columns if "_origin" in col]
-    dest_cols = [col for col in df.columns if "_destination" in col]
+    # orig_cols = [col for col in df.columns if "_origin" in col]
+    # dest_cols = [col for col in df.columns if "_destination" in col]
 
     for country in countries:
+        temp_orig_cols = [col for col in df.columns if "_origin" in col]
+        temp_orig_cols.remove(country + "_origin")
+
+        temp_dest_cols = [col for col in df.columns if "_destination" in col]
+        temp_dest_cols.remove(country + "_destination")
         df.loc[df["Entity"] == country, country + "_destination"] = (
-            df.loc[df["Entity"] == country, orig_cols].sum(axis=1) * -1
+            df.loc[df["Entity"] == country, temp_orig_cols].sum(axis=1) * -1
         )
         df.loc[df["Entity"] == country, country + "_origin"] = (
-            df.loc[df["Entity"] == country, dest_cols].sum(axis=1) * -1
+            df.loc[df["Entity"] == country, temp_dest_cols].sum(axis=1) * -1
         )
 
     return df
@@ -105,7 +110,7 @@ def migration_matrix():
         df_wide_origin, df_wide_destination, on=["Entity", "Year"], how="outer"
     )
 
-    df_both = add_selected_country_value(df_both)
+    df_both = add_selected_country_value(df=df_both)
 
     res = df_both.apply(lambda x: x.fillna(""))
     res.columns = res.columns.str.replace(" ", "").str.lower()
