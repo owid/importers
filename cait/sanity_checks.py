@@ -258,11 +258,15 @@ class SanityChecksOnSingleDataset(Check):
         for variable in ranges:
             min_value = ranges[variable]["min"]
             if min_value == "World":
-                min_value = self.data[(self.data[self._get_name("country")] == "World")][
-                    self._get_name(variable)
-                ].min()
+                min_value = self.data[
+                    (self.data[self._get_name("country")] == "World")
+                ][self._get_name(variable)].min()
             too_low_rows = self.data[(self.data[self._get_name(variable)] < min_value)][
-                [self._get_name("country"), self._get_name("year"), self._get_name(variable)]
+                [
+                    self._get_name("country"),
+                    self._get_name("year"),
+                    self._get_name(variable),
+                ]
             ]
             if len(too_low_rows) > 0:
                 too_low = (
@@ -286,11 +290,17 @@ class SanityChecksOnSingleDataset(Check):
         for variable in ranges:
             max_value = ranges[variable]["max"]
             if max_value == "World":
-                max_value = self.data[(self.data[self._get_name("country")] == "World")][
-                    self._get_name(variable)
-                ].max()
-            too_high_rows = self.data[(self.data[self._get_name(variable)] > max_value)][
-                [self._get_name("country"), self._get_name("year"), self._get_name(variable)]
+                max_value = self.data[
+                    (self.data[self._get_name("country")] == "World")
+                ][self._get_name(variable)].max()
+            too_high_rows = self.data[
+                (self.data[self._get_name(variable)] > max_value)
+            ][
+                [
+                    self._get_name("country"),
+                    self._get_name("year"),
+                    self._get_name(variable),
+                ]
             ]
             if len(too_high_rows) > 0:
                 too_high = (
@@ -505,11 +515,15 @@ class SanityChecksComparingTwoDatasets(Check):
         errors = pd.DataFrame(
             {self._get_name("country"): [], "Variable": [], error_name: []}
         )
-        for country in tqdm(self.comparison[self._get_name("country")].unique().tolist()):
+        for country in tqdm(
+            self.comparison[self._get_name("country")].unique().tolist()
+        ):
             for variable in columns:
                 min_relevant_value = self.variable_ranges[variable]["min_relevant"]
                 comparison_pivot = (
-                    self.comparison[self.comparison[self._get_name("country")] == country]
+                    self.comparison[
+                        self.comparison[self._get_name("country")] == country
+                    ]
                     .pivot(
                         index=self._get_name("year"),
                         columns="source",
