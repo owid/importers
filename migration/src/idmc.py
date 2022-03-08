@@ -1,9 +1,13 @@
-from operator import index
 import pandas as pd
 import requests
 import json
 
-from migration.src.utils import is_number, standardise_countries, owid_population
+from migration.src.utils import (
+    is_number,
+    standardise_countries,
+    owid_population,
+    five_year_moving_window,
+)
 
 
 def download_data() -> None:
@@ -29,9 +33,7 @@ def annual_internal_displacement_conflict():
         },
         inplace=True,
     )
-    df["idmc_annual_internal_displacement_conflict"] = df.groupby("Country")[
-        "idmc_annual_internal_displacement_conflict"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/idmc_annual_internal_displacement_conflict.csv", index=False
     )
@@ -84,9 +86,7 @@ def annual_internal_displacement_disaster():
         },
         inplace=True,
     )
-    df["idmc_annual_internal_displacement_disaster"] = df.groupby("Country")[
-        "idmc_annual_internal_displacement_disaster"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/idmc_annual_internal_displacement_disaster.csv", index=False
     )
@@ -139,9 +139,7 @@ def total_internal_displacement_conflict():
         },
         inplace=True,
     )
-    df["idmc_total_internal_displacement_conflict"] = df.groupby("Country")[
-        "idmc_total_internal_displacement_conflict"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/idmc_total_internal_displacement_conflict.csv", index=False
     )

@@ -1,7 +1,7 @@
 import requests, zipfile, io
 import pandas as pd
 import os.path
-from migration.src.utils import standardise_countries
+from migration.src.utils import standardise_countries, five_year_moving_window
 
 
 def remittances_received_share_gdp() -> pd.DataFrame:
@@ -35,9 +35,7 @@ def remittances_received_share_gdp() -> pd.DataFrame:
             "value": "wdi_remittances_received_share_gdp",
         }
     )
-    df["wdi_remittances_received_share_gdp"] = df.groupby("Country")[
-        "wdi_remittances_received_share_gdp"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv("migration/ready/wdi_remittances_received_share_gdp.csv", index=False)
 
 
@@ -73,9 +71,7 @@ def average_cost_sending_remittances_from_country() -> pd.DataFrame:
             "value": "wdi_average_cost_sending_remittances_from_country",
         }
     )
-    df["wdi_average_cost_sending_remittances_from_country"] = df.groupby("Country")[
-        "wdi_average_cost_sending_remittances_from_country"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/wdi_average_cost_sending_remittances_from_country.csv",
         index=False,
@@ -114,9 +110,7 @@ def average_cost_sending_remittances_to_country() -> pd.DataFrame:
             "value": "wdi_average_cost_sending_remittances_to_country",
         }
     )
-    df["wdi_average_cost_sending_remittances_to_country"] = df.groupby("Country")[
-        "wdi_average_cost_sending_remittances_to_country"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/wdi_average_cost_sending_remittances_to_country.csv",
         index=False,

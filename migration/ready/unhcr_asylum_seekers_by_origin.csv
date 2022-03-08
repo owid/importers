@@ -1,4001 +1,3184 @@
-Country,Year,unhcr_asylum_seekers_by_origin
-Unknown,1993,743601.0
-Unknown,1994,694120.5
-Unknown,1995,791566.3333333334
-Unknown,1996,837946.5
-Unknown,1997,875997.2
-Unknown,1998,922837.0
-Unknown,1999,999389.0
-Afghanistan,2000,40290.0
-Albania,2000,2817.0
-Algeria,2000,2320.0
-Angola,2000,5489.0
-Antigua and Barbuda,2000,6.0
-Egypt,2000,1151.0
-Argentina,2000,1559.0
-Armenia,2000,5228.0
-Australia,2000,5.0
-Azerbaijan,2000,5282.0
-Bahrain,2000,51.0
-Barbados,2000,8.0
-Burundi,2000,3626.0
-Belgium,2000,20.0
-Benin,2000,148.0
-Bangladesh,2000,3322.0
-Bahamas,2000,7.0
-Bhutan,2000,46.0
-Burkina Faso,2000,242.0
-Belarus,2000,766.0
-Bolivia,2000,121.0
-Brazil,2000,649.0
-Bosnia and Herzegovina,2000,4305.0
-Bulgaria,2000,1303.0
-Belize,2000,14.0
-Cambodia,2000,301.0
-Canada,2000,7.0
-Central African Republic,2000,54.0
-Chad,2000,2422.0
-China,2000,17178.0
-Chile,2000,159.0
-Cameroon,2000,1494.0
-Congo,2000,4142.0
-Democratic Republic of Congo,2000,19844.0
-Comoros,2000,96.0
-Colombia,2000,5003.0
-Costa Rica,2000,226.0
-Cuba,2000,3464.0
-Cape Verde,2000,13.0
-Cyprus,2000,10.0
-Czechia,2000,176.0
-Denmark,2000,5.0
-Djibouti,2000,142.0
-Dominica,2000,16.0
-Dominican Republic,2000,50.0
-Ecuador,2000,270.0
-Equatorial Guinea,2000,41.0
-Eritrea,2000,2559.0
-Estonia,2000,74.0
-Ethiopia,2000,14551.0
-Fiji,2000,1661.0
-Finland,2000,5.0
-France,2000,45.0
-Gabon,2000,13.0
-Gambia,2000,280.0
-Palestine,2000,538.0
-United Kingdom,2000,69.0
-Georgia,2000,1469.0
-Germany,2000,57.0
-Ghana,2000,989.0
-Guinea-Bissau,2000,689.0
-Greece,2000,25.0
-Grenada,2000,89.0
-Guatemala,2000,101803.0
-Guinea,2000,2523.0
-Guyana,2000,201.0
-Haiti,2000,19735.0
-Hong Kong,2000,8.0
-Honduras,2000,1187.0
-Croatia,2000,368.0
-Hungary,2000,1959.0
-Cote d'Ivoire,2000,678.0
-India,2000,9786.0
-Indonesia,2000,3618.0
-Iran,2000,20622.0
-Iraq,2000,40630.0
-Israel,2000,362.0
-Italy,2000,33.0
-Jamaica,2000,173.0
-Jordan,2000,551.0
-Japan,2000,11.0
-Kazakhstan,2000,739.0
-Kenya,2000,861.0
-Kyrgyzstan,2000,322.0
-South Korea,2000,359.0
-North Korea,2000,50.0
-Kuwait,2000,98.0
-Laos,2000,201.0
-Liberia,2000,4196.0
-Libya,2000,531.0
-Saint Lucia,2000,28.0
-Lebanon,2000,1538.0
-Sri Lanka,2000,6499.0
-Lithuania,2000,138.0
-Latvia,2000,107.0
-Madagascar,2000,15.0
-Mauritania,2000,1782.0
-North Macedonia,2000,505.0
-Moldova,2000,866.0
-Mexico,2000,13058.0
-Mali,2000,185.0
-Malaysia,2000,240.0
-Malawi,2000,5.0
-Mongolia,2000,597.0
-Morocco,2000,183.0
-Malta,2000,5.0
-Mauritius,2000,15.0
-Myanmar,2000,1013.0
-Namibia,2000,10.0
-Nepal,2000,444.0
-Netherlands,2000,132.0
-Niger,2000,250.0
-Nicaragua,2000,13136.0
-Nigeria,2000,3457.0
-Oman,2000,6.0
-Pakistan,2000,7201.0
-Panama,2000,50.0
-Paraguay,2000,16.0
-Peru,2000,2435.0
-Philippines,2000,1848.0
-Poland,2000,549.0
-Portugal,2000,73.0
-Qatar,2000,31.0
-Romania,2000,2466.0
-South Africa,2000,98.0
-Russia,2000,10597.0
-Rwanda,2000,24806.0
-El Salvador,2000,176478.0
-Saudi Arabia,2000,41.0
-Senegal,2000,914.0
-Seychelles,2000,12.0
-Singapore,2000,17.0
-Sierra Leone,2000,6862.0
-Solomon Islands,2000,23.0
-Somalia,2000,11971.0
-Spain,2000,21.0
-Serbia and Kosovo: S/RES/1244 (1999),2000,49001.0
-Vietnam,2000,1525.0
-Stateless,2000,2029.0
-Saint Kitts and Nevis,2000,5.0
-Sao Tome and Principe,2000,6.0
-Sudan,2000,19094.0
-Suriname,2000,48.0
-Slovakia,2000,796.0
-Slovenia,2000,19.0
-Sweden,2000,5.0
-Syria,2000,3730.0
-Tanzania,2000,801.0
-Thailand,2000,139.0
-Tajikistan,2000,635.0
-Turkmenistan,2000,15.0
-Timor-Leste,2000,19.0
-Togo,2000,1277.0
-Tonga,2000,22.0
-Trinidad and Tobago,2000,117.0
-Tunisia,2000,366.0
-Turkey,2000,10231.0
-United Arab Emirates,2000,8.0
-Uganda,2000,1050.0
-Unknown,2000,840493.0
-Ukraine,2000,3038.0
-Uruguay,2000,162.0
-United States,2000,86.0
-Uzbekistan,2000,372.0
-Saint Vincent and the Grenadines,2000,78.0
-Venezuela,2000,172.0
-Yemen,2000,848.0
-Zambia,2000,117.0
-Zimbabwe,2000,204.0
-Afghanistan,2001,35536.0
-Albania,2001,3395.5
-Algeria,2001,2533.0
-Andorra,2001,7.0
-Angola,2001,7668.5
-Antigua and Barbuda,2001,6.0
-Egypt,2001,1296.5
-Argentina,2001,1504.5
-Armenia,2001,5657.5
-Australia,2001,7.5
-Austria,2001,5.0
-Azerbaijan,2001,5511.0
-Bahrain,2001,28.0
-Barbados,2001,16.0
-Burundi,2001,3770.0
-Belgium,2001,19.0
-Benin,2001,165.0
-Bangladesh,2001,3383.0
-Bahamas,2001,16.5
-Bhutan,2001,55.5
-Burkina Faso,2001,242.0
-Belarus,2001,948.5
-Bolivia,2001,140.5
-Botswana,2001,5.0
-Brazil,2001,721.5
-Bosnia and Herzegovina,2001,4243.5
-Bulgaria,2001,1405.0
-Belize,2001,22.0
-Cambodia,2001,302.5
-Canada,2001,8.0
-Central African Republic,2001,203.5
-Chad,2001,2707.0
-China,2001,18480.5
-Chile,2001,179.0
-Cameroon,2001,1827.0
-Congo,2001,4200.0
-Democratic Republic of Congo,2001,24050.5
-Comoros,2001,89.0
-Colombia,2001,10235.0
-Costa Rica,2001,448.5
-Cuba,2001,3495.0
-Cape Verde,2001,16.0
-Cyprus,2001,9.0
-Czechia,2001,193.5
-Djibouti,2001,161.5
-Dominica,2001,19.5
-Dominican Republic,2001,87.0
-Ecuador,2001,352.5
-Equatorial Guinea,2001,38.0
-Eritrea,2001,2704.0
-Estonia,2001,86.0
-Ethiopia,2001,13428.0
-Fiji,2001,1789.5
-Finland,2001,5.0
-France,2001,52.0
-Gabon,2001,29.0
-Gambia,2001,290.5
-Palestine,2001,713.5
-United Kingdom,2001,73.0
-Georgia,2001,1997.0
-Germany,2001,54.5
-Ghana,2001,1042.0
-Guinea-Bissau,2001,718.5
-Greece,2001,37.0
-Grenada,2001,132.0
-Guatemala,2001,100672.5
-Guinea,2001,3190.0
-Guyana,2001,289.5
-Haiti,2001,20846.5
-Hong Kong,2001,13.0
-Honduras,2001,1172.5
-Croatia,2001,357.0
-Hungary,2001,3055.5
-Cote d'Ivoire,2001,731.5
-India,2001,9767.0
-Indonesia,2001,4109.0
-Iran,2001,17380.0
-Iraq,2001,37728.0
-Israel,2001,485.5
-Italy,2001,32.0
-Jamaica,2001,227.0
-Jordan,2001,554.0
-Japan,2001,17.0
-Kazakhstan,2001,807.5
-Kenya,2001,787.0
-Kyrgyzstan,2001,357.5
-South Korea,2001,415.0
-North Korea,2001,49.5
-Kuwait,2001,122.0
-Laos,2001,582.0
-Liberia,2001,5276.5
-Libya,2001,507.5
-Saint Lucia,2001,47.0
-Lebanon,2001,1712.5
-Lesotho,2001,6.0
-Sri Lanka,2001,6547.5
-Lithuania,2001,197.0
-Latvia,2001,142.5
-Macao,2001,5.0
-Madagascar,2001,10.0
-Mauritania,2001,2169.5
-North Macedonia,2001,1365.0
-Moldova,2001,1508.5
-Mexico,2001,17765.5
-Mali,2001,276.0
-Malaysia,2001,276.0
-Malawi,2001,8.5
-Mongolia,2001,723.5
-Morocco,2001,226.5
-Mozambique,2001,12.0
-Malta,2001,5.0
-Mauritius,2001,18.0
-Myanmar,2001,1070.5
-Namibia,2001,80.0
-Nepal,2001,497.0
-Netherlands,2001,109.5
-Niger,2001,332.5
-Nicaragua,2001,13154.5
-Nigeria,2001,3795.0
-New Zealand,2001,5.0
-Oman,2001,5.5
-Pakistan,2001,7602.5
-Panama,2001,61.0
-Paraguay,2001,19.0
-Peru,2001,2592.5
-Philippines,2001,1843.0
-Poland,2001,714.0
-Portugal,2001,109.5
-Qatar,2001,30.0
-Romania,2001,2639.0
-South Africa,2001,138.0
-Russia,2001,12632.5
-Rwanda,2001,25358.0
-El Salvador,2001,170732.5
-Saudi Arabia,2001,94.0
-Senegal,2001,1073.0
-Seychelles,2001,19.0
-Singapore,2001,18.0
-Sierra Leone,2001,7963.5
-Solomon Islands,2001,18.5
-Somalia,2001,14083.0
-Spain,2001,19.5
-Serbia and Kosovo: S/RES/1244 (1999),2001,49912.0
-Vietnam,2001,2498.0
-Stateless,2001,1921.0
-Sao Tome and Principe,2001,10.0
-Sudan,2001,19459.0
-Suriname,2001,51.0
-Slovakia,2001,735.0
-Slovenia,2001,20.5
-Eswatini,2001,5.0
-Sweden,2001,6.5
-Syria,2001,3791.5
-Tanzania,2001,804.0
-Thailand,2001,147.5
-Tajikistan,2001,514.5
-Turkmenistan,2001,25.5
-Timor-Leste,2001,19.5
-Togo,2001,1621.0
-Tonga,2001,34.5
-Trinidad and Tobago,2001,148.0
-Tunisia,2001,381.0
-Turkey,2001,11778.5
-United Arab Emirates,2001,18.5
-Uganda,2001,996.5
-Unknown,2001,672476.2
-Ukraine,2001,4467.0
-Uruguay,2001,236.5
-United States,2001,98.0
-Uzbekistan,2001,517.0
-Saint Vincent and the Grenadines,2001,126.0
-Venezuela,2001,253.0
-Samoa,2001,6.0
-Western Sahara,2001,5.0
-Yemen,2001,795.5
-Zambia,2001,110.0
-Zimbabwe,2001,1449.0
-Afghanistan,2002,32586.333333333332
-Albania,2002,3925.6666666666665
-Algeria,2002,2480.0
-Andorra,2002,6.0
-Angola,2002,9869.666666666666
-Antigua and Barbuda,2002,17.666666666666668
-Egypt,2002,1472.6666666666667
-Argentina,2002,1446.6666666666667
-Armenia,2002,5660.666666666667
-Australia,2002,9.666666666666666
-Austria,2002,7.5
-Azerbaijan,2002,5336.0
-Bahrain,2002,20.333333333333332
-Barbados,2002,31.0
-Burundi,2002,4992.0
-Belgium,2002,20.666666666666668
-Benin,2002,185.33333333333334
-Bangladesh,2002,3864.3333333333335
-Bahamas,2002,65.33333333333333
-Bhutan,2002,55.333333333333336
-Burkina Faso,2002,221.33333333333334
-Belarus,2002,1323.3333333333333
-Bolivia,2002,257.6666666666667
-Botswana,2002,7.5
-Brazil,2002,864.0
-Bosnia and Herzegovina,2002,4805.0
-Bulgaria,2002,1518.3333333333333
-Belize,2002,25.666666666666668
-Cambodia,2002,356.6666666666667
-Canada,2002,12.0
-Central African Republic,2002,354.6666666666667
-Chad,2002,2616.6666666666665
-China,2002,20728.333333333332
-Chile,2002,290.3333333333333
-Cameroon,2002,2165.0
-Congo,2002,5139.0
-Democratic Republic of Congo,2002,30726.333333333332
-Comoros,2002,71.33333333333333
-Colombia,2002,14130.0
-Costa Rica,2002,875.6666666666666
-Cuba,2002,3222.6666666666665
-Cape Verde,2002,14.333333333333334
-Cyprus,2002,11.0
-Czechia,2002,190.33333333333334
-Denmark,2002,5.5
-Djibouti,2002,145.0
-Dominica,2002,28.666666666666668
-Dominican Republic,2002,106.33333333333333
-Ecuador,2002,513.0
-Equatorial Guinea,2002,45.666666666666664
-Eritrea,2002,10411.333333333334
-Estonia,2002,109.66666666666667
-Ethiopia,2002,11937.333333333334
-Fiji,2002,1693.6666666666667
-Finland,2002,5.0
-France,2002,59.0
-Micronesia (region),2002,5.0
-Gabon,2002,36.666666666666664
-Gambia,2002,289.0
-Palestine,2002,808.6666666666666
-United Kingdom,2002,73.33333333333333
-Georgia,2002,2252.0
-Germany,2002,60.666666666666664
-Ghana,2002,1077.6666666666667
-Gibraltar,2002,5.0
-Guinea-Bissau,2002,571.3333333333334
-Greece,2002,38.0
-Grenada,2002,212.66666666666666
-Guatemala,2002,99152.33333333333
-Guinea,2002,3394.6666666666665
-Guyana,2002,551.0
-Haiti,2002,21292.666666666668
-Hong Kong,2002,14.333333333333334
-Honduras,2002,1198.0
-Croatia,2002,410.0
-Hungary,2002,3076.6666666666665
-Cote d'Ivoire,2002,1050.3333333333333
-India,2002,10198.0
-Indonesia,2002,4511.333333333333
-Iran,2002,15980.0
-Iraq,2002,35032.333333333336
-Israel,2002,664.6666666666666
-Italy,2002,33.333333333333336
-Jamaica,2002,311.0
-Jordan,2002,610.3333333333334
-Japan,2002,18.666666666666668
-Kazakhstan,2002,845.6666666666666
-Kenya,2002,3917.0
-Kyrgyzstan,2002,417.6666666666667
-South Korea,2002,478.0
-North Korea,2002,56.333333333333336
-Kuwait,2002,120.0
-Laos,2002,691.6666666666666
-Liberia,2002,7037.333333333333
-Libya,2002,645.6666666666666
-Saint Lucia,2002,123.0
-Lebanon,2002,1929.6666666666667
-Lesotho,2002,5.5
-Sri Lanka,2002,6010.0
-Lithuania,2002,250.0
-Latvia,2002,158.0
-Macao,2002,6.5
-Madagascar,2002,11.666666666666666
-Mauritania,2002,2437.0
-North Macedonia,2002,1616.6666666666667
-Moldova,2002,1512.3333333333333
-Mexico,2002,22134.333333333332
-Mali,2002,288.6666666666667
-Malaysia,2002,344.0
-Malawi,2002,54.666666666666664
-Mongolia,2002,825.3333333333334
-Morocco,2002,249.0
-Mozambique,2002,31.0
-Malta,2002,5.0
-Mauritius,2002,18.0
-Myanmar,2002,1391.6666666666667
-Namibia,2002,113.0
-Nepal,2002,533.3333333333334
-Netherlands,2002,102.0
-Niger,2002,406.6666666666667
-Nicaragua,2002,12081.666666666666
-Nigeria,2002,5080.333333333333
-New Zealand,2002,5.0
-Oman,2002,5.333333333333333
-Pakistan,2002,8858.666666666666
-Panama,2002,76.66666666666667
-Paraguay,2002,27.333333333333332
-Peru,2002,2922.0
-Philippines,2002,1901.6666666666667
-Papua New Guinea,2002,5.0
-Poland,2002,748.6666666666666
-Portugal,2002,256.6666666666667
-Qatar,2002,30.0
-Romania,2002,2523.6666666666665
-South Africa,2002,152.66666666666666
-Russia,2002,14960.0
-Rwanda,2002,20584.333333333332
-El Salvador,2002,164349.66666666666
-Saudi Arabia,2002,97.66666666666667
-Senegal,2002,975.6666666666666
-Seychelles,2002,22.0
-Singapore,2002,18.666666666666668
-Sierra Leone,2002,7797.333333333333
-Solomon Islands,2002,14.0
-Somalia,2002,14037.0
-Spain,2002,21.333333333333332
-Serbia and Kosovo: S/RES/1244 (1999),2002,39248.666666666664
-Vietnam,2002,2362.6666666666665
-Stateless,2002,2129.0
-Saint Kitts and Nevis,2002,5.0
-Sudan,2002,17639.0
-Suriname,2002,48.666666666666664
-Slovakia,2002,725.3333333333334
-Slovenia,2002,23.0
-Eswatini,2002,5.0
-Sweden,2002,9.333333333333334
-Switzerland,2002,5.0
-Syria,2002,3949.0
-Tanzania,2002,1364.3333333333333
-Turks and Caicos Islands,2002,5.0
-Thailand,2002,181.66666666666666
-Tajikistan,2002,415.3333333333333
-Turkmenistan,2002,58.333333333333336
-Timor-Leste,2002,184.0
-Togo,2002,2006.6666666666667
-Tonga,2002,44.666666666666664
-Trinidad and Tobago,2002,205.66666666666666
-Tunisia,2002,398.0
-Turkey,2002,12024.333333333334
-United Arab Emirates,2002,24.333333333333332
-Uganda,2002,1341.0
-Unknown,2002,520508.0
-Ukraine,2002,4602.0
-Uruguay,2002,327.6666666666667
-United States,2002,143.0
-Uzbekistan,2002,855.3333333333334
-Saint Vincent and the Grenadines,2002,254.0
-Venezuela,2002,428.3333333333333
-Samoa,2002,5.5
-Western Sahara,2002,5.0
-Yemen,2002,741.3333333333334
-Zambia,2002,130.66666666666666
-Zimbabwe,2002,1352.0
-Afghanistan,2003,31016.75
-Albania,2003,4075.75
-Algeria,2003,2337.5
-Andorra,2003,5.666666666666667
-Angola,2003,10330.0
-Antigua and Barbuda,2003,18.75
-Egypt,2003,1609.25
-Argentina,2003,1366.25
-Armenia,2003,5486.75
-Australia,2003,8.5
-Austria,2003,8.666666666666666
-Azerbaijan,2003,5160.25
-Bahrain,2003,16.5
-Barbados,2003,34.0
-Burundi,2003,5755.75
-Belgium,2003,18.25
-Benin,2003,200.75
-Bangladesh,2003,4966.25
-Bahamas,2003,53.5
-Bhutan,2003,102.0
-Burkina Faso,2003,203.5
-Belarus,2003,1517.25
-Bolivia,2003,314.5
-Botswana,2003,10.333333333333334
-Brazil,2003,964.5
-Bosnia and Herzegovina,2003,4151.75
-Bulgaria,2003,1482.0
-Belize,2003,26.25
-Cambodia,2003,382.75
-Canada,2003,14.5
-Central African Republic,2003,474.0
-Chad,2003,2542.25
-China,2003,20860.5
-Chile,2003,295.0
-Cameroon,2003,2459.25
-Congo,2003,5592.25
-Democratic Republic of Congo,2003,36030.25
-Comoros,2003,64.75
-Colombia,2003,16332.0
-Costa Rica,2003,1023.75
-Cuba,2003,2970.5
-Cape Verde,2003,13.5
-Cyprus,2003,9.5
-Czechia,2003,228.75
-Denmark,2003,5.333333333333333
-Djibouti,2003,126.25
-Dominica,2003,27.5
-Dominican Republic,2003,110.5
-Ecuador,2003,557.0
-Equatorial Guinea,2003,47.25
-Eritrea,2003,8515.5
-Estonia,2003,126.5
-Ethiopia,2003,11654.25
-Fiji,2003,1524.75
-Finland,2003,5.0
-France,2003,60.75
-Micronesia (region),2003,5.0
-Gabon,2003,36.0
-Gambia,2003,302.0
-Palestine,2003,875.0
-United Kingdom,2003,71.0
-Georgia,2003,2436.0
-Germany,2003,60.75
-Ghana,2003,1223.75
-Guinea-Bissau,2003,484.5
-Greece,2003,37.75
-Grenada,2003,224.0
-Guatemala,2003,96509.75
-Guinea,2003,3336.25
-Guyana,2003,737.25
-Haiti,2003,20557.5
-Hong Kong,2003,16.0
-Honduras,2003,1199.0
-Croatia,2003,423.5
-Hungary,2003,2558.75
-Iceland,2003,5.0
-Cote d'Ivoire,2003,1611.25
-India,2003,10512.5
-Indonesia,2003,5263.0
-Ireland,2003,10.0
-Iran,2003,14824.75
-Iraq,2003,34172.0
-Israel,2003,734.5
-Italy,2003,32.5
-Jamaica,2003,335.75
-Jordan,2003,637.0
-Japan,2003,20.75
-Kazakhstan,2003,856.25
-Kenya,2003,5654.5
-Kyrgyzstan,2003,467.25
-South Korea,2003,483.25
-North Korea,2003,52.5
-Kuwait,2003,116.0
-Laos,2003,637.25
-Liberia,2003,6824.5
-Libya,2003,708.75
-Saint Lucia,2003,160.25
-Lebanon,2003,1979.5
-Lesotho,2003,5.333333333333333
-Sri Lanka,2003,5249.0
-Lithuania,2003,277.0
-Latvia,2003,168.0
-Macao,2003,6.0
-Madagascar,2003,16.0
-Mauritania,2003,2545.75
-North Macedonia,2003,1505.25
-Moldova,2003,1378.75
-Mexico,2003,23215.75
-Mali,2003,272.0
-Malaysia,2003,339.25
-Malawi,2003,403.5
-Mongolia,2003,792.25
-Morocco,2003,252.5
-Mozambique,2003,76.66666666666667
-Malta,2003,5.75
-Mauritius,2003,18.25
-Myanmar,2003,3683.75
-Namibia,2003,131.0
-Nepal,2003,581.25
-Netherlands,2003,99.0
-Niger,2003,418.0
-Nicaragua,2003,10775.0
-Nigeria,2003,7472.0
-New Zealand,2003,5.0
-Pakistan,2003,10853.75
-Panama,2003,79.75
-Paraguay,2003,33.0
-Peru,2003,2883.75
-Philippines,2003,1884.25
-Papua New Guinea,2003,5.5
-Poland,2003,787.5
-Portugal,2003,290.5
-Qatar,2003,26.0
-Romania,2003,2433.75
-South Africa,2003,183.0
-Russia,2003,16477.75
-Rwanda,2003,17974.0
-El Salvador,2003,155426.0
-Saudi Arabia,2003,98.0
-Senegal,2003,939.5
-Seychelles,2003,19.75
-Singapore,2003,19.0
-Sierra Leone,2003,7574.75
-Solomon Islands,2003,14.25
-Somalia,2003,14220.75
-Spain,2003,26.0
-Serbia and Kosovo: S/RES/1244 (1999),2003,32995.5
-Vietnam,2003,2083.75
-Stateless,2003,2469.75
-Saint Kitts and Nevis,2003,5.0
-Sudan,2003,14898.0
-Suriname,2003,44.75
-Slovakia,2003,644.5
-Slovenia,2003,23.5
-Eswatini,2003,6.666666666666667
-Sweden,2003,13.0
-Syria,2003,3848.75
-Tanzania,2003,1913.75
-Turks and Caicos Islands,2003,5.0
-Thailand,2003,175.0
-Tajikistan,2003,361.5
-Turkmenistan,2003,83.5
-Timor-Leste,2003,139.25
-Togo,2003,2935.25
-Tonga,2003,43.0
-Trinidad and Tobago,2003,226.25
-Tunisia,2003,391.0
-Turkey,2003,11150.0
-United Arab Emirates,2003,23.75
-Uganda,2003,1710.25
-Unknown,2003,370806.0
-Ukraine,2003,4164.0
-Uruguay,2003,381.0
-United States,2003,193.5
-Uzbekistan,2003,1022.5
-Saint Vincent and the Grenadines,2003,295.25
-Venezuela,2003,825.25
-Western Sahara,2003,9.666666666666666
-Yemen,2003,674.5
-Zambia,2003,163.0
-Zimbabwe,2003,1881.75
-Afghanistan,2004,28210.0
-Albania,2004,3924.4
-Algeria,2004,2137.0
-Andorra,2004,5.5
-Angola,2004,10172.0
-Antigua and Barbuda,2004,17.6
-Egypt,2004,1735.8
-Argentina,2004,1193.0
-Armenia,2004,5198.2
-Australia,2004,8.2
-Austria,2004,7.75
-Azerbaijan,2004,4918.4
-Bahrain,2004,16.8
-Barbados,2004,29.6
-Burundi,2004,6175.0
-Belgium,2004,18.0
-Benin,2004,202.8
-Bangladesh,2004,5840.8
-Bahamas,2004,46.6
-Bhutan,2004,178.0
-Burkina Faso,2004,185.2
-Belarus,2004,1494.4
-Bolivia,2004,327.6
-Botswana,2004,9.5
-Brazil,2004,973.8
-Bosnia and Herzegovina,2004,3558.2
-Bulgaria,2004,1430.0
-Belize,2004,25.6
-Cambodia,2004,406.4
-Canada,2004,15.2
-Central African Republic,2004,636.4
-Chad,2004,2541.8
-China,2004,20633.4
-Chile,2004,275.4
-Cameroon,2004,2711.8
-Congo,2004,5902.0
-Democratic Republic of Congo,2004,39006.4
-Comoros,2004,155.2
-Colombia,2004,17370.6
-Costa Rica,2004,889.2
-Cuba,2004,2773.4
-Cape Verde,2004,13.0
-Czechia,2004,216.4
-Denmark,2004,5.25
-Djibouti,2004,108.2
-Dominica,2004,25.4
-Dominican Republic,2004,117.6
-Ecuador,2004,544.0
-Equatorial Guinea,2004,47.8
-Eritrea,2004,7374.6
-Estonia,2004,129.8
-Ethiopia,2004,11943.0
-Fiji,2004,1323.8
-Finland,2004,5.0
-France,2004,59.6
-Micronesia (region),2004,5.0
-Gabon,2004,34.0
-Gambia,2004,329.4
-Palestine,2004,904.8
-United Kingdom,2004,66.0
-Georgia,2004,2505.4
-Germany,2004,60.8
-Ghana,2004,1309.0
-Guinea-Bissau,2004,427.4
-Greece,2004,36.6
-Grenada,2004,203.4
-Guatemala,2004,88936.2
-Guinea,2004,3164.8
-Guyana,2004,723.4
-Haiti,2004,19699.2
-Hong Kong,2004,14.8
-Honduras,2004,1212.2
-Croatia,2004,409.8
-Hungary,2004,2166.4
-Iceland,2004,5.5
-Cote d'Ivoire,2004,2237.4
-India,2004,10751.6
-Indonesia,2004,5364.6
-Ireland,2004,7.5
-Iran,2004,13763.6
-Iraq,2004,33461.4
-Israel,2004,739.6
-Italy,2004,30.6
-Jamaica,2004,325.6
-Jordan,2004,650.2
-Japan,2004,30.6
-Kazakhstan,2004,816.2
-Kenya,2004,6765.4
-Kyrgyzstan,2004,468.6
-South Korea,2004,448.0
-North Korea,2004,54.8
-Kuwait,2004,110.6
-Laos,2004,604.0
-Liberia,2004,6977.0
-Libya,2004,729.2
-Saint Lucia,2004,158.0
-Lebanon,2004,1905.6
-Lesotho,2004,6.5
-Sri Lanka,2004,4822.0
-Lithuania,2004,262.0
-Latvia,2004,164.0
-Macao,2004,5.75
-Madagascar,2004,15.6
-Mauritania,2004,2551.2
-North Macedonia,2004,1343.2
-Moldova,2004,1226.0
-Maldives,2004,5.0
-Mexico,2004,22338.8
-Mali,2004,255.8
-Malaysia,2004,306.4
-Malawi,2004,910.2
-Mongolia,2004,746.0
-Morocco,2004,252.2
-Mozambique,2004,135.0
-Malta,2004,5.6
-Mauritius,2004,16.8
-Myanmar,2004,5047.6
-Namibia,2004,141.6
-Nepal,2004,726.8
-Netherlands,2004,102.2
-Niger,2004,404.6
-Nicaragua,2004,9868.6
-Nigeria,2004,8628.4
-Norway,2004,5.0
-New Zealand,2004,5.0
-Pakistan,2004,11842.2
-Panama,2004,77.8
-Paraguay,2004,34.8
-Peru,2004,2727.6
-Philippines,2004,1703.4
-Poland,2004,743.8
-Portugal,2004,274.8
-Romania,2004,2214.8
-South Africa,2004,254.8
-Russia,2004,15782.2
-Rwanda,2004,15450.0
-El Salvador,2004,142694.2
-Saudi Arabia,2004,95.0
-Senegal,2004,1060.4
-Seychelles,2004,17.8
-Singapore,2004,18.2
-Sierra Leone,2004,7683.6
-Solomon Islands,2004,13.4
-Somalia,2004,15480.0
-Spain,2004,26.4
-Serbia and Kosovo: S/RES/1244 (1999),2004,28325.6
-Vietnam,2004,1882.0
-Stateless,2004,2606.4
-Sudan,2004,14308.4
-Suriname,2004,41.4
-Slovakia,2004,558.0
-Slovenia,2004,21.0
-Eswatini,2004,7.5
-Sweden,2004,11.8
-Syria,2004,3835.2
-Tanzania,2004,2398.8
-Thailand,2004,158.0
-Tajikistan,2004,320.6
-Turkmenistan,2004,102.8
-Togo,2004,3439.4
-Tonga,2004,37.0
-Trinidad and Tobago,2004,215.4
-Tunisia,2004,381.4
-Turkey,2004,9976.4
-United Arab Emirates,2004,20.0
-Uganda,2004,2008.6
-Unknown,2004,210435.6
-Ukraine,2004,3859.6
-Uruguay,2004,330.6
-United States,2004,208.0
-Uzbekistan,2004,1084.4
-Saint Vincent and the Grenadines,2004,278.8
-Venezuela,2004,1196.6
-Western Sahara,2004,10.5
-Yemen,2004,607.2
-Zambia,2004,205.0
-Zimbabwe,2004,3385.0
-Afghanistan,2005,22956.6
-Albania,2005,3875.4
-Algeria,2005,1949.2
-Andorra,2005,5.4
-Angola,2005,10741.4
-Antigua and Barbuda,2005,17.8
-Egypt,2005,1971.0
-Argentina,2005,938.2
-Armenia,2005,5020.4
-Azerbaijan,2005,4686.2
-Bahrain,2005,11.0
-Barbados,2005,31.6
-Burundi,2005,7101.8
-Belgium,2005,18.0
-Benin,2005,227.6
-Bermuda,2005,5.0
-Bangladesh,2005,7207.6
-Bahamas,2005,48.8
-Bhutan,2005,389.8
-Burkina Faso,2005,176.6
-Belarus,2005,1626.2
-Bolivia,2005,373.8
-Botswana,2005,9.2
-Brazil,2005,962.0
-Bosnia and Herzegovina,2005,3060.4
-Bulgaria,2005,1411.8
-Belize,2005,27.6
-Cambodia,2005,517.4
-Canada,2005,20.8
-Central African Republic,2005,993.4
-Chad,2005,2679.2
-China,2005,21073.4
-Chile,2005,259.8
-Cameroon,2005,3384.2
-Congo,2005,6707.2
-Democratic Republic of Congo,2005,46227.6
-Comoros,2005,237.8
-Colombia,2005,20318.8
-Costa Rica,2005,870.6
-Cuba,2005,2414.8
-Cape Verde,2005,13.2
-Czechia,2005,221.8
-Denmark,2005,5.2
-Djibouti,2005,122.8
-Dominica,2005,31.4
-Dominican Republic,2005,123.0
-Ecuador,2005,544.8
-Equatorial Guinea,2005,49.6
-Eritrea,2005,7666.0
-Estonia,2005,141.4
-Ethiopia,2005,12276.0
-Fiji,2005,1065.6
-Finland,2005,5.0
-New Caledonia,2005,7.0
-France,2005,61.4
-Gabon,2005,42.4
-Gambia,2005,405.2
-Palestine,2005,1007.8
-United Kingdom,2005,63.6
-Georgia,2005,2812.6
-Germany,2005,62.4
-Ghana,2005,1576.6
-Guinea-Bissau,2005,338.2
-Greece,2005,40.2
-Grenada,2005,205.8
-Guatemala,2005,74945.2
-Guinea,2005,3313.8
-Guyana,2005,760.2
-Haiti,2005,18455.2
-Hong Kong,2005,17.0
-Honduras,2005,1219.8
-Croatia,2005,377.8
-Hungary,2005,1825.4
-Cote d'Ivoire,2005,3371.4
-India,2005,11228.2
-Indonesia,2005,5539.4
-Iran,2005,12215.0
-Iraq,2005,32223.0
-Israel,2005,791.2
-Italy,2005,28.0
-Jamaica,2005,348.6
-Jordan,2005,672.6
-Japan,2005,38.6
-Kazakhstan,2005,789.4
-Kenya,2005,8879.4
-Kyrgyzstan,2005,476.6
-Kiribati,2005,5.0
-South Korea,2005,440.4
-North Korea,2005,58.2
-Kuwait,2005,104.0
-Laos,2005,633.0
-Liberia,2005,7332.8
-Libya,2005,775.6
-Saint Lucia,2005,192.4
-Lebanon,2005,1998.8
-Lesotho,2005,6.4
-Sri Lanka,2005,4370.6
-Lithuania,2005,270.6
-Latvia,2005,166.2
-Macao,2005,5.6
-Madagascar,2005,15.6
-Mauritania,2005,2654.2
-North Macedonia,2005,1382.6
-Monaco,2005,5.0
-Moldova,2005,1166.6
-Mexico,2005,22250.0
-Mali,2005,286.6
-Malaysia,2005,295.2
-Malawi,2005,1678.4
-Mongolia,2005,755.6
-Morocco,2005,305.4
-Mozambique,2005,181.2
-Mauritius,2005,17.2
-Myanmar,2005,13070.4
-Namibia,2005,147.6
-Nepal,2005,1121.4
-Netherlands,2005,83.8
-Niger,2005,470.8
-Nicaragua,2005,8126.0
-Nigeria,2005,10740.0
-New Zealand,2005,5.0
-Pakistan,2005,13689.6
-Panama,2005,79.6
-Paraguay,2005,37.8
-Peru,2005,2568.0
-Philippines,2005,1506.2
-Papua New Guinea,2005,9.333333333333334
-Poland,2005,754.6
-Portugal,2005,284.6
-Qatar,2005,21.8
-Romania,2005,1948.6
-South Africa,2005,265.8
-Russia,2005,16523.4
-Rwanda,2005,13660.2
-El Salvador,2005,116439.2
-Saudi Arabia,2005,99.8
-Senegal,2005,1244.2
-Seychelles,2005,17.0
-Singapore,2005,19.2
-Sierra Leone,2005,7496.2
-San Marino,2005,5.0
-Solomon Islands,2005,10.8
-Somalia,2005,19179.0
-Spain,2005,26.2
-Serbia and Kosovo: S/RES/1244 (1999),2005,22152.0
-Vietnam,2005,1916.8
-Stateless,2005,2587.4
-Sudan,2005,13181.8
-Suriname,2005,36.0
-Slovakia,2005,439.0
-Slovenia,2005,21.0
-Eswatini,2005,7.0
-Sweden,2005,12.8
-Syria,2005,4487.6
-Tanzania,2005,3285.8
-Thailand,2005,173.0
-Tibet,2005,8.0
-Tajikistan,2005,224.0
-Turkmenistan,2005,133.8
-Togo,2005,4677.2
-Tonga,2005,33.8
-Trinidad and Tobago,2005,233.8
-Tunisia,2005,379.6
-Turkey,2005,10192.2
-United Arab Emirates,2005,21.4
-Uganda,2005,2658.0
-Unknown,2005,197233.8
-Ukraine,2005,3784.8
-Uruguay,2005,310.8
-United States,2005,241.8
-Uzbekistan,2005,1303.0
-Saint Vincent and the Grenadines,2005,333.8
-Venezuela,2005,1725.4
-Western Sahara,2005,12.4
-Yemen,2005,519.8
-Zambia,2005,277.2
-Zimbabwe,2005,6810.2
-Afghanistan,2006,19792.0
-Albania,2006,3536.4
-Algeria,2006,1706.2
-Angola,2006,9087.2
-Antigua and Barbuda,2006,18.2
-Egypt,2006,2017.6
-Argentina,2006,683.4
-Armenia,2006,4883.2
-Australia,2006,8.2
-Austria,2006,9.4
-Azerbaijan,2006,4157.2
-Bahrain,2006,12.8
-Barbados,2006,34.2
-Burundi,2006,7422.8
-Belgium,2006,21.4
-Benin,2006,222.0
-Bangladesh,2006,7320.6
-Bahamas,2006,48.0
-Bhutan,2006,667.4
-Burkina Faso,2006,166.8
-Belarus,2006,1739.6
-Bolivia,2006,426.6
-Botswana,2006,13.6
-Brazil,2006,889.0
-Bosnia and Herzegovina,2006,2561.0
-Bulgaria,2006,1274.6
-Belize,2006,24.4
-Cambodia,2006,590.2
-Canada,2006,27.8
-Central African Republic,2006,1344.4
-Chad,2006,2766.8
-China,2006,20572.4
-Chile,2006,236.6
-Cameroon,2006,3628.6
-Congo,2006,6828.4
-Democratic Republic of Congo,2006,46418.4
-Comoros,2006,222.4
-Colombia,2006,21608.2
-Costa Rica,2006,751.2
-Cuba,2006,1973.8
-Cape Verde,2006,11.4
-Czechia,2006,215.8
-Denmark,2006,5.2
-Djibouti,2006,107.8
-Dominica,2006,30.2
-Dominican Republic,2006,122.8
-Ecuador,2006,510.6
-Equatorial Guinea,2006,48.0
-Eritrea,2006,8100.8
-Estonia,2006,146.4
-Ethiopia,2006,13149.0
-Fiji,2006,732.6
-France,2006,56.6
-Gabon,2006,41.4
-Gambia,2006,546.2
-Palestine,2006,1107.2
-United Kingdom,2006,56.8
-Georgia,2006,3182.6
-Germany,2006,68.0
-Ghana,2006,1584.0
-Guinea-Bissau,2006,245.6
-Greece,2006,35.0
-Grenada,2006,179.0
-Guatemala,2006,59143.2
-Guinea,2006,3074.0
-Guyana,2006,744.6
-Haiti,2006,16171.6
-Hong Kong,2006,17.0
-Honduras,2006,1259.4
-Croatia,2006,352.0
-Hungary,2006,1035.0
-Cote d'Ivoire,2006,4489.8
-India,2006,10627.6
-Indonesia,2006,5272.8
-Iran,2006,12128.8
-Iraq,2006,34716.6
-Israel,2006,857.2
-Italy,2006,24.4
-Jamaica,2006,346.4
-Jordan,2006,712.8
-Japan,2006,40.4
-Kazakhstan,2006,745.4
-Kenya,2006,8951.8
-Kyrgyzstan,2006,514.6
-Kiribati,2006,5.0
-South Korea,2006,407.8
-North Korea,2006,67.4
-Kuwait,2006,99.4
-Laos,2006,497.0
-Liberia,2006,7061.4
-Libya,2006,810.2
-Saint Lucia,2006,208.0
-Lebanon,2006,2253.4
-Lesotho,2006,6.2
-Sri Lanka,2006,3996.2
-Lithuania,2006,249.8
-Latvia,2006,150.6
-Macao,2006,5.6
-Madagascar,2006,19.0
-Mauritania,2006,2501.8
-North Macedonia,2006,1258.4
-Monaco,2006,5.0
-Moldova,2006,990.8
-Mexico,2006,20118.6
-Mali,2006,295.4
-Malaysia,2006,259.8
-Malawi,2006,1684.6
-Montenegro,2006,123.0
-Mongolia,2006,956.2
-Morocco,2006,367.8
-Mozambique,2006,180.0
-Malta,2006,5.6
-Mauritius,2006,17.2
-Myanmar,2006,18107.0
-Namibia,2006,120.4
-Nepal,2006,1496.2
-Netherlands,2006,74.0
-Niger,2006,481.8
-Nicaragua,2006,5951.4
-Nigeria,2006,11585.6
-New Zealand,2006,5.0
-Pakistan,2006,13441.4
-Panama,2006,68.8
-Paraguay,2006,40.6
-Peru,2006,2402.6
-Philippines,2006,1296.8
-Papua New Guinea,2006,8.5
-Poland,2006,653.2
-Portugal,2006,264.4
-Qatar,2006,16.6
-Romania,2006,1650.8
-South Africa,2006,260.0
-Russia,2006,17401.2
-Rwanda,2006,10201.0
-El Salvador,2006,89197.6
-Saudi Arabia,2006,78.8
-Senegal,2006,1243.6
-Seychelles,2006,12.8
-Singapore,2006,17.6
-Sierra Leone,2006,6808.0
-Solomon Islands,2006,13.2
-Somalia,2006,20342.0
-Spain,2006,25.4
-Serbia and Kosovo: S/RES/1244 (1999),2006,15796.6
-Vietnam,2006,1575.0
-Stateless,2006,2645.8
-Saint Kitts and Nevis,2006,5.0
-Sudan,2006,12542.8
-Suriname,2006,29.2
-Slovakia,2006,360.6
-Slovenia,2006,18.8
-Eswatini,2006,7.0
-Sweden,2006,14.6
-Syria,2006,5215.6
-Tanzania,2006,3165.4
-Thailand,2006,182.0
-Tajikistan,2006,169.0
-Turkmenistan,2006,155.8
-Timor-Leste,2006,113.0
-Togo,2006,5601.8
-Tonga,2006,27.2
-Trinidad and Tobago,2006,229.6
-Tunisia,2006,372.0
-Turkey,2006,9964.4
-United Arab Emirates,2006,17.6
-Uganda,2006,2738.2
-Unknown,2006,211731.8
-Ukraine,2006,3301.2
-Uruguay,2006,259.4
-United States,2006,297.8
-Uzbekistan,2006,1600.8
-Saint Vincent and the Grenadines,2006,362.6
-Venezuela,2006,2132.0
-Western Sahara,2006,16.2
-Yemen,2006,441.4
-Zambia,2006,269.6
-Zimbabwe,2006,6512.8
-Afghanistan,2007,17670.0
-Albania,2007,2868.2
-Algeria,2007,1499.4
-Andorra,2007,5.0
-Angola,2007,6390.4
-Egypt,2007,1975.4
-Argentina,2007,440.6
-Armenia,2007,4546.8
-Austria,2007,9.4
-Azerbaijan,2007,3540.6
-Bahrain,2007,15.0
-Barbados,2007,28.0
-Burundi,2007,7343.6
-Belgium,2007,18.6
-Benin,2007,207.8
-Bangladesh,2007,7820.8
-Bahamas,2007,20.0
-Bhutan,2007,983.8
-Burkina Faso,2007,181.6
-Belarus,2007,1565.4
-Bolivia,2007,412.4
-Botswana,2007,22.2
-Brazil,2007,718.8
-Bosnia and Herzegovina,2007,1597.2
-Bulgaria,2007,1007.0
-Belize,2007,19.8
-Cambodia,2007,580.2
-Canada,2007,35.6
-Central African Republic,2007,1479.6
-Chad,2007,2813.2
-China,2007,18632.8
-Chile,2007,159.4
-Cameroon,2007,3655.0
-Congo,2007,6639.4
-Democratic Republic of Congo,2007,44861.0
-Comoros,2007,223.4
-Colombia,2007,25843.6
-Costa Rica,2007,417.4
-Cuba,2007,1651.2
-Cape Verde,2007,10.2
-Czechia,2007,205.6
-Djibouti,2007,90.8
-Dominica,2007,22.4
-Dominican Republic,2007,120.0
-Ecuador,2007,399.4
-Equatorial Guinea,2007,41.6
-Eritrea,2007,5371.0
-Estonia,2007,126.0
-Ethiopia,2007,17251.6
-Fiji,2007,470.8
-France,2007,51.6
-Gabon,2007,35.2
-Gambia,2007,688.2
-Palestine,2007,1390.6
-United Kingdom,2007,49.2
-Georgia,2007,3442.4
-Germany,2007,66.8
-Ghana,2007,1681.4
-Guinea-Bissau,2007,239.6
-Greece,2007,29.0
-Grenada,2007,116.8
-Guatemala,2007,42920.4
-Guinea,2007,2698.0
-Guyana,2007,578.4
-Haiti,2007,13787.0
-Hong Kong,2007,18.6
-Honduras,2007,1143.8
-Croatia,2007,272.2
-Hungary,2007,429.0
-Cote d'Ivoire,2007,5635.4
-India,2007,9831.0
-Indonesia,2007,4680.2
-Iran,2007,11567.6
-Iraq,2007,34321.8
-Israel,2007,841.8
-Italy,2007,19.2
-Jamaica,2007,297.8
-Jordan,2007,714.2
-Japan,2007,39.8
-Kazakhstan,2007,666.4
-Kenya,2007,7259.8
-Kyrgyzstan,2007,495.8
-South Korea,2007,363.8
-North Korea,2007,99.8
-Kuwait,2007,97.0
-Laos,2007,347.6
-Liberia,2007,5653.2
-Libya,2007,748.4
-Saint Lucia,2007,188.8
-Lebanon,2007,2292.6
-Lesotho,2007,7.6
-Sri Lanka,2007,4204.0
-Lithuania,2007,195.2
-Latvia,2007,120.2
-Macao,2007,5.0
-Madagascar,2007,17.0
-Mauritania,2007,2107.6
-North Macedonia,2007,1054.8
-Moldova,2007,868.6
-Mexico,2007,16896.4
-Mali,2007,357.6
-Malaysia,2007,186.2
-Malawi,2007,3292.0
-Montenegro,2007,209.0
-Mongolia,2007,1142.0
-Morocco,2007,401.6
-Mozambique,2007,305.6
-Mauritius,2007,16.6
-Myanmar,2007,21502.0
-Namibia,2007,87.8
-Nepal,2007,1802.4
-Netherlands,2007,61.0
-Niger,2007,423.0
-Nicaragua,2007,4128.6
-Nigeria,2007,12000.4
-Norway,2007,5.0
-New Zealand,2007,5.0
-Oman,2007,5.25
-Pakistan,2007,12887.2
-Panama,2007,53.0
-Paraguay,2007,40.6
-Peru,2007,2297.6
-Philippines,2007,1043.4
-Papua New Guinea,2007,10.4
-Poland,2007,527.0
-Portugal,2007,162.4
-Romania,2007,1304.4
-South Africa,2007,245.2
-Russia,2007,16994.4
-Rwanda,2007,9640.2
-El Salvador,2007,62602.6
-Saudi Arabia,2007,63.8
-Senegal,2007,1265.0
-Seychelles,2007,8.8
-Singapore,2007,16.4
-Sierra Leone,2007,6245.8
-Solomon Islands,2007,16.6
-Somalia,2007,20837.8
-Spain,2007,22.6
-Serbia and Kosovo: S/RES/1244 (1999),2007,15058.8
-Vietnam,2007,1511.6
-Stateless,2007,2677.4
-Saint Kitts and Nevis,2007,5.6
-Sudan,2007,13624.2
-Suriname,2007,22.2
-Slovakia,2007,238.8
-Slovenia,2007,15.0
-Eswatini,2007,18.8
-Sweden,2007,12.6
-Syria,2007,5732.6
-Tanzania,2007,3249.6
-Thailand,2007,204.6
-Tajikistan,2007,144.2
-Turkmenistan,2007,157.8
-Togo,2007,5306.4
-Tonga,2007,17.0
-Trinidad and Tobago,2007,200.4
-Tunisia,2007,352.4
-Turkey,2007,9295.6
-United Arab Emirates,2007,12.4
-Uganda,2007,2958.2
-Unknown,2007,194336.8
-Ukraine,2007,2810.4
-Uruguay,2007,163.6
-United States,2007,471.2
-Uzbekistan,2007,1661.4
-Vatican,2007,5.0
-Saint Vincent and the Grenadines,2007,361.4
-Venezuela,2007,2326.4
-Western Sahara,2007,19.8
-Yemen,2007,376.0
-Zambia,2007,333.6
-Zimbabwe,2007,13144.8
-Afghanistan,2008,17043.8
-Albania,2008,2325.8
-Algeria,2008,1421.8
-Andorra,2008,5.0
-Angola,2008,4195.0
-Antigua and Barbuda,2008,15.0
-Egypt,2008,1932.2
-Argentina,2008,243.4
-Armenia,2008,4306.6
-Australia,2008,8.0
-Azerbaijan,2008,2989.2
-Bahrain,2008,16.0
-Barbados,2008,28.4
-Burundi,2008,7060.0
-Belgium,2008,21.8
-Benin,2008,194.2
-Bangladesh,2008,7509.0
-Bahamas,2008,21.6
-Bhutan,2008,1154.2
-Burkina Faso,2008,213.6
-Belarus,2008,1362.0
-Bolivia,2008,346.0
-Botswana,2008,48.6
-Brazil,2008,536.8
-Bosnia and Herzegovina,2008,1391.2
-Bulgaria,2008,791.4
-Belize,2008,17.6
-Cambodia,2008,530.4
-Canada,2008,42.2
-Central African Republic,2008,1555.8
-Chad,2008,3017.4
-China,2008,18304.4
-Chile,2008,123.2
-Cameroon,2008,3568.8
-Congo,2008,6257.8
-Democratic Republic of Congo,2008,41728.0
-Comoros,2008,221.6
-Colombia,2008,31780.0
-Costa Rica,2008,136.8
-Cuba,2008,1381.8
-Czechia,2008,293.4
-Denmark,2008,5.2
-Djibouti,2008,87.8
-Dominica,2008,21.4
-Dominican Republic,2008,148.8
-Ecuador,2008,310.4
-Equatorial Guinea,2008,40.8
-Eritrea,2008,7726.0
-Estonia,2008,97.2
-Ethiopia,2008,21391.8
-Fiji,2008,307.2
-France,2008,49.4
-Gabon,2008,33.0
-Gambia,2008,845.6
-Palestine,2008,1705.4
-United Kingdom,2008,41.2
-Georgia,2008,3862.6
-Germany,2008,74.6
-Ghana,2008,1748.2
-Guinea-Bissau,2008,246.0
-Greece,2008,24.6
-Grenada,2008,78.2
-Guatemala,2008,27252.6
-Guinea,2008,2468.2
-Guyana,2008,374.4
-Haiti,2008,12650.2
-Hong Kong,2008,24.2
-Honduras,2008,1091.6
-Croatia,2008,205.2
-Hungary,2008,285.4
-Cote d'Ivoire,2008,6268.4
-India,2008,8913.2
-Indonesia,2008,3620.8
-Iran,2008,11525.4
-Iraq,2008,33134.4
-Israel,2008,860.4
-Italy,2008,19.2
-Jamaica,2008,296.0
-Jordan,2008,719.4
-Japan,2008,39.6
-Kazakhstan,2008,604.6
-Kenya,2008,5525.8
-Kyrgyzstan,2008,454.0
-South Korea,2008,365.8
-North Korea,2008,134.2
-Kuwait,2008,88.4
-Laos,2008,288.4
-Liberia,2008,4892.2
-Libya,2008,719.4
-Saint Lucia,2008,201.6
-Lebanon,2008,2322.0
-Lesotho,2008,10.0
-Sri Lanka,2008,5018.2
-Lithuania,2008,135.6
-Latvia,2008,85.4
-Madagascar,2008,15.2
-Mauritania,2008,1687.8
-North Macedonia,2008,1035.4
-Moldova,2008,848.8
-Mexico,2008,15091.4
-Mali,2008,460.8
-Malaysia,2008,146.8
-Malawi,2008,4643.2
-Montenegro,2008,199.33333333333334
-Mongolia,2008,1417.2
-Morocco,2008,454.2
-Mozambique,2008,407.6
-Mauritius,2008,17.0
-Myanmar,2008,23855.6
-Namibia,2008,55.4
-Nepal,2008,2076.0
-Netherlands,2008,48.0
-Niger,2008,385.4
-Nicaragua,2008,2850.8
-Nigeria,2008,11160.8
-New Zealand,2008,5.0
-Pakistan,2008,10767.8
-Panama,2008,42.4
-Paraguay,2008,37.0
-Peru,2008,2243.8
-Philippines,2008,857.8
-Papua New Guinea,2008,11.4
-Poland,2008,391.2
-Portugal,2008,90.6
-Romania,2008,948.6
-South Africa,2008,218.0
-Russia,2008,15927.6
-Rwanda,2008,8828.2
-El Salvador,2008,39102.0
-Saudi Arabia,2008,50.6
-Senegal,2008,1259.8
-Seychelles,2008,9.0
-Singapore,2008,15.0
-Sierra Leone,2008,5387.4
-Somalia,2008,21987.2
-Spain,2008,18.0
-Serbia and Kosovo: S/RES/1244 (1999),2008,15147.2
-Vietnam,2008,1603.4
-Stateless,2008,2566.0
-Saint Kitts and Nevis,2008,6.2
-Sudan,2008,15903.8
-Suriname,2008,17.8
-Slovakia,2008,184.2
-Slovenia,2008,12.4
-Eswatini,2008,35.8
-Sweden,2008,10.6
-Syria,2008,6218.6
-Tanzania,2008,3116.8
-Thailand,2008,254.8
-Tajikistan,2008,132.2
-Turkmenistan,2008,148.0
-Togo,2008,4386.0
-Tonga,2008,13.6
-Trinidad and Tobago,2008,191.0
-Tunisia,2008,348.8
-Turkey,2008,9296.4
-United Arab Emirates,2008,9.6
-Uganda,2008,3020.0
-Unknown,2008,198693.2
-Ukraine,2008,2620.4
-Uruguay,2008,65.8
-United States,2008,750.2
-Uzbekistan,2008,1724.2
-Vatican,2008,5.0
-Saint Vincent and the Grenadines,2008,426.4
-Venezuela,2008,2226.8
-Western Sahara,2008,21.6
-Yemen,2008,374.0
-Zambia,2008,379.6
-Zimbabwe,2008,19405.8
-Afghanistan,2009,19728.4
-Albania,2009,1979.2
-Algeria,2009,1462.2
-Angola,2009,2426.2
-Antigua and Barbuda,2009,18.8
-Egypt,2009,1809.0
-Argentina,2009,174.2
-Armenia,2009,4314.8
-Australia,2009,7.0
-Azerbaijan,2009,2692.0
-Barbados,2009,39.2
-Burundi,2009,6458.6
-Belgium,2009,23.2
-Benin,2009,191.8
-Bangladesh,2009,6006.6
-Bahamas,2009,24.2
-Bhutan,2009,1260.4
-Burkina Faso,2009,266.6
-Belarus,2009,1276.4
-Bolivia,2009,302.4
-Botswana,2009,86.2
-Brazil,2009,406.8
-Bosnia and Herzegovina,2009,1383.8
-Bulgaria,2009,633.8
-Belize,2009,16.2
-Cambodia,2009,474.2
-Canada,2009,40.4
-Central African Republic,2009,1469.0
-Chad,2009,2971.6
-China,2009,18024.4
-Chile,2009,119.4
-Cameroon,2009,3272.2
-Congo,2009,5469.4
-Democratic Republic of Congo,2009,37766.6
-Comoros,2009,119.2
-Colombia,2009,40342.0
-Costa Rica,2009,81.8
-Cuba,2009,1427.4
-Czechia,2009,680.0
-Djibouti,2009,112.4
-Dominica,2009,21.6
-Dominican Republic,2009,199.8
-Ecuador,2009,267.8
-Equatorial Guinea,2009,37.2
-Eritrea,2009,10039.6
-Estonia,2009,75.4
-Ethiopia,2009,28518.8
-Fiji,2009,275.2
-France,2009,52.2
-Gabon,2009,34.4
-Gambia,2009,988.8
-Palestine,2009,1998.2
-United Kingdom,2009,40.8
-Georgia,2009,4257.8
-Germany,2009,78.6
-Ghana,2009,1682.0
-Guinea-Bissau,2009,269.6
-Greece,2009,22.4
-Grenada,2009,71.6
-Guatemala,2009,17345.0
-Guinea,2009,2536.2
-Guyana,2009,305.4
-Haiti,2009,11774.2
-Hong Kong,2009,35.4
-Honduras,2009,1038.0
-Croatia,2009,160.6
-Hungary,2009,656.4
-Cote d'Ivoire,2009,6372.4
-India,2009,7513.4
-Indonesia,2009,2867.0
-Ireland,2009,6.666666666666667
-Iran,2009,12368.4
-Iraq,2009,31485.0
-Israel,2009,919.2
-Italy,2009,20.8
-Jamaica,2009,353.8
-Jordan,2009,730.2
-Japan,2009,31.2
-Kazakhstan,2009,594.0
-Kenya,2009,3879.0
-Kyrgyzstan,2009,444.6
-South Korea,2009,368.0
-North Korea,2009,146.4
-Kuwait,2009,81.8
-Laos,2009,232.2
-Liberia,2009,3813.8
-Libya,2009,684.4
-Saint Lucia,2009,291.2
-Lebanon,2009,2351.0
-Lesotho,2009,9.0
-Sri Lanka,2009,5908.6
-Lithuania,2009,117.2
-Latvia,2009,71.0
-Madagascar,2009,18.6
-Mauritania,2009,1351.4
-North Macedonia,2009,1070.0
-Moldova,2009,872.6
-Mexico,2009,15405.6
-Mali,2009,574.4
-Malaysia,2009,141.4
-Malawi,2009,4064.2
-Montenegro,2009,192.75
-Mongolia,2009,1763.2
-Morocco,2009,524.6
-Mozambique,2009,346.6
-Mauritius,2009,18.0
-Myanmar,2009,26270.4
-Namibia,2009,27.2
-Nepal,2009,2174.0
-Netherlands,2009,30.0
-Niger,2009,371.8
-Nicaragua,2009,1688.2
-Nigeria,2009,10437.4
-Norway,2009,5.0
-Oman,2009,5.2
-Pakistan,2009,8559.8
-Panama,2009,36.6
-Paraguay,2009,34.6
-Peru,2009,2984.4
-Philippines,2009,819.8
-Papua New Guinea,2009,12.4
-Poland,2009,326.4
-Portugal,2009,57.4
-Qatar,2009,11.8
-Romania,2009,763.2
-South Africa,2009,142.0
-Russia,2009,15984.8
-Rwanda,2009,8715.8
-El Salvador,2009,22697.4
-Saudi Arabia,2009,42.6
-Senegal,2009,1074.2
-Seychelles,2009,8.4
-Singapore,2009,14.4
-Sierra Leone,2009,4353.4
-Somalia,2009,22095.6
-Spain,2009,22.6
-Serbia and Kosovo: S/RES/1244 (1999),2009,15677.4
-Vietnam,2009,1626.6
-Stateless,2009,2611.8
-Saint Kitts and Nevis,2009,7.4
-Sudan,2009,16894.0
-Suriname,2009,14.6
-Slovakia,2009,211.4
-Slovenia,2009,13.4
-Eswatini,2009,44.4
-Sweden,2009,11.6
-Switzerland,2009,5.0
-Syria,2009,6574.2
-Tanzania,2009,2289.8
-Thailand,2009,315.2
-Tajikistan,2009,152.8
-Turkmenistan,2009,127.4
-Togo,2009,3486.6
-Tonga,2009,15.2
-Trinidad and Tobago,2009,210.8
-Tunisia,2009,377.8
-Turkey,2009,10094.6
-United Arab Emirates,2009,13.0
-Uganda,2009,2559.2
-Unknown,2009,243039.6
-Ukraine,2009,2398.0
-Uruguay,2009,52.0
-United States,2009,985.6
-Uzbekistan,2009,1773.0
-Saint Vincent and the Grenadines,2009,598.2
-Venezuela,2009,2004.6
-Western Sahara,2009,23.0
-Yemen,2009,426.8
-Zambia,2009,314.2
-Zimbabwe,2009,17805.0
-Afghanistan,2010,24344.0
-Albania,2010,1734.8
-Algeria,2010,1528.8
-Angola,2010,901.0
-Antigua and Barbuda,2010,22.6
-Egypt,2010,1657.8
-Argentina,2010,134.0
-Armenia,2010,4036.4
-Australia,2010,8.0
-Azerbaijan,2010,2282.2
-Bahrain,2010,17.2
-Barbados,2010,48.2
-Burundi,2010,6305.4
-Belgium,2010,20.4
-Benin,2010,182.4
-Bangladesh,2010,5273.8
-Bahamas,2010,26.2
-Bhutan,2010,1241.2
-Burkina Faso,2010,326.6
-Belarus,2010,1138.8
-Bolivia,2010,258.8
-Botswana,2010,121.6
-Brazil,2010,337.0
-Bosnia and Herzegovina,2010,1289.0
-Bulgaria,2010,416.2
-Belize,2010,13.4
-Cambodia,2010,330.4
-Canada,2010,34.4
-Central African Republic,2010,1402.0
-Chad,2010,2882.6
-China,2010,15695.2
-Chile,2010,137.2
-Cameroon,2010,2716.4
-Congo,2010,4435.6
-Democratic Republic of Congo,2010,35193.0
-Comoros,2010,18.4
-Colombia,2010,48460.4
-Costa Rica,2010,70.0
-Cuba,2010,1969.2
-Czechia,2010,869.8
-Djibouti,2010,114.6
-Dominica,2010,15.6
-Dominican Republic,2010,261.6
-Ecuador,2010,253.2
-Equatorial Guinea,2010,41.6
-Eritrea,2010,11950.2
-Estonia,2010,52.0
-Ethiopia,2010,35052.2
-Fiji,2010,260.8
-France,2010,48.0
-Gabon,2010,30.8
-Gambia,2010,1065.8
-Palestine,2010,2426.4
-United Kingdom,2010,38.0
-Georgia,2010,5093.8
-Germany,2010,71.6
-Ghana,2010,1615.8
-Guinea-Bissau,2010,288.6
-Greece,2010,21.0
-Grenada,2010,64.0
-Guatemala,2010,11180.0
-Guinea,2010,2436.4
-Guyana,2010,262.4
-Haiti,2010,10509.2
-Hong Kong,2010,47.8
-Honduras,2010,956.0
-Croatia,2010,188.0
-Hungary,2010,1315.2
-Cote d'Ivoire,2010,6305.6
-India,2010,5850.8
-Indonesia,2010,2058.8
-Iran,2010,13003.6
-Iraq,2010,30585.2
-Israel,2010,953.6
-Italy,2010,27.2
-Jamaica,2010,407.0
-Jordan,2010,719.6
-Japan,2010,23.0
-Kazakhstan,2010,622.8
-Kenya,2010,1922.6
-Kyrgyzstan,2010,684.2
-South Korea,2010,350.4
-North Korea,2010,186.6
-Kuwait,2010,85.0
-Laos,2010,176.6
-Liberia,2010,3000.6
-Libya,2010,643.4
-Saint Lucia,2010,387.8
-Lebanon,2010,2253.8
-Lesotho,2010,8.8
-Sri Lanka,2010,6777.8
-Lithuania,2010,105.0
-Latvia,2010,82.8
-Madagascar,2010,19.2
-Mauritania,2010,1042.6
-North Macedonia,2010,1498.0
-Moldova,2010,885.8
-Mexico,2010,14874.0
-Mali,2010,583.6
-Malaysia,2010,127.8
-Malawi,2010,3307.0
-Montenegro,2010,190.4
-Mongolia,2010,1991.8
-Morocco,2010,601.2
-Mozambique,2010,275.6
-Mauritius,2010,22.6
-Myanmar,2010,22498.6
-Namibia,2010,88.2
-Nepal,2010,1922.6
-Netherlands,2010,26.2
-Niger,2010,319.4
-Nicaragua,2010,834.4
-Nigeria,2010,10016.8
-Oman,2010,5.2
-Pakistan,2010,9271.8
-Panama,2010,35.0
-Paraguay,2010,33.2
-Peru,2010,3609.8
-Philippines,2010,777.6
-Papua New Guinea,2010,17.6
-Poland,2010,236.4
-Portugal,2010,45.0
-Qatar,2010,7.2
-Romania,2010,597.8
-South Africa,2010,153.4
-Russia,2010,15217.8
-Rwanda,2010,7604.8
-El Salvador,2010,13965.4
-Saudi Arabia,2010,44.6
-Senegal,2010,1012.0
-Singapore,2010,12.0
-Sierra Leone,2010,3449.8
-Somalia,2010,20564.6
-Spain,2010,32.6
-Serbia and Kosovo: S/RES/1244 (1999),2010,15287.4
-Vietnam,2010,1511.4
-Stateless,2010,3054.8
-Saint Kitts and Nevis,2010,8.8
-Sudan,2010,18941.6
-Suriname,2010,12.4
-Slovakia,2010,256.0
-Slovenia,2010,12.6
-Eswatini,2010,53.4
-Sweden,2010,15.2
-Syria,2010,7123.6
-Tanzania,2010,1281.4
-Thailand,2010,315.8
-Tajikistan,2010,187.2
-Turkmenistan,2010,102.8
-Togo,2010,2198.0
-Tonga,2010,16.0
-Trinidad and Tobago,2010,198.2
-Tunisia,2010,413.8
-Turkey,2010,9331.2
-United Arab Emirates,2010,14.8
-Uganda,2010,1885.6
-Unknown,2010,272157.2
-Ukraine,2010,2115.2
-Uruguay,2010,49.2
-United States,2010,1107.8
-Uzbekistan,2010,1802.4
-Saint Vincent and the Grenadines,2010,737.0
-Venezuela,2010,1566.6
-Western Sahara,2010,23.8
-Yemen,2010,467.4
-Zambia,2010,227.0
-Zimbabwe,2010,14539.2
-Afghanistan,2011,29191.8
-Albania,2011,1717.6
-Algeria,2011,1659.2
-Angola,2011,740.2
-Antigua and Barbuda,2011,27.6
-Egypt,2011,1845.4
-Argentina,2011,109.6
-Armenia,2011,3486.6
-Australia,2011,7.6
-Azerbaijan,2011,2100.8
-Bahrain,2011,27.2
-Barbados,2011,55.4
-Burundi,2011,7100.6
-Benin,2011,205.4
-Bermuda,2011,5.0
-Bangladesh,2011,5519.6
-Bahamas,2011,28.8
-Bhutan,2011,1153.4
-Burkina Faso,2011,355.4
-Belarus,2011,981.2
-Bolivia,2011,204.4
-Botswana,2011,149.8
-Brazil,2011,290.6
-Bosnia and Herzegovina,2011,1341.8
-Bulgaria,2011,288.6
-Belize,2011,13.4
-Cambodia,2011,233.2
-Central African Republic,2011,1339.0
-Chad,2011,2821.0
-China,2011,14514.6
-Chile,2011,144.0
-Cameroon,2011,2536.0
-Congo,2011,3851.6
-Democratic Republic of Congo,2011,39813.8
-Comoros,2011,23.0
-Colombia,2011,52594.8
-Costa Rica,2011,63.0
-Cuba,2011,1886.6
-Cape Verde,2011,9.0
-Czechia,2011,964.8
-Djibouti,2011,148.4
-Dominica,2011,14.4
-Dominican Republic,2011,306.4
-Ecuador,2011,251.2
-Equatorial Guinea,2011,43.6
-Eritrea,2011,13865.2
-Estonia,2011,34.2
-Ethiopia,2011,39483.6
-Fiji,2011,261.4
-Finland,2011,5.0
-France,2011,51.2
-Gabon,2011,29.8
-Gambia,2011,1100.4
-Palestine,2011,2501.2
-United Kingdom,2011,37.4
-Georgia,2011,4810.2
-Germany,2011,61.4
-Ghana,2011,1888.0
-Guinea-Bissau,2011,328.8
-Greece,2011,24.0
-Grenada,2011,64.8
-Guatemala,2011,7294.6
-Guinea,2011,2833.0
-Guyana,2011,222.8
-Haiti,2011,9893.8
-Hong Kong,2011,45.2
-Honduras,2011,854.2
-Croatia,2011,293.2
-Hungary,2011,2476.4
-Cote d'Ivoire,2011,8669.6
-India,2011,5371.2
-Indonesia,2011,1480.6
-Ireland,2011,6.25
-Iran,2011,13952.2
-Iraq,2011,26023.4
-Israel,2011,867.2
-Italy,2011,31.0
-Jamaica,2011,468.8
-Jordan,2011,674.4
-Japan,2011,23.8
-Kazakhstan,2011,641.0
-Kenya,2011,2025.6
-Kyrgyzstan,2011,879.8
-Kiribati,2011,5.0
-South Korea,2011,323.4
-North Korea,2011,277.6
-Kuwait,2011,93.2
-Laos,2011,124.8
-Liberia,2011,2392.0
-Libya,2011,902.8
-Saint Lucia,2011,494.8
-Lebanon,2011,1898.6
-Lesotho,2011,39.4
-Sri Lanka,2011,7880.8
-Lithuania,2011,96.8
-Latvia,2011,91.4
-Madagascar,2011,17.0
-Mauritania,2011,799.4
-North Macedonia,2011,1629.6
-Moldova,2011,722.8
-Mexico,2011,13576.4
-Mali,2011,579.2
-Malaysia,2011,128.0
-Malawi,2011,3891.0
-Montenegro,2011,225.8
-Mongolia,2011,1909.8
-Morocco,2011,711.6
-Mozambique,2011,343.6
-Mauritius,2011,39.8
-Myanmar,2011,22056.6
-Namibia,2011,303.8
-Nepal,2011,1838.6
-Netherlands,2011,27.0
-Niger,2011,283.4
-Nicaragua,2011,402.0
-Nigeria,2011,10448.4
-Norway,2011,5.0
-Nauru,2011,5.0
-New Zealand,2011,5.2
-Pakistan,2011,10655.0
-Panama,2011,37.6
-Paraguay,2011,30.4
-Peru,2011,3324.8
-Philippines,2011,690.4
-Papua New Guinea,2011,25.6
-Poland,2011,231.8
-Portugal,2011,49.4
-Qatar,2011,5.8
-Romania,2011,426.2
-South Africa,2011,163.6
-Russia,2011,13774.4
-Rwanda,2011,7733.0
-El Salvador,2011,8536.2
-Saudi Arabia,2011,56.8
-Senegal,2011,951.4
-Singapore,2011,13.4
-Sierra Leone,2011,2565.8
-Solomon Islands,2011,14.6
-Somalia,2011,22410.6
-Spain,2011,46.8
-Serbia and Kosovo: S/RES/1244 (1999),2011,14558.4
-Vietnam,2011,1419.8
-South Sudan,2011,5.0
-Stateless,2011,3082.0
-Saint Kitts and Nevis,2011,10.6
-Sudan,2011,21905.2
-Suriname,2011,9.4
-Slovakia,2011,307.2
-Slovenia,2011,11.8
-Eswatini,2011,78.6
-Sweden,2011,15.4
-Syria,2011,8513.2
-Tanzania,2011,1351.0
-Turks and Caicos Islands,2011,5.333333333333333
-Thailand,2011,310.6
-Tajikistan,2011,237.6
-Turkmenistan,2011,87.6
-Togo,2011,1475.2
-Tonga,2011,17.4
-Trinidad and Tobago,2011,187.2
-Tunisia,2011,661.8
-Turkey,2011,8270.8
-United Arab Emirates,2011,14.0
-Uganda,2011,2010.8
-Unknown,2011,287027.4
-Ukraine,2011,1627.4
-Uruguay,2011,46.6
-United States,2011,1148.0
-Uzbekistan,2011,1672.8
-Saint Vincent and the Grenadines,2011,854.4
-Venezuela,2011,1207.2
-Western Sahara,2011,20.0
-Yemen,2011,627.6
-Zambia,2011,250.4
-Zimbabwe,2011,21634.8
-Afghanistan,2012,38437.2
-Albania,2012,2133.0
-Algeria,2012,1883.8
-Angola,2012,814.2
-Antigua and Barbuda,2012,33.0
-Egypt,2012,2346.2
-Argentina,2012,94.4
-Armenia,2012,3267.2
-Australia,2012,7.6
-Austria,2012,8.4
-Azerbaijan,2012,2157.6
-Bahrain,2012,45.0
-Barbados,2012,60.6
-Burundi,2012,8284.0
-Belgium,2012,16.0
-Benin,2012,260.0
-Bermuda,2012,5.0
-Bangladesh,2012,5686.4
-Bahamas,2012,30.6
-Bhutan,2012,845.8
-Burkina Faso,2012,405.4
-Belarus,2012,943.4
-Bolivia,2012,152.6
-Botswana,2012,164.4
-Brazil,2012,279.4
-Bosnia and Herzegovina,2012,1678.2
-Bulgaria,2012,234.4
-Belize,2012,12.4
-Cambodia,2012,193.0
-Canada,2012,26.6
-Central African Republic,2012,1452.2
-Chad,2012,3039.0
-China,2012,14481.8
-Chile,2012,131.2
-Cameroon,2012,2617.4
-Congo,2012,3135.0
-Democratic Republic of Congo,2012,44289.6
-Comoros,2012,25.6
-Colombia,2012,47702.4
-Costa Rica,2012,55.4
-Cuba,2012,1838.2
-Cape Verde,2012,8.8
-Czechia,2012,977.0
-Djibouti,2012,202.8
-Dominica,2012,15.2
-Dominican Republic,2012,351.2
-Ecuador,2012,299.4
-Equatorial Guinea,2012,53.4
-Eritrea,2012,15538.6
-Estonia,2012,28.8
-Ethiopia,2012,41970.2
-Fiji,2012,276.6
-Finland,2012,5.2
-France,2012,49.2
-Gabon,2012,36.8
-Gambia,2012,1251.8
-Palestine,2012,2502.6
-United Kingdom,2012,39.2
-Georgia,2012,4913.0
-Germany,2012,52.2
-Ghana,2012,2254.6
-Guinea-Bissau,2012,459.0
-Greece,2012,47.4
-Grenada,2012,62.0
-Guatemala,2012,4560.0
-Guinea,2012,4349.0
-Guyana,2012,188.8
-Haiti,2012,8367.0
-Hong Kong,2012,53.0
-Honduras,2012,880.8
-Croatia,2012,528.4
-Hungary,2012,3204.8
-Cote d'Ivoire,2012,9424.8
-India,2012,5286.6
-Indonesia,2012,1109.6
-Ireland,2012,7.0
-Iran,2012,16686.0
-Iraq,2012,25337.8
-Israel,2012,761.2
-Italy,2012,39.8
-Jamaica,2012,521.0
-Jordan,2012,652.8
-Japan,2012,27.4
-Kazakhstan,2012,720.8
-Kenya,2012,1991.0
-Kyrgyzstan,2012,1030.2
-Kiribati,2012,6.25
-South Korea,2012,283.2
-North Korea,2012,435.8
-Kuwait,2012,99.4
-Laos,2012,94.0
-Liberia,2012,2092.6
-Libya,2012,1159.0
-Saint Lucia,2012,562.4
-Lebanon,2012,1781.8
-Lesotho,2012,92.8
-Sri Lanka,2012,9489.6
-Lithuania,2012,98.2
-Latvia,2012,102.8
-Madagascar,2012,21.4
-Mauritania,2012,1204.8
-North Macedonia,2012,2338.0
-Moldova,2012,627.0
-Maldives,2012,18.0
-Mexico,2012,11345.2
-Mali,2012,824.0
-Malaysia,2012,139.6
-Malawi,2012,3162.8
-Montenegro,2012,241.0
-Mongolia,2012,1706.4
-Morocco,2012,970.8
-Mozambique,2012,381.0
-Mauritius,2012,59.6
-Myanmar,2012,23379.2
-Namibia,2012,414.8
-Nepal,2012,1913.4
-Netherlands,2012,28.2
-Niger,2012,302.0
-Nicaragua,2012,261.8
-Nigeria,2012,11335.2
-Norway,2012,5.0
-New Zealand,2012,5.4
-Pakistan,2012,13675.8
-Panama,2012,38.0
-Paraguay,2012,26.2
-Peru,2012,2780.8
-Philippines,2012,615.4
-Papua New Guinea,2012,38.6
-Poland,2012,259.6
-Portugal,2012,51.0
-Qatar,2012,5.8
-Romania,2012,436.0
-South Africa,2012,186.2
-Russia,2012,13309.0
-Rwanda,2012,8143.0
-El Salvador,2012,5143.6
-Saudi Arabia,2012,79.0
-Senegal,2012,1303.4
-Singapore,2012,15.6
-Sierra Leone,2012,2096.2
-Solomon Islands,2012,13.6
-Somalia,2012,25861.8
-Spain,2012,60.8
-Serbia and Kosovo: S/RES/1244 (1999),2012,15040.6
-Vietnam,2012,1343.6
-South Sudan,2012,9340.5
-Stateless,2012,3183.8
-Saint Kitts and Nevis,2012,13.0
-Sudan,2012,22328.2
-Suriname,2012,11.2
-Slovakia,2012,412.6
-Slovenia,2012,12.4
-Eswatini,2012,99.0
-Sweden,2012,22.6
-Switzerland,2012,5.0
-Syria,2012,12346.6
-Tanzania,2012,931.2
-Turks and Caicos Islands,2012,6.25
-Thailand,2012,272.4
-Tajikistan,2012,308.0
-Turkmenistan,2012,85.8
-Timor-Leste,2012,110.4
-Togo,2012,1818.6
-Tonga,2012,22.4
-Trinidad and Tobago,2012,170.2
-Tunisia,2012,1050.8
-Turkey,2012,8207.8
-Tuvalu,2012,5.0
-United Arab Emirates,2012,14.6
-Uganda,2012,2000.0
-Unknown,2012,296042.0
-Ukraine,2012,1385.6
-Uruguay,2012,47.0
-United States,2012,1011.4
-Uzbekistan,2012,1591.6
-Saint Vincent and the Grenadines,2012,850.8
-Venezuela,2012,956.2
-Samoa,2012,7.333333333333333
-Western Sahara,2012,41.0
-Yemen,2012,882.6
-Zambia,2012,200.8
-Zimbabwe,2012,23115.8
-Afghanistan,2013,48858.6
-Albania,2013,3724.4
-Algeria,2013,2436.6
-Angola,2013,955.8
-Antigua and Barbuda,2013,33.6
-Egypt,2013,3881.2
-Argentina,2013,80.8
-Armenia,2013,3587.0
-Australia,2013,6.8
-Austria,2013,8.2
-Azerbaijan,2013,2505.0
-Bahrain,2013,59.6
-Barbados,2013,61.8
-Burundi,2013,9837.4
-Belgium,2013,20.2
-Benin,2013,324.4
-Bangladesh,2013,8915.2
-Bahamas,2013,30.8
-Bhutan,2013,658.4
-Burkina Faso,2013,530.8
-Belarus,2013,901.0
-Bolivia,2013,162.2
-Botswana,2013,155.0
-Brazil,2013,318.4
-Bosnia and Herzegovina,2013,2273.8
-Bulgaria,2013,210.8
-Belize,2013,19.6
-Cambodia,2013,196.8
-Canada,2013,19.4
-Central African Republic,2013,2701.4
-Chad,2013,3139.8
-China,2013,15518.6
-Chile,2013,118.8
-Cameroon,2013,2878.2
-Congo,2013,2780.8
-Democratic Republic of Congo,2013,50104.8
-Comoros,2013,82.0
-Colombia,2013,40306.0
-Costa Rica,2013,134.4
-Cuba,2013,1888.8
-Curacao,2013,59.0
-Cape Verde,2013,9.4
-Czechia,2013,842.6
-Denmark,2013,5.2
-Djibouti,2013,270.0
-Dominica,2013,15.4
-Dominican Republic,2013,465.8
-Ecuador,2013,718.6
-Equatorial Guinea,2013,55.8
-Eritrea,2013,18402.8
-Estonia,2013,26.6
-Ethiopia,2013,45532.0
-Fiji,2013,329.2
-Finland,2013,5.2
-France,2013,46.6
-Gabon,2013,53.0
-Gambia,2013,1789.6
-Palestine,2013,2640.2
-United Kingdom,2013,47.6
-Georgia,2013,6206.8
-Germany,2013,46.8
-Ghana,2013,2850.8
-Guinea-Bissau,2013,646.4
-Greece,2013,64.4
-Grenada,2013,57.2
-Guatemala,2013,4198.4
-Guinea,2013,6267.4
-Guyana,2013,160.8
-Haiti,2013,6864.6
-Hong Kong,2013,53.6
-Honduras,2013,1751.0
-Croatia,2013,698.6
-Hungary,2013,3538.6
-Iceland,2013,5.333333333333333
-Cote d'Ivoire,2013,10330.0
-India,2013,6407.4
-Indonesia,2013,888.8
-Ireland,2013,11.4
-Iran,2013,20212.4
-Iraq,2013,28836.0
-Israel,2013,611.6
-Italy,2013,49.2
-Jamaica,2013,566.8
-Jordan,2013,689.6
-Japan,2013,31.8
-Kazakhstan,2013,834.4
-Kenya,2013,1990.0
-Kyrgyzstan,2013,1206.6
-South Korea,2013,223.8
-North Korea,2013,581.2
-Kuwait,2013,121.8
-Laos,2013,66.6
-Liberia,2013,2012.8
-Libya,2013,1422.0
-Saint Lucia,2013,546.6
-Lebanon,2013,1872.6
-Lesotho,2013,224.6
-Sri Lanka,2013,11308.8
-Lithuania,2013,101.4
-Latvia,2013,111.2
-Macao,2013,5.0
-Madagascar,2013,51.0
-Mauritania,2013,1818.8
-North Macedonia,2013,3459.4
-Moldova,2013,626.6
-Maldives,2013,20.0
-Mexico,2013,10311.6
-Marshall Islands,2013,5.0
-Mali,2013,1982.2
-Malaysia,2013,167.2
-Malawi,2013,2374.6
-Montenegro,2013,320.4
-Mongolia,2013,1543.6
-Morocco,2013,1438.4
-Mozambique,2013,530.8
-Mauritius,2013,79.4
-Myanmar,2013,27905.4
-Namibia,2013,465.4
-Nepal,2013,2251.4
-Netherlands,2013,28.2
-Niger,2013,333.0
-Nicaragua,2013,270.0
-Nigeria,2013,13511.8
-Norway,2013,5.0
-New Zealand,2013,5.6
-Pakistan,2013,21936.0
-Panama,2013,36.2
-Paraguay,2013,25.4
-Peru,2013,2420.0
-Philippines,2013,609.8
-Palau,2013,5.0
-Papua New Guinea,2013,65.8
-Poland,2013,269.4
-Portugal,2013,52.4
-Romania,2013,589.2
-South Africa,2013,229.0
-Russia,2013,15361.8
-Rwanda,2013,8623.0
-El Salvador,2013,5165.2
-Saudi Arabia,2013,110.8
-Senegal,2013,2078.4
-Singapore,2013,19.0
-Sierra Leone,2013,2052.0
-Solomon Islands,2013,13.6
-Somalia,2013,28891.0
-Spain,2013,71.0
-Serbia and Kosovo: S/RES/1244 (1999),2013,16630.0
-Vietnam,2013,1402.2
-South Sudan,2013,16452.0
-Stateless,2013,3724.4
-Saint Kitts and Nevis,2013,15.6
-Sudan,2013,24389.2
-Suriname,2013,12.4
-Slovakia,2013,466.6
-Slovenia,2013,12.2
-Eswatini,2013,109.2
-Sweden,2013,21.8
-Syria,2013,19354.8
-Tanzania,2013,555.0
-Turks and Caicos Islands,2013,6.0
-Thailand,2013,225.8
-Tibet,2013,6.5
-Tajikistan,2013,400.8
-Turkmenistan,2013,127.2
-Timor-Leste,2013,108.4
-Togo,2013,1896.4
-Tonga,2013,30.4
-Trinidad and Tobago,2013,147.4
-Tunisia,2013,1337.4
-Turkey,2013,8612.0
-United Arab Emirates,2013,21.2
-Uganda,2013,2125.4
-Unknown,2013,277611.6
-Ukraine,2013,1331.8
-Uruguay,2013,41.0
-United States,2013,720.0
-Uzbekistan,2013,1579.2
-Saint Vincent and the Grenadines,2013,746.6
-Venezuela,2013,883.4
-Samoa,2013,7.25
-Western Sahara,2013,116.2
-Yemen,2013,1163.4
-Zambia,2013,161.6
-Zimbabwe,2013,24525.0
-Afghanistan,2014,59858.8
-Albania,2014,6426.8
-Algeria,2014,3154.6
-Angola,2014,1160.2
-Antigua and Barbuda,2014,28.4
-Egypt,2014,5719.2
-Argentina,2014,70.4
-Armenia,2014,4027.4
-Azerbaijan,2014,2890.2
-Bahrain,2014,77.2
-Barbados,2014,52.0
-Burundi,2014,12739.8
-Belgium,2014,19.0
-Benin,2014,421.4
-Bangladesh,2014,12870.6
-Bahamas,2014,32.4
-Bhutan,2014,493.8
-Burkina Faso,2014,768.6
-Belarus,2014,892.2
-Bolivia,2014,182.2
-Botswana,2014,129.8
-Brazil,2014,484.2
-Bosnia and Herzegovina,2014,3357.6
-Bulgaria,2014,161.4
-Belize,2014,33.0
-Cambodia,2014,204.2
-Canada,2014,19.4
-Central African Republic,2014,5403.2
-Chad,2014,3336.8
-China,2014,21320.6
-Chile,2014,102.8
-Cameroon,2014,3433.0
-Congo,2014,2823.0
-Democratic Republic of Congo,2014,57351.8
-Comoros,2014,150.6
-Colombia,2014,28381.6
-Costa Rica,2014,144.2
-Cuba,2014,1809.2
-Cape Verde,2014,16.6
-Czechia,2014,442.0
-Denmark,2014,6.2
-Djibouti,2014,321.0
-Dominica,2014,14.4
-Dominican Republic,2014,613.4
-Ecuador,2014,2056.0
-Equatorial Guinea,2014,65.6
-Eritrea,2014,26257.0
-Estonia,2014,26.0
-Ethiopia,2014,48059.0
-Fiji,2014,411.0
-France,2014,40.8
-Gabon,2014,69.6
-Gambia,2014,3653.8
-Palestine,2014,2869.8
-United Kingdom,2014,54.2
-Georgia,2014,6815.6
-Germany,2014,46.0
-Ghana,2014,4110.8
-Guadeloupe,2014,12.0
-Guinea-Bissau,2014,934.8
-Greece,2014,72.0
-Grenada,2014,50.0
-Guatemala,2014,5537.6
-Guinea,2014,9266.2
-Guyana,2014,125.8
-Haiti,2014,5831.6
-Hong Kong,2014,48.0
-Honduras,2014,3578.8
-Croatia,2014,694.4
-Hungary,2014,3115.6
-Iceland,2014,5.25
-Cote d'Ivoire,2014,11958.4
-India,2014,8805.2
-Indonesia,2014,841.4
-Ireland,2014,26.8
-Iran,2014,24442.4
-Iraq,2014,45106.4
-Israel,2014,457.2
-Italy,2014,65.0
-Jamaica,2014,571.4
-Jordan,2014,796.8
-Japan,2014,38.4
-Kazakhstan,2014,943.2
-Kenya,2014,1980.0
-Kyrgyzstan,2014,1488.0
-South Korea,2014,216.6
-North Korea,2014,602.8
-Kuwait,2014,162.6
-Laos,2014,51.2
-Liberia,2014,2037.6
-Libya,2014,2072.0
-Saint Lucia,2014,434.2
-Lebanon,2014,2288.2
-Lesotho,2014,356.6
-Sri Lanka,2014,13237.8
-Lithuania,2014,90.8
-Latvia,2014,107.4
-Macao,2014,6.2
-Madagascar,2014,84.8
-Mauritania,2014,3040.0
-North Macedonia,2014,4843.4
-Monaco,2014,5.333333333333333
-Moldova,2014,767.8
-Maldives,2014,16.25
-Mexico,2014,12101.4
-Marshall Islands,2014,5.5
-Mali,2014,4276.4
-Malaysia,2014,327.2
-Malawi,2014,3144.4
-Montenegro,2014,540.4
-Mongolia,2014,1526.2
-Morocco,2014,1962.0
-Mozambique,2014,811.4
-Mauritius,2014,106.4
-Myanmar,2014,33657.8
-Namibia,2014,465.8
-Nepal,2014,3220.4
-Netherlands,2014,31.2
-Niger,2014,383.4
-Nicaragua,2014,327.6
-Nigeria,2014,17599.4
-Niue,2014,28.0
-New Zealand,2014,7.2
-Oman,2014,6.0
-Pakistan,2014,29868.6
-Panama,2014,33.6
-Paraguay,2014,26.2
-Peru,2014,1464.6
-Philippines,2014,675.2
-Papua New Guinea,2014,106.2
-Poland,2014,273.0
-Portugal,2014,50.0
-Qatar,2014,5.8
-Romania,2014,709.0
-South Africa,2014,302.8
-Russia,2014,17542.4
-Rwanda,2014,9664.6
-El Salvador,2014,6823.4
-Saudi Arabia,2014,178.2
-Senegal,2014,3698.6
-Seychelles,2014,9.2
-Singapore,2014,22.8
-Sierra Leone,2014,2092.4
-Solomon Islands,2014,12.4
-Somalia,2014,34491.8
-Spain,2014,74.4
-Serbia and Kosovo: S/RES/1244 (1999),2014,23285.2
-Vietnam,2014,1790.4
-South Sudan,2014,13280.5
-Stateless,2014,5154.4
-Saint Kitts and Nevis,2014,14.8
-Sao Tome and Principe,2014,8.333333333333334
-Sudan,2014,28214.4
-Suriname,2014,19.2
-Slovakia,2014,462.4
-Slovenia,2014,10.0
-Eswatini,2014,126.6
-Sweden,2014,21.4
-Syria,2014,34172.6
-Tanzania,2014,725.4
-Thailand,2014,229.4
-Tibet,2014,7.666666666666667
-Tajikistan,2014,516.4
-Turkmenistan,2014,260.4
-Timor-Leste,2014,7.2
-Togo,2014,2042.8
-Tonga,2014,42.6
-Trinidad and Tobago,2014,127.8
-Tunisia,2014,1596.2
-Turkey,2014,8995.2
-United Arab Emirates,2014,30.4
-Uganda,2014,2895.4
-Unknown,2014,279325.8
-Ukraine,2014,4042.8
-Uruguay,2014,37.4
-United States,2014,464.2
-Uzbekistan,2014,1659.0
-Saint Vincent and the Grenadines,2014,541.2
-Venezuela,2014,1533.6
-Samoa,2014,7.2
-Western Sahara,2014,347.4
-Yemen,2014,1586.2
-Zambia,2014,211.0
-Zimbabwe,2014,32730.0
-Afghanistan,2015,104211.0
-Albania,2015,14587.8
-Algeria,2015,4336.2
-Andorra,2015,5.0
-Angola,2015,1668.4
-Antigua and Barbuda,2015,24.4
-Egypt,2015,7833.4
-Argentina,2015,85.6
-Armenia,2015,5136.2
-Austria,2015,8.2
-Azerbaijan,2015,3518.2
-Bahrain,2015,88.6
-Barbados,2015,44.2
-Burundi,2015,16612.2
-Belgium,2015,21.6
-Benin,2015,604.6
-Bangladesh,2015,17681.0
-Bahamas,2015,42.8
-Bhutan,2015,336.6
-Burkina Faso,2015,1207.0
-Belarus,2015,1039.2
-Bolivia,2015,223.8
-Botswana,2015,107.4
-Brazil,2015,866.2
-Brunei,2015,5.0
-Bosnia and Herzegovina,2015,4492.2
-Bulgaria,2015,178.0
-Belize,2015,50.2
-Cambodia,2015,251.2
-Canada,2015,84.4
-Central African Republic,2015,7229.2
-Chad,2015,3457.4
-China,2015,31312.8
-Chile,2015,98.6
-Cameroon,2015,4489.0
-Congo,2015,3037.4
-Democratic Republic of Congo,2015,63941.2
-Comoros,2015,194.8
-Colombia,2015,17690.2
-Costa Rica,2015,172.0
-Cuba,2015,1403.8
-Cape Verde,2015,34.6
-Cyprus,2015,8.6
-Czechia,2015,235.4
-Denmark,2015,8.2
-Djibouti,2015,384.2
-Dominica,2015,29.0
-Dominican Republic,2015,878.0
-Ecuador,2015,4098.8
-Equatorial Guinea,2015,68.2
-Eritrea,2015,35960.8
-Estonia,2015,30.8
-Ethiopia,2015,53618.4
-Fiji,2015,437.2
-France,2015,49.6
-Micronesia (region),2015,5.25
-Gabon,2015,107.0
-Gambia,2015,6009.0
-Palestine,2015,3094.0
-United Kingdom,2015,67.4
-Georgia,2015,7227.6
-Germany,2015,57.2
-Ghana,2015,5852.6
-Guadeloupe,2015,17.5
-Guinea-Bissau,2015,1251.4
-Greece,2015,77.8
-Grenada,2015,47.6
-Guatemala,2015,10723.2
-Guinea,2015,12278.8
-Guyana,2015,136.4
-Haiti,2015,6246.2
-Hong Kong,2015,47.8
-Honduras,2015,7307.0
-Croatia,2015,643.2
-Hungary,2015,2546.6
-Iceland,2015,5.2
-Cote d'Ivoire,2015,13506.0
-India,2015,13008.8
-Indonesia,2015,1278.6
-Ireland,2015,33.0
-Iran,2015,32647.6
-Iraq,2015,86552.2
-Israel,2015,374.6
-Italy,2015,82.4
-Jamaica,2015,628.4
-Jordan,2015,1040.6
-Japan,2015,50.0
-Kazakhstan,2015,1106.4
-Kenya,2015,2301.8
-Kyrgyzstan,2015,1628.6
-Kiribati,2015,6.0
-South Korea,2015,220.4
-North Korea,2015,593.8
-Kuwait,2015,232.6
-Laos,2015,70.6
-Liberia,2015,2138.6
-Libya,2015,3168.8
-Saint Lucia,2015,309.6
-Lebanon,2015,3181.6
-Lesotho,2015,573.8
-Sri Lanka,2015,14476.6
-Lithuania,2015,79.6
-Latvia,2015,87.4
-Macao,2015,10.2
-Madagascar,2015,114.4
-Mauritania,2015,4384.2
-North Macedonia,2015,7196.8
-Moldova,2015,1328.2
-Maldives,2015,18.6
-Mexico,2015,19360.2
-Marshall Islands,2015,5.666666666666667
-Mali,2015,6174.2
-Malaysia,2015,868.6
-Malawi,2015,4266.8
-Montenegro,2015,1107.2
-Mongolia,2015,1874.4
-Morocco,2015,2910.6
-Mozambique,2015,1247.8
-Malta,2015,5.6
-Mauritius,2015,138.8
-Myanmar,2015,41330.6
-Namibia,2015,408.8
-Nepal,2015,4780.6
-Netherlands,2015,38.0
-Niger,2015,472.2
-Nicaragua,2015,544.2
-Nigeria,2015,25487.6
-Niue,2015,23.0
-Norway,2015,5.0
-New Zealand,2015,7.6
-Oman,2015,8.2
-Pakistan,2015,38660.0
-Panama,2015,35.2
-Paraguay,2015,34.8
-Peru,2015,817.8
-Philippines,2015,922.2
-Papua New Guinea,2015,137.2
-Poland,2015,322.2
-Portugal,2015,50.8
-Qatar,2015,7.2
-Romania,2015,922.8
-South Africa,2015,429.6
-Russia,2015,20950.4
-Rwanda,2015,9793.8
-El Salvador,2015,12804.8
-Saudi Arabia,2015,275.4
-Senegal,2015,6254.4
-Seychelles,2015,12.2
-Singapore,2015,29.8
-Sierra Leone,2015,2508.2
-Solomon Islands,2015,15.4
-Somalia,2015,41262.4
-Spain,2015,77.4
-Serbia and Kosovo: S/RES/1244 (1999),2015,30707.0
-Vietnam,2015,2440.4
-South Sudan,2015,11445.2
-Stateless,2015,8044.8
-Saint Kitts and Nevis,2015,16.4
-Sao Tome and Principe,2015,8.75
-Sudan,2015,32056.4
-Suriname,2015,27.0
-Slovakia,2015,485.8
-Slovenia,2015,9.0
-Eswatini,2015,148.4
-Sweden,2015,18.8
-Syria,2015,81396.2
-Tanzania,2015,1002.0
-Thailand,2015,352.6
-Tibet,2015,8.25
-Tajikistan,2015,741.8
-Turkmenistan,2015,492.0
-Timor-Leste,2015,7.2
-Togo,2015,2263.8
-Tonga,2015,53.0
-Trinidad and Tobago,2015,137.6
-Tunisia,2015,1954.6
-Turkey,2015,9911.2
-United Arab Emirates,2015,46.2
-Uganda,2015,3994.8
-Unknown,2015,434477.4
-Ukraine,2015,8262.8
-Uruguay,2015,40.0
-United States,2015,340.0
-Uzbekistan,2015,1868.4
-Saint Vincent and the Grenadines,2015,340.4
-Venezuela,2015,4425.8
-Samoa,2015,7.8
-Western Sahara,2015,630.2
-Yemen,2015,3474.6
-Zambia,2015,288.0
-Zimbabwe,2015,44005.0
-Afghanistan,2016,170185.8
-Albania,2016,18901.2
-Algeria,2016,5335.0
-Andorra,2016,5.0
-Angola,2016,2467.2
-Antigua and Barbuda,2016,24.0
-Egypt,2016,9916.0
-Argentina,2016,118.6
-Armenia,2016,7224.2
-Australia,2016,7.0
-Austria,2016,6.0
-Azerbaijan,2016,4700.2
-Bahrain,2016,97.8
-Barbados,2016,38.4
-Burundi,2016,19592.2
-Belgium,2016,24.4
-Benin,2016,779.8
-Bangladesh,2016,21819.2
-Bahamas,2016,59.6
-Bhutan,2016,189.2
-Burkina Faso,2016,1978.6
-Belarus,2016,1254.2
-Bolivia,2016,275.6
-Botswana,2016,99.2
-Brazil,2016,1578.8
-Brunei,2016,5.0
-Bosnia and Herzegovina,2016,4724.0
-Bulgaria,2016,193.0
-Belize,2016,79.4
-Cambodia,2016,290.8
-Canada,2016,94.2
-Central African Republic,2016,8991.2
-Chad,2016,3468.6
-China,2016,43470.8
-Chile,2016,115.2
-Cameroon,2016,6181.6
-Congo,2016,3517.8
-Democratic Republic of Congo,2016,70020.0
-Comoros,2016,234.4
-Colombia,2016,11689.2
-Costa Rica,2016,226.6
-Cuba,2016,2227.2
-Cape Verde,2016,53.2
-Cyprus,2016,7.6
-Czechia,2016,150.8
-Denmark,2016,8.2
-Djibouti,2016,495.4
-Dominica,2016,52.0
-Dominican Republic,2016,1279.4
-Ecuador,2016,6784.4
-Equatorial Guinea,2016,80.8
-Eritrea,2016,46580.0
-Estonia,2016,32.4
-Ethiopia,2016,61623.8
-Fiji,2016,488.0
-Finland,2016,5.2
-France,2016,62.6
-Gabon,2016,186.2
-Gambia,2016,9550.8
-Palestine,2016,3938.0
-United Kingdom,2016,79.4
-Georgia,2016,9465.6
-Germany,2016,77.0
-Ghana,2016,7723.2
-Guinea-Bissau,2016,1527.4
-Greece,2016,85.4
-Grenada,2016,51.2
-Guatemala,2016,19746.6
-Guinea,2016,16228.4
-Guyana,2016,175.2
-Haiti,2016,9244.4
-Hong Kong,2016,69.2
-Honduras,2016,14177.2
-Croatia,2016,563.2
-Hungary,2016,1677.6
-Iceland,2016,5.2
-Cote d'Ivoire,2016,13592.2
-India,2016,17727.2
-Indonesia,2016,1919.6
-Ireland,2016,40.4
-Iran,2016,46464.6
-Iraq,2016,137328.6
-Israel,2016,382.8
-Italy,2016,102.4
-Jamaica,2016,739.4
-Jordan,2016,1420.8
-Japan,2016,59.4
-Kazakhstan,2016,1402.0
-Kenya,2016,2695.0
-Kyrgyzstan,2016,1790.0
-South Korea,2016,239.0
-North Korea,2016,589.0
-Kuwait,2016,329.8
-Laos,2016,99.2
-Liberia,2016,2267.4
-Libya,2016,4082.2
-Saint Lucia,2016,213.0
-Lebanon,2016,4601.6
-Lesotho,2016,681.8
-Sri Lanka,2016,15521.2
-Lithuania,2016,73.0
-Latvia,2016,78.0
-Madagascar,2016,122.8
-Mauritania,2016,5745.6
-North Macedonia,2016,8155.2
-Moldova,2016,2107.6
-Maldives,2016,24.6
-Mexico,2016,31145.8
-Mali,2016,8036.8
-Malaysia,2016,2074.0
-Malawi,2016,4424.6
-Montenegro,2016,1273.6
-Mongolia,2016,2352.0
-Morocco,2016,4134.0
-Mozambique,2016,2319.0
-Mauritius,2016,158.0
-Myanmar,2016,47715.0
-Namibia,2016,216.4
-Nepal,2016,6686.0
-Netherlands,2016,38.0
-Niger,2016,581.8
-Nicaragua,2016,941.6
-Nigeria,2016,36756.2
-Norway,2016,7.0
-New Zealand,2016,10.0
-Oman,2016,12.0
-Pakistan,2016,49464.2
-Panama,2016,45.2
-Paraguay,2016,53.8
-Peru,2016,1176.2
-Philippines,2016,1475.0
-Papua New Guinea,2016,180.2
-Poland,2016,365.4
-Portugal,2016,53.6
-Qatar,2016,10.4
-Romania,2016,1333.8
-South Africa,2016,604.6
-Russia,2016,25655.6
-Rwanda,2016,10280.8
-El Salvador,2016,24910.8
-Saudi Arabia,2016,452.2
-Senegal,2016,9329.4
-Seychelles,2016,11.6
-Singapore,2016,35.6
-Sierra Leone,2016,3202.2
-Solomon Islands,2016,30.2
-Somalia,2016,47112.6
-Spain,2016,84.4
-Serbia and Kosovo: S/RES/1244 (1999),2016,31966.6
-Vietnam,2016,3087.2
-South Sudan,2016,12602.6
-Stateless,2016,9745.6
-Saint Kitts and Nevis,2016,18.0
-Sao Tome and Principe,2016,8.6
-Sudan,2016,35860.8
-Suriname,2016,31.0
-Slovakia,2016,494.2
-Slovenia,2016,10.0
-Eswatini,2016,149.6
-Sweden,2016,18.6
-Switzerland,2016,6.25
-Syria,2016,115375.4
-Tanzania,2016,1134.4
-Turks and Caicos Islands,2016,6.0
-Thailand,2016,507.6
-Tibet,2016,8.6
-Tajikistan,2016,1307.2
-Turkmenistan,2016,691.8
-Togo,2016,2198.0
-Tonga,2016,64.2
-Trinidad and Tobago,2016,165.2
-Tunisia,2016,2047.4
-Turkey,2016,13181.4
-United Arab Emirates,2016,77.0
-Uganda,2016,4666.4
-Unknown,2016,421069.6
-Ukraine,2016,14982.6
-Uruguay,2016,52.4
-United States,2016,279.0
-Uzbekistan,2016,2185.2
-Saint Vincent and the Grenadines,2016,185.6
-Venezuela,2016,13326.6
-Samoa,2016,8.8
-Western Sahara,2016,1027.8
-Yemen,2016,6418.2
-Zambia,2016,310.4
-Zimbabwe,2016,45306.2
-Afghanistan,2017,224522.2
-Albania,2017,21909.0
-Algeria,2017,6128.8
-Andorra,2017,5.0
-Angola,2017,3799.4
-Antigua and Barbuda,2017,29.6
-Egypt,2017,12010.0
-Argentina,2017,180.8
-Armenia,2017,9628.0
-Australia,2017,7.0
-Austria,2017,10.2
-Azerbaijan,2017,6171.0
-Bahrain,2017,111.6
-Barbados,2017,42.4
-Burundi,2017,29087.4
-Belgium,2017,29.2
-Benin,2017,920.4
-Bangladesh,2017,33810.4
-Bahamas,2017,100.2
-Bhutan,2017,249.4
-Burkina Faso,2017,2989.2
-Belarus,2017,1624.0
-Bolivia,2017,416.2
-Botswana,2017,93.0
-Brazil,2017,2887.6
-Brunei,2017,6.333333333333333
-Bosnia and Herzegovina,2017,4543.0
-Bulgaria,2017,229.0
-Belize,2017,119.6
-Cambodia,2017,563.6
-Canada,2017,108.8
-Central African Republic,2017,11210.8
-Chad,2017,3338.0
-China,2017,58300.0
-Chile,2017,172.6
-Cameroon,2017,10427.0
-Congo,2017,5633.6
-Democratic Republic of Congo,2017,85516.4
-Comoros,2017,288.0
-Colombia,2017,14457.8
-Costa Rica,2017,319.2
-Cuba,2017,4714.2
-Cape Verde,2017,87.4
-Cyprus,2017,10.0
-Czechia,2017,173.4
-Denmark,2017,11.2
-Djibouti,2017,692.8
-Dominica,2017,62.2
-Dominican Republic,2017,1840.2
-Ecuador,2017,10148.8
-Equatorial Guinea,2017,87.2
-Eritrea,2017,58132.8
-Estonia,2017,35.2
-Ethiopia,2017,79975.2
-French Guiana,2017,11.0
-Fiji,2017,569.8
-Finland,2017,6.2
-France,2017,83.0
-Gabon,2017,314.2
-Gambia,2017,13643.0
-Palestine,2017,5225.2
-United Kingdom,2017,102.0
-Georgia,2017,11843.8
-Germany,2017,108.6
-Ghana,2017,10530.2
-Guadeloupe,2017,24.0
-Guinea-Bissau,2017,2048.2
-Greece,2017,79.0
-Grenada,2017,53.8
-Guatemala,2017,34026.8
-Guinea,2017,21231.2
-Guyana,2017,257.0
-Haiti,2017,16122.4
-Hong Kong,2017,77.2
-Honduras,2017,25972.8
-Croatia,2017,358.2
-Hungary,2017,1262.6
-Cote d'Ivoire,2017,16660.8
-India,2017,24467.6
-Indonesia,2017,2896.8
-Ireland,2017,48.8
-Iran,2017,56672.0
-Iraq,2017,187006.2
-Israel,2017,437.8
-Italy,2017,148.0
-Jamaica,2017,926.0
-Jordan,2017,1989.8
-Japan,2017,71.8
-Kazakhstan,2017,1919.6
-Kenya,2017,3529.0
-Kyrgyzstan,2017,2064.8
-South Korea,2017,278.6
-North Korea,2017,501.8
-Kuwait,2017,493.0
-Laos,2017,141.8
-Liberia,2017,2535.6
-Libya,2017,5071.8
-Saint Lucia,2017,145.2
-Lebanon,2017,6063.4
-Lesotho,2017,630.0
-Sri Lanka,2017,16504.4
-Lithuania,2017,74.0
-Latvia,2017,80.2
-Macao,2017,11.2
-Madagascar,2017,132.0
-Mauritania,2017,6648.6
-North Macedonia,2017,8034.0
-Moldova,2017,2705.2
-Maldives,2017,25.2
-Mexico,2017,47440.4
-Mali,2017,10684.2
-Malaysia,2017,3935.6
-Malawi,2017,4146.8
-Montenegro,2017,1353.4
-Mongolia,2017,2997.6
-Morocco,2017,5152.8
-Mozambique,2017,4662.2
-Malta,2017,5.6
-Mauritius,2017,181.0
-Myanmar,2017,50808.2
-Namibia,2017,144.4
-Nepal,2017,8821.0
-Netherlands,2017,45.2
-Niger,2017,990.8
-Nicaragua,2017,1461.8
-Nigeria,2017,52309.2
-Niue,2017,17.0
-Norway,2017,11.0
-New Zealand,2017,14.2
-Oman,2017,15.4
-Pakistan,2017,60100.4
-Panama,2017,64.2
-Paraguay,2017,84.2
-Peru,2017,1808.4
-Philippines,2017,3015.8
-Palau,2017,5.0
-Papua New Guinea,2017,238.0
-Poland,2017,457.0
-Portugal,2017,78.0
-Qatar,2017,16.8
-Romania,2017,1863.0
-South Africa,2017,882.0
-Russia,2017,30337.4
-Rwanda,2017,10784.4
-El Salvador,2017,45561.8
-Saudi Arabia,2017,673.4
-Senegal,2017,13836.0
-Seychelles,2017,9.8
-Singapore,2017,41.6
-Sierra Leone,2017,3988.2
-Solomon Islands,2017,50.4
-Somalia,2017,52040.6
-Spain,2017,107.6
-Serbia and Kosovo: S/RES/1244 (1999),2017,31199.2
-Vietnam,2017,4231.4
-South Sudan,2017,10157.8
-Stateless,2017,10881.2
-Saint Kitts and Nevis,2017,17.6
-Sao Tome and Principe,2017,12.0
-Sudan,2017,41994.8
-Suriname,2017,36.2
-Slovakia,2017,509.2
-Slovenia,2017,10.4
-Eswatini,2017,124.4
-Sweden,2017,14.0
-Switzerland,2017,7.0
-Syria,2017,139608.0
-Tanzania,2017,1264.0
-Turks and Caicos Islands,2017,6.0
-Thailand,2017,739.8
-Tibet,2017,9.4
-Tajikistan,2017,1941.6
-Turkmenistan,2017,889.8
-Timor-Leste,2017,6.6
-Togo,2017,2346.8
-Tonga,2017,77.6
-Trinidad and Tobago,2017,207.8
-Tunisia,2017,2057.6
-Turkey,2017,18170.2
-United Arab Emirates,2017,115.8
-Uganda,2017,6082.4
-Unknown,2017,382692.6
-Ukraine,2017,22274.8
-Uruguay,2017,80.6
-United States,2017,634.8
-Uzbekistan,2017,2607.6
-Vanuatu,2017,14.0
-Saint Vincent and the Grenadines,2017,115.6
-Venezuela,2017,42846.6
-Samoa,2017,8.8
-Western Sahara,2017,1370.8
-Yemen,2017,11027.8
-Zambia,2017,294.4
-Zimbabwe,2017,41313.6
-Afghanistan,2018,271486.8
-Albania,2018,24169.0
-Algeria,2018,6761.0
-Angola,2018,5291.8
-Antigua and Barbuda,2018,33.4
-Egypt,2018,13466.4
-Argentina,2018,264.4
-Armenia,2018,11294.8
-Australia,2018,9.4
-Austria,2018,11.2
-Azerbaijan,2018,7312.0
-Bahrain,2018,121.0
-Barbados,2018,48.4
-Burundi,2018,36880.2
-Belgium,2018,38.8
-Benin,2018,1035.8
-Bangladesh,2018,41007.6
-Bahamas,2018,173.0
-Bhutan,2018,296.0
-Burkina Faso,2018,3791.6
-Belarus,2018,2106.4
-Bolivia,2018,576.8
-Botswana,2018,90.6
-Brazil,2018,4491.4
-Bosnia and Herzegovina,2018,4038.8
-Bulgaria,2018,267.0
-Belize,2018,152.8
-Cambodia,2018,667.2
-Canada,2018,120.0
-Central African Republic,2018,13174.6
-Chad,2018,3449.4
-China,2018,72210.4
-Chile,2018,262.2
-Cameroon,2018,13311.6
-Congo,2018,7331.4
-Democratic Republic of Congo,2018,99130.2
-Comoros,2018,324.4
-Colombia,2018,20465.0
-Costa Rica,2018,336.8
-Cuba,2018,9809.6
-Cape Verde,2018,125.2
-Cyprus,2018,11.0
-Czechia,2018,196.0
-Denmark,2018,17.2
-Djibouti,2018,834.6
-Dominica,2018,69.4
-Dominican Republic,2018,2353.4
-Ecuador,2018,13226.2
-Equatorial Guinea,2018,110.4
-Eritrea,2018,68064.8
-Estonia,2018,38.2
-Ethiopia,2018,96763.0
-French Guiana,2018,17.0
-Fiji,2018,736.6
-Finland,2018,6.2
-France,2018,118.4
-Gabon,2018,441.2
-Gambia,2018,15682.8
-Palestine,2018,7250.2
-United Kingdom,2018,125.6
-Georgia,2018,13733.4
-Germany,2018,129.2
-Ghana,2018,12043.2
-Guadeloupe,2018,20.75
-Guinea-Bissau,2018,2379.6
-Greece,2018,84.6
-Grenada,2018,57.4
-Guatemala,2018,49714.8
-Guinea,2018,25519.4
-Guyana,2018,340.0
-Haiti,2018,23285.8
-Hong Kong,2018,71.2
-Honduras,2018,40219.6
-Croatia,2018,178.0
-Hungary,2018,1032.2
-Iceland,2018,5.0
-Cote d'Ivoire,2018,19034.8
-India,2018,32333.8
-Indonesia,2018,3352.4
-Ireland,2018,54.2
-Iran,2018,68389.0
-Iraq,2018,229720.4
-Israel,2018,516.6
-Italy,2018,208.8
-Jamaica,2018,1099.0
-Jordan,2018,2628.2
-Japan,2018,85.0
-Kazakhstan,2018,2856.8
-Kenya,2018,4548.0
-Kyrgyzstan,2018,2351.2
-South Korea,2018,343.4
-North Korea,2018,343.0
-Kuwait,2018,702.4
-Laos,2018,192.4
-Liberia,2018,2736.4
-Libya,2018,6015.4
-Saint Lucia,2018,106.8
-Lebanon,2018,7129.0
-Lesotho,2018,502.4
-Sri Lanka,2018,16181.2
-Lithuania,2018,76.6
-Luxembourg,2018,5.0
-Latvia,2018,87.6
-Macao,2018,15.2
-Madagascar,2018,120.6
-Mauritania,2018,7504.2
-North Macedonia,2018,7343.4
-Moldova,2018,3437.2
-Maldives,2018,27.4
-Mexico,2018,62945.8
-Mali,2018,11556.6
-Malaysia,2018,6889.8
-Malawi,2018,3853.8
-Montenegro,2018,1364.6
-Mongolia,2018,3624.4
-Morocco,2018,6212.6
-Mozambique,2018,6172.2
-Malta,2018,6.0
-Mauritius,2018,215.8
-Myanmar,2018,47908.2
-Namibia,2018,155.6
-Nepal,2018,9879.2
-Netherlands,2018,58.4
-Niger,2018,1317.6
-Nicaragua,2018,7813.4
-Nigeria,2018,64967.6
-Niue,2018,14.0
-Norway,2018,12.2
-New Zealand,2018,15.8
-Oman,2018,19.8
-Pakistan,2018,65659.2
-Panama,2018,87.0
-Paraguay,2018,134.2
-Peru,2018,2648.2
-Philippines,2018,3601.4
-Papua New Guinea,2018,297.8
-Poland,2018,584.6
-Portugal,2018,119.0
-Qatar,2018,22.4
-Romania,2018,2483.4
-South Africa,2018,1291.4
-Russia,2018,33798.8
-Rwanda,2018,11842.2
-El Salvador,2018,67164.0
-Saudi Arabia,2018,922.2
-Senegal,2018,16381.8
-Singapore,2018,49.6
-Sierra Leone,2018,4993.8
-Solomon Islands,2018,77.4
-Somalia,2018,56078.0
-Spain,2018,141.6
-Serbia and Kosovo: S/RES/1244 (1999),2018,28614.6
-Vietnam,2018,4945.8
-South Sudan,2018,6563.0
-Stateless,2018,11171.6
-Saint Kitts and Nevis,2018,15.6
-Sao Tome and Principe,2018,14.2
-Sudan,2018,49805.8
-Suriname,2018,44.2
-Slovakia,2018,507.4
-Slovenia,2018,10.2
-Eswatini,2018,104.8
-Sweden,2018,17.8
-Switzerland,2018,8.6
-Syria,2018,159319.4
-Tanzania,2018,1392.4
-Thailand,2018,1263.6
-Tajikistan,2018,2459.2
-Turkmenistan,2018,1079.2
-Timor-Leste,2018,7.4
-Togo,2018,2754.4
-Tonga,2018,99.4
-Trinidad and Tobago,2018,243.4
-Tunisia,2018,2250.4
-Turkey,2018,24642.8
-United Arab Emirates,2018,162.0
-Uganda,2018,7522.8
-Unknown,2018,364019.4
-Ukraine,2018,28341.6
-Uruguay,2018,116.8
-United States,2018,1145.0
-Uzbekistan,2018,3173.6
-Vanuatu,2018,33.0
-Saint Vincent and the Grenadines,2018,82.2
-Venezuela,2018,135460.4
-Samoa,2018,15.8
-Western Sahara,2018,1650.6
-Yemen,2018,17829.4
-Zambia,2018,286.4
-Zimbabwe,2018,36373.4
-Afghanistan,2019,305454.2
-Albania,2019,24958.8
-Algeria,2019,7282.6
-Angola,2019,7106.6
-Antigua and Barbuda,2019,43.6
-Egypt,2019,14636.8
-Argentina,2019,430.4
-Armenia,2019,12257.8
-Australia,2019,18.4
-Austria,2019,11.2
-Azerbaijan,2019,8081.2
-Bahrain,2019,132.6
-Barbados,2019,68.2
-Burundi,2019,43776.2
-Belgium,2019,55.8
-Benin,2019,1143.4
-Bangladesh,2019,49263.0
-Bahamas,2019,271.0
-Bhutan,2019,340.6
-Burkina Faso,2019,4478.4
-Belarus,2019,2722.8
-Bolivia,2019,772.0
-Botswana,2019,104.6
-Brazil,2019,6660.6
-Brunei,2019,7.25
-Bosnia and Herzegovina,2019,3023.2
-Bulgaria,2019,298.4
-Belize,2019,191.8
-Cambodia,2019,788.8
-Canada,2019,126.6
-Central African Republic,2019,13518.0
-Chad,2019,3861.6
-China,2019,83595.2
-Chile,2019,493.2
-Cameroon,2019,16696.8
-Congo,2019,8897.6
-Democratic Republic of Congo,2019,115448.0
-Comoros,2019,546.6
-Colombia,2019,34635.2
-Costa Rica,2019,460.6
-Cuba,2019,20641.8
-Cape Verde,2019,166.0
-Cyprus,2019,17.0
-Czechia,2019,213.6
-Denmark,2019,22.6
-Djibouti,2019,919.4
-Dominica,2019,83.2
-Dominican Republic,2019,2933.4
-Ecuador,2019,15701.2
-Equatorial Guinea,2019,127.6
-Eritrea,2019,72354.4
-Estonia,2019,43.0
-Ethiopia,2019,111839.8
-French Guiana,2019,19.333333333333332
-Fiji,2019,1051.4
-Finland,2019,7.0
-France,2019,164.0
-Gabon,2019,596.8
-Gambia,2019,15432.2
-Palestine,2019,8836.0
-United Kingdom,2019,155.6
-Georgia,2019,16121.2
-Germany,2019,154.6
-Ghana,2019,12632.6
-Guinea-Bissau,2019,2561.6
-Greece,2019,99.4
-Grenada,2019,64.8
-Guatemala,2019,70470.2
-Guinea,2019,28106.2
-Guyana,2019,445.6
-Haiti,2019,35086.0
-Hong Kong,2019,108.0
-Honduras,2019,62794.6
-Croatia,2019,168.8
-Hungary,2019,1100.8
-Iceland,2019,5.0
-Cote d'Ivoire,2019,20344.0
-India,2019,42195.2
-Indonesia,2019,3864.4
-Ireland,2019,56.0
-Iran,2019,78654.4
-Iraq,2019,269661.4
-Israel,2019,598.2
-Italy,2019,273.0
-Jamaica,2019,1339.2
-Jordan,2019,3315.4
-Japan,2019,95.2
-Kazakhstan,2019,4024.2
-Kenya,2019,5539.2
-Kyrgyzstan,2019,2503.2
-South Korea,2019,415.6
-North Korea,2019,319.8
-Kuwait,2019,931.0
-Laos,2019,247.8
-Liberia,2019,2865.6
-Libya,2019,6441.2
-Saint Lucia,2019,114.8
-Lebanon,2019,7970.0
-Lesotho,2019,379.2
-Liechtenstein,2019,14.0
-Sri Lanka,2019,15952.2
-Lithuania,2019,80.4
-Latvia,2019,95.8
-Macao,2019,20.8
-Madagascar,2019,133.4
-Mauritania,2019,7821.8
-North Macedonia,2019,6292.4
-Moldova,2019,4280.4
-Maldives,2019,28.6
-Mexico,2019,77410.0
-Mali,2019,10832.6
-Malaysia,2019,10952.0
-Malawi,2019,3589.6
-Montenegro,2019,1231.2
-Mongolia,2019,3995.8
-Morocco,2019,7249.2
-Mozambique,2019,7643.6
-Malta,2019,8.0
-Mauritius,2019,246.4
-Myanmar,2019,45147.2
-Namibia,2019,298.8
-Nepal,2019,10538.4
-Netherlands,2019,70.8
-Niger,2019,1705.0
-Nicaragua,2019,21099.8
-Nigeria,2019,81452.6
-Niue,2019,12.4
-Norway,2019,13.4
-Nauru,2019,10.0
-New Zealand,2019,18.6
-Oman,2019,29.8
-Pakistan,2019,70055.4
-Panama,2019,129.4
-Paraguay,2019,253.8
-Peru,2019,4176.6
-Philippines,2019,4324.6
-Papua New Guinea,2019,365.0
-Poland,2019,735.2
-Portugal,2019,179.8
-Qatar,2019,28.6
-Romania,2019,3064.8
-South Africa,2019,1753.4
-Russia,2019,38624.4
-Rwanda,2019,12996.8
-El Salvador,2019,90843.0
-Saudi Arabia,2019,1129.8
-Senegal,2019,17706.0
-Seychelles,2019,9.6
-Singapore,2019,61.0
-Sierra Leone,2019,5823.0
-Solomon Islands,2019,118.8
-Somalia,2019,57246.4
-Spain,2019,183.2
-Serbia and Kosovo: S/RES/1244 (1999),2019,20995.2
-Vietnam,2019,5940.2
-South Sudan,2019,6986.8
-Stateless,2019,10537.2
-Saint Kitts and Nevis,2019,17.6
-Sao Tome and Principe,2019,19.0
-Sudan,2019,57413.4
-Suriname,2019,49.4
-Slovakia,2019,488.6
-Slovenia,2019,12.2
-Eswatini,2019,96.2
-Sweden,2019,24.0
-Switzerland,2019,11.6
-Syria,2019,167190.0
-Tanzania,2019,1574.0
-Thailand,2019,1887.8
-Tajikistan,2019,2825.0
-Turkmenistan,2019,1045.8
-Timor-Leste,2019,13.6
-Togo,2019,3092.4
-Tonga,2019,166.8
-Trinidad and Tobago,2019,290.4
-Tunisia,2019,2430.0
-Turkey,2019,31803.0
-United Arab Emirates,2019,185.0
-Uganda,2019,8873.0
-Unknown,2019,297427.2
-Ukraine,2019,30923.8
-Uruguay,2019,170.6
-United States,2019,1737.0
-Uzbekistan,2019,3779.2
-Vanuatu,2019,47.0
-Vatican,2019,5.0
-Saint Vincent and the Grenadines,2019,88.8
-Venezuela,2019,293409.8
-Samoa,2019,31.2
-Western Sahara,2019,1606.4
-Yemen,2019,24192.4
-Zambia,2019,319.6
-Zimbabwe,2019,31125.4
-Afghanistan,2020,301440.0
-Anguilla,2020,5.0
-Albania,2020,20053.4
-Algeria,2020,7313.8
-Andorra,2020,5.0
-Angola,2020,8936.8
-Antigua and Barbuda,2020,51.4
-Egypt,2020,15444.0
-Argentina,2020,636.2
-Armenia,2020,12329.6
-Australia,2020,19.8
-Azerbaijan,2020,8323.8
-Bahrain,2020,140.0
-Barbados,2020,87.4
-Burundi,2020,48450.4
-Belgium,2020,60.8
-Benin,2020,1185.2
-Bangladesh,2020,56081.4
-Bahamas,2020,394.0
-Bhutan,2020,378.2
-Burkina Faso,2020,4962.2
-Belarus,2020,3368.0
-Bolivia,2020,977.6
-Botswana,2020,116.8
-Brazil,2020,9601.8
-Brunei,2020,7.8
-Bosnia and Herzegovina,2020,1891.8
-Bulgaria,2020,327.0
-Belize,2020,235.4
-Cambodia,2020,897.6
-Canada,2020,81.4
-Central African Republic,2020,14082.8
-Chad,2020,4451.4
-China,2020,93670.8
-Chile,2020,885.6
-Cameroon,2020,19828.0
-Congo,2020,10650.6
-Democratic Republic of Congo,2020,129316.6
-Comoros,2020,1039.0
-Colombia,2020,47442.8
-Costa Rica,2020,578.0
-Cuba,2020,32618.0
-Cape Verde,2020,198.6
-Cyprus,2020,19.8
-Czechia,2020,221.4
-Denmark,2020,23.0
-Djibouti,2020,987.6
-Dominica,2020,80.2
-Dominican Republic,2020,3440.4
-Ecuador,2020,18036.2
-Equatorial Guinea,2020,149.2
-Eritrea,2020,74524.0
-Estonia,2020,43.8
-Ethiopia,2020,121517.2
-French Guiana,2020,21.25
-Fiji,2020,1502.2
-France,2020,183.6
-Gabon,2020,775.0
-Gambia,2020,14286.4
-Palestine,2020,10464.2
-United Kingdom,2020,173.8
-Georgia,2020,17353.8
-Germany,2020,170.6
-Ghana,2020,12510.0
-Guadeloupe,2020,33.8
-Guinea-Bissau,2020,2720.0
-Greece,2020,110.8
-Grenada,2020,70.8
-Guatemala,2020,94302.2
-Guinea,2020,30853.0
-Guyana,2020,542.6
-Haiti,2020,49278.4
-Hong Kong,2020,189.4
-Honduras,2020,88690.4
-Croatia,2020,162.6
-Hungary,2020,1080.6
-Cote d'Ivoire,2020,24436.8
-India,2020,51211.0
-Indonesia,2020,4325.0
-Ireland,2020,67.6
-Iran,2020,82684.2
-Iraq,2020,270369.4
-Israel,2020,655.0
-Italy,2020,339.4
-Jamaica,2020,1551.8
-Jordan,2020,3946.4
-Japan,2020,105.8
-Kazakhstan,2020,4906.8
-Kenya,2020,6679.2
-Kyrgyzstan,2020,2589.6
-South Korea,2020,509.8
-North Korea,2020,292.8
-Kuwait,2020,1127.8
-Laos,2020,307.4
-Liberia,2020,2997.4
-Libya,2020,6321.2
-Saint Lucia,2020,119.4
-Lebanon,2020,8365.2
-Lesotho,2020,168.6
-Liechtenstein,2020,9.5
-Sri Lanka,2020,16007.8
-Lithuania,2020,83.2
-Latvia,2020,98.8
-Macao,2020,27.4
-Madagascar,2020,167.8
-Martinique,2020,5.0
-Mauritania,2020,8177.4
-North Macedonia,2020,3713.6
-Moldova,2020,4695.0
-Maldives,2020,27.6
-Mexico,2020,90505.6
-Marshall Islands,2020,16.75
-Mali,2020,11084.0
-Malaysia,2020,14682.2
-Malawi,2020,2888.8
-Montenegro,2020,755.0
-Mongolia,2020,4115.4
-Morocco,2020,7781.8
-Mozambique,2020,8939.8
-Malta,2020,9.0
-Mauritius,2020,273.6
-Myanmar,2020,41062.2
-Namibia,2020,455.0
-Nepal,2020,10808.0
-Netherlands,2020,76.4
-Niger,2020,2373.2
-Nicaragua,2020,33269.4
-Nigeria,2020,85824.4
-Niue,2020,8.2
-Norway,2020,15.4
-Nauru,2020,12.0
-New Zealand,2020,23.6
-Oman,2020,40.6
-Pakistan,2020,69549.8
-Panama,2020,180.6
-Paraguay,2020,414.0
-Peru,2020,5987.2
-Philippines,2020,4945.2
-Papua New Guinea,2020,455.4
-Poland,2020,865.8
-Portugal,2020,239.0
-Qatar,2020,33.8
-Romania,2020,3533.4
-South Africa,2020,2229.6
-Russia,2020,42001.8
-Rwanda,2020,14136.8
-El Salvador,2020,114461.4
-Saudi Arabia,2020,1265.8
-Senegal,2020,18003.0
-Seychelles,2020,8.2
-Singapore,2020,66.8
-Sierra Leone,2020,6802.6
-Solomon Islands,2020,164.8
-Somalia,2020,56677.6
-Spain,2020,225.0
-Serbia and Kosovo: S/RES/1244 (1999),2020,11757.8
-Vietnam,2020,6953.6
-South Sudan,2020,7137.6
-Stateless,2020,7920.8
-Saint Kitts and Nevis,2020,17.2
-Sao Tome and Principe,2020,21.6
-Sudan,2020,62768.8
-Suriname,2020,68.8
-Slovakia,2020,422.2
-Slovenia,2020,11.2
-Eswatini,2020,80.6
-Sweden,2020,28.0
-Switzerland,2020,13.8
-Syria,2020,139435.2
-Tanzania,2020,1638.6
-Turks and Caicos Islands,2020,5.8
-Thailand,2020,2473.2
-Tajikistan,2020,3026.6
-Turkmenistan,2020,921.8
-Timor-Leste,2020,77.0
-Togo,2020,3332.8
-Tonga,2020,300.6
-Trinidad and Tobago,2020,334.2
-Tunisia,2020,2529.8
-Turkey,2020,38292.2
-United Arab Emirates,2020,199.6
-Uganda,2020,9936.2
-Unknown,2020,109724.2
-Ukraine,2020,30739.0
-Uruguay,2020,245.2
-United States,2020,2186.2
-Uzbekistan,2020,4281.6
-Vanuatu,2020,74.75
-Vatican,2020,6.75
-Saint Vincent and the Grenadines,2020,87.8
-Venezuela,2020,460645.4
-Samoa,2020,56.0
-Western Sahara,2020,1526.4
-Yemen,2020,26687.8
-Zambia,2020,329.2
-Zimbabwe,2020,22573.0
-Afghanistan,2021,272892.4
-Anguilla,2021,5.0
-Albania,2021,18853.2
-Algeria,2021,7129.2
-Andorra,2021,5.0
-Angola,2021,10591.8
-Antigua and Barbuda,2021,56.2
-Egypt,2021,16694.2
-Argentina,2021,902.0
-Armenia,2021,11462.8
-Australia,2021,22.0
-Azerbaijan,2021,7854.0
-Bahrain,2021,149.0
-Barbados,2021,106.6
-Burundi,2021,53691.8
-Belgium,2021,76.0
-Benin,2021,1249.6
-Bangladesh,2021,63813.0
-Bahamas,2021,513.8
-Bhutan,2021,419.8
-Burkina Faso,2021,5264.2
-Belarus,2021,4153.2
-Bolivia,2021,1234.8
-Botswana,2021,120.2
-Brazil,2021,13092.2
-Brunei,2021,8.8
-Bosnia and Herzegovina,2021,1461.0
-Bulgaria,2021,351.0
-Belize,2021,276.0
-Cambodia,2021,1077.6
-Canada,2021,93.4
-Central African Republic,2021,17643.4
-Chad,2021,4998.6
-China,2021,103555.0
-Chile,2021,1477.0
-Cameroon,2021,22134.2
-Congo,2021,12426.0
-Democratic Republic of Congo,2021,141882.4
-Comoros,2021,1497.4
-Colombia,2021,58447.0
-Costa Rica,2021,700.4
-Cuba,2021,44165.2
-Cape Verde,2021,232.0
-Cyprus,2021,22.4
-Czechia,2021,213.6
-Denmark,2021,27.4
-Djibouti,2021,1031.0
-Dominica,2021,75.0
-Dominican Republic,2021,3848.6
-Ecuador,2021,20180.0
-Equatorial Guinea,2021,175.0
-Eritrea,2021,76060.4
-Estonia,2021,46.4
-Ethiopia,2021,132693.8
-French Guiana,2021,25.0
-Fiji,2021,1961.0
-France,2021,206.0
-Gabon,2021,912.4
-Gambia,2021,11796.8
-Palestine,2021,11292.6
-United Kingdom,2021,206.4
-Georgia,2021,17263.6
-Germany,2021,192.6
-Ghana,2021,12104.2
-Guadeloupe,2021,48.6
-Guinea-Bissau,2021,2867.8
-Greece,2021,127.4
-Grenada,2021,77.4
-Guatemala,2021,116533.6
-Guinea,2021,31613.4
-Guyana,2021,650.4
-Haiti,2021,64047.6
-Hong Kong,2021,292.8
-Honduras,2021,115533.6
-Croatia,2021,110.8
-Hungary,2021,898.6
-Cote d'Ivoire,2021,31439.6
-India,2021,61529.4
-Indonesia,2021,4751.4
-Ireland,2021,78.8
-Iran,2021,79698.8
-Iraq,2021,268044.2
-Israel,2021,709.2
-Italy,2021,427.2
-Jamaica,2021,1777.2
-Jordan,2021,4622.8
-Japan,2021,115.4
-Kazakhstan,2021,5721.6
-Kenya,2021,7903.0
-Kyrgyzstan,2021,2694.6
-Kiribati,2021,6.0
-South Korea,2021,621.4
-North Korea,2021,208.6
-Kuwait,2021,1300.0
-Laos,2021,369.8
-Liberia,2021,3108.0
-Libya,2021,6137.2
-Saint Lucia,2021,99.6
-Lebanon,2021,8350.6
-Lesotho,2021,37.4
-Liechtenstein,2021,9.0
-Sri Lanka,2021,15738.4
-Lithuania,2021,89.8
-Latvia,2021,106.8
-Macao,2021,31.2
-Madagascar,2021,221.2
-Martinique,2021,5.0
-Mauritania,2021,8467.4
-North Macedonia,2021,2549.6
-Moldova,2021,4906.4
-Maldives,2021,25.0
-Mexico,2021,101244.6
-Marshall Islands,2021,23.4
-Mali,2021,11890.8
-Malaysia,2021,17556.4
-Malawi,2021,2576.4
-Montenegro,2021,673.6
-Mongolia,2021,4348.2
-Morocco,2021,8261.8
-Mozambique,2021,9544.4
-Malta,2021,11.0
-Mauritius,2021,303.0
-Myanmar,2021,38677.6
-Namibia,2021,595.8
-Nepal,2021,10784.8
-Netherlands,2021,87.4
-Niger,2021,2687.8
-Nicaragua,2021,54186.6
-Nigeria,2021,87936.6
-Niue,2021,6.0
-Norway,2021,18.2
-Nauru,2021,13.0
-New Zealand,2021,26.6
-Oman,2021,50.8
-Pakistan,2021,68080.6
-Panama,2021,240.8
-Paraguay,2021,595.6
-Peru,2021,7359.4
-Philippines,2021,5374.8
-Papua New Guinea,2021,537.0
-Poland,2021,977.6
-Portugal,2021,309.8
-Qatar,2021,37.0
-Romania,2021,3883.0
-South Africa,2021,2728.6
-Russia,2021,44114.8
-Rwanda,2021,15110.6
-El Salvador,2021,132917.8
-Saudi Arabia,2021,1388.4
-Senegal,2021,18173.8
-Singapore,2021,75.0
-Sierra Leone,2021,7491.2
-Solomon Islands,2021,205.6
-Somalia,2021,55380.8
-Spain,2021,277.6
-Serbia and Kosovo: S/RES/1244 (1999),2021,8631.8
-Vietnam,2021,8129.4
-South Sudan,2021,6650.2
-Stateless,2021,6793.2
-Saint Kitts and Nevis,2021,16.6
-Sao Tome and Principe,2021,24.8
-Sudan,2021,66666.2
-Suriname,2021,85.6
-Slovakia,2021,347.0
-Slovenia,2021,15.6
-Eswatini,2021,70.0
-Sweden,2021,36.4
-Switzerland,2021,15.8
-Syria,2021,126045.8
-Tanzania,2021,1788.0
-Turks and Caicos Islands,2021,5.0
-Thailand,2021,2996.2
-Tajikistan,2021,2845.0
-Turkmenistan,2021,854.2
-Timor-Leste,2021,145.6
-Togo,2021,3430.8
-Tonga,2021,451.4
-Trinidad and Tobago,2021,379.2
-Tunisia,2021,2813.0
-Turkey,2021,41979.0
-United Arab Emirates,2021,215.8
-Uganda,2021,11261.4
-Unknown,2021,78080.8
-Ukraine,2021,28346.2
-Uruguay,2021,344.4
-United States,2021,2402.8
-Uzbekistan,2021,4710.6
-Vanuatu,2021,111.0
-Vatican,2021,7.8
-Saint Vincent and the Grenadines,2021,78.6
-Venezuela,2021,642079.8
-Samoa,2021,85.4
-Western Sahara,2021,1289.4
-Yemen,2021,30342.0
-Zambia,2021,369.8
-Zimbabwe,2021,16797.8
+Year,Country,unhcr_asylum_seekers_by_origin
+2002,Afghanistan,28210.0
+2003,Afghanistan,22956.6
+2004,Afghanistan,19792.0
+2005,Afghanistan,17670.0
+2006,Afghanistan,17043.8
+2007,Afghanistan,19728.4
+2008,Afghanistan,24344.0
+2009,Afghanistan,29191.8
+2010,Afghanistan,38437.2
+2011,Afghanistan,48858.6
+2012,Afghanistan,59858.8
+2013,Afghanistan,104211.0
+2014,Afghanistan,170185.8
+2015,Afghanistan,224522.2
+2016,Afghanistan,271486.8
+2017,Afghanistan,305454.2
+2018,Afghanistan,301440.0
+2019,Afghanistan,272892.4
+2002,Albania,3924.4
+2003,Albania,3875.4
+2004,Albania,3536.4
+2005,Albania,2868.2
+2006,Albania,2325.8
+2007,Albania,1979.2
+2008,Albania,1734.8
+2009,Albania,1717.6
+2010,Albania,2133.0
+2011,Albania,3724.4
+2012,Albania,6426.8
+2013,Albania,14587.8
+2014,Albania,18901.2
+2015,Albania,21909.0
+2016,Albania,24169.0
+2017,Albania,24958.8
+2018,Albania,20053.4
+2019,Albania,18853.2
+2002,Algeria,2137.0
+2003,Algeria,1949.2
+2004,Algeria,1706.2
+2005,Algeria,1499.4
+2006,Algeria,1421.8
+2007,Algeria,1462.2
+2008,Algeria,1528.8
+2009,Algeria,1659.2
+2010,Algeria,1883.8
+2011,Algeria,2436.6
+2012,Algeria,3154.6
+2013,Algeria,4336.2
+2014,Algeria,5335.0
+2015,Algeria,6128.8
+2016,Algeria,6761.0
+2017,Algeria,7282.6
+2018,Algeria,7313.8
+2019,Algeria,7129.2
+2003,Andorra,5.4
+2004,Andorra,5.0
+2005,Andorra,5.0
+2007,Andorra,5.0
+2008,Andorra,5.0
+2015,Andorra,5.0
+2016,Andorra,5.0
+2017,Andorra,5.0
+2002,Angola,10172.0
+2003,Angola,10741.4
+2004,Angola,9087.2
+2005,Angola,6390.4
+2006,Angola,4195.0
+2007,Angola,2426.2
+2008,Angola,901.0
+2009,Angola,740.2
+2010,Angola,814.2
+2011,Angola,955.8
+2012,Angola,1160.2
+2013,Angola,1668.4
+2014,Angola,2467.2
+2015,Angola,3799.4
+2016,Angola,5291.8
+2017,Angola,7106.6
+2018,Angola,8936.8
+2019,Angola,10591.8
+2002,Antigua and Barbuda,17.6
+2003,Antigua and Barbuda,17.8
+2004,Antigua and Barbuda,18.2
+2005,Antigua and Barbuda,15.0
+2006,Antigua and Barbuda,18.8
+2008,Antigua and Barbuda,22.6
+2009,Antigua and Barbuda,27.6
+2010,Antigua and Barbuda,33.0
+2011,Antigua and Barbuda,33.6
+2012,Antigua and Barbuda,28.4
+2013,Antigua and Barbuda,24.4
+2014,Antigua and Barbuda,24.0
+2015,Antigua and Barbuda,29.6
+2016,Antigua and Barbuda,33.4
+2017,Antigua and Barbuda,43.6
+2018,Antigua and Barbuda,51.4
+2019,Antigua and Barbuda,56.2
+2002,Argentina,1193.0
+2003,Argentina,938.2
+2004,Argentina,683.4
+2005,Argentina,440.6
+2006,Argentina,243.4
+2007,Argentina,174.2
+2008,Argentina,134.0
+2009,Argentina,109.6
+2010,Argentina,94.4
+2011,Argentina,80.8
+2012,Argentina,70.4
+2013,Argentina,85.6
+2014,Argentina,118.6
+2015,Argentina,180.8
+2016,Argentina,264.4
+2017,Argentina,430.4
+2018,Argentina,636.2
+2019,Argentina,902.0
+2002,Armenia,5198.2
+2003,Armenia,5020.4
+2004,Armenia,4883.2
+2005,Armenia,4546.8
+2006,Armenia,4306.6
+2007,Armenia,4314.8
+2008,Armenia,4036.4
+2009,Armenia,3486.6
+2010,Armenia,3267.2
+2011,Armenia,3587.0
+2012,Armenia,4027.4
+2013,Armenia,5136.2
+2014,Armenia,7224.2
+2015,Armenia,9628.0
+2016,Armenia,11294.8
+2017,Armenia,12257.8
+2018,Armenia,12329.6
+2019,Armenia,11462.8
+2002,Australia,8.2
+2003,Australia,8.2
+2004,Australia,8.0
+2006,Australia,7.0
+2008,Australia,8.0
+2009,Australia,7.6
+2010,Australia,7.6
+2011,Australia,6.8
+2012,Australia,7.0
+2013,Australia,7.0
+2016,Australia,9.4
+2017,Australia,18.4
+2018,Australia,19.8
+2019,Australia,22.0
+2003,Austria,9.4
+2004,Austria,9.4
+2006,Austria,8.4
+2007,Austria,8.2
+2012,Austria,8.2
+2013,Austria,6.0
+2015,Austria,10.2
+2016,Austria,11.2
+2017,Austria,11.2
+2002,Azerbaijan,4918.4
+2003,Azerbaijan,4686.2
+2004,Azerbaijan,4157.2
+2005,Azerbaijan,3540.6
+2006,Azerbaijan,2989.2
+2007,Azerbaijan,2692.0
+2008,Azerbaijan,2282.2
+2009,Azerbaijan,2100.8
+2010,Azerbaijan,2157.6
+2011,Azerbaijan,2505.0
+2012,Azerbaijan,2890.2
+2013,Azerbaijan,3518.2
+2014,Azerbaijan,4700.2
+2015,Azerbaijan,6171.0
+2016,Azerbaijan,7312.0
+2017,Azerbaijan,8081.2
+2018,Azerbaijan,8323.8
+2019,Azerbaijan,7854.0
+2002,Bahamas,46.6
+2003,Bahamas,48.8
+2004,Bahamas,48.0
+2005,Bahamas,20.0
+2006,Bahamas,21.6
+2007,Bahamas,24.2
+2008,Bahamas,26.2
+2009,Bahamas,28.8
+2010,Bahamas,30.6
+2011,Bahamas,30.8
+2012,Bahamas,32.4
+2013,Bahamas,42.8
+2014,Bahamas,59.6
+2015,Bahamas,100.2
+2016,Bahamas,173.0
+2017,Bahamas,271.0
+2018,Bahamas,394.0
+2019,Bahamas,513.8
+2002,Bahrain,16.8
+2003,Bahrain,11.0
+2004,Bahrain,12.8
+2005,Bahrain,15.0
+2006,Bahrain,16.0
+2007,Bahrain,17.2
+2008,Bahrain,27.2
+2010,Bahrain,45.0
+2011,Bahrain,59.6
+2012,Bahrain,77.2
+2013,Bahrain,88.6
+2014,Bahrain,97.8
+2015,Bahrain,111.6
+2016,Bahrain,121.0
+2017,Bahrain,132.6
+2018,Bahrain,140.0
+2019,Bahrain,149.0
+2002,Bangladesh,5840.8
+2003,Bangladesh,7207.6
+2004,Bangladesh,7320.6
+2005,Bangladesh,7820.8
+2006,Bangladesh,7509.0
+2007,Bangladesh,6006.6
+2008,Bangladesh,5273.8
+2009,Bangladesh,5519.6
+2010,Bangladesh,5686.4
+2011,Bangladesh,8915.2
+2012,Bangladesh,12870.6
+2013,Bangladesh,17681.0
+2014,Bangladesh,21819.2
+2015,Bangladesh,33810.4
+2016,Bangladesh,41007.6
+2017,Bangladesh,49263.0
+2018,Bangladesh,56081.4
+2019,Bangladesh,63813.0
+2002,Barbados,29.6
+2003,Barbados,31.6
+2004,Barbados,34.2
+2005,Barbados,28.0
+2006,Barbados,28.4
+2007,Barbados,39.2
+2008,Barbados,48.2
+2009,Barbados,55.4
+2010,Barbados,60.6
+2011,Barbados,61.8
+2012,Barbados,52.0
+2013,Barbados,44.2
+2014,Barbados,38.4
+2015,Barbados,42.4
+2016,Barbados,48.4
+2017,Barbados,68.2
+2018,Barbados,87.4
+2019,Barbados,106.6
+2002,Belarus,1494.4
+2003,Belarus,1626.2
+2004,Belarus,1739.6
+2005,Belarus,1565.4
+2006,Belarus,1362.0
+2007,Belarus,1276.4
+2008,Belarus,1138.8
+2009,Belarus,981.2
+2010,Belarus,943.4
+2011,Belarus,901.0
+2012,Belarus,892.2
+2013,Belarus,1039.2
+2014,Belarus,1254.2
+2015,Belarus,1624.0
+2016,Belarus,2106.4
+2017,Belarus,2722.8
+2018,Belarus,3368.0
+2019,Belarus,4153.2
+2002,Belgium,18.0
+2003,Belgium,18.0
+2004,Belgium,21.4
+2005,Belgium,18.6
+2006,Belgium,21.8
+2007,Belgium,23.2
+2008,Belgium,20.4
+2009,Belgium,16.0
+2010,Belgium,20.2
+2012,Belgium,19.0
+2013,Belgium,21.6
+2014,Belgium,24.4
+2015,Belgium,29.2
+2016,Belgium,38.8
+2017,Belgium,55.8
+2018,Belgium,60.8
+2019,Belgium,76.0
+2002,Belize,25.6
+2003,Belize,27.6
+2004,Belize,24.4
+2005,Belize,19.8
+2006,Belize,17.6
+2007,Belize,16.2
+2008,Belize,13.4
+2009,Belize,13.4
+2010,Belize,12.4
+2011,Belize,19.6
+2012,Belize,33.0
+2013,Belize,50.2
+2014,Belize,79.4
+2015,Belize,119.6
+2016,Belize,152.8
+2017,Belize,191.8
+2018,Belize,235.4
+2019,Belize,276.0
+2002,Benin,202.8
+2003,Benin,227.6
+2004,Benin,222.0
+2005,Benin,207.8
+2006,Benin,194.2
+2007,Benin,191.8
+2008,Benin,182.4
+2009,Benin,205.4
+2010,Benin,260.0
+2011,Benin,324.4
+2012,Benin,421.4
+2013,Benin,604.6
+2014,Benin,779.8
+2015,Benin,920.4
+2016,Benin,1035.8
+2017,Benin,1143.4
+2018,Benin,1185.2
+2019,Benin,1249.6
+2002,Bhutan,178.0
+2003,Bhutan,389.8
+2004,Bhutan,667.4
+2005,Bhutan,983.8
+2006,Bhutan,1154.2
+2007,Bhutan,1260.4
+2008,Bhutan,1241.2
+2009,Bhutan,1153.4
+2010,Bhutan,845.8
+2011,Bhutan,658.4
+2012,Bhutan,493.8
+2013,Bhutan,336.6
+2014,Bhutan,189.2
+2015,Bhutan,249.4
+2016,Bhutan,296.0
+2017,Bhutan,340.6
+2018,Bhutan,378.2
+2019,Bhutan,419.8
+2002,Bolivia,327.6
+2003,Bolivia,373.8
+2004,Bolivia,426.6
+2005,Bolivia,412.4
+2006,Bolivia,346.0
+2007,Bolivia,302.4
+2008,Bolivia,258.8
+2009,Bolivia,204.4
+2010,Bolivia,152.6
+2011,Bolivia,162.2
+2012,Bolivia,182.2
+2013,Bolivia,223.8
+2014,Bolivia,275.6
+2015,Bolivia,416.2
+2016,Bolivia,576.8
+2017,Bolivia,772.0
+2018,Bolivia,977.6
+2019,Bolivia,1234.8
+2002,Bosnia and Herzegovina,3558.2
+2003,Bosnia and Herzegovina,3060.4
+2004,Bosnia and Herzegovina,2561.0
+2005,Bosnia and Herzegovina,1597.2
+2006,Bosnia and Herzegovina,1391.2
+2007,Bosnia and Herzegovina,1383.8
+2008,Bosnia and Herzegovina,1289.0
+2009,Bosnia and Herzegovina,1341.8
+2010,Bosnia and Herzegovina,1678.2
+2011,Bosnia and Herzegovina,2273.8
+2012,Bosnia and Herzegovina,3357.6
+2013,Bosnia and Herzegovina,4492.2
+2014,Bosnia and Herzegovina,4724.0
+2015,Bosnia and Herzegovina,4543.0
+2016,Bosnia and Herzegovina,4038.8
+2017,Bosnia and Herzegovina,3023.2
+2018,Bosnia and Herzegovina,1891.8
+2019,Bosnia and Herzegovina,1461.0
+2003,Botswana,9.2
+2004,Botswana,13.6
+2005,Botswana,22.2
+2006,Botswana,48.6
+2007,Botswana,86.2
+2008,Botswana,121.6
+2009,Botswana,149.8
+2010,Botswana,164.4
+2011,Botswana,155.0
+2012,Botswana,129.8
+2013,Botswana,107.4
+2014,Botswana,99.2
+2015,Botswana,93.0
+2016,Botswana,90.6
+2017,Botswana,104.6
+2018,Botswana,116.8
+2019,Botswana,120.2
+2002,Brazil,973.8
+2003,Brazil,962.0
+2004,Brazil,889.0
+2005,Brazil,718.8
+2006,Brazil,536.8
+2007,Brazil,406.8
+2008,Brazil,337.0
+2009,Brazil,290.6
+2010,Brazil,279.4
+2011,Brazil,318.4
+2012,Brazil,484.2
+2013,Brazil,866.2
+2014,Brazil,1578.8
+2015,Brazil,2887.6
+2016,Brazil,4491.4
+2017,Brazil,6660.6
+2018,Brazil,9601.8
+2019,Brazil,13092.2
+2017,Brunei,7.8
+2019,Brunei,8.8
+2002,Bulgaria,1430.0
+2003,Bulgaria,1411.8
+2004,Bulgaria,1274.6
+2005,Bulgaria,1007.0
+2006,Bulgaria,791.4
+2007,Bulgaria,633.8
+2008,Bulgaria,416.2
+2009,Bulgaria,288.6
+2010,Bulgaria,234.4
+2011,Bulgaria,210.8
+2012,Bulgaria,161.4
+2013,Bulgaria,178.0
+2014,Bulgaria,193.0
+2015,Bulgaria,229.0
+2016,Bulgaria,267.0
+2017,Bulgaria,298.4
+2018,Bulgaria,327.0
+2019,Bulgaria,351.0
+2002,Burkina Faso,185.2
+2003,Burkina Faso,176.6
+2004,Burkina Faso,166.8
+2005,Burkina Faso,181.6
+2006,Burkina Faso,213.6
+2007,Burkina Faso,266.6
+2008,Burkina Faso,326.6
+2009,Burkina Faso,355.4
+2010,Burkina Faso,405.4
+2011,Burkina Faso,530.8
+2012,Burkina Faso,768.6
+2013,Burkina Faso,1207.0
+2014,Burkina Faso,1978.6
+2015,Burkina Faso,2989.2
+2016,Burkina Faso,3791.6
+2017,Burkina Faso,4478.4
+2018,Burkina Faso,4962.2
+2019,Burkina Faso,5264.2
+2002,Burundi,6175.0
+2003,Burundi,7101.8
+2004,Burundi,7422.8
+2005,Burundi,7343.6
+2006,Burundi,7060.0
+2007,Burundi,6458.6
+2008,Burundi,6305.4
+2009,Burundi,7100.6
+2010,Burundi,8284.0
+2011,Burundi,9837.4
+2012,Burundi,12739.8
+2013,Burundi,16612.2
+2014,Burundi,19592.2
+2015,Burundi,29087.4
+2016,Burundi,36880.2
+2017,Burundi,43776.2
+2018,Burundi,48450.4
+2019,Burundi,53691.8
+2002,Cambodia,406.4
+2003,Cambodia,517.4
+2004,Cambodia,590.2
+2005,Cambodia,580.2
+2006,Cambodia,530.4
+2007,Cambodia,474.2
+2008,Cambodia,330.4
+2009,Cambodia,233.2
+2010,Cambodia,193.0
+2011,Cambodia,196.8
+2012,Cambodia,204.2
+2013,Cambodia,251.2
+2014,Cambodia,290.8
+2015,Cambodia,563.6
+2016,Cambodia,667.2
+2017,Cambodia,788.8
+2018,Cambodia,897.6
+2019,Cambodia,1077.6
+2002,Cameroon,2711.8
+2003,Cameroon,3384.2
+2004,Cameroon,3628.6
+2005,Cameroon,3655.0
+2006,Cameroon,3568.8
+2007,Cameroon,3272.2
+2008,Cameroon,2716.4
+2009,Cameroon,2536.0
+2010,Cameroon,2617.4
+2011,Cameroon,2878.2
+2012,Cameroon,3433.0
+2013,Cameroon,4489.0
+2014,Cameroon,6181.6
+2015,Cameroon,10427.0
+2016,Cameroon,13311.6
+2017,Cameroon,16696.8
+2018,Cameroon,19828.0
+2019,Cameroon,22134.2
+2002,Canada,15.2
+2003,Canada,20.8
+2004,Canada,27.8
+2005,Canada,35.6
+2006,Canada,42.2
+2007,Canada,40.4
+2008,Canada,34.4
+2009,Canada,26.6
+2010,Canada,19.4
+2012,Canada,19.4
+2013,Canada,84.4
+2014,Canada,94.2
+2015,Canada,108.8
+2016,Canada,120.0
+2017,Canada,126.6
+2018,Canada,81.4
+2019,Canada,93.4
+2002,Cape Verde,13.0
+2003,Cape Verde,13.2
+2004,Cape Verde,11.4
+2005,Cape Verde,10.2
+2006,Cape Verde,9.0
+2007,Cape Verde,8.8
+2011,Cape Verde,9.4
+2012,Cape Verde,16.6
+2013,Cape Verde,34.6
+2014,Cape Verde,53.2
+2015,Cape Verde,87.4
+2016,Cape Verde,125.2
+2017,Cape Verde,166.0
+2018,Cape Verde,198.6
+2019,Cape Verde,232.0
+2002,Central African Republic,636.4
+2003,Central African Republic,993.4
+2004,Central African Republic,1344.4
+2005,Central African Republic,1479.6
+2006,Central African Republic,1555.8
+2007,Central African Republic,1469.0
+2008,Central African Republic,1402.0
+2009,Central African Republic,1339.0
+2010,Central African Republic,1452.2
+2011,Central African Republic,2701.4
+2012,Central African Republic,5403.2
+2013,Central African Republic,7229.2
+2014,Central African Republic,8991.2
+2015,Central African Republic,11210.8
+2016,Central African Republic,13174.6
+2017,Central African Republic,13518.0
+2018,Central African Republic,14082.8
+2019,Central African Republic,17643.4
+2002,Chad,2541.8
+2003,Chad,2679.2
+2004,Chad,2766.8
+2005,Chad,2813.2
+2006,Chad,3017.4
+2007,Chad,2971.6
+2008,Chad,2882.6
+2009,Chad,2821.0
+2010,Chad,3039.0
+2011,Chad,3139.8
+2012,Chad,3336.8
+2013,Chad,3457.4
+2014,Chad,3468.6
+2015,Chad,3338.0
+2016,Chad,3449.4
+2017,Chad,3861.6
+2018,Chad,4451.4
+2019,Chad,4998.6
+2002,Chile,275.4
+2003,Chile,259.8
+2004,Chile,236.6
+2005,Chile,159.4
+2006,Chile,123.2
+2007,Chile,119.4
+2008,Chile,137.2
+2009,Chile,144.0
+2010,Chile,131.2
+2011,Chile,118.8
+2012,Chile,102.8
+2013,Chile,98.6
+2014,Chile,115.2
+2015,Chile,172.6
+2016,Chile,262.2
+2017,Chile,493.2
+2018,Chile,885.6
+2019,Chile,1477.0
+2002,China,20633.4
+2003,China,21073.4
+2004,China,20572.4
+2005,China,18632.8
+2006,China,18304.4
+2007,China,18024.4
+2008,China,15695.2
+2009,China,14514.6
+2010,China,14481.8
+2011,China,15518.6
+2012,China,21320.6
+2013,China,31312.8
+2014,China,43470.8
+2015,China,58300.0
+2016,China,72210.4
+2017,China,83595.2
+2018,China,93670.8
+2019,China,103555.0
+2002,Colombia,17370.6
+2003,Colombia,20318.8
+2004,Colombia,21608.2
+2005,Colombia,25843.6
+2006,Colombia,31780.0
+2007,Colombia,40342.0
+2008,Colombia,48460.4
+2009,Colombia,52594.8
+2010,Colombia,47702.4
+2011,Colombia,40306.0
+2012,Colombia,28381.6
+2013,Colombia,17690.2
+2014,Colombia,11689.2
+2015,Colombia,14457.8
+2016,Colombia,20465.0
+2017,Colombia,34635.2
+2018,Colombia,47442.8
+2019,Colombia,58447.0
+2002,Comoros,155.2
+2003,Comoros,237.8
+2004,Comoros,222.4
+2005,Comoros,223.4
+2006,Comoros,221.6
+2007,Comoros,119.2
+2008,Comoros,18.4
+2009,Comoros,23.0
+2010,Comoros,25.6
+2011,Comoros,82.0
+2012,Comoros,150.6
+2013,Comoros,194.8
+2014,Comoros,234.4
+2015,Comoros,288.0
+2016,Comoros,324.4
+2017,Comoros,546.6
+2018,Comoros,1039.0
+2019,Comoros,1497.4
+2002,Congo,5902.0
+2003,Congo,6707.2
+2004,Congo,6828.4
+2005,Congo,6639.4
+2006,Congo,6257.8
+2007,Congo,5469.4
+2008,Congo,4435.6
+2009,Congo,3851.6
+2010,Congo,3135.0
+2011,Congo,2780.8
+2012,Congo,2823.0
+2013,Congo,3037.4
+2014,Congo,3517.8
+2015,Congo,5633.6
+2016,Congo,7331.4
+2017,Congo,8897.6
+2018,Congo,10650.6
+2019,Congo,12426.0
+2002,Costa Rica,889.2
+2003,Costa Rica,870.6
+2004,Costa Rica,751.2
+2005,Costa Rica,417.4
+2006,Costa Rica,136.8
+2007,Costa Rica,81.8
+2008,Costa Rica,70.0
+2009,Costa Rica,63.0
+2010,Costa Rica,55.4
+2011,Costa Rica,134.4
+2012,Costa Rica,144.2
+2013,Costa Rica,172.0
+2014,Costa Rica,226.6
+2015,Costa Rica,319.2
+2016,Costa Rica,336.8
+2017,Costa Rica,460.6
+2018,Costa Rica,578.0
+2019,Costa Rica,700.4
+2002,Cote d'Ivoire,2237.4
+2003,Cote d'Ivoire,3371.4
+2004,Cote d'Ivoire,4489.8
+2005,Cote d'Ivoire,5635.4
+2006,Cote d'Ivoire,6268.4
+2007,Cote d'Ivoire,6372.4
+2008,Cote d'Ivoire,6305.6
+2009,Cote d'Ivoire,8669.6
+2010,Cote d'Ivoire,9424.8
+2011,Cote d'Ivoire,10330.0
+2012,Cote d'Ivoire,11958.4
+2013,Cote d'Ivoire,13506.0
+2014,Cote d'Ivoire,13592.2
+2015,Cote d'Ivoire,16660.8
+2016,Cote d'Ivoire,19034.8
+2017,Cote d'Ivoire,20344.0
+2018,Cote d'Ivoire,24436.8
+2019,Cote d'Ivoire,31439.6
+2002,Croatia,409.8
+2003,Croatia,377.8
+2004,Croatia,352.0
+2005,Croatia,272.2
+2006,Croatia,205.2
+2007,Croatia,160.6
+2008,Croatia,188.0
+2009,Croatia,293.2
+2010,Croatia,528.4
+2011,Croatia,698.6
+2012,Croatia,694.4
+2013,Croatia,643.2
+2014,Croatia,563.2
+2015,Croatia,358.2
+2016,Croatia,178.0
+2017,Croatia,168.8
+2018,Croatia,162.6
+2019,Croatia,110.8
+2002,Cuba,2773.4
+2003,Cuba,2414.8
+2004,Cuba,1973.8
+2005,Cuba,1651.2
+2006,Cuba,1381.8
+2007,Cuba,1427.4
+2008,Cuba,1969.2
+2009,Cuba,1886.6
+2010,Cuba,1838.2
+2011,Cuba,1888.8
+2012,Cuba,1809.2
+2013,Cuba,1403.8
+2014,Cuba,2227.2
+2015,Cuba,4714.2
+2016,Cuba,9809.6
+2017,Cuba,20641.8
+2018,Cuba,32618.0
+2019,Cuba,44165.2
+2002,Cyprus,8.6
+2003,Cyprus,7.6
+2015,Cyprus,10.0
+2016,Cyprus,11.0
+2017,Cyprus,17.0
+2018,Cyprus,19.8
+2019,Cyprus,22.4
+2002,Czechia,216.4
+2003,Czechia,221.8
+2004,Czechia,215.8
+2005,Czechia,205.6
+2006,Czechia,293.4
+2007,Czechia,680.0
+2008,Czechia,869.8
+2009,Czechia,964.8
+2010,Czechia,977.0
+2011,Czechia,842.6
+2012,Czechia,442.0
+2013,Czechia,235.4
+2014,Czechia,150.8
+2015,Czechia,173.4
+2016,Czechia,196.0
+2017,Czechia,213.6
+2018,Czechia,221.4
+2019,Czechia,213.6
+2002,Democratic Republic of Congo,39006.4
+2003,Democratic Republic of Congo,46227.6
+2004,Democratic Republic of Congo,46418.4
+2005,Democratic Republic of Congo,44861.0
+2006,Democratic Republic of Congo,41728.0
+2007,Democratic Republic of Congo,37766.6
+2008,Democratic Republic of Congo,35193.0
+2009,Democratic Republic of Congo,39813.8
+2010,Democratic Republic of Congo,44289.6
+2011,Democratic Republic of Congo,50104.8
+2012,Democratic Republic of Congo,57351.8
+2013,Democratic Republic of Congo,63941.2
+2014,Democratic Republic of Congo,70020.0
+2015,Democratic Republic of Congo,85516.4
+2016,Democratic Republic of Congo,99130.2
+2017,Democratic Republic of Congo,115448.0
+2018,Democratic Republic of Congo,129316.6
+2019,Democratic Republic of Congo,141882.4
+2003,Denmark,5.2
+2004,Denmark,5.2
+2005,Denmark,5.2
+2006,Denmark,5.2
+2008,Denmark,6.2
+2013,Denmark,8.2
+2014,Denmark,8.2
+2015,Denmark,11.2
+2016,Denmark,17.2
+2017,Denmark,22.6
+2018,Denmark,23.0
+2019,Denmark,27.4
+2002,Djibouti,108.2
+2003,Djibouti,122.8
+2004,Djibouti,107.8
+2005,Djibouti,90.8
+2006,Djibouti,87.8
+2007,Djibouti,112.4
+2008,Djibouti,114.6
+2009,Djibouti,148.4
+2010,Djibouti,202.8
+2011,Djibouti,270.0
+2012,Djibouti,321.0
+2013,Djibouti,384.2
+2014,Djibouti,495.4
+2015,Djibouti,692.8
+2016,Djibouti,834.6
+2017,Djibouti,919.4
+2018,Djibouti,987.6
+2019,Djibouti,1031.0
+2002,Dominica,25.4
+2003,Dominica,31.4
+2004,Dominica,30.2
+2005,Dominica,22.4
+2006,Dominica,21.4
+2007,Dominica,21.6
+2008,Dominica,15.6
+2009,Dominica,14.4
+2010,Dominica,15.2
+2011,Dominica,15.4
+2012,Dominica,14.4
+2013,Dominica,29.0
+2014,Dominica,52.0
+2015,Dominica,62.2
+2016,Dominica,69.4
+2017,Dominica,83.2
+2018,Dominica,80.2
+2019,Dominica,75.0
+2002,Dominican Republic,117.6
+2003,Dominican Republic,123.0
+2004,Dominican Republic,122.8
+2005,Dominican Republic,120.0
+2006,Dominican Republic,148.8
+2007,Dominican Republic,199.8
+2008,Dominican Republic,261.6
+2009,Dominican Republic,306.4
+2010,Dominican Republic,351.2
+2011,Dominican Republic,465.8
+2012,Dominican Republic,613.4
+2013,Dominican Republic,878.0
+2014,Dominican Republic,1279.4
+2015,Dominican Republic,1840.2
+2016,Dominican Republic,2353.4
+2017,Dominican Republic,2933.4
+2018,Dominican Republic,3440.4
+2019,Dominican Republic,3848.6
+2002,Ecuador,544.0
+2003,Ecuador,544.8
+2004,Ecuador,510.6
+2005,Ecuador,399.4
+2006,Ecuador,310.4
+2007,Ecuador,267.8
+2008,Ecuador,253.2
+2009,Ecuador,251.2
+2010,Ecuador,299.4
+2011,Ecuador,718.6
+2012,Ecuador,2056.0
+2013,Ecuador,4098.8
+2014,Ecuador,6784.4
+2015,Ecuador,10148.8
+2016,Ecuador,13226.2
+2017,Ecuador,15701.2
+2018,Ecuador,18036.2
+2019,Ecuador,20180.0
+2002,Egypt,1735.8
+2003,Egypt,1971.0
+2004,Egypt,2017.6
+2005,Egypt,1975.4
+2006,Egypt,1932.2
+2007,Egypt,1809.0
+2008,Egypt,1657.8
+2009,Egypt,1845.4
+2010,Egypt,2346.2
+2011,Egypt,3881.2
+2012,Egypt,5719.2
+2013,Egypt,7833.4
+2014,Egypt,9916.0
+2015,Egypt,12010.0
+2016,Egypt,13466.4
+2017,Egypt,14636.8
+2018,Egypt,15444.0
+2019,Egypt,16694.2
+2002,El Salvador,142694.2
+2003,El Salvador,116439.2
+2004,El Salvador,89197.6
+2005,El Salvador,62602.6
+2006,El Salvador,39102.0
+2007,El Salvador,22697.4
+2008,El Salvador,13965.4
+2009,El Salvador,8536.2
+2010,El Salvador,5143.6
+2011,El Salvador,5165.2
+2012,El Salvador,6823.4
+2013,El Salvador,12804.8
+2014,El Salvador,24910.8
+2015,El Salvador,45561.8
+2016,El Salvador,67164.0
+2017,El Salvador,90843.0
+2018,El Salvador,114461.4
+2019,El Salvador,132917.8
+2002,Equatorial Guinea,47.8
+2003,Equatorial Guinea,49.6
+2004,Equatorial Guinea,48.0
+2005,Equatorial Guinea,41.6
+2006,Equatorial Guinea,40.8
+2007,Equatorial Guinea,37.2
+2008,Equatorial Guinea,41.6
+2009,Equatorial Guinea,43.6
+2010,Equatorial Guinea,53.4
+2011,Equatorial Guinea,55.8
+2012,Equatorial Guinea,65.6
+2013,Equatorial Guinea,68.2
+2014,Equatorial Guinea,80.8
+2015,Equatorial Guinea,87.2
+2016,Equatorial Guinea,110.4
+2017,Equatorial Guinea,127.6
+2018,Equatorial Guinea,149.2
+2019,Equatorial Guinea,175.0
+2002,Eritrea,7374.6
+2003,Eritrea,7666.0
+2004,Eritrea,8100.8
+2005,Eritrea,5371.0
+2006,Eritrea,7726.0
+2007,Eritrea,10039.6
+2008,Eritrea,11950.2
+2009,Eritrea,13865.2
+2010,Eritrea,15538.6
+2011,Eritrea,18402.8
+2012,Eritrea,26257.0
+2013,Eritrea,35960.8
+2014,Eritrea,46580.0
+2015,Eritrea,58132.8
+2016,Eritrea,68064.8
+2017,Eritrea,72354.4
+2018,Eritrea,74524.0
+2019,Eritrea,76060.4
+2002,Estonia,129.8
+2003,Estonia,141.4
+2004,Estonia,146.4
+2005,Estonia,126.0
+2006,Estonia,97.2
+2007,Estonia,75.4
+2008,Estonia,52.0
+2009,Estonia,34.2
+2010,Estonia,28.8
+2011,Estonia,26.6
+2012,Estonia,26.0
+2013,Estonia,30.8
+2014,Estonia,32.4
+2015,Estonia,35.2
+2016,Estonia,38.2
+2017,Estonia,43.0
+2018,Estonia,43.8
+2019,Estonia,46.4
+2003,Eswatini,7.0
+2004,Eswatini,7.0
+2005,Eswatini,18.8
+2006,Eswatini,35.8
+2007,Eswatini,44.4
+2008,Eswatini,53.4
+2009,Eswatini,78.6
+2010,Eswatini,99.0
+2011,Eswatini,109.2
+2012,Eswatini,126.6
+2013,Eswatini,148.4
+2014,Eswatini,149.6
+2015,Eswatini,124.4
+2016,Eswatini,104.8
+2017,Eswatini,96.2
+2018,Eswatini,80.6
+2019,Eswatini,70.0
+2002,Ethiopia,11943.0
+2003,Ethiopia,12276.0
+2004,Ethiopia,13149.0
+2005,Ethiopia,17251.6
+2006,Ethiopia,21391.8
+2007,Ethiopia,28518.8
+2008,Ethiopia,35052.2
+2009,Ethiopia,39483.6
+2010,Ethiopia,41970.2
+2011,Ethiopia,45532.0
+2012,Ethiopia,48059.0
+2013,Ethiopia,53618.4
+2014,Ethiopia,61623.8
+2015,Ethiopia,79975.2
+2016,Ethiopia,96763.0
+2017,Ethiopia,111839.8
+2018,Ethiopia,121517.2
+2019,Ethiopia,132693.8
+2002,Fiji,1323.8
+2003,Fiji,1065.6
+2004,Fiji,732.6
+2005,Fiji,470.8
+2006,Fiji,307.2
+2007,Fiji,275.2
+2008,Fiji,260.8
+2009,Fiji,261.4
+2010,Fiji,276.6
+2011,Fiji,329.2
+2012,Fiji,411.0
+2013,Fiji,437.2
+2014,Fiji,488.0
+2015,Fiji,569.8
+2016,Fiji,736.6
+2017,Fiji,1051.4
+2018,Fiji,1502.2
+2019,Fiji,1961.0
+2002,Finland,5.0
+2003,Finland,5.0
+2004,Finland,5.0
+2005,Finland,5.2
+2011,Finland,5.2
+2012,Finland,5.2
+2013,Finland,6.2
+2016,Finland,6.2
+2017,Finland,7.0
+2002,France,59.6
+2003,France,61.4
+2004,France,56.6
+2005,France,51.6
+2006,France,49.4
+2007,France,52.2
+2008,France,48.0
+2009,France,51.2
+2010,France,49.2
+2011,France,46.6
+2012,France,40.8
+2013,France,49.6
+2014,France,62.6
+2015,France,83.0
+2016,France,118.4
+2017,France,164.0
+2018,France,183.6
+2019,France,206.0
+2019,French Guiana,25.0
+2002,Gabon,34.0
+2003,Gabon,42.4
+2004,Gabon,41.4
+2005,Gabon,35.2
+2006,Gabon,33.0
+2007,Gabon,34.4
+2008,Gabon,30.8
+2009,Gabon,29.8
+2010,Gabon,36.8
+2011,Gabon,53.0
+2012,Gabon,69.6
+2013,Gabon,107.0
+2014,Gabon,186.2
+2015,Gabon,314.2
+2016,Gabon,441.2
+2017,Gabon,596.8
+2018,Gabon,775.0
+2019,Gabon,912.4
+2002,Gambia,329.4
+2003,Gambia,405.2
+2004,Gambia,546.2
+2005,Gambia,688.2
+2006,Gambia,845.6
+2007,Gambia,988.8
+2008,Gambia,1065.8
+2009,Gambia,1100.4
+2010,Gambia,1251.8
+2011,Gambia,1789.6
+2012,Gambia,3653.8
+2013,Gambia,6009.0
+2014,Gambia,9550.8
+2015,Gambia,13643.0
+2016,Gambia,15682.8
+2017,Gambia,15432.2
+2018,Gambia,14286.4
+2019,Gambia,11796.8
+2002,Georgia,2505.4
+2003,Georgia,2812.6
+2004,Georgia,3182.6
+2005,Georgia,3442.4
+2006,Georgia,3862.6
+2007,Georgia,4257.8
+2008,Georgia,5093.8
+2009,Georgia,4810.2
+2010,Georgia,4913.0
+2011,Georgia,6206.8
+2012,Georgia,6815.6
+2013,Georgia,7227.6
+2014,Georgia,9465.6
+2015,Georgia,11843.8
+2016,Georgia,13733.4
+2017,Georgia,16121.2
+2018,Georgia,17353.8
+2019,Georgia,17263.6
+2002,Germany,60.8
+2003,Germany,62.4
+2004,Germany,68.0
+2005,Germany,66.8
+2006,Germany,74.6
+2007,Germany,78.6
+2008,Germany,71.6
+2009,Germany,61.4
+2010,Germany,52.2
+2011,Germany,46.8
+2012,Germany,46.0
+2013,Germany,57.2
+2014,Germany,77.0
+2015,Germany,108.6
+2016,Germany,129.2
+2017,Germany,154.6
+2018,Germany,170.6
+2019,Germany,192.6
+2002,Ghana,1309.0
+2003,Ghana,1576.6
+2004,Ghana,1584.0
+2005,Ghana,1681.4
+2006,Ghana,1748.2
+2007,Ghana,1682.0
+2008,Ghana,1615.8
+2009,Ghana,1888.0
+2010,Ghana,2254.6
+2011,Ghana,2850.8
+2012,Ghana,4110.8
+2013,Ghana,5852.6
+2014,Ghana,7723.2
+2015,Ghana,10530.2
+2016,Ghana,12043.2
+2017,Ghana,12632.6
+2018,Ghana,12510.0
+2019,Ghana,12104.2
+2002,Greece,36.6
+2003,Greece,40.2
+2004,Greece,35.0
+2005,Greece,29.0
+2006,Greece,24.6
+2007,Greece,22.4
+2008,Greece,21.0
+2009,Greece,24.0
+2010,Greece,47.4
+2011,Greece,64.4
+2012,Greece,72.0
+2013,Greece,77.8
+2014,Greece,85.4
+2015,Greece,79.0
+2016,Greece,84.6
+2017,Greece,99.4
+2018,Greece,110.8
+2019,Greece,127.4
+2002,Grenada,203.4
+2003,Grenada,205.8
+2004,Grenada,179.0
+2005,Grenada,116.8
+2006,Grenada,78.2
+2007,Grenada,71.6
+2008,Grenada,64.0
+2009,Grenada,64.8
+2010,Grenada,62.0
+2011,Grenada,57.2
+2012,Grenada,50.0
+2013,Grenada,47.6
+2014,Grenada,51.2
+2015,Grenada,53.8
+2016,Grenada,57.4
+2017,Grenada,64.8
+2018,Grenada,70.8
+2019,Grenada,77.4
+2017,Guadeloupe,33.8
+2018,Guadeloupe,48.6
+2002,Guatemala,88936.2
+2003,Guatemala,74945.2
+2004,Guatemala,59143.2
+2005,Guatemala,42920.4
+2006,Guatemala,27252.6
+2007,Guatemala,17345.0
+2008,Guatemala,11180.0
+2009,Guatemala,7294.6
+2010,Guatemala,4560.0
+2011,Guatemala,4198.4
+2012,Guatemala,5537.6
+2013,Guatemala,10723.2
+2014,Guatemala,19746.6
+2015,Guatemala,34026.8
+2016,Guatemala,49714.8
+2017,Guatemala,70470.2
+2018,Guatemala,94302.2
+2019,Guatemala,116533.6
+2002,Guinea,3164.8
+2003,Guinea,3313.8
+2004,Guinea,3074.0
+2005,Guinea,2698.0
+2006,Guinea,2468.2
+2007,Guinea,2536.2
+2008,Guinea,2436.4
+2009,Guinea,2833.0
+2010,Guinea,4349.0
+2011,Guinea,6267.4
+2012,Guinea,9266.2
+2013,Guinea,12278.8
+2014,Guinea,16228.4
+2015,Guinea,21231.2
+2016,Guinea,25519.4
+2017,Guinea,28106.2
+2018,Guinea,30853.0
+2019,Guinea,31613.4
+2002,Guinea-Bissau,427.4
+2003,Guinea-Bissau,338.2
+2004,Guinea-Bissau,245.6
+2005,Guinea-Bissau,239.6
+2006,Guinea-Bissau,246.0
+2007,Guinea-Bissau,269.6
+2008,Guinea-Bissau,288.6
+2009,Guinea-Bissau,328.8
+2010,Guinea-Bissau,459.0
+2011,Guinea-Bissau,646.4
+2012,Guinea-Bissau,934.8
+2013,Guinea-Bissau,1251.4
+2014,Guinea-Bissau,1527.4
+2015,Guinea-Bissau,2048.2
+2016,Guinea-Bissau,2379.6
+2017,Guinea-Bissau,2561.6
+2018,Guinea-Bissau,2720.0
+2019,Guinea-Bissau,2867.8
+2002,Guyana,723.4
+2003,Guyana,760.2
+2004,Guyana,744.6
+2005,Guyana,578.4
+2006,Guyana,374.4
+2007,Guyana,305.4
+2008,Guyana,262.4
+2009,Guyana,222.8
+2010,Guyana,188.8
+2011,Guyana,160.8
+2012,Guyana,125.8
+2013,Guyana,136.4
+2014,Guyana,175.2
+2015,Guyana,257.0
+2016,Guyana,340.0
+2017,Guyana,445.6
+2018,Guyana,542.6
+2019,Guyana,650.4
+2002,Haiti,19699.2
+2003,Haiti,18455.2
+2004,Haiti,16171.6
+2005,Haiti,13787.0
+2006,Haiti,12650.2
+2007,Haiti,11774.2
+2008,Haiti,10509.2
+2009,Haiti,9893.8
+2010,Haiti,8367.0
+2011,Haiti,6864.6
+2012,Haiti,5831.6
+2013,Haiti,6246.2
+2014,Haiti,9244.4
+2015,Haiti,16122.4
+2016,Haiti,23285.8
+2017,Haiti,35086.0
+2018,Haiti,49278.4
+2019,Haiti,64047.6
+2002,Honduras,1212.2
+2003,Honduras,1219.8
+2004,Honduras,1259.4
+2005,Honduras,1143.8
+2006,Honduras,1091.6
+2007,Honduras,1038.0
+2008,Honduras,956.0
+2009,Honduras,854.2
+2010,Honduras,880.8
+2011,Honduras,1751.0
+2012,Honduras,3578.8
+2013,Honduras,7307.0
+2014,Honduras,14177.2
+2015,Honduras,25972.8
+2016,Honduras,40219.6
+2017,Honduras,62794.6
+2018,Honduras,88690.4
+2019,Honduras,115533.6
+2002,Hong Kong,14.8
+2003,Hong Kong,17.0
+2004,Hong Kong,17.0
+2005,Hong Kong,18.6
+2006,Hong Kong,24.2
+2007,Hong Kong,35.4
+2008,Hong Kong,47.8
+2009,Hong Kong,45.2
+2010,Hong Kong,53.0
+2011,Hong Kong,53.6
+2012,Hong Kong,48.0
+2013,Hong Kong,47.8
+2014,Hong Kong,69.2
+2015,Hong Kong,77.2
+2016,Hong Kong,71.2
+2017,Hong Kong,108.0
+2018,Hong Kong,189.4
+2019,Hong Kong,292.8
+2002,Hungary,2166.4
+2003,Hungary,1825.4
+2004,Hungary,1035.0
+2005,Hungary,429.0
+2006,Hungary,285.4
+2007,Hungary,656.4
+2008,Hungary,1315.2
+2009,Hungary,2476.4
+2010,Hungary,3204.8
+2011,Hungary,3538.6
+2012,Hungary,3115.6
+2013,Hungary,2546.6
+2014,Hungary,1677.6
+2015,Hungary,1262.6
+2016,Hungary,1032.2
+2017,Hungary,1100.8
+2018,Hungary,1080.6
+2019,Hungary,898.6
+2013,Iceland,5.2
+2014,Iceland,5.2
+2015,Iceland,5.0
+2016,Iceland,5.0
+2002,India,10751.6
+2003,India,11228.2
+2004,India,10627.6
+2005,India,9831.0
+2006,India,8913.2
+2007,India,7513.4
+2008,India,5850.8
+2009,India,5371.2
+2010,India,5286.6
+2011,India,6407.4
+2012,India,8805.2
+2013,India,13008.8
+2014,India,17727.2
+2015,India,24467.6
+2016,India,32333.8
+2017,India,42195.2
+2018,India,51211.0
+2019,India,61529.4
+2002,Indonesia,5364.6
+2003,Indonesia,5539.4
+2004,Indonesia,5272.8
+2005,Indonesia,4680.2
+2006,Indonesia,3620.8
+2007,Indonesia,2867.0
+2008,Indonesia,2058.8
+2009,Indonesia,1480.6
+2010,Indonesia,1109.6
+2011,Indonesia,888.8
+2012,Indonesia,841.4
+2013,Indonesia,1278.6
+2014,Indonesia,1919.6
+2015,Indonesia,2896.8
+2016,Indonesia,3352.4
+2017,Indonesia,3864.4
+2018,Indonesia,4325.0
+2019,Indonesia,4751.4
+2002,Iran,13763.6
+2003,Iran,12215.0
+2004,Iran,12128.8
+2005,Iran,11567.6
+2006,Iran,11525.4
+2007,Iran,12368.4
+2008,Iran,13003.6
+2009,Iran,13952.2
+2010,Iran,16686.0
+2011,Iran,20212.4
+2012,Iran,24442.4
+2013,Iran,32647.6
+2014,Iran,46464.6
+2015,Iran,56672.0
+2016,Iran,68389.0
+2017,Iran,78654.4
+2018,Iran,82684.2
+2019,Iran,79698.8
+2002,Iraq,33461.4
+2003,Iraq,32223.0
+2004,Iraq,34716.6
+2005,Iraq,34321.8
+2006,Iraq,33134.4
+2007,Iraq,31485.0
+2008,Iraq,30585.2
+2009,Iraq,26023.4
+2010,Iraq,25337.8
+2011,Iraq,28836.0
+2012,Iraq,45106.4
+2013,Iraq,86552.2
+2014,Iraq,137328.6
+2015,Iraq,187006.2
+2016,Iraq,229720.4
+2017,Iraq,269661.4
+2018,Iraq,270369.4
+2019,Iraq,268044.2
+2009,Ireland,7.0
+2011,Ireland,11.4
+2012,Ireland,26.8
+2013,Ireland,33.0
+2014,Ireland,40.4
+2015,Ireland,48.8
+2016,Ireland,54.2
+2017,Ireland,56.0
+2018,Ireland,67.6
+2019,Ireland,78.8
+2002,Israel,739.6
+2003,Israel,791.2
+2004,Israel,857.2
+2005,Israel,841.8
+2006,Israel,860.4
+2007,Israel,919.2
+2008,Israel,953.6
+2009,Israel,867.2
+2010,Israel,761.2
+2011,Israel,611.6
+2012,Israel,457.2
+2013,Israel,374.6
+2014,Israel,382.8
+2015,Israel,437.8
+2016,Israel,516.6
+2017,Israel,598.2
+2018,Israel,655.0
+2019,Israel,709.2
+2002,Italy,30.6
+2003,Italy,28.0
+2004,Italy,24.4
+2005,Italy,19.2
+2006,Italy,19.2
+2007,Italy,20.8
+2008,Italy,27.2
+2009,Italy,31.0
+2010,Italy,39.8
+2011,Italy,49.2
+2012,Italy,65.0
+2013,Italy,82.4
+2014,Italy,102.4
+2015,Italy,148.0
+2016,Italy,208.8
+2017,Italy,273.0
+2018,Italy,339.4
+2019,Italy,427.2
+2002,Jamaica,325.6
+2003,Jamaica,348.6
+2004,Jamaica,346.4
+2005,Jamaica,297.8
+2006,Jamaica,296.0
+2007,Jamaica,353.8
+2008,Jamaica,407.0
+2009,Jamaica,468.8
+2010,Jamaica,521.0
+2011,Jamaica,566.8
+2012,Jamaica,571.4
+2013,Jamaica,628.4
+2014,Jamaica,739.4
+2015,Jamaica,926.0
+2016,Jamaica,1099.0
+2017,Jamaica,1339.2
+2018,Jamaica,1551.8
+2019,Jamaica,1777.2
+2002,Japan,30.6
+2003,Japan,38.6
+2004,Japan,40.4
+2005,Japan,39.8
+2006,Japan,39.6
+2007,Japan,31.2
+2008,Japan,23.0
+2009,Japan,23.8
+2010,Japan,27.4
+2011,Japan,31.8
+2012,Japan,38.4
+2013,Japan,50.0
+2014,Japan,59.4
+2015,Japan,71.8
+2016,Japan,85.0
+2017,Japan,95.2
+2018,Japan,105.8
+2019,Japan,115.4
+2002,Jordan,650.2
+2003,Jordan,672.6
+2004,Jordan,712.8
+2005,Jordan,714.2
+2006,Jordan,719.4
+2007,Jordan,730.2
+2008,Jordan,719.6
+2009,Jordan,674.4
+2010,Jordan,652.8
+2011,Jordan,689.6
+2012,Jordan,796.8
+2013,Jordan,1040.6
+2014,Jordan,1420.8
+2015,Jordan,1989.8
+2016,Jordan,2628.2
+2017,Jordan,3315.4
+2018,Jordan,3946.4
+2019,Jordan,4622.8
+2002,Kazakhstan,816.2
+2003,Kazakhstan,789.4
+2004,Kazakhstan,745.4
+2005,Kazakhstan,666.4
+2006,Kazakhstan,604.6
+2007,Kazakhstan,594.0
+2008,Kazakhstan,622.8
+2009,Kazakhstan,641.0
+2010,Kazakhstan,720.8
+2011,Kazakhstan,834.4
+2012,Kazakhstan,943.2
+2013,Kazakhstan,1106.4
+2014,Kazakhstan,1402.0
+2015,Kazakhstan,1919.6
+2016,Kazakhstan,2856.8
+2017,Kazakhstan,4024.2
+2018,Kazakhstan,4906.8
+2019,Kazakhstan,5721.6
+2002,Kenya,6765.4
+2003,Kenya,8879.4
+2004,Kenya,8951.8
+2005,Kenya,7259.8
+2006,Kenya,5525.8
+2007,Kenya,3879.0
+2008,Kenya,1922.6
+2009,Kenya,2025.6
+2010,Kenya,1991.0
+2011,Kenya,1990.0
+2012,Kenya,1980.0
+2013,Kenya,2301.8
+2014,Kenya,2695.0
+2015,Kenya,3529.0
+2016,Kenya,4548.0
+2017,Kenya,5539.2
+2018,Kenya,6679.2
+2019,Kenya,7903.0
+2011,Kiribati,6.0
+2012,Kiribati,6.0
+2002,Kuwait,110.6
+2003,Kuwait,104.0
+2004,Kuwait,99.4
+2005,Kuwait,97.0
+2006,Kuwait,88.4
+2007,Kuwait,81.8
+2008,Kuwait,85.0
+2009,Kuwait,93.2
+2010,Kuwait,99.4
+2011,Kuwait,121.8
+2012,Kuwait,162.6
+2013,Kuwait,232.6
+2014,Kuwait,329.8
+2015,Kuwait,493.0
+2016,Kuwait,702.4
+2017,Kuwait,931.0
+2018,Kuwait,1127.8
+2019,Kuwait,1300.0
+2002,Kyrgyzstan,468.6
+2003,Kyrgyzstan,476.6
+2004,Kyrgyzstan,514.6
+2005,Kyrgyzstan,495.8
+2006,Kyrgyzstan,454.0
+2007,Kyrgyzstan,444.6
+2008,Kyrgyzstan,684.2
+2009,Kyrgyzstan,879.8
+2010,Kyrgyzstan,1030.2
+2011,Kyrgyzstan,1206.6
+2012,Kyrgyzstan,1488.0
+2013,Kyrgyzstan,1628.6
+2014,Kyrgyzstan,1790.0
+2015,Kyrgyzstan,2064.8
+2016,Kyrgyzstan,2351.2
+2017,Kyrgyzstan,2503.2
+2018,Kyrgyzstan,2589.6
+2019,Kyrgyzstan,2694.6
+2002,Laos,604.0
+2003,Laos,633.0
+2004,Laos,497.0
+2005,Laos,347.6
+2006,Laos,288.4
+2007,Laos,232.2
+2008,Laos,176.6
+2009,Laos,124.8
+2010,Laos,94.0
+2011,Laos,66.6
+2012,Laos,51.2
+2013,Laos,70.6
+2014,Laos,99.2
+2015,Laos,141.8
+2016,Laos,192.4
+2017,Laos,247.8
+2018,Laos,307.4
+2019,Laos,369.8
+2002,Latvia,164.0
+2003,Latvia,166.2
+2004,Latvia,150.6
+2005,Latvia,120.2
+2006,Latvia,85.4
+2007,Latvia,71.0
+2008,Latvia,82.8
+2009,Latvia,91.4
+2010,Latvia,102.8
+2011,Latvia,111.2
+2012,Latvia,107.4
+2013,Latvia,87.4
+2014,Latvia,78.0
+2015,Latvia,80.2
+2016,Latvia,87.6
+2017,Latvia,95.8
+2018,Latvia,98.8
+2019,Latvia,106.8
+2002,Lebanon,1905.6
+2003,Lebanon,1998.8
+2004,Lebanon,2253.4
+2005,Lebanon,2292.6
+2006,Lebanon,2322.0
+2007,Lebanon,2351.0
+2008,Lebanon,2253.8
+2009,Lebanon,1898.6
+2010,Lebanon,1781.8
+2011,Lebanon,1872.6
+2012,Lebanon,2288.2
+2013,Lebanon,3181.6
+2014,Lebanon,4601.6
+2015,Lebanon,6063.4
+2016,Lebanon,7129.0
+2017,Lebanon,7970.0
+2018,Lebanon,8365.2
+2019,Lebanon,8350.6
+2003,Lesotho,6.4
+2004,Lesotho,6.2
+2005,Lesotho,7.6
+2006,Lesotho,10.0
+2007,Lesotho,9.0
+2008,Lesotho,8.8
+2009,Lesotho,39.4
+2010,Lesotho,92.8
+2011,Lesotho,224.6
+2012,Lesotho,356.6
+2013,Lesotho,573.8
+2014,Lesotho,681.8
+2015,Lesotho,630.0
+2016,Lesotho,502.4
+2017,Lesotho,379.2
+2018,Lesotho,168.6
+2019,Lesotho,37.4
+2002,Liberia,6977.0
+2003,Liberia,7332.8
+2004,Liberia,7061.4
+2005,Liberia,5653.2
+2006,Liberia,4892.2
+2007,Liberia,3813.8
+2008,Liberia,3000.6
+2009,Liberia,2392.0
+2010,Liberia,2092.6
+2011,Liberia,2012.8
+2012,Liberia,2037.6
+2013,Liberia,2138.6
+2014,Liberia,2267.4
+2015,Liberia,2535.6
+2016,Liberia,2736.4
+2017,Liberia,2865.6
+2018,Liberia,2997.4
+2019,Liberia,3108.0
+2002,Libya,729.2
+2003,Libya,775.6
+2004,Libya,810.2
+2005,Libya,748.4
+2006,Libya,719.4
+2007,Libya,684.4
+2008,Libya,643.4
+2009,Libya,902.8
+2010,Libya,1159.0
+2011,Libya,1422.0
+2012,Libya,2072.0
+2013,Libya,3168.8
+2014,Libya,4082.2
+2015,Libya,5071.8
+2016,Libya,6015.4
+2017,Libya,6441.2
+2018,Libya,6321.2
+2019,Libya,6137.2
+2002,Lithuania,262.0
+2003,Lithuania,270.6
+2004,Lithuania,249.8
+2005,Lithuania,195.2
+2006,Lithuania,135.6
+2007,Lithuania,117.2
+2008,Lithuania,105.0
+2009,Lithuania,96.8
+2010,Lithuania,98.2
+2011,Lithuania,101.4
+2012,Lithuania,90.8
+2013,Lithuania,79.6
+2014,Lithuania,73.0
+2015,Lithuania,74.0
+2016,Lithuania,76.6
+2017,Lithuania,80.4
+2018,Lithuania,83.2
+2019,Lithuania,89.8
+2003,Macao,5.6
+2004,Macao,5.6
+2005,Macao,5.0
+2006,Macao,5.0
+2007,Macao,6.2
+2013,Macao,10.2
+2014,Macao,11.2
+2015,Macao,15.2
+2017,Macao,20.8
+2018,Macao,27.4
+2019,Macao,31.2
+2002,Madagascar,15.6
+2003,Madagascar,15.6
+2004,Madagascar,19.0
+2005,Madagascar,17.0
+2006,Madagascar,15.2
+2007,Madagascar,18.6
+2008,Madagascar,19.2
+2009,Madagascar,17.0
+2010,Madagascar,21.4
+2011,Madagascar,51.0
+2012,Madagascar,84.8
+2013,Madagascar,114.4
+2014,Madagascar,122.8
+2015,Madagascar,132.0
+2016,Madagascar,120.6
+2017,Madagascar,133.4
+2018,Madagascar,167.8
+2019,Madagascar,221.2
+2002,Malawi,910.2
+2003,Malawi,1678.4
+2004,Malawi,1684.6
+2005,Malawi,3292.0
+2006,Malawi,4643.2
+2007,Malawi,4064.2
+2008,Malawi,3307.0
+2009,Malawi,3891.0
+2010,Malawi,3162.8
+2011,Malawi,2374.6
+2012,Malawi,3144.4
+2013,Malawi,4266.8
+2014,Malawi,4424.6
+2015,Malawi,4146.8
+2016,Malawi,3853.8
+2017,Malawi,3589.6
+2018,Malawi,2888.8
+2019,Malawi,2576.4
+2002,Malaysia,306.4
+2003,Malaysia,295.2
+2004,Malaysia,259.8
+2005,Malaysia,186.2
+2006,Malaysia,146.8
+2007,Malaysia,141.4
+2008,Malaysia,127.8
+2009,Malaysia,128.0
+2010,Malaysia,139.6
+2011,Malaysia,167.2
+2012,Malaysia,327.2
+2013,Malaysia,868.6
+2014,Malaysia,2074.0
+2015,Malaysia,3935.6
+2016,Malaysia,6889.8
+2017,Malaysia,10952.0
+2018,Malaysia,14682.2
+2019,Malaysia,17556.4
+2013,Maldives,18.6
+2014,Maldives,24.6
+2015,Maldives,25.2
+2016,Maldives,27.4
+2017,Maldives,28.6
+2018,Maldives,27.6
+2019,Maldives,25.0
+2002,Mali,255.8
+2003,Mali,286.6
+2004,Mali,295.4
+2005,Mali,357.6
+2006,Mali,460.8
+2007,Mali,574.4
+2008,Mali,583.6
+2009,Mali,579.2
+2010,Mali,824.0
+2011,Mali,1982.2
+2012,Mali,4276.4
+2013,Mali,6174.2
+2014,Mali,8036.8
+2015,Mali,10684.2
+2016,Mali,11556.6
+2017,Mali,10832.6
+2018,Mali,11084.0
+2019,Mali,11890.8
+2002,Malta,5.6
+2003,Malta,5.6
+2004,Malta,5.6
+2006,Malta,5.6
+2015,Malta,6.0
+2017,Malta,8.0
+2018,Malta,9.0
+2019,Malta,11.0
+2015,Marshall Islands,23.4
+2002,Mauritania,2551.2
+2003,Mauritania,2654.2
+2004,Mauritania,2501.8
+2005,Mauritania,2107.6
+2006,Mauritania,1687.8
+2007,Mauritania,1351.4
+2008,Mauritania,1042.6
+2009,Mauritania,799.4
+2010,Mauritania,1204.8
+2011,Mauritania,1818.8
+2012,Mauritania,3040.0
+2013,Mauritania,4384.2
+2014,Mauritania,5745.6
+2015,Mauritania,6648.6
+2016,Mauritania,7504.2
+2017,Mauritania,7821.8
+2018,Mauritania,8177.4
+2019,Mauritania,8467.4
+2002,Mauritius,16.8
+2003,Mauritius,17.2
+2004,Mauritius,17.2
+2005,Mauritius,16.6
+2006,Mauritius,17.0
+2007,Mauritius,18.0
+2008,Mauritius,22.6
+2009,Mauritius,39.8
+2010,Mauritius,59.6
+2011,Mauritius,79.4
+2012,Mauritius,106.4
+2013,Mauritius,138.8
+2014,Mauritius,158.0
+2015,Mauritius,181.0
+2016,Mauritius,215.8
+2017,Mauritius,246.4
+2018,Mauritius,273.6
+2019,Mauritius,303.0
+2002,Mexico,22338.8
+2003,Mexico,22250.0
+2004,Mexico,20118.6
+2005,Mexico,16896.4
+2006,Mexico,15091.4
+2007,Mexico,15405.6
+2008,Mexico,14874.0
+2009,Mexico,13576.4
+2010,Mexico,11345.2
+2011,Mexico,10311.6
+2012,Mexico,12101.4
+2013,Mexico,19360.2
+2014,Mexico,31145.8
+2015,Mexico,47440.4
+2016,Mexico,62945.8
+2017,Mexico,77410.0
+2018,Mexico,90505.6
+2019,Mexico,101244.6
+2002,Moldova,1226.0
+2003,Moldova,1166.6
+2004,Moldova,990.8
+2005,Moldova,868.6
+2006,Moldova,848.8
+2007,Moldova,872.6
+2008,Moldova,885.8
+2009,Moldova,722.8
+2010,Moldova,627.0
+2011,Moldova,626.6
+2012,Moldova,767.8
+2013,Moldova,1328.2
+2014,Moldova,2107.6
+2015,Moldova,2705.2
+2016,Moldova,3437.2
+2017,Moldova,4280.4
+2018,Moldova,4695.0
+2019,Moldova,4906.4
+2002,Mongolia,746.0
+2003,Mongolia,755.6
+2004,Mongolia,956.2
+2005,Mongolia,1142.0
+2006,Mongolia,1417.2
+2007,Mongolia,1763.2
+2008,Mongolia,1991.8
+2009,Mongolia,1909.8
+2010,Mongolia,1706.4
+2011,Mongolia,1543.6
+2012,Mongolia,1526.2
+2013,Mongolia,1874.4
+2014,Mongolia,2352.0
+2015,Mongolia,2997.6
+2016,Mongolia,3624.4
+2017,Mongolia,3995.8
+2018,Mongolia,4115.4
+2019,Mongolia,4348.2
+2008,Montenegro,190.4
+2009,Montenegro,225.8
+2010,Montenegro,241.0
+2011,Montenegro,320.4
+2012,Montenegro,540.4
+2013,Montenegro,1107.2
+2014,Montenegro,1273.6
+2015,Montenegro,1353.4
+2016,Montenegro,1364.6
+2017,Montenegro,1231.2
+2018,Montenegro,755.0
+2019,Montenegro,673.6
+2002,Morocco,252.2
+2003,Morocco,305.4
+2004,Morocco,367.8
+2005,Morocco,401.6
+2006,Morocco,454.2
+2007,Morocco,524.6
+2008,Morocco,601.2
+2009,Morocco,711.6
+2010,Morocco,970.8
+2011,Morocco,1438.4
+2012,Morocco,1962.0
+2013,Morocco,2910.6
+2014,Morocco,4134.0
+2015,Morocco,5152.8
+2016,Morocco,6212.6
+2017,Morocco,7249.2
+2018,Morocco,7781.8
+2019,Morocco,8261.8
+2003,Mozambique,181.2
+2004,Mozambique,180.0
+2005,Mozambique,305.6
+2006,Mozambique,407.6
+2007,Mozambique,346.6
+2008,Mozambique,275.6
+2009,Mozambique,343.6
+2010,Mozambique,381.0
+2011,Mozambique,530.8
+2012,Mozambique,811.4
+2013,Mozambique,1247.8
+2014,Mozambique,2319.0
+2015,Mozambique,4662.2
+2016,Mozambique,6172.2
+2017,Mozambique,7643.6
+2018,Mozambique,8939.8
+2019,Mozambique,9544.4
+2002,Myanmar,5047.6
+2003,Myanmar,13070.4
+2004,Myanmar,18107.0
+2005,Myanmar,21502.0
+2006,Myanmar,23855.6
+2007,Myanmar,26270.4
+2008,Myanmar,22498.6
+2009,Myanmar,22056.6
+2010,Myanmar,23379.2
+2011,Myanmar,27905.4
+2012,Myanmar,33657.8
+2013,Myanmar,41330.6
+2014,Myanmar,47715.0
+2015,Myanmar,50808.2
+2016,Myanmar,47908.2
+2017,Myanmar,45147.2
+2018,Myanmar,41062.2
+2019,Myanmar,38677.6
+2002,Namibia,141.6
+2003,Namibia,147.6
+2004,Namibia,120.4
+2005,Namibia,87.8
+2006,Namibia,55.4
+2007,Namibia,27.2
+2008,Namibia,88.2
+2009,Namibia,303.8
+2010,Namibia,414.8
+2011,Namibia,465.4
+2012,Namibia,465.8
+2013,Namibia,408.8
+2014,Namibia,216.4
+2015,Namibia,144.4
+2016,Namibia,155.6
+2017,Namibia,298.8
+2018,Namibia,455.0
+2019,Namibia,595.8
+2002,Nepal,726.8
+2003,Nepal,1121.4
+2004,Nepal,1496.2
+2005,Nepal,1802.4
+2006,Nepal,2076.0
+2007,Nepal,2174.0
+2008,Nepal,1922.6
+2009,Nepal,1838.6
+2010,Nepal,1913.4
+2011,Nepal,2251.4
+2012,Nepal,3220.4
+2013,Nepal,4780.6
+2014,Nepal,6686.0
+2015,Nepal,8821.0
+2016,Nepal,9879.2
+2017,Nepal,10538.4
+2018,Nepal,10808.0
+2019,Nepal,10784.8
+2002,Netherlands,102.2
+2003,Netherlands,83.8
+2004,Netherlands,74.0
+2005,Netherlands,61.0
+2006,Netherlands,48.0
+2007,Netherlands,30.0
+2008,Netherlands,26.2
+2009,Netherlands,27.0
+2010,Netherlands,28.2
+2011,Netherlands,28.2
+2012,Netherlands,31.2
+2013,Netherlands,38.0
+2014,Netherlands,38.0
+2015,Netherlands,45.2
+2016,Netherlands,58.4
+2017,Netherlands,70.8
+2018,Netherlands,76.4
+2019,Netherlands,87.4
+2003,New Zealand,5.0
+2004,New Zealand,5.0
+2005,New Zealand,5.0
+2006,New Zealand,5.0
+2007,New Zealand,5.2
+2008,New Zealand,5.4
+2011,New Zealand,5.6
+2012,New Zealand,7.2
+2013,New Zealand,7.6
+2014,New Zealand,10.0
+2015,New Zealand,14.2
+2016,New Zealand,15.8
+2017,New Zealand,18.6
+2018,New Zealand,23.6
+2019,New Zealand,26.6
+2002,Nicaragua,9868.6
+2003,Nicaragua,8126.0
+2004,Nicaragua,5951.4
+2005,Nicaragua,4128.6
+2006,Nicaragua,2850.8
+2007,Nicaragua,1688.2
+2008,Nicaragua,834.4
+2009,Nicaragua,402.0
+2010,Nicaragua,261.8
+2011,Nicaragua,270.0
+2012,Nicaragua,327.6
+2013,Nicaragua,544.2
+2014,Nicaragua,941.6
+2015,Nicaragua,1461.8
+2016,Nicaragua,7813.4
+2017,Nicaragua,21099.8
+2018,Nicaragua,33269.4
+2019,Nicaragua,54186.6
+2002,Niger,404.6
+2003,Niger,470.8
+2004,Niger,481.8
+2005,Niger,423.0
+2006,Niger,385.4
+2007,Niger,371.8
+2008,Niger,319.4
+2009,Niger,283.4
+2010,Niger,302.0
+2011,Niger,333.0
+2012,Niger,383.4
+2013,Niger,472.2
+2014,Niger,581.8
+2015,Niger,990.8
+2016,Niger,1317.6
+2017,Niger,1705.0
+2018,Niger,2373.2
+2019,Niger,2687.8
+2002,Nigeria,8628.4
+2003,Nigeria,10740.0
+2004,Nigeria,11585.6
+2005,Nigeria,12000.4
+2006,Nigeria,11160.8
+2007,Nigeria,10437.4
+2008,Nigeria,10016.8
+2009,Nigeria,10448.4
+2010,Nigeria,11335.2
+2011,Nigeria,13511.8
+2012,Nigeria,17599.4
+2013,Nigeria,25487.6
+2014,Nigeria,36756.2
+2015,Nigeria,52309.2
+2016,Nigeria,64967.6
+2017,Nigeria,81452.6
+2018,Nigeria,85824.4
+2019,Nigeria,87936.6
+2017,Niue,12.4
+2018,Niue,8.2
+2019,Niue,6.0
+2002,North Korea,54.8
+2003,North Korea,58.2
+2004,North Korea,67.4
+2005,North Korea,99.8
+2006,North Korea,134.2
+2007,North Korea,146.4
+2008,North Korea,186.6
+2009,North Korea,277.6
+2010,North Korea,435.8
+2011,North Korea,581.2
+2012,North Korea,602.8
+2013,North Korea,593.8
+2014,North Korea,589.0
+2015,North Korea,501.8
+2016,North Korea,343.0
+2017,North Korea,319.8
+2018,North Korea,292.8
+2019,North Korea,208.6
+2002,North Macedonia,1343.2
+2003,North Macedonia,1382.6
+2004,North Macedonia,1258.4
+2005,North Macedonia,1054.8
+2006,North Macedonia,1035.4
+2007,North Macedonia,1070.0
+2008,North Macedonia,1498.0
+2009,North Macedonia,1629.6
+2010,North Macedonia,2338.0
+2011,North Macedonia,3459.4
+2012,North Macedonia,4843.4
+2013,North Macedonia,7196.8
+2014,North Macedonia,8155.2
+2015,North Macedonia,8034.0
+2016,North Macedonia,7343.4
+2017,North Macedonia,6292.4
+2018,North Macedonia,3713.6
+2019,North Macedonia,2549.6
+2009,Norway,5.0
+2011,Norway,5.0
+2012,Norway,5.0
+2013,Norway,7.0
+2015,Norway,11.0
+2016,Norway,12.2
+2017,Norway,13.4
+2018,Norway,15.4
+2019,Norway,18.2
+2002,Oman,5.2
+2007,Oman,5.2
+2009,Oman,6.0
+2010,Oman,8.2
+2014,Oman,12.0
+2015,Oman,15.4
+2016,Oman,19.8
+2017,Oman,29.8
+2018,Oman,40.6
+2019,Oman,50.8
+2002,Pakistan,11842.2
+2003,Pakistan,13689.6
+2004,Pakistan,13441.4
+2005,Pakistan,12887.2
+2006,Pakistan,10767.8
+2007,Pakistan,8559.8
+2008,Pakistan,9271.8
+2009,Pakistan,10655.0
+2010,Pakistan,13675.8
+2011,Pakistan,21936.0
+2012,Pakistan,29868.6
+2013,Pakistan,38660.0
+2014,Pakistan,49464.2
+2015,Pakistan,60100.4
+2016,Pakistan,65659.2
+2017,Pakistan,70055.4
+2018,Pakistan,69549.8
+2019,Pakistan,68080.6
+2002,Palestine,904.8
+2003,Palestine,1007.8
+2004,Palestine,1107.2
+2005,Palestine,1390.6
+2006,Palestine,1705.4
+2007,Palestine,1998.2
+2008,Palestine,2426.4
+2009,Palestine,2501.2
+2010,Palestine,2502.6
+2011,Palestine,2640.2
+2012,Palestine,2869.8
+2013,Palestine,3094.0
+2014,Palestine,3938.0
+2015,Palestine,5225.2
+2016,Palestine,7250.2
+2017,Palestine,8836.0
+2018,Palestine,10464.2
+2019,Palestine,11292.6
+2002,Panama,77.8
+2003,Panama,79.6
+2004,Panama,68.8
+2005,Panama,53.0
+2006,Panama,42.4
+2007,Panama,36.6
+2008,Panama,35.0
+2009,Panama,37.6
+2010,Panama,38.0
+2011,Panama,36.2
+2012,Panama,33.6
+2013,Panama,35.2
+2014,Panama,45.2
+2015,Panama,64.2
+2016,Panama,87.0
+2017,Panama,129.4
+2018,Panama,180.6
+2019,Panama,240.8
+2005,Papua New Guinea,10.4
+2006,Papua New Guinea,11.4
+2007,Papua New Guinea,12.4
+2008,Papua New Guinea,17.6
+2009,Papua New Guinea,25.6
+2010,Papua New Guinea,38.6
+2011,Papua New Guinea,65.8
+2012,Papua New Guinea,106.2
+2013,Papua New Guinea,137.2
+2014,Papua New Guinea,180.2
+2015,Papua New Guinea,238.0
+2016,Papua New Guinea,297.8
+2017,Papua New Guinea,365.0
+2018,Papua New Guinea,455.4
+2019,Papua New Guinea,537.0
+2002,Paraguay,34.8
+2003,Paraguay,37.8
+2004,Paraguay,40.6
+2005,Paraguay,40.6
+2006,Paraguay,37.0
+2007,Paraguay,34.6
+2008,Paraguay,33.2
+2009,Paraguay,30.4
+2010,Paraguay,26.2
+2011,Paraguay,25.4
+2012,Paraguay,26.2
+2013,Paraguay,34.8
+2014,Paraguay,53.8
+2015,Paraguay,84.2
+2016,Paraguay,134.2
+2017,Paraguay,253.8
+2018,Paraguay,414.0
+2019,Paraguay,595.6
+2002,Peru,2727.6
+2003,Peru,2568.0
+2004,Peru,2402.6
+2005,Peru,2297.6
+2006,Peru,2243.8
+2007,Peru,2984.4
+2008,Peru,3609.8
+2009,Peru,3324.8
+2010,Peru,2780.8
+2011,Peru,2420.0
+2012,Peru,1464.6
+2013,Peru,817.8
+2014,Peru,1176.2
+2015,Peru,1808.4
+2016,Peru,2648.2
+2017,Peru,4176.6
+2018,Peru,5987.2
+2019,Peru,7359.4
+2002,Philippines,1703.4
+2003,Philippines,1506.2
+2004,Philippines,1296.8
+2005,Philippines,1043.4
+2006,Philippines,857.8
+2007,Philippines,819.8
+2008,Philippines,777.6
+2009,Philippines,690.4
+2010,Philippines,615.4
+2011,Philippines,609.8
+2012,Philippines,675.2
+2013,Philippines,922.2
+2014,Philippines,1475.0
+2015,Philippines,3015.8
+2016,Philippines,3601.4
+2017,Philippines,4324.6
+2018,Philippines,4945.2
+2019,Philippines,5374.8
+2002,Poland,743.8
+2003,Poland,754.6
+2004,Poland,653.2
+2005,Poland,527.0
+2006,Poland,391.2
+2007,Poland,326.4
+2008,Poland,236.4
+2009,Poland,231.8
+2010,Poland,259.6
+2011,Poland,269.4
+2012,Poland,273.0
+2013,Poland,322.2
+2014,Poland,365.4
+2015,Poland,457.0
+2016,Poland,584.6
+2017,Poland,735.2
+2018,Poland,865.8
+2019,Poland,977.6
+2002,Portugal,274.8
+2003,Portugal,284.6
+2004,Portugal,264.4
+2005,Portugal,162.4
+2006,Portugal,90.6
+2007,Portugal,57.4
+2008,Portugal,45.0
+2009,Portugal,49.4
+2010,Portugal,51.0
+2011,Portugal,52.4
+2012,Portugal,50.0
+2013,Portugal,50.8
+2014,Portugal,53.6
+2015,Portugal,78.0
+2016,Portugal,119.0
+2017,Portugal,179.8
+2018,Portugal,239.0
+2019,Portugal,309.8
+2002,Qatar,21.8
+2003,Qatar,16.6
+2005,Qatar,11.8
+2006,Qatar,7.2
+2009,Qatar,5.8
+2010,Qatar,5.8
+2011,Qatar,5.8
+2012,Qatar,7.2
+2014,Qatar,10.4
+2015,Qatar,16.8
+2016,Qatar,22.4
+2017,Qatar,28.6
+2018,Qatar,33.8
+2019,Qatar,37.0
+2002,Romania,2214.8
+2003,Romania,1948.6
+2004,Romania,1650.8
+2005,Romania,1304.4
+2006,Romania,948.6
+2007,Romania,763.2
+2008,Romania,597.8
+2009,Romania,426.2
+2010,Romania,436.0
+2011,Romania,589.2
+2012,Romania,709.0
+2013,Romania,922.8
+2014,Romania,1333.8
+2015,Romania,1863.0
+2016,Romania,2483.4
+2017,Romania,3064.8
+2018,Romania,3533.4
+2019,Romania,3883.0
+2002,Russia,15782.2
+2003,Russia,16523.4
+2004,Russia,17401.2
+2005,Russia,16994.4
+2006,Russia,15927.6
+2007,Russia,15984.8
+2008,Russia,15217.8
+2009,Russia,13774.4
+2010,Russia,13309.0
+2011,Russia,15361.8
+2012,Russia,17542.4
+2013,Russia,20950.4
+2014,Russia,25655.6
+2015,Russia,30337.4
+2016,Russia,33798.8
+2017,Russia,38624.4
+2018,Russia,42001.8
+2019,Russia,44114.8
+2002,Rwanda,15450.0
+2003,Rwanda,13660.2
+2004,Rwanda,10201.0
+2005,Rwanda,9640.2
+2006,Rwanda,8828.2
+2007,Rwanda,8715.8
+2008,Rwanda,7604.8
+2009,Rwanda,7733.0
+2010,Rwanda,8143.0
+2011,Rwanda,8623.0
+2012,Rwanda,9664.6
+2013,Rwanda,9793.8
+2014,Rwanda,10280.8
+2015,Rwanda,10784.4
+2016,Rwanda,11842.2
+2017,Rwanda,12996.8
+2018,Rwanda,14136.8
+2019,Rwanda,15110.6
+2003,Saint Kitts and Nevis,5.6
+2006,Saint Kitts and Nevis,6.2
+2007,Saint Kitts and Nevis,7.4
+2008,Saint Kitts and Nevis,8.8
+2009,Saint Kitts and Nevis,10.6
+2010,Saint Kitts and Nevis,13.0
+2011,Saint Kitts and Nevis,15.6
+2012,Saint Kitts and Nevis,14.8
+2013,Saint Kitts and Nevis,16.4
+2014,Saint Kitts and Nevis,18.0
+2015,Saint Kitts and Nevis,17.6
+2016,Saint Kitts and Nevis,15.6
+2017,Saint Kitts and Nevis,17.6
+2018,Saint Kitts and Nevis,17.2
+2019,Saint Kitts and Nevis,16.6
+2002,Saint Lucia,158.0
+2003,Saint Lucia,192.4
+2004,Saint Lucia,208.0
+2005,Saint Lucia,188.8
+2006,Saint Lucia,201.6
+2007,Saint Lucia,291.2
+2008,Saint Lucia,387.8
+2009,Saint Lucia,494.8
+2010,Saint Lucia,562.4
+2011,Saint Lucia,546.6
+2012,Saint Lucia,434.2
+2013,Saint Lucia,309.6
+2014,Saint Lucia,213.0
+2015,Saint Lucia,145.2
+2016,Saint Lucia,106.8
+2017,Saint Lucia,114.8
+2018,Saint Lucia,119.4
+2019,Saint Lucia,99.6
+2002,Saint Vincent and the Grenadines,278.8
+2003,Saint Vincent and the Grenadines,333.8
+2004,Saint Vincent and the Grenadines,362.6
+2005,Saint Vincent and the Grenadines,361.4
+2006,Saint Vincent and the Grenadines,426.4
+2007,Saint Vincent and the Grenadines,598.2
+2008,Saint Vincent and the Grenadines,737.0
+2009,Saint Vincent and the Grenadines,854.4
+2010,Saint Vincent and the Grenadines,850.8
+2011,Saint Vincent and the Grenadines,746.6
+2012,Saint Vincent and the Grenadines,541.2
+2013,Saint Vincent and the Grenadines,340.4
+2014,Saint Vincent and the Grenadines,185.6
+2015,Saint Vincent and the Grenadines,115.6
+2016,Saint Vincent and the Grenadines,82.2
+2017,Saint Vincent and the Grenadines,88.8
+2018,Saint Vincent and the Grenadines,87.8
+2019,Saint Vincent and the Grenadines,78.6
+2012,Samoa,7.2
+2013,Samoa,7.8
+2014,Samoa,8.8
+2015,Samoa,8.8
+2016,Samoa,15.8
+2017,Samoa,31.2
+2018,Samoa,56.0
+2019,Samoa,85.4
+2014,Sao Tome and Principe,8.6
+2015,Sao Tome and Principe,12.0
+2016,Sao Tome and Principe,14.2
+2017,Sao Tome and Principe,19.0
+2018,Sao Tome and Principe,21.6
+2019,Sao Tome and Principe,24.8
+2002,Saudi Arabia,95.0
+2003,Saudi Arabia,99.8
+2004,Saudi Arabia,78.8
+2005,Saudi Arabia,63.8
+2006,Saudi Arabia,50.6
+2007,Saudi Arabia,42.6
+2008,Saudi Arabia,44.6
+2009,Saudi Arabia,56.8
+2010,Saudi Arabia,79.0
+2011,Saudi Arabia,110.8
+2012,Saudi Arabia,178.2
+2013,Saudi Arabia,275.4
+2014,Saudi Arabia,452.2
+2015,Saudi Arabia,673.4
+2016,Saudi Arabia,922.2
+2017,Saudi Arabia,1129.8
+2018,Saudi Arabia,1265.8
+2019,Saudi Arabia,1388.4
+2002,Senegal,1060.4
+2003,Senegal,1244.2
+2004,Senegal,1243.6
+2005,Senegal,1265.0
+2006,Senegal,1259.8
+2007,Senegal,1074.2
+2008,Senegal,1012.0
+2009,Senegal,951.4
+2010,Senegal,1303.4
+2011,Senegal,2078.4
+2012,Senegal,3698.6
+2013,Senegal,6254.4
+2014,Senegal,9329.4
+2015,Senegal,13836.0
+2016,Senegal,16381.8
+2017,Senegal,17706.0
+2018,Senegal,18003.0
+2019,Senegal,18173.8
+2002,Serbia and Kosovo: S/RES/1244 (1999),28325.6
+2003,Serbia and Kosovo: S/RES/1244 (1999),22152.0
+2004,Serbia and Kosovo: S/RES/1244 (1999),15796.6
+2005,Serbia and Kosovo: S/RES/1244 (1999),15058.8
+2006,Serbia and Kosovo: S/RES/1244 (1999),15147.2
+2007,Serbia and Kosovo: S/RES/1244 (1999),15677.4
+2008,Serbia and Kosovo: S/RES/1244 (1999),15287.4
+2009,Serbia and Kosovo: S/RES/1244 (1999),14558.4
+2010,Serbia and Kosovo: S/RES/1244 (1999),15040.6
+2011,Serbia and Kosovo: S/RES/1244 (1999),16630.0
+2012,Serbia and Kosovo: S/RES/1244 (1999),23285.2
+2013,Serbia and Kosovo: S/RES/1244 (1999),30707.0
+2014,Serbia and Kosovo: S/RES/1244 (1999),31966.6
+2015,Serbia and Kosovo: S/RES/1244 (1999),31199.2
+2016,Serbia and Kosovo: S/RES/1244 (1999),28614.6
+2017,Serbia and Kosovo: S/RES/1244 (1999),20995.2
+2018,Serbia and Kosovo: S/RES/1244 (1999),11757.8
+2019,Serbia and Kosovo: S/RES/1244 (1999),8631.8
+2002,Seychelles,17.8
+2003,Seychelles,17.0
+2004,Seychelles,12.8
+2005,Seychelles,8.8
+2006,Seychelles,9.0
+2007,Seychelles,8.4
+2008,Seychelles,9.2
+2009,Seychelles,12.2
+2014,Seychelles,11.6
+2015,Seychelles,9.8
+2016,Seychelles,9.6
+2017,Seychelles,8.2
+2002,Sierra Leone,7683.6
+2003,Sierra Leone,7496.2
+2004,Sierra Leone,6808.0
+2005,Sierra Leone,6245.8
+2006,Sierra Leone,5387.4
+2007,Sierra Leone,4353.4
+2008,Sierra Leone,3449.8
+2009,Sierra Leone,2565.8
+2010,Sierra Leone,2096.2
+2011,Sierra Leone,2052.0
+2012,Sierra Leone,2092.4
+2013,Sierra Leone,2508.2
+2014,Sierra Leone,3202.2
+2015,Sierra Leone,3988.2
+2016,Sierra Leone,4993.8
+2017,Sierra Leone,5823.0
+2018,Sierra Leone,6802.6
+2019,Sierra Leone,7491.2
+2002,Singapore,18.2
+2003,Singapore,19.2
+2004,Singapore,17.6
+2005,Singapore,16.4
+2006,Singapore,15.0
+2007,Singapore,14.4
+2008,Singapore,12.0
+2009,Singapore,13.4
+2010,Singapore,15.6
+2011,Singapore,19.0
+2012,Singapore,22.8
+2013,Singapore,29.8
+2014,Singapore,35.6
+2015,Singapore,41.6
+2016,Singapore,49.6
+2017,Singapore,61.0
+2018,Singapore,66.8
+2019,Singapore,75.0
+2002,Slovakia,558.0
+2003,Slovakia,439.0
+2004,Slovakia,360.6
+2005,Slovakia,238.8
+2006,Slovakia,184.2
+2007,Slovakia,211.4
+2008,Slovakia,256.0
+2009,Slovakia,307.2
+2010,Slovakia,412.6
+2011,Slovakia,466.6
+2012,Slovakia,462.4
+2013,Slovakia,485.8
+2014,Slovakia,494.2
+2015,Slovakia,509.2
+2016,Slovakia,507.4
+2017,Slovakia,488.6
+2018,Slovakia,422.2
+2019,Slovakia,347.0
+2002,Slovenia,21.0
+2003,Slovenia,21.0
+2004,Slovenia,18.8
+2005,Slovenia,15.0
+2006,Slovenia,12.4
+2007,Slovenia,13.4
+2008,Slovenia,12.6
+2009,Slovenia,11.8
+2010,Slovenia,12.4
+2011,Slovenia,12.2
+2012,Slovenia,10.0
+2013,Slovenia,9.0
+2014,Slovenia,10.0
+2015,Slovenia,10.4
+2016,Slovenia,10.2
+2017,Slovenia,12.2
+2018,Slovenia,11.2
+2019,Slovenia,15.6
+2002,Solomon Islands,13.4
+2003,Solomon Islands,10.8
+2004,Solomon Islands,13.2
+2005,Solomon Islands,16.6
+2006,Solomon Islands,14.6
+2007,Solomon Islands,13.6
+2011,Solomon Islands,13.6
+2012,Solomon Islands,12.4
+2013,Solomon Islands,15.4
+2014,Solomon Islands,30.2
+2015,Solomon Islands,50.4
+2016,Solomon Islands,77.4
+2017,Solomon Islands,118.8
+2018,Solomon Islands,164.8
+2019,Solomon Islands,205.6
+2002,Somalia,15480.0
+2003,Somalia,19179.0
+2004,Somalia,20342.0
+2005,Somalia,20837.8
+2006,Somalia,21987.2
+2007,Somalia,22095.6
+2008,Somalia,20564.6
+2009,Somalia,22410.6
+2010,Somalia,25861.8
+2011,Somalia,28891.0
+2012,Somalia,34491.8
+2013,Somalia,41262.4
+2014,Somalia,47112.6
+2015,Somalia,52040.6
+2016,Somalia,56078.0
+2017,Somalia,57246.4
+2018,Somalia,56677.6
+2019,Somalia,55380.8
+2002,South Africa,254.8
+2003,South Africa,265.8
+2004,South Africa,260.0
+2005,South Africa,245.2
+2006,South Africa,218.0
+2007,South Africa,142.0
+2008,South Africa,153.4
+2009,South Africa,163.6
+2010,South Africa,186.2
+2011,South Africa,229.0
+2012,South Africa,302.8
+2013,South Africa,429.6
+2014,South Africa,604.6
+2015,South Africa,882.0
+2016,South Africa,1291.4
+2017,South Africa,1753.4
+2018,South Africa,2229.6
+2019,South Africa,2728.6
+2002,South Korea,448.0
+2003,South Korea,440.4
+2004,South Korea,407.8
+2005,South Korea,363.8
+2006,South Korea,365.8
+2007,South Korea,368.0
+2008,South Korea,350.4
+2009,South Korea,323.4
+2010,South Korea,283.2
+2011,South Korea,223.8
+2012,South Korea,216.6
+2013,South Korea,220.4
+2014,South Korea,239.0
+2015,South Korea,278.6
+2016,South Korea,343.4
+2017,South Korea,415.6
+2018,South Korea,509.8
+2019,South Korea,621.4
+2013,South Sudan,11445.2
+2014,South Sudan,12602.6
+2015,South Sudan,10157.8
+2016,South Sudan,6563.0
+2017,South Sudan,6986.8
+2018,South Sudan,7137.6
+2019,South Sudan,6650.2
+2002,Spain,26.4
+2003,Spain,26.2
+2004,Spain,25.4
+2005,Spain,22.6
+2006,Spain,18.0
+2007,Spain,22.6
+2008,Spain,32.6
+2009,Spain,46.8
+2010,Spain,60.8
+2011,Spain,71.0
+2012,Spain,74.4
+2013,Spain,77.4
+2014,Spain,84.4
+2015,Spain,107.6
+2016,Spain,141.6
+2017,Spain,183.2
+2018,Spain,225.0
+2019,Spain,277.6
+2002,Sri Lanka,4822.0
+2003,Sri Lanka,4370.6
+2004,Sri Lanka,3996.2
+2005,Sri Lanka,4204.0
+2006,Sri Lanka,5018.2
+2007,Sri Lanka,5908.6
+2008,Sri Lanka,6777.8
+2009,Sri Lanka,7880.8
+2010,Sri Lanka,9489.6
+2011,Sri Lanka,11308.8
+2012,Sri Lanka,13237.8
+2013,Sri Lanka,14476.6
+2014,Sri Lanka,15521.2
+2015,Sri Lanka,16504.4
+2016,Sri Lanka,16181.2
+2017,Sri Lanka,15952.2
+2018,Sri Lanka,16007.8
+2019,Sri Lanka,15738.4
+2002,Stateless,2606.4
+2003,Stateless,2587.4
+2004,Stateless,2645.8
+2005,Stateless,2677.4
+2006,Stateless,2566.0
+2007,Stateless,2611.8
+2008,Stateless,3054.8
+2009,Stateless,3082.0
+2010,Stateless,3183.8
+2011,Stateless,3724.4
+2012,Stateless,5154.4
+2013,Stateless,8044.8
+2014,Stateless,9745.6
+2015,Stateless,10881.2
+2016,Stateless,11171.6
+2017,Stateless,10537.2
+2018,Stateless,7920.8
+2019,Stateless,6793.2
+2002,Sudan,14308.4
+2003,Sudan,13181.8
+2004,Sudan,12542.8
+2005,Sudan,13624.2
+2006,Sudan,15903.8
+2007,Sudan,16894.0
+2008,Sudan,18941.6
+2009,Sudan,21905.2
+2010,Sudan,22328.2
+2011,Sudan,24389.2
+2012,Sudan,28214.4
+2013,Sudan,32056.4
+2014,Sudan,35860.8
+2015,Sudan,41994.8
+2016,Sudan,49805.8
+2017,Sudan,57413.4
+2018,Sudan,62768.8
+2019,Sudan,66666.2
+2002,Suriname,41.4
+2003,Suriname,36.0
+2004,Suriname,29.2
+2005,Suriname,22.2
+2006,Suriname,17.8
+2007,Suriname,14.6
+2008,Suriname,12.4
+2009,Suriname,9.4
+2010,Suriname,11.2
+2011,Suriname,12.4
+2012,Suriname,19.2
+2013,Suriname,27.0
+2014,Suriname,31.0
+2015,Suriname,36.2
+2016,Suriname,44.2
+2017,Suriname,49.4
+2018,Suriname,68.8
+2019,Suriname,85.6
+2002,Sweden,11.8
+2003,Sweden,12.8
+2004,Sweden,14.6
+2005,Sweden,12.6
+2006,Sweden,10.6
+2007,Sweden,11.6
+2008,Sweden,15.2
+2009,Sweden,15.4
+2010,Sweden,22.6
+2011,Sweden,21.8
+2012,Sweden,21.4
+2013,Sweden,18.8
+2014,Sweden,18.6
+2015,Sweden,14.0
+2016,Sweden,17.8
+2017,Sweden,24.0
+2018,Sweden,28.0
+2019,Sweden,36.4
+2012,Switzerland,7.0
+2016,Switzerland,8.6
+2017,Switzerland,11.6
+2018,Switzerland,13.8
+2019,Switzerland,15.8
+2002,Syria,3835.2
+2003,Syria,4487.6
+2004,Syria,5215.6
+2005,Syria,5732.6
+2006,Syria,6218.6
+2007,Syria,6574.2
+2008,Syria,7123.6
+2009,Syria,8513.2
+2010,Syria,12346.6
+2011,Syria,19354.8
+2012,Syria,34172.6
+2013,Syria,81396.2
+2014,Syria,115375.4
+2015,Syria,139608.0
+2016,Syria,159319.4
+2017,Syria,167190.0
+2018,Syria,139435.2
+2019,Syria,126045.8
+2002,Tajikistan,320.6
+2003,Tajikistan,224.0
+2004,Tajikistan,169.0
+2005,Tajikistan,144.2
+2006,Tajikistan,132.2
+2007,Tajikistan,152.8
+2008,Tajikistan,187.2
+2009,Tajikistan,237.6
+2010,Tajikistan,308.0
+2011,Tajikistan,400.8
+2012,Tajikistan,516.4
+2013,Tajikistan,741.8
+2014,Tajikistan,1307.2
+2015,Tajikistan,1941.6
+2016,Tajikistan,2459.2
+2017,Tajikistan,2825.0
+2018,Tajikistan,3026.6
+2019,Tajikistan,2845.0
+2002,Tanzania,2398.8
+2003,Tanzania,3285.8
+2004,Tanzania,3165.4
+2005,Tanzania,3249.6
+2006,Tanzania,3116.8
+2007,Tanzania,2289.8
+2008,Tanzania,1281.4
+2009,Tanzania,1351.0
+2010,Tanzania,931.2
+2011,Tanzania,555.0
+2012,Tanzania,725.4
+2013,Tanzania,1002.0
+2014,Tanzania,1134.4
+2015,Tanzania,1264.0
+2016,Tanzania,1392.4
+2017,Tanzania,1574.0
+2018,Tanzania,1638.6
+2019,Tanzania,1788.0
+2002,Thailand,158.0
+2003,Thailand,173.0
+2004,Thailand,182.0
+2005,Thailand,204.6
+2006,Thailand,254.8
+2007,Thailand,315.2
+2008,Thailand,315.8
+2009,Thailand,310.6
+2010,Thailand,272.4
+2011,Thailand,225.8
+2012,Thailand,229.4
+2013,Thailand,352.6
+2014,Thailand,507.6
+2015,Thailand,739.8
+2016,Thailand,1263.6
+2017,Thailand,1887.8
+2018,Thailand,2473.2
+2019,Thailand,2996.2
+2014,Tibet,8.6
+2015,Tibet,9.4
+2002,Timor-Leste,113.0
+2003,Timor-Leste,110.4
+2006,Timor-Leste,108.4
+2012,Timor-Leste,7.2
+2013,Timor-Leste,7.2
+2014,Timor-Leste,6.6
+2015,Timor-Leste,7.4
+2017,Timor-Leste,13.6
+2018,Timor-Leste,77.0
+2019,Timor-Leste,145.6
+2002,Togo,3439.4
+2003,Togo,4677.2
+2004,Togo,5601.8
+2005,Togo,5306.4
+2006,Togo,4386.0
+2007,Togo,3486.6
+2008,Togo,2198.0
+2009,Togo,1475.2
+2010,Togo,1818.6
+2011,Togo,1896.4
+2012,Togo,2042.8
+2013,Togo,2263.8
+2014,Togo,2198.0
+2015,Togo,2346.8
+2016,Togo,2754.4
+2017,Togo,3092.4
+2018,Togo,3332.8
+2019,Togo,3430.8
+2002,Tonga,37.0
+2003,Tonga,33.8
+2004,Tonga,27.2
+2005,Tonga,17.0
+2006,Tonga,13.6
+2007,Tonga,15.2
+2008,Tonga,16.0
+2009,Tonga,17.4
+2010,Tonga,22.4
+2011,Tonga,30.4
+2012,Tonga,42.6
+2013,Tonga,53.0
+2014,Tonga,64.2
+2015,Tonga,77.6
+2016,Tonga,99.4
+2017,Tonga,166.8
+2018,Tonga,300.6
+2019,Tonga,451.4
+2002,Trinidad and Tobago,215.4
+2003,Trinidad and Tobago,233.8
+2004,Trinidad and Tobago,229.6
+2005,Trinidad and Tobago,200.4
+2006,Trinidad and Tobago,191.0
+2007,Trinidad and Tobago,210.8
+2008,Trinidad and Tobago,198.2
+2009,Trinidad and Tobago,187.2
+2010,Trinidad and Tobago,170.2
+2011,Trinidad and Tobago,147.4
+2012,Trinidad and Tobago,127.8
+2013,Trinidad and Tobago,137.6
+2014,Trinidad and Tobago,165.2
+2015,Trinidad and Tobago,207.8
+2016,Trinidad and Tobago,243.4
+2017,Trinidad and Tobago,290.4
+2018,Trinidad and Tobago,334.2
+2019,Trinidad and Tobago,379.2
+2002,Tunisia,381.4
+2003,Tunisia,379.6
+2004,Tunisia,372.0
+2005,Tunisia,352.4
+2006,Tunisia,348.8
+2007,Tunisia,377.8
+2008,Tunisia,413.8
+2009,Tunisia,661.8
+2010,Tunisia,1050.8
+2011,Tunisia,1337.4
+2012,Tunisia,1596.2
+2013,Tunisia,1954.6
+2014,Tunisia,2047.4
+2015,Tunisia,2057.6
+2016,Tunisia,2250.4
+2017,Tunisia,2430.0
+2018,Tunisia,2529.8
+2019,Tunisia,2813.0
+2002,Turkey,9976.4
+2003,Turkey,10192.2
+2004,Turkey,9964.4
+2005,Turkey,9295.6
+2006,Turkey,9296.4
+2007,Turkey,10094.6
+2008,Turkey,9331.2
+2009,Turkey,8270.8
+2010,Turkey,8207.8
+2011,Turkey,8612.0
+2012,Turkey,8995.2
+2013,Turkey,9911.2
+2014,Turkey,13181.4
+2015,Turkey,18170.2
+2016,Turkey,24642.8
+2017,Turkey,31803.0
+2018,Turkey,38292.2
+2019,Turkey,41979.0
+2002,Turkmenistan,102.8
+2003,Turkmenistan,133.8
+2004,Turkmenistan,155.8
+2005,Turkmenistan,157.8
+2006,Turkmenistan,148.0
+2007,Turkmenistan,127.4
+2008,Turkmenistan,102.8
+2009,Turkmenistan,87.6
+2010,Turkmenistan,85.8
+2011,Turkmenistan,127.2
+2012,Turkmenistan,260.4
+2013,Turkmenistan,492.0
+2014,Turkmenistan,691.8
+2015,Turkmenistan,889.8
+2016,Turkmenistan,1079.2
+2017,Turkmenistan,1045.8
+2018,Turkmenistan,921.8
+2019,Turkmenistan,854.2
+2011,Turks and Caicos Islands,6.0
+2012,Turks and Caicos Islands,6.0
+2013,Turks and Caicos Islands,6.0
+2016,Turks and Caicos Islands,5.8
+2017,Turks and Caicos Islands,5.0
+2002,Uganda,2008.6
+2003,Uganda,2658.0
+2004,Uganda,2738.2
+2005,Uganda,2958.2
+2006,Uganda,3020.0
+2007,Uganda,2559.2
+2008,Uganda,1885.6
+2009,Uganda,2010.8
+2010,Uganda,2000.0
+2011,Uganda,2125.4
+2012,Uganda,2895.4
+2013,Uganda,3994.8
+2014,Uganda,4666.4
+2015,Uganda,6082.4
+2016,Uganda,7522.8
+2017,Uganda,8873.0
+2018,Uganda,9936.2
+2019,Uganda,11261.4
+2002,Ukraine,3859.6
+2003,Ukraine,3784.8
+2004,Ukraine,3301.2
+2005,Ukraine,2810.4
+2006,Ukraine,2620.4
+2007,Ukraine,2398.0
+2008,Ukraine,2115.2
+2009,Ukraine,1627.4
+2010,Ukraine,1385.6
+2011,Ukraine,1331.8
+2012,Ukraine,4042.8
+2013,Ukraine,8262.8
+2014,Ukraine,14982.6
+2015,Ukraine,22274.8
+2016,Ukraine,28341.6
+2017,Ukraine,30923.8
+2018,Ukraine,30739.0
+2019,Ukraine,28346.2
+2002,United Arab Emirates,20.0
+2003,United Arab Emirates,21.4
+2004,United Arab Emirates,17.6
+2005,United Arab Emirates,12.4
+2006,United Arab Emirates,9.6
+2007,United Arab Emirates,13.0
+2008,United Arab Emirates,14.8
+2009,United Arab Emirates,14.0
+2010,United Arab Emirates,14.6
+2011,United Arab Emirates,21.2
+2012,United Arab Emirates,30.4
+2013,United Arab Emirates,46.2
+2014,United Arab Emirates,77.0
+2015,United Arab Emirates,115.8
+2016,United Arab Emirates,162.0
+2017,United Arab Emirates,185.0
+2018,United Arab Emirates,199.6
+2019,United Arab Emirates,215.8
+2002,United Kingdom,66.0
+2003,United Kingdom,63.6
+2004,United Kingdom,56.8
+2005,United Kingdom,49.2
+2006,United Kingdom,41.2
+2007,United Kingdom,40.8
+2008,United Kingdom,38.0
+2009,United Kingdom,37.4
+2010,United Kingdom,39.2
+2011,United Kingdom,47.6
+2012,United Kingdom,54.2
+2013,United Kingdom,67.4
+2014,United Kingdom,79.4
+2015,United Kingdom,102.0
+2016,United Kingdom,125.6
+2017,United Kingdom,155.6
+2018,United Kingdom,173.8
+2019,United Kingdom,206.4
+2002,United States,208.0
+2003,United States,241.8
+2004,United States,297.8
+2005,United States,471.2
+2006,United States,750.2
+2007,United States,985.6
+2008,United States,1107.8
+2009,United States,1148.0
+2010,United States,1011.4
+2011,United States,720.0
+2012,United States,464.2
+2013,United States,340.0
+2014,United States,279.0
+2015,United States,634.8
+2016,United States,1145.0
+2017,United States,1737.0
+2018,United States,2186.2
+2019,United States,2402.8
+1995,Unknown,875997.2
+1996,Unknown,922837.0
+1997,Unknown,999389.0
+1998,Unknown,840493.0
+1999,Unknown,672476.2
+2000,Unknown,520508.0
+2001,Unknown,370806.0
+2002,Unknown,210435.6
+2003,Unknown,197233.8
+2004,Unknown,211731.8
+2005,Unknown,194336.8
+2006,Unknown,198693.2
+2007,Unknown,243039.6
+2008,Unknown,272157.2
+2009,Unknown,287027.4
+2010,Unknown,296042.0
+2011,Unknown,277611.6
+2012,Unknown,279325.8
+2013,Unknown,434477.4
+2014,Unknown,421069.6
+2015,Unknown,382692.6
+2016,Unknown,364019.4
+2017,Unknown,297427.2
+2018,Unknown,109724.2
+2019,Unknown,78080.8
+2002,Uruguay,330.6
+2003,Uruguay,310.8
+2004,Uruguay,259.4
+2005,Uruguay,163.6
+2006,Uruguay,65.8
+2007,Uruguay,52.0
+2008,Uruguay,49.2
+2009,Uruguay,46.6
+2010,Uruguay,47.0
+2011,Uruguay,41.0
+2012,Uruguay,37.4
+2013,Uruguay,40.0
+2014,Uruguay,52.4
+2015,Uruguay,80.6
+2016,Uruguay,116.8
+2017,Uruguay,170.6
+2018,Uruguay,245.2
+2019,Uruguay,344.4
+2002,Uzbekistan,1084.4
+2003,Uzbekistan,1303.0
+2004,Uzbekistan,1600.8
+2005,Uzbekistan,1661.4
+2006,Uzbekistan,1724.2
+2007,Uzbekistan,1773.0
+2008,Uzbekistan,1802.4
+2009,Uzbekistan,1672.8
+2010,Uzbekistan,1591.6
+2011,Uzbekistan,1579.2
+2012,Uzbekistan,1659.0
+2013,Uzbekistan,1868.4
+2014,Uzbekistan,2185.2
+2015,Uzbekistan,2607.6
+2016,Uzbekistan,3173.6
+2017,Uzbekistan,3779.2
+2018,Uzbekistan,4281.6
+2019,Uzbekistan,4710.6
+2019,Vanuatu,111.0
+2019,Vatican,7.8
+2002,Venezuela,1196.6
+2003,Venezuela,1725.4
+2004,Venezuela,2132.0
+2005,Venezuela,2326.4
+2006,Venezuela,2226.8
+2007,Venezuela,2004.6
+2008,Venezuela,1566.6
+2009,Venezuela,1207.2
+2010,Venezuela,956.2
+2011,Venezuela,883.4
+2012,Venezuela,1533.6
+2013,Venezuela,4425.8
+2014,Venezuela,13326.6
+2015,Venezuela,42846.6
+2016,Venezuela,135460.4
+2017,Venezuela,293409.8
+2018,Venezuela,460645.4
+2019,Venezuela,642079.8
+2002,Vietnam,1882.0
+2003,Vietnam,1916.8
+2004,Vietnam,1575.0
+2005,Vietnam,1511.6
+2006,Vietnam,1603.4
+2007,Vietnam,1626.6
+2008,Vietnam,1511.4
+2009,Vietnam,1419.8
+2010,Vietnam,1343.6
+2011,Vietnam,1402.2
+2012,Vietnam,1790.4
+2013,Vietnam,2440.4
+2014,Vietnam,3087.2
+2015,Vietnam,4231.4
+2016,Vietnam,4945.8
+2017,Vietnam,5940.2
+2018,Vietnam,6953.6
+2019,Vietnam,8129.4
+2003,Western Sahara,12.4
+2004,Western Sahara,16.2
+2005,Western Sahara,19.8
+2006,Western Sahara,21.6
+2007,Western Sahara,23.0
+2008,Western Sahara,23.8
+2009,Western Sahara,20.0
+2010,Western Sahara,41.0
+2011,Western Sahara,116.2
+2012,Western Sahara,347.4
+2013,Western Sahara,630.2
+2014,Western Sahara,1027.8
+2015,Western Sahara,1370.8
+2016,Western Sahara,1650.6
+2017,Western Sahara,1606.4
+2018,Western Sahara,1526.4
+2019,Western Sahara,1289.4
+2002,Yemen,607.2
+2003,Yemen,519.8
+2004,Yemen,441.4
+2005,Yemen,376.0
+2006,Yemen,374.0
+2007,Yemen,426.8
+2008,Yemen,467.4
+2009,Yemen,627.6
+2010,Yemen,882.6
+2011,Yemen,1163.4
+2012,Yemen,1586.2
+2013,Yemen,3474.6
+2014,Yemen,6418.2
+2015,Yemen,11027.8
+2016,Yemen,17829.4
+2017,Yemen,24192.4
+2018,Yemen,26687.8
+2019,Yemen,30342.0
+2002,Zambia,205.0
+2003,Zambia,277.2
+2004,Zambia,269.6
+2005,Zambia,333.6
+2006,Zambia,379.6
+2007,Zambia,314.2
+2008,Zambia,227.0
+2009,Zambia,250.4
+2010,Zambia,200.8
+2011,Zambia,161.6
+2012,Zambia,211.0
+2013,Zambia,288.0
+2014,Zambia,310.4
+2015,Zambia,294.4
+2016,Zambia,286.4
+2017,Zambia,319.6
+2018,Zambia,329.2
+2019,Zambia,369.8
+2002,Zimbabwe,3385.0
+2003,Zimbabwe,6810.2
+2004,Zimbabwe,6512.8
+2005,Zimbabwe,13144.8
+2006,Zimbabwe,19405.8
+2007,Zimbabwe,17805.0
+2008,Zimbabwe,14539.2
+2009,Zimbabwe,21634.8
+2010,Zimbabwe,23115.8
+2011,Zimbabwe,24525.0
+2012,Zimbabwe,32730.0
+2013,Zimbabwe,44005.0
+2014,Zimbabwe,45306.2
+2015,Zimbabwe,41313.6
+2016,Zimbabwe,36373.4
+2017,Zimbabwe,31125.4
+2018,Zimbabwe,22573.0
+2019,Zimbabwe,16797.8

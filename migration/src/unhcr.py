@@ -1,7 +1,11 @@
 import requests, zipfile, io
 import pandas as pd
 
-from migration.src.utils import standardise_countries, owid_population
+from migration.src.utils import (
+    standardise_countries,
+    owid_population,
+    five_year_moving_window,
+)
 
 
 def refugees_by_destination() -> pd.DataFrame:
@@ -24,9 +28,7 @@ def refugees_by_destination() -> pd.DataFrame:
         },
         inplace=True,
     )
-    df["unhcr_refugees_by_destination"] = df.groupby("Country")[
-        "unhcr_refugees_by_destination"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
 
     df.to_csv("migration/ready/unhcr_refugees_by_destination.csv", index=False)
     return df
@@ -72,9 +74,7 @@ def refugees_by_origin() -> pd.DataFrame:
         },
         inplace=True,
     )
-    df["unhcr_refugees_by_origin"] = df.groupby("Country")[
-        "unhcr_refugees_by_origin"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv("migration/ready/unhcr_refugees_by_origin.csv", index=False)
     return df
 
@@ -117,9 +117,7 @@ def asylum_seekers_by_origin() -> pd.DataFrame:
         },
         inplace=True,
     )
-    df["unhcr_asylum_seekers_by_origin"] = df.groupby("Country")[
-        "unhcr_asylum_seekers_by_origin"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv("migration/ready/unhcr_asylum_seekers_by_origin.csv", index=False)
     return df
 
@@ -163,9 +161,7 @@ def asylum_seekers_by_destination() -> pd.DataFrame:
         },
         inplace=True,
     )
-    df["unhcr_asylum_seekers_by_destination"] = df.groupby("Country")[
-        "unhcr_asylum_seekers_by_destination"
-    ].transform(lambda x: x.rolling(5, 1).mean())
+    df = five_year_moving_window(df)
     df.to_csv("migration/ready/unhcr_asylum_seekers_by_destination.csv", index=False)
     return df
 
