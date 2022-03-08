@@ -1,19 +1,22 @@
 import requests, zipfile, io
 import pandas as pd
-
-from migration.src.utils import standardise_countries, owid_population
+import os.path
+from migration.src.utils import standardise_countries
 
 
 def remittances_received_share_gdp() -> pd.DataFrame:
-    res = requests.get(
-        "https://api.worldbank.org/v2/en/indicator/BX.TRF.PWKR.DT.GD.ZS?downloadformat=csv"
-    )
-    assert res.ok
-    z = zipfile.ZipFile(io.BytesIO(res.content))
-    z.extractall("migration/input/wb_wdi/remittances_received_share_gdp/")
+    if not os.path.exists(
+        "migration/input/wb_wdi/remittances_received_share_gdp/API_BX.TRF.PWKR.DT.GD.ZS_DS2_en_csv_v2_3732529.csv"
+    ):
+        res = requests.get(
+            "https://api.worldbank.org/v2/en/indicator/BX.TRF.PWKR.DT.GD.ZS?downloadformat=csv"
+        )
+        assert res.ok
+        z = zipfile.ZipFile(io.BytesIO(res.content))
+        z.extractall("migration/input/wb_wdi/remittances_received_share_gdp/")
 
     df = pd.read_csv(
-        "migration/input/wb_wdi/remittances_received_share_gdp/API_BX.TRF.PWKR.DT.GD.ZS_DS2_en_csv_v2_3686014.csv",
+        "migration/input/wb_wdi/remittances_received_share_gdp/API_BX.TRF.PWKR.DT.GD.ZS_DS2_en_csv_v2_3732529.csv",
         skiprows=4,
     )
 
@@ -32,21 +35,26 @@ def remittances_received_share_gdp() -> pd.DataFrame:
             "value": "wdi_remittances_received_share_gdp",
         }
     )
+    df["wdi_remittances_received_share_gdp"] = df.groupby("Country")[
+        "wdi_remittances_received_share_gdp"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv("migration/ready/wdi_remittances_received_share_gdp.csv", index=False)
 
 
 def average_cost_sending_remittances_from_country() -> pd.DataFrame:
-    res = requests.get(
-        "https://api.worldbank.org/v2/en/indicator/SI.RMT.COST.OB.ZS?downloadformat=csv"
-    )
-    assert res.ok
-    z = zipfile.ZipFile(io.BytesIO(res.content))
-    z.extractall(
-        "migration/input/wb_wdi/average_cost_sending_remittances_from_country/"
-    )
-
+    if not os.path.exists(
+        "migration/input/wb_wdi/average_cost_sending_remittances_from_country/API_SI.RMT.COST.OB.ZS_DS2_en_csv_v2_3759305.csv"
+    ):
+        res = requests.get(
+            "https://api.worldbank.org/v2/en/indicator/SI.RMT.COST.OB.ZS?downloadformat=csv"
+        )
+        assert res.ok
+        z = zipfile.ZipFile(io.BytesIO(res.content))
+        z.extractall(
+            "migration/input/wb_wdi/average_cost_sending_remittances_from_country/"
+        )
     df = pd.read_csv(
-        "migration/input/wb_wdi/average_cost_sending_remittances_from_country/API_SI.RMT.COST.OB.ZS_DS2_en_csv_v2_3685871.csv",
+        "migration/input/wb_wdi/average_cost_sending_remittances_from_country/API_SI.RMT.COST.OB.ZS_DS2_en_csv_v2_3759305.csv",
         skiprows=4,
     )
 
@@ -65,6 +73,9 @@ def average_cost_sending_remittances_from_country() -> pd.DataFrame:
             "value": "wdi_average_cost_sending_remittances_from_country",
         }
     )
+    df["wdi_average_cost_sending_remittances_from_country"] = df.groupby("Country")[
+        "wdi_average_cost_sending_remittances_from_country"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv(
         "migration/ready/wdi_average_cost_sending_remittances_from_country.csv",
         index=False,
@@ -72,15 +83,19 @@ def average_cost_sending_remittances_from_country() -> pd.DataFrame:
 
 
 def average_cost_sending_remittances_to_country() -> pd.DataFrame:
-    res = requests.get(
-        "https://api.worldbank.org/v2/en/indicator/SI.RMT.COST.IB.ZS?downloadformat=csv"
-    )
-    assert res.ok
-    z = zipfile.ZipFile(io.BytesIO(res.content))
-    z.extractall("migration/input/wb_wdi/average_cost_sending_remittances_to_country/")
-
+    if not os.path.exists(
+        "migration/input/wb_wdi/average_cost_sending_remittances_to_country/API_SI.RMT.COST.IB.ZS_DS2_en_csv_v2_3758354.csv"
+    ):
+        res = requests.get(
+            "https://api.worldbank.org/v2/en/indicator/SI.RMT.COST.IB.ZS?downloadformat=csv"
+        )
+        assert res.ok
+        z = zipfile.ZipFile(io.BytesIO(res.content))
+        z.extractall(
+            "migration/input/wb_wdi/average_cost_sending_remittances_to_country/"
+        )
     df = pd.read_csv(
-        "migration/input/wb_wdi/average_cost_sending_remittances_to_country/API_SI.RMT.COST.IB.ZS_DS2_en_csv_v2_3692955.csv",
+        "migration/input/wb_wdi/average_cost_sending_remittances_to_country/API_SI.RMT.COST.IB.ZS_DS2_en_csv_v2_3758354.csv",
         skiprows=4,
     )
 
@@ -99,6 +114,9 @@ def average_cost_sending_remittances_to_country() -> pd.DataFrame:
             "value": "wdi_average_cost_sending_remittances_to_country",
         }
     )
+    df["wdi_average_cost_sending_remittances_to_country"] = df.groupby("Country")[
+        "wdi_average_cost_sending_remittances_to_country"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv(
         "migration/ready/wdi_average_cost_sending_remittances_to_country.csv",
         index=False,

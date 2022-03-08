@@ -29,6 +29,9 @@ def annual_internal_displacement_conflict():
         },
         inplace=True,
     )
+    df["idmc_annual_internal_displacement_conflict"] = df.groupby("Country")[
+        "idmc_annual_internal_displacement_conflict"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv(
         "migration/ready/idmc_annual_internal_displacement_conflict.csv", index=False
     )
@@ -81,6 +84,9 @@ def annual_internal_displacement_disaster():
         },
         inplace=True,
     )
+    df["idmc_annual_internal_displacement_disaster"] = df.groupby("Country")[
+        "idmc_annual_internal_displacement_disaster"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv(
         "migration/ready/idmc_annual_internal_displacement_disaster.csv", index=False
     )
@@ -133,6 +139,9 @@ def total_internal_displacement_conflict():
         },
         inplace=True,
     )
+    df["idmc_total_internal_displacement_conflict"] = df.groupby("Country")[
+        "idmc_total_internal_displacement_conflict"
+    ].transform(lambda x: x.rolling(5, 1).mean())
     df.to_csv(
         "migration/ready/idmc_total_internal_displacement_conflict.csv", index=False
     )
