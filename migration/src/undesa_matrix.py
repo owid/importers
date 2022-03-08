@@ -22,7 +22,7 @@ def add_selected_country_value(
             total_dest["Entity"] == country, "total_destination"
         ].to_list()
         df.loc[df["Entity"] == country, country + "_destination"] = (
-            df.loc[df["Entity"] == country, country + "_origin"] * -1
+            df.loc[df["Entity"] == country, country + "_destination"] * -1
         )
 
     return df
