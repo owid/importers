@@ -1,6 +1,36 @@
 """Load and process EIA data and generate a file with yearly and a file with monthly data.
 
-TODO: For the next update, apply for an API key to be able to use the API, instead of manually downloading files.
+The EIA has an API to download data:
+https://www.eia.gov/opendata/register.php
+However, as of today, the API seems to not cover international data (only US data).
+
+They also have bulk datasets:
+https://www.eia.gov/opendata/bulkfiles.php
+However, the format of the datasets is not trivial to parse.
+
+Therefore, we manually downloaded the files from:
+https://www.eia.gov/international/data/world
+Specifically, we downloaded the following dataset using the "Export CSV (table)" option:
+- Natural Gas
+  - Dry natural gas production
+  - Dry natural gas consumption
+  - Dry natural gas imports
+  - Dry natural gas exports
+  - Dry natural gas reserves
+- Coal and coke
+  - Coal and coke production
+  - Coal and coke consumption
+  - Coal and coke imports
+  - Coal and coke exports
+  - Coal reserves
+- Petroleum and Other Liquids
+  - Monthly petroleum and other liquids production
+  - Annual petroleum and other liquids production
+  - Annual refined petroleum products consumption
+  - Annual crude and lease condensate imports
+  - Annual crude and lease condensate exports
+  - Annual crude and lease condensate reserves
+These files can be found inside INPUT_DIR (as defined in natural_resources/__init__.py).
 
 """
 
