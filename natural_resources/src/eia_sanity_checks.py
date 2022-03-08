@@ -1,4 +1,4 @@
-"""Tun sanity checks on the EIA datasets.
+"""Run sanity checks on the EIA datasets.
 
 """
 
@@ -21,8 +21,9 @@ DATE_TAG = datetime.now().strftime("%Y-%m-%d")
 OUTPUT_FILE = os.path.join(SANITY_CHECKS_DIR, f"eia_sanity_checks_{DATE_TAG}.html")
 YEARLY_DATA_FILE = os.path.join(READY_DIR, "eia_natural-resources-yearly.csv")
 MONTHLY_DATA_FILE = os.path.join(READY_DIR, "eia_natural-resources-monthly.csv")
-
+# Latest acceptable value for the minimum year.
 MIN_YEAR_LATEST_POSSIBLE = 2000
+# Maximum delay (from current year) that maximum year can have
 MAX_YEAR_MAXIMUM_DELAY = 2
 # True to include interactive plots in output HTML file (which can make the inspection slow if there are many figures);
 # False to include plots as static images.
@@ -30,53 +31,12 @@ EXPORT_INTERACTIVE_PLOTS = False
 # Maximum number of plots (of potentially problematic cases) to show in output file.
 MAX_NUM_PLOTS = 150
 
-all_columns = [
-    'Entity',
-    'Year',
-    'Population',
-    'natural_gas_production',
-    'natural_gas_consumption',
-    'natural_gas_imports',
-    'natural_gas_exports',
-    'natural_gas_reserves',
-    'natural_gas_net_imports',
-    'coal_production',
-    'coal_consumption',
-    'coal_imports',
-    'coal_exports',
-    'coal_reserves',
-    'coal_net_imports',
-    'oil_production',
-    'oil_consumption',
-    'oil_imports',
-    'oil_exports',
-    'oil_reserves',
-    'oil_net_imports',
-    'natural_gas_production_per_capita',
-    'natural_gas_consumption_per_capita',
-    'natural_gas_imports_per_capita',
-    'natural_gas_exports_per_capita',
-    'natural_gas_reserves_per_capita',
-    'natural_gas_net_imports_per_capita',
-    'coal_production_per_capita',
-    'coal_consumption_per_capita',
-    'coal_imports_per_capita',
-    'coal_exports_per_capita',
-    'coal_reserves_per_capita',
-    'coal_net_imports_per_capita',
-    'oil_production_per_capita',
-    'oil_consumption_per_capita',
-    'oil_imports_per_capita',
-    'oil_exports_per_capita',
-    'oil_reserves_per_capita',
-    'oil_net_imports_per_capita',
-]
+# Define default entity names.
 NAME = {
     'country': 'Entity',
     'year': 'Year',
 }
-NAME.update({col: col for col in all_columns if col not in ['Entity', 'Year', 'Date']})
-
+# Define minimum, maximum, and minimum relevant values for all variables.
 default_range = {
     'min': 0,
     'max': 'World',
@@ -187,7 +147,7 @@ RANGES = {
         'max': 100,
     },
 }
-
+# Define ranges for variables created when comparing consumption + exports with production + imports.
 RANGES_ON_TOTAL_ENERGY = {
     'natural_gas_total': {
         'min_relevant': 1,
@@ -199,6 +159,19 @@ RANGES_ON_TOTAL_ENERGY = {
 
 
 def resample_monthly_data(monthly):
+    """Convert monthly data into yearly data.
+
+    Parameters
+    ----------
+    monthly : pd.DataFrame
+        Monthly data.
+
+    Returns
+    -------
+    monthly_resampled : pd.DataFrame
+        Monthly data resampled to be in yearly intervals.
+
+    """
     monthly_resampled = monthly.copy()
     monthly_resampled['Date'] = pd.to_datetime(monthly_resampled['Date'])
     monthly_resampled = monthly_resampled.groupby('Entity').resample('Y', on='Date').sum().reset_index()
@@ -241,13 +214,13 @@ def max_absolute_percentage_error(old, new, epsilon=1e-6):
     return error
 
 
+# Default error metric.
 ERROR_METRIC = {
     'function': max_absolute_percentage_error,
     'name': 'maxape',
     'min_relevant': 1,
 }
-
-
+# Error metric to use when comparing consumption + exports with production + imports.
 ERROR_METRIC_ON_TOTAL_ENERGY = {
     'function': sanity_checks.mean_absolute_percentage_error,
     'name': 'mape',
@@ -305,18 +278,11 @@ def compare_consumption_and_imports_with_production_and_exports(yearly):
         production_and_imports[f'{variable}_total'] = \
             production_and_imports[f"{variable}_production"] + production_and_imports[f"{variable}_imports"]
 
-    name = {
-        'country': 'Entity',
-        'year': 'Year',
-        'natural_gas_total': 'natural_gas_total',
-        'coal_total': 'coal_total',
-    }
-
     checks_comparing_datasets = sanity_checks.SanityChecksComparingTwoDatasets(
         data_old=consumption_and_exports,
         data_new=production_and_imports,
         error_metric=ERROR_METRIC_ON_TOTAL_ENERGY,
-        name=name,
+        name=NAME,
         variable_ranges=RANGES_ON_TOTAL_ENERGY,
         data_label_old='consumption_and_exports',
         data_label_new='production_and_imports',
