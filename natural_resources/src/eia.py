@@ -41,18 +41,18 @@ MST_TO_TONNES = 9.072e2
 #   Given that 1 barrel = 0.1589873 cubic meters, and given that 1 (Julian) year = 365.25 days,
 #   1 Mb/d = 1 thousand barrels / day * (0.1589873 cubic meters / barrel) * (1e3 / thousand) * (365.25 days / year) =
 #   = 5.807e+04 cubic meters / year
-MBD_TO_CUBIC_METERS_PER_YEAR = 5.807e+04
+MBD_TO_CUBIC_METERS_PER_YEAR = 5.807e04
 # * Conversion factor from billion barrels (billion b) to cubic meters.
 #   Given that 1 barrel = 0.1589873 cubic meters,
 #   1 billion b = 1 billion barrels * (0.1589873 cubic meters / barrel) * (1e9 / billion) =
 #   = 1.590e+08 cubic meters
-BB_TO_CUBIC_METERS = 1.590e+08
+BB_TO_CUBIC_METERS = 1.590e08
 # * Conversion factor from thousand barrels per day (Mb/d) to cubic meters per month.
 #   Given that 1 barrel = 0.1589873 cubic meters, and given that 1 average month in a (Julian) year = 365.25 / 12 days,
 #   1 Mb/d = 1 thousand barrels per day * (0.1589873 cubic meters / barrel) * (1e3 / thousand) * (365.25 days / year) *
 #   * (1 year / 12 months) =
 #   = 4.839e+03 cubic meters / month
-MBD_TO_CUBIC_METERS_PER_MONTH = 4.839e+03
+MBD_TO_CUBIC_METERS_PER_MONTH = 4.839e03
 
 
 def find_last_data_file(variable_name):
@@ -73,10 +73,21 @@ def find_last_data_file(variable_name):
     """
     data_dir = os.path.join(INPUT_DIR, variable_name)
     assert os.path.isdir(data_dir)
-    files_found = np.array([file.path for file in os.scandir(data_dir) if file.path.lower().endswith('.csv')])
-    timestamps = np.array([datetime.strptime(os.path.basename(file).split('.')[0],
-                                             "INT-Export-%m-%d-%Y_%H-%M-%S").strftime("%Y-%m-%d_%H-%M-%S")
-                           for file in files_found])
+    files_found = np.array(
+        [
+            file.path
+            for file in os.scandir(data_dir)
+            if file.path.lower().endswith(".csv")
+        ]
+    )
+    timestamps = np.array(
+        [
+            datetime.strptime(
+                os.path.basename(file).split(".")[0], "INT-Export-%m-%d-%Y_%H-%M-%S"
+            ).strftime("%Y-%m-%d_%H-%M-%S")
+            for file in files_found
+        ]
+    )
     last_file = files_found[np.array(timestamps).argsort()][-1]
     assert os.path.isfile(last_file)
 
@@ -93,8 +104,14 @@ def load_population_dataset():
 
     """
     # Load OWID population dataset.
-    population = catalog.find("population", namespace="owid").load().reset_index()[["country", "population", "year"]].\
-        rename(columns={"country": "Entity", "population": "Population", "year": "Year"})
+    population = (
+        catalog.find("population", namespace="owid")
+        .load()
+        .reset_index()[["country", "population", "year"]]
+        .rename(
+            columns={"country": "Entity", "population": "Population", "year": "Year"}
+        )
+    )
 
     return population
 
@@ -116,21 +133,29 @@ def load_simple_dataset(variable_name, conversion_factor):
 
     """
     data_file = find_last_data_file(variable_name=variable_name)
-    variable_name_in_file = pd.read_csv(data_file, skiprows=1, na_values='--').iloc[0, 1]
+    variable_name_in_file = pd.read_csv(data_file, skiprows=1, na_values="--").iloc[
+        0, 1
+    ]
     print(variable_name_in_file)
-    data = pd.read_csv(data_file, skiprows=1, na_values='--').drop(0).drop(columns='API').\
-        rename(columns={'Unnamed: 1': 'Entity'})
-    data_melt = data.melt(id_vars='Entity', var_name='Year')
-    data_melt[variable_name] = data_melt['value'].astype(float) * conversion_factor
-    data_melt['Year'] = data_melt['Year'].astype(int)
-    data_melt = data_melt.drop(columns=['value'])
+    data = (
+        pd.read_csv(data_file, skiprows=1, na_values="--")
+        .drop(0)
+        .drop(columns="API")
+        .rename(columns={"Unnamed: 1": "Entity"})
+    )
+    data_melt = data.melt(id_vars="Entity", var_name="Year")
+    data_melt[variable_name] = data_melt["value"].astype(float) * conversion_factor
+    data_melt["Year"] = data_melt["Year"].astype(int)
+    data_melt = data_melt.drop(columns=["value"])
     # Remove appended spaces on country names.
-    data_melt['Entity'] = data_melt['Entity'].str.lstrip()
+    data_melt["Entity"] = data_melt["Entity"].str.lstrip()
 
     return data_melt
 
 
-def load_dataset_with_indented_entities(variable_name, conversion_factor, relevant_entity):
+def load_dataset_with_indented_entities(
+    variable_name, conversion_factor, relevant_entity
+):
     """Load a dataset that has been manually downloaded from the EIA website, where one of the columns has entity levels
     defined by their indentation.
 
@@ -150,20 +175,27 @@ def load_dataset_with_indented_entities(variable_name, conversion_factor, releva
 
     """
     data_file = find_last_data_file(variable_name=variable_name)
-    data = pd.read_csv(data_file, skiprows=1, na_values='--').rename(columns={'Unnamed: 1': 'mixed'}).\
-        drop(columns=['API'])
-    print(data.loc[1]['mixed'].lstrip())
+    data = (
+        pd.read_csv(data_file, skiprows=1, na_values="--")
+        .rename(columns={"Unnamed: 1": "mixed"})
+        .drop(columns=["API"])
+    )
+    print(data.loc[1]["mixed"].lstrip())
     # Add a column for country. To do so, assume that country names are not prepended by spaces.
-    data['Entity'] = data['mixed'].copy()
-    data.loc[data['Entity'].str.startswith(' '), 'Entity'] = np.nan
-    data['Entity'] = data['Entity'].ffill()
-    data['mixed'] = data['mixed'].str.lstrip()
+    data["Entity"] = data["mixed"].copy()
+    data.loc[data["Entity"].str.startswith(" "), "Entity"] = np.nan
+    data["Entity"] = data["Entity"].ffill()
+    data["mixed"] = data["mixed"].str.lstrip()
     # We only care about coal data.
-    data = data[data['mixed'] == relevant_entity].drop(columns='mixed').reset_index(drop=True)
-    data_melt = data.melt(id_vars='Entity', var_name='Year')
-    data_melt[variable_name] = data_melt['value'] * conversion_factor
-    data_melt = data_melt.drop(columns='value')
-    data_melt['Year'] = data_melt['Year'].astype(int)
+    data = (
+        data[data["mixed"] == relevant_entity]
+        .drop(columns="mixed")
+        .reset_index(drop=True)
+    )
+    data_melt = data.melt(id_vars="Entity", var_name="Year")
+    data_melt[variable_name] = data_melt["value"] * conversion_factor
+    data_melt = data_melt.drop(columns="value")
+    data_melt["Year"] = data_melt["Year"].astype(int)
 
     return data_melt
 
@@ -183,9 +215,9 @@ def merge_dataframes(list_of_dataframes):
 
     """
     # Merge all dataframes into one.
-    combined = pd.DataFrame({'Entity': [], 'Year': []})
+    combined = pd.DataFrame({"Entity": [], "Year": []})
     for dataframe in list_of_dataframes:
-        combined = pd.merge(combined, dataframe, on=('Entity', 'Year'), how='outer')
+        combined = pd.merge(combined, dataframe, on=("Entity", "Year"), how="outer")
 
     return combined
 
@@ -203,23 +235,25 @@ def load_gas_data():
         # Dry natural gas production (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_production",
-            conversion_factor=BCF_TO_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS,
+        ),
         # Dry natural gas consumption (cubic meters).
         load_simple_dataset(
             variable_name="natural_gas_consumption",
-            conversion_factor=BCF_TO_CUBIC_METERS),
+            conversion_factor=BCF_TO_CUBIC_METERS,
+        ),
         # Dry natural gas imports (cubic meters).
         load_simple_dataset(
-            variable_name="natural_gas_imports",
-            conversion_factor=BCF_TO_CUBIC_METERS),
+            variable_name="natural_gas_imports", conversion_factor=BCF_TO_CUBIC_METERS
+        ),
         # Dry natural gas exports (cubic meters).
         load_simple_dataset(
-            variable_name="natural_gas_exports",
-            conversion_factor=BCF_TO_CUBIC_METERS),
+            variable_name="natural_gas_exports", conversion_factor=BCF_TO_CUBIC_METERS
+        ),
         # Dry natural gas reserves (cubic meters).
         load_simple_dataset(
-            variable_name="natural_gas_reserves",
-            conversion_factor=TCF_TO_CUBIC_METERS),
+            variable_name="natural_gas_reserves", conversion_factor=TCF_TO_CUBIC_METERS
+        ),
     ]
 
     # Merge all dataframes into one.
@@ -242,30 +276,30 @@ def load_coal_data():
         load_dataset_with_indented_entities(
             variable_name="coal_production",
             conversion_factor=MST_TO_TONNES,
-            relevant_entity='Coal (Mst)',
+            relevant_entity="Coal (Mst)",
         ),
         # Coal consumption (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_consumption",
             conversion_factor=MST_TO_TONNES,
-            relevant_entity='Coal (Mst)',
+            relevant_entity="Coal (Mst)",
         ),
         # Coal imports (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_imports",
             conversion_factor=MST_TO_TONNES,
-            relevant_entity='Coal (Mst)',
-            ),
+            relevant_entity="Coal (Mst)",
+        ),
         # Coal exports (tonnes).
         load_dataset_with_indented_entities(
             variable_name="coal_exports",
             conversion_factor=MST_TO_TONNES,
-            relevant_entity='Coal (Mst)',
+            relevant_entity="Coal (Mst)",
         ),
         # Coal reserves (tonnes).
         load_simple_dataset(
-            variable_name="coal_reserves",
-            conversion_factor=MST_TO_TONNES),
+            variable_name="coal_reserves", conversion_factor=MST_TO_TONNES
+        ),
     ]
 
     # Merge all dataframes into one.
@@ -288,24 +322,26 @@ def load_oil_data():
         load_dataset_with_indented_entities(
             variable_name="oil_production",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
-            relevant_entity="Crude oil including lease condensate (Mb/d)"),
+            relevant_entity="Crude oil including lease condensate (Mb/d)",
+        ),
         # Consumption of refined petroleum products (cubic meters).
         load_dataset_with_indented_entities(
             variable_name="oil_consumption",
             conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR,
-            relevant_entity="Consumption (Mb/d)"),
+            relevant_entity="Consumption (Mb/d)",
+        ),
         # Crude oil imports, including lease condensate (cubic meters).
         load_simple_dataset(
-            variable_name="oil_imports",
-            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
+            variable_name="oil_imports", conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR
+        ),
         # Crude oil exports, including lease condensate (cubic meters).
         load_simple_dataset(
-            variable_name="oil_exports",
-            conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR),
+            variable_name="oil_exports", conversion_factor=MBD_TO_CUBIC_METERS_PER_YEAR
+        ),
         # Crude oil reserves, including lease condensate (cubic meters).
         load_simple_dataset(
-            variable_name="oil_reserves",
-            conversion_factor=BB_TO_CUBIC_METERS),
+            variable_name="oil_reserves", conversion_factor=BB_TO_CUBIC_METERS
+        ),
     ]
 
     # Merge all dataframes into one.
@@ -363,16 +399,22 @@ def add_percentage_columns(combined):
         numerator = percentage_columns[new_column]["numerator"]
         denominator = percentage_columns[new_column]["denominator"]
         print(f"\n  * Adding column: {new_column}")
-        combined_added[new_column] = 100 * combined_added[numerator] / combined_added[denominator]
+        combined_added[new_column] = (
+            100 * combined_added[numerator] / combined_added[denominator]
+        )
 
         negative_pct_rows = combined_added[combined_added[new_column].fillna(0) < 0]
         if len(negative_pct_rows) > 0:
-            print(f"  WARNING: {len(negative_pct_rows)} rows with negative percentages.")
+            print(
+                f"  WARNING: {len(negative_pct_rows)} rows with negative percentages."
+            )
 
         above_101_pct_rows = combined_added[combined_added[new_column].fillna(0) >= 101]
         if len(above_101_pct_rows) > 0:
-            print(f"  WARNING: {len(above_101_pct_rows)} rows with above 100 percentages.")
-    
+            print(
+                f"  WARNING: {len(above_101_pct_rows)} rows with above 100 percentages."
+            )
+
     return combined_added
 
 
@@ -392,8 +434,10 @@ def add_net_imports(data):
     """
     data = data.copy()
 
-    for variable in ['natural_gas', 'coal', 'oil']:
-        data[f'{variable}_net_imports'] = data[f'{variable}_imports'] - data[f'{variable}_exports']
+    for variable in ["natural_gas", "coal", "oil"]:
+        data[f"{variable}_net_imports"] = (
+            data[f"{variable}_imports"] - data[f"{variable}_exports"]
+        )
 
     return data
 
@@ -415,35 +459,42 @@ def add_per_capita_columns(data):
     data = data.copy()
 
     # Create a per-capita column for each relevant variable.
-    per_capita_columns = [column for column in data.columns if column not in ['Entity', 'Year', 'Date']
-                          if not column.startswith('share_')]
+    per_capita_columns = [
+        column
+        for column in data.columns
+        if column not in ["Entity", "Year", "Date"]
+        if not column.startswith("share_")
+    ]
 
     # Standardize country names.
-    country_remapping = pd.read_csv(COUNTRIES_FILE).set_index('eia_name').to_dict()['owid_name']
-    data['Entity'] = data['Entity'].replace(country_remapping)
+    country_remapping = (
+        pd.read_csv(COUNTRIES_FILE).set_index("eia_name").to_dict()["owid_name"]
+    )
+    data["Entity"] = data["Entity"].replace(country_remapping)
 
     # Add population data.
     population = load_population_dataset()
 
     # Temporarily add a year column to monthly data be able to merge with population dataset.
-    if 'Date' in data.columns:
-        data['Year'] = pd.to_datetime(data['Date']).dt.year
+    if "Date" in data.columns:
+        data["Year"] = pd.to_datetime(data["Date"]).dt.year
 
     # Add population to data.
-    data = pd.merge(data, population, on=['Entity', 'Year'], how='left')
+    data = pd.merge(data, population, on=["Entity", "Year"], how="left")
 
     # Add per capita variables one by one.
     for column in per_capita_columns:
-        new_column = column + '_per_capita'
-        data[new_column] = data[column] / data['Population']
+        new_column = column + "_per_capita"
+        data[new_column] = data[column] / data["Population"]
 
     # Remove unnecessary columns.
-    if 'Date' in data.columns:
-        del data['Year']
+    if "Date" in data.columns:
+        del data["Year"]
 
-    first_columns = ['Entity', 'Year', 'Date', 'Population']
-    columns = [column for column in data.columns if column in first_columns] + \
-              [column for column in data.columns if column not in first_columns]
+    first_columns = ["Entity", "Year", "Date", "Population"]
+    columns = [column for column in data.columns if column in first_columns] + [
+        column for column in data.columns if column not in first_columns
+    ]
     data = data[columns]
 
     return data
@@ -475,7 +526,7 @@ def clean_dataset(data, fixed_columns):
     # Replace infinities by nan.
     clean = clean.replace([np.inf, -np.inf], np.nan)
     # Remove rows where all columns are nan.
-    clean = clean.dropna(subset=variables, how='all')
+    clean = clean.dropna(subset=variables, how="all")
     clean = clean.sort_values(fixed_columns).reset_index(drop=True)
 
     return clean
@@ -495,24 +546,33 @@ def load_oil_monthly_dataset():
     variable_name = "oil_production_monthly"
     relevant_entity = "Crude oil including lease condensate (Mb/d)"
     data_file = find_last_data_file(variable_name=variable_name)
-    data = pd.read_csv(data_file, skiprows=1, na_values='--').rename(columns={'Unnamed: 1': 'mixed'}).\
-        drop(columns=['API'])
-    print(data.loc[1]['mixed'].lstrip())
+    data = (
+        pd.read_csv(data_file, skiprows=1, na_values="--")
+        .rename(columns={"Unnamed: 1": "mixed"})
+        .drop(columns=["API"])
+    )
+    print(data.loc[1]["mixed"].lstrip())
     # Add a column for country. To do so, assume that country names are not prepended by spaces.
-    data['Entity'] = data['mixed'].copy()
-    data.loc[data['Entity'].str.startswith(' '), 'Entity'] = np.nan
-    data['Entity'] = data['Entity'].ffill()
-    data['mixed'] = data['mixed'].str.lstrip()
-    data = data[data['mixed'] == relevant_entity].drop(columns='mixed').reset_index(drop=True)
-    data_melt = data.melt(id_vars='Entity', var_name='Date')
-    data_melt[variable_name] = data_melt['value'] * conversion_factor
-    data_melt = data_melt.drop(columns='value')
-    data_melt['Date'] = pd.to_datetime(data_melt['Date']).astype(str)
+    data["Entity"] = data["mixed"].copy()
+    data.loc[data["Entity"].str.startswith(" "), "Entity"] = np.nan
+    data["Entity"] = data["Entity"].ffill()
+    data["mixed"] = data["mixed"].str.lstrip()
+    data = (
+        data[data["mixed"] == relevant_entity]
+        .drop(columns="mixed")
+        .reset_index(drop=True)
+    )
+    data_melt = data.melt(id_vars="Entity", var_name="Date")
+    data_melt[variable_name] = data_melt["value"] * conversion_factor
+    data_melt = data_melt.drop(columns="value")
+    data_melt["Date"] = pd.to_datetime(data_melt["Date"]).astype(str)
 
     return data_melt
 
 
-def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_significant_figures=N_SIGNIFICANT_FIGURES):
+def save_data_in_a_convenient_format(
+    data, output_file, columns_to_format, n_significant_figures=N_SIGNIFICANT_FIGURES
+):
     """Save output data in a file using a convenient format.
 
     To save data using scientific notation, one could simply use:
@@ -536,17 +596,19 @@ def save_data_in_a_convenient_format(data, output_file, columns_to_format, n_sig
     data = data.copy()
     format_rule = f"{{:.{n_significant_figures -1}e}}"
     for column in columns_to_format:
-        data[column] = data[column].map(format_rule.format).\
-            str.replace('e+00', '', regex=False).str.replace('nan', '', regex=False)
+        data[column] = (
+            data[column]
+            .map(format_rule.format)
+            .str.replace("e+00", "", regex=False)
+            .str.replace("nan", "", regex=False)
+        )
         data.loc[data[column] == "0." + "0" * (n_significant_figures - 1), column] = "0"
 
     data.to_csv(output_file, index=False)
 
 
 def generate_yearly_dataset():
-    """Generate yearly dataset and store it in a file.
-
-    """
+    """Generate yearly dataset and store it in a file."""
     print("* Loading yearly data.")
     all_data = [
         load_gas_data(),
@@ -567,19 +629,22 @@ def generate_yearly_dataset():
     combined = add_per_capita_columns(data=combined)
 
     print("* Cleaning yearly data.")
-    clean_data = clean_dataset(data=combined, fixed_columns=['Entity', 'Year', 'Population'])
+    clean_data = clean_dataset(
+        data=combined, fixed_columns=["Entity", "Year", "Population"]
+    )
 
     print(f"* Saving data to file: {OUTPUT_YEARLY_FILE}")
     save_data_in_a_convenient_format(
         data=clean_data,
         output_file=OUTPUT_YEARLY_FILE,
-        columns_to_format=[column for column in clean_data.columns if column not in ['Entity', 'Year']])
+        columns_to_format=[
+            column for column in clean_data.columns if column not in ["Entity", "Year"]
+        ],
+    )
 
 
 def generate_monthly_dataset():
-    """Generate yearly dataset and store it in a file.
-
-    """
+    """Generate yearly dataset and store it in a file."""
     print("* Loading oil monthly production data.")
     monthly_data = load_oil_monthly_dataset()
 
@@ -587,13 +652,18 @@ def generate_monthly_dataset():
     monthly_data = add_per_capita_columns(data=monthly_data)
 
     print("* Cleaning monthly data.")
-    clean_data = clean_dataset(data=monthly_data, fixed_columns=['Entity', 'Date', 'Population'])
+    clean_data = clean_dataset(
+        data=monthly_data, fixed_columns=["Entity", "Date", "Population"]
+    )
 
     print(f"* Saving data to file: {OUTPUT_MONTHLY_FILE}")
     save_data_in_a_convenient_format(
         data=clean_data,
         output_file=OUTPUT_MONTHLY_FILE,
-        columns_to_format=[column for column in clean_data.columns if column not in ['Entity', 'Date']])
+        columns_to_format=[
+            column for column in clean_data.columns if column not in ["Entity", "Date"]
+        ],
+    )
 
 
 def main():

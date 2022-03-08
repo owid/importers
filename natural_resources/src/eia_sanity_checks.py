@@ -33,127 +33,127 @@ MAX_NUM_PLOTS = 150
 
 # Define default entity names.
 NAME = {
-    'country': 'Entity',
-    'year': 'Year',
+    "country": "Entity",
+    "year": "Year",
 }
 # Define minimum, maximum, and minimum relevant values for all variables.
 default_range = {
-    'min': 0,
-    'max': 'World',
-    'min_relevant': 1,
+    "min": 0,
+    "max": "World",
+    "min_relevant": 1,
 }
 default_range_percentage = {
-    'min': 0,
-    'max': 100,
+    "min": 0,
+    "max": 100,
 }
 RANGES = {
-    'natural_gas_production': default_range,
-    'natural_gas_consumption': default_range,
-    'natural_gas_imports': default_range,
-    'natural_gas_exports': default_range,
-    'natural_gas_reserves': default_range,
-    'natural_gas_net_imports': {
-        'min': -1e12,
-        'max': 1e12,
+    "natural_gas_production": default_range,
+    "natural_gas_consumption": default_range,
+    "natural_gas_imports": default_range,
+    "natural_gas_exports": default_range,
+    "natural_gas_reserves": default_range,
+    "natural_gas_net_imports": {
+        "min": -1e12,
+        "max": 1e12,
     },
-    'coal_production': default_range,
-    'coal_consumption': default_range,
-    'coal_imports': default_range,
-    'coal_exports': default_range,
-    'coal_reserves': default_range,
-    'coal_net_imports': {
-        'min': -1e9,
-        'max': 1e9,
+    "coal_production": default_range,
+    "coal_consumption": default_range,
+    "coal_imports": default_range,
+    "coal_exports": default_range,
+    "coal_reserves": default_range,
+    "coal_net_imports": {
+        "min": -1e9,
+        "max": 1e9,
     },
-    'oil_production': default_range,
-    'oil_consumption': default_range,
-    'oil_imports': default_range,
-    'oil_exports': default_range,
-    'oil_reserves': default_range,
-    'oil_net_imports': {
-        'min': -1e9,
-        'max': 1e9,
+    "oil_production": default_range,
+    "oil_consumption": default_range,
+    "oil_imports": default_range,
+    "oil_exports": default_range,
+    "oil_reserves": default_range,
+    "oil_net_imports": {
+        "min": -1e9,
+        "max": 1e9,
     },
-    'natural_gas_production_per_capita': {
-        'min': 0,
-        'max': 15000,
+    "natural_gas_production_per_capita": {
+        "min": 0,
+        "max": 15000,
     },
-    'natural_gas_consumption_per_capita': {
-        'min': 0,
-        'max': 10000,
+    "natural_gas_consumption_per_capita": {
+        "min": 0,
+        "max": 10000,
     },
-    'natural_gas_imports_per_capita': {
-        'min': 0,
-        'max': 5000,
+    "natural_gas_imports_per_capita": {
+        "min": 0,
+        "max": 5000,
     },
-    'natural_gas_exports_per_capita': {
-        'min': 0,
-        'max': 10000,
+    "natural_gas_exports_per_capita": {
+        "min": 0,
+        "max": 10000,
     },
-    'natural_gas_reserves_per_capita': {
-        'min': 0,
-        'max': 500000,
+    "natural_gas_reserves_per_capita": {
+        "min": 0,
+        "max": 500000,
     },
-    'natural_gas_net_imports_per_capita': {
-        'min': -6000,
-        'max': 5000,
+    "natural_gas_net_imports_per_capita": {
+        "min": -6000,
+        "max": 5000,
     },
-    'coal_production_per_capita': {
-        'min': 0,
-        'max': 10,
+    "coal_production_per_capita": {
+        "min": 0,
+        "max": 10,
     },
-    'coal_consumption_per_capita': {
-        'min': 0,
-        'max': 10,
+    "coal_consumption_per_capita": {
+        "min": 0,
+        "max": 10,
     },
-    'coal_imports_per_capita': {
-        'min': 0,
-        'max': 10,
+    "coal_imports_per_capita": {
+        "min": 0,
+        "max": 10,
     },
-    'coal_exports_per_capita': {
-        'min': 0,
-        'max': 10,
+    "coal_exports_per_capita": {
+        "min": 0,
+        "max": 10,
     },
-    'coal_reserves_per_capita': {
-        'min': 0,
-        'max': 10,
+    "coal_reserves_per_capita": {
+        "min": 0,
+        "max": 10,
     },
-    'coal_net_imports_per_capita': {
-        'min': -10,
-        'max': 10,
+    "coal_net_imports_per_capita": {
+        "min": -10,
+        "max": 10,
     },
-    'oil_production_per_capita': {
-        'min': 0,
-        'max': 100,
+    "oil_production_per_capita": {
+        "min": 0,
+        "max": 100,
     },
-    'oil_consumption_per_capita': {
-        'min': 0,
-        'max': 100,
+    "oil_consumption_per_capita": {
+        "min": 0,
+        "max": 100,
     },
-    'oil_imports_per_capita': {
-        'min': 0,
-        'max': 100,
+    "oil_imports_per_capita": {
+        "min": 0,
+        "max": 100,
     },
-    'oil_exports_per_capita': {
-        'min': 0,
-        'max': 100,
+    "oil_exports_per_capita": {
+        "min": 0,
+        "max": 100,
     },
-    'oil_reserves_per_capita': {
-        'min': 0,
-        'max': 2000,
+    "oil_reserves_per_capita": {
+        "min": 0,
+        "max": 2000,
     },
-    'oil_net_imports_per_capita': {
-        'min': -100,
-        'max': 100,
+    "oil_net_imports_per_capita": {
+        "min": -100,
+        "max": 100,
     },
 }
 # Define ranges for variables created when comparing consumption + exports with production + imports.
 RANGES_ON_TOTAL_ENERGY = {
-    'natural_gas_total': {
-        'min_relevant': 1,
+    "natural_gas_total": {
+        "min_relevant": 1,
     },
-    'coal_total': {
-        'min_relevant': 1e6,
+    "coal_total": {
+        "min_relevant": 1e6,
     },
 }
 
@@ -173,10 +173,12 @@ def resample_monthly_data(monthly):
 
     """
     monthly_resampled = monthly.copy()
-    monthly_resampled['Date'] = pd.to_datetime(monthly_resampled['Date'])
-    monthly_resampled = monthly_resampled.groupby('Entity').resample('Y', on='Date').sum().reset_index()
-    monthly_resampled['Year'] = monthly_resampled['Date'].dt.year.astype(int)
-    monthly_resampled = monthly_resampled.drop(columns='Date')
+    monthly_resampled["Date"] = pd.to_datetime(monthly_resampled["Date"])
+    monthly_resampled = (
+        monthly_resampled.groupby("Entity").resample("Y", on="Date").sum().reset_index()
+    )
+    monthly_resampled["Year"] = monthly_resampled["Date"].dt.year.astype(int)
+    monthly_resampled = monthly_resampled.drop(columns="Date")
 
     return monthly_resampled
 
@@ -216,15 +218,15 @@ def max_absolute_percentage_error(old, new, epsilon=1e-6):
 
 # Default error metric.
 ERROR_METRIC = {
-    'function': max_absolute_percentage_error,
-    'name': 'maxape',
-    'min_relevant': 1,
+    "function": max_absolute_percentage_error,
+    "name": "maxape",
+    "min_relevant": 1,
 }
 # Error metric to use when comparing consumption + exports with production + imports.
 ERROR_METRIC_ON_TOTAL_ENERGY = {
-    'function': sanity_checks.mean_absolute_percentage_error,
-    'name': 'mape',
-    'min_relevant': 10,
+    "function": sanity_checks.mean_absolute_percentage_error,
+    "name": "mape",
+    "min_relevant": 10,
 }
 
 
@@ -252,8 +254,8 @@ def compare_monthly_and_yearly_datasets(monthly_resampled, yearly, common_column
         error_metric=ERROR_METRIC,
         name=NAME,
         variable_ranges=RANGES,
-        data_label_old='yearly',
-        data_label_new='monthly_resampled',
+        data_label_old="yearly",
+        data_label_new="monthly_resampled",
         export_interactive_plots=EXPORT_INTERACTIVE_PLOTS,
         max_num_plots=MAX_NUM_PLOTS,
     )
@@ -272,11 +274,15 @@ def compare_consumption_and_imports_with_production_and_exports(yearly):
     consumption_and_exports = yearly.copy()
     production_and_imports = yearly.copy()
 
-    for variable in ['natural_gas', 'coal']:
-        consumption_and_exports[f'{variable}_total'] = \
-            consumption_and_exports[f"{variable}_consumption"] + consumption_and_exports[f"{variable}_exports"]
-        production_and_imports[f'{variable}_total'] = \
-            production_and_imports[f"{variable}_production"] + production_and_imports[f"{variable}_imports"]
+    for variable in ["natural_gas", "coal"]:
+        consumption_and_exports[f"{variable}_total"] = (
+            consumption_and_exports[f"{variable}_consumption"]
+            + consumption_and_exports[f"{variable}_exports"]
+        )
+        production_and_imports[f"{variable}_total"] = (
+            production_and_imports[f"{variable}_production"]
+            + production_and_imports[f"{variable}_imports"]
+        )
 
     checks_comparing_datasets = sanity_checks.SanityChecksComparingTwoDatasets(
         data_old=consumption_and_exports,
@@ -284,8 +290,8 @@ def compare_consumption_and_imports_with_production_and_exports(yearly):
         error_metric=ERROR_METRIC_ON_TOTAL_ENERGY,
         name=NAME,
         variable_ranges=RANGES_ON_TOTAL_ENERGY,
-        data_label_old='consumption_and_exports',
-        data_label_new='production_and_imports',
+        data_label_old="consumption_and_exports",
+        data_label_new="production_and_imports",
         export_interactive_plots=EXPORT_INTERACTIVE_PLOTS,
         max_num_plots=MAX_NUM_PLOTS,
     )
@@ -306,7 +312,9 @@ def main(output_file=OUTPUT_FILE):
     yearly = pd.read_csv(YEARLY_DATA_FILE)
     monthly = pd.read_csv(MONTHLY_DATA_FILE)
     # Rename columns to be consistent with yearly data.
-    monthly = monthly.rename(columns={col: col.replace('_monthly', '') for col in monthly.columns})
+    monthly = monthly.rename(
+        columns={col: col.replace("_monthly", "") for col in monthly.columns}
+    )
     # Load OWID population dataset.
     population = load_population_dataset()
     # Resample monthly data to become yearly.
@@ -315,14 +323,26 @@ def main(output_file=OUTPUT_FILE):
     print(f"Execute sanity checks on {len(RANGES)} variables of the new dataset.")
     summary = run_sanity_checks_on_new_dataset(yearly=yearly, population=population)
 
-    common_columns = [col for col in list(set(yearly.columns) & set(monthly_resampled.columns))
-                      if 'capita' not in col]
-    print(f"Execute sanity checks comparing yearly and monthly resampled datasets on {len(common_columns)} variables.")
+    common_columns = [
+        col
+        for col in list(set(yearly.columns) & set(monthly_resampled.columns))
+        if "capita" not in col
+    ]
+    print(
+        f"Execute sanity checks comparing yearly and monthly resampled datasets on {len(common_columns)} variables."
+    )
     summary += compare_monthly_and_yearly_datasets(
-        monthly_resampled=monthly_resampled, yearly=yearly, common_columns=common_columns)
+        monthly_resampled=monthly_resampled,
+        yearly=yearly,
+        common_columns=common_columns,
+    )
 
-    print(f"Execute sanity checks comparing consumption and imports with production and exports.")
-    summary += compare_consumption_and_imports_with_production_and_exports(yearly=yearly)
+    print(
+        f"Execute sanity checks comparing consumption and imports with production and exports."
+    )
+    summary += compare_consumption_and_imports_with_production_and_exports(
+        yearly=yearly
+    )
 
     # Save all warnings to a HTML file for visual inspection.
     _save_output_file(summary=summary, output_file=output_file)
