@@ -199,7 +199,7 @@ def share_of_pop_international_migrants_by_origin() -> pd.DataFrame:
 
 def refugees_by_destination() -> pd.DataFrame:
     if not os.path.exists(
-        "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+        "migration/input/refugee_undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
     ):
         df = pd.read_excel(
             "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
@@ -768,7 +768,7 @@ def net_number_migrants() -> pd.DataFrame:
 
 def child_migrants_by_destination() -> pd.DataFrame:
     if not os.path.exists(
-        "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
+        "migration/input/child_undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
     ):
         df = pd.read_excel(
             "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_age_sex_and_destination.xlsx",

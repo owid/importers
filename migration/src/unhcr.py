@@ -207,6 +207,7 @@ def resettlement_arrivals_by_destination() -> pd.DataFrame:
         },
         inplace=True,
     )
+    df = five_year_moving_window(df)
     df.to_csv(
         "migration/ready/unhcr_resettlement_arrivals_by_destination.csv", index=False
     )
@@ -257,6 +258,7 @@ def resettlement_arrivals_by_origin() -> pd.DataFrame:
         },
         inplace=True,
     )
+    df = five_year_moving_window(df)
     df.to_csv("migration/ready/unhcr_resettlement_arrivals_by_origin.csv", index=False)
     return df
 
