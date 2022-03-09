@@ -91,6 +91,7 @@ def transform():
         "idmc_share_annual_internal_displacement_disaster",
         "undesa_child_migrants_by_destination_under_15_per_1000",
         "unhcr_refugees_by_origin_per_1000",
+        "unhcr_refugees_by_destination_per_1000",
         "unhcr_resettlement_arrivals_by_origin_per_100000",
         "unhcr_asylum_seekers_by_destination_per_100000",
         "undesa_share_of_population_that_are_international_migrants_by_origin",

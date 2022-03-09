@@ -37,7 +37,6 @@ def refugees_by_destination() -> pd.DataFrame:
 def refugees_by_destination_per_1000() -> pd.DataFrame:
     population = owid_population()
     refugees = refugees_by_destination()
-    # refugees["Country of asylum"] = standardise_countries(refugees["Country of asylum"])
     refugees = refugees.merge(
         population,
         how="inner",
@@ -93,7 +92,7 @@ def refugees_by_origin_per_1000() -> pd.DataFrame:
     ) * 1000
     refugees = refugees[["Year", "Country", "unhcr_refugees_by_origin_per_1000"]]
     refugees.to_csv(
-        "migration/ready/omm_unhcr_refugees_by_destination_per_1000.csv", index=False
+        "migration/ready/omm_unhcr_refugees_by_origin_per_1000.csv", index=False
     )
     return refugees
 

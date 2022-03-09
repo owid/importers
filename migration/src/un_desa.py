@@ -1,35 +1,48 @@
 import pandas as pd
 import numpy as np
+import os.path
 
 from migration.src.utils import is_number, standardise_countries, owid_population
 
 
 def international_migrants_by_destination() -> pd.DataFrame:
-    df = pd.read_excel(
-        "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
-        sheet_name="Table 1",
-        skiprows=10,
-        usecols="B:L",
-    )
+    if not os.path.exists(
+        "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+    ):
+        df = pd.read_excel(
+            "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
+            sheet_name="Table 1",
+            skiprows=10,
+            usecols="B:L",
+        )
+        df.to_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv",
+            index=False,
+        )
+    else:
+        df = pd.read_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+        )
+
     df["Region, development group, country or area"] = standardise_countries(
         df["Region, development group, country or area"]
     )
     df = df[
         [
             "Region, development group, country or area",
-            1990,
-            1995,
-            2000,
-            2005,
-            2010,
-            2015,
-            2020,
+            "1990",
+            "1995",
+            "2000",
+            "2005",
+            "2010",
+            "2015",
+            "2020",
         ]
     ]
     df = pd.melt(
         df,
         id_vars=["Region, development group, country or area"],
-        value_vars=[1990, 1995, 2000, 2005, 2010, 2015, 2020],
+        value_vars=["1990", "1995", "2000", "2005", "2010", "2015", "2020"],
     )
     df.rename(
         columns={
@@ -40,6 +53,10 @@ def international_migrants_by_destination() -> pd.DataFrame:
         inplace=True,
     )
     df = df[df["undesa_international_migrants_by_destination"].apply(is_number)]
+    df.Year = df.Year.astype(int)
+    df.undesa_international_migrants_by_destination = (
+        df.undesa_international_migrants_by_destination.astype(int)
+    )
     df.to_csv(
         "migration/ready/undesa_international_migrants_by_destination.csv", index=False
     )
@@ -49,6 +66,10 @@ def international_migrants_by_destination() -> pd.DataFrame:
 def share_of_pop_international_migrants_by_destination() -> pd.DataFrame:
     migrants = international_migrants_by_destination()
     population = owid_population()
+    migrants.Year = migrants.Year.astype(int)
+    migrants.undesa_international_migrants_by_destination = (
+        migrants.undesa_international_migrants_by_destination.astype(int)
+    )
 
     migrants = migrants.merge(
         population,
@@ -83,31 +104,42 @@ def share_of_pop_international_migrants_by_destination() -> pd.DataFrame:
 
 
 def international_migrants_by_origin() -> pd.DataFrame:
-    df = pd.read_excel(
-        "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_origin.xlsx",
-        sheet_name="Table 1",
-        skiprows=10,
-        usecols="B:L",
-    )
+    if not os.path.exists(
+        "migration/input/undesa_pd_2020_ims_stock_by_sex_and_origin.csv"
+    ):
+        df = pd.read_excel(
+            "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_origin.xlsx",
+            sheet_name="Table 1",
+            skiprows=10,
+            usecols="B:L",
+        )
+        df.to_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_origin.csv",
+            index=False,
+        )
+    else:
+        df = pd.read_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_origin.csv"
+        )
     df["Region, development group, country or area"] = standardise_countries(
         df["Region, development group, country or area"]
     )
     df = df[
         [
             "Region, development group, country or area",
-            1990,
-            1995,
-            2000,
-            2005,
-            2010,
-            2015,
-            2020,
+            "1990",
+            "1995",
+            "2000",
+            "2005",
+            "2010",
+            "2015",
+            "2020",
         ]
     ]
     df = pd.melt(
         df,
         id_vars=["Region, development group, country or area"],
-        value_vars=[1990, 1995, 2000, 2005, 2010, 2015, 2020],
+        value_vars=["1990", "1995", "2000", "2005", "2010", "2015", "2020"],
     )
     df.rename(
         columns={
@@ -118,6 +150,10 @@ def international_migrants_by_origin() -> pd.DataFrame:
         inplace=True,
     )
     df = df[df["undesa_international_migrants_by_origin"].apply(is_number)]
+    df.Year = df.Year.astype(int)
+    df.undesa_international_migrants_by_origin = (
+        df.undesa_international_migrants_by_origin.astype(int)
+    )
     df.to_csv(
         "migration/ready/undesa_international_migrants_by_origin.csv", index=False
     )
@@ -127,6 +163,10 @@ def international_migrants_by_origin() -> pd.DataFrame:
 def share_of_pop_international_migrants_by_origin() -> pd.DataFrame:
     migrants = international_migrants_by_origin()
     population = owid_population()
+    migrants.Year = migrants.Year.astype(int)
+    migrants.undesa_international_migrants_by_origin = (
+        migrants.undesa_international_migrants_by_origin.astype(int)
+    )
 
     migrants = migrants.merge(
         population,
@@ -158,31 +198,39 @@ def share_of_pop_international_migrants_by_origin() -> pd.DataFrame:
 
 
 def refugees_by_destination() -> pd.DataFrame:
-    df = pd.read_excel(
-        "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
-        sheet_name="Table 6",
-        skiprows=10,
-        usecols="B:L",
-    )
+    if not os.path.exists(
+        "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+    ):
+        df = pd.read_excel(
+            "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_sex_and_destination.xlsx",
+            sheet_name="Table 6",
+            skiprows=10,
+            usecols="B:L",
+        )
+        df.to_csv("migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv")
+    else:
+        df = pd.read_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+        )
     df["Region, development group, country or area"] = standardise_countries(
         df["Region, development group, country or area"]
     )
     df = df[
         [
             "Region, development group, country or area",
-            1990,
-            1995,
-            2000,
-            2005,
-            2010,
-            2015,
-            2020,
+            "1990",
+            "1995",
+            "2000",
+            "2005",
+            "2010",
+            "2015",
+            "2020",
         ]
     ]
     df = pd.melt(
         df,
         id_vars=["Region, development group, country or area"],
-        value_vars=[1990, 1995, 2000, 2005, 2010, 2015, 2020],
+        value_vars=["1990", "1995", "2000", "2005", "2010", "2015", "2020"],
     )
     df.rename(
         columns={
@@ -200,6 +248,10 @@ def refugees_by_destination() -> pd.DataFrame:
 def refugees_by_destination_per_1000() -> pd.DataFrame:
     refugees = refugees_by_destination()
     population = owid_population()
+    refugees.Year = refugees.Year.astype(int)
+    refugees.undesa_refugees_by_destination = (
+        refugees.undesa_refugees_by_destination.astype(int)
+    )
     refugees = refugees.merge(
         population,
         how="inner",
@@ -295,6 +347,7 @@ def average_annual_change_international_migrants_by_destination() -> pd.DataFram
 def change_in_international_migrants_by_destination() -> pd.DataFrame:
     migrants = international_migrants_by_destination()
     shifted = migrants.groupby("Country").shift(+1)
+
     migrants_lead = migrants.join(shifted.rename(columns=lambda x: x + "_lead"))
     migrants_lead[
         "undesa_five_year_change_in_international_migrants_by_destination"
@@ -707,12 +760,33 @@ def net_number_migrants() -> pd.DataFrame:
 
 
 def child_migrants_by_destination() -> pd.DataFrame:
-    df = pd.read_excel(
-        "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_age_sex_and_destination.xlsx",
-        sheet_name="Table 1",
-        skiprows=10,
-        usecols="B:K",
-    )
+    if not os.path.exists(
+        "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
+    ):
+        df = pd.read_excel(
+            "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2020_ims_stock_by_age_sex_and_destination.xlsx",
+            sheet_name="Table 1",
+            skiprows=10,
+            usecols="B:K",
+        )
+        df.to_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv",
+            index=False,
+        )
+    else:
+        df = pd.read_csv(
+            "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
+        )
+        cols = df.columns.drop(
+            [
+                "Region, development group, country or area",
+                "Notes",
+                "Location code",
+                "Type of data",
+            ]
+        )
+        df[cols] = df[cols].apply(pd.to_numeric, errors="coerce", downcast="integer")
+
     df["Region, development group, country or area"] = standardise_countries(
         df["Region, development group, country or area"]
     )
