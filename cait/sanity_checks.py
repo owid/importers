@@ -89,6 +89,17 @@ class Check(abc.ABC):
 
     def __init__(self):
         self.num_warnings = 0
+        self.name = None
+
+    def _get_name(self, entity):
+        if self.name is None:
+            entity_name = entity
+        elif entity not in self.name:
+            entity_name = entity
+        else:
+            entity_name = self.name[entity]
+
+        return entity_name
 
     @staticmethod
     def _parse_check_name(check_name):
@@ -202,10 +213,10 @@ class SanityChecksOnSingleDataset(Check):
 
     def check_that_countries_are_in_population_dataset(self):
         missing_countries = list(
-            set(self.data[self.name["country"]])
-            - set(self.population[self.name["country"]])
+            set(self.data[self._get_name("country")])
+            - set(self.population[self._get_name("country")])
         )
-        warnings = pd.DataFrame({"country": missing_countries})
+        warnings = pd.DataFrame({self._get_name("country"): missing_countries})
 
         return warnings
 
@@ -213,8 +224,8 @@ class SanityChecksOnSingleDataset(Check):
         # Keep only rows for which we have at least one not null data point.
         data_clean = self.data.dropna(how="all")
         year_ranges = (
-            data_clean.groupby(self.name["country"])
-            .agg({self.name["year"]: (min, max)})[self.name["year"]]
+            data_clean.groupby(self._get_name("country"))
+            .agg({self._get_name("year"): (min, max)})[self._get_name("year")]
             .reset_index()
         )
 
@@ -223,7 +234,7 @@ class SanityChecksOnSingleDataset(Check):
     def check_that_first_year_is_not_too_recent(self):
         year_ranges = self._get_year_ranges()
         warnings = year_ranges[year_ranges["min"] > self.min_year_latest_possible][
-            [self.name["country"], "min"]
+            [self._get_name("country"), "min"]
         ].rename(columns={"min": "Value"})
 
         return warnings
@@ -233,7 +244,7 @@ class SanityChecksOnSingleDataset(Check):
         year_ranges = self._get_year_ranges()
         warnings = year_ranges[
             year_ranges["max"] < (current_year - self.max_year_maximum_delay)
-        ][[self.name["country"], "max"]].rename(columns={"max": "Value"})
+        ][[self._get_name("country"), "max"]].rename(columns={"max": "Value"})
 
         return warnings
 
@@ -242,23 +253,27 @@ class SanityChecksOnSingleDataset(Check):
         ranges = {
             variable: self.variable_ranges[variable]
             for variable in self.variable_ranges
-            if self.name[variable] in self.data.columns
+            if self._get_name(variable) in self.data.columns
         }
         for variable in ranges:
             min_value = ranges[variable]["min"]
             if min_value == "World":
-                min_value = self.data[(self.data[self.name["country"]] == "World")][
-                    self.name[variable]
-                ].min()
-            too_low_rows = self.data[(self.data[self.name[variable]] < min_value)][
-                [self.name["country"], self.name["year"], self.name[variable]]
+                min_value = self.data[
+                    (self.data[self._get_name("country")] == "World")
+                ][self._get_name(variable)].min()
+            too_low_rows = self.data[(self.data[self._get_name(variable)] < min_value)][
+                [
+                    self._get_name("country"),
+                    self._get_name("year"),
+                    self._get_name(variable),
+                ]
             ]
             if len(too_low_rows) > 0:
                 too_low = (
-                    too_low_rows.groupby(self.name["country"])
-                    .agg({self.name[variable]: min})
+                    too_low_rows.groupby(self._get_name("country"))
+                    .agg({self._get_name(variable): min})
                     .reset_index()
-                    .rename(columns={self.name[variable]: "Value"})
+                    .rename(columns={self._get_name(variable): "Value"})
                 )
                 too_low["Variable"] = variable
                 warnings = pd.concat([warnings, too_low], ignore_index=True)
@@ -270,23 +285,29 @@ class SanityChecksOnSingleDataset(Check):
         ranges = {
             variable: self.variable_ranges[variable]
             for variable in self.variable_ranges
-            if self.name[variable] in self.data.columns
+            if self._get_name(variable) in self.data.columns
         }
         for variable in ranges:
             max_value = ranges[variable]["max"]
             if max_value == "World":
-                max_value = self.data[(self.data[self.name["country"]] == "World")][
-                    self.name[variable]
-                ].max()
-            too_high_rows = self.data[(self.data[self.name[variable]] > max_value)][
-                [self.name["country"], self.name["year"], self.name[variable]]
+                max_value = self.data[
+                    (self.data[self._get_name("country")] == "World")
+                ][self._get_name(variable)].max()
+            too_high_rows = self.data[
+                (self.data[self._get_name(variable)] > max_value)
+            ][
+                [
+                    self._get_name("country"),
+                    self._get_name("year"),
+                    self._get_name(variable),
+                ]
             ]
             if len(too_high_rows) > 0:
                 too_high = (
-                    too_high_rows.groupby(self.name["country"])
-                    .agg({self.name[variable]: max})
+                    too_high_rows.groupby(self._get_name("country"))
+                    .agg({self._get_name(variable): max})
                     .reset_index()
-                    .rename(columns={self.name[variable]: "Value"})
+                    .rename(columns={self._get_name(variable): "Value"})
                 )
                 too_high["Variable"] = variable
                 warnings = pd.concat([warnings, too_high], ignore_index=True)
@@ -366,19 +387,19 @@ class SanityChecksComparingTwoDatasets(Check):
 
     def check_that_all_countries_in_old_dataset_are_in_new_dataset(self):
         warnings = self.data_old[
-            ~self.data_old[self.name["country"]].isin(
-                self.data_new[self.name["country"]]
+            ~self.data_old[self._get_name("country")].isin(
+                self.data_new[self._get_name("country")]
             )
-        ][[self.name["country"]]].drop_duplicates()
+        ][[self._get_name("country")]].drop_duplicates()
 
         return warnings
 
     def check_that_all_countries_in_new_dataset_are_in_old_dataset(self):
         warnings = self.data_new[
-            ~self.data_new[self.name["country"]].isin(
-                self.data_old[self.name["country"]]
+            ~self.data_new[self._get_name("country")].isin(
+                self.data_old[self._get_name("country")]
             )
-        ][[self.name["country"]]].drop_duplicates()
+        ][[self._get_name("country")]].drop_duplicates()
 
         return warnings
 
@@ -413,8 +434,8 @@ class SanityChecksComparingTwoDatasets(Check):
         """
         # Select data for country.
         comparison = self.comparison[
-            self.comparison[self.name["country"]] == country
-        ].reset_index(drop=True)[[self.name["year"], variable, "source"]]
+            self.comparison[self._get_name("country")] == country
+        ].reset_index(drop=True)[[self._get_name("year"), variable, "source"]]
         # Add columns for plotting parameters.
         comparison["size"] = 0.003
         comparison.loc[comparison["source"] == self.data_label_new, "size"] = 0.001
@@ -428,14 +449,14 @@ class SanityChecksComparingTwoDatasets(Check):
         fig = (
             px.scatter(
                 comparison,
-                x=self.name["year"],
+                x=self._get_name("year"),
                 y=variable,
                 color="source",
                 size="size",
                 size_max=10,
                 color_discrete_sequence=["red", "green"],
                 opacity=0.9,
-                hover_name=self.name["year"],
+                hover_name=self._get_name("year"),
                 hover_data=hover_data,
             )
             .update_xaxes(
@@ -443,8 +464,8 @@ class SanityChecksComparingTwoDatasets(Check):
                 title="Year",
                 autorange=False,
                 range=[
-                    comparison[self.name["year"]].min() - 1,
-                    comparison[self.name["year"]].max() + 1,
+                    comparison[self._get_name("year")].min() - 1,
+                    comparison[self._get_name("year")].max() + 1,
                 ],
             )
             .update_yaxes(
@@ -488,21 +509,25 @@ class SanityChecksComparingTwoDatasets(Check):
         columns = [
             col
             for col in self.variable_ranges
-            if self.name[col] in self.data_old.columns
-            if self.name[col] in self.data_new.columns
+            if self._get_name(col) in self.data_old.columns
+            if self._get_name(col) in self.data_new.columns
         ]
         errors = pd.DataFrame(
-            {self.name["country"]: [], "Variable": [], error_name: []}
+            {self._get_name("country"): [], "Variable": [], error_name: []}
         )
-        for country in tqdm(self.comparison[self.name["country"]].unique().tolist()):
+        for country in tqdm(
+            self.comparison[self._get_name("country")].unique().tolist()
+        ):
             for variable in columns:
                 min_relevant_value = self.variable_ranges[variable]["min_relevant"]
                 comparison_pivot = (
-                    self.comparison[self.comparison[self.name["country"]] == country]
+                    self.comparison[
+                        self.comparison[self._get_name("country")] == country
+                    ]
                     .pivot(
-                        index=self.name["year"],
+                        index=self._get_name("year"),
                         columns="source",
-                        values=self.name[variable],
+                        values=self._get_name(variable),
                     )
                     .dropna(how="any")
                     .reset_index()
@@ -524,8 +549,8 @@ class SanityChecksComparingTwoDatasets(Check):
                         errors,
                         pd.DataFrame(
                             {
-                                self.name["country"]: [country],
-                                "Variable": [self.name[variable]],
+                                self._get_name("country"): [country],
+                                "Variable": [self._get_name(variable)],
                                 error_name: [error],
                             }
                         ),
@@ -535,12 +560,12 @@ class SanityChecksComparingTwoDatasets(Check):
 
         # Compare errors with mean value of a variables.
         mean_variable_value = (
-            self.comparison.groupby([self.name["country"]])
+            self.comparison.groupby([self._get_name("country")])
             .mean()
             .reset_index()
-            .drop(columns=self.name["year"])
+            .drop(columns=self._get_name("year"))
             .melt(
-                id_vars=self.name["country"],
+                id_vars=self._get_name("country"),
                 var_name="Variable",
                 value_name="mean_variable_value",
             )
@@ -548,7 +573,7 @@ class SanityChecksComparingTwoDatasets(Check):
         errors = pd.merge(
             mean_variable_value,
             errors,
-            on=[self.name["country"], "Variable"],
+            on=[self._get_name("country"), "Variable"],
             how="inner",
         )
 
@@ -665,7 +690,7 @@ class SanityChecksComparingTwoDatasets(Check):
             warnings_to_plot.iterrows(), total=len(warnings_to_plot)
         ):
             fig = self.plot_time_series_for_country_and_variable(
-                country=warning[self.name["country"]], variable=warning["Variable"]
+                country=warning[self._get_name("country")], variable=warning["Variable"]
             )
             if self.error_metric["name"] in warning:
                 fig.update_layout(
