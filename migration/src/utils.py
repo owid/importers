@@ -24,7 +24,7 @@ def owid_population() -> pd.DataFrame:
             columns={"country": "Country", "year": "Year", "population": "Population"}
         )[["Country", "Year", "Population"]]
     )
-    countries = ["Mayotte", "Turks and Caicos"]
+    countries = ["Mayotte", "Turks and Caicos Islands"]
     population.drop(population[population.Country.isin(countries)].index, inplace=True)
     return population
 
