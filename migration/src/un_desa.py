@@ -207,10 +207,12 @@ def refugees_by_destination() -> pd.DataFrame:
             skiprows=10,
             usecols="B:L",
         )
-        df.to_csv("migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv")
+        df.to_csv(
+            "migration/input/refugee_undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+        )
     else:
         df = pd.read_csv(
-            "migration/input/undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
+            "migration/input/refugee_undesa_pd_2020_ims_stock_by_sex_and_destination.csv"
         )
     df["Region, development group, country or area"] = standardise_countries(
         df["Region, development group, country or area"]
@@ -642,12 +644,17 @@ def average_annual_change_international_migrants_by_origin_per_100000() -> pd.Da
 
 
 def net_migration_rate() -> pd.DataFrame:
-    df = pd.read_excel(
-        "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/4_Migration/WPP2019_MIGR_F01_NET_MIGRATION_RATE.xlsx",
-        sheet_name="ESTIMATES",
-        skiprows=16,
-        usecols="B:U",
-    )
+    if not os.path.exists("migration/input/WPP2019_MIGR_F01_NET_MIGRATION_RATE.csv"):
+        df = pd.read_excel(
+            "https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/EXCEL_FILES/4_Migration/WPP2019_MIGR_F01_NET_MIGRATION_RATE.xlsx",
+            sheet_name="ESTIMATES",
+            skiprows=16,
+            usecols="B:U",
+            engine="openpyxl",
+        )
+        df.to_csv("migration/input/WPP2019_MIGR_F01_NET_MIGRATION_RATE.csv")
+    else:
+        df = pd.read_csv("migration/input/WPP2019_MIGR_F01_NET_MIGRATION_RATE.csv")
 
     df["Region, subregion, country or area *"] = standardise_countries(
         df["Region, subregion, country or area *"]
@@ -770,12 +777,12 @@ def child_migrants_by_destination() -> pd.DataFrame:
             usecols="B:K",
         )
         df.to_csv(
-            "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv",
+            "migration/input/child_undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv",
             index=False,
         )
     else:
         df = pd.read_csv(
-            "migration/input/undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
+            "migration/input/child_undesa_pd_2020_ims_stock_by_age_sex_and_destination.csv"
         )
         cols = df.columns.drop(
             [
