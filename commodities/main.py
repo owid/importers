@@ -49,6 +49,7 @@ def main():
         ),
         dataframes,
     ).sort_values("date")
+    df.insert(0, "entity", "World")
 
     df.to_csv("output/commodities.csv", index=False)
 
