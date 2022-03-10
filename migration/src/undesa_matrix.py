@@ -1,6 +1,6 @@
 import pandas as pd
 import os.path
-
+import numpy as np
 from migration.src.utils import standardise_countries
 
 
@@ -14,9 +14,9 @@ def add_selected_country_value(
         df.loc[df["Entity"] == country, country + "_origin"] = total_origin.loc[
             total_origin["Entity"] == country, "total_origin"
         ].to_list()
-        df.loc[df["Entity"] == country, country + "_origin"] = (
-            df.loc[df["Entity"] == country, country + "_origin"] * -1
-        )
+        df.loc[df["Entity"] == country, country + "_origin"] = df.loc[
+            df["Entity"] == country, country + "_origin"
+        ]
 
         df.loc[df["Entity"] == country, country + "_destination"] = total_dest.loc[
             total_dest["Entity"] == country, "total_destination"
@@ -109,6 +109,14 @@ def migration_matrix():
         columns={"destination": "Entity", "variable": "Year"}
     )
 
+    df_wide_destination.loc[
+        :, ~df_wide_destination.columns.isin(["Entity", "Year"])
+    ] = df_wide_destination.loc[
+        :, ~df_wide_destination.columns.isin(["Entity", "Year"])
+    ].mul(
+        -1, fill_value=np.nan
+    )
+
     df_both = pd.merge(
         df_wide_origin, df_wide_destination, on=["Entity", "Year"], how="outer"
     )
@@ -120,7 +128,7 @@ def migration_matrix():
     res = df_both.apply(lambda x: x.fillna(""))
     res.columns = res.columns.str.replace(" ", "").str.lower()
 
-    res.to_csv("migration/output/Migration_matrix.csv", index=False)
+    res.to_csv("migration/output/Migration_matrix_new.csv", index=False)
 
 
 def get_total_origin_destination(df: pd.DataFrame):
