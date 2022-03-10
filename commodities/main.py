@@ -26,12 +26,10 @@ def get_original_data(chart_id: int) -> pd.DataFrame:
     return pd.DataFrame.from_records(json.loads(data))
 
 
-def clean_data(df: pd.DataFrame, name: str, conversion: float = None) -> pd.DataFrame:
+def clean_data(df: pd.DataFrame, name: str, conversion: float) -> pd.DataFrame:
     if "close1" in df.columns:
         df = df.drop(columns="close").rename(columns={"close1": "close"})
-    df["close"] = df.close.astype(float)
-    if conversion:
-        df.loc[df.close.notnull(), "close"] = df.close.mul(conversion).round(2)
+    df["close"] = df.close.astype(float).mul(conversion).round(2)
     return df.dropna(subset="close").drop(columns="id").rename(columns={"close": name})
 
 
