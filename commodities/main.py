@@ -1,12 +1,12 @@
 from functools import reduce
 import json
-import pdb
 import re
 import requests
 import yaml
 
 from bs4 import BeautifulSoup
 import pandas as pd
+from tqdm import tqdm
 
 
 def get_config():
@@ -37,8 +37,7 @@ def main():
     commodities = get_config()
 
     dataframes = []
-    for com in commodities:
-        print(com["name"])
+    for com in tqdm(commodities):
         df = get_original_data(com["chart_id"]).pipe(
             clean_data, com["name"], com["conversion"]
         )
