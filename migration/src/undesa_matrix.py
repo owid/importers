@@ -14,16 +14,16 @@ def add_selected_country_value(
         df.loc[df["Entity"] == country, country + "_origin"] = total_origin.loc[
             total_origin["Entity"] == country, "total_origin"
         ].to_list()
-        df.loc[df["Entity"] == country, country + "_origin"] = df.loc[
-            df["Entity"] == country, country + "_origin"
-        ]
+        df.loc[df["Entity"] == country, country + "_origin"] = (
+            df.loc[df["Entity"] == country, country + "_origin"] * -1
+        )
 
         df.loc[df["Entity"] == country, country + "_destination"] = total_dest.loc[
             total_dest["Entity"] == country, "total_destination"
         ].to_list()
         df.loc[df["Entity"] == country, country + "_destination"] = (
-            df.loc[df["Entity"] == country, country + "_destination"] * -1
-        )
+            df.loc[df["Entity"] == country, country + "_destination"]
+        ) * -1
 
     return df
 
@@ -109,13 +109,13 @@ def migration_matrix():
         columns={"destination": "Entity", "variable": "Year"}
     )
 
-    df_wide_destination.loc[
-        :, ~df_wide_destination.columns.isin(["Entity", "Year"])
-    ] = df_wide_destination.loc[
-        :, ~df_wide_destination.columns.isin(["Entity", "Year"])
-    ].mul(
-        -1, fill_value=np.nan
-    )
+    # df_wide_destination.loc[
+    #    :, ~df_wide_destination.columns.isin(["Entity", "Year"])
+    # ] = df_wide_destination.loc[
+    #    :, ~df_wide_destination.columns.isin(["Entity", "Year"])
+    # ].mul(
+    #    -1, fill_value=np.nan
+    # )
 
     df_both = pd.merge(
         df_wide_origin, df_wide_destination, on=["Entity", "Year"], how="outer"
@@ -124,6 +124,9 @@ def migration_matrix():
     df_both = add_selected_country_value(
         df=df_both, total_origin=orig_total, total_dest=dest_total
     )
+
+    dest_cols = [col for col in df_both.columns if "_destination" in col]
+    df_both[dest_cols] = df_both[dest_cols].mul(-1, fill_value=np.NaN)
 
     res = df_both.apply(lambda x: x.fillna(""))
     res.columns = res.columns.str.replace(" ", "").str.lower()
