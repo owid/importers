@@ -29,7 +29,7 @@ def get_original_data(chart_id: int) -> pd.DataFrame:
 def clean_data(df: pd.DataFrame, name: str, multiply_by: float) -> pd.DataFrame:
     if "close1" in df.columns:
         df = df.drop(columns="close").rename(columns={"close1": "close"})
-    df["close"] = df.close.astype(float).mul(multiply_by).round(2)
+    df["close"] = df.close.astype(float).mul(multiply_by).round(3)
     return df.dropna(subset="close").drop(columns="id").rename(columns={"close": name})
 
 
