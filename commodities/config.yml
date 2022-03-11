@@ -1,51 +1,51 @@
 - name: wheat
   chart_id: 2534
-  conversion: 27.2155
+  multiply_by: 0.036 # bushel to kg (https://www.agric.gov.ab.ca/app19/calc/crop/bushel2tonne.jsp)
 - name: corn
   chart_id: 2532
-  conversion: 25.4
+  multiply_by: 0.039 # bushel to kg (https://www.agric.gov.ab.ca/app19/calc/crop/bushel2tonne.jsp)
 - name: soybean
   chart_id: 2531
-  conversion: 27.2155
+  multiply_by: 0.036 # bushel to kg (https://www.agric.gov.ab.ca/app19/calc/crop/bushel2tonne.jsp)
 - name: oats
   chart_id: 2536
-  conversion: 14.515
+  multiply_by: 0.064 # bushel to kg (https://www.agric.gov.ab.ca/app19/calc/crop/bushel2tonne.jsp)
 - name: coffee
   chart_id: 2535
-  conversion: 0.453592
+  multiply_by: 2.205 # pound to kg
 - name: cotton
   chart_id: 2533
-  conversion: 0.453592
+  multiply_by: 2.205 # pound to kg
 - name: sugar
   chart_id: 2537
-  conversion: 0.453592
+  multiply_by: 2.205 # pound to kg
 - name: soybean_oil
   chart_id: 2538
-  conversion: 0.453592
+  multiply_by: 2.205 # pound to kg
 - name: heating_oil
   chart_id: 2479
-  conversion: 3.785
+  multiply_by: 0.264172 # gallon to liter
 - name: natural_gas
   chart_id: 2478
-  conversion: 1
+  multiply_by: 1
 - name: brent_crude_oil
   chart_id: 2480
-  conversion: 1
+  multiply_by: 1
 - name: long_term_crude_oil
   chart_id: 1369
-  conversion: 1
+  multiply_by: 1
 - name: copper
   chart_id: 1476
-  conversion: 0.453592
+  multiply_by: 2.205 # pound to kg
 - name: gold
   chart_id: 1333
-  conversion: 28.3495
+  multiply_by: 0.035274 # ounce to g
 - name: silver
   chart_id: 1470
-  conversion: 28.3495
+  multiply_by: 0.035274 # ounce to g
 - name: platinum
   chart_id: 2540
-  conversion: 28.3495
+  multiply_by: 0.035274 # ounce to g
 - name: palladium
   chart_id: 2542
-  conversion: 28.3495
+  multiply_by: 0.035274 # ounce to g

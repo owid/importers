@@ -26,10 +26,10 @@ def get_original_data(chart_id: int) -> pd.DataFrame:
     return pd.DataFrame.from_records(json.loads(data))
 
 
-def clean_data(df: pd.DataFrame, name: str, conversion: float) -> pd.DataFrame:
+def clean_data(df: pd.DataFrame, name: str, multiply_by: float) -> pd.DataFrame:
     if "close1" in df.columns:
         df = df.drop(columns="close").rename(columns={"close1": "close"})
-    df["close"] = df.close.astype(float).mul(conversion).round(2)
+    df["close"] = df.close.astype(float).mul(multiply_by).round(2)
     return df.dropna(subset="close").drop(columns="id").rename(columns={"close": name})
 
 
@@ -39,7 +39,7 @@ def main():
     dataframes = []
     for com in tqdm(commodities):
         df = get_original_data(com["chart_id"]).pipe(
-            clean_data, com["name"], com["conversion"]
+            clean_data, com["name"], com["multiply_by"]
         )
         dataframes.append(df)
 
