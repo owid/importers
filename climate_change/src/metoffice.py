@@ -1,8 +1,11 @@
 import datetime
 import io
-import requests
+import os
 
 import pandas as pd
+import requests
+
+from climate_change.src import READY_DIR
 
 
 def process_file(loc: str, source_url: str, period: str) -> pd.DataFrame:
@@ -34,7 +37,8 @@ def process_file(loc: str, source_url: str, period: str) -> pd.DataFrame:
     )
 
 
-def annual_sea_surface_temperature() -> pd.DataFrame:
+def annual_sea_surface_temperature():
+    output_file = os.path.join(READY_DIR, "metoffice_annual-sea-surface-temperature.csv")
     files = {
         "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_GLOBE.csv",
         "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_NHEM.csv",
@@ -43,10 +47,11 @@ def annual_sea_surface_temperature() -> pd.DataFrame:
     }
     df = pd.concat([process_file(k, v, period="annual") for k, v in files.items()])
     df = df[df.year < datetime.date.today().year]
-    df.to_csv("ready/metoffice_annual-sea-surface-temperature.csv", index=False)
+    df.to_csv(output_file, index=False)
 
 
-def monthly_sea_surface_temperature() -> pd.DataFrame:
+def monthly_sea_surface_temperature():
+    output_file = os.path.join(READY_DIR, "metoffice_monthly-sea-surface-temperature.csv")
     files = {
         "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_GLOBE.csv",
         "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_NHEM.csv",
@@ -54,7 +59,7 @@ def monthly_sea_surface_temperature() -> pd.DataFrame:
         "Tropics": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_TROP.csv",
     }
     df = pd.concat([process_file(k, v, period="monthly") for k, v in files.items()])
-    df.to_csv("ready/metoffice_monthly-sea-surface-temperature.csv", index=False)
+    df.to_csv(output_file, index=False)
 
 
 def main():
