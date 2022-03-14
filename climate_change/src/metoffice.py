@@ -38,7 +38,9 @@ def process_file(loc: str, source_url: str, period: str) -> pd.DataFrame:
 
 
 def annual_sea_surface_temperature():
-    output_file = os.path.join(READY_DIR, "metoffice_annual-sea-surface-temperature.csv")
+    output_file = os.path.join(
+        READY_DIR, "metoffice_annual-sea-surface-temperature.csv"
+    )
     files = {
         "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_GLOBE.csv",
         "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_NHEM.csv",
@@ -51,7 +53,9 @@ def annual_sea_surface_temperature():
 
 
 def monthly_sea_surface_temperature():
-    output_file = os.path.join(READY_DIR, "metoffice_monthly-sea-surface-temperature.csv")
+    output_file = os.path.join(
+        READY_DIR, "metoffice_monthly-sea-surface-temperature.csv"
+    )
     files = {
         "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_GLOBE.csv",
         "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_NHEM.csv",

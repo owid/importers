@@ -32,30 +32,40 @@ from climate_change.src import READY_DIR
 
 def co2_concentrations():
     # Define input and output files.
-    scripps_data_file = "https://scrippsco2.ucsd.edu/assets/data/atmospheric/stations/in_situ_co2/monthly/" \
-                        "monthly_in_situ_co2_mlo.csv"
+    scripps_data_file = (
+        "https://scrippsco2.ucsd.edu/assets/data/atmospheric/stations/in_situ_co2/monthly/"
+        "monthly_in_situ_co2_mlo.csv"
+    )
     output_file = os.path.join(READY_DIR, "scripps_monthly-co2-concentrations.csv")
     # Name for output column of CO2 concentrations.
     co2_column = "monthly_co2_concentrations"
 
     # Load data and give it a convenient format.
     scripps_data = pd.read_csv(scripps_data_file, skiprows=54)
-    scripps_data = scripps_data.rename(columns={
-        scripps_data.columns[0]: 'year',
-        scripps_data.columns[1]: 'month',
-        scripps_data.columns[-1]: co2_column,
-    })[['year', 'month', co2_column]].dropna(how='all')
+    scripps_data = scripps_data.rename(
+        columns={
+            scripps_data.columns[0]: "year",
+            scripps_data.columns[1]: "month",
+            scripps_data.columns[-1]: co2_column,
+        }
+    )[["year", "month", co2_column]].dropna(how="all")
     for column in scripps_data.columns:
-        scripps_data[column] = pd.to_numeric(scripps_data[column], errors='coerce')
+        scripps_data[column] = pd.to_numeric(scripps_data[column], errors="coerce")
 
     # Missing data is denoted with an arbitrary -99.99. Ignore those rows.
     scripps_data = scripps_data[scripps_data[co2_column] > 0].reset_index(drop=True)
 
     # Assume that each month corresponds to the 15th of each month (as explained above).
-    scripps_data['date'] = scripps_data['year'].astype(int).astype(str) + \
-        '-' + scripps_data['month'].astype(int).astype(str).str.zfill(2) + \
-        '-' + '15'
-    scripps_data = scripps_data.assign(location="World")[['location', 'date', co2_column]]
+    scripps_data["date"] = (
+        scripps_data["year"].astype(int).astype(str)
+        + "-"
+        + scripps_data["month"].astype(int).astype(str).str.zfill(2)
+        + "-"
+        + "15"
+    )
+    scripps_data = scripps_data.assign(location="World")[
+        ["location", "date", co2_column]
+    ]
 
     # Save data to file.
     scripps_data.to_csv(output_file, index=False)

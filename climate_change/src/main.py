@@ -24,9 +24,7 @@ OUTPUT_MONTHLY_FILE = os.path.join(OUTPUT_DIR, "climate_change_impacts_monthly.c
 
 
 def generate_individual_datasets():
-    """Generate individual datasets for all institutions as csv files.
-
-    """
+    """Generate individual datasets for all institutions as csv files."""
     eea.ghg_concentrations()
     epa.ocean_heat_content()
     epa.antarctic_sea_ice()
@@ -45,7 +43,9 @@ def generate_individual_datasets():
     scripps.co2_concentrations()
 
 
-def resample_monthly_to_yearly_data(df, aggregations=None, date_column='date', year_column='year'):
+def resample_monthly_to_yearly_data(
+    df, aggregations=None, date_column="date", year_column="year"
+):
     """Resample a dataframe of monthly data (with a column of dates) into another of yearly data.
 
     Parameters
@@ -69,17 +69,25 @@ def resample_monthly_to_yearly_data(df, aggregations=None, date_column='date', y
     # Define dictionary of aggregations.
     if aggregations is None:
         # By default, if nothing specified, assume that all columns should be averaged.
-        resampling = {col: 'mean' for col in df_resampled.columns if col not in [date_column]}
+        resampling = {
+            col: "mean" for col in df_resampled.columns if col not in [date_column]
+        }
     else:
         # Ensure columns in aggregations dictionary exist in dataset.
-        resampling = {col: aggregations[col] for col in aggregations
-                      if col in df_resampled.columns if col != date_column}
+        resampling = {
+            col: aggregations[col]
+            for col in aggregations
+            if col in df_resampled.columns
+            if col != date_column
+        }
     # Convert date column into a datetime column, and resample.
     df_resampled[date_column] = pd.to_datetime(df_resampled[date_column])
-    df_resampled = df_resampled.resample('Y', on=date_column).agg(resampling).reset_index()
+    df_resampled = (
+        df_resampled.resample("Y", on=date_column).agg(resampling).reset_index()
+    )
     # Create year column and delete original date column.
     df_resampled[year_column] = df_resampled[date_column].dt.year
-    df_resampled = df_resampled.drop(columns='date').reset_index(drop=True)
+    df_resampled = df_resampled.drop(columns="date").reset_index(drop=True)
 
     return df_resampled
 
@@ -105,14 +113,21 @@ def generate_long_run_ghg_concentrations_data(yearly_file, monthly_file, gas):
     monthly = pd.read_csv(monthly_file)
 
     aggregations = {
-        'location': 'first',
-        f'monthly_{gas}_concentrations': "mean",
+        "location": "first",
+        f"monthly_{gas}_concentrations": "mean",
     }
-    monthly_resampled = resample_monthly_to_yearly_data(df=monthly, aggregations=aggregations).\
-        rename(columns={f'monthly_{gas}_concentrations': f'yearly_{gas}_concentrations'})
-    monthly_first_year = monthly_resampled['year'].min()
-    combined = pd.concat([yearly[yearly['year'] < monthly_first_year], monthly_resampled], ignore_index=True).\
-        sort_values(['location', 'year']).reset_index(drop=True)
+    monthly_resampled = resample_monthly_to_yearly_data(
+        df=monthly, aggregations=aggregations
+    ).rename(columns={f"monthly_{gas}_concentrations": f"yearly_{gas}_concentrations"})
+    monthly_first_year = monthly_resampled["year"].min()
+    combined = (
+        pd.concat(
+            [yearly[yearly["year"] < monthly_first_year], monthly_resampled],
+            ignore_index=True,
+        )
+        .sort_values(["location", "year"])
+        .reset_index(drop=True)
+    )
 
     return combined
 
@@ -138,14 +153,18 @@ def generate_monthly_dataset():
         # os.path.join(READY_DIR, "scripps_monthly-co2-concentrations.csv"),
         os.path.join(READY_DIR, "noaa_monthly-co2-concentrations.csv"),
     ]
-    monthly_data = pd.DataFrame({'entity': [], 'date': []})
+    monthly_data = pd.DataFrame({"entity": [], "date": []})
     for dataset_file in monthly_dataset_files:
-        dataset = pd.read_csv(dataset_file).rename(columns={'location': 'entity'})
-        monthly_data = pd.merge(monthly_data, dataset, on=['entity', 'date'], how='outer')
+        dataset = pd.read_csv(dataset_file).rename(columns={"location": "entity"})
+        monthly_data = pd.merge(
+            monthly_data, dataset, on=["entity", "date"], how="outer"
+        )
 
     # Sort values and columns conveniently.
-    monthly_data = monthly_data.sort_values(['entity', 'date']).reset_index(drop=True)
-    monthly_columns = ['entity', 'date'] + [col for col in monthly_data.columns if col not in ['entity', 'date']]
+    monthly_data = monthly_data.sort_values(["entity", "date"]).reset_index(drop=True)
+    monthly_columns = ["entity", "date"] + [
+        col for col in monthly_data.columns if col not in ["entity", "date"]
+    ]
     monthly_data = monthly_data[monthly_columns]
 
     return monthly_data
@@ -162,27 +181,31 @@ def generate_yearly_dataset():
     """
     # Gather gas yearly concentration files.
     gas_concentration_files = {
-        'co2': {
-            'yearly': os.path.join(READY_DIR, "noaa_yearly-long-run-co2-concentrations.csv"),
-            'monthly': os.path.join(READY_DIR, "scripps_monthly-co2-concentrations.csv"),
+        "co2": {
+            "yearly": os.path.join(
+                READY_DIR, "noaa_yearly-long-run-co2-concentrations.csv"
+            ),
+            "monthly": os.path.join(
+                READY_DIR, "scripps_monthly-co2-concentrations.csv"
+            ),
         },
-        'ch4': {
-            'yearly': os.path.join(READY_DIR, "eea_yearly-ch4-concentrations.csv"),
-            'monthly': os.path.join(READY_DIR, "noaa_monthly-ch4-concentrations.csv"),
+        "ch4": {
+            "yearly": os.path.join(READY_DIR, "eea_yearly-ch4-concentrations.csv"),
+            "monthly": os.path.join(READY_DIR, "noaa_monthly-ch4-concentrations.csv"),
         },
-        'n2o': {
-            'yearly': os.path.join(READY_DIR, "eea_yearly-n2o-concentrations.csv"),
-            'monthly': os.path.join(READY_DIR, "noaa_monthly-n2o-concentrations.csv"),
+        "n2o": {
+            "yearly": os.path.join(READY_DIR, "eea_yearly-n2o-concentrations.csv"),
+            "monthly": os.path.join(READY_DIR, "noaa_monthly-n2o-concentrations.csv"),
         },
     }
-    yearly_data = pd.DataFrame({'entity': [], 'year': []})
+    yearly_data = pd.DataFrame({"entity": [], "year": []})
     for gas in gas_concentration_files:
         dataset = generate_long_run_ghg_concentrations_data(
-            yearly_file=gas_concentration_files[gas]['yearly'],
-            monthly_file=gas_concentration_files[gas]['monthly'],
-            gas=gas
-        ).rename(columns={'location': 'entity'})
-        yearly_data = pd.merge(yearly_data, dataset, on=['entity', 'year'], how='outer')
+            yearly_file=gas_concentration_files[gas]["yearly"],
+            monthly_file=gas_concentration_files[gas]["monthly"],
+            gas=gas,
+        ).rename(columns={"location": "entity"})
+        yearly_data = pd.merge(yearly_data, dataset, on=["entity", "year"], how="outer")
 
     # Include all other yearly data (not related to concentrations).
     yearly_dataset_files = [
@@ -199,12 +222,14 @@ def generate_yearly_dataset():
         os.path.join(READY_DIR, "nasa_arctic-sea-ice.csv"),
     ]
     for dataset_file in yearly_dataset_files:
-        dataset = pd.read_csv(dataset_file).rename(columns={'location': 'entity'})
-        yearly_data = pd.merge(yearly_data, dataset, on=['entity', 'year'], how='outer')
+        dataset = pd.read_csv(dataset_file).rename(columns={"location": "entity"})
+        yearly_data = pd.merge(yearly_data, dataset, on=["entity", "year"], how="outer")
 
     # Sort values and columns conveniently.
-    yearly_data = yearly_data.sort_values(['entity', 'year']).reset_index(drop=True)
-    yearly_columns = ['entity', 'year'] + [col for col in yearly_data.columns if col not in ['entity', 'year']]
+    yearly_data = yearly_data.sort_values(["entity", "year"]).reset_index(drop=True)
+    yearly_columns = ["entity", "year"] + [
+        col for col in yearly_data.columns if col not in ["entity", "year"]
+    ]
     yearly_data = yearly_data[yearly_columns]
 
     return yearly_data
@@ -220,7 +245,9 @@ def main():
     print("Generate output yearly dataset.")
     yearly_data = generate_yearly_dataset()
 
-    print(f"Save data into two output files:\n* {OUTPUT_YEARLY_FILE}\n* {OUTPUT_MONTHLY_FILE}")
+    print(
+        f"Save data into two output files:\n* {OUTPUT_YEARLY_FILE}\n* {OUTPUT_MONTHLY_FILE}"
+    )
     yearly_data.to_csv(OUTPUT_YEARLY_FILE, index=False)
     monthly_data.to_csv(OUTPUT_MONTHLY_FILE, index=False)
 

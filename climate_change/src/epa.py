@@ -141,7 +141,9 @@ def antarctica_greenland_ice_sheet_loss():
 
     df = pd.merge(ice_mass, change, on=["Year", "location"], how="outer")
     df["date"] = df.Year.apply(decimal_date_to_date)
-    df.drop(columns="Year").sort_values(["date", "location"]).to_csv(output_file, index=False)
+    df.drop(columns="Year").sort_values(["date", "location"]).to_csv(
+        output_file, index=False
+    )
 
 
 def main():
