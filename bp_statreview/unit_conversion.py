@@ -51,30 +51,30 @@ class UnitConverter:
 
 
 def ej2twh(x: float) -> float:
-    """Exajoules -> Terrawatt-hours."""
+    """Exajoules -> Terawatt-hours."""
     return x * (1 / 0.0036)
 
 
 def twh2ej(x: float) -> float:
-    """Terrawatt-hours -> Exajoules."""
+    """Terawatt-hours -> Exajoules."""
     return x * 0.0036
 
 
 def pj2twh(x: float) -> float:
-    """Petajoules -> Terrawatt-hours."""
+    """Petajoules -> Terawatt-hours."""
     return x * (1 / 3.6)
 
 
 def twh2pj(x: float) -> float:
-    """Terrawatt-hours -> Petajoules."""
+    """Terawatt-hours -> Petajoules."""
     return x * 3.6
 
 
 def mtoe2twh(x: float) -> float:
-    """Million tonnes of oil equivalent -> Terrawatt-hours."""
+    """Million tonnes of oil equivalent -> Terawatt-hours."""
     return x * 11.63
 
 
 def twh2mtoe(x: float) -> float:
-    """Terrawatt-hours -> Million tonnes of oil equivalent."""
+    """Terawatt-hours -> Million tonnes of oil equivalent."""
     return x * (1 / 11.63)
