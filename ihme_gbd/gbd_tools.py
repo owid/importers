@@ -276,6 +276,22 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
+    regions_to_remove = [
+        "Four World Regions",
+        "World Bank Income Levels",
+        "World Bank Regions",
+        "WHO region",
+        "Latin America and Caribbean",
+        "South Asia",
+        "Sub-Saharan Africa",
+    ]
+
+    df = df[~df["country"].isin(regions_to_remove)]
+
+    return df
+
+
 def create_datapoints(
     vars: pd.DataFrame,
     inpath: str,
@@ -303,6 +319,7 @@ def create_datapoints(
         df_m = df_m[["location", "year", "val", "id"]].rename(
             columns={"location": "country", "val": "value"}
         )
+        df_m = remove_regions(df=df_m)
         df_m["country"] = df_m["country"].map(entity2owid_name)
 
         df_g = df_m.groupby("id")

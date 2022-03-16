@@ -39,7 +39,7 @@ def download_data() -> None:
         os.makedirs(INPATH)
     _download_data_csv()
     _download_data_excel()
-    logger.info(f"Data succcessfully downloaded to {INPATH}")
+    logger.info(f"Data successfully downloaded to {INPATH}")
 
 
 def _download_data_csv(wide: bool = False) -> None:
