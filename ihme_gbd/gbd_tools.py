@@ -282,9 +282,6 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
         "World Bank Income Levels",
         "World Bank Regions",
         "WHO region",
-        "Latin America and Caribbean",
-        "South Asia",
-        "Sub-Saharan Africa",
     ]
 
     df = df[~df["country"].isin(regions_to_remove)]
