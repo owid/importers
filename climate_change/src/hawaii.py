@@ -1,7 +1,12 @@
+import os
+
 import pandas as pd
+
+from climate_change.src import READY_DIR
 
 
 def ocean_ph():
+    output_file = os.path.join(READY_DIR, "hawaii_ocean-ph.csv")
     source_url = "https://hahana.soest.hawaii.edu/hot/products/HOT_surface_CO2.txt"
     df = (
         pd.read_csv(
@@ -24,7 +29,7 @@ def ocean_ph():
     )
 
     df = df.dropna(subset=["ocean_ph"]).reset_index().rename(columns={"index": "date"})
-    df.to_csv("ready/hawaii_ocean-ph.csv", index=False)
+    df.to_csv(output_file, index=False)
 
 
 def main():

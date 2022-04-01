@@ -1,8 +1,11 @@
 import datetime
+import os
 import requests
 
 from bs4 import BeautifulSoup
 import pandas as pd
+
+from climate_change.src import READY_DIR
 
 
 def process_file(loc: str, source_url: str) -> pd.DataFrame:
@@ -41,7 +44,8 @@ def process_file(loc: str, source_url: str) -> pd.DataFrame:
     )
 
 
-def global_temperature_anomaly() -> pd.DataFrame:
+def global_temperature_anomaly():
+    output_file = os.path.join(READY_DIR, "nasa_global-temperature-anomaly.csv")
     df = pd.concat(
         [
             process_file(
@@ -59,10 +63,11 @@ def global_temperature_anomaly() -> pd.DataFrame:
         ]
     )
     df = df[df.date < datetime.datetime.now()]
-    df.to_csv("ready/nasa_global-temperature-anomaly.csv", index=False)
+    df.to_csv(output_file, index=False)
 
 
 def arctic_sea_ice_extent():
+    output_file = os.path.join(READY_DIR, "nasa_arctic-sea-ice.csv")
     source_url = "https://climate.nasa.gov/vital-signs/arctic-sea-ice/"
     soup = BeautifulSoup(requests.get(source_url).content, "html.parser")
     file_url = soup.find(class_="download_links").find("a").get("href")
@@ -71,7 +76,7 @@ def arctic_sea_ice_extent():
         df[["year", "extent"]]
         .rename(columns={"extent": "arctic_sea_ice_nasa"})
         .assign(location="World")
-        .to_csv("ready/nasa_arctic-sea-ice.csv", index=False)
+        .to_csv(output_file, index=False)
     )
 
 
