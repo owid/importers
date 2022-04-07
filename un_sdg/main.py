@@ -17,7 +17,7 @@ import click
 
 from un_sdg import CONFIGPATH, DATASET_DIR, DATASET_NAMESPACE
 
-from un_sdg import download, clean, match_variables
+from un_sdg import download, clean
 
 from standard_importer import import_dataset
 from standard_revisions import match_variables_from_two_versions_of_a_dataset
@@ -58,7 +58,6 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
-        # match_variables.main()
         match_variables_from_two_versions_of_a_dataset.main(
             old_dataset_name="United Nations Sustainable Development Goals - United Nations (2021-10)",
             new_dataset_name="United Nations Sustainable Development Goals - United Nations (2022-02)",

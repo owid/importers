@@ -212,20 +212,32 @@ def create_sources(original_df: pd.DataFrame, df_datasets: pd.DataFrame) -> None
             )
         except:
             pass
-        df_sources = df_sources.append(
-            {
-                "id": i,
-                "name": source_description["dataPublisherSource"],
-                "description": json.dumps(source_description),
-                "dataset_id": df_datasets.iloc[0]["id"],
-                "series_code": row["SeriesCode"],
-            },
+
+        df_sources = pd.concat(
+            [
+                df_sources,
+                pd.DataFrame(
+                    data={
+                        "id": [i],
+                        "name": [source_description["dataPublisherSource"]],
+                        "description": [json.dumps(source_description)],
+                        "dataset_id": [0],
+                        "series_code": [row["SeriesCode"]],
+                    }
+                ),
+            ],
             ignore_index=True,
         )
         assert (
-            df_sources.duplicated(subset=["name", "dataset_id", "description"]).sum()
+            df_sources.duplicated(
+                subset=["name", "dataset_id", "description", "series_code"]
+            ).sum()
             == 0
-        ), (print(i + source_description["dataPublisherSource"]) + "is duplicated!")
+        ), df_sources[
+            df_sources.duplicated(
+                subset=["name", "dataset_id", "description", "series_code"], keep=False
+            )
+        ]
     print("Saving sources csv...")
     df_sources.to_csv(os.path.join(OUTPATH, "sources.csv"), index=False)
 
@@ -284,6 +296,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
     )
     all_series["short_unit"] = create_short_unit(all_series.Units_long)
     print("Extracting variables from original data...")
+
     for i, row in tqdm(all_series.iterrows(), total=len(all_series)):
         data_filtered = pd.DataFrame(
             original_df[
@@ -300,47 +313,13 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
             table = generate_tables_for_indicator_and_series(
                 data_filtered, init_dimensions, init_non_dimensions, dim_description
             )
-            variable = {
-                "dataset_id": 0,
-                "source_id": series2source_id[row["SeriesCode"]],
-                "id": variable_idx,
-                "name": "%s - %s - %s"
-                % (row["Indicator"], row["SeriesDescription"], row["SeriesCode"]),
-                "description": None,
-                "code": None,
-                "unit": row["Units_long"],
-                "short_unit": row["short_unit"],
-                "timespan": "%s - %s"
-                % (
-                    int(np.min(data_filtered["TimePeriod"])),
-                    int(np.max(data_filtered["TimePeriod"])),
-                ),
-                "coverage": None,
-                "display": None,
-                "original_metadata": None,
-            }
-            variables = variables.append(variable, ignore_index=True)
-            extract_datapoints(table).to_csv(
-                os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
-                index=False,
-            )
-            variable_idx += 1
-        else:
-            # has additional dimensions
-            for member_combination, table in generate_tables_for_indicator_and_series(
-                data_filtered, init_dimensions, init_non_dimensions, dim_description
-            ).items():
-                variable = {
-                    "dataset_id": 0,
+            variable = pd.DataFrame(
+                data={
+                    "dataset_id": [0],
                     "source_id": series2source_id[row["SeriesCode"]],
                     "id": variable_idx,
-                    "name": "%s - %s - %s - %s"
-                    % (
-                        row["Indicator"],
-                        row["SeriesDescription"],
-                        row["SeriesCode"],
-                        " - ".join(map(str, member_combination)),
-                    ),
+                    "name": "%s - %s - %s"
+                    % (row["Indicator"], row["SeriesDescription"], row["SeriesCode"]),
                     "description": None,
                     "code": None,
                     "unit": row["Units_long"],
@@ -351,10 +330,51 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                         int(np.max(data_filtered["TimePeriod"])),
                     ),
                     "coverage": None,
-                    # "display": None,
+                    "display": None,
                     "original_metadata": None,
                 }
-                variables = variables.append(variable, ignore_index=True)
+            )
+            variables = pd.concat([variables, variable], ignore_index=True)
+            extract_datapoints(table).to_csv(
+                os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
+                index=False,
+            )
+            variable_idx += 1
+        else:
+            # has additional dimensions
+            for member_combination, table in generate_tables_for_indicator_and_series(
+                data_series=data_filtered,
+                init_dimensions=init_dimensions,
+                init_non_dimensions=init_non_dimensions,
+                dim_dict=dim_description,
+            ).items():
+                variable = pd.DataFrame(
+                    data={
+                        "dataset_id": [0],
+                        "source_id": series2source_id[row["SeriesCode"]],
+                        "id": variable_idx,
+                        "name": "%s - %s - %s - %s"
+                        % (
+                            row["Indicator"],
+                            row["SeriesDescription"],
+                            row["SeriesCode"],
+                            " - ".join(map(str, member_combination)),
+                        ),
+                        "description": None,
+                        "code": None,
+                        "unit": row["Units_long"],
+                        "short_unit": row["short_unit"],
+                        "timespan": "%s - %s"
+                        % (
+                            int(np.min(data_filtered["TimePeriod"])),
+                            int(np.max(data_filtered["TimePeriod"])),
+                        ),
+                        "coverage": None,
+                        # "display": None,
+                        "original_metadata": None,
+                    }
+                )
+                variables = pd.concat([variables, variable], ignore_index=True)
                 extract_datapoints(table).to_csv(
                     os.path.join(
                         OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx
@@ -367,8 +387,6 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
 
 
 def create_distinct_entities() -> None:
-    # df_distinct_entities = pd.DataFrame(
-    #    get_distinct_entities(), columns=["name"]
     # )  # Goes through each datapoints to get the distinct entities
     df_distinct_entities = pd.read_csv(
         os.path.join(CONFIGPATH, "standardized_entity_names.csv")

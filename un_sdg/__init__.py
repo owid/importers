@@ -3,7 +3,7 @@ from datetime import date
 
 DATASET_NAME = "United Nations Sustainable Development Goals"
 DATASET_AUTHORS = "United Nations"
-DATASET_VERSION = "2022-02"
+DATASET_VERSION = "2022-04"
 DATASET_LINK = "https://unstats.un.org/sdgs/indicators/database/"
 DATASET_DIR = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"

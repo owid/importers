@@ -164,14 +164,17 @@ def generate_tables_for_indicator_and_series(
             .squeeze()
             .to_dict()
         )
+        dim_desc["nan"] = ""
         i = 0
         # Mapping the dimension value codes to more meaningful descriptions
         for i in range(len(dimension_values)):
             df = pd.DataFrame({"value": dimension_values[i]})
-            dimension_values[i] = df["value"].map(dim_desc)
+            df["value"] = df["value"].astype(str)
+            dimension_values[i] = [dim_desc[k] for k in df["value"].to_list()]
         # Mapping the descriptions into the dataframe
         for dim in dimensions:
-            data_dimensions[dim] = data_dimensions[dim].map(dim_desc)
+            data_dimensions[dim] = data_dimensions[dim].astype(str)
+            data_dimensions[dim] = [dim_desc[k] for k in data_dimensions[dim]]
         # Create each combination of dimension values, e.g. each age group & sex combination. Not all combinations will have associated data.
         for dimension_value_combination in itertools.product(*dimension_values):
             # build filter by reducing, start with a constant True boolean array
