@@ -434,7 +434,7 @@ if __name__ == "__main__":
         "-s",
         "--similarity_name",
         help=f"Name of similarity function to use when fuzzy matching variables. Default: {SIMILARITY_NAME}. "
-        f"Available methods: {', '.join(list(SIMILARITY_NAMES))}.",
+        f"Available methods: {', '.join(list(SIMILARITY_NAMES))}.", default=SIMILARITY_NAME,
     )
     parser.add_argument(
         "-a",
