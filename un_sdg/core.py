@@ -1,4 +1,5 @@
 import os
+from xxlimited import new
 import pandas as pd
 import json
 import itertools
@@ -307,3 +308,50 @@ def get_metadata_link(indicator: str) -> None:
         ctype_a = url_check.headers["Content-Type"]
         assert ctype_a == "application/pdf", url_a + "does not link to a pdf"
     return url_out
+
+
+def create_comb_omm(
+    variables: pd.DataFrame, var_stub: str, new_var_name: str
+) -> pd.DataFrame:
+    variable_str = var_stub
+    vars = variables[variables["name"].str.startswith(variable_str)]
+    vars = vars[
+        vars["name"]
+        != "15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - No breakdown"
+    ]
+    vars_to_comb_id = vars["id"].to_list()
+    vars_to_comb_name = (
+        vars["name"].str.replace(variable_str, "", regex=False).to_list()
+    )
+    new_var_df = []
+    new_var_id = variables["id"].max() + 1
+    for var_id in vars_to_comb_id:
+        df_var_id = pd.read_csv(
+            os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % var_id)
+        )
+        df_var_id["value"] = vars_to_comb_name[vars_to_comb_id.index(var_id)]
+        new_var_df.append(df_var_id)
+    pd.concat(new_var_df, ignore_index=True).to_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % new_var_id),
+        index=False,
+    )
+    new_var = vars.head(1)
+    new_var["id"] = new_var_id
+    new_var["name"] = new_var_name
+    variables = pd.concat([variables, new_var], ignore_index=True)
+    return variables
+
+
+def create_omms(variables: pd.DataFrame) -> pd.DataFrame:
+    variables = create_comb_omm(
+        variables,
+        var_stub="12.7.1 - Number of countries implementing sustainable public procurement policies and action plans - SG_SCP_PROCN - ",
+        new_var_name="12.7.1 - Number of countries implementing sustainable public procurement policies and action plans - SG_SCP_PROCN - OMM",
+    )
+
+    variables = create_comb_omm(
+        variables,
+        var_stub="15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - ",
+        new_var_name="15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - OMM",
+    )
+    return variables

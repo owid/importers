@@ -46,6 +46,7 @@ from un_sdg.core import (
     create_short_unit,
     get_series_with_relevant_dimensions,
     generate_tables_for_indicator_and_series,
+    create_omms,
 )
 
 """
@@ -375,6 +376,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                     }
                 )
                 variables = pd.concat([variables, variable], ignore_index=True)
+
                 extract_datapoints(table).to_csv(
                     os.path.join(
                         OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx
@@ -382,6 +384,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
                     index=False,
                 )
                 variable_idx += 1
+    variables = create_omms(variables)
     print("Saving variables csv...")
     variables.to_csv(os.path.join(OUTPATH, "variables.csv"), index=False)
 

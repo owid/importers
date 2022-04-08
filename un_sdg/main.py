@@ -59,8 +59,8 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
         match_variables_from_two_versions_of_a_dataset.main(
-            old_dataset_name="United Nations Sustainable Development Goals - United Nations (2021-10)",
-            new_dataset_name="United Nations Sustainable Development Goals - United Nations (2022-02)",
+            old_dataset_name="United Nations Sustainable Development Goals - United Nations (2022-02)",
+            new_dataset_name="United Nations Sustainable Development Goals - United Nations (2022-04)",
             output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
         )
     if suggest_charts:
