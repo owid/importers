@@ -305,9 +305,9 @@ class Cleaner:
                 ),
             ),
             "derived_gdp": _construct_source(
-                name=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['s_name']}",
-                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['s_name']}",
-                dataPublisherSource=f"{default_data_publisher_source} and {gdp_source['s_name']}",
+                name=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['source']['name']}",
+                dataPublishedBy=f"Our World in Data based on the {DATASET_AUTHORS} and {gdp_source['source']['name']}",
+                dataPublisherSource=f"{default_data_publisher_source} and {gdp_source['source']['name']}",
                 appendAdditionalInfo=(
                     f"\n\nGDP figures are sourced from "
                     f"{gdp_source['source']['dataPublishedBy']} "
@@ -530,12 +530,12 @@ class DataValuesCleaner:
     @property
     def gdp_id(self) -> int:
         """OWID variable ID for the latest Maddison GDP series"""
-        return 146201
+        return 417484
 
     @property
     def primary_energy_id(self) -> int:
         """OWID variable ID for the latest primary energy consumption series"""
-        return 143360
+        return 413912
 
     @property
     def variables_to_drop(self) -> List[str]:
