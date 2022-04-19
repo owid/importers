@@ -23,6 +23,7 @@ Documentation extracted from the header of the data file:
 
 """
 
+import argparse
 import os
 
 import pandas as pd
@@ -76,4 +77,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

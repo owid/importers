@@ -1,3 +1,8 @@
+"""Functions to fetch data from the National Aeronautics and Space Administration (NASA).
+
+"""
+
+import argparse
 import datetime
 import os
 import requests
@@ -86,4 +91,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()
