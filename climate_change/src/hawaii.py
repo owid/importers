@@ -1,3 +1,8 @@
+"""Functions to fetch data from the University of Hawaii at Manoa.
+
+"""
+
+import argparse
 import os
 
 import pandas as pd
@@ -7,7 +12,7 @@ from climate_change.src import READY_DIR
 
 def ocean_ph():
     output_file = os.path.join(READY_DIR, "hawaii_ocean-ph.csv")
-    source_url = "https://hahana.soest.hawaii.edu/hot/products/HOT_surface_CO2.txt"
+    source_url = "https://hahana.soest.hawaii.edu/hot/hotco2/HOT_surface_CO2.txt"
     df = (
         pd.read_csv(
             source_url,
@@ -37,4 +42,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

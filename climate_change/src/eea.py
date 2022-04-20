@@ -11,6 +11,7 @@ This data contains CO2, CH4 and N2O concentrations from 1750 to 2017/2018.
 
 """
 
+import argparse
 import os
 
 import pandas as pd
@@ -84,4 +85,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

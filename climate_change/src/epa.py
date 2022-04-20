@@ -1,3 +1,8 @@
+"""Functions to fetch data from the United States Environmental Protection Agency (EPA) and create various datasets.
+
+"""
+
+import argparse
 import os
 
 import pandas as pd
@@ -155,4 +160,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()
