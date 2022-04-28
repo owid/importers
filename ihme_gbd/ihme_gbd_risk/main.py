@@ -8,7 +8,7 @@ Usage:
 """
 
 import click
-import re
+import os
 from ihme_gbd.ihme_gbd_risk import DATASET_DIR, DATASET_NAMESPACE, NAMESPACE, OUTPATH
 
 from ihme_gbd.ihme_gbd_risk import (
@@ -27,6 +27,7 @@ from ihme_gbd.ihme_gbd_risk import download, clean
 from ihme_gbd import match_variables, init_variables_to_clean
 
 from standard_importer import import_dataset
+from standard_revisions import match_variables_from_two_versions_of_a_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
@@ -46,7 +47,12 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to import the data",
 )
-def main(download_data, clean_data, import_data):
+@click.option(
+    "--match_data/--skip_match",
+    default=True,
+    help="Whether or not to match variables",
+)
+def main(download_data, clean_data, import_data, match_data):
     if download_data:
         download.main()
     if not CLEAN_ALL_VARIABLES:
@@ -64,7 +70,12 @@ def main(download_data, clean_data, import_data):
         import_dataset.main(
             dataset_dir=DATASET_DIR, dataset_namespace=DATASET_NAMESPACE
         )
-    match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
+    if match_data:
+        match_variables_from_two_versions_of_a_dataset.main(
+            old_dataset_name="IHME - Global Burden of Disease - Risk Factors - Institute for Health Metrics and Evaluation  (2022-01)",
+            new_dataset_name="IHME - Global Burden of Disease - Risk Factors - Institute for Health Metrics and Evaluation  (2022-04)",
+            output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
+        )
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
 
