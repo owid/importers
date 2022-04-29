@@ -4,7 +4,7 @@ The download step is fairly manual and needs some setting up before running. Mor
 
 
 Usage:
-    python -m ihme_gbd.ihme_gbd_risk.main --skip_download  --skip_clean --skip_import
+    python -m ihme_gbd.ihme_gbd_risk.main --skip_download --skip_clean --skip_import
 """
 
 import click
