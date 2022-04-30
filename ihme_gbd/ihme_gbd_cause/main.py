@@ -69,7 +69,7 @@ def main(download_data, clean_data, import_data, match_vars):
     if match_vars:
         match_variables_from_two_versions_of_a_dataset.main(
             old_dataset_name="IHME - Global Burden of Disease - Deaths and DALYs - Institute for Health Metrics and Evaluation  (2021-09)",
-            new_dataset_name="IHME - Global Burden of Disease - Deaths and DALYs - Institute for Health Metrics and Evaluation  (2022-04))",
+            new_dataset_name="IHME - Global Burden of Disease - Deaths and DALYs - Institute for Health Metrics and Evaluation  (2022-04)",
             output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
         )
 
