@@ -4,7 +4,7 @@ import os
 
 DATASET_NAME = "IHME - Global Burden of Disease - Mental Health"
 DATASET_AUTHORS = "Institute for Health Metrics and Evaluation "
-DATASET_VERSION = "2021-09"
+DATASET_VERSION = "2022-04"
 DATASET_LINK = "http://ghdx.healthdata.org/gbd-results-tool"
 PARENT_DIR = "ihme_gbd"
 DATASET_DIR = os.path.join(PARENT_DIR, os.path.dirname(__file__).split("/")[-1])

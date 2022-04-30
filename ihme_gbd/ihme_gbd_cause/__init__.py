@@ -4,7 +4,7 @@ from ihme_gbd.ihme_gbd_risk import CALCULATE_OWID_VARS
 
 DATASET_NAME = "IHME - Global Burden of Disease - Deaths and DALYs"
 DATASET_AUTHORS = "Institute for Health Metrics and Evaluation "
-DATASET_VERSION = "2021-09"
+DATASET_VERSION = "2022-04"
 DATASET_LINK = "http://ghdx.healthdata.org/gbd-results-tool"
 PARENT_DIR = "ihme_gbd"
 DATASET_DIR = os.path.join(PARENT_DIR, os.path.dirname(__file__).split("/")[-1])
