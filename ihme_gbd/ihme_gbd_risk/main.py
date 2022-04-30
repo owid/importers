@@ -24,7 +24,7 @@ from ihme_gbd.ihme_gbd_risk import (
 )
 
 from ihme_gbd.ihme_gbd_risk import download, clean
-from ihme_gbd import match_variables, init_variables_to_clean
+from ihme_gbd import init_variables_to_clean
 
 from standard_importer import import_dataset
 from standard_revisions import match_variables_from_two_versions_of_a_dataset
