@@ -1,11 +1,14 @@
 import pandas as pd
 
-SOURCE_FILE = "WEOOct2021all.csv"
+# Go to https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases#sort=%40imfdate%20descending
+# Find the latest release of the WEO dataset (e.g. "World Economic Outlook Database, April 2022")
+# Click on "Entire Dataset" > Under "Tab Delimited Values:", copy the link to the "By Countries" file
+SOURCE_FILE = "https://www.imf.org/-/media/Files/Publications/WEO/WEO-Database/2022/WEOApr2022all.ashx"
 
 
 def read(source_url: str) -> pd.DataFrame:
     df = (
-        pd.read_csv(f"input/{source_url}", low_memory=False)
+        pd.read_csv(source_url, low_memory=False, sep="\t", encoding="utf-16-le")
         .drop(
             columns=[
                 "WEO Country Code",
