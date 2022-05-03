@@ -324,7 +324,6 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
         "Central Europe, Eastern Europe, and Central Asia",
         "High-income Asia Pacific",
         "South Asia",
-        "Middle East & North Africa",
         "Western Europe",
     ]
 
