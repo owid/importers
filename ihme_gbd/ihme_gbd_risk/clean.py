@@ -13,6 +13,7 @@ from ihme_gbd.ihme_gbd_risk import (
     CLEAN_ALL_VARIABLES,
     COUNTRY_COL,
     CALCULATE_OWID_VARS,
+    PARENT_DIR,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -49,11 +50,12 @@ def main() -> None:
     create_datapoints(
         vars,
         inpath=INPATH,
+        parent_dir=PARENT_DIR,
         configpath=CONFIGPATH,
         outpath=OUTPATH,
         calculate_owid_vars=CALCULATE_OWID_VARS,
     )
-    create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
+    create_distinct_entities(parent_dir=PARENT_DIR, outpath=OUTPATH)
 
 
 if __name__ == "__main__":

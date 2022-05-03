@@ -2,18 +2,5 @@
     "meta": {
         "notes": "This file contains an array of IHME GBD variables that have been changed since the lastupload. New variable names will have to be manually identified and saved in 'manual_variables_to_clean.json'"
     },
-    "variables": [
-        "Deaths - Ambient particulate matter pollution - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Child stunting - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Child wasting - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Discontinued breastfeeding - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - High fasting plasma glucose - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Household air pollution from solid fuels - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Low birth weight - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - No access to handwashing facility - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Non-exclusive breastfeeding - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Secondhand smoke - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Unsafe sanitation - Sex: Both - Age: Under 5 (Number)",
-        "Deaths - Unsafe water source - Sex: Both - Age: Under 5 (Number)"
-    ]
+    "variables": []
 }

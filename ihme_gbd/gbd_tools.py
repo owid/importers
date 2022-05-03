@@ -96,7 +96,7 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     We don't have any additional variable level metadata for this dataset so we just have this generic source tab."""
     source_description = {
         "dataPublishedBy": "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2021.",
-        "dataPublisherSource": "Institute for Health Metrics and Evaluation",
+        "dataPublisherSource": "Institute for Health Metrics and Evaluation, Global Burden of Disease (2019)",
         "link": "http://ghdx.healthdata.org/gbd-results-tool",
         "retrievedDate": dataset_retrieved_date,
         "additionalInfo": None,
@@ -282,6 +282,49 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
         "World Bank Income Levels",
         "World Bank Regions",
         "WHO region",
+        "Low SDI",
+        "Low-middle SDI",
+        "Middle SDI",
+        "High-middle SDI",
+        "High SDI",
+        "Central Europe, Eastern Europe and Central Asia",
+        "Nordic Region",
+        "African Union",
+        "Africa",
+        "Asia",
+        "America",
+        "Europe",
+        "Southern Latin America",
+        "Latin America and Caribbean",
+        "Caribbean",
+        "Central Latin America",
+        "Commonwealth Low Income",
+        "Commonwealth Middle Income",
+        "East Asia",
+        "Central Sub-Saharan Africa",
+        "Western Sub-Saharan Africa",
+        "Eastern Sub-Saharan Africa",
+        "Sub-Saharan Africa",
+        "Australasia",
+        "Central Asia",
+        "Eastern Europe",
+        "Southern Sub-Saharan Africa",
+        "Central Europe",
+        "High-income North America",
+        "Southeast Asia, East Asia and Oceania",
+        "Southeast Asia",
+        "Commonwealth High Income",
+        "North Africa and Middle East",
+        "Tropical Latin America",
+        "Andean Latin America",
+        "European Union",
+        "Oceania",
+        "Commonwealth",
+        "High-income",
+        "Central Europe, Eastern Europe, and Central Asia",
+        "High-income Asia Pacific",
+        "South Asia",
+        "Western Europe",
     ]
 
     df = df[~df["country"].isin(regions_to_remove)]
@@ -292,6 +335,7 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
 def create_datapoints(
     vars: pd.DataFrame,
     inpath: str,
+    parent_dir: str,
     configpath: str,
     outpath: str,
     calculate_owid_vars: str,
@@ -301,7 +345,7 @@ def create_datapoints(
     paths = list_input_files(inpath)
 
     entity2owid_name = (
-        pd.read_csv(os.path.join(configpath, "standardized_entity_names.csv"))
+        pd.read_csv(os.path.join(parent_dir, "standardized_entity_names.csv"))
         .set_index("Country")
         .squeeze()
         .to_dict()
@@ -367,10 +411,10 @@ def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> Non
         )
 
 
-def create_distinct_entities(configpath: str, outpath: str) -> None:
+def create_distinct_entities(parent_dir: str, outpath: str) -> None:
     """Creating a list of distinct entities for use in upserting to the grapher db"""
     df_distinct_entities = pd.read_csv(
-        os.path.join(configpath, "standardized_entity_names.csv")
+        os.path.join(parent_dir, "standardized_entity_names.csv")
     )
     df_distinct_entities = df_distinct_entities[["Our World In Data Name"]].rename(
         columns={"Our World In Data Name": "name"}

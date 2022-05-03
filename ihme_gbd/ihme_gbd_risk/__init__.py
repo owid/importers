@@ -2,9 +2,10 @@ import os
 
 DATASET_NAME = "IHME - Global Burden of Disease - Risk Factors"
 DATASET_AUTHORS = "Institute for Health Metrics and Evaluation "
-DATASET_VERSION = "2022-01"
+DATASET_VERSION = "2022-04"
 DATASET_LINK = "http://ghdx.healthdata.org/gbd-results-tool"
-DATASET_DIR = os.path.join("ihme_gbd", os.path.dirname(__file__).split("/")[-1])
+PARENT_DIR = "ihme_gbd"
+DATASET_DIR = os.path.join(PARENT_DIR, os.path.dirname(__file__).split("/")[-1])
 NAMESPACE = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{NAMESPACE}@{DATASET_VERSION}"
 CONFIGPATH = os.path.join(DATASET_DIR, "config")
