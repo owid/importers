@@ -326,7 +326,6 @@ def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
         "South Asia",
         "Middle East & North Africa",
         "Western Europe",
-        "North America",
     ]
 
     df = df[~df["country"].isin(regions_to_remove)]
