@@ -1,5 +1,4 @@
 import os
-from xxlimited import new
 import pandas as pd
 import json
 import itertools
@@ -22,6 +21,7 @@ def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
     if df.duplicated(subset=["country", "TimePeriod"]).sum() > 0:
         df.to_csv("un_sdg/output/duplicate_country_year.csv")
     assert df.duplicated(subset=["country", "TimePeriod"]).sum() == 0
+
     return pd.DataFrame(
         {"country": df["country"], "year": df["TimePeriod"], "value": df["Value"]}
     ).dropna()
@@ -63,6 +63,21 @@ def clean_datasets(
         {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
     ]
     df = pd.DataFrame(data)
+    return df
+
+
+def clean_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Some values for 15.2.1 is above 100% when this shouldn't be possible. This sets the max value to 100.
+    Returns:
+        pd.DataFrame with cleaned values for 15.2.1
+    """
+    df["Value"] = df["Value"].astype(float)
+    df["Value"][
+        (df["Units_long"] == "Percentage")
+        & (df["Value"] > 100)
+        & (df["Indicator"] == "15.2.1")
+    ] = 100
     return df
 
 

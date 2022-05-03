@@ -36,6 +36,7 @@ from un_sdg import (
 )
 
 from un_sdg.core import (
+    clean_data,
     create_short_unit,
     extract_datapoints,
     get_metadata_link,
@@ -286,6 +287,7 @@ def create_variables_datapoints(original_df: pd.DataFrame) -> None:
         lambda x: unit_description[x]
     )
 
+    original_df = clean_data(original_df)
     init_dimensions = tuple(dim_description.id.unique())
     init_non_dimensions = tuple(
         [c for c in original_df.columns if c not in set(init_dimensions)]
