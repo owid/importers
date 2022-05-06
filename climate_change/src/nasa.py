@@ -1,4 +1,16 @@
+"""Functions to fetch data from the National Aeronautics and Space Administration (NASA).
+
+"""
+
+import argparse
+import datetime
+import os
+import requests
+
+from bs4 import BeautifulSoup
 import pandas as pd
+
+from climate_change.src import READY_DIR
 
 
 def process_file(loc: str, source_url: str) -> pd.DataFrame:
@@ -32,10 +44,13 @@ def process_file(loc: str, source_url: str) -> pd.DataFrame:
         )
     )
     df["date"] = pd.to_datetime(df.year.astype(str) + df.month + "15", format="%Y%b%d")
-    return df[["location", "date", "temperature_anomaly"]]
+    return df[["location", "date", "temperature_anomaly"]].dropna(
+        subset=["temperature_anomaly"]
+    )
 
 
-def global_temperature_anomaly() -> pd.DataFrame:
+def global_temperature_anomaly():
+    output_file = os.path.join(READY_DIR, "nasa_global-temperature-anomaly.csv")
     df = pd.concat(
         [
             process_file(
@@ -52,18 +67,21 @@ def global_temperature_anomaly() -> pd.DataFrame:
             ),
         ]
     )
-    df.to_csv("ready/nasa_global-temperature-anomaly.csv", index=False)
+    df = df[df.date < datetime.datetime.now()]
+    df.to_csv(output_file, index=False)
 
 
 def arctic_sea_ice_extent():
-    source_url = "https://climate.nasa.gov/system/internal_resources/details/original/2264_N_09_extent_v3.0.csv"
-    df = pd.read_csv(source_url)
-    df.columns = df.columns.str.strip()
+    output_file = os.path.join(READY_DIR, "nasa_arctic-sea-ice.csv")
+    source_url = "https://climate.nasa.gov/vital-signs/arctic-sea-ice/"
+    soup = BeautifulSoup(requests.get(source_url).content, "html.parser")
+    file_url = soup.find(class_="download_links").find("a").get("href")
+    df = pd.read_excel("https://climate.nasa.gov" + file_url)
     (
         df[["year", "extent"]]
         .rename(columns={"extent": "arctic_sea_ice_nasa"})
-        .assign(location="Arctic")
-        .to_csv("ready/nasa_arctic-sea-ice.csv", index=False)
+        .assign(location="World")
+        .to_csv(output_file, index=False)
     )
 
 
@@ -73,4 +91,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

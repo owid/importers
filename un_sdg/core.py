@@ -21,6 +21,7 @@ def extract_datapoints(df: pd.DataFrame) -> pd.DataFrame:
     if df.duplicated(subset=["country", "TimePeriod"]).sum() > 0:
         df.to_csv("un_sdg/output/duplicate_country_year.csv")
     assert df.duplicated(subset=["country", "TimePeriod"]).sum() == 0
+
     return pd.DataFrame(
         {"country": df["country"], "year": df["TimePeriod"], "value": df["Value"]}
     ).dropna()
@@ -62,6 +63,21 @@ def clean_datasets(
         {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
     ]
     df = pd.DataFrame(data)
+    return df
+
+
+def clean_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Some values for 15.2.1 is above 100% when this shouldn't be possible. This sets the max value to 100.
+    Returns:
+        pd.DataFrame with cleaned values for 15.2.1
+    """
+    df["Value"] = df["Value"].astype(float)
+    df["Value"][
+        (df["Units_long"] == "Percentage")
+        & (df["Value"] > 100)
+        & (df["Indicator"] == "15.2.1")
+    ] = 100
     return df
 
 
@@ -164,14 +180,17 @@ def generate_tables_for_indicator_and_series(
             .squeeze()
             .to_dict()
         )
+        dim_desc["nan"] = ""
         i = 0
         # Mapping the dimension value codes to more meaningful descriptions
         for i in range(len(dimension_values)):
             df = pd.DataFrame({"value": dimension_values[i]})
-            dimension_values[i] = df["value"].map(dim_desc)
+            df["value"] = df["value"].astype(str)
+            dimension_values[i] = [dim_desc[k] for k in df["value"].to_list()]
         # Mapping the descriptions into the dataframe
         for dim in dimensions:
-            data_dimensions[dim] = data_dimensions[dim].map(dim_desc)
+            data_dimensions[dim] = data_dimensions[dim].astype(str)
+            data_dimensions[dim] = [dim_desc[k] for k in data_dimensions[dim]]
         # Create each combination of dimension values, e.g. each age group & sex combination. Not all combinations will have associated data.
         for dimension_value_combination in itertools.product(*dimension_values):
             # build filter by reducing, start with a constant True boolean array
@@ -304,3 +323,50 @@ def get_metadata_link(indicator: str) -> None:
         ctype_a = url_check.headers["Content-Type"]
         assert ctype_a == "application/pdf", url_a + "does not link to a pdf"
     return url_out
+
+
+def create_comb_omm(
+    variables: pd.DataFrame, var_stub: str, new_var_name: str
+) -> pd.DataFrame:
+    variable_str = var_stub
+    vars = variables[variables["name"].str.startswith(variable_str)]
+    vars = vars[
+        vars["name"]
+        != "15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - No breakdown"
+    ]
+    vars_to_comb_id = vars["id"].to_list()
+    vars_to_comb_name = (
+        vars["name"].str.replace(variable_str, "", regex=False).to_list()
+    )
+    new_var_df = []
+    new_var_id = variables["id"].max() + 1
+    for var_id in vars_to_comb_id:
+        df_var_id = pd.read_csv(
+            os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % var_id)
+        )
+        df_var_id["value"] = vars_to_comb_name[vars_to_comb_id.index(var_id)]
+        new_var_df.append(df_var_id)
+    pd.concat(new_var_df, ignore_index=True).to_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % new_var_id),
+        index=False,
+    )
+    new_var = vars.head(1)
+    new_var["id"] = new_var_id
+    new_var["name"] = new_var_name
+    variables = pd.concat([variables, new_var], ignore_index=True)
+    return variables
+
+
+def create_omms(variables: pd.DataFrame) -> pd.DataFrame:
+    variables = create_comb_omm(
+        variables,
+        var_stub="12.7.1 - Number of countries implementing sustainable public procurement policies and action plans - SG_SCP_PROCN - ",
+        new_var_name="12.7.1 - Number of countries implementing sustainable public procurement policies and action plans - SG_SCP_PROCN - OMM",
+    )
+
+    variables = create_comb_omm(
+        variables,
+        var_stub="15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - ",
+        new_var_name="15.9.1 - Countries that established national targets in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020 in their National Biodiversity Strategy and Action Plans (1 = YES; 0 = NO) - ER_BDY_ABT2NP - OMM",
+    )
+    return variables

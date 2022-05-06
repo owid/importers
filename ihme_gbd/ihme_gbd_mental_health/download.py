@@ -30,8 +30,8 @@
 #    Year: select all
 #
 #    Cause:
-#    - All under B.6
-#    - All under B.7
+#    - All under B.6 - Mental Disorders
+#    - All under B.7 - Substance Use Disorders
 #
 #    Context: Cause
 #

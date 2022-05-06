@@ -1,0 +1,13 @@
+{
+    "meta": {
+        "notes": "This file contains an array of IHME GBD variables to upsert to SQL. Any variables NOT in this file will be ignored."
+    },
+    "variables": [
+        "Deaths - All causes - Sex: Both - Age: 0-6 days (Number)",
+        "Deaths - All causes - Sex: Both - Age: 1-4 years (Number)",
+        "Deaths - All causes - Sex: Both - Age: 28-364 days (Number)",
+        "Deaths - All causes - Sex: Both - Age: 7-27 days (Number)",
+        "Deaths - All causes - Sex: Both - Age: <1 year (Number)",
+        "Deaths - All causes - Sex: Both - Age: <1 year (Rate)"
+    ]
+}

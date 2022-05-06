@@ -7,7 +7,8 @@ import json
 from pathlib import Path
 import shutil
 import re
-import glob
+import numpy as np
+import os.path
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -51,7 +52,8 @@ def download_data(url: str, inpath: str) -> None:
                 z.extractall(os.path.join(inpath, "csv"))
             else:
                 status = False
-                os.remove(os.path.join(inpath, "csv", "citation.txt"))
+                if os.path.exists(os.path.join(inpath, "csv", "citation.txt")):
+                    os.remove(os.path.join(inpath, "csv", "citation.txt"))
                 break
 
 
@@ -94,7 +96,7 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     We don't have any additional variable level metadata for this dataset so we just have this generic source tab."""
     source_description = {
         "dataPublishedBy": "Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2021.",
-        "dataPublisherSource": "Institute for Health Metrics and Evaluation",
+        "dataPublisherSource": "Institute for Health Metrics and Evaluation, Global Burden of Disease (2019)",
         "link": "http://ghdx.healthdata.org/gbd-results-tool",
         "retrievedDate": dataset_retrieved_date,
         "additionalInfo": None,
@@ -114,38 +116,135 @@ def create_sources(dataset_retrieved_date: str, outpath: str) -> None:
     df_sources.to_csv(os.path.join(outpath, "sources.csv"), index=False)
 
 
-def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataFrame:
-    """Iterating through each variable and pulling out the relevant datapoints.
-    Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
-
-    units_dict = {"Percent": "%", "Rate": "", "Number": ""}
+def get_variable_names(inpath: str, filter_fields: list) -> pd.Series:
 
     paths = list_input_files(inpath)
-
-    r = re.compile(r"measure|sex|age|cause|metric|year")
+    if "rei" in filter_fields:
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
+    else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
 
     fields = list(filter(r.match, filter_fields))
 
-    rd = re.compile(r"measure|sex|age|cause")
+    vars_out = []
+    for path in paths:
+        df = pd.read_csv(path, usecols=fields).drop_duplicates()
+        df = create_var_name(df)
+        vars_out.append(df["name"])
+
+    vars = pd.concat(vars_out)
+
+    return vars
+
+
+def list_variables_to_clean(configpath: str):
+    f = open(os.path.join(configpath, "variables_to_clean.json"))
+    ch_vars = json.load(f)
+    ch_vars = ch_vars["variables"]
+
+    if os.path.isfile(os.path.join(configpath, "manual_variables_to_clean.json")):
+        fm = open(os.path.join(configpath, "manual_variables_to_clean.json"))
+        ch_vars_man = json.load(fm)
+        ch_vars_man = ch_vars_man["variables"]
+        ch_vars = ch_vars + ch_vars_man
+        ch_vars = list(dict.fromkeys(ch_vars))
+    return ch_vars
+
+
+def create_units(df: pd.DataFrame) -> pd.DataFrame:
+
+    conds = [
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Rate")
+        ),
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Number")
+        ),
+        (
+            (df["measure"] == "DALYs (Disability-Adjusted Life Years)")
+            & (df["metric"] == "Percent")
+        ),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Number")),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Deaths") & (df["metric"] == "Percent")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Number")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Prevalence") & (df["metric"] == "Percent")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Number")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Rate")),
+        ((df["measure"] == "Incidence") & (df["metric"] == "Percent")),
+    ]
+
+    choices = [
+        "DALYs per 100,000 people",
+        "DALYs",
+        "%",
+        "deaths",
+        "deaths per 100,000 people",
+        "%",
+        "",
+        "",
+        "%",
+        "",
+        "",
+        "%",
+    ]
+    df["metric"] = np.select(conds, choices)
+    return df
+
+
+def create_variables(
+    inpath: str,
+    filter_fields: list,
+    outpath: str,
+    clean_all_vars: bool,
+    configpath: str,
+    calculate_owid_vars: str,
+) -> pd.DataFrame:
+    """Iterating through each variable and pulling out the relevant datapoints.
+    Formatting the data for the variables.csv file and outputting the associated csv files into the datapoints folder."""
+    paths = list_input_files(inpath)
+
+    if "rei" in filter_fields:
+        r = re.compile(r"measure|sex|age|cause|rei|metric|year")
+        rd = re.compile(r"measure|sex|age|cause|rei")
+    else:
+        r = re.compile(r"measure|sex|age|cause|metric|year")
+        rd = re.compile(r"measure|sex|age|cause")
+
+    fields = list(filter(r.match, filter_fields))
 
     field_drop = list(filter(rd.match, fields))
+    field_drop = [w.replace("_name", "") for w in field_drop]
+
+    ch_vars = list_variables_to_clean(configpath)
 
     vars_out = []
     print("Creating variables.csv")
     for path in paths:
-        df = pd.read_csv(path, usecols=fields).drop_duplicates()
-        df["name"] = create_var_name(df)
-        df_t = df.drop(field_drop, axis=1).drop_duplicates()
-        df_t["dataset_id"] = int(0)
-        df_t["source_id"] = int(0)
-        df_t[["description", "code", "coverage", "display", "original_metadata"]] = None
-        if "metric_name" in df_t.columns:
-            df_t = df_t.rename(columns={"metric_name": "unit"})
-        if "metric" in df_t.columns:
+        print(path)
+        df = pd.read_csv(path, usecols=fields)
+        df = create_var_name(df)
+        df = create_units(df)
+        if not clean_all_vars:
+            df = df[df["name"].isin(ch_vars)]
+        if (
+            df.shape[0]
+            > 0  # check there are some rows left after the previous if statement
+        ):
+            df_t = df.drop(field_drop, axis=1).drop_duplicates()
+            df_t["dataset_id"] = int(0)
+            df_t["source_id"] = int(0)
+            df_t[
+                ["description", "code", "coverage", "display", "original_metadata"]
+            ] = None
             df_t = df_t.rename(columns={"metric": "unit"})
-        assert "unit" in df_t.columns
-        df_t["short_unit"] = df_t["unit"].map(units_dict)
-        vars_out.append(df_t)
+            assert "unit" in df_t.columns
+
+            df_t["short_unit"] = np.where(df_t["unit"] == "%", "%", "")
+            vars_out.append(df_t)
 
     df = pd.concat(vars_out)
     df_t = df.join(df.groupby("name")["year"].agg(["min", "max"]), on="name")
@@ -153,43 +252,115 @@ def create_variables(inpath: str, filter_fields: list, outpath: str) -> pd.DataF
     df_t["max"] = df_t["max"].astype("str")
     df_t["timespan"] = df_t["min"] + " - " + df_t["max"]
     df_t = df_t.drop(["min", "max", "year"], axis=1).drop_duplicates()
-    # df_t = df_t.drop_duplicates()
+
+    if calculate_owid_vars:
+        df_t = add_owid_variables(df_t, configpath)
+
     df_t["id"] = range(0, len(df_t))
     df_t.to_csv(os.path.join(outpath, "variables.csv"), index=False)
     return df_t
 
 
+def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
+
+    df["val"][df["metric"] == "Percent"] = df["val"][df["metric"] == "Percent"] * 100
+    df["val"][
+        (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
+        & (df["metric"] == "Number")
+    ] = round(
+        df["val"][
+            (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
+            & (df["metric"] == "Number")
+        ]
+    )
+    return df
+
+
+def remove_regions(df: pd.DataFrame) -> pd.DataFrame:
+    regions_to_remove = [
+        "Four World Regions",
+        "World Bank Income Levels",
+        "World Bank Regions",
+        "WHO region",
+        "Low SDI",
+        "Low-middle SDI",
+        "Middle SDI",
+        "High-middle SDI",
+        "High SDI",
+        "Central Europe, Eastern Europe and Central Asia",
+        "Nordic Region",
+        "African Union",
+        "Africa",
+        "Asia",
+        "America",
+        "Europe",
+        "Southern Latin America",
+        "Latin America and Caribbean",
+        "Caribbean",
+        "Central Latin America",
+        "Commonwealth Low Income",
+        "Commonwealth Middle Income",
+        "East Asia",
+        "Central Sub-Saharan Africa",
+        "Western Sub-Saharan Africa",
+        "Eastern Sub-Saharan Africa",
+        "Sub-Saharan Africa",
+        "Australasia",
+        "Central Asia",
+        "Eastern Europe",
+        "Southern Sub-Saharan Africa",
+        "Central Europe",
+        "High-income North America",
+        "Southeast Asia, East Asia, and Oceania",
+        "Southeast Asia",
+        "Commonwealth High Income",
+        "North Africa and Middle East",
+        "Tropical Latin America",
+        "Andean Latin America",
+        "European Union",
+        "Oceania",
+        "Commonwealth",
+        "High-income",
+        "Central Europe, Eastern Europe, and Central Asia",
+        "High-income Asia Pacific",
+        "South Asia",
+        "Western Europe",
+    ]
+
+    df = df[~df["country"].isin(regions_to_remove)]
+
+    return df
+
+
 def create_datapoints(
-    vars: pd.DataFrame, inpath: str, configpath: str, outpath: str
+    vars: pd.DataFrame,
+    inpath: str,
+    parent_dir: str,
+    configpath: str,
+    outpath: str,
+    calculate_owid_vars: str,
 ) -> None:
+
     print("Creating datapoints")
     paths = list_input_files(inpath)
 
     entity2owid_name = (
-        pd.read_csv(os.path.join(configpath, "standardized_entity_names.csv"))
+        pd.read_csv(os.path.join(parent_dir, "standardized_entity_names.csv"))
         .set_index("Country")
         .squeeze()
         .to_dict()
     )
 
     for path in paths:
-        print(path)
         df = pd.read_csv(path)
-        df["name"] = create_var_name(df)
-
-        df["val"][df["metric"] == "Percent"] = (
-            df["val"][df["metric"] == "Percent"] * 100
-        )
-
+        df = create_var_name(df)
+        print(df["name"][0])
+        df = clean_units_and_values(df)
         df_m = df.merge(vars[["name", "id"]], on="name")
-        if "location_name" in df_m.columns:
-            df_m = df_m[["location_name", "year", "val", "id"]].rename(
-                columns={"location_name": "country", "val": "value"}
-            )
-        if "location" in df_m.columns:
-            df_m = df_m[["location", "year", "val", "id"]].rename(
-                columns={"location": "country", "val": "value"}
-            )
+        df_m = df_m[["location", "year", "val", "id"]].rename(
+            columns={"location": "country", "val": "value"}
+        )
+        df_m = remove_regions(df=df_m)
         df_m["country"] = df_m["country"].map(entity2owid_name)
 
         df_g = df_m.groupby("id")
@@ -208,12 +379,42 @@ def create_datapoints(
                     os.path.join(outpath, "datapoints", "datapoints_%d.csv" % name),
                     index=False,
                 )
+    if calculate_owid_vars:
+        calc_owid_var_data(vars, outpath, configpath)
 
 
-def create_distinct_entities(configpath: str, outpath: str) -> None:
+def calc_owid_var_data(vars: pd.DataFrame, outpath: str, configpath: str) -> None:
+
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
+
+    for var in vars_to_calc:
+        print(var)
+        id = vars.loc[vars["name"] == var].id
+        assert (
+            vars["name"] == var
+        ).any(), "%s not in list of variables, check spelling!" % (var)
+        vars_to_sum = vars[vars.name.isin(vars_to_calc[var])].id.to_list()
+        df_sum = []
+        for file in vars_to_sum:
+            df = pd.read_csv(
+                os.path.join(outpath, "datapoints", "datapoints_%d.csv" % file),
+                index_col=None,
+                header=0,
+            )
+            df["id"] = file
+            df_sum.append(df)
+        df = pd.concat(df_sum, ignore_index=True)
+        df = df.drop_duplicates()
+        df.groupby(["country", "year"])["value"].sum().reset_index().to_csv(
+            os.path.join(outpath, "datapoints", "datapoints_%d.csv" % id)
+        )
+
+
+def create_distinct_entities(parent_dir: str, outpath: str) -> None:
     """Creating a list of distinct entities for use in upserting to the grapher db"""
     df_distinct_entities = pd.read_csv(
-        os.path.join(configpath, "standardized_entity_names.csv")
+        os.path.join(parent_dir, "standardized_entity_names.csv")
     )
     df_distinct_entities = df_distinct_entities[["Our World In Data Name"]].rename(
         columns={"Our World In Data Name": "name"}
@@ -226,20 +427,34 @@ def create_distinct_entities(configpath: str, outpath: str) -> None:
 
 def create_var_name(df: pd.DataFrame) -> pd.Series:
 
-    if "measure_name" in df.columns:
+    df.columns = df.columns.str.replace(r"_name$", "", regex=True)
+    # For risk factor variables we want to include the risk factor and the cause of death so need a slightly different variable format
+
+    age_dict = {
+        "Early Neonatal": "0-6 days",
+        "Late Neonatal": "7-27 days",
+        "Post Neonatal": "28-364 days",
+        "1 to 4": "1-4 years",
+    }
+
+    df = df.replace({"age": age_dict}, regex=False)
+
+    if "rei" in df.columns:
         df["name"] = (
-            df["measure_name"]
-            + " - "
-            + df["cause_name"]
+            df["measure"]
+            + " - Cause: "
+            + df["cause"]
+            + " - Risk: "
+            + df["rei"]
             + " - Sex: "
-            + df["sex_name"]
+            + df["sex"]
             + " - Age: "
-            + df["age_name"]
+            + df["age"]
             + " ("
-            + df["metric_name"]
+            + df["metric"]
             + ")"
         )
-    if "measure" in df.columns:
+    else:
         df["name"] = (
             df["measure"]
             + " - "
@@ -252,5 +467,28 @@ def create_var_name(df: pd.DataFrame) -> pd.Series:
             + df["metric"]
             + ")"
         )
+
     assert "name" in df.columns
-    return df["name"]
+    return df
+
+
+def add_owid_variables(vars: pd.DataFrame, configpath: str) -> pd.DataFrame:
+
+    f = open(os.path.join(configpath, "variables_to_sum.json"))
+    vars_to_calc = json.load(f)
+
+    vars_out = []
+    for item in vars_to_calc:
+        print(item)
+        assert (vars.name == vars_to_calc[item][0]).any()
+        var_out = vars[vars.name == vars_to_calc[item][0]]
+        var_out["name"] = item
+        var_out[
+            "description"
+        ] = f"Variable calculated by OWID: the sum of {vars_to_calc[item]}"
+        vars_out.append(var_out)
+
+    vars_out = pd.concat(vars_out)
+
+    vars = pd.concat([vars, vars_out])
+    return vars

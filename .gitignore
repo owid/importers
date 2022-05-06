@@ -24,13 +24,21 @@ ihme_gbd/ihme_gbd_prevalence/input/*
 ihme_gbd/ihme_gbd_prevalence/output/*
 ihme_gbd/ihme_gbd_mental_health/input/*
 ihme_gbd/ihme_gbd_mental_health/output/*
-un_sdg/input/**/*.csv
-un_sdg/output/datapoints
+ihme_gbd/ihme_gbd_child_mortality/input/*
+ihme_gbd/ihme_gbd_child_mortality/output/*
+un_sdg/input/*
+un_sdg/output/*
 un_sdg/metadata/
-who_ghe/input/
-who_ghe/output/
+who_gho/input/
+who_gho/output/
+migration/input/
 *.Rproj.user
 *.Rhistory
 *.Rproj
 .Rproj.user
 venv
+.idea
+
+# Sanity checks and temporary files for CAIT datasets.
+cait/sanity_checks/*.html
+cait/grapher/temp.json

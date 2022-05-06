@@ -8,19 +8,25 @@ Usage:
     python -m ihme_gbd.ihme_gbd_mental_health.main --skip_download --skip_clean
 """
 import click
-import re
+import os
 from ihme_gbd.ihme_gbd_mental_health import (
+    CONFIGPATH,
     DATASET_DIR,
     DATASET_NAMESPACE,
+    FILTER_FIELDS,
+    INPATH,
     NAMESPACE,
     OUTPATH,
+    CLEAN_ALL_VARIABLES,
+    UPDATE_EXISTING_DATA_VERSION,
 )
 
 from ihme_gbd.ihme_gbd_mental_health import download, clean
-from ihme_gbd import match_variables
+from ihme_gbd import init_variables_to_clean
 
 from standard_importer import import_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
+from standard_revisions import match_variables_from_two_versions_of_a_dataset
 
 
 @click.command()
@@ -39,15 +45,35 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
     default=True,
     help="Whether or not to import the data",
 )
-def main(download_data, clean_data, import_data):
+@click.option(
+    "--match_data/--skip_match",
+    default=True,
+    help="Whether or not to match the variables",
+)
+def main(download_data, clean_data, import_data, match_data):
     if download_data:
         download.main()
+    if not CLEAN_ALL_VARIABLES:
+        init_variables_to_clean.main(
+            configpath=CONFIGPATH,
+            inpath=INPATH,
+            outpath=OUTPATH,
+            namespace=NAMESPACE,
+            fields=FILTER_FIELDS,
+            update_existing_data=UPDATE_EXISTING_DATA_VERSION,
+        )
     if clean_data:
         clean.main()
     if import_data:
-        import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
-    match_variables.main(outpath=OUTPATH, namespace=re.sub("ihme_", "", NAMESPACE))
-
+        import_dataset.main(
+            dataset_dir=DATASET_DIR, dataset_namespace=DATASET_NAMESPACE
+        )
+    if match_data:
+        match_variables_from_two_versions_of_a_dataset.main(
+            old_dataset_name="IHME - Global Burden of Disease - Mental Health - Institute for Health Metrics and Evaluation  (2021-09)",
+            new_dataset_name="IHME - Global Burden of Disease - Mental Health - Institute for Health Metrics and Evaluation  (2022-04)",
+            output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
+        )
     suggester = ChartRevisionSuggester(DATASET_DIR)
     suggester.suggest()
 

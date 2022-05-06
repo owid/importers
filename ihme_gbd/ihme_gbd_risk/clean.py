@@ -9,6 +9,11 @@ from ihme_gbd.ihme_gbd_risk import (
     ENTFILE,
     CURRENT_PATH,
     DATAPOINTS_DIR,
+    FILTER_FIELDS,
+    CLEAN_ALL_VARIABLES,
+    COUNTRY_COL,
+    CALCULATE_OWID_VARS,
+    PARENT_DIR,
 )
 
 from ihme_gbd.gbd_tools import (
@@ -20,19 +25,6 @@ from ihme_gbd.gbd_tools import (
     find_countries,
     delete_datapoints,
 )
-
-FILTER_FIELDS = [
-    "measure_name",
-    "location_name",
-    "sex_name",
-    "age_name",
-    "cause_name",
-    "metric_name",
-    "year",
-    "val",
-]
-
-COUNTRY_COL = "location_name"
 
 
 def main() -> None:
@@ -47,9 +39,23 @@ def main() -> None:
         outpath=OUTPATH,
     )
     create_sources(dataset_retrieved_date=DATASET_RETRIEVED_DATE, outpath=OUTPATH)
-    vars = create_variables(inpath=INPATH, filter_fields=FILTER_FIELDS, outpath=OUTPATH)
-    create_datapoints(vars, inpath=INPATH, configpath=CONFIGPATH, outpath=OUTPATH)
-    create_distinct_entities(configpath=CONFIGPATH, outpath=OUTPATH)
+    vars = create_variables(
+        inpath=INPATH,
+        filter_fields=FILTER_FIELDS,
+        outpath=OUTPATH,
+        clean_all_vars=CLEAN_ALL_VARIABLES,
+        configpath=CONFIGPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
+    )
+    create_datapoints(
+        vars,
+        inpath=INPATH,
+        parent_dir=PARENT_DIR,
+        configpath=CONFIGPATH,
+        outpath=OUTPATH,
+        calculate_owid_vars=CALCULATE_OWID_VARS,
+    )
+    create_distinct_entities(parent_dir=PARENT_DIR, outpath=OUTPATH)
 
 
 if __name__ == "__main__":
