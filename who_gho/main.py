@@ -1,4 +1,4 @@
-"""executes bulk dataset import + chart updates for the UN_SDGs dataset.
+"""executes bulk dataset import + chart updates for the WHO Global Health Observatory dataset.
 Usage:
     python -m who_gho.main --skip_download --skip_clean --skip_import
 

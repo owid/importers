@@ -209,6 +209,9 @@ def add_missing_dims(dim_val_dict: dict):
     dim_val_dict["NGO_PREVENTION"] = "Prevention"
     dim_val_dict["DROPIN_SERVICES"] = '"Drop-in" services'
     dim_val_dict["WHO_TOTL"] = "WHO Total"
+    dim_val_dict["ASSISTIVETECHSOURCE_ASSISTIVETECH_NGO"] = "NGO"
+    dim_val_dict["ASSISTIVETECHSOURCE_ASSISTIVETECH_Other"] = "Other"
+    dim_val_dict["ASSISTIVETECHBARRIER_ASSISTIVETECH_Other"] = "Other"
     return dim_val_dict
 
 
@@ -222,18 +225,21 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
         .to_dict()
     )
 
+    # Some of the dimesions are missing from the API, so we add them here
     if any(x in dims for x in ["NGO", "PROGRAMME", "WEALTHQUINTILE"]):
         dim_val_dict = add_missing_dims(dim_val_dict)
 
+    # Map the dimension values codes to the more meaningful values
     df[["Dim1m", "Dim2m", "Dim3m"]] = df[["Dim1", "Dim2", "Dim3"]].applymap(
         dim_val_dict.get
     )
-
+    # Map the dimension type codes to the more meaningful descriptions
     df[["Dim1Typem", "Dim2Typem", "Dim3Typem"]] = df[
         ["Dim1Type", "Dim2Type", "Dim3Type"]
     ].applymap(dim_dict.get)
 
     cols = ["Dim1Typem", "Dim2Typem", "Dim3Typem"]
+    # Adding punctuation arounf the dimensions types so they can be pasted together into a variable name
     df[cols] = " - " + df[cols] + ":"
 
     col_com = [
@@ -245,7 +251,7 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
         "Dim3Typem",
         "Dim3m",
     ]
-
+    # Creating variable names
     df["variable_name"] = "Indicator:" + df[col_com].fillna("").sum(axis=1)
 
     # Check all of the dim types have an associated value
@@ -253,7 +259,12 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
 
     # df[df["variable_name"].str.endswith(end_check)]
 
-    assert df["variable_name"].str.endswith(end_check).sum() == 0
+    assert df["variable_name"].str.endswith(end_check).sum() == 0, print(
+        "DIMENSIONS MISSING FROM dim_dict(): ",
+        df[["IndicatorCode", "Dim1", "Dim2", "Dim3"]][
+            df["variable_name"].str.endswith(end_check)
+        ].drop_duplicates(),
+    )
 
     return df["variable_name"]
 
@@ -422,9 +433,27 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
-    # Vars I'm excluding because they are archived duplicates of other variables in the dataset
-    vars_to_exclude = ["RSUD_880", "RSUD_890", "RSUD_900"]
+    # Vars I'm excluding because they are archived duplicates of other variables in the dataset. Also excluding the Deaths and DALYs as these are only available at regional level but take up a lot of space - we will use the more detailed global health estimates here.
+    vars_to_exclude = [
+        "RSUD_880",
+        "RSUD_890",
+        "RSUD_900",
+        "GHE_DALYNUM",
+        "GHE_DALYRATE",
+        "GHE_YLDNUM",
+        "GHE_YLLNUM",
+        "GHE_YLLRATE",
+        "GHE_YLDRATE",
+        "MORT_100",
+        "MORT_200",
+        "MORT_300",
+        "MORT_400",
+        "MORT_500",
+        "MORT_600",
+        "MORT_700",
+    ]
 
+    variables = [x for x in variables if (x not in vars_to_exclude)]
     # Getting a list of all the downloaded variable csv files
     var_list = []
     for var in variables:
@@ -433,16 +462,18 @@ def load_all_data_and_add_variable_name(
 
     # Combining all the variable csv files into one parquet file
     csv_to_parquet(var_list)
-    main_df = pq.read_table(
-        source=os.path.join(INPATH, "df_combined.parquet")
-    ).to_pandas()
+    main_df_pq = pq.ParquetFile(os.path.join(INPATH, "df_combined.parquet")).read()
+    main_df = main_df_pq.to_pandas()
+
     # Converting the variable code to a more meaningful name - from get_metadata_url()
 
     main_df["indicator_name"] = main_df["IndicatorCode"].apply(
         lambda x: var_code2name[x] if x in var_code2name else None
     )
 
-    main_df["variable"] = create_var_name(main_df, dim_values, dim_dict)
+    main_df["variable"] = create_var_name(
+        df=main_df, dim_values=dim_values, dim_dict=dim_dict
+    )
     var_df = main_df[
         [
             "IndicatorCode",
@@ -459,6 +490,7 @@ def load_all_data_and_add_variable_name(
 
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
     var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
+    # shouldn't need this as we are filtering out variables we don't want above
     var_df = var_df[~var_df.IndicatorCode.isin(vars_to_exclude)]
     ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows (if it is a number or a string shorter than 60 char)
     var_df["NumericValue"] = np.where(
@@ -802,3 +834,10 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
         f"{sum(drop)} rows dropped as alcohol consumers and abstainers values do not sum to 100"
     )
     return df
+
+
+
+def create_omms(df:pd.DataFrame) -> pd.DataFrame:
+
+    # Number of reported Yaws cases - add global total
+    # 
