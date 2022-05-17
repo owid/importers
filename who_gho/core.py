@@ -2,7 +2,6 @@
 import os
 import re
 import simplejson as json
-import logging
 import shutil
 from typing import List, Tuple, Any
 from pathlib import Path
@@ -27,10 +26,6 @@ from who_gho import (
     DATASET_RETRIEVED_DATE,
     SELECTED_VARS_ONLY,
 )
-
-logging.basicConfig()
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -427,18 +422,26 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
+    # Vars I'm excluding because they are archived duplicates of other variables in the dataset
     vars_to_exclude = ["RSUD_880", "RSUD_890", "RSUD_900"]
 
+    # Getting a list of all the downloaded variable csv files
     var_list = []
     for var in variables:
         var_path = f"{INPATH}/{var}.csv"
         var_list.append(var_path)
 
+    # Combining all the variable csv files into one parquet file
     csv_to_parquet(var_list)
-    main_df = pd.read_parquet(os.path.join(INPATH, "df_combined.parquet"))
+    main_df = pq.read_table(
+        source=os.path.join(INPATH, "df_combined.parquet")
+    ).to_pandas()
+    # Converting the variable code to a more meaningful name - from get_metadata_url()
+
     main_df["indicator_name"] = main_df["IndicatorCode"].apply(
         lambda x: var_code2name[x] if x in var_code2name else None
     )
+
     main_df["variable"] = create_var_name(main_df, dim_values, dim_dict)
     var_df = main_df[
         [
