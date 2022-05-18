@@ -11,6 +11,7 @@ import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
 
+import datetime
 import pyarrow as pa
 import pyarrow.parquet as pq
 from who_gho import (
@@ -53,7 +54,6 @@ def delete_input(inpath: str) -> None:
     )
     if os.path.exists(inpath):
         shutil.rmtree(inpath)
-    logger.info(f"Deleted all existing input files in {inpath}")
 
 
 def load_variables_to_clean() -> List[dict]:
@@ -359,9 +359,6 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
             )
             variable_idx += 1
             print(variable_idx)
-    logger.info(
-        f"Saved data points to csv for {variable_idx} variables. Excluded {len(ignored_var_codes)} variables."
-    )
     return variables
 
 
@@ -653,6 +650,7 @@ def get_distinct_entities() -> List[str]:
 
 
 def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
+    # Getting all the variables metadata links from the WHO ATHENA API so each indicator code will be linked with a metadata link - if possible
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
@@ -705,7 +703,20 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
-    if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
+
+    # Downloading the metadata for each indicator code - this takes some time so we only want to do it if necessary
+    if os.file.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
+        today = datetime.datetime.today()
+        modified_date = datetime.datetime.fromtimestamp(
+            os.path.getmtime(os.path.join(CONFIGPATH, "variable_metadata.json"))
+        )
+        duration = today - modified_date
+    else:
+        today = datetime.datetime.today()
+        modified_date = datetime.datetime.today()
+        duration = today - modified_date
+    # Download the variable metadata if we haven't downloaded it in the last 180 days
+    if duration.days > 90:
         indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
         descs = {}
         for name in indicators:
@@ -713,13 +724,8 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
             url = var_code2url[name]
             print(url)
             if url.startswith("http"):
-                if name == "SDGHEALTHFACILITIESESSENTIALMEDS":
-                    descs[name] = str(
-                        "Rationale: Measurement and monitoring of access to essential medicines are of high priority for the global development agenda given access is an integral part of the Universal Health Coverage movement and an indispensable element of the delivery of quality health care. Access to medicines is a composite multidimensional concept that is composed of the availability of medicines and the affordability of their prices. Information on these two dimensions has been collected and analysed since the 54th World Health Assembly in 2001, when Member States adopted the WHO Medicines Strategy (resolution WHA54.11). This resolution led to the launch of the joint project on Medicine Prices and Availability by WHO and the international non-governmental organization Health Action International (HAI/WHO), as well as a proposed HAI/WHO methodology for collecting data and measuring components of access to medicines.\n\nDefinition: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis.\nThe indicator is a multidimensional index reported as a proportion (%) of health facilities that have a defined core set of quality-assured medicines that are available and affordable relative to the total number of surveyed health facilities at national level.\n\nMethod of estimation: The index is computed as a ratio of the health facilities with available and affordable medicines for primary health care over the total number of the surveyed health facilities. For this indicator, the following variables are considered for a multidimensional understanding of the\ncomponents of access to medicines:\n\u2022 A core set of relevant essential medicines for primary healthcare\n\u2022 Regional burden of disease\n\u2022 Availability of a medicine\n\u2022 Price of a medicine\n\u2022 Treatment courses for each medicine (number of units per treatment & duration of\ntreatment)\n\u2022 National poverty line and lowest-paid unskilled government worker (LPGW) wage\n\u2022 Proxy for quality of the core set of relevant essential medicines.",
-                    )
-                else:
-                    desc = _fetch_description_one_variable(url)
-                    descs[name] = str(desc)
+                desc = _fetch_description_one_variable(url)
+                descs[name] = str(desc)
             else:
                 descs[name] = str("")
         with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
@@ -727,7 +733,7 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
     else:
         with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
             descs = json.load(fp)
-    return descs
+        return descs
 
 
 def _fetch_description_one_variable(url: str) -> str:
@@ -747,29 +753,24 @@ def _fetch_description_one_variable(url: str) -> str:
         "method of measurement",
         "method of estimation",
     ]
-    if (
-        url
-        == "https://www.who.int/data/gho/indicator-metadata-registry/imr-details/5559"  # dodgy formatting on this page
-    ):
-        text = "Rationale: Measurement and monitoring of access to essential medicines are of high priority for the global development agenda given access is an integral part of the Universal Health Coverage movement and an indispensable element of the delivery of quality health care. Access to medicines is a composite multidimensional concept that is composed of the availability of medicines and the affordability of their prices. Information on these two dimensions has been collected and analysed since the 54th World Health Assembly in 2001, when Member States adopted the WHO Medicines Strategy (resolution WHA54.11). This resolution led to the launch of the joint project on Medicine Prices and Availability by WHO and the international non-governmental organization Health Action International (HAI/WHO), as well as a proposed HAI/WHO methodology for collecting data and measuring components of access to medicines.\n\nDefinition: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis.\nThe indicator is a multidimensional index reported as a proportion (%) of health facilities that have a defined core set of quality-assured medicines that are available and affordable relative to the total number of surveyed health facilities at national level.\n\nMethod of estimation: The index is computed as a ratio of the health facilities with available and affordable medicines for primary health care over the total number of the surveyed health facilities:\nSDG3.b.3 =\nFacilities with available and affordable basket of medicines(n)\nSurveyed Facilities (n)\nFor this indicator, the following variables are considered for a multidimensional understanding of the\ncomponents of access to medicines:\n• A core set of relevant essential medicines for primary healthcare\n• Regional burden of disease\n• Availability of a medicine\n• Price of a medicine\n• Treatment courses for each medicine (number of units per treatment & duration of\ntreatment)\n• National poverty line and lowest-paid unskilled government worker (LPGW) wage\n• Proxy for quality of the core set of relevant essential medicines."
-    else:
-        try:
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, features="lxml")
-            divs = soup.find_all("div", {"class": "metadata-box"})
-            text = ""
-            for div in divs:
-                heading_text = re.sub(
-                    r":$",
-                    "",
-                    div.find("div", {"class": "metadata-title"}).text.strip().lower(),
-                )
-                if heading_text in headings_to_use:
-                    text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
-            text = text.strip()
-        except requests.exceptions.RequestException as e:
-            print(e)
-            text = ""
+
+    try:
+        r = requests.get(url)
+        soup = BeautifulSoup(r.content, features="lxml")
+        divs = soup.find_all("div", {"class": "metadata-box"})
+        text = ""
+        for div in divs:
+            heading_text = re.sub(
+                r":$",
+                "",
+                div.find("div", {"class": "metadata-title"}).text.strip().lower(),
+            )
+            if heading_text in headings_to_use:
+                text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
+        text = text.strip()
+    except requests.exceptions.RequestException as e:
+        print(e)
+        text = ""
     return text
 
 
@@ -836,8 +837,6 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-
-def create_omms(df:pd.DataFrame) -> pd.DataFrame:
-
-    # Number of reported Yaws cases - add global total
-    # 
+# def create_omms(df:pd.DataFrame) -> pd.DataFrame:
+# Number of reported Yaws cases - add global total
+#
