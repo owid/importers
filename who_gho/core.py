@@ -10,10 +10,11 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-
 import datetime
 import pyarrow as pa
 import pyarrow.parquet as pq
+from owid.catalog import RemoteCatalog
+
 from who_gho import (
     CONFIGPATH,
     DOWNLOAD_INPUTS,
@@ -708,7 +709,7 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
 
     # Downloading the metadata for each indicator code - this takes some time so we only want to do it if necessary
-    if os.file.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
+    if os.path.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
         today = datetime.datetime.today()
         modified_date = datetime.datetime.fromtimestamp(
             os.path.getmtime(os.path.join(CONFIGPATH, "variable_metadata.json"))
@@ -840,6 +841,53 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# def create_omms(df:pd.DataFrame) -> pd.DataFrame:
-# Number of reported Yaws cases - add global total
-#
+def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
+    # Number of reported Yaws cases - add global total
+    yaws = "Indicator:Number of cases of yaws reported"
+    yaws_id = df_variables["id"][df_variables["name"] == yaws]
+    yaws_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id)
+    )
+    yaws_global = pd.DataFrame()
+    yaws_global = yaws_df.groupby("year").sum()
+    yaws_global["year"] = yaws_global.index
+    yaws_global = yaws_global.reset_index(drop=True)
+    yaws_global["country"] = "World"
+    yaws_out = pd.concat([yaws_df, yaws_global], axis=0)
+    yaws_out.to_csv(os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id))
+
+    # Number of neonatal tetanus cases per million
+    rc = RemoteCatalog(channels=["garden"])
+    population = (
+        rc.find("population", namespace="owid", dataset="key_indicators")
+        .load()
+        .reset_index()
+    )
+    neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
+    neo_tet_id = df_variables["id"][df_variables["name"] == neo_tet]
+    tet_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % neo_tet_id)
+    )
+    tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
+    tet_pop["value"] = round((tet_pop["value"] / tet_pop["population"]) * 1000000, 2)
+    tet_pop = tet_pop[["country", "year", "value"]].dropna()
+
+    tet_pop_var = df_variables[df_variables["name"] == neo_tet].copy()
+    tet_pop_var[
+        "name"
+    ] = "Indicator:Neonatal tetanus - number of reported cases per million"
+    tet_pop_var[
+        "description"
+    ] = "Definition: Confirmed neonatal tetanus cases per million.\n\nMethod of estimation: WHO compiles neonatal tetanus data as reported by national authorities. Our World In Data converts this into a rate by standardising with our population variable."
+    tet_pop_var["id"] = max(df_variables["id"]) + 1
+
+    tet_pop.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%d.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
+
+    return df_variables
