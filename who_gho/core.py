@@ -334,25 +334,28 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
             ignored_var_codes.add(row["IndicatorCode"])
         else:
             unit_var, short_unit_var = get_unit(row["variable"])
-            variable = {
-                "dataset_id": 0,
-                "source_id": 0,
-                "id": variable_idx,
-                "name": row["variable"],
-                "description": var_code2meta[row["IndicatorCode"]],
-                "code": None,
-                "unit": unit_var,
-                "short_unit": short_unit_var,
-                "timespan": "%s - %s"
-                % (
-                    int(float(np.min(data_filtered["TimeDim"]))),
-                    int(float(np.max(data_filtered["TimeDim"]))),
-                ),
-                "coverage": None,
-                "display": None,
-                "original_metadata": None,
-            }
-            variables = variables.append(variable, ignore_index=True)
+            variable = pd.DataFrame(
+                {
+                    "dataset_id": 0,
+                    "source_id": 0,
+                    "id": variable_idx,
+                    "name": row["variable"],
+                    "description": var_code2meta[row["IndicatorCode"]],
+                    "code": None,
+                    "unit": unit_var,
+                    "short_unit": short_unit_var,
+                    "timespan": "%s - %s"
+                    % (
+                        int(float(np.min(data_filtered["TimeDim"]))),
+                        int(float(np.max(data_filtered["TimeDim"]))),
+                    ),
+                    "coverage": None,
+                    "display": None,
+                    "original_metadata": None,
+                },
+                index=[0],
+            )
+            variables = pd.concat([variables, variable], ignore_index=True)
             extract_datapoints(data_filtered).to_csv(
                 os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
                 index=False,
