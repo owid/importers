@@ -4,46 +4,59 @@
 
 import argparse
 import os
-import requests
+from io import StringIO
 
-from bs4 import BeautifulSoup
+import requests
 import pandas as pd
+from bs4 import BeautifulSoup
 
 from climate_change.src import READY_DIR
 
 
-def process_concentration_file(
-    gas: str, source_url: str, skiprows: int
-) -> pd.DataFrame:
-    df = pd.read_fwf(source_url, skiprows=skiprows)
+def find_number_of_rows_to_skip_in_noaa_monthly_data(raw_data):
+    n_rows_to_skip = -1
+    for line in raw_data.split("\n"):
+        if line.startswith("#"):
+            n_rows_to_skip += 1
+        else:
+            break
+
+    return n_rows_to_skip
+
+
+def process_concentration_file(gas_name: str, source_url: str) -> pd.DataFrame:
+    # Fetch data from source.
+    raw_data = requests.get(source_url).text
+    # Find the number of rows that have to be skipped before the header and data start.
+    n_rows_to_skip = find_number_of_rows_to_skip_in_noaa_monthly_data(raw_data)
+    # Create dataframe.
+    df = pd.read_fwf(StringIO(raw_data), skiprows=n_rows_to_skip)
     df["date"] = pd.to_datetime(
         df.year.astype(str) + "-" + df.month.astype(str) + "-15"
     )
-    return (
-        df[["date", "average", "trend"]]
-        .rename(
-            columns={
-                # Monthly averaged concentrations.
-                "average": f"monthly_{gas}_concentrations",
-                # Yearly averaged concentrations.
-                "trend": f"yearly_{gas}_concentrations",
-            }
-        )
-        .assign(location="World")
-    )
+    df = df[["date", "average", "trend"]].rename(
+        columns={
+            # Monthly averaged concentrations.
+            "average": f"monthly_{gas_name}_concentrations",
+            # Yearly averaged concentrations.
+            "trend": f"yearly_{gas_name}_concentrations",
+        }
+    ).assign(location="World")
+
+    return df
 
 
 def monthly_concentrations():
-    gases = {
-        "co2": ("https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt", 57),
-        "ch4": ("https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt", 60),
-        "n2o": ("https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt", 60),
+    gas_urls = {
+        "co2": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_gl.txt",
+        "ch4": "https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt",
+        "n2o": "https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt",
     }
-    for k, v in gases.items():
-        output_file = os.path.join(READY_DIR, f"noaa_monthly-{k}-concentrations.csv")
-        process_concentration_file(gas=k, source_url=v[0], skiprows=v[1]).to_csv(
-            output_file, index=False
-        )
+    for gas_name, gas_url in gas_urls.items():
+        output_file = os.path.join(READY_DIR, f"noaa_monthly-{gas_name}-concentrations.csv")
+        df = process_concentration_file(gas_name=gas_name, source_url=gas_url)
+        # Save to file.
+        df.to_csv(output_file, index=False)
 
 
 def get_sea_level_url(source_page: str) -> str:
