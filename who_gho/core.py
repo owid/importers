@@ -866,8 +866,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_stat_id)
     )
     # We can combine both dataframes into one as there aren't any duplicate country-year combinations
-    yaws_merge = yaws_df.merge(yaws_stat_df, on=["country", "year"], how="outer")
-    yaws_stat_df["value"] = yaws_merge["value_x"].combine_first(yaws_merge["value_y"])
+    yaws_stat_df = pd.concat([yaws_df, yaws_stat_df])
     yaws_stat_var = df_variables[df_variables["name"] == yaws_stat].copy()
     yaws_stat_var["name"] = "Indicator:Yaws status of endemicity and number of cases"
     yaws_stat_var[
