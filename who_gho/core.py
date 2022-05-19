@@ -642,6 +642,7 @@ def get_distinct_entities() -> List[str]:
     ]
     entity_set = set({})
     for fname in fnames:
+        print(fname)
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entity_set.update(df_temp["country"].unique().tolist())
 
@@ -873,7 +874,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         "description"
     ] = "Definition: The number of reported yaws cases combined with the status of endemicity dataset for all countries that had reported case numbers."
     yaws_stat_var["id"] = max(df_variables["id"]) + 1
-    yaws_stat_var.to_csv(
+    yaws_stat_df.to_csv(
         os.path.join(
             OUTPATH,
             "datapoints",
