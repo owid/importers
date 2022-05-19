@@ -848,6 +848,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     yaws_df = pd.read_csv(
         os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id)
     )
+    yaws_df["value"] = yaws_df["value"].astype(int)
     yaws_global = pd.DataFrame()
     yaws_global = yaws_df.groupby("year").sum()
     yaws_global["year"] = yaws_global.index
@@ -855,6 +856,30 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     yaws_global["country"] = "World"
     yaws_out = pd.concat([yaws_df, yaws_global], axis=0)
     yaws_out.to_csv(os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id))
+
+    # Yaws endemicity and number of reported cases
+
+    yaws_stat = "Indicator:Status of yaws endemicity"
+    yaws_stat_id = df_variables["id"][df_variables["name"] == yaws_stat]
+    yaws_stat_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_stat_id)
+    )
+    # We can combine both dataframes into one as there aren't any duplicate country-year combinations
+    yaws_merge = yaws_df.merge(yaws_stat_df, on=["country", "year"], how="outer")
+    yaws_stat_df["value"] = yaws_merge["value_x"].combine_first(yaws_merge["value_y"])
+    yaws_stat_var = df_variables[df_variables["name"] == yaws_stat].copy()
+    yaws_stat_var["name"] = "Indicator:Yaws status of endemicity and number of cases"
+    yaws_stat_var[
+        "description"
+    ] = "Definition: The number of reported yaws cases combined with the status of endemicity dataset for all countries that had reported case numbers."
+    yaws_stat_var["id"] = max(df_variables["id"]) + 1
+    yaws_stat_var.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%d.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
 
     # Number of neonatal tetanus cases per million
     rc = RemoteCatalog(channels=["garden"])
