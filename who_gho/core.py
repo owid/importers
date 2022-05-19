@@ -877,7 +877,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         os.path.join(
             OUTPATH,
             "datapoints",
-            "datapoints_%d.csv" % str(max(df_variables["id"]) + 1),
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
         )
     )
 
@@ -910,7 +910,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         os.path.join(
             OUTPATH,
             "datapoints",
-            "datapoints_%d.csv" % str(max(df_variables["id"]) + 1),
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
         )
     )
     df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
