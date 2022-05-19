@@ -880,6 +880,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
             "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
         )
     )
+    df_variables = pd.concat([df_variables, yaws_stat_var], axis=0)
 
     # Number of neonatal tetanus cases per million
     rc = RemoteCatalog(channels=["garden"])
