@@ -34,14 +34,18 @@ def process_concentration_file(gas_name: str, source_url: str) -> pd.DataFrame:
     df["date"] = pd.to_datetime(
         df.year.astype(str) + "-" + df.month.astype(str) + "-15"
     )
-    df = df[["date", "average", "trend"]].rename(
-        columns={
-            # Monthly averaged concentrations.
-            "average": f"monthly_{gas_name}_concentrations",
-            # Yearly averaged concentrations.
-            "trend": f"yearly_{gas_name}_concentrations",
-        }
-    ).assign(location="World")
+    df = (
+        df[["date", "average", "trend"]]
+        .rename(
+            columns={
+                # Monthly averaged concentrations.
+                "average": f"monthly_{gas_name}_concentrations",
+                # Yearly averaged concentrations.
+                "trend": f"yearly_{gas_name}_concentrations",
+            }
+        )
+        .assign(location="World")
+    )
 
     return df
 
@@ -53,7 +57,9 @@ def monthly_concentrations():
         "n2o": "https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt",
     }
     for gas_name, gas_url in gas_urls.items():
-        output_file = os.path.join(READY_DIR, f"noaa_monthly-{gas_name}-concentrations.csv")
+        output_file = os.path.join(
+            READY_DIR, f"noaa_monthly-{gas_name}-concentrations.csv"
+        )
         df = process_concentration_file(gas_name=gas_name, source_url=gas_url)
         # Save to file.
         df.to_csv(output_file, index=False)
