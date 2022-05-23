@@ -48,6 +48,7 @@ from who_gho.core import (
     clean_datapoints_custom,
     check_variables_custom,
     clean_datasets,
+    create_omms,
     get_metadata_url,
     get_variable_codes,
     clean_sources,
@@ -98,6 +99,8 @@ def main() -> None:
 
     assert df[df["country"].isnull()].shape[0] == 0
     df_variables = clean_variables(df, var_code2meta)
+    # Create OMMs - neonatal tetanus rate per million and yaws global aggregate
+    df_variables = create_omms(df_variables)
 
     df_distinct_entities = pd.DataFrame(get_distinct_entities(), columns=["name"])
 

@@ -251,11 +251,11 @@ GLOBAL,Global
 OECD_HII_AMR,"Americas, high-income OECD"
 OECD_HII_EUR,"Europe, high-income OECD"
 OECD_HII_WPR,"Western Pacific , high-income OECD"
-OECD_NON_AFR,Africa
+OECD_NON_AFR,Africa (non-OECD)
 OECD_NON_AMR,"Americas, non-OECD"
-OECD_NON_EMR,Eastern Mediterranean
+OECD_NON_EMR,Eastern Mediterranean (non-OECD)
 OECD_NON_EUR,"Europe, non-OECD"
-OECD_NON_SEAR,South-East Asia
+OECD_NON_SEAR,South-East Asia (non-OECD)
 OECD_NON_WPR,"Western Pacific, non-OECD"
 SEAR,South-East Asia
 WHO_HI_GLOBAL,WHO High income countries of the world
@@ -265,7 +265,7 @@ WHO_LMI_EMR,Low-and-middle-income countries of the Eastern Mediterranean Region
 WHO_LMI_EUR,Low-and-middle-income countries of the European Region
 WHO_LMI_HIC,High income countries
 WHO_LMI_SEAR,Low-and-middle-income countries of the South-East Asia Region
-WHO_LMI_WORLD,Global
+WHO_LMI_WORLD,Global (WHO LMI)
 WHO_LMI_WPR,Low-and-middle-income countries of the Western Pacific Region
 WPR,Western Pacific
 GBD_IHME_ASIACEN,"Asia, Central"
@@ -299,7 +299,7 @@ MDG_OCE,Oceania
 MDG_SAEXIND,Southern Asia excluding India
 MDG_SEA,South-eastern Asia
 MDG_SOA,Southern Asia
-MDG_SSA,Sub-Saharan Africa
+MDG_SSA,Sub-Saharan Africa (MDG)
 MDG_WAS,Western Asia
 REG6_AFR,Africa Region
 REG6_AMR,Region of the Americas
@@ -319,22 +319,22 @@ SDG_CENSOUASIA,Central Asia and Southern Asia
 SDG_ESEASIA,Eastern Asia and South-eastern Asia
 SDG_NORAMEUR,Northern America and Europe
 SDG_OCEANIAexAUSNZL,Oceania excluding Australia and New Zealand
-SDG_WASIANAFRICA,Western Asia�and Northern Africa
+SDG_WASIANAFRICA,Western Asia and Northern Africa
 UNICEF_CEECIS,"Central and Eastern Europe, Commonwealth of Independent States"
 UNICEF_EAPRO,East Asia and the Pacific
 UNICEF_ESARO,Eastern and Southern Africa
 UNICEF_IND,Industrialized
-UNICEF_MENA,Middle East and North Africa
-UNICEF_ROSA,South Asia
+UNICEF_MENA,Middle East and North Africa (UNICEF)
+UNICEF_ROSA,South Asia (UNICEF)
 UNICEF_TACRO,The Americas and Caribbean
 UNICEF_WCARO,West and Central Africa
 WBDCP_EAP,East Asia and Pacific
 WBDCP_EURCASIA,Europe and Central Asia
 WBDCP_HIINCOME,High income
 WBDCP_LAC,Latin America and Caribbean
-WBDCP_MIDEASTNAF,Middle East and North Africa
-WBDCP_SASIA,South Asia
-WBDCP_SSA,Sub-Saharan Africa
+WBDCP_MIDEASTNAF,Middle East and North Africa (WBDCP)
+WBDCP_SASIA,South Asia (WBDCP)
+WBDCP_SSA,Sub-Saharan Africa (WBDCP)
 WBINC_HIINC,High-income
 WBINC_LMINC,Lower-middle-income
 WBINC_LOINC,Low-income
@@ -344,11 +344,11 @@ WBINC_UMINC,Upper-middle-income
 13,Central America
 135,Caucasus and Central Asia (MDG)
 14,Eastern Africa
-142,Asia
+142,Asia (142)
 143,Central Asia
 145,Western Asia
 15,Northern Africa
-150,Europe
+150,Europe (150)
 151,Eastern Europe
 154,Northern Europe
 155,Western Europe
@@ -357,9 +357,9 @@ WBINC_UMINC,Upper-middle-income
 19,Americas
 197,Less Developed Regions
 199,Least Developed Countries (LDCs)
-2,Africa
+2,Africa (2)
 202,Sub-Saharan Africa
-21,Northern America
+21,Northern America (21)
 29,Caribbean
 30,Eastern Asia
 34,Southern Asia
@@ -385,11 +385,11 @@ WBINC_UMINC,Upper-middle-income
 746,Northern Africa (exc. Sudan)
 747,Northern Africa and Western Asia
 753,Eastern Asia and South-eastern Asia
-9,Oceania
+9,Oceania (9)
 UN_Africa,Africa
 UN_Asia,Asia
 UN_Europe,Europe
-UN_Latin America_Caribbean,Latin America and Caribbean
+UN_Latin_America_Caribbean,Latin America and Caribbean
 UN_Northern_America,Northern America
 UN_Oceania,Oceania
 UNSDG_AUSTRALIANEWZEALAND,Australia and New Zealand
@@ -407,7 +407,7 @@ UNSDG_EUROPE,Europe
 UNSDG_EUROPENORTHERNAMERICAAUSTRALIANEWZEALAND,"Europe, Northern America, Australia and New Zealand"
 UNSDG_EUROPENORTHERNAMR,Europe and Northern America
 UNSDG_LAC,Latin America and the Caribbean
-UNSDG_LDC,Least developed countries
+UNSDG_LDC,Least developed countries (LDC)
 UNSDG_LEASTDEVELOPED,Least developed countries
 UNSDG_LLDC,Landlocked developing countries (LLDCs)
 UNSDG_MELANESIA,Melanesia

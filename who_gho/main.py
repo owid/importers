@@ -1,15 +1,23 @@
-"""executes bulk dataset import + chart updates for the UN_SDGs dataset.
+"""executes bulk dataset import + chart updates for the WHO Global Health Observatory dataset.
 Usage:
     python -m who_gho.main --skip_download --skip_clean --skip_import
 
 """
 import click
+import os
+from who_gho import (
+    DATASET_DIR,
+    DATASET_NAMESPACE,
+    CONFIGPATH,
+    DATASET_NAME,
+    DATASET_AUTHORS,
+    DATASET_VERSION,
+)
 
-from who_gho import DATASET_DIR, DATASET_NAMESPACE, OUTPATH
-
-from who_gho import download, clean, match_variables
+from who_gho import download, clean
 
 from standard_importer import import_dataset
+from standard_revisions import match_variables_from_two_versions_of_a_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 
@@ -47,7 +55,11 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
     if import_data:
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
-        match_variables.main(outpath=OUTPATH, namespace=("who_gho"))
+        match_variables_from_two_versions_of_a_dataset.main(
+            old_dataset_name="Global Health Observatory - World Health Organization (2021.12)",
+            new_dataset_name=f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})",
+            output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
+        )
     if suggest_charts:
         suggester = ChartRevisionSuggester(DATASET_DIR)
         suggester.suggest()

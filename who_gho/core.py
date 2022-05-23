@@ -2,7 +2,6 @@
 import os
 import re
 import simplejson as json
-import logging
 import shutil
 from typing import List, Tuple, Any
 from pathlib import Path
@@ -11,9 +10,11 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-
+import datetime
 import pyarrow as pa
 import pyarrow.parquet as pq
+from owid.catalog import RemoteCatalog
+
 from who_gho import (
     CONFIGPATH,
     DOWNLOAD_INPUTS,
@@ -27,10 +28,6 @@ from who_gho import (
     DATASET_RETRIEVED_DATE,
     SELECTED_VARS_ONLY,
 )
-
-logging.basicConfig()
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -58,7 +55,6 @@ def delete_input(inpath: str) -> None:
     )
     if os.path.exists(inpath):
         shutil.rmtree(inpath)
-    logger.info(f"Deleted all existing input files in {inpath}")
 
 
 def load_variables_to_clean() -> List[dict]:
@@ -214,6 +210,9 @@ def add_missing_dims(dim_val_dict: dict):
     dim_val_dict["NGO_PREVENTION"] = "Prevention"
     dim_val_dict["DROPIN_SERVICES"] = '"Drop-in" services'
     dim_val_dict["WHO_TOTL"] = "WHO Total"
+    dim_val_dict["ASSISTIVETECHSOURCE_ASSISTIVETECH_NGO"] = "NGO"
+    dim_val_dict["ASSISTIVETECHSOURCE_ASSISTIVETECH_Other"] = "Other"
+    dim_val_dict["ASSISTIVETECHBARRIER_ASSISTIVETECH_Other"] = "Other"
     return dim_val_dict
 
 
@@ -227,18 +226,21 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
         .to_dict()
     )
 
+    # Some of the dimesions are missing from the API, so we add them here
     if any(x in dims for x in ["NGO", "PROGRAMME", "WEALTHQUINTILE"]):
         dim_val_dict = add_missing_dims(dim_val_dict)
 
+    # Map the dimension values codes to the more meaningful values
     df[["Dim1m", "Dim2m", "Dim3m"]] = df[["Dim1", "Dim2", "Dim3"]].applymap(
         dim_val_dict.get
     )
-
+    # Map the dimension type codes to the more meaningful descriptions
     df[["Dim1Typem", "Dim2Typem", "Dim3Typem"]] = df[
         ["Dim1Type", "Dim2Type", "Dim3Type"]
     ].applymap(dim_dict.get)
 
     cols = ["Dim1Typem", "Dim2Typem", "Dim3Typem"]
+    # Adding punctuation arounf the dimensions types so they can be pasted together into a variable name
     df[cols] = " - " + df[cols] + ":"
 
     col_com = [
@@ -250,7 +252,7 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
         "Dim3Typem",
         "Dim3m",
     ]
-
+    # Creating variable names
     df["variable_name"] = "Indicator:" + df[col_com].fillna("").sum(axis=1)
 
     # Check all of the dim types have an associated value
@@ -258,7 +260,12 @@ def create_var_name(df: pd.DataFrame, dim_values: pd.DataFrame, dim_dict: dict):
 
     # df[df["variable_name"].str.endswith(end_check)]
 
-    assert df["variable_name"].str.endswith(end_check).sum() == 0
+    assert df["variable_name"].str.endswith(end_check).sum() == 0, print(
+        "DIMENSIONS MISSING FROM dim_dict(): ",
+        df[["IndicatorCode", "Dim1", "Dim2", "Dim3"]][
+            df["variable_name"].str.endswith(end_check)
+        ].drop_duplicates(),
+    )
 
     return df["variable_name"]
 
@@ -328,34 +335,34 @@ def clean_variables(df: pd.DataFrame, var_code2meta: dict):
             ignored_var_codes.add(row["IndicatorCode"])
         else:
             unit_var, short_unit_var = get_unit(row["variable"])
-            variable = {
-                "dataset_id": 0,
-                "source_id": 0,
-                "id": variable_idx,
-                "name": row["variable"],
-                "description": var_code2meta[row["IndicatorCode"]],
-                "code": None,
-                "unit": unit_var,
-                "short_unit": short_unit_var,
-                "timespan": "%s - %s"
-                % (
-                    int(float(np.min(data_filtered["TimeDim"]))),
-                    int(float(np.max(data_filtered["TimeDim"]))),
-                ),
-                "coverage": None,
-                "display": None,
-                "original_metadata": None,
-            }
-            variables = variables.append(variable, ignore_index=True)
+            variable = pd.DataFrame(
+                {
+                    "dataset_id": 0,
+                    "source_id": 0,
+                    "id": variable_idx,
+                    "name": row["variable"],
+                    "description": var_code2meta[row["IndicatorCode"]],
+                    "code": None,
+                    "unit": unit_var,
+                    "short_unit": short_unit_var,
+                    "timespan": "%s - %s"
+                    % (
+                        int(float(np.min(data_filtered["TimeDim"]))),
+                        int(float(np.max(data_filtered["TimeDim"]))),
+                    ),
+                    "coverage": None,
+                    "display": None,
+                    "original_metadata": None,
+                },
+                index=[0],
+            )
+            variables = pd.concat([variables, variable], ignore_index=True)
             extract_datapoints(data_filtered).to_csv(
                 os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % variable_idx),
                 index=False,
             )
             variable_idx += 1
             print(variable_idx)
-    logger.info(
-        f"Saved data points to csv for {variable_idx} variables. Excluded {len(ignored_var_codes)} variables."
-    )
     return variables
 
 
@@ -427,19 +434,47 @@ def load_all_data_and_add_variable_name(
         "REGION_ WB_HI",
     ]  # spatial dims in the data that do not have aliases in the API e.g. REGION_WB_LI is not in  https://ghoapi.azureedge.net/api/DIMENSION/Region/DimensionValues
 
-    vars_to_exclude = ["RSUD_880", "RSUD_890", "RSUD_900"]
+    # Vars I'm excluding because they are archived duplicates of other variables in the dataset. Also excluding the Deaths and DALYs as these are only available at regional level but take up a lot of space - we will use the more detailed global health estimates here.
+    vars_to_exclude = [
+        "RSUD_880",
+        "RSUD_890",
+        "RSUD_900",
+        "GHE_DALYNUM",
+        "GHE_DALYRATE",
+        "GHE_YLDNUM",
+        "GHE_YLLNUM",
+        "GHE_YLLRATE",
+        "GHE_YLDRATE",
+        "MORT_100",
+        "MORT_200",
+        "MORT_300",
+        "MORT_400",
+        "MORT_500",
+        "MORT_600",
+        "MORT_700",
+    ]
 
+    variables = [x for x in variables if (x not in vars_to_exclude)]
+    # Getting a list of all the downloaded variable csv files
     var_list = []
     for var in variables:
         var_path = f"{INPATH}/{var}.csv"
         var_list.append(var_path)
 
+    # Combining all the variable csv files into one parquet file
     csv_to_parquet(var_list)
-    main_df = pd.read_parquet(os.path.join(INPATH, "df_combined.parquet"))
+    main_df_pq = pq.ParquetFile(os.path.join(INPATH, "df_combined.parquet")).read()
+    main_df = main_df_pq.to_pandas()
+
+    # Converting the variable code to a more meaningful name - from get_metadata_url()
+
     main_df["indicator_name"] = main_df["IndicatorCode"].apply(
         lambda x: var_code2name[x] if x in var_code2name else None
     )
-    main_df["variable"] = create_var_name(main_df, dim_values, dim_dict)
+
+    main_df["variable"] = create_var_name(
+        df=main_df, dim_values=dim_values, dim_dict=dim_dict
+    )
     var_df = main_df[
         [
             "IndicatorCode",
@@ -456,6 +491,7 @@ def load_all_data_and_add_variable_name(
 
     var_df = var_df[~var_df.SpatialDimType.isin(spatial_dim_types_exclude)]
     var_df = var_df[~var_df.SpatialDim.isin(spatial_dims_to_exclude)]
+    # shouldn't need this as we are filtering out variables we don't want above
     var_df = var_df[~var_df.IndicatorCode.isin(vars_to_exclude)]
     ### If there isn't a value in the NumericValue column but there is one in the Value column then move the Value rows into the NumericValue rows (if it is a number or a string shorter than 60 char)
     var_df["NumericValue"] = np.where(
@@ -606,6 +642,7 @@ def get_distinct_entities() -> List[str]:
     ]
     entity_set = set({})
     for fname in fnames:
+        print(fname)
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entity_set.update(df_temp["country"].unique().tolist())
 
@@ -618,6 +655,7 @@ def get_distinct_entities() -> List[str]:
 
 
 def get_metadata_url(fix_var_code: bool) -> Tuple[dict, dict]:
+    # Getting all the variables metadata links from the WHO ATHENA API so each indicator code will be linked with a metadata link - if possible
     url_json = requests.get(
         "https://apps.who.int/gho/athena/api/GHO/?format=json"
     ).json()
@@ -670,7 +708,20 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
-    if not os.path.isfile(os.path.join(CONFIGPATH, "variable_metadata.json")):
+
+    # Downloading the metadata for each indicator code - this takes some time so we only want to do it if necessary
+    if os.path.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
+        today = datetime.datetime.today()
+        modified_date = datetime.datetime.fromtimestamp(
+            os.path.getmtime(os.path.join(CONFIGPATH, "variable_metadata.json"))
+        )
+        duration = today - modified_date
+    else:
+        today = datetime.datetime.today()
+        modified_date = datetime.datetime.today()
+        duration = today - modified_date
+    # Download the variable metadata if we haven't downloaded it in the last 180 days
+    if duration.days > 90:
         indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
         descs = {}
         for name in indicators:
@@ -678,13 +729,8 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
             url = var_code2url[name]
             print(url)
             if url.startswith("http"):
-                if name == "SDGHEALTHFACILITIESESSENTIALMEDS":
-                    descs[name] = str(
-                        "Rationale: Measurement and monitoring of access to essential medicines are of high priority for the global development agenda given access is an integral part of the Universal Health Coverage movement and an indispensable element of the delivery of quality health care. Access to medicines is a composite multidimensional concept that is composed of the availability of medicines and the affordability of their prices. Information on these two dimensions has been collected and analysed since the 54th World Health Assembly in 2001, when Member States adopted the WHO Medicines Strategy (resolution WHA54.11). This resolution led to the launch of the joint project on Medicine Prices and Availability by WHO and the international non-governmental organization Health Action International (HAI/WHO), as well as a proposed HAI/WHO methodology for collecting data and measuring components of access to medicines.\n\nDefinition: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis.\nThe indicator is a multidimensional index reported as a proportion (%) of health facilities that have a defined core set of quality-assured medicines that are available and affordable relative to the total number of surveyed health facilities at national level.\n\nMethod of estimation: The index is computed as a ratio of the health facilities with available and affordable medicines for primary health care over the total number of the surveyed health facilities. For this indicator, the following variables are considered for a multidimensional understanding of the\ncomponents of access to medicines:\n\u2022 A core set of relevant essential medicines for primary healthcare\n\u2022 Regional burden of disease\n\u2022 Availability of a medicine\n\u2022 Price of a medicine\n\u2022 Treatment courses for each medicine (number of units per treatment & duration of\ntreatment)\n\u2022 National poverty line and lowest-paid unskilled government worker (LPGW) wage\n\u2022 Proxy for quality of the core set of relevant essential medicines.",
-                    )
-                else:
-                    desc = _fetch_description_one_variable(url)
-                    descs[name] = str(desc)
+                desc = _fetch_description_one_variable(url)
+                descs[name] = str(desc)
             else:
                 descs[name] = str("")
         with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
@@ -692,7 +738,7 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
     else:
         with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
             descs = json.load(fp)
-    return descs
+        return descs
 
 
 def _fetch_description_one_variable(url: str) -> str:
@@ -712,29 +758,24 @@ def _fetch_description_one_variable(url: str) -> str:
         "method of measurement",
         "method of estimation",
     ]
-    if (
-        url
-        == "https://www.who.int/data/gho/indicator-metadata-registry/imr-details/5559"  # dodgy formatting on this page
-    ):
-        text = "Rationale: Measurement and monitoring of access to essential medicines are of high priority for the global development agenda given access is an integral part of the Universal Health Coverage movement and an indispensable element of the delivery of quality health care. Access to medicines is a composite multidimensional concept that is composed of the availability of medicines and the affordability of their prices. Information on these two dimensions has been collected and analysed since the 54th World Health Assembly in 2001, when Member States adopted the WHO Medicines Strategy (resolution WHA54.11). This resolution led to the launch of the joint project on Medicine Prices and Availability by WHO and the international non-governmental organization Health Action International (HAI/WHO), as well as a proposed HAI/WHO methodology for collecting data and measuring components of access to medicines.\n\nDefinition: Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis.\nThe indicator is a multidimensional index reported as a proportion (%) of health facilities that have a defined core set of quality-assured medicines that are available and affordable relative to the total number of surveyed health facilities at national level.\n\nMethod of estimation: The index is computed as a ratio of the health facilities with available and affordable medicines for primary health care over the total number of the surveyed health facilities:\nSDG3.b.3 =\nFacilities with available and affordable basket of medicines(n)\nSurveyed Facilities (n)\nFor this indicator, the following variables are considered for a multidimensional understanding of the\ncomponents of access to medicines:\n• A core set of relevant essential medicines for primary healthcare\n• Regional burden of disease\n• Availability of a medicine\n• Price of a medicine\n• Treatment courses for each medicine (number of units per treatment & duration of\ntreatment)\n• National poverty line and lowest-paid unskilled government worker (LPGW) wage\n• Proxy for quality of the core set of relevant essential medicines."
-    else:
-        try:
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, features="lxml")
-            divs = soup.find_all("div", {"class": "metadata-box"})
-            text = ""
-            for div in divs:
-                heading_text = re.sub(
-                    r":$",
-                    "",
-                    div.find("div", {"class": "metadata-title"}).text.strip().lower(),
-                )
-                if heading_text in headings_to_use:
-                    text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
-            text = text.strip()
-        except requests.exceptions.RequestException as e:
-            print(e)
-            text = ""
+
+    try:
+        r = requests.get(url)
+        soup = BeautifulSoup(r.content, features="lxml")
+        divs = soup.find_all("div", {"class": "metadata-box"})
+        text = ""
+        for div in divs:
+            heading_text = re.sub(
+                r":$",
+                "",
+                div.find("div", {"class": "metadata-title"}).text.strip().lower(),
+            )
+            if heading_text in headings_to_use:
+                text += f"\n\n{heading_text.capitalize()}: {div.find(text=True, recursive=False).strip()}"
+        text = text.strip()
+    except requests.exceptions.RequestException as e:
+        print(e)
+        text = ""
     return text
 
 
@@ -799,3 +840,80 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
         f"{sum(drop)} rows dropped as alcohol consumers and abstainers values do not sum to 100"
     )
     return df
+
+
+def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
+    # Number of reported Yaws cases - add global total
+    yaws = "Indicator:Number of cases of yaws reported"
+    yaws_id = df_variables["id"][df_variables["name"] == yaws]
+    yaws_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id)
+    )
+    yaws_df["value"] = yaws_df["value"].astype(int)
+    yaws_global = pd.DataFrame()
+    yaws_global = yaws_df.groupby("year").sum()
+    yaws_global["year"] = yaws_global.index
+    yaws_global = yaws_global.reset_index(drop=True)
+    yaws_global["country"] = "World"
+    yaws_out = pd.concat([yaws_df, yaws_global], axis=0)
+    yaws_out.to_csv(os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id))
+
+    # Yaws endemicity and number of reported cases
+
+    yaws_stat = "Indicator:Status of yaws endemicity"
+    yaws_stat_id = df_variables["id"][df_variables["name"] == yaws_stat]
+    yaws_stat_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_stat_id)
+    )
+    # We can combine both dataframes into one as there aren't any duplicate country-year combinations
+    yaws_stat_df = pd.concat([yaws_df, yaws_stat_df])
+    yaws_stat_var = df_variables[df_variables["name"] == yaws_stat].copy()
+    yaws_stat_var["name"] = "Indicator:Yaws status of endemicity and number of cases"
+    yaws_stat_var[
+        "description"
+    ] = "Definition: The number of reported yaws cases combined with the status of endemicity dataset for all countries that had reported case numbers."
+    yaws_stat_var["id"] = max(df_variables["id"]) + 1
+    yaws_stat_df.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, yaws_stat_var], axis=0)
+
+    # Number of neonatal tetanus cases per million
+    rc = RemoteCatalog(channels=["garden"])
+    population = (
+        rc.find("population", namespace="owid", dataset="key_indicators")
+        .load()
+        .reset_index()
+    )
+    neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
+    neo_tet_id = df_variables["id"][df_variables["name"] == neo_tet]
+    tet_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % neo_tet_id)
+    )
+    tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
+    tet_pop["value"] = round((tet_pop["value"] / tet_pop["population"]) * 1000000, 2)
+    tet_pop = tet_pop[["country", "year", "value"]].dropna()
+
+    tet_pop_var = df_variables[df_variables["name"] == neo_tet].copy()
+    tet_pop_var[
+        "name"
+    ] = "Indicator:Neonatal tetanus - number of reported cases per million"
+    tet_pop_var[
+        "description"
+    ] = "Definition: Confirmed neonatal tetanus cases per million.\n\nMethod of estimation: WHO compiles neonatal tetanus data as reported by national authorities. Our World In Data converts this into a rate by standardising with our population variable."
+    tet_pop_var["id"] = max(df_variables["id"]) + 1
+
+    tet_pop.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
+
+    return df_variables
