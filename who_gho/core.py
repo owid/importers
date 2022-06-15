@@ -639,7 +639,7 @@ def get_distinct_entities() -> List[str]:
     ]
     entity_set = set({})
     for fname in fnames:
-        print(fname)
+        # print(fname)
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entity_set.update(df_temp["country"].unique().tolist())
         assert pd.notnull(df_temp["country"]).all()
@@ -842,12 +842,32 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
+
+    df_variables = add_global_yaws(df_variables)
+    df_variables = add_neonatal_tetanus_cases_per_mil(df_variables)
+    add_youth_mortality_rates(df_variables)
+
+    return df_variables
+
+
+def get_dataframe_from_variable_name(variable_name: str) -> pd.DataFrame:
+    """Returns a dataframe containing all datapoints for a given variable name."""
+    var_id = df_variables["id"][df_variables["name"] == variable_name]
+    var_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % var_id)
+    )
+    return var_df
+
+
+def add_youth_mortality_rates(df_variables: pd.DataFrame) -> pd.DataFrame:
+    u5 = "Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes"
+    u5_df = get_dataframe_from_variable_name(u5)
+
+
+def add_global_yaws(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Number of reported Yaws cases - add global total
     yaws = "Indicator:Number of cases of yaws reported"
-    yaws_id = df_variables["id"][df_variables["name"] == yaws]
-    yaws_df = pd.read_csv(
-        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id)
-    )
+    yaws_df = get_dataframe_from_variable_name(yaws)
     yaws_df["value"] = yaws_df["value"].astype(int)
     yaws_global = pd.DataFrame()
     yaws_global = yaws_df.groupby("year").sum()
@@ -881,6 +901,10 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     )
     df_variables = pd.concat([df_variables, yaws_stat_var], axis=0)
 
+    return df_variables
+
+
+def add_neonatal_tetanus_cases_per_mil(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Number of neonatal tetanus cases per million
     rc = RemoteCatalog(channels=["garden"])
     population = (
@@ -889,10 +913,7 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
     neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
-    neo_tet_id = df_variables["id"][df_variables["name"] == neo_tet]
-    tet_df = pd.read_csv(
-        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % neo_tet_id)
-    )
+    tet_df = get_dataframe_from_variable_name(neo_tet)
     tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
     tet_pop["value"] = round((tet_pop["value"] / tet_pop["population"]) * 1000000, 2)
     tet_pop = tet_pop[["country", "year", "value"]].dropna()
@@ -914,5 +935,3 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         )
     )
     df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
-
-    return df_variables
