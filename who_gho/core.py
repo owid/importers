@@ -859,9 +859,22 @@ def get_dataframe_from_variable_name(variable_name: str) -> pd.DataFrame:
     return var_df
 
 
+def adjust_mortality_rates(
+    younger_df: pd.DataFrame, older_df: pd.DataFrame, output_str: str
+) -> pd.Series:
+    df = younger_df.merge(older_df, on=["country", "year"], how="outer")
+    df["adjusted_older_rate"] = ((1000 - df["value_x"]) / 1000) * df["value_y"]
+    df[output_str] = df["adjusted_older_rate"] + df["value_x"]
+    return df[output_str]
+
+
 def add_youth_mortality_rates(df_variables: pd.DataFrame) -> pd.DataFrame:
     u5 = "Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes"
+    mr5_9 = "Indicator:Mortality rate among children ages 5 to 9 years (per 1000 children aged 5) - Sex:Both sexes"
+
     u5_df = get_dataframe_from_variable_name(u5)
+    mr5_9_df = get_dataframe_from_variable_name(mr5_9)
+    adjust_mortality_rates(u5_df, mr5_9_df, "Under-ten mortality rate")
 
 
 def add_global_yaws(df_variables: pd.DataFrame) -> pd.DataFrame:
