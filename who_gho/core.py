@@ -10,7 +10,6 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-import datetime
 import pyarrow as pa
 import pyarrow.parquet as pq
 from owid.catalog import RemoteCatalog
@@ -708,37 +707,38 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
-
+    indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
     # Downloading the metadata for each indicator code - this takes some time so we only want to do it if necessary
     if os.path.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
-        today = datetime.datetime.today()
-        modified_date = datetime.datetime.fromtimestamp(
-            os.path.getmtime(os.path.join(CONFIGPATH, "variable_metadata.json"))
-        )
-        duration = today - modified_date
-    else:
-        today = datetime.datetime.today()
-        modified_date = datetime.datetime.today()
-        duration = today - modified_date
-    # Download the variable metadata if we haven't downloaded it in the last 180 days
-    if duration.days > 90:
-        indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
-        descs = {}
-        for name in indicators:
-            print(name)
-            url = var_code2url[name]
-            print(url)
-            if url.startswith("http"):
-                desc = _fetch_description_one_variable(url)
-                descs[name] = str(desc)
-            else:
-                descs[name] = str("")
-        with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
-            json.dump(descs, fp, indent=2)
-    else:
         with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
             descs = json.load(fp)
-        return descs
+
+        set_current = set(indicators)
+        set_existing = set(list(descs.keys()))
+        missing = list(sorted(set_current - set_existing))
+        if len(missing) > 0:
+            print(f"Downloading metadata for {len(missing)} variables...")
+            descs_miss = fetch_metadata(var_code2url, missing)
+            descs.update(descs_miss)
+    else:
+        descs = fetch_metadata(var_code2url, indicators)
+        with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
+            json.dump(descs, fp, indent=2)
+    return descs
+
+
+def fetch_metadata(var_code2url: dict[Any, Any], ind_codes: list) -> dict[Any, Any]:
+    descs = {}
+    for name in ind_codes:
+        print(name)
+        url = var_code2url[name]
+        print(url)
+        if url.startswith("http"):
+            desc = _fetch_description_one_variable(url)
+            descs[name] = str(desc)
+        else:
+            descs[name] = str("")
+    return descs
 
 
 def _fetch_description_one_variable(url: str) -> str:
