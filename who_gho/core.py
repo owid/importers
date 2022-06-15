@@ -619,9 +619,7 @@ def standardise_country_name(country_col: pd.Series):
         .to_dict()
     )
 
-    country_col_owid = country_col.apply(
-        lambda x: entity2owid_name[x] if x in entity2owid_name else None
-    )
+    country_col_owid = country_col.apply(lambda x: entity2owid_name[x])
     return country_col_owid
 
 
@@ -644,8 +642,9 @@ def get_distinct_entities() -> List[str]:
         print(fname)
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entity_set.update(df_temp["country"].unique().tolist())
+        assert pd.notnull(df_temp["country"]).all()
 
-    entities = sorted(entity_set)
+    entities = list(entity_set)
     assert pd.notnull(entities).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
@@ -717,7 +716,7 @@ def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
         set_existing = set(list(descs.keys()))
         missing = list(sorted(set_current - set_existing))
         if len(missing) > 0:
-            print(f"Downloading metadata for {len(missing)} variables...")
+            print(f"Downloading metadata for {len(missing)} new variables...")
             descs_miss = fetch_metadata(var_code2url, missing)
             descs.update(descs_miss)
     else:
