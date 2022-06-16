@@ -842,21 +842,32 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
-
+    # Adding a global total for Yaws - adding to existing variable
     df_variables = add_global_yaws(df_variables)
+    # Adding a variables for neonatal cases per million
     df_variables = add_neonatal_tetanus_cases_per_mil(df_variables)
-    add_youth_mortality_rates(df_variables)
+    # Adding a variables for youth mortality rate - under 10 years
+    # df_variables = add_youth_mortality_rates(
+    #    df_variables=df_variables,
+    #    younger_ind="Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes",
+    #    older_ind="Indicator:Mortality rate among children ages 5 to 9 years (per 1000 children aged 5) - Sex:Both sexes",
+    #    new_ind_name_short="Under-ten mortality rate",
+    #    new_ind_name_long="Indicator:Under-ten mortality rate (per 1000 live births)",
+    #    new_ind_desc="Definition: Under ten mortality rate is the share of newborns who die before reaching the age of 10. It is calculated by OWID based on WHO Global Health Observatory data.",
+    # )
 
     return df_variables
 
 
-def get_dataframe_from_variable_name(variable_name: str) -> pd.DataFrame:
+def get_dataframe_from_variable_name(
+    df_var: pd.DataFrame, variable_name: str
+) -> tuple[int, pd.DataFrame]:
     """Returns a dataframe containing all datapoints for a given variable name."""
-    var_id = df_variables["id"][df_variables["name"] == variable_name]
+    var_id = df_var["id"][df_var["name"] == variable_name]
     var_df = pd.read_csv(
         os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % var_id)
     )
-    return var_df
+    return var_id, var_df
 
 
 def adjust_mortality_rates(
@@ -865,22 +876,46 @@ def adjust_mortality_rates(
     df = younger_df.merge(older_df, on=["country", "year"], how="outer")
     df["adjusted_older_rate"] = ((1000 - df["value_x"]) / 1000) * df["value_y"]
     df[output_str] = df["adjusted_older_rate"] + df["value_x"]
-    return df[output_str]
+    out_df = df[["country", "year", output_str]].dropna()
+
+    return out_df
 
 
-def add_youth_mortality_rates(df_variables: pd.DataFrame) -> pd.DataFrame:
-    u5 = "Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes"
-    mr5_9 = "Indicator:Mortality rate among children ages 5 to 9 years (per 1000 children aged 5) - Sex:Both sexes"
+def add_youth_mortality_rates(
+    df_variables: pd.DataFrame,
+    younger_ind: str,
+    older_ind: str,
+    new_ind_name_short: str,
+    new_ind_name_long: str,
+    new_ind_desc: str,
+) -> pd.DataFrame:
+    younger_id, younger_df = get_dataframe_from_variable_name(df_variables, younger_ind)
+    older_id, older_df = get_dataframe_from_variable_name(df_variables, older_ind)
+    new_df = adjust_mortality_rates(
+        younger_df,
+        older_df,
+        new_ind_name_short,
+    )
+    new_var = df_variables[df_variables["name"] == younger_ind].copy()
+    new_var["name"] = new_ind_name_long
+    new_var["description"] = new_ind_desc
+    new_var["id"] = max(df_variables["id"]) + 1
 
-    u5_df = get_dataframe_from_variable_name(u5)
-    mr5_9_df = get_dataframe_from_variable_name(mr5_9)
-    adjust_mortality_rates(u5_df, mr5_9_df, "Under-ten mortality rate")
+    new_df.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, new_var], axis=0)
+    return df_variables
 
 
 def add_global_yaws(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Number of reported Yaws cases - add global total
     yaws = "Indicator:Number of cases of yaws reported"
-    yaws_df = get_dataframe_from_variable_name(yaws)
+    yaws_id, yaws_df = get_dataframe_from_variable_name(df_variables, yaws)
     yaws_df["value"] = yaws_df["value"].astype(int)
     yaws_global = pd.DataFrame()
     yaws_global = yaws_df.groupby("year").sum()
@@ -926,7 +961,7 @@ def add_neonatal_tetanus_cases_per_mil(df_variables: pd.DataFrame) -> pd.DataFra
         .reset_index()
     )
     neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
-    tet_df = get_dataframe_from_variable_name(neo_tet)
+    tet_id, tet_df = get_dataframe_from_variable_name(df_variables, neo_tet)
     tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
     tet_pop["value"] = round((tet_pop["value"] / tet_pop["population"]) * 1000000, 2)
     tet_pop = tet_pop[["country", "year", "value"]].dropna()
@@ -948,3 +983,4 @@ def add_neonatal_tetanus_cases_per_mil(df_variables: pd.DataFrame) -> pd.DataFra
         )
     )
     df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
+    return df_variables
