@@ -10,15 +10,18 @@ TODO: Primary energy consumption per capita was called `primary_gj_pc` in the pr
 
 """
 
+import argparse
+import logging
 import os
 import re
-import simplejson as json
 import shutil
-from typing import Dict, List
 from copy import deepcopy
-from pandas.core.dtypes.common import is_numeric_dtype
+from typing import Dict, List
+
 import pandas as pd
+import simplejson as json
 from dotenv import load_dotenv
+from pandas.core.dtypes.common import is_numeric_dtype
 
 from bp_statreview import (
     DATASET_NAME,
@@ -30,10 +33,8 @@ from bp_statreview import (
     INPATH,
     OUTPATH,
 )
-from bp_statreview.unit_conversion import UnitConverter
 from bp_statreview.clean_excel import clean_excel_datapoints
-
-import logging
+from bp_statreview.unit_conversion import UnitConverter
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -46,7 +47,7 @@ load_dotenv()
 KEEP_PATHS = ["distinct_countries_unstandardized.csv"]
 
 
-def main() -> None:
+def main(countries_are_standardized=False) -> None:
 
     delete_output(KEEP_PATHS)
     mk_output_dir()
@@ -67,7 +68,7 @@ def main() -> None:
     df_variables, df_data = clean_variables_and_datapoints(
         dataset_id=df_datasets["id"].iloc[0],
         source_id=df_sources["id"].iloc[0],
-        std_entities=True,
+        std_entities=countries_are_standardized,
     )
     create_datapoints(
         df=df_data,
@@ -429,4 +430,14 @@ def get_distinct_entities() -> List[str]:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "-s",
+        "--countries_are_standardized",
+        default=False,
+        action="store_true",
+        help="Use this flag if the file harmonizing country names has already been updated.",
+    )
+    args = parser.parse_args()
+    main(countries_are_standardized=args.countries_are_standardized)
+
