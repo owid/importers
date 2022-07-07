@@ -1,3 +1,5 @@
+# type: ignore
+
 """Removes hard-coded year "2011" from subtitles of charts containing the
 GDP per capita, PPP (constant 2017 international $) variable.
 """
