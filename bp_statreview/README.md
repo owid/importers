@@ -7,6 +7,7 @@ Instructions for executing a bulk dataset import + update of existing charts for
 0. Go to the `importers`' root folder and activate the virtual environment (which should have been previously created).
 ```
 source venv/activate/bin
+export PYTHONPATH=${PWD}
 ```
 1. From the same root folder, download the new data:
 ```
@@ -29,15 +30,16 @@ standardized, which is solved in the next steps.
 python bp_statreview/entities.py
 ```
 This will create the file `distinct_countries_unstandardized.csv` in the folder of outputs.
+The same warning as in the previous step will be raised (ignore it).
 4. Harmonize country names.
 To do this, you can either use the `harmonize` tool from `etl` (and adjust the format of the output file), or upload
 the `distinct_countries_unstandardized.csv` file to the
 [OWID country standardizer tool](https://owid.cloud/admin/standardize).
 The resulting file must be saved as `config/standardized_entity_names.csv`, with columns `Country` and
 `Our World In Data Name`.
-5. Execute again the cleaning script.
+5. Execute again the cleaning script, now that countries are harmonized.
 ```
-python bp_statreview/clean.py
+python bp_statreview/clean.py --countries_are_standardized
 ```
 This time it should work without raising any warnings.
 6. Update the data in the grapher database.
