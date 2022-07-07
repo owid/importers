@@ -1,3 +1,5 @@
+# type: ignore
+
 """Retrieves unstandardized entity names from raw downloaded dataset.
 
 Usage:
