@@ -10,6 +10,10 @@ DATASET_LINK = "https://www.bp.com/en/global/corporate/energy-economics/statisti
 # Dataset variables (that change on each update).
 # Dataset version, which is the year when it was released, and is assumed to be the current year (e.g. "2022").
 DATASET_VERSION = str(datetime.today().year)
+# Full name of dataset (as will appear in grapher).
+DATASET_FULL_NAME = f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"
+# Full name of previous dataset (that needs to be identified to be able to replace variables with the new ones).
+DATASET_FULL_NAME_PREVIOUS = f"{DATASET_NAME} - {DATASET_AUTHORS} ({str(int(DATASET_VERSION) - 1)})"
 # URL to the download link to the excel file with all data.
 ALL_DATA_LINK = f"https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/xlsx/energy-economics/statistical-review/bp-stats-review-{DATASET_VERSION}-all-data.xlsx"
 # URL to the download link to the consolidated dataset in panel format.

@@ -24,6 +24,7 @@ from dotenv import load_dotenv
 from pandas.core.dtypes.common import is_numeric_dtype
 
 from bp_statreview import (
+    DATASET_FULL_NAME,
     DATASET_NAME,
     DATASET_AUTHORS,
     DATASET_VERSION,
@@ -130,7 +131,7 @@ def clean_datasets() -> pd.DataFrame:
         pd.DataFrame. Cleaned dataframe of datasets to be uploaded.
     """
     data = [
-        {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
+        {"id": 0, "name": f"{DATASET_FULL_NAME}"}
     ]
     return pd.DataFrame(data)
 
