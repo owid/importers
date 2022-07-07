@@ -1,5 +1,6 @@
 """downloads WDI data and saves it to disk.
 """
+# type: ignore
 
 import os
 import shutil
