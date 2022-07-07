@@ -1,3 +1,5 @@
+# type: ignore
+
 """Retrieves unstandardized entity names from raw downloaded dataset.
 
 Usage:
@@ -9,7 +11,6 @@ Usage:
     >>> pd.DataFrame(get_unstandardized_entity_names(), columns=["Country"]).to_csv(os.path.join(OUTPATH, "distinct_countries_unstandardized.csv"), index=False)
 
 """
-# type: ignore
 
 import os
 import pandas as pd
