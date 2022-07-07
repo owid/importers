@@ -1,4 +1,5 @@
-"""downloads raw data and saves it to disk.
+"""Delete the content of the input folders, download raw data files from BP and save them in the input folder.
+
 """
 
 import os
@@ -6,7 +7,8 @@ import shutil
 import requests
 import pandas as pd
 
-from bp_statreview import INPATH
+from bp_statreview import ALL_DATA_LINK, INPATH, CONSOLIDATED_DATASET_NARROW_FORMAT_LINK,\
+    CONSOLIDATED_DATASET_PANEL_FORMAT_LINK
 
 import logging
 
@@ -44,16 +46,16 @@ def download_data() -> None:
 
 def _download_data_csv(wide: bool = False) -> None:
     if wide:
-        url = "https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/xlsx/energy-economics/statistical-review/bp-stats-review-2021-consolidated-dataset-panel-format.csv"
+        url = CONSOLIDATED_DATASET_PANEL_FORMAT_LINK
     else:
-        url = "https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/xlsx/energy-economics/statistical-review/bp-stats-review-2021-consolidated-dataset-narrow-format.csv"
+        url = CONSOLIDATED_DATASET_NARROW_FORMAT_LINK
     logger.info(f'Downloading data from "{url}"...')
     df = pd.read_csv(url)
     df.to_csv(os.path.join(INPATH, "data.csv"), index=False)
 
 
 def _download_data_excel() -> None:
-    url = "https://www.bp.com/content/dam/bp/business-sites/en/global/corporate/xlsx/energy-economics/statistical-review/bp-stats-review-2021-all-data.xlsx"
+    url = ALL_DATA_LINK
     logger.info(f'Downloading data from "{url}"...')
     res = requests.get(url)
     with open(os.path.join(INPATH, "data.xlsx"), "wb") as f:

@@ -10,8 +10,6 @@ Usage:
 from bp_statreview import (
     DATASET_NAMESPACE,
     DATASET_DIR,
-    download,
-    clean,
     match_variables,
 )
 from standard_importer import import_dataset
@@ -20,8 +18,6 @@ from standard_importer.chart_revision_suggester import ChartRevisionSuggester
 
 def main():
     # insert data into sql
-    download.main()
-    clean.main()
     import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
 
     # constructs and upserts suggested chart revisions

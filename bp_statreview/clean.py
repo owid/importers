@@ -1,4 +1,13 @@
-"""cleans BP metadata and data points in preparation for MySQL insert.
+"""Clean BP metadata and data points in preparation for MySQL insert.
+
+This script constructs variables from both the csv and xlsx input files, in addition to constructing variables through
+unit conversion. The reason for this reliance on both the csv and xlsx files is that the csv input file does not contain
+all of the variables available in the xlsx file. But the xlsx file is much more cumbersome to clean, so we opt for
+variables in the csv file when available.
+
+TODO: Primary energy consumption per capita was called `primary_gj_pc` in the previous dataset, and now `primary_ej_pc`,
+  however the numbers seem to be in the same order of magnitude. Check which one is correct.
+
 """
 
 import os
@@ -34,7 +43,7 @@ load_dotenv()
 
 # KEEP_PATHS: Names of files in `{DATASET_DIR}/output` that you do NOT
 # want deleted in the beginning of this script.
-KEEP_PATHS = []
+KEEP_PATHS = ["distinct_countries_unstandardized.csv"]
 
 
 def main() -> None:
@@ -417,3 +426,7 @@ def get_distinct_entities() -> List[str]:
     entities = sorted(entities)
     assert pd.notnull(entities).all(), "All entities should be non-null."
     return entities
+
+
+if __name__ == "__main__":
+    main()
