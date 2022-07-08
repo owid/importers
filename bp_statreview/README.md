@@ -9,13 +9,17 @@ Instructions for executing a bulk dataset import + update of existing charts for
 source venv/activate/bin
 export PYTHONPATH=${PWD}
 ```
-1. From the same root folder, download the new data:
+1. From the same root folder, download the new data, by running:
 ```
 python bp_statreview/download.py
 ```
 If anything fails, you may have to manually edit some of the variables defined in `__init__.py` (maybe the download
 links to the new BP files have changed).
 2. Ensure all variables can be read and cleaned from the new files.
+It is advisable to open the old and new `.xlsx` data files and visually inspect them to detect any changes.
+Manually update the names of some variables in `variables_to_clean.json` that have a hardcoded year in the name (e.g.
+"Oil - Crude prices since 1861 (2021 $)").
+Then run:
 ```
 python bp_statreview/clean.py
 ```
@@ -25,7 +29,7 @@ Then, adjust the content of `variables_to_clean.json`, and, if that is not enoug
 `clean_excel.py`.
 Once it runs until the end without errors, it may still raise a warning, saying that entities have not been
 standardized, which is solved in the next steps.
-3. Retrieve all country/region names from raw BP data.
+3. Retrieve all country/region names from raw BP data, by running:
 ```
 python bp_statreview/entities.py
 ```
@@ -37,12 +41,12 @@ the `distinct_countries_unstandardized.csv` file to the
 [OWID country standardizer tool](https://owid.cloud/admin/standardize).
 The resulting file must be saved as `config/standardized_entity_names.csv`, with columns `Country` and
 `Our World In Data Name`.
-5. Execute again the cleaning script, now that countries are harmonized.
+5. Execute again the cleaning script, now that countries are harmonized, by running:
 ```
 python bp_statreview/clean.py --countries_are_standardized
 ```
 This time it should work without raising any warnings.
-6. Update the data in the grapher database.
+6. Update the data in the grapher database, by running:
 ```
 python bp_statreview/write_to_grapher.py
 ```
