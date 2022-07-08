@@ -44,6 +44,6 @@ python bp_statreview/clean.py --countries_are_standardized
 This time it should work without raising any warnings.
 6. Update the data in the grapher database.
 ```
-python bp_statreview/main.py
+python bp_statreview/write_to_grapher.py
 ```
 7. Use the chart approval tool to compare old and new charts.
