@@ -2,6 +2,7 @@
 
 """
 
+import argparse
 import os
 from typing import List
 
@@ -26,4 +27,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

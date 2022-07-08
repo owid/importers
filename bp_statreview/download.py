@@ -2,16 +2,18 @@
 
 """
 
+import argparse
+import logging
 import os
 import shutil
-import requests
-import pandas as pd
 
-from bp_statreview import ALL_DATA_LINK, INPATH, CONSOLIDATED_DATASET_NARROW_FORMAT_LINK,\
+import pandas as pd
+import requests
+
+from bp_statreview import ALL_DATA_LINK, INPATH, CONSOLIDATED_DATASET_NARROW_FORMAT_LINK, \
     CONSOLIDATED_DATASET_PANEL_FORMAT_LINK
 
-import logging
-
+# Initialise logger.
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -63,4 +65,6 @@ def _download_data_excel() -> None:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

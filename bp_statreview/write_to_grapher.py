@@ -1,11 +1,8 @@
-"""executes bulk dataset import + chart updates for the BP statistical review
-or world energy dataset.
-
-Usage:
-
-    python -m bp_statreview.main
+"""Write the new dataset to grapher database, and add charts to be reviewed using the chart approval tool.
 
 """
+
+import argparse
 
 from bp_statreview import (
     DATASET_NAMESPACE,
@@ -27,4 +24,6 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    args = parser.parse_args()
     main()

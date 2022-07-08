@@ -5,9 +5,6 @@ unit conversion. The reason for this reliance on both the csv and xlsx files is 
 all of the variables available in the xlsx file. But the xlsx file is much more cumbersome to clean, so we opt for
 variables in the csv file when available.
 
-TODO: Primary energy consumption per capita was called `primary_gj_pc` in the previous dataset, and now `primary_ej_pc`,
-  however the numbers seem to be in the same order of magnitude. Check which one is correct.
-
 """
 
 import argparse
@@ -27,7 +24,6 @@ from bp_statreview import (
     DATASET_FULL_NAME,
     DATASET_NAME,
     DATASET_AUTHORS,
-    DATASET_VERSION,
     DATASET_LINK,
     DATASET_RETRIEVED_DATE,
     CONFIGPATH,
