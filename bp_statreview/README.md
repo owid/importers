@@ -17,8 +17,8 @@ If anything fails, you may have to manually edit some of the variables defined i
 links to the new BP files have changed).
 2. Ensure all variables can be read and cleaned from the new files.
 It is advisable to open the old and new `.xlsx` data files and visually inspect them to detect any changes.
-Manually update the names of some variables in `variables_to_clean.json` that have a hardcoded year in the name (e.g.
-"Oil - Crude prices since 1861 (2021 $)").
+Manually update the names of some variables in `variables_to_clean.json` and `variable_replacements_by_name.json` that
+have a hardcoded year in the name (e.g. "Oil - Crude prices since 1861 (2021 $)").
 Then run:
 ```
 python bp_statreview/clean.py

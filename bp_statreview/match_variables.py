@@ -83,7 +83,7 @@ def main():
             # from there. Otherwise, assume the new variable name is the same as the old.
             renaming = df_replacements[df_replacements["old_name"] == old_variable_name]
             if len(renaming) == 1:
-                new_variable_name = renaming["new_name"]
+                new_variable_name = renaming["new_name"].item()
             else:
                 new_variable_name = old_variable_name
 
