@@ -2,7 +2,6 @@ Country,Our World In Data Name
 Algeria,Algeria
 Angola,Angola
 Argentina,Argentina
-Asian marker price,Asian marker price
 Australia,Australia
 Austria,Austria
 Azerbaijan,Azerbaijan
@@ -12,7 +11,6 @@ Belarus,Belarus
 Belgium,Belgium
 Bolivia,Bolivia
 Brazil,Brazil
-Brent,Brent
 Brunei,Brunei
 Bulgaria,Bulgaria
 Canada,Canada
@@ -20,30 +18,24 @@ Chad,Chad
 Chile,Chile
 China,China
 China Hong Kong SAR,Hong Kong
-China Qinhuangdao spot price,China Qinhuangdao spot price
 Colombia,Colombia
 Costa Rica,Costa Rica
 Croatia,Croatia
-Crude oil - OECD countries CIF,Crude oil - OECD countries CIF
 Cuba,Cuba
 Curacao,Curacao
 Cyprus,Cyprus
 Czech Republic,Czechia
 Democratic Republic of Congo,Democratic Republic of Congo
 Denmark,Denmark
-Dubai,Dubai
 Ecuador,Ecuador
 Egypt,Egypt
-El Salvador,El Salvador
 Equatorial Guinea,Equatorial Guinea
 Estonia,Estonia
-Ethiopia,Ethiopia
 Finland,Finland
 France,France
 Gabon,Gabon
 Germany,Germany
 Greece,Greece
-Guatemala,Guatemala
 Honduras,Honduras
 Hungary,Hungary
 Iceland,Iceland
@@ -55,15 +47,9 @@ Ireland,Ireland
 Israel,Israel
 Italy,Italy
 Japan,Japan
-Japan coking coal import CIF price,Japan coking coal import CIF price
-Japan steam coal import CIF price,Japan steam coal import CIF price
-Japan steam spot CIF price,Japan steam spot CIF price
 Jordan,Jordan
 Kazakhstan,Kazakhstan
-Kenya,Kenya
 Kuwait,Kuwait
-LNG - Japan CIF,LNG - Japan CIF
-LNG - Japan Korea Marker (JKM),LNG - Japan Korea Marker (JKM)
 Latvia,Latvia
 Libya,Libya
 Lithuania,Lithuania
@@ -71,34 +57,18 @@ Luxembourg,Luxembourg
 Madagascar,Madagascar
 Malaysia,Malaysia
 Mexico,Mexico
-Middle East,Middle East
 Mongolia,Mongolia
 Morocco,Morocco
 Mozambique,Mozambique
 Myanmar,Myanmar
-Natural gas - Average German Import price,Natural gas - Average German Import price
-Natural gas - Canada (Alberta),Natural gas - Canada (Alberta)
-Natural gas - Netherlands TTF (DA Heren Index),Natural gas - Netherlands TTF (DA Heren Index)
-Natural gas - UK (Heren NBP Index),Natural gas - UK (Heren NBP Index)
-Natural gas - US Henry Hub,Natural gas - US Henry Hub
 Netherlands,Netherlands
 Netherlands Antilles,Netherlands Antilles
 New Caledonia,New Caledonia
 New Zealand,New Zealand
-Nicaragua,Nicaragua
 Nigeria,Nigeria
-Nigerian Forcados,Nigerian Forcados
 North Macedonia,North Macedonia
-Northwest Europe marker price,Northwest Europe marker price
 Norway,Norway
 Oman,Oman
-Other Africa,Other Africa
-Other Asia Pacific,Other Asia Pacific
-Other CIS,Other CIS
-Other Europe,Other Europe
-Other Middle East,Other Middle East
-Other S. & Cent. America,Other South & Central America
-Other S. and Cent. America,Other South & Central America
 Pakistan,Pakistan
 Papua New Guinea,Papua New Guinea
 Peru,Peru
@@ -125,28 +95,13 @@ Switzerland,Switzerland
 Syria,Syria
 Taiwan,Taiwan
 Thailand,Thailand
-Total Africa,Africa
-Total Asia Pacific,Asia Pacific
-Total CIS,CIS
-Total Central America,Central America
-Total Eastern Africa,Eastern Africa
-Total Europe,Europe
-Total European Union,European Union
-Total Middle Africa,Middle Africa
-Total Middle East,Middle East
-Total Middle East & Africa,Middle East & Africa
-Total Non-OECD,Non-OECD
-Total North America,North America
-Total OECD,OECD
-Total S. & Cent. America,South & Central America
-Total Western Africa,Western Africa
+Total EU,European Union (27)
 Total World,World
 Trinidad & Tobago,Trinidad and Tobago
 Tunisia,Tunisia
 Turkey,Turkey
 Turkmenistan,Turkmenistan
 US,United States
-US Central Appalachian coal spot price index,US Central Appalachian coal spot price index
 USSR,USSR
 Ukraine,Ukraine
 United Arab Emirates,United Arab Emirates
@@ -156,7 +111,57 @@ Uzbekistan,Uzbekistan
 Venezuela,Venezuela
 Viet Nam,Vietnam
 Vietnam,Vietnam
-West Texas Intermediate,West Texas Intermediate
 Yemen,Yemen
 Zambia,Zambia
 Zimbabwe,Zimbabwe
+Asian marker price,Asian marker price (BP)
+Brent,Brent (BP)
+China Qinhuangdao spot price,China Qinhuangdao spot price (BP)
+Crude Oil - OECD countries CIF,Crude Oil - OECD countries CIF (BP)
+Dubai,Dubai (BP)
+Japan coking coal import CIF price,Japan coking coal import CIF price (BP)
+Japan steam coal import CIF price,Japan steam coal import CIF price (BP)
+Japan steam spot CIF price,Japan steam spot CIF price (BP)
+LNG - Japan CIF,LNG - Japan CIF (BP)
+LNG - Japan Korea Marker (JKM),LNG - Japan Korea Marker (JKM) (BP)
+Middle East,Middle East (BP)
+Natural Gas - Average German Import price,Natural Gas - Average German Import price (BP)
+Natural Gas - Canada (Alberta),Natural Gas - Canada (Alberta) (BP)
+Natural Gas - Netherlands TTF (DA Heren Index),Natural Gas - Netherlands TTF (DA Heren Index) (BP)
+Natural Gas - UK (Heren NBP Index),Natural Gas - UK (Heren NBP Index) (BP)
+Natural Gas - US Henry Hub,Natural Gas - US Henry Hub (BP)
+Nigerian Forcados,Nigerian Forcados (BP)
+Northwest Europe marker price,Northwest Europe marker price (BP)
+Other Africa,Other Africa (BP)
+Other Asia Pacific,Other Asia Pacific (BP)
+Other CIS,Other CIS (BP)
+Other Caribbean,Other Caribbean (BP)
+Other Eastern Africa,Other Eastern Africa (BP)
+Other Europe,Other Europe (BP)
+Other Middle Africa,Other Middle Africa (BP)
+Other Middle East,Other Middle East (BP)
+Other North America,Other North America (BP)
+Other Northern Africa,Other Northern Africa (BP)
+Other S. & Cent. America,Other South and Central America (BP)
+Other South America,Other South America (BP)
+Other Southern Africa,Other Southern Africa (BP)
+Other Western Africa,Other Western Africa (BP)
+Rest of World,Rest of World (BP)
+Total Africa,Africa (BP)
+Total Asia Pacific,Asia Pacific (BP)
+Total CIS,CIS (BP)
+Total Central America,Central America (BP)
+Total Eastern Africa,Eastern Africa (BP)
+Total Europe,Europe (BP)
+Total Middle Africa,Middle Africa (BP)
+Total Middle East & Africa,Total Middle East & Africa (BP)
+Total Middle East,Middle East (BP)
+Total Non-OECD,Non-OECD (BP)
+Total Non-OPEC,Total Non-OPEC (BP)
+Total North America,North America (BP)
+Total OECD,OECD (BP)
+Total OPEC,Total OPEC (BP)
+Total S. & Cent. America,South and Central America (BP)
+Total Western Africa,Western Africa (BP)
+US Central Appalachian coal spot price index,US Central Appalachian coal spot price index (BP)
+West Texas Intermediate,West Texas Intermediate (BP)

@@ -22,7 +22,7 @@
     {
       "name": "Biofuels Consumption - TWh - Biodiesel",
       "code": null,
-      "unit": "Terrawatt-hours",
+      "unit": "Terawatt-hours",
       "shortUnit": "TWh",
       "description": "",
       "cleaningMetadata": {"dataSource": null, "convertFromCode": "biodiesel_cons_pj", "fillna": {"value": 0}}
@@ -46,7 +46,7 @@
     {
       "name": "Biofuels Production - TWh - Biodiesel",
       "code": null,
-      "unit": "Terrawatt-hours",
+      "unit": "Terawatt-hours",
       "shortUnit": "TWh",
       "description": "Biodiesel production includes biojet which is currently <1 KBOED globally but more than doubled relative to 2019.",
       "cleaningMetadata": {"dataSource": null, "convertFromCode": "biodiesel_prod_pj"}
@@ -72,7 +72,7 @@
     {
       "name": "Biofuels Consumption - TWh - Total",
       "code": null,
-      "unit": "Terrawatt-hours",
+      "unit": "Terawatt-hours",
       "shortUnit": "TWh",
       "description": "Includes biogasoline (such as ethanol) and biodiesel. Volumes have been adjusted for energy content.",
       "cleaningMetadata": {"dataSource": null, "convertFromCode": "biofuels_cons_pj", "fillna": {"value": 0}},
@@ -99,7 +99,7 @@
     {
       "name": "Biofuels Production - TWh - Total",
       "code": null,
-      "unit": "Terrawatt-hours",
+      "unit": "Terawatt-hours",
       "shortUnit": "TWh",
       "description": "Includes biogasoline (such as ethanol), biodiesel and biojet. Volumes have been adjusted for energy content.",
       "cleaningMetadata": {"dataSource": null, "convertFromCode": "biofuels_prod_pj"},
@@ -440,7 +440,7 @@
     {
       "name": "Oil Production - TWh",
       "code": null,
-      "unit": "Terrawatt-hours",
+      "unit": "Terawatt-hours",
       "shortUnit": "TWh",
       "description": "Includes crude oil, shale oil, oil sands, condensates (lease condensate or gas condensates that require further refining) and NGLs (natural gas liquids - ethane, LPG and naphtha separated from the production of natural gas). Excludes liquid fuels from other sources such as biofuels and synthetic derivatives of coal and natural gas. This also excludes liquid fuel adjustment factors such as refinery processing gain. Excludes oil shales/kerogen extracted in solid form.",
       "cleaningMetadata": {"dataSource": null, "convertFromCode": "oilprod_mt"},
@@ -482,7 +482,8 @@
     },
     {
       "name": "Primary Energy - Cons capita",
-      "code": "primary_gj_pc",
+      "code": "primary_ej_pc",
+      "note": "The code used to be primary_gj_pc and now it is primary_ej_pc, however the numbers have not changed; therefore it seems that the units are still GJ per capita (and it is the code that is misleading).",
       "unit": "Gigajoules per capita",
       "shortUnit": "",
       "description": "Primary energy comprises commercially-traded fuels, including modern renewables used to generate electricity. Energy from all sources of non-fossil power generation is accounted for on an input-equivalent basis.",
@@ -604,7 +605,7 @@
       "unit": "US dollars per tonne",
       "shortUnit": "",
       "description": "",
-      "cleaningMetadata": {"dataSource": "excel", "skipRows": 1, "sheetName": "Coal - Prices"}
+      "cleaningMetadata": {"dataSource": "excel", "skipRows": 1, "sheetName": "Coal Prices"}
     },
     {
       "name": "Coal - Reserves - Anthracite and bituminous",
@@ -638,15 +639,7 @@
       "unit": "US dollars per million BTU",
       "shortUnit": "",
       "description": "",
-      "cleaningMetadata": {"dataSource": "excel", "skipRows": 2, "sheetName": "Gas - Prices "}
-    },
-    {
-      "name": "Geothermal Capacity",
-      "code": null,
-      "unit": "Megawatts",
-      "shortUnit": "MW",
-      "description": "",
-      "cleaningMetadata": {"dataSource": "excel", "skipRows": 3, "sheetName": "Geothermal Capacity"}
+      "cleaningMetadata": {"dataSource": "excel", "skipRows": 2, "sheetName": "Gas Prices "}
     },
     {
       "name": "Oil - Spot crude prices",
@@ -662,15 +655,15 @@
       "unit": "US dollars per barrel (current $)",
       "shortUnit": "",
       "description": "",
-      "cleaningMetadata": {"dataSource": "excel", "skipRows": 3, "sheetName": "Oil - Crude prices since 1861", "subvariable": "$ money of the day"}
+      "cleaningMetadata": {"dataSource": "excel", "skipRows": 3, "sheetName": "Oil crude prices since 1861", "subvariable": "$ money of the day"}
     },
     {
-      "name": "Oil - Crude prices since 1861 (2020 $)",
+      "name": "Oil - Crude prices since 1861 (2021 $)",
       "code": null,
-      "unit": "US dollars per barrel (2020 $)",
+      "unit": "US dollars per barrel (2021 $)",
       "shortUnit": "",
       "description": "",
-      "cleaningMetadata": {"dataSource": "excel", "skipRows": 3, "sheetName": "Oil - Crude prices since 1861", "subvariable": "$ 2020"}
+      "cleaningMetadata": {"dataSource": "excel", "skipRows": 3, "sheetName": "Oil crude prices since 1861", "subvariable": "$ 2021"}
     },
     {
       "name": "Solar Capacity",

@@ -1,157 +1,17 @@
 {
   "meta": {
-    "notes": "This file contains an array of mappings from old variable names to new variable names."
+    "notes": "If any variable has changed name in the new dataset, add an entry here in 'replacements', with 'old_name', 'new_name' (and optionally 'notes')."
   },
   "replacements": [
     {
-      "newName": "Biofuels Production - TWh - Total",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Biofuels Production - PJ - Total"
-    },
-    {
-      "newName": "Biofuels Consumption - TWh - Total",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Biofuels Consumption - PJ - Total"
-    },
-    {
-      "newName": "Coal - Prices",
+      "old_name": "example of old variable name",
       "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Coal - Prices"
+      "new_name": "example of new variable name"
     },
     {
-      "newName": "Coal - Reserves - Anthracite and bituminous",
+      "old_name": "Oil - Crude prices since 1861 (2020 $)",
       "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Coal - Reserves - Anthracite and bituminous"
-    },
-    {
-      "newName": "Coal - Reserves - Sub-bituminous and lignite",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Coal - Reserves - Sub-bituminous and lignite"
-    },
-    {
-      "newName": "Coal - Reserves - Total",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Coal - Reserves - Total"
-    },
-    {
-      "newName": "Coal Consumption - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Coal Consumption - EJ"
-    },
-    {
-      "newName": "Coal Production - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Coal Production - EJ"
-    },
-    {
-      "newName": "Gas - Prices",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Gas - Prices "
-    },
-    {
-      "newName": "Gas - Proved reserves",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Gas - Proved reserves"
-    },
-    {
-      "newName": "Gas Consumption - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Gas Consumption - EJ"
-    },
-    {
-      "newName": "Gas Production - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Gas Production - EJ"
-    },
-    {
-      "newName": "Geo Biomass Other - TWh",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Geo Biomass Other - TWh"
-    },
-    {
-      "newName": "Geothermal Capacity",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Geothermal Capacity"
-    },
-    {
-      "newName": "Hydro Generation - TWh",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Hydro Generation - TWh"
-    },
-    {
-      "newName": "Nuclear Generation - TWh",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Nuclear Generation - TWh"
-    },
-    {
-      "newName": "Oil - Spot crude prices",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Oil - Spot crude prices"
-    },
-    {
-      "newName": "Oil - Crude prices since 1861 (current $)",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Oil - Crude prices since 1861"
-    },
-    {
-      "newName": "Oil Consumption - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Oil Consumption - EJ"
-    },
-    {
-      "newName": "Oil Production - Tonnes",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Oil Production - Tonnes"
-    },
-    {
-      "newName": "Primary Energy Consumption - TWh",
-      "notes": "Existing variable was displayed in terms of TWh",
-      "oldDatasetId": 5155,
-      "oldName": "Primary Energy Consumption"
-    },
-    {
-      "newName": "Solar Capacity",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Solar Capacity"
-    },
-    {
-      "newName": "Solar Generation - TWh",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Solar Generation - TWh"
-    },
-    {
-      "newName": "Wind Capacity",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Wind Capacity"
-    },
-    {
-      "newName": "Wind Generation - TWh",
-      "notes": "",
-      "oldDatasetId": 5155,
-      "oldName": "Wind Generation -TWh"
+      "new_name": "Oil - Crude prices since 1861 (2021 $)"
     }
   ]
 }

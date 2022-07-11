@@ -24,7 +24,8 @@ Australia,2016,5.47
 Australia,2017,5.8
 Australia,2018,4.9
 Australia,2019,5.7
-Australia,2020,5.660278746
+Australia,2020,5.6
+Australia,2021,5.570159858
 Canada,1995,5.339
 Canada,1996,5.714
 Canada,1997,5.709
@@ -50,7 +51,8 @@ Canada,2016,4.216
 Canada,2017,3.704
 Canada,2018,3.524
 Canada,2019,3.336
-Canada,2020,3.2
+Canada,2020,4.474
+Canada,2021,3.834
 China,1995,0.98
 China,1996,0.19
 China,1997,0.2
@@ -68,15 +70,16 @@ China,2008,1.84
 China,2009,1.84
 China,2010,1.5
 China,2011,1.5
-China,2012,1.5
-China,2013,1.5
-China,2014,1.5
-China,2015,1.5
-China,2016,1.5
-China,2017,1.5
-China,2018,3.1
+China,2012,2.2
+China,2013,2.6
+China,2014,2.8
+China,2015,2.6
+China,2016,2.3
+China,2017,2.5
+China,2018,2.0
 China,2019,2.5
-China,2020,2.3
+China,2020,2.2
+China,2021,2.2
 Cuba,1995,1.591
 Cuba,1996,2.011
 Cuba,1997,2.358
@@ -97,12 +100,13 @@ Cuba,2011,5.1
 Cuba,2012,4.7
 Cuba,2013,4.0
 Cuba,2014,3.7
-Cuba,2015,4.3
-Cuba,2016,5.1
-Cuba,2017,5.0
-Cuba,2018,4.490419328
-Cuba,2019,4.687586781
-Cuba,2020,4.679255762
+Cuba,2015,4.0
+Cuba,2016,3.9
+Cuba,2017,3.9
+Cuba,2018,3.5
+Cuba,2019,3.8
+Cuba,2020,3.793246445
+Cuba,2021,3.968838863
 Democratic Republic of Congo,1995,1.67
 Democratic Republic of Congo,1996,2.0
 Democratic Republic of Congo,1997,3.5
@@ -128,7 +132,8 @@ Democratic Republic of Congo,2016,69.03828906
 Democratic Republic of Congo,2017,90.31940625
 Democratic Republic of Congo,2018,109.4023
 Democratic Republic of Congo,2019,77.9637
-Democratic Republic of Congo,2020,85.855
+Democratic Republic of Congo,2020,86.591
+Democratic Republic of Congo,2021,93.011
 Madagascar,2006,0.0
 Madagascar,2007,0.0
 Madagascar,2008,0.0
@@ -140,10 +145,11 @@ Madagascar,2013,2.4
 Madagascar,2014,3.4
 Madagascar,2015,4.0
 Madagascar,2016,3.8
-Madagascar,2017,3.405194805
-Madagascar,2018,2.8474
-Madagascar,2019,2.8885
-Madagascar,2020,0.7
+Madagascar,2017,3.053
+Madagascar,2018,2.852
+Madagascar,2019,2.897
+Madagascar,2020,0.833
+Madagascar,2021,2.0
 Morocco,1995,0.537
 Morocco,1996,0.565
 Morocco,1997,0.714
@@ -169,7 +175,8 @@ Morocco,2016,2.729868896
 Morocco,2017,2.523915283
 Morocco,2018,2.1
 Morocco,2019,2.3
-Morocco,2020,1.9
+Morocco,2020,2.3
+Morocco,2021,2.3
 New Caledonia,1995,1.1
 New Caledonia,1996,1.1
 New Caledonia,1997,1.0
@@ -196,6 +203,7 @@ New Caledonia,2017,2.8
 New Caledonia,2018,1.661
 New Caledonia,2019,1.24
 New Caledonia,2020,0.681
+New Caledonia,2021,0.0
 Papua New Guinea,2008,0.0
 Papua New Guinea,2009,0.0
 Papua New Guinea,2010,0.0
@@ -207,7 +215,8 @@ Papua New Guinea,2016,2.19
 Papua New Guinea,2017,3.31
 Papua New Guinea,2018,3.28
 Papua New Guinea,2019,2.91
-Papua New Guinea,2020,2.8
+Papua New Guinea,2020,2.94
+Papua New Guinea,2021,2.953
 Philippines,2003,0.1
 Philippines,2004,0.1
 Philippines,2005,0.3
@@ -221,11 +230,39 @@ Philippines,2012,2.7
 Philippines,2013,2.8
 Philippines,2014,4.6
 Philippines,2015,4.3
-Philippines,2016,4.1
+Philippines,2016,4.0
 Philippines,2017,4.6
-Philippines,2018,4.437341917
-Philippines,2019,4.62635712
-Philippines,2020,4.465345682
+Philippines,2018,4.75
+Philippines,2019,5.1
+Philippines,2020,4.922504335
+Philippines,2021,4.329722791
+Rest of World (BP),1995,1.894
+Rest of World (BP),1996,2.014
+Rest of World (BP),1997,1.81
+Rest of World (BP),1998,1.823
+Rest of World (BP),1999,2.202
+Rest of World (BP),2000,2.337
+Rest of World (BP),2001,2.473
+Rest of World (BP),2002,2.517
+Rest of World (BP),2003,2.474
+Rest of World (BP),2004,2.513
+Rest of World (BP),2005,3.214
+Rest of World (BP),2006,2.937
+Rest of World (BP),2007,4.53
+Rest of World (BP),2008,4.471
+Rest of World (BP),2009,3.841
+Rest of World (BP),2010,5.798
+Rest of World (BP),2011,8.319
+Rest of World (BP),2012,9.851
+Rest of World (BP),2013,11.383
+Rest of World (BP),2014,7.464
+Rest of World (BP),2015,7.074
+Rest of World (BP),2016,4.804284821
+Rest of World (BP),2017,3.98
+Rest of World (BP),2018,2.824
+Rest of World (BP),2019,2.956
+Rest of World (BP),2020,3.715
+Rest of World (BP),2021,3.08862
 Russia,1995,3.5
 Russia,1996,3.3
 Russia,1997,3.3
@@ -251,7 +288,8 @@ Russia,2016,5.5
 Russia,2017,5.9
 Russia,2018,6.1
 Russia,2019,6.3
-Russia,2020,6.3
+Russia,2020,6.529090909
+Russia,2021,6.529090909
 South Africa,1995,0.288
 South Africa,1996,0.35
 South Africa,1997,0.465
@@ -278,6 +316,7 @@ South Africa,2017,2.3
 South Africa,2018,2.3
 South Africa,2019,2.1
 South Africa,2020,1.8
+South Africa,2021,1.197
 World,1995,20.654
 World,1996,23.015
 World,1997,24.303
@@ -295,15 +334,16 @@ World,2008,82.928
 World,2009,93.532
 World,2010,129.462
 World,2011,148.242
-World,2012,134.736
-World,2013,130.482
-World,2014,129.4332168
-World,2015,136.4674766
-World,2016,119.1204428
-World,2017,137.7914163
-World,2018,152.5514612
-World,2019,123.7747439
-World,2020,127.6634802
+World,2012,135.436
+World,2013,131.582
+World,2014,130.7332168
+World,2015,137.2674766
+World,2016,118.6204428
+World,2017,137.3392215
+World,2018,150.7783
+World,2019,119.4697
+World,2020,126.6658417
+World,2021,131.2684324
 Zambia,1995,2.931
 Zambia,1996,4.829
 Zambia,1997,4.028
@@ -328,5 +368,6 @@ Zambia,2015,2.979
 Zambia,2016,4.982
 Zambia,2017,2.6489
 Zambia,2018,1.585
-Zambia,2019,4.2686
-Zambia,2020,4.2686
+Zambia,2019,0.367
+Zambia,2020,0.287
+Zambia,2021,0.287
