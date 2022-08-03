@@ -846,7 +846,11 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     df_variables = add_global_yaws(df_variables)
     # Adding a variables for neonatal cases per million
     df_variables = add_neonatal_tetanus_cases_per_mil(df_variables)
-    # Adding a variables for youth mortality rate - under 10 years
+    # Adding the % of people without access to clean cooking fuels (100 - existing variable)
+    df_variables = add_percentage_without_clean_cooking_fuels(df_variables)
+    # Adding the number of people without access to clean cooking fuels (population in year - existing variable)
+    df_variables = add_population_without_clean_cooking_fuels(df_variables)
+
     # df_variables = add_youth_mortality_rates(
     #    df_variables=df_variables,
     #    younger_ind="Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes",
@@ -856,6 +860,74 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     #    new_ind_desc="Definition: Under ten mortality rate is the share of newborns who die before reaching the age of 10. It is calculated by OWID based on WHO Global Health Observatory data.",
     # )
 
+    return df_variables
+
+
+def add_population_without_clean_cooking_fuels(
+    df_variables: pd.DataFrame,
+) -> pd.DataFrame:
+    rc = RemoteCatalog(channels=["garden"])
+    clean_pop_var_orig = "Indicator:Population with primary reliance on clean fuels and technologies for cooking (in millions) - Residence Area Type:Total"
+    population = (
+        rc.find("population", namespace="owid", dataset="key_indicators")
+        .load()
+        .reset_index()
+    )
+    clean_id, clean_pop_df = get_dataframe_from_variable_name(
+        df_variables, clean_pop_var_orig
+    )
+    clean_pop = clean_pop_df.merge(population, on=["country", "year"], how="left")
+    clean_pop["value"] = clean_pop["population"] - clean_pop["value"]
+    clean_pop = clean_pop[["country", "year", "value"]].dropna()
+
+    clean_pop_var = df_variables[df_variables["name"] == clean_pop_var_orig].copy()
+    clean_pop_var[
+        "name"
+    ] = "Indicator:Population without primary reliance on clean fuels and technologies for cooking (in millions) - Residence Area Type:Total"
+    clean_pop_var[
+        "description"
+    ] = "Rationale: The use of solid fuels and kerosene in households is associated with increased mortality from acute lower respiratory, chronic obstructive pulmonary disease, stroke, ischaemic heart disease, and lung cancer.\nDefinition: The population who are not able to rely on clean fuels and technologies as the primary source of domestic energy for cooking.\nMethod of measurement: The indicator is calculated as the total population minus the number of people using clean fuels and technologies. Based on the recommendations included in the WHO Guidelines for indoor air quality: household fuel combustion, the fuels and technologies that are considered clean include electricity, natural gas, liquified petroleum gas, biogas, ethanol, and solar.\nMethod of estimation: Modelled estimates. A non-parametrical statistical model based on household survey data and time as inputs is applied to derive estimates. For further information on the model, see Stoner O et al, 2020: Global Household Energy Model: A Multivariate Hierarchical Approach to Estimating Trends in the Use of Polluting and Clean Fuels for Cooking (see link below).\nInput data for the model is found in the WHO Household Energy Database. This database compiles data from nationally-representative surveys and censuses that provide estimates of primary cooking fuels and technologies. In cases where estimates of the population not cooking at home, with missing data or cooking with other fuels are provided, these populations are removed from the denominator for estimation purposes. The population data is calculated by OWID and is available at: https://ourworldindata.org/grapher/population-past-future "
+    clean_pop_var["id"] = max(df_variables["id"]) + 1
+
+    clean_pop.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, clean_pop_var], axis=0)
+    return df_variables
+
+
+def add_percentage_without_clean_cooking_fuels(
+    df_variables: pd.DataFrame,
+) -> pd.DataFrame:
+    clean_pcnt_var_orig = "Indicator:Proportion of population with primary reliance on clean fuels and technologies for cooking (%) - Residence Area Type:Total"
+    clean_id, clean_df = get_dataframe_from_variable_name(
+        df_variables, clean_pcnt_var_orig
+    )
+
+    clean_df["value"] = 100 - clean_df["value"]
+    clean_df["value"] = clean_df[["country", "year", "value"]].dropna()
+
+    clean_pcnt_var = df_variables[df_variables["name"] == clean_pcnt_var_orig].copy()
+    clean_pcnt_var[
+        "name"
+    ] = "Indicator:Proportion of population without primary reliance on clean fuels and technologies for cooking (%) - Residence Area Type:Total"
+    clean_pcnt_var[
+        "description"
+    ] = "Rationale: The use of solid fuels and kerosene in households is associated with increased mortality from acute lower respiratory, chronic obstructive pulmonary disease, stroke, ischaemic heart disease, and lung cancer.\nDefinition: Proportion of population without primary reliance on clean fuels and technology is calculated as the number of people unable to use clean fuels and technologies for cooking, heating and lighting divided by total population reporting that any cooking, heating or lighting, expressed as percentage. “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. \nMethod of measurement: The indicator is calculated as the number of people unable to use clean fuels and technologies divided by total population, expressed as a percentage. Based on the recommendations included in the WHO Guidelines for indoor air quality: household fuel combustion, the fuels and technologies that are considered clean include electricity, natural gas, liquified petroleum gas, biogas, ethanol, and solar. Method of estimation: A non-parametrical statistical model based on household survey data and time as inputs is applied to derive estimates. For further information on the model, see Stoner O et al, 2020: Global Household Energy Model: A Multivariate Hierarchical Approach to Estimating Trends in the Use of Polluting and Clean Fuels for Cooking (see link below). Input data for the model is found in the WHO Household Energy Database. This database compiles data from nationally-representative surveys and censuses that provide estimates of primary cooking fuels and technologies. In cases where estimates of the population not cooking at home, with missing data or cooking with other fuels are provided, these populations are removed from the denominator for estimation purposes. The population data source is the 2018 Revision of World Urbanization Prospects."
+    clean_pcnt_var["id"] = max(df_variables["id"]) + 1
+
+    clean_df.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, clean_pcnt_var], axis=0)
     return df_variables
 
 
