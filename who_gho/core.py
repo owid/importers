@@ -909,7 +909,7 @@ def add_percentage_without_clean_cooking_fuels(
     )
 
     clean_df["value"] = 100 - clean_df["value"]
-    clean_df["value"] = clean_df[["country", "year", "value"]].dropna()
+    clean_df = clean_df[["country", "year", "value"]].dropna()
 
     clean_pcnt_var = df_variables[df_variables["name"] == clean_pcnt_var_orig].copy()
     clean_pcnt_var[
