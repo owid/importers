@@ -1,30 +1,37 @@
-"""cleans BP metadata and data points in preparation for MySQL insert.
+"""Clean BP metadata and data points in preparation for MySQL insert.
+
+This script constructs variables from both the csv and xlsx input files, in addition to constructing variables through
+unit conversion. The reason for this reliance on both the csv and xlsx files is that the csv input file does not contain
+all of the variables available in the xlsx file. But the xlsx file is much more cumbersome to clean, so we opt for
+variables in the csv file when available.
+
 """
 
+import argparse
+import logging
 import os
 import re
-import simplejson as json
 import shutil
-from typing import Dict, List
 from copy import deepcopy
-from pandas.core.dtypes.common import is_numeric_dtype
+from typing import Dict, List
+
 import pandas as pd
+import simplejson as json
 from dotenv import load_dotenv
+from pandas.core.dtypes.common import is_numeric_dtype
 
 from bp_statreview import (
+    DATASET_FULL_NAME,
     DATASET_NAME,
     DATASET_AUTHORS,
-    DATASET_VERSION,
     DATASET_LINK,
     DATASET_RETRIEVED_DATE,
     CONFIGPATH,
     INPATH,
     OUTPATH,
 )
-from bp_statreview.unit_conversion import UnitConverter
 from bp_statreview.clean_excel import clean_excel_datapoints
-
-import logging
+from bp_statreview.unit_conversion import UnitConverter
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)
@@ -34,10 +41,10 @@ load_dotenv()
 
 # KEEP_PATHS: Names of files in `{DATASET_DIR}/output` that you do NOT
 # want deleted in the beginning of this script.
-KEEP_PATHS = []
+KEEP_PATHS = ["distinct_countries_unstandardized.csv"]
 
 
-def main() -> None:
+def main(countries_are_standardized=False) -> None:
 
     delete_output(KEEP_PATHS)
     mk_output_dir()
@@ -58,7 +65,7 @@ def main() -> None:
     df_variables, df_data = clean_variables_and_datapoints(
         dataset_id=df_datasets["id"].iloc[0],
         source_id=df_sources["id"].iloc[0],
-        std_entities=True,
+        std_entities=countries_are_standardized,
     )
     create_datapoints(
         df=df_data,
@@ -120,7 +127,7 @@ def clean_datasets() -> pd.DataFrame:
         pd.DataFrame. Cleaned dataframe of datasets to be uploaded.
     """
     data = [
-        {"id": 0, "name": f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})"}
+        {"id": 0, "name": f"{DATASET_FULL_NAME}"}
     ]
     return pd.DataFrame(data)
 
@@ -417,3 +424,17 @@ def get_distinct_entities() -> List[str]:
     entities = sorted(entities)
     assert pd.notnull(entities).all(), "All entities should be non-null."
     return entities
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "-s",
+        "--countries_are_standardized",
+        default=False,
+        action="store_true",
+        help="Use this flag if the file harmonizing country names has already been updated.",
+    )
+    args = parser.parse_args()
+    main(countries_are_standardized=args.countries_are_standardized)
+

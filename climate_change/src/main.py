@@ -5,6 +5,7 @@ datasets (one with yearly, and one with monthly data).
 
 import argparse
 import os
+from structlog import get_logger
 
 import pandas as pd
 
@@ -18,6 +19,9 @@ import osisaf
 import scripps
 from climate_change.src import READY_DIR, OUTPUT_DIR
 
+# Initialize logger.
+log = get_logger()
+
 # Define paths to output files.
 OUTPUT_YEARLY_FILE = os.path.join(OUTPUT_DIR, "climate_change_impacts_yearly.csv")
 OUTPUT_MONTHLY_FILE = os.path.join(OUTPUT_DIR, "climate_change_impacts_monthly.csv")
@@ -25,21 +29,37 @@ OUTPUT_MONTHLY_FILE = os.path.join(OUTPUT_DIR, "climate_change_impacts_monthly.c
 
 def generate_individual_datasets():
     """Generate individual datasets for all institutions as csv files."""
+    log.info("eea.ghg_concentrations")
     eea.ghg_concentrations()
+    log.info("epa.ocean_heat_content")
     epa.ocean_heat_content()
+    log.info("epa.antarctic_sea_ice")
     epa.antarctic_sea_ice()
+    log.info("epa.mass_balance_global_glaciers")
     epa.mass_balance_global_glaciers()
+    log.info("epa.snow_cover_north_america")
     epa.snow_cover_north_america()
+    log.info("epa.antarctica_greenland_ice_sheet_loss")
     epa.antarctica_greenland_ice_sheet_loss()
+    log.info("hawaii.ocean_ph")
     hawaii.ocean_ph()
+    log.info("metoffice.annual_sea_surface_temperature")
     metoffice.annual_sea_surface_temperature()
+    log.info("metoffice.monthly_sea_surface_temperature")
     metoffice.monthly_sea_surface_temperature()
+    log.info("nasa.global_temperature_anomaly")
     nasa.global_temperature_anomaly()
+    log.info("nasa.arctic_sea_ice_extent")
     nasa.arctic_sea_ice_extent()
+    log.info("noaa.monthly_concentrations")
     noaa.monthly_concentrations()
+    log.info("noaa.sea_level_rise")
     noaa.sea_level_rise()
+    log.info("noaa.yearly_long_run_co2_concentration")
     noaa.yearly_long_run_co2_concentration()
+    log.info("osisaf.arctic_sea_ice")
     osisaf.arctic_sea_ice()
+    log.info("scripps.co2_concentrations")
     scripps.co2_concentrations()
 
 
@@ -236,18 +256,16 @@ def generate_yearly_dataset():
 
 
 def main():
-    print(f"Generate individual datasets in folder: {READY_DIR}")
+    log.info(f"Generate individual datasets in folder: {READY_DIR}")
     generate_individual_datasets()
 
-    print("Generate output monthly dataset.")
+    log.info("Generate output monthly dataset.")
     monthly_data = generate_monthly_dataset()
 
-    print("Generate output yearly dataset.")
+    log.info("Generate output yearly dataset.")
     yearly_data = generate_yearly_dataset()
 
-    print(
-        f"Save data into two output files:\n* {OUTPUT_YEARLY_FILE}\n* {OUTPUT_MONTHLY_FILE}"
-    )
+    log.info(f"Save data into two output files:\n* {OUTPUT_YEARLY_FILE}\n* {OUTPUT_MONTHLY_FILE}")
     yearly_data.to_csv(OUTPUT_YEARLY_FILE, index=False)
     monthly_data.to_csv(OUTPUT_MONTHLY_FILE, index=False)
 

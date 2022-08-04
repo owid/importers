@@ -21,11 +21,11 @@ def clean_excel_datapoints(var: dict) -> pd.DataFrame:
             cleaning_meta["skipRows"],
             cleaning_meta["subvariable"],
         )
-    elif cleaning_meta["sheetName"].lower() == "coal - prices":
+    elif cleaning_meta["sheetName"].lower() == "coal prices":
         df = process_coal_prices(cleaning_meta["sheetName"], cleaning_meta["skipRows"])
-    elif cleaning_meta["sheetName"].lower() == "gas - prices ":
+    elif cleaning_meta["sheetName"].lower() == "gas prices ":
         df = process_gas_prices(cleaning_meta["sheetName"], cleaning_meta["skipRows"])
-    elif cleaning_meta["sheetName"].lower() == "oil - crude prices since 1861":
+    elif cleaning_meta["sheetName"].lower() == "oil crude prices since 1861":
         df = process_countryless_sheet(
             cleaning_meta["sheetName"],
             cleaning_meta["skipRows"],
@@ -166,15 +166,6 @@ def process_gas_prices(sheet_name: str, skiprows: int) -> pd.DataFrame:
     data.set_index(data.columns[0], inplace=True)
     data.index.name = None
     data.columns = [f"{lvl0} - {lvl1} {lvl2}" for lvl0, lvl1, lvl2 in data.columns]
-    data.rename(
-        columns={
-            "LNG - Average German Import price 3": (
-                "Natural gas - Average German Import price 3"
-            )
-        },
-        errors="raise",
-        inplace=True,
-    )
     data = (
         data.dropna(how="all")
         .stack()
@@ -215,11 +206,6 @@ def process_crude_prices(sheet_name: str, skiprows: int) -> pd.DataFrame:
                 col += f" {lvl}"
         columns.append(col.strip())
     data.columns = columns
-    data.rename(
-        columns={"West Texas Intermdiate": "West Texas Intermediate"},
-        errors="raise",
-        inplace=True,
-    )
     data = (
         data.set_index(data.columns[0])
         .filter(regex=r"^\d{4}$", axis=0)

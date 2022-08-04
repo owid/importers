@@ -1,3 +1,5 @@
+# type: ignore
+
 """downloads WDI data and saves it to disk.
 """
 

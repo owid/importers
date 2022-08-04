@@ -1,18 +1,4 @@
 country,year,value
-Brazil,1990,0.0
-Brazil,1991,0.0
-Brazil,1992,0.0
-Brazil,1993,0.0
-Brazil,1994,0.0
-Brazil,1995,0.0
-Brazil,1996,0.0
-Brazil,1997,0.0
-Brazil,1998,0.0
-Brazil,1999,0.0
-Brazil,2000,0.0
-Brazil,2001,0.0
-Brazil,2002,0.0
-Brazil,2003,0.0
 Brazil,2004,0.0
 Brazil,2005,0.014737492
 Brazil,2006,1.016886941
@@ -30,223 +16,543 @@ Brazil,2017,63.39836162
 Brazil,2018,78.63163748
 Brazil,2019,87.30295665
 Brazil,2020,94.78083481
-Asia Pacific,1990,0.0
-Asia Pacific,1991,0.0
-Asia Pacific,1992,0.0
-Asia Pacific,1993,0.0
-Asia Pacific,1994,0.0
-Asia Pacific,1995,0.0
-Asia Pacific,1996,0.0
-Asia Pacific,1997,0.0
-Asia Pacific,1998,0.0
-Asia Pacific,1999,0.0
-Asia Pacific,2000,0.0
-Asia Pacific,2001,0.0
-Asia Pacific,2002,0.068013525
-Asia Pacific,2003,0.532141357
-Asia Pacific,2004,0.667952683
-Asia Pacific,2005,3.78906367
-Asia Pacific,2006,7.872348215
-Asia Pacific,2007,12.13336622
-Asia Pacific,2008,21.63997235
-Asia Pacific,2009,28.86626394
-Asia Pacific,2010,34.39311417
-Asia Pacific,2011,39.6777373
-Asia Pacific,2012,53.5587829
-Asia Pacific,2013,75.44127696
-Asia Pacific,2014,97.2687988
-Asia Pacific,2015,65.55830693
-Asia Pacific,2016,96.65108209
-Asia Pacific,2017,93.39805071
-Asia Pacific,2018,125.6694999
-Asia Pacific,2019,168.7173239
-Asia Pacific,2020,169.7616637
-CIS,1990,0.0
-CIS,1991,0.0
-CIS,1992,0.0
-CIS,1993,0.0
-CIS,1994,0.0
-CIS,1995,0.0
-CIS,1996,0.0
-CIS,1997,0.0
-CIS,1998,0.0
-CIS,1999,0.0
-CIS,2000,0.0
-CIS,2001,0.0
-CIS,2002,0.0
-CIS,2003,0.0
-CIS,2004,0.0
-CIS,2005,0.0
-CIS,2006,0.0
-CIS,2007,0.0
-CIS,2008,0.132162176
-CIS,2009,0.38100726
-CIS,2010,0.629490256
-CIS,2011,0.513531524
-CIS,2012,0.545168977
-CIS,2013,0.430703859
-CIS,2014,0.459278281
-CIS,2015,0.361459156
-CIS,2016,0.542405129
-CIS,2017,0.759338907
-CIS,2018,0.876677197
-CIS,2019,1.120141665
-CIS,2020,1.305611888
-Europe,1990,0.11891504
-Europe,1991,0.131988941
-Europe,1992,0.276271553
-Europe,1993,0.445690656
-Europe,1994,2.008635485
-Europe,1995,3.433685741
-Europe,1996,4.982741616
-Europe,1997,6.796256055
-Europe,1998,6.090080218
-Europe,1999,7.077341343
-Europe,2000,11.67167084
-Europe,2001,13.83699571
-Europe,2002,17.17546106
-Europe,2003,21.47576366
-Europe,2004,29.43754442
-Europe,2005,46.44475633
-Europe,2006,72.95027276
-Europe,2007,102.7531149
-Europe,2008,135.552917
-Europe,2009,159.7543954
-Europe,2010,187.2471022
-Europe,2011,200.1962172
-Europe,2012,220.5540825
-Europe,2013,200.924191
-Europe,2014,216.7115706
-Europe,2015,218.627625
-Europe,2016,224.2764928
-Europe,2017,243.980013
-Europe,2018,266.9386236
-Europe,2019,274.1957186
-Europe,2020,281.2504496
-European Union,1990,0.11891504
-European Union,1991,0.131988941
-European Union,1992,0.276271553
-European Union,1993,0.445690656
-European Union,1994,2.008635485
-European Union,1995,3.433685741
-European Union,1996,4.982741616
-European Union,1997,6.796256055
-European Union,1998,6.090080218
-European Union,1999,7.077341343
-European Union,2000,11.67167084
-European Union,2001,13.83699571
-European Union,2002,17.14630665
-European Union,2003,21.1696424
-European Union,2004,29.16133431
-European Union,2005,45.96370864
-European Union,2006,70.11823983
-European Union,2007,96.97664862
-European Union,2008,120.9320895
-European Union,2009,142.489832
-European Union,2010,169.4355839
-European Union,2011,184.134923
-European Union,2012,207.2825845
-European Union,2013,180.5673479
-European Union,2014,198.1596239
-European Union,2015,204.2991702
-European Union,2016,205.7185737
-European Union,2017,221.2706107
-European Union,2018,238.9130666
-European Union,2019,237.1573127
-European Union,2020,245.1929983
-Middle East,1990,0.0
-Middle East,1991,0.0
-Middle East,1992,0.0
-Middle East,1993,0.0
-Middle East,1994,0.0
-Middle East,1995,0.0
-Middle East,1996,0.0
-Middle East,1997,0.0
-Middle East,1998,0.0
-Middle East,1999,0.0
-Middle East,2000,0.0
-Middle East,2001,0.0
-Middle East,2002,0.0
-Middle East,2003,0.0
-Middle East,2004,0.0
-Middle East,2005,0.0
-Middle East,2006,0.0
-Middle East,2007,0.0
-Middle East,2008,0.0
-Middle East,2009,0.0
-Middle East,2010,0.0
-Middle East,2011,0.0
-Middle East,2012,0.0
-Middle East,2013,0.0
-Middle East,2014,0.0
-Middle East,2015,0.0
-Middle East,2016,0.0
-Middle East,2017,0.0
-Middle East,2018,0.0
-Middle East,2019,0.0
-Middle East,2020,0.0
-Non-OECD,1990,0.0
-Non-OECD,1991,0.0
-Non-OECD,1992,0.0
-Non-OECD,1993,0.0
-Non-OECD,1994,0.0
-Non-OECD,1995,0.0
-Non-OECD,1996,0.0
-Non-OECD,1997,0.0
-Non-OECD,1998,0.0
-Non-OECD,1999,0.0
-Non-OECD,2000,0.0
-Non-OECD,2001,0.0
-Non-OECD,2002,0.068013525
-Non-OECD,2003,0.532141357
-Non-OECD,2004,0.565136761
-Non-OECD,2005,3.552617895
-Non-OECD,2006,8.890064908
-Non-OECD,2007,17.63870332
-Non-OECD,2008,38.09757657
-Non-OECD,2009,52.76856919
-Non-OECD,2010,75.99981686
-Non-OECD,2011,89.51955924
-Non-OECD,2012,110.2580996
-Non-OECD,2013,131.3704124
-Non-OECD,2014,162.6044858
-Non-OECD,2015,141.5888216
-Non-OECD,2016,172.654629
-Non-OECD,2017,180.497368
-Non-OECD,2018,223.1324426
-Non-OECD,2019,277.7306723
-Non-OECD,2020,276.0314725
-OECD,1990,0.11891504
-OECD,1991,0.131988941
-OECD,1992,0.276271553
-OECD,1993,0.445690656
-OECD,1994,2.008635485
-OECD,1995,3.433685741
-OECD,1996,4.982741616
-OECD,1997,6.796256055
-OECD,1998,6.090080218
-OECD,1999,7.077341343
-OECD,2000,11.67167084
-OECD,2001,14.40982575
-OECD,2002,18.08817507
-OECD,2003,22.22943215
-OECD,2004,31.03363637
-OECD,2005,51.76299407
-OECD,2006,89.51022459
-OECD,2007,125.6398447
-OECD,2008,157.7956813
-OECD,2009,183.3337866
-OECD,2010,217.6102109
-OECD,2011,268.6823642
-OECD,2012,292.0526377
-OECD,2013,304.3998308
-OECD,2014,319.102595
-OECD,2015,322.2358547
-OECD,2016,357.5971983
-OECD,2017,375.9507574
-OECD,2018,398.5247276
-OECD,2019,400.7232372
-OECD,2020,406.1420056
+Brazil,2021,100.5525366
+Other North America (BP),1995,0.0
+Other North America (BP),1996,0.0
+Other North America (BP),1997,0.0
+Other North America (BP),1998,0.0
+Other North America (BP),1999,0.0
+Other North America (BP),2000,0.0
+Other North America (BP),2001,0.0
+Other North America (BP),2002,0.0
+Other North America (BP),2003,0.0
+Other North America (BP),2004,0.0
+Other North America (BP),2005,0.0
+Other North America (BP),2006,0.692729822
+Other North America (BP),2007,1.394011865
+Other North America (BP),2008,1.659130686
+Other North America (BP),2009,0.92245357
+Other North America (BP),2010,3.330674063
+Other North America (BP),2011,6.558186973
+Other North America (BP),2012,9.210935962
+Other North America (BP),2013,8.061408068
+Other North America (BP),2014,8.37089734
+Other North America (BP),2015,6.661346337
+Other North America (BP),2016,5.614340151
+Other North America (BP),2017,9.387782338
+Other North America (BP),2018,9.535157257
+Other North America (BP),2019,10.4131286
+Other North America (BP),2020,10.17475696
+Other North America (BP),2021,11.03220642
+Other South and Central America (BP),1990,0.0
+Other South and Central America (BP),1991,0.0
+Other South and Central America (BP),1992,0.0
+Other South and Central America (BP),1993,0.0
+Other South and Central America (BP),1994,0.0
+Other South and Central America (BP),1995,0.0
+Other South and Central America (BP),1996,0.0
+Other South and Central America (BP),1997,0.0
+Other South and Central America (BP),1998,0.0
+Other South and Central America (BP),1999,0.0
+Other South and Central America (BP),2000,0.0
+Other South and Central America (BP),2001,0.0
+Other South and Central America (BP),2002,0.0
+Other South and Central America (BP),2003,0.0
+Other South and Central America (BP),2004,0.0
+Other South and Central America (BP),2005,0.0
+Other South and Central America (BP),2006,1.311624989
+Other South and Central America (BP),2007,1.311624989
+Other South and Central America (BP),2008,3.486366259
+Other South and Central America (BP),2009,5.159860383
+Other South and Central America (BP),2010,18.17496747
+Other South and Central America (BP),2011,23.92599513
+Other South and Central America (BP),2012,27.95264962
+Other South and Central America (BP),2013,28.04071331
+Other South and Central America (BP),2014,29.87451826
+Other South and Central America (BP),2015,31.21192497
+Other South and Central America (BP),2016,31.59620307
+Other South and Central America (BP),2017,35.08023936
+Other South and Central America (BP),2018,34.12690434
+Other South and Central America (BP),2019,34.09576274
+Other South and Central America (BP),2020,22.70524418
+Other South and Central America (BP),2021,24.44177403
+Other South America (BP),1990,0.0
+Other South America (BP),1991,0.0
+Other South America (BP),1992,0.0
+Other South America (BP),1993,0.0
+Other South America (BP),1994,0.0
+Other South America (BP),1995,0.0
+Other South America (BP),1996,0.0
+Other South America (BP),1997,0.0
+Other South America (BP),1998,0.0
+Other South America (BP),1999,0.0
+Other South America (BP),2000,0.0
+Other South America (BP),2001,0.0
+Other South America (BP),2002,0.0
+Other South America (BP),2003,0.0
+Other South America (BP),2004,0.0
+Other South America (BP),2005,0.0
+Other South America (BP),2006,1.311624989
+Other South America (BP),2007,1.311624989
+Other South America (BP),2008,3.486366259
+Other South America (BP),2009,5.159860383
+Other South America (BP),2010,18.06674572
+Other South America (BP),2011,23.81980254
+Other South America (BP),2012,27.90304514
+Other South America (BP),2013,28.00651069
+Other South America (BP),2014,29.83670395
+Other South America (BP),2015,31.21192497
+Other South America (BP),2016,31.59620307
+Other South America (BP),2017,35.08023936
+Other South America (BP),2018,34.12690434
+Other South America (BP),2019,34.09576274
+Other South America (BP),2020,22.70524418
+Other South America (BP),2021,24.44177403
+Asia Pacific (BP),1965,0.0
+Asia Pacific (BP),1966,0.0
+Asia Pacific (BP),1967,0.0
+Asia Pacific (BP),1968,0.0
+Asia Pacific (BP),1969,0.0
+Asia Pacific (BP),1970,0.0
+Asia Pacific (BP),1971,0.0
+Asia Pacific (BP),1972,0.0
+Asia Pacific (BP),1973,0.0
+Asia Pacific (BP),1974,0.0
+Asia Pacific (BP),1975,0.0
+Asia Pacific (BP),1976,0.0
+Asia Pacific (BP),1977,0.0
+Asia Pacific (BP),1978,0.0
+Asia Pacific (BP),1979,0.0
+Asia Pacific (BP),1980,0.0
+Asia Pacific (BP),1981,0.0
+Asia Pacific (BP),1982,0.0
+Asia Pacific (BP),1983,0.0
+Asia Pacific (BP),1984,0.0
+Asia Pacific (BP),1985,0.0
+Asia Pacific (BP),1986,0.0
+Asia Pacific (BP),1987,0.0
+Asia Pacific (BP),1988,0.0
+Asia Pacific (BP),1989,0.0
+Asia Pacific (BP),1990,0.0
+Asia Pacific (BP),1991,0.0
+Asia Pacific (BP),1992,0.0
+Asia Pacific (BP),1993,0.0
+Asia Pacific (BP),1994,0.0
+Asia Pacific (BP),1995,0.0
+Asia Pacific (BP),1996,0.0
+Asia Pacific (BP),1997,0.0
+Asia Pacific (BP),1998,0.0
+Asia Pacific (BP),1999,0.0
+Asia Pacific (BP),2000,0.0
+Asia Pacific (BP),2001,0.0
+Asia Pacific (BP),2002,0.068013525
+Asia Pacific (BP),2003,0.532141357
+Asia Pacific (BP),2004,0.667952683
+Asia Pacific (BP),2005,3.9455408
+Asia Pacific (BP),2006,8.197726624
+Asia Pacific (BP),2007,12.2323117
+Asia Pacific (BP),2008,21.54553891
+Asia Pacific (BP),2009,29.03102383
+Asia Pacific (BP),2010,34.80143218
+Asia Pacific (BP),2011,39.89085065
+Asia Pacific (BP),2012,53.8730054
+Asia Pacific (BP),2013,82.28901731
+Asia Pacific (BP),2014,97.57074376
+Asia Pacific (BP),2015,65.92037739
+Asia Pacific (BP),2016,96.78059475
+Asia Pacific (BP),2017,93.64035397
+Asia Pacific (BP),2018,125.9915412
+Asia Pacific (BP),2019,170.0669081
+Asia Pacific (BP),2020,192.2833673
+Asia Pacific (BP),2021,209.0702028
+CIS (BP),1995,0.0
+CIS (BP),1996,0.0
+CIS (BP),1997,0.0
+CIS (BP),1998,0.0
+CIS (BP),1999,0.0
+CIS (BP),2000,0.0
+CIS (BP),2001,0.0
+CIS (BP),2002,0.0
+CIS (BP),2003,0.0
+CIS (BP),2004,0.0
+CIS (BP),2005,0.0
+CIS (BP),2006,0.0
+CIS (BP),2007,0.0
+CIS (BP),2008,0.132162176
+CIS (BP),2009,0.38100726
+CIS (BP),2010,0.629490256
+CIS (BP),2011,0.513531524
+CIS (BP),2012,0.545168977
+CIS (BP),2013,0.430703859
+CIS (BP),2014,0.463834925
+CIS (BP),2015,0.364441727
+CIS (BP),2016,0.545168977
+CIS (BP),2017,0.76201452
+CIS (BP),2018,0.795145586
+CIS (BP),2019,1.14302178
+CIS (BP),2020,1.262106245
+CIS (BP),2021,1.752452413
+European Union (27),1965,0.0
+European Union (27),1966,0.0
+European Union (27),1967,0.0
+European Union (27),1968,0.0
+European Union (27),1969,0.0
+European Union (27),1970,0.0
+European Union (27),1971,0.0
+European Union (27),1972,0.0
+European Union (27),1973,0.0
+European Union (27),1974,0.0
+European Union (27),1975,0.0
+European Union (27),1976,0.0
+European Union (27),1977,0.0
+European Union (27),1978,0.0
+European Union (27),1979,0.0
+European Union (27),1980,0.0
+European Union (27),1981,0.0
+European Union (27),1982,0.0
+European Union (27),1983,0.0
+European Union (27),1984,0.0
+European Union (27),1985,0.0
+European Union (27),1986,0.0
+European Union (27),1987,0.0
+European Union (27),1988,0.0
+European Union (27),1989,0.0
+European Union (27),1990,0.11891504
+European Union (27),1991,0.131988941
+European Union (27),1992,0.276271553
+European Union (27),1993,0.445690656
+European Union (27),1994,2.008635485
+European Union (27),1995,3.433685741
+European Union (27),1996,4.982741616
+European Union (27),1997,6.796256055
+European Union (27),1998,6.090080218
+European Union (27),1999,7.077341343
+European Union (27),2000,11.67167084
+European Union (27),2001,13.83699571
+European Union (27),2002,17.14630665
+European Union (27),2003,21.1696424
+European Union (27),2004,29.16133431
+European Union (27),2005,45.96652478
+European Union (27),2006,70.13856574
+European Union (27),2007,96.98556088
+European Union (27),2008,120.9495143
+European Union (27),2009,142.5177148
+European Union (27),2010,169.3687882
+European Union (27),2011,184.6824736
+European Union (27),2012,207.6213487
+European Union (27),2013,180.9924685
+European Union (27),2014,198.5161468
+European Union (27),2015,204.9056831
+European Union (27),2016,205.7636883
+European Union (27),2017,221.2906401
+European Union (27),2018,238.9130617
+European Union (27),2019,237.0896691
+European Union (27),2020,248.4359251
+European Union (27),2021,249.8341915
+Europe (BP),1965,0.0
+Europe (BP),1966,0.0
+Europe (BP),1967,0.0
+Europe (BP),1968,0.0
+Europe (BP),1969,0.0
+Europe (BP),1970,0.0
+Europe (BP),1971,0.0
+Europe (BP),1972,0.0
+Europe (BP),1973,0.0
+Europe (BP),1974,0.0
+Europe (BP),1975,0.0
+Europe (BP),1976,0.0
+Europe (BP),1977,0.0
+Europe (BP),1978,0.0
+Europe (BP),1979,0.0
+Europe (BP),1980,0.0
+Europe (BP),1981,0.0
+Europe (BP),1982,0.0
+Europe (BP),1983,0.0
+Europe (BP),1984,0.0
+Europe (BP),1985,0.0
+Europe (BP),1986,0.0
+Europe (BP),1987,0.0
+Europe (BP),1988,0.0
+Europe (BP),1989,0.0
+Europe (BP),1990,0.11891504
+Europe (BP),1991,0.131988941
+Europe (BP),1992,0.276271553
+Europe (BP),1993,0.445690656
+Europe (BP),1994,2.008635485
+Europe (BP),1995,3.433685741
+Europe (BP),1996,4.982741616
+Europe (BP),1997,6.796256055
+Europe (BP),1998,6.090080218
+Europe (BP),1999,7.077341343
+Europe (BP),2000,11.67167084
+Europe (BP),2001,13.83699571
+Europe (BP),2002,17.17546106
+Europe (BP),2003,21.47576366
+Europe (BP),2004,29.43754442
+Europe (BP),2005,46.44757247
+Europe (BP),2006,72.97059867
+Europe (BP),2007,102.7620271
+Europe (BP),2008,135.5703418
+Europe (BP),2009,159.7822782
+Europe (BP),2010,187.1803065
+Europe (BP),2011,200.8021528
+Europe (BP),2012,220.7864519
+Europe (BP),2013,201.3600392
+Europe (BP),2014,217.0637064
+Europe (BP),2015,219.0833977
+Europe (BP),2016,223.4963497
+Europe (BP),2017,243.2175566
+Europe (BP),2018,266.3533237
+Europe (BP),2019,273.1701081
+Europe (BP),2020,282.3097482
+Europe (BP),2021,278.1258687
+Middle East (BP),1978,0.0
+Middle East (BP),1979,0.0
+Middle East (BP),1980,0.0
+Middle East (BP),1981,0.0
+Middle East (BP),1982,0.0
+Middle East (BP),1983,0.0
+Middle East (BP),1984,0.0
+Middle East (BP),1985,0.0
+Middle East (BP),1986,0.0
+Middle East (BP),1987,0.0
+Middle East (BP),1988,0.0
+Middle East (BP),1989,0.0
+Middle East (BP),1990,0.0
+Middle East (BP),1991,0.0
+Middle East (BP),1992,0.0
+Middle East (BP),1993,0.0
+Middle East (BP),1994,0.0
+Middle East (BP),1995,0.0
+Middle East (BP),1996,0.0
+Middle East (BP),1997,0.0
+Middle East (BP),1998,0.0
+Middle East (BP),1999,0.0
+Middle East (BP),2000,0.0
+Middle East (BP),2001,0.0
+Middle East (BP),2002,0.0
+Middle East (BP),2003,0.0
+Middle East (BP),2004,0.0
+Middle East (BP),2005,0.0
+Middle East (BP),2006,0.0
+Middle East (BP),2007,0.0
+Middle East (BP),2008,0.0
+Middle East (BP),2009,0.0
+Middle East (BP),2010,0.0
+Middle East (BP),2011,0.0
+Middle East (BP),2012,0.0
+Middle East (BP),2013,0.0
+Middle East (BP),2014,0.0
+Middle East (BP),2015,0.0
+Middle East (BP),2016,0.264324352
+Middle East (BP),2017,0.430703859
+Middle East (BP),2018,0.530097057
+Middle East (BP),2019,0.662621322
+Middle East (BP),2020,0.710371697
+Middle East (BP),2021,0.76201452
+Non-OECD (BP),1965,0.0
+Non-OECD (BP),1966,0.0
+Non-OECD (BP),1967,0.0
+Non-OECD (BP),1968,0.0
+Non-OECD (BP),1969,0.0
+Non-OECD (BP),1970,0.0
+Non-OECD (BP),1971,0.0
+Non-OECD (BP),1972,0.0
+Non-OECD (BP),1973,0.0
+Non-OECD (BP),1974,0.0
+Non-OECD (BP),1975,0.0
+Non-OECD (BP),1976,0.0
+Non-OECD (BP),1977,0.0
+Non-OECD (BP),1978,0.0
+Non-OECD (BP),1979,0.0
+Non-OECD (BP),1980,0.0
+Non-OECD (BP),1981,0.0
+Non-OECD (BP),1982,0.0
+Non-OECD (BP),1983,0.0
+Non-OECD (BP),1984,0.0
+Non-OECD (BP),1985,0.0
+Non-OECD (BP),1986,0.0
+Non-OECD (BP),1987,0.0
+Non-OECD (BP),1988,0.0
+Non-OECD (BP),1989,0.0
+Non-OECD (BP),1990,0.0
+Non-OECD (BP),1991,0.0
+Non-OECD (BP),1992,0.0
+Non-OECD (BP),1993,0.0
+Non-OECD (BP),1994,0.0
+Non-OECD (BP),1995,0.0
+Non-OECD (BP),1996,0.0
+Non-OECD (BP),1997,0.0
+Non-OECD (BP),1998,0.0
+Non-OECD (BP),1999,0.0
+Non-OECD (BP),2000,0.0
+Non-OECD (BP),2001,0.0
+Non-OECD (BP),2002,0.068013525
+Non-OECD (BP),2003,0.532141357
+Non-OECD (BP),2004,0.565136761
+Non-OECD (BP),2005,3.552617895
+Non-OECD (BP),2006,8.890064908
+Non-OECD (BP),2007,17.63870332
+Non-OECD (BP),2008,38.09757657
+Non-OECD (BP),2009,52.76856919
+Non-OECD (BP),2010,76.07254096
+Non-OECD (BP),2011,89.50699501
+Non-OECD (BP),2012,110.5057404
+Non-OECD (BP),2013,137.9564089
+Non-OECD (BP),2014,162.854575
+Non-OECD (BP),2015,141.6800221
+Non-OECD (BP),2016,173.08085
+Non-OECD (BP),2017,180.9846767
+Non-OECD (BP),2018,223.6300195
+Non-OECD (BP),2019,279.1326116
+Non-OECD (BP),2020,299.5670761
+Non-OECD (BP),2021,322.2444899
+North America (BP),1990,0.0
+North America (BP),1991,0.0
+North America (BP),1992,0.0
+North America (BP),1993,0.0
+North America (BP),1994,0.0
+North America (BP),1995,0.0
+North America (BP),1996,0.0
+North America (BP),1997,0.0
+North America (BP),1998,0.0
+North America (BP),1999,0.0
+North America (BP),2000,0.0
+North America (BP),2001,0.572830041
+North America (BP),2002,0.912714009
+North America (BP),2003,0.75366849
+North America (BP),2004,1.493276034
+North America (BP),2005,5.067054469
+North America (BP),2006,15.24915659
+North America (BP),2007,21.12649525
+North America (BP),2008,18.54746128
+North America (BP),2009,18.87665393
+North America (BP),2010,17.83958564
+North America (BP),2011,59.44014129
+North America (BP),2012,63.35515546
+North America (BP),2013,104.224154
+North America (BP),2014,104.4984175
+North America (BP),2015,111.5661153
+North America (BP),2016,146.960659
+North America (BP),2017,147.8070709
+North America (BP),2018,141.5315434
+North America (BP),2019,155.8046906
+North America (BP),2020,162.1127853
+North America (BP),2021,172.1807489
+OECD (BP),1965,0.0
+OECD (BP),1966,0.0
+OECD (BP),1967,0.0
+OECD (BP),1968,0.0
+OECD (BP),1969,0.0
+OECD (BP),1970,0.0
+OECD (BP),1971,0.0
+OECD (BP),1972,0.0
+OECD (BP),1973,0.0
+OECD (BP),1974,0.0
+OECD (BP),1975,0.0
+OECD (BP),1976,0.0
+OECD (BP),1977,0.0
+OECD (BP),1978,0.0
+OECD (BP),1979,0.0
+OECD (BP),1980,0.0
+OECD (BP),1981,0.0
+OECD (BP),1982,0.0
+OECD (BP),1983,0.0
+OECD (BP),1984,0.0
+OECD (BP),1985,0.0
+OECD (BP),1986,0.0
+OECD (BP),1987,0.0
+OECD (BP),1988,0.0
+OECD (BP),1989,0.0
+OECD (BP),1990,0.11891504
+OECD (BP),1991,0.131988941
+OECD (BP),1992,0.276271553
+OECD (BP),1993,0.445690656
+OECD (BP),1994,2.008635485
+OECD (BP),1995,3.433685741
+OECD (BP),1996,4.982741616
+OECD (BP),1997,6.796256055
+OECD (BP),1998,6.090080218
+OECD (BP),1999,7.077341343
+OECD (BP),2000,11.67167084
+OECD (BP),2001,14.40982575
+OECD (BP),2002,18.08817507
+OECD (BP),2003,22.22943215
+OECD (BP),2004,31.03363637
+OECD (BP),2005,51.92228734
+OECD (BP),2006,89.85592891
+OECD (BP),2007,125.7477025
+OECD (BP),2008,157.7186726
+OECD (BP),2009,183.5264292
+OECD (BP),2010,217.8790091
+OECD (BP),2011,272.9587155
+OECD (BP),2012,296.4773386
+OECD (BP),2013,321.5488059
+OECD (BP),2014,336.5957842
+OECD (BP),2015,344.6327133
+OECD (BP),2016,382.4045568
+OECD (BP),2017,403.3516242
+OECD (BP),2018,424.3301733
+OECD (BP),2019,443.1134577
+OECD (BP),2020,456.5973816
+OECD (BP),2021,464.641108
+South and Central America (BP),1990,0.0
+South and Central America (BP),1991,0.0
+South and Central America (BP),1992,0.0
+South and Central America (BP),1993,0.0
+South and Central America (BP),1994,0.0
+South and Central America (BP),1995,0.0
+South and Central America (BP),1996,0.0
+South and Central America (BP),1997,0.0
+South and Central America (BP),1998,0.0
+South and Central America (BP),1999,0.0
+South and Central America (BP),2000,0.0
+South and Central America (BP),2001,0.0
+South and Central America (BP),2002,0.0
+South and Central America (BP),2003,0.0
+South and Central America (BP),2004,0.0
+South and Central America (BP),2005,0.014737492
+South and Central America (BP),2006,2.32851193
+South and Central America (BP),2007,7.265571715
+South and Central America (BP),2008,20.02074498
+South and Central America (BP),2009,28.2240352
+South and Central America (BP),2010,53.50073554
+South and Central America (BP),2011,61.8190343
+South and Central America (BP),2012,68.42329726
+South and Central America (BP),2013,71.20130051
+South and Central America (BP),2014,79.85365663
+South and Central America (BP),2015,89.37840328
+South and Central America (BP),2016,87.43831006
+South and Central America (BP),2017,98.47860098
+South and Central America (BP),2018,112.7585418
+South and Central America (BP),2019,121.3987194
+South and Central America (BP),2020,117.486079
+South and Central America (BP),2021,124.9943107
+World,1965,0.0
+World,1966,0.0
+World,1967,0.0
+World,1968,0.0
+World,1969,0.0
+World,1970,0.0
+World,1971,0.0
+World,1972,0.0
+World,1973,0.0
+World,1974,0.0
+World,1975,0.0
+World,1976,0.0
+World,1977,0.0
+World,1978,0.0
+World,1979,0.0
+World,1980,0.0
+World,1981,0.0
+World,1982,0.0
+World,1983,0.0
+World,1984,0.0
+World,1985,0.0
+World,1986,0.0
+World,1987,0.0
+World,1988,0.0
+World,1989,0.0
 World,1990,0.11891504
 World,1991,0.131988941
 World,1992,0.276271553
@@ -262,22 +568,23 @@ World,2001,14.40982575
 World,2002,18.15618859
 World,2003,22.7615735
 World,2004,31.59877313
-World,2005,55.31561196
-World,2006,98.4002895
-World,2007,143.2785481
-World,2008,195.8932578
-World,2009,236.1023558
-World,2010,293.6100278
-World,2011,358.2019234
-World,2012,402.3107373
-World,2013,435.7702432
-World,2014,481.7070807
-World,2015,463.8246763
-World,2016,530.2518273
-World,2017,556.4481254
-World,2018,621.6571702
-World,2019,678.4539094
-World,2020,682.1734782
+World,2005,55.47490523
+World,2006,98.74599382
+World,2007,143.3864058
+World,2008,195.8162491
+World,2009,236.2949984
+World,2010,293.9515501
+World,2011,362.4657105
+World,2012,406.983079
+World,2013,459.5052148
+World,2014,499.4503592
+World,2015,486.3127355
+World,2016,555.4854068
+World,2017,584.3363008
+World,2018,647.9601928
+World,2019,722.2460693
+World,2020,756.1644577
+World,2021,786.8855979
 United States,1990,0.0
 United States,1991,0.0
 United States,1992,0.0
@@ -299,13 +606,14 @@ United States,2007,19.73248338
 United States,2008,16.8883306
 United States,2009,17.95420036
 United States,2010,14.50891157
-United States,2011,49.43721615
-United States,2012,50.01846967
-United States,2013,79.71136276
-United States,2014,79.04287907
-United States,2015,83.3554356
-United States,2016,116.0231416
-United States,2017,110.7538268
-United States,2018,106.2028953
-United States,2019,101.1339124
-United States,2020,103.6900622
+United States,2011,52.88195431
+United States,2012,54.1442195
+United States,2013,96.16274593
+United States,2014,96.12752015
+United States,2015,104.904769
+United States,2016,141.3463188
+United States,2017,138.4192885
+United States,2018,131.9963862
+United States,2019,145.391562
+United States,2020,151.9380284
+United States,2021,161.1485424

@@ -15,9 +15,9 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2002-02-15,317.0,316.8,World
 2002-03-15,317.0,316.8,World
 2002-04-15,316.9,316.8,World
-2002-05-15,316.8,316.9,World
+2002-05-15,316.9,316.9,World
 2002-06-15,316.8,316.9,World
-2002-07-15,316.8,316.9,World
+2002-07-15,316.8,317.0,World
 2002-08-15,316.8,317.0,World
 2002-09-15,316.9,317.0,World
 2002-10-15,317.0,317.1,World
@@ -80,7 +80,7 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2007-07-15,320.2,320.5,World
 2007-08-15,320.2,320.6,World
 2007-09-15,320.5,320.7,World
-2007-10-15,320.7,320.7,World
+2007-10-15,320.7,320.8,World
 2007-11-15,321.0,320.8,World
 2007-12-15,321.2,320.9,World
 2008-01-15,321.3,321.0,World
@@ -132,7 +132,7 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2011-11-15,324.6,324.6,World
 2011-12-15,324.8,324.6,World
 2012-01-15,324.9,324.7,World
-2012-02-15,325.0,324.8,World
+2012-02-15,325.0,324.7,World
 2012-03-15,325.0,324.8,World
 2012-04-15,324.9,324.9,World
 2012-05-15,324.9,324.9,World
@@ -203,7 +203,7 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2017-10-15,330.0,330.0,World
 2017-11-15,330.2,330.1,World
 2017-12-15,330.3,330.2,World
-2018-01-15,330.5,330.4,World
+2018-01-15,330.5,330.3,World
 2018-02-15,330.6,330.5,World
 2018-03-15,330.7,330.6,World
 2018-04-15,330.7,330.7,World
@@ -237,7 +237,7 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2020-08-15,333.2,333.2,World
 2020-09-15,333.3,333.3,World
 2020-10-15,333.4,333.4,World
-2020-11-15,333.6,333.6,World
+2020-11-15,333.6,333.5,World
 2020-12-15,333.8,333.7,World
 2021-01-15,333.9,333.8,World
 2021-02-15,334.0,333.9,World
@@ -251,4 +251,6 @@ date,monthly_n2o_concentrations,yearly_n2o_concentrations,location
 2021-10-15,334.6,334.7,World
 2021-11-15,334.9,334.8,World
 2021-12-15,335.1,334.9,World
-2022-01-15,335.2,335.0,World
+2022-01-15,335.3,335.0,World
+2022-02-15,335.3,335.1,World
+2022-03-15,335.4,335.3,World

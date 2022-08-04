@@ -4,25 +4,50 @@ This folder contains all scripts required to execute a bulk dataset import + upd
 
 Instructions for executing a bulk dataset import + update of existing charts for a new version of the dataset:
 
-1. Update `__init__.py` with the appropriate `DATASET_VERSION`, `DATASET_RETRIEVED_DATE`, and other constants as needed.
-
-2. Make any necessary changes to the scripts and `config/` files in this folder, which may require small modifications to work with the new dataset version. (e.g. you may need to change `download.py` to make sure the newest dataset version is being downloaded.)
-
-3. Update `standardized_entity_names.csv` by executing:
-
-```python
-import os
-import pandas as pd
-from bp_statreview import OUTPATH
-from bp_statreview.entities import get_unstandardized_entity_names
-pd.DataFrame(get_unstandardized_entity_names(), columns=["Country"]).to_csv(os.path.join(OUTPATH, "distinct_countries_unstandardized.csv"), index=False)
+0. Go to the `importers`' root folder and activate the virtual environment (which should have been previously created).
 ```
-
-Then upload this `distinct_countries_unstandardized.csv` file to the [OWID country standardizer tool](https://owid.cloud/admin/standardize). After using the tool, download the csv file of standardized entity names and save it to `config/standardized_entity_names.csv`.
-
-3. Execute `python -m bp_statreview.main`.
-
-## Other useful things to know
-
-* The `clean.py` script constructs variables from both the csv and xlsx input files, in addition to constructing variables through unit conversion. The reason for this reliance on both the csv and xlsx files is that the csv input file does not contain all of the variables available in the xlsx file. But the xlsx file is much more cumbersome to clean, so we opt for variables in the csv file when available.
-* In the `config/standardized_entity_names.csv` file, we override the country standardizer tool's assignment of "USSR" (unstandardized) -> "Russia" (standardized) by instead assigning "USSR"->"USSR". This is because "Russia" already exists in the list of standardized entity names ("Russian Federation"->"Russia"), which would lead to duplicate variable-country-year observations if both "USSR" and "Russian Federation" -> "Russia".
+source venv/activate/bin
+export PYTHONPATH=${PWD}
+```
+1. From the same root folder, download the new data, by running:
+```
+python bp_statreview/download.py
+```
+If anything fails, you may have to manually edit some of the variables defined in `__init__.py` (maybe the download
+links to the new BP files have changed).
+2. Ensure all variables can be read and cleaned from the new files.
+It is advisable to open the old and new `.xlsx` data files and visually inspect them to detect any changes.
+Manually update the names of some variables in `variables_to_clean.json` and `variable_replacements_by_name.json` that
+have a hardcoded year in the name (e.g. "Oil - Crude prices since 1861 (2021 $)").
+Then run:
+```
+python bp_statreview/clean.py
+```
+This script is likely to fail because various things have changed in the new BP data files with respect to the old one.
+The best solution (which is far from ideal) is to run the script in debug mode, and find out the source of the error.
+Then, adjust the content of `variables_to_clean.json`, and, if that is not enough, adjust the code in `clean.py` and
+`clean_excel.py`.
+Once it runs until the end without errors, it may still raise a warning, saying that entities have not been
+standardized, which is solved in the next steps.
+3. Retrieve all country/region names from raw BP data, by running:
+```
+python bp_statreview/entities.py
+```
+This will create the file `distinct_countries_unstandardized.csv` in the folder of outputs.
+The same warning as in the previous step will be raised (ignore it).
+4. Harmonize country names.
+To do this, you can either use the `harmonize` tool from `etl` (and adjust the format of the output file), or upload
+the `distinct_countries_unstandardized.csv` file to the
+[OWID country standardizer tool](https://owid.cloud/admin/standardize).
+The resulting file must be saved as `config/standardized_entity_names.csv`, with columns `Country` and
+`Our World In Data Name`.
+5. Execute again the cleaning script, now that countries are harmonized, by running:
+```
+python bp_statreview/clean.py --countries_are_standardized
+```
+This time it should work without raising any warnings.
+6. Update the data in the grapher database, by running:
+```
+python bp_statreview/write_to_grapher.py
+```
+7. Use the chart approval tool to compare old and new charts.
