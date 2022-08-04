@@ -3,9 +3,9 @@ import os
 # Dataset constants.
 DATASET_NAME = "Global Health Observatory"
 DATASET_AUTHORS = "World Health Organization"
-DATASET_VERSION = "2022.05"
+DATASET_VERSION = "2022.08"
 DATASET_LINK = "https://ghoapi.azureedge.net/api/"
-DATASET_RETRIEVED_DATE = "2022-05-17"
+DATASET_RETRIEVED_DATE = "2022-08-03"
 DELETE_EXISTING_INPUTS = True
 DOWNLOAD_INPUTS = True
 KEEP_PATHS = ["standardized_entity_names.csv"]
