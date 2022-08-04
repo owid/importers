@@ -877,7 +877,8 @@ def add_population_without_clean_cooking_fuels(
         df_variables, clean_pop_var_orig
     )
     clean_pop = clean_pop_df.merge(population, on=["country", "year"], how="left")
-    clean_pop["value"] = clean_pop["population"] - clean_pop["value"]
+    clean_pop["value"] = clean_pop["population"] - (clean_pop["value"] * 1000000)
+    clean_pop["value"] = clean_pop["value"] / 1000000
     clean_pop = clean_pop[["country", "year", "value"]].dropna()
 
     clean_pop_var = df_variables[df_variables["name"] == clean_pop_var_orig].copy()
