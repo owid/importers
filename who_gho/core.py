@@ -871,6 +871,14 @@ def add_population_without_clean_cooking_fuels(
             PARENT_DIR, "population/output/Population (Gapminder, HYDE & UN).csv"
         )
     )
+    population = population.rename(
+        columns={
+            "Entity": "country",
+            "Year": "year",
+            "Population (historical estimates and future projections)": "population",
+        }
+    )
+    clean_pop_var_orig = "Indicator:Population with primary reliance on clean fuels and technologies for cooking (in millions) - Residence Area Type:Total"
     clean_id, clean_pop_df = get_dataframe_from_variable_name(
         df_variables, clean_pop_var_orig
     )
@@ -1030,7 +1038,13 @@ def add_neonatal_tetanus_cases_per_mil(df_variables: pd.DataFrame) -> pd.DataFra
             PARENT_DIR, "population/output/Population (Gapminder, HYDE & UN).csv"
         )
     )
-    # rc.find("population", namespace="owid", dataset="key_indicators").load()
+    population = population.rename(
+        columns={
+            "Entity": "country",
+            "Year": "year",
+            "Population (historical estimates and future projections)": "population",
+        }
+    )
     neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
     tet_id, tet_df = get_dataframe_from_variable_name(df_variables, neo_tet)
     tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
