@@ -10,15 +10,14 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-import datetime
 import pyarrow as pa
 import pyarrow.parquet as pq
-from owid.catalog import RemoteCatalog
 
 from who_gho import (
     CONFIGPATH,
     DOWNLOAD_INPUTS,
     CURRENT_DIR,
+    PARENT_DIR,
     INPATH,
     OUTPATH,
     DATASET_AUTHORS,
@@ -620,9 +619,7 @@ def standardise_country_name(country_col: pd.Series):
         .to_dict()
     )
 
-    country_col_owid = country_col.apply(
-        lambda x: entity2owid_name[x] if x in entity2owid_name else None
-    )
+    country_col_owid = country_col.apply(lambda x: entity2owid_name[x])
     return country_col_owid
 
 
@@ -642,11 +639,12 @@ def get_distinct_entities() -> List[str]:
     ]
     entity_set = set({})
     for fname in fnames:
-        print(fname)
+        # print(fname)
         df_temp = pd.read_csv(os.path.join(OUTPATH, "datapoints", fname))
         entity_set.update(df_temp["country"].unique().tolist())
+        assert pd.notnull(df_temp["country"]).all()
 
-    entities = sorted(entity_set)
+    entities = list(entity_set)
     assert pd.notnull(entities).all(), (
         "All entities should be non-null. Something went wrong in "
         "`clean_and_create_datapoints()`."
@@ -708,37 +706,38 @@ def get_variable_codes(selected_vars_only: bool) -> pd.DataFrame:
 
 
 def get_metadata(var_code2url: dict[Any, Any]) -> dict[Any, Any]:
-
+    indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
     # Downloading the metadata for each indicator code - this takes some time so we only want to do it if necessary
     if os.path.exists(os.path.join(CONFIGPATH, "variable_metadata.json")):
-        today = datetime.datetime.today()
-        modified_date = datetime.datetime.fromtimestamp(
-            os.path.getmtime(os.path.join(CONFIGPATH, "variable_metadata.json"))
-        )
-        duration = today - modified_date
-    else:
-        today = datetime.datetime.today()
-        modified_date = datetime.datetime.today()
-        duration = today - modified_date
-    # Download the variable metadata if we haven't downloaded it in the last 180 days
-    if duration.days > 90:
-        indicators = get_variable_codes(selected_vars_only=SELECTED_VARS_ONLY)
-        descs = {}
-        for name in indicators:
-            print(name)
-            url = var_code2url[name]
-            print(url)
-            if url.startswith("http"):
-                desc = _fetch_description_one_variable(url)
-                descs[name] = str(desc)
-            else:
-                descs[name] = str("")
-        with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
-            json.dump(descs, fp, indent=2)
-    else:
         with open(os.path.join(CONFIGPATH, "variable_metadata.json")) as fp:
             descs = json.load(fp)
-        return descs
+
+        set_current = set(indicators)
+        set_existing = set(list(descs.keys()))
+        missing = list(sorted(set_current - set_existing))
+        if len(missing) > 0:
+            print(f"Downloading metadata for {len(missing)} new variables...")
+            descs_miss = fetch_metadata(var_code2url, missing)
+            descs.update(descs_miss)
+    else:
+        descs = fetch_metadata(var_code2url, indicators)
+        with open(os.path.join(CONFIGPATH, "variable_metadata.json"), "w") as fp:
+            json.dump(descs, fp, indent=2)
+    return descs
+
+
+def fetch_metadata(var_code2url: dict[Any, Any], ind_codes: list) -> dict[Any, Any]:
+    descs = {}
+    for name in ind_codes:
+        print(name)
+        url = var_code2url[name]
+        print(url)
+        if url.startswith("http"):
+            desc = _fetch_description_one_variable(url)
+            descs[name] = str(desc)
+        else:
+            descs[name] = str("")
+    return descs
 
 
 def _fetch_description_one_variable(url: str) -> str:
@@ -843,12 +842,159 @@ def check_variables_custom(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
+    # Adding a global total for Yaws - adding to existing variable
+    df_variables = add_global_yaws(df_variables)
+    # Adding a variables for neonatal cases per million
+    df_variables = add_neonatal_tetanus_cases_per_mil(df_variables)
+    # Adding the % of people without access to clean cooking fuels (100 - existing variable)
+    df_variables = add_percentage_without_clean_cooking_fuels(df_variables)
+    # Adding the number of people without access to clean cooking fuels (population in year - existing variable)
+    df_variables = add_population_without_clean_cooking_fuels(df_variables)
+
+    # df_variables = add_youth_mortality_rates(
+    #    df_variables=df_variables,
+    #    younger_ind="Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes",
+    #    older_ind="Indicator:Mortality rate among children ages 5 to 9 years (per 1000 children aged 5) - Sex:Both sexes",
+    #    new_ind_name_short="Under-ten mortality rate",
+    #    new_ind_name_long="Indicator:Under-ten mortality rate (per 1000 live births)",
+    #    new_ind_desc="Definition: Under ten mortality rate is the share of newborns who die before reaching the age of 10. It is calculated by OWID based on WHO Global Health Observatory data.",
+    # )
+
+    return df_variables
+
+
+def add_population_without_clean_cooking_fuels(
+    df_variables: pd.DataFrame,
+) -> pd.DataFrame:
+    population = pd.read_csv(
+        os.path.join(
+            PARENT_DIR, "population/output/Population (Gapminder, HYDE & UN).csv"
+        )
+    )
+    population = population.rename(
+        columns={
+            "Entity": "country",
+            "Year": "year",
+            "Population (historical estimates and future projections)": "population",
+        }
+    )
+    clean_pop_var_orig = "Indicator:Population with primary reliance on clean fuels and technologies for cooking (in millions) - Residence Area Type:Total"
+    clean_id, clean_pop_df = get_dataframe_from_variable_name(
+        df_variables, clean_pop_var_orig
+    )
+    clean_pop = clean_pop_df.merge(population, on=["country", "year"], how="left")
+    clean_pop["value"] = clean_pop["population"] - (clean_pop["value"] * 1000000)
+    clean_pop["value"] = clean_pop["value"] / 1000000
+    clean_pop = clean_pop[["country", "year", "value"]].dropna()
+
+    clean_pop_var = df_variables[df_variables["name"] == clean_pop_var_orig].copy()
+    clean_pop_var[
+        "name"
+    ] = "Indicator:Population without primary reliance on clean fuels and technologies for cooking (in millions) - Residence Area Type:Total"
+    clean_pop_var[
+        "description"
+    ] = "Rationale: The use of solid fuels and kerosene in households is associated with increased mortality from acute lower respiratory, chronic obstructive pulmonary disease, stroke, ischaemic heart disease, and lung cancer.\nDefinition: The population who are not able to rely on clean fuels and technologies as the primary source of domestic energy for cooking.\nMethod of measurement: The indicator is calculated as the total population minus the number of people using clean fuels and technologies. Based on the recommendations included in the WHO Guidelines for indoor air quality: household fuel combustion, the fuels and technologies that are considered clean include electricity, natural gas, liquified petroleum gas, biogas, ethanol, and solar.\nMethod of estimation: Modelled estimates. A non-parametrical statistical model based on household survey data and time as inputs is applied to derive estimates. For further information on the model, see Stoner O et al, 2020: Global Household Energy Model: A Multivariate Hierarchical Approach to Estimating Trends in the Use of Polluting and Clean Fuels for Cooking (see link below).\nInput data for the model is found in the WHO Household Energy Database. This database compiles data from nationally-representative surveys and censuses that provide estimates of primary cooking fuels and technologies. In cases where estimates of the population not cooking at home, with missing data or cooking with other fuels are provided, these populations are removed from the denominator for estimation purposes. The population data is calculated by OWID and is available at: https://ourworldindata.org/grapher/population-past-future "
+    clean_pop_var["id"] = max(df_variables["id"]) + 1
+
+    clean_pop.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, clean_pop_var], axis=0)
+    return df_variables
+
+
+def add_percentage_without_clean_cooking_fuels(
+    df_variables: pd.DataFrame,
+) -> pd.DataFrame:
+    clean_pcnt_var_orig = "Indicator:Proportion of population with primary reliance on clean fuels and technologies for cooking (%) - Residence Area Type:Total"
+    clean_id, clean_df = get_dataframe_from_variable_name(
+        df_variables, clean_pcnt_var_orig
+    )
+
+    clean_df["value"] = 100 - clean_df["value"]
+    clean_df = clean_df[["country", "year", "value"]].dropna()
+
+    clean_pcnt_var = df_variables[df_variables["name"] == clean_pcnt_var_orig].copy()
+    clean_pcnt_var[
+        "name"
+    ] = "Indicator:Proportion of population without primary reliance on clean fuels and technologies for cooking (%) - Residence Area Type:Total"
+    clean_pcnt_var[
+        "description"
+    ] = "Rationale: The use of solid fuels and kerosene in households is associated with increased mortality from acute lower respiratory, chronic obstructive pulmonary disease, stroke, ischaemic heart disease, and lung cancer.\nDefinition: Proportion of population without primary reliance on clean fuels and technology is calculated as the number of people unable to use clean fuels and technologies for cooking, heating and lighting divided by total population reporting that any cooking, heating or lighting, expressed as percentage. “Clean” is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion. \nMethod of measurement: The indicator is calculated as the number of people unable to use clean fuels and technologies divided by total population, expressed as a percentage. Based on the recommendations included in the WHO Guidelines for indoor air quality: household fuel combustion, the fuels and technologies that are considered clean include electricity, natural gas, liquified petroleum gas, biogas, ethanol, and solar. Method of estimation: A non-parametrical statistical model based on household survey data and time as inputs is applied to derive estimates. For further information on the model, see Stoner O et al, 2020: Global Household Energy Model: A Multivariate Hierarchical Approach to Estimating Trends in the Use of Polluting and Clean Fuels for Cooking (see link below). Input data for the model is found in the WHO Household Energy Database. This database compiles data from nationally-representative surveys and censuses that provide estimates of primary cooking fuels and technologies. In cases where estimates of the population not cooking at home, with missing data or cooking with other fuels are provided, these populations are removed from the denominator for estimation purposes. The population data source is the 2018 Revision of World Urbanization Prospects."
+    clean_pcnt_var["id"] = max(df_variables["id"]) + 1
+
+    clean_df.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, clean_pcnt_var], axis=0)
+    return df_variables
+
+
+def get_dataframe_from_variable_name(
+    df_var: pd.DataFrame, variable_name: str
+) -> tuple[int, pd.DataFrame]:
+    """Returns a dataframe containing all datapoints for a given variable name."""
+    var_id = df_var["id"][df_var["name"] == variable_name]
+    var_df = pd.read_csv(
+        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % var_id)
+    )
+    return var_id, var_df
+
+
+def adjust_mortality_rates(
+    younger_df: pd.DataFrame, older_df: pd.DataFrame, output_str: str
+) -> pd.Series:
+    df = younger_df.merge(older_df, on=["country", "year"], how="outer")
+    df["adjusted_older_rate"] = ((1000 - df["value_x"]) / 1000) * df["value_y"]
+    df[output_str] = df["adjusted_older_rate"] + df["value_x"]
+    out_df = df[["country", "year", output_str]].dropna()
+
+    return out_df
+
+
+def add_youth_mortality_rates(
+    df_variables: pd.DataFrame,
+    younger_ind: str,
+    older_ind: str,
+    new_ind_name_short: str,
+    new_ind_name_long: str,
+    new_ind_desc: str,
+) -> pd.DataFrame:
+    younger_id, younger_df = get_dataframe_from_variable_name(df_variables, younger_ind)
+    older_id, older_df = get_dataframe_from_variable_name(df_variables, older_ind)
+    new_df = adjust_mortality_rates(
+        younger_df,
+        older_df,
+        new_ind_name_short,
+    )
+    new_var = df_variables[df_variables["name"] == younger_ind].copy()
+    new_var["name"] = new_ind_name_long
+    new_var["description"] = new_ind_desc
+    new_var["id"] = max(df_variables["id"]) + 1
+
+    new_df.to_csv(
+        os.path.join(
+            OUTPATH,
+            "datapoints",
+            "datapoints_%s.csv" % str(max(df_variables["id"]) + 1),
+        )
+    )
+    df_variables = pd.concat([df_variables, new_var], axis=0)
+    return df_variables
+
+
+def add_global_yaws(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Number of reported Yaws cases - add global total
     yaws = "Indicator:Number of cases of yaws reported"
-    yaws_id = df_variables["id"][df_variables["name"] == yaws]
-    yaws_df = pd.read_csv(
-        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % yaws_id)
-    )
+    yaws_id, yaws_df = get_dataframe_from_variable_name(df_variables, yaws)
     yaws_df["value"] = yaws_df["value"].astype(int)
     yaws_global = pd.DataFrame()
     yaws_global = yaws_df.groupby("year").sum()
@@ -882,18 +1028,25 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     )
     df_variables = pd.concat([df_variables, yaws_stat_var], axis=0)
 
+    return df_variables
+
+
+def add_neonatal_tetanus_cases_per_mil(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Number of neonatal tetanus cases per million
-    rc = RemoteCatalog(channels=["garden"])
-    population = (
-        rc.find("population", namespace="owid", dataset="key_indicators")
-        .load()
-        .reset_index()
+    population = pd.read_csv(
+        os.path.join(
+            PARENT_DIR, "population/output/Population (Gapminder, HYDE & UN).csv"
+        )
+    )
+    population = population.rename(
+        columns={
+            "Entity": "country",
+            "Year": "year",
+            "Population (historical estimates and future projections)": "population",
+        }
     )
     neo_tet = "Indicator:Neonatal tetanus - number of reported cases"
-    neo_tet_id = df_variables["id"][df_variables["name"] == neo_tet]
-    tet_df = pd.read_csv(
-        os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % neo_tet_id)
-    )
+    tet_id, tet_df = get_dataframe_from_variable_name(df_variables, neo_tet)
     tet_pop = tet_df.merge(population, on=["country", "year"], how="left")
     tet_pop["value"] = round((tet_pop["value"] / tet_pop["population"]) * 1000000, 2)
     tet_pop = tet_pop[["country", "year", "value"]].dropna()
@@ -915,5 +1068,4 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
         )
     )
     df_variables = pd.concat([df_variables, tet_pop_var], axis=0)
-
     return df_variables

@@ -56,7 +56,7 @@ def main(download_data, clean_data, import_data, match_vars, suggest_charts):
         import_dataset.main(DATASET_DIR, DATASET_NAMESPACE)
     if match_vars:
         match_variables_from_two_versions_of_a_dataset.main(
-            old_dataset_name="Global Health Observatory - World Health Organization (2021.12)",
+            old_dataset_name="Global Health Observatory - World Health Organization (2022.05)",
             new_dataset_name=f"{DATASET_NAME} - {DATASET_AUTHORS} ({DATASET_VERSION})",
             output_file=os.path.join(CONFIGPATH, "variable_replacements.json"),
         )

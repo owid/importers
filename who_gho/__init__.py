@@ -3,9 +3,9 @@ import os
 # Dataset constants.
 DATASET_NAME = "Global Health Observatory"
 DATASET_AUTHORS = "World Health Organization"
-DATASET_VERSION = "2022.05"
+DATASET_VERSION = "2022.08"
 DATASET_LINK = "https://ghoapi.azureedge.net/api/"
-DATASET_RETRIEVED_DATE = "2022-05-17"
+DATASET_RETRIEVED_DATE = "2022-08-03"
 DELETE_EXISTING_INPUTS = True
 DOWNLOAD_INPUTS = True
 KEEP_PATHS = ["standardized_entity_names.csv"]
@@ -13,6 +13,7 @@ CURRENT_DIR = os.path.dirname(__file__)
 INPATH = os.path.join(CURRENT_DIR, "input")
 OUTPATH = os.path.join(CURRENT_DIR, "output")
 CONFIGPATH = os.path.join(CURRENT_DIR, "config")
+PARENT_DIR = os.path.dirname(os.path.dirname(__file__))
 SELECTED_VARS_ONLY = False  # should we download just the selected vars in config/
 DATASET_DIR = os.path.dirname(__file__).split("/")[-1]
 DATASET_NAMESPACE = f"{DATASET_DIR}@{DATASET_VERSION}"
