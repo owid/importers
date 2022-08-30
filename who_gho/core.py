@@ -12,6 +12,7 @@ from tqdm import tqdm
 from bs4 import BeautifulSoup
 import pyarrow as pa
 import pyarrow.parquet as pq
+from owid import catalog
 
 from who_gho import (
     CONFIGPATH,
@@ -851,6 +852,8 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     # Adding the number of people without access to clean cooking fuels (population in year - existing variable)
     df_variables = add_population_without_clean_cooking_fuels(df_variables)
 
+    add_global_total_leprosy(df_variables)
+
     # df_variables = add_youth_mortality_rates(
     #    df_variables=df_variables,
     #    younger_ind="Indicator:Under-five mortality rate (per 1000 live births) (SDG 3.2.1) - Sex:Both sexes",
@@ -861,6 +864,23 @@ def create_omms(df_variables: pd.DataFrame) -> pd.DataFrame:
     # )
 
     return df_variables
+
+
+def add_global_total_leprosy(df_variables: pd.DataFrame) -> None:
+    countries_df = catalog.find("countries_regions", namespace="owid").load()
+    countries_df = countries_df.dropna(subset="iso_alpha2")
+    leprosy_var_orig = "Indicator:Number of new leprosy cases"
+    lepr_id, lepr_pop_df = get_dataframe_from_variable_name(
+        df_variables, leprosy_var_orig
+    )
+
+    lep_df_owid = lepr_pop_df[lepr_pop_df["country"].isin(countries_df["name"])]
+    glob_lep = lep_df_owid.groupby("year").sum().reset_index()
+    glob_lep["country"] = "World"
+    glob_lep = glob_lep[["country", "year", "value"]]
+    lep_df = pd.concat([lep_df_owid, glob_lep])
+    lep_df["value"] = lep_df["value"].astype(int)
+    lep_df.to_csv(os.path.join(OUTPATH, "datapoints", "datapoints_%d.csv" % lepr_id))
 
 
 def add_population_without_clean_cooking_fuels(
