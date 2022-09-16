@@ -16,7 +16,7 @@ from climate_change.src import READY_DIR
 def find_number_of_rows_to_skip_in_noaa_monthly_data(raw_data):
     n_rows_to_skip = -1
     for line in raw_data.split("\n"):
-        if line.startswith("#"):
+        if line.startswith("#") or (len(line) == 0):
             n_rows_to_skip += 1
         else:
             break
