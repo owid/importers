@@ -1,3 +1,4 @@
+# type: ignore
 """Cleans data from the World Health Organization Global Health Observatory (WHO GHO).
 
 https://www.who.int/data/gho/info/gho-odata-api
