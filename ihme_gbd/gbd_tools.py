@@ -1,14 +1,15 @@
-import requests
-import os
-import pandas as pd
-import zipfile
 import io
 import json
-from pathlib import Path
-import shutil
-import re
-import numpy as np
+import os
 import os.path
+import re
+import shutil
+import zipfile
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import requests
 
 
 def make_dirs(inpath: str, outpath: str, configpath: str) -> None:
@@ -271,7 +272,18 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
         df["val"][
             (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
             & (df["metric"] == "Number")
-        ]
+        ],
+        0,
+    )
+    df["val"][
+        (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
+        & (df["metric"] != "Number")
+    ] = round(
+        df["val"][
+            (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
+            & (df["metric"] != "Number")
+        ],
+        2,
     )
     return df
 
