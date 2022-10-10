@@ -265,6 +265,7 @@ def create_variables(
 def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
 
     df["val"][df["metric"] == "Percent"] = df["val"][df["metric"] == "Percent"] * 100
+    df["val"] = df["val"].round(2)
     df["val"][
         (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
         & (df["metric"] == "Number")
@@ -274,16 +275,6 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
             & (df["metric"] == "Number")
         ],
         0,
-    )
-    df["val"][
-        (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
-        & (df["metric"] != "Number")
-    ] = round(
-        df["val"][
-            (df["measure"].isin(["Prevalence", "Incidence", "Deaths"]))
-            & (df["metric"] != "Number")
-        ],
-        2,
     )
     return df
 
