@@ -263,7 +263,7 @@ def create_variables(
 
 
 def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
-
+    df = df.copy(deep=True)
     df["val"][df["metric"] == "Percent"] = df["val"][df["metric"] == "Percent"] * 100
     df["val"] = df["val"].astype(float).round(2)
     df["val"][
@@ -276,7 +276,7 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
         ],
         0,
     )
-    if df[(df["cause"] == "Malaria") & (df["measure"] == "Incidence")].any():
+    if ((df["cause"] == "Malaria") & (df["measure"] == "Incidence")).any():
         df = df[df["country"] != "Comoros"]
 
     return df
