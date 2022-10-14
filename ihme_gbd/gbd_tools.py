@@ -276,6 +276,9 @@ def clean_units_and_values(df: pd.DataFrame) -> pd.DataFrame:
         ],
         0,
     )
+    if df[(df["cause"] == "Malaria") & (df["measure"] == "Incidence")].any():
+        df = df[df["country"] != "Comoros"]
+
     return df
 
 
