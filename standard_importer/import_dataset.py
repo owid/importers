@@ -1,3 +1,4 @@
+# type: ignore
 """Imports a dataset and associated data sources, variables, and data points
 into the SQL database.
 
@@ -9,19 +10,17 @@ Usage:
     >>> import_dataset.main(dataset_dir, dataset_namespace)
 """
 
-import re
-from glob import glob
+import logging
 import os
+import re
 import traceback
+from glob import glob
 
-from tqdm import tqdm
 import pandas as pd
-from dotenv import load_dotenv
-
 from db import get_connection
 from db_utils import DBUtils
-
-import logging
+from dotenv import load_dotenv
+from tqdm import tqdm
 
 logging.basicConfig()
 logger = logging.getLogger(__name__)

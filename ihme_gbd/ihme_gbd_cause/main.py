@@ -7,9 +7,12 @@ Usage:
 
     python -m ihme_gbd.ihme_gbd_cause.main --skip_download --skip_clean --skip_import
 """
-import click
 import os
+
+import click
+from ihme_gbd import init_variables_to_clean
 from ihme_gbd.ihme_gbd_cause import (
+    CLEAN_ALL_VARIABLES,
     CONFIGPATH,
     DATASET_DIR,
     DATASET_NAMESPACE,
@@ -17,16 +20,13 @@ from ihme_gbd.ihme_gbd_cause import (
     INPATH,
     NAMESPACE,
     OUTPATH,
-    CLEAN_ALL_VARIABLES,
     UPDATE_EXISTING_DATA_VERSION,
+    clean,
+    download,
 )
-
-from ihme_gbd.ihme_gbd_cause import download, clean
-from ihme_gbd import init_variables_to_clean, match_variables
-
 from standard_importer import import_dataset
-from standard_revisions import match_variables_from_two_versions_of_a_dataset
 from standard_importer.chart_revision_suggester import ChartRevisionSuggester
+from standard_revisions import match_variables_from_two_versions_of_a_dataset
 
 
 @click.command()
