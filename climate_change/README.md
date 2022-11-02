@@ -3,8 +3,8 @@
 Here is the code that generates the datasets used in the climate change impacts data explorer.
 For the moment we do not have a fully automated pipeline to update the datasets.
 
-WARNING: During last update, `nasa.arctic_sea_ice_extent()` failed.
-On the next update, we may need to adapt the ingestion code.
+TODO: During last update, `nasa.arctic_sea_ice_extent()` failed.
+On the next update, we may need to adapt the ingestion code, and change units of EPA antarctic ice extent from miles to km (and adapt explorer accordingly).
 
 To update the datasets:
 1. Update the files in folders `ready` and `output`, by executing, from the root directory of this repository:
