@@ -12,6 +12,12 @@ import requests
 
 from climate_change.src import READY_DIR
 
+# Base URL for download links to get HadSST data from the Met Office site.
+METOFFICE_BASE_URL = "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/"
+# Version of the HadSST data to use.
+# NOTE: Currently we don't have an automated way to check for updates in their version.
+HADSST_VERSION = "HadSST.4.0.1.0"
+
 
 def process_file(loc: str, source_url: str, period: str) -> pd.DataFrame:
     data = requests.get(source_url).content
@@ -47,10 +53,10 @@ def annual_sea_surface_temperature():
         READY_DIR, "metoffice_annual-sea-surface-temperature.csv"
     )
     files = {
-        "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_GLOBE.csv",
-        "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_NHEM.csv",
-        "Southern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_SHEM.csv",
-        "Tropics": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_annual_TROP.csv",
+        "World": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_annual_GLOBE.csv",
+        "Northern Hemisphere": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_annual_NHEM.csv",
+        "Southern Hemisphere": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_annual_SHEM.csv",
+        "Tropics": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_annual_TROP.csv",
     }
     df = pd.concat([process_file(k, v, period="annual") for k, v in files.items()])
     df = df[df.year < datetime.date.today().year]
@@ -62,10 +68,10 @@ def monthly_sea_surface_temperature():
         READY_DIR, "metoffice_monthly-sea-surface-temperature.csv"
     )
     files = {
-        "World": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_GLOBE.csv",
-        "Northern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_NHEM.csv",
-        "Southern Hemisphere": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_SHEM.csv",
-        "Tropics": "https://www.metoffice.gov.uk/hadobs/hadsst4/data/csv/HadSST.4.0.1.0_monthly_TROP.csv",
+        "World": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_monthly_GLOBE.csv",
+        "Northern Hemisphere": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_monthly_NHEM.csv",
+        "Southern Hemisphere": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_monthly_SHEM.csv",
+        "Tropics": f"{METOFFICE_BASE_URL}{HADSST_VERSION}_monthly_TROP.csv",
     }
     df = pd.concat([process_file(k, v, period="monthly") for k, v in files.items()])
     df.to_csv(output_file, index=False)
