@@ -3,12 +3,12 @@ import pandas as pd
 # Go to https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases#sort=%40imfdate%20descending
 # Find the latest release of the WEO dataset (e.g. "World Economic Outlook Database, April 2022")
 # Click on "Entire Dataset" > Under "Tab Delimited Values:", copy the link to the "By Countries" file
-SOURCE_FILE = "https://www.imf.org/-/media/Files/Publications/WEO/WEO-Database/2022/WEOApr2022all.ashx"
+SOURCE_FILE = "https://www.imf.org/-/media/Files/Publications/WEO/WEO-Database/2022/WEOOct2022all.ashx"
 
 
 def read(source_url: str) -> pd.DataFrame:
     df = (
-        pd.read_csv(source_url, low_memory=False, sep="\t", encoding="utf-16-le")
+        pd.read_csv(source_url, low_memory=False, sep="\t", encoding="unicode_escape")
         .drop(
             columns=[
                 "WEO Country Code",
