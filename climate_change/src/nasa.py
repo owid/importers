@@ -75,17 +75,16 @@ def global_temperature_anomaly():
 
 
 def fetch_sea_ice_extent_data_from_ftp():
-    # FTP server, access password, and remote directory of data files.
+    # FTP server and remote directory of data files.
     ftp_dir = 'sidads.colorado.edu'
-    ftp_password = 'pablo@ourworldindata.org'
     remote_directory = '/DATASETS/NOAA/G02135/north/monthly/data'
     # Name of data file for the month of September.
     # We download only September because it is the month with the minimum extent.
     september_file = 'N_09_extent_v3.0.csv'
 
-    # Connect and log in to the FTP
+    # Connect and log in to the FTP server.
     ftp = FTP(ftp_dir)
-    ftp.login('anonymous', ftp_password)
+    ftp.login('anonymous')
     ftp.cwd(remote_directory)
 
     # List all files in remote FTP directory.
