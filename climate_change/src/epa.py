@@ -11,6 +11,9 @@ from bs4 import BeautifulSoup
 
 from climate_change.src import READY_DIR
 
+# Convert miles squared to kilometers squared.
+MILES_SQUARED_TO_KM_SQUARED = (1.609344)**2
+
 
 def get_downloadable_file(source_page: str) -> str:
     soup = BeautifulSoup(requests.get(source_page).content, "html.parser")
@@ -65,6 +68,7 @@ def antarctic_sea_ice():
         )
         .assign(location="Antarctica")
     )
+    df[["antarctic_sea_ice_february", "antarctic_sea_ice_september"]] *= MILES_SQUARED_TO_KM_SQUARED
     df[
         [
             "year",
