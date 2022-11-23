@@ -5,13 +5,10 @@
 import argparse
 import datetime
 import os
-import requests
 import tempfile
 from ftplib import FTP
 
 import pandas as pd
-from bs4 import BeautifulSoup
-from tqdm.auto import tqdm
 
 from climate_change.src import READY_DIR
 
@@ -76,15 +73,15 @@ def global_temperature_anomaly():
 
 def fetch_sea_ice_extent_data_from_ftp():
     # FTP server and remote directory of data files.
-    ftp_dir = 'sidads.colorado.edu'
-    remote_directory = '/DATASETS/NOAA/G02135/north/monthly/data'
+    ftp_dir = "sidads.colorado.edu"
+    remote_directory = "/DATASETS/NOAA/G02135/north/monthly/data"
     # Name of data file for the month of September.
     # We download only September because it is the month with the minimum extent.
-    september_file = 'N_09_extent_v3.0.csv'
+    september_file = "N_09_extent_v3.0.csv"
 
     # Connect and log in to the FTP server.
     ftp = FTP(ftp_dir)
-    ftp.login('anonymous')
+    ftp.login("anonymous")
     ftp.cwd(remote_directory)
 
     # List all files in remote FTP directory.
@@ -93,7 +90,7 @@ def fetch_sea_ice_extent_data_from_ftp():
     # # Download all files within the FTP directory into a temporary folder, and store them in memory.
     # with tempfile.TemporaryDirectory() as temp_dir:
     #     data = []
-    #     for remote_file in tqdm(remote_files):
+    #     for remote_file in remote_files:
     #         temp_file = os.path.join(temp_dir, remote_file)
     #         with open(temp_file, "wb") as _temp_file:
     #             ftp.retrbinary('RETR ' + remote_file, _temp_file.write)
@@ -110,7 +107,7 @@ def fetch_sea_ice_extent_data_from_ftp():
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_file = os.path.join(temp_dir, remote_file)
         with open(temp_file, "wb") as _temp_file:
-            ftp.retrbinary(f'RETR {remote_file}', _temp_file.write)
+            ftp.retrbinary(f"RETR {remote_file}", _temp_file.write)
         df = pd.read_csv(temp_file)
 
     # Close the FTP connection.
@@ -135,8 +132,13 @@ def arctic_sea_ice_extent():
     assert df["region"].str.strip().unique().tolist() == ["N"]
 
     # Prepare output dataframe.
-    df = df[["year", "extent"]].sort_values("year").reset_index(drop=True).\
-        rename(columns={"extent": "arctic_sea_ice_nasa"}).assign(**{"location": "World"})
+    df = (
+        df[["year", "extent"]]
+        .sort_values("year")
+        .reset_index(drop=True)
+        .rename(columns={"extent": "arctic_sea_ice_nasa"})
+        .assign(**{"location": "World"})
+    )
 
     # Save data to output file.
     df.to_csv(output_file, index=False)
