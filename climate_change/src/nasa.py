@@ -75,9 +75,18 @@ def fetch_sea_ice_extent_data_from_ftp():
     # FTP server and remote directory of data files.
     ftp_dir = "sidads.colorado.edu"
     remote_directory = "/DATASETS/NOAA/G02135/north/monthly/data"
-    # Name of data file for the month of September.
-    # We download only September because it is the month with the minimum extent.
-    september_file = "N_09_extent_v3.0.csv"
+    # Name of data files for the months of February and September, corresponding to the maximum and minimum sea
+    # ice extent, respectively.
+    # The minimum seems to be happening consistently in September, whereas the maximum occurs between February and
+    # March. In fact, March is on average little larger than February, however, given that the difference is small,
+    # and for consistency with the months used for the Antarctic sea ice extent (February and September, as chosen by
+    # EPA), we will use February and September for the Arctic too.
+    files_to_download = [
+        # February.
+        "N_02_extent_v3.0.csv",
+        # September.
+        "N_09_extent_v3.0.csv",
+    ]
 
     # Connect and log in to the FTP server.
     ftp = FTP(ftp_dir)
@@ -87,28 +96,20 @@ def fetch_sea_ice_extent_data_from_ftp():
     # List all files in remote FTP directory.
     remote_files = ftp.nlst()[2:]
 
-    # # Download all files within the FTP directory into a temporary folder, and store them in memory.
-    # with tempfile.TemporaryDirectory() as temp_dir:
-    #     data = []
-    #     for remote_file in remote_files:
-    #         temp_file = os.path.join(temp_dir, remote_file)
-    #         with open(temp_file, "wb") as _temp_file:
-    #             ftp.retrbinary('RETR ' + remote_file, _temp_file.write)
-    #         data.append(pd.read_csv(temp_file))
-    # # Gather all data files into a single dataframe.
-    # df = pd.concat(data)
+    # Instead of downloading all files, get only the files for maximum and minimum extent.
+    error = "Data files for February or September not found; they may have changed names."
+    assert set(files_to_download) < set(remote_files), error
 
-    # Instead of downloading all files, get only the one for September (which has every year the minimum extent).
-    error = "Data file for September not found; it may have changed name."
-    assert september_file in remote_files, error
-
-    # Download data file for September from the FTP directory into a temporary folder, and store data in memory.
-    remote_file = september_file
+    # Download all files within the FTP directory into a temporary folder, and store them in memory.
     with tempfile.TemporaryDirectory() as temp_dir:
-        temp_file = os.path.join(temp_dir, remote_file)
-        with open(temp_file, "wb") as _temp_file:
-            ftp.retrbinary(f"RETR {remote_file}", _temp_file.write)
-        df = pd.read_csv(temp_file)
+        data = []
+        for remote_file in files_to_download:
+            temp_file = os.path.join(temp_dir, remote_file)
+            with open(temp_file, "wb") as _temp_file:
+                ftp.retrbinary('RETR ' + remote_file, _temp_file.write)
+            data.append(pd.read_csv(temp_file))
+    # Gather all data files into a single dataframe.
+    df = pd.concat(data)
 
     # Close the FTP connection.
     ftp.quit()
@@ -131,14 +132,12 @@ def arctic_sea_ice_extent():
     # Check that there is only one region (North).
     assert df["region"].str.strip().unique().tolist() == ["N"]
 
+    # Create a column for each month, and rename them appropriately.
+    df["mo"] = df["mo"].replace({2: "arctic_sea_ice_february", 9: "arctic_sea_ice_september"})
+    df = df.pivot(index="year", columns=["mo"], values=["extent"]).droplevel(0, axis=1).reset_index()
+
     # Prepare output dataframe.
-    df = (
-        df[["year", "extent"]]
-        .sort_values("year")
-        .reset_index(drop=True)
-        .rename(columns={"extent": "arctic_sea_ice_nasa"})
-        .assign(**{"location": "World"})
-    )
+    df = df.sort_values("year").reset_index(drop=True).assign(**{"location": "World"})
 
     # Save data to output file.
     df.to_csv(output_file, index=False)
