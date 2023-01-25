@@ -1,3 +1,6 @@
+> **Warning**
+> This repository is deprecated. See https://docs.owid.io/projects/etl/en/latest/
+
 # Importers
 
 _Bulk import scripts for ingesting large external datasets into OWID's master dataset._
