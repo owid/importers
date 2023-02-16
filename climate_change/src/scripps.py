@@ -40,18 +40,33 @@ def co2_concentrations():
     output_file = os.path.join(READY_DIR, "scripps_monthly-co2-concentrations.csv")
     # Name for output column of CO2 concentrations.
     co2_column = "monthly_co2_concentrations"
-
+    # Select relevant input columns, and how to rename them.
+    columns = {
+        "Yr": "year",
+        "Mn": "month",
+        "CO2": co2_column,
+    }
     # Load data and give it a convenient format.
-    scripps_data = pd.read_csv(scripps_data_file, skiprows=54)
-    scripps_data = scripps_data.rename(
-        columns={
-            scripps_data.columns[0]: "year",
-            scripps_data.columns[1]: "month",
-            scripps_data.columns[-1]: co2_column,
-        }
-    )[["year", "month", co2_column]].dropna(how="all")
-    for column in scripps_data.columns:
-        scripps_data[column] = pd.to_numeric(scripps_data[column], errors="coerce")
+    scripps_data = pd.read_csv(scripps_data_file, comment='"')
+
+    # For some reason, the column name is distributed between the two first rows.
+    scripps_data.columns = (
+        (scripps_data.columns + " " + scripps_data.loc[0].fillna("").tolist())
+        .str.replace(r"\s+", " ", regex=True)
+        .str.strip()
+    )
+
+    # Remove the first two rows (that were continuations of the column names, and units).
+    # They are the only rows that do not have a year.
+    scripps_data = scripps_data[scripps_data["Yr"].str.isdigit()].reset_index(drop=True)
+
+    # Keep only relevant columns.
+    scripps_data = scripps_data.rename(columns=columns, errors="raise")[
+        columns.values()
+    ]
+
+    # Ensure columns have the right type.
+    scripps_data = scripps_data.astype({"year": int, "month": int, co2_column: float})
 
     # Missing data is denoted with an arbitrary -99.99. Ignore those rows.
     scripps_data = scripps_data[scripps_data[co2_column] > 0].reset_index(drop=True)
