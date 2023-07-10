@@ -22,7 +22,7 @@ def ocean_ph():
             na_values=[-999],
         )
         .rename(columns={"pHcalc_insitu": "ocean_ph"})
-        .assign(location="World")
+        .assign(location="Hawaii")
     )
 
     df["date"] = pd.to_datetime(df.date)
