@@ -67,6 +67,11 @@ TCF_TO_CUBIC_METERS = 2.832e10
 #   1 MST = 1 thousand short tons * (0.9071847 tonnes / short tons) * (1e3 / thousand) =
 #   = 9.072e2 tonnes
 MST_TO_TONNES = 9.072e2
+# * Conversion factor from million short tons (million st) to tonnes.
+#   Given that 1 US (short) ton = 0.9071847 (metric) tonnes,
+#   1 million st = 1 million short tons * (0.9071847 tonnes / short tons) * (1e6 / million) =
+#   = 9.072e5 tonnes
+MILLION_ST_TO_TONNES = 9.072e5
 # * Conversion factor from thousand barrels per day (Mb/d) to cubic meters per year.
 #   Given that 1 barrel = 0.1589873 cubic meters, and given that 1 (Julian) year = 365.25 days,
 #   1 Mb/d = 1 thousand barrels / day * (0.1589873 cubic meters / barrel) * (1e3 / thousand) * (365.25 days / year) =
@@ -328,7 +333,7 @@ def load_coal_data():
         ),
         # Coal reserves (tonnes).
         load_simple_dataset(
-            variable_name="coal_reserves", conversion_factor=MST_TO_TONNES
+            variable_name="coal_reserves", conversion_factor=MILLION_ST_TO_TONNES,
         ),
     ]
 
