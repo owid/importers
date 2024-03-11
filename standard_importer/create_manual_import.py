@@ -7,10 +7,11 @@ Usage::
     python -m standard_importer.create_manual_import
 """
 
+import logging
 import os
 import re
-import logging
 from glob import glob
+
 import pandas as pd
 from tqdm import tqdm
 
@@ -18,7 +19,7 @@ logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-DATASET_DIR = "who_gho"  # directory of dataset to import.
+DATASET_DIR = "un_sdg"  # directory of dataset to import.
 
 
 def main():
