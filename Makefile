@@ -3,7 +3,7 @@
 #
 
 
-SRC = *.py standard_importer worldbank_wdi who_gho
+SRC = *.py standard_importer worldbank_wdi
 
 default:
 	@echo 'Available commands:'
