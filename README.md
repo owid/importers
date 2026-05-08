@@ -1,5 +1,5 @@
 > **Warning**
-> This repository is deprecated. See https://docs.owid.io/projects/etl/en/latest/
+> This repository is deprecated. See https://docs.owid.io/projects/etl/
 
 # Importers
 
