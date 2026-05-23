@@ -1,0 +1,528 @@
+country,year,value
+Mexico,2004,0.0
+Mexico,2005,0.0
+Mexico,2006,0.0
+Mexico,2007,0.0
+Mexico,2008,0.0
+Mexico,2009,0.0
+Mexico,2010,0.0
+Mexico,2011,0.0
+Mexico,2012,0.0
+Mexico,2013,0.0
+Mexico,2014,0.0
+Mexico,2015,0.0
+Mexico,2016,0.0
+Mexico,2017,0.0
+Mexico,2018,0.0
+Canada,1971,1534.5
+Canada,1972,1727.2
+Canada,1973,2101.2
+Canada,1974,2336.0
+Canada,1975,2501.6
+Canada,1976,2608.8
+Canada,1977,2804.0
+Canada,1978,3025.6
+Canada,1979,3168.2
+Canada,1980,3279.7
+Canada,1981,3224.6
+Canada,1982,2973.2
+Canada,1983,2765.0
+Canada,1984,2732.3
+Canada,1985,2659.9
+Canada,1986,2663.7
+Canada,1987,2803.6
+Canada,1988,2977.1
+Canada,1989,3148.9
+Canada,1990,2330.1
+Canada,1991,1436.8
+Canada,1992,1483.9
+Canada,1993,1554.8
+Canada,1994,1592.0
+Canada,1995,1562.4
+Canada,1996,1537.6
+Canada,1997,1529.8
+Canada,1998,1572.7
+Canada,1999,1607.8
+Canada,2000,1590.6
+Canada,2001,1611.0
+Canada,2002,1661.8
+Canada,2003,1692.5
+Canada,2004,1721.5
+Canada,2005,1759.7
+Canada,2006,1863.4
+Canada,2007,1956.4
+Canada,2008,1940.4
+Canada,2009,1988.7
+Canada,2010,1965.2
+Canada,2011,1985.8
+Canada,2012,2089.8
+Canada,2013,2148.3
+Canada,2014,2178.0
+Canada,2015,2296.6
+Canada,2016,2409.9
+Canada,2017,2520.8
+Canada,2018,2593.0
+Canada,2019,2642.8
+Finland,1996,968.4
+Finland,1997,1000.8
+Finland,1998,1063.1
+Finland,1999,1132.5
+Finland,2000,1194.7
+Finland,2001,1222.3
+Finland,2002,1259.2
+Finland,2003,1301.1
+Finland,2004,1385.0
+Finland,2005,1504.2
+Finland,2006,1619.1
+Finland,2007,1685.5
+Finland,2008,1665.6
+Finland,2009,1612.7
+Finland,2010,1671.3
+Finland,2011,1737.2
+Finland,2012,1738.9
+Finland,2013,1725.2
+Finland,2014,1730.2
+Finland,2015,1741.0
+Finland,2016,1782.1
+Finland,2017,1824.5
+Finland,2018,1815.8
+Germany,1970,1266.7
+Germany,1971,1345.6
+Germany,1972,1446.4
+Germany,1973,1510.4
+Germany,1974,1552.9
+Germany,1975,1579.7
+Germany,1976,1643.2
+Germany,1977,1734.7
+Germany,1978,1822.0
+Germany,1979,1952.0
+Germany,1980,2076.5
+Germany,1981,2172.1
+Germany,1982,2202.9
+Germany,1983,2266.4
+Germany,1984,2346.0
+Germany,1985,2380.5
+Germany,1986,2384.2
+Germany,1987,2437.5
+Germany,1988,2487.8
+Germany,1989,2523.9
+Germany,1990,2617.2
+Germany,1991,2196.2
+Germany,1992,2111.9
+Germany,1993,1966.5
+Germany,1994,1893.8
+Germany,1995,1849.9
+Germany,1996,1854.5
+Germany,1997,1913.6
+Germany,1998,2019.7
+Germany,1999,2065.8
+Germany,2000,2074.0
+Germany,2001,2066.9
+Germany,2002,2059.3
+Germany,2003,2052.7
+Germany,2004,2043.2
+Germany,2005,2045.2
+Germany,2006,2068.9
+Germany,2007,2052.7
+Germany,2008,2029.4
+Germany,2009,1992.3
+Germany,2010,1995.5
+Germany,2011,2023.6
+Germany,2012,2050.3
+Germany,2013,2045.6
+Germany,2014,2066.9
+Germany,2015,2155.3
+Germany,2016,2263.8
+Germany,2017,2455.9
+Germany,2018,2686.9
+Denmark,1990,9048.9
+Denmark,1991,7119.0
+Denmark,1992,10489.6
+Denmark,1993,7501.3
+Denmark,1994,7934.6
+Denmark,1995,17878.6
+Denmark,1996,25085.9
+Denmark,1997,30571.6
+Denmark,1998,40481.6
+Denmark,1999,50530.9
+Denmark,2000,60193.8
+Denmark,2001,67796.9
+Denmark,2002,73596.7
+Denmark,2003,77855.8
+Denmark,2004,95172.4
+Denmark,2005,122582.6
+Denmark,2006,164090.4
+Denmark,2007,193079.4
+Denmark,2008,196237.8
+Denmark,2009,189119.5
+Denmark,2010,180207.9
+Denmark,2011,162227.3
+Denmark,2012,140090.6
+Denmark,2013,137179.1
+Denmark,2014,141870.5
+Denmark,2015,153213.5
+Denmark,2016,149760.3
+Denmark,2017,150808.7
+Denmark,2018,155894.8
+Korea,1996,1167057.3
+Korea,1997,1170696.8
+Korea,1998,1103261.4
+Korea,1999,1104358.4
+Korea,2000,1142052.0
+Korea,2001,1145797.4
+Korea,2002,1207152.0
+Korea,2003,1302957.5
+Korea,2004,1406250.8
+Korea,2005,1573034.6
+Korea,2006,1788438.5
+Korea,2007,1921619.9
+Korea,2008,2044781.6
+Korea,2009,2245754.0
+Korea,2010,2444538.8
+Korea,2011,2607680.8
+Korea,2012,2617185.8
+Korea,2013,2463813.0
+Korea,2014,2440963.8
+Korea,2015,2467578.0
+Korea,2016,2518602.5
+Korea,2017,2639126.5
+Korea,2018,2926567.0
+Korea,2019,3227084.0
+United Kingdom,1996,2060.7
+United Kingdom,1997,2253.0
+United Kingdom,1998,2564.6
+United Kingdom,1999,2963.8
+United Kingdom,2000,3511.5
+United Kingdom,2001,4201.2
+United Kingdom,2002,5331.0
+United Kingdom,2003,6701.2
+United Kingdom,2004,7920.5
+United Kingdom,2005,8770.4
+United Kingdom,2006,9557.0
+United Kingdom,2007,10542.9
+United Kingdom,2008,9630.4
+United Kingdom,2009,8710.6
+United Kingdom,2010,8934.9
+United Kingdom,2011,8814.2
+United Kingdom,2012,8748.4
+United Kingdom,2013,9125.9
+United Kingdom,2014,9964.2
+United Kingdom,2015,11325.4
+United Kingdom,2016,12378.5
+United Kingdom,2017,13198.5
+United Kingdom,2018,13595.6
+France,1979,944.7
+France,1980,895.6
+France,1981,845.3
+France,1982,770.3
+France,1983,751.1
+France,1984,749.2
+France,1985,745.2
+France,1986,801.4
+France,1987,910.1
+France,1988,1079.4
+France,1989,1324.7
+France,1990,1530.0
+France,1991,1573.2
+France,1992,1471.3
+France,1993,1355.0
+France,1994,1374.1
+France,1995,1357.8
+France,1996,1283.7
+France,1997,1271.8
+France,1998,1421.2
+France,1999,1937.9
+France,2000,2547.2
+France,2001,3066.8
+France,2002,3716.8
+France,2003,4664.2
+France,2004,5972.9
+France,2005,7494.4
+France,2006,8692.5
+France,2007,9212.2
+France,2008,8644.6
+France,2009,8010.0
+France,2010,8475.0
+France,2011,9055.3
+France,2012,8929.5
+France,2013,8547.2
+France,2014,8200.3
+France,2015,8071.0
+France,2016,8360.2
+France,2017,8828.9
+France,2018,9379.3
+France,2019,9956.2
+Japan,1970,81194.3
+Japan,1971,93152.6
+Japan,1972,112805.5
+Japan,1973,131011.1
+Japan,1974,120958.8
+Japan,1975,114053.1
+Japan,1976,110556.7
+Japan,1977,109934.7
+Japan,1978,115838.6
+Japan,1979,135098.5
+Japan,1980,157110.1
+Japan,1981,176969.2
+Japan,1982,191976.5
+Japan,1983,200911.8
+Japan,1984,204807.2
+Japan,1985,214971.8
+Japan,1986,250503.1
+Japan,1987,326548.7
+Japan,1988,387975.8
+Japan,1989,428180.9
+Japan,1990,468141.7
+Japan,1991,455110.8
+Japan,1992,407350.8
+Japan,1993,374804.8
+Japan,1994,589792.0
+Japan,1995,799333.6
+Japan,1996,775529.5
+Japan,1997,743295.7
+Japan,1998,694121.1
+Japan,1999,639186.9
+Japan,2000,590949.9
+Japan,2001,555433.2
+Japan,2002,527840.7
+Japan,2003,501855.8
+Japan,2004,479800.2
+Japan,2005,474780.9
+Japan,2006,488175.8
+Japan,2007,513561.8
+Japan,2008,548016.1
+Japan,2009,546913.2
+Japan,2010,530340.4
+Japan,2011,521338.8
+Japan,2012,506381.2
+Japan,2013,497692.1
+Japan,2014,496993.2
+Japan,2015,505323.2
+Japan,2016,525158.7
+Japan,2017,546465.9
+Sweden,1980,16432.9
+Sweden,1981,17100.3
+Sweden,1982,16858.6
+Sweden,1983,19150.5
+Sweden,1984,24485.3
+Sweden,1985,33361.2
+Sweden,1986,44674.0
+Sweden,1987,46750.2
+Sweden,1988,55371.0
+Sweden,1989,82002.3
+Sweden,1990,56213.3
+Sweden,1991,31783.2
+Sweden,1992,14438.5
+Sweden,1993,21632.1
+Sweden,1994,17274.9
+Sweden,1995,21382.4
+Sweden,1996,25854.9
+Sweden,1997,30423.5
+Sweden,1998,35124.0
+Sweden,1999,39263.6
+Sweden,2000,34823.0
+Sweden,2001,26528.8
+Sweden,2002,41319.1
+Sweden,2003,41250.8
+Sweden,2004,74943.1
+Sweden,2005,79818.7
+Sweden,2006,90323.0
+Sweden,2007,108163.9
+Sweden,2008,106508.4
+Sweden,2009,112827.9
+Sweden,2010,110078.2
+Sweden,2011,115927.8
+Sweden,2012,111567.9
+Sweden,2013,131263.7
+Sweden,2014,132552.6
+Sweden,2015,155750.4
+Sweden,2016,183074.3
+Sweden,2017,183188.8
+Sweden,2018,219075.9
+Sweden,2019,265089.7
+Czechia,1993,13762.5
+Czechia,1994,11204.4
+Czechia,1995,9729.4
+Czechia,1996,8042.3
+Czechia,1997,6610.6
+Czechia,1998,5699.4
+Czechia,1999,5275.5
+Czechia,2000,4683.9
+Czechia,2001,4174.5
+Czechia,2002,4099.8
+Czechia,2003,4193.0
+Czechia,2004,4116.4
+Czechia,2005,4099.9
+Czechia,2006,4562.9
+Czechia,2007,5600.0
+Czechia,2008,6818.0
+Czechia,2009,6784.7
+Czechia,2010,6432.0
+Czechia,2011,6590.1
+Czechia,2012,6462.6
+Czechia,2013,6292.1
+Czechia,2014,6205.8
+Czechia,2015,6123.8
+Czechia,2016,5983.2
+Czechia,2017,5976.1
+Czechia,2018,6138.6
+Czechia,2019,6172.6
+United States,1946,47.7
+United States,1947,51.1
+United States,1948,52.2
+United States,1949,61.5
+United States,1950,65.6
+United States,1951,62.7
+United States,1952,60.7
+United States,1953,61.6
+United States,1954,63.5
+United States,1955,65.0
+United States,1956,62.9
+United States,1957,60.3
+United States,1958,60.5
+United States,1959,64.6
+United States,1960,70.1
+United States,1961,77.9
+United States,1962,88.9
+United States,1963,99.6
+United States,1964,109.8
+United States,1965,113.4
+United States,1966,113.0
+United States,1967,117.2
+United States,1968,119.1
+United States,1969,122.8
+United States,1970,128.9
+United States,1971,136.0
+United States,1972,142.7
+United States,1973,157.9
+United States,1974,171.9
+United States,1975,149.4
+United States,1976,137.0
+United States,1977,148.8
+United States,1978,157.5
+United States,1979,164.1
+United States,1980,170.8
+United States,1981,174.8
+United States,1982,188.4
+United States,1983,203.6
+United States,1984,213.1
+United States,1985,245.0
+United States,1986,306.2
+United States,1987,349.1
+United States,1988,361.3
+United States,1989,368.8
+United States,1990,373.0
+United States,1991,363.3
+United States,1992,354.4
+United States,1993,343.4
+United States,1994,325.0
+United States,1995,304.5
+United States,1996,293.6
+United States,1997,296.1
+United States,1998,307.2
+United States,1999,329.4
+United States,2000,356.8
+United States,2001,403.9
+United States,2002,471.6
+United States,2003,528.7
+United States,2004,577.2
+United States,2005,645.4
+United States,2006,718.4
+United States,2007,723.3
+United States,2008,656.6
+United States,2009,548.0
+United States,2010,452.1
+United States,2011,404.2
+United States,2012,373.1
+United States,2013,366.7
+United States,2014,392.6
+United States,2015,428.8
+United States,2016,476.1
+United States,2017,517.6
+United States,2018,532.6
+United States,2019,542.5
+Australia,1960,1330.9
+Australia,1961,1379.8
+Australia,1962,1483.6
+Australia,1963,1486.8
+Australia,1964,1539.6
+Australia,1965,1639.2
+Australia,1966,1686.3
+Australia,1967,1637.8
+Australia,1968,1621.9
+Australia,1969,1666.8
+Australia,1970,1815.7
+Australia,1971,1943.5
+Australia,1972,2067.7
+Australia,1973,2190.6
+Australia,1974,2331.3
+Australia,1975,2334.4
+Australia,1976,2208.9
+Australia,1977,2153.2
+Australia,1978,2083.9
+Australia,1979,2009.5
+Australia,1980,2072.1
+Australia,1981,2257.5
+Australia,1982,2147.7
+Australia,1983,1930.3
+Australia,1984,1925.4
+Australia,1985,2041.9
+Australia,1986,1965.0
+Australia,1987,1791.8
+Australia,1988,1982.7
+Australia,1989,2457.9
+Australia,1990,2784.8
+Australia,1991,2825.5
+Australia,1992,2869.6
+Australia,1993,2956.2
+Australia,1994,3167.3
+Australia,1995,3340.3
+Australia,1996,3366.9
+Australia,1997,3697.2
+Australia,1998,4066.4
+Australia,1999,4326.3
+Australia,2000,4575.6
+Australia,2001,4615.2
+Australia,2002,5083.2
+Australia,2003,5932.0
+Australia,2004,6605.8
+Australia,2005,6846.5
+Australia,2006,6962.6
+Australia,2007,7342.8
+Australia,2008,7479.2
+Australia,2009,6861.7
+Australia,2010,7331.7
+Australia,2011,7593.6
+Australia,2012,7108.0
+Australia,2013,7034.1
+Australia,2014,7398.0
+Australia,2015,8079.0
+Australia,2016,8552.3
+Australia,2017,8952.0
+Australia,2018,9149.4
+Australia,2019,8505.0
+Netherlands,1995,3288.0
+Netherlands,1996,3832.4
+Netherlands,1997,5044.9
+Netherlands,1998,6428.6
+Netherlands,1999,8274.9
+Netherlands,2000,10597.1
+Netherlands,2001,12401.5
+Netherlands,2002,13148.0
+Netherlands,2003,13329.6
+Netherlands,2004,13483.6
+Netherlands,2005,13699.5
+Netherlands,2006,13837.5
+Netherlands,2007,14133.8
+Netherlands,2008,14209.4
+Netherlands,2009,13622.6
+Netherlands,2010,12500.0
+Netherlands,2011,11968.6
+Netherlands,2012,10991.1
+Netherlands,2013,9625.9
+Netherlands,2014,9259.4
+Netherlands,2015,9888.8
+Netherlands,2016,10777.9
+Netherlands,2017,11988.7
+Netherlands,2018,13252.2
+Netherlands,2019,14116.0
